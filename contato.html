@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fale com um especialista | 4WaTT Bio Engenharia</title>
+  <meta name="description"
+    content="Fale com a engenharia da 4WaTT. Diagnóstico técnico-financeiro gratuito, retorno em até 24h e confidencialidade garantida por NDA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/contato.css?v=2.0">
+  <style>
+    :root {
+      --accent: var(--teal);
+      --accent-light: var(--teal-ink);
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-N91NFD55MB');</script>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+</head>
+
+<body class="t4">
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true"
+            data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="https://calculadora-zeta-sooty.vercel.app" data-i18n="cta_simular">Simular
+          Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HERO curto -->
+    <header class="ct-hero">
+      <div class="ph ph--roxo"><img src="assets/img_old/reuniao.jpeg" alt=""></div>
+      <div class="ct-hero__inner container">
+        <span class="kicker" data-reveal data-i18n="contato_hero_kicker">Contato</span>
+        <h1 data-reveal data-d="1" data-i18n="contato_hero_title">Fale com um especialista.</h1>
+        <p class="ct-hero__lead" data-reveal data-d="2" data-i18n="contato_hero_lead">Preencha o formulário e nossa
+          equipe de engenharia retorna em
+          até 24h. Diagnóstico técnico-financeiro sem custo.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="orb orb--teal" data-parallax="0.12" style="width:420px;height:420px;top:-40px;right:-110px;"></div>
+        <div class="container">
+          <div class="ct-grid">
+
+            <!-- FORM -->
+            <div class="ct-formcard" data-reveal>
+              <h2 data-i18n="contato_form_title">Envie uma mensagem</h2>
+              <p class="sub" data-i18n="contato_form_sub">Resposta em até 24 horas úteis.</p>
+              <form class="form-4watt" id="contactForm" data-form-name="Contato">
+                <div class="form-row">
+                  <div class="form-field"><label for="ct-nome" data-i18n="contato_label_nome">Nome*</label><input
+                      class="form-input" id="ct-nome" name="nome" type="text" required placeholder="Seu nome completo"
+                      data-i18n-placeholder="contato_placeholder_nome"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="ct-empresa"
+                      data-i18n="contato_label_empresa">Empresa*</label><input class="form-input" id="ct-empresa"
+                      name="empresa" type="text" required placeholder="Nome da empresa"
+                      data-i18n-placeholder="contato_placeholder_empresa"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field"><label for="ct-email" data-i18n="contato_label_email">E-mail*</label><input
+                      class="form-input" id="ct-email" name="email" type="email" required placeholder="seu@email.com"
+                      data-i18n-placeholder="contato_placeholder_email"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="ct-wpp" data-i18n="contato_label_wpp">WhatsApp*</label><input
+                      class="form-input" id="ct-wpp" name="whatsapp" type="tel" required placeholder="(00) 00000-0000"
+                      data-i18n-placeholder="contato_placeholder_wpp"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-field"><label for="ct-motivo" data-i18n="contato_label_motivo">Motivo do
+                    contato*</label>
+                  <select class="form-select" id="ct-motivo" name="motivo" required>
+                    <option value="" data-i18n="contato_select_default">Selecione o motivo</option>
+                    <option data-i18n="contato_opt_gerador">Sou gerador de resíduos</option>
+                    <option data-i18n="contato_opt_investidor">Sou investidor</option>
+                    <option data-i18n="contato_opt_comprar">Quero comprar biometano</option>
+                    <option data-i18n="contato_opt_om">O&amp;M</option>
+                    <option data-i18n="contato_opt_outro">Outro</option>
+                  </select><span class="form-error-msg"></span>
+                </div>
+                <div class="form-field"><label for="ct-msg" data-i18n="contato_label_msg">Mensagem</label><textarea
+                    class="form-textarea" id="ct-msg" name="mensagem" placeholder="Descreva sua necessidade..."
+                    data-i18n-placeholder="contato_placeholder_msg"></textarea><span class="form-error-msg"></span>
+                </div>
+                <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;"
+                  data-i18n="contato_form_submit">Enviar mensagem <i class="fas fa-arrow-right"></i></button>
+                <p class="form-consent" data-i18n="contato_form_consent">Ao enviar, você concorda em ser contatado pela
+                  equipe 4WaTT. Tratamos seus dados com confidencialidade.</p>
+              </form>
+              <div class="form-success" data-i18n="contato_form_success">Mensagem enviada! Nosso time entra em contato
+                em até 24 horas.</div>
+            </div>
+
+            <!-- ASIDE -->
+            <aside class="ct-aside">
+              <div class="ct-block" data-reveal data-d="1">
+                <h3 data-i18n="contato_aside_title">Contato direto</h3>
+                <ul class="ct-contact">
+                  <li><a href="mailto:contato@4watt.tech"><i class="fas fa-envelope"></i> contato@4watt.tech</a></li>
+                  <li><a href="https://wa.me/5545991378949"><i class="fab fa-whatsapp"></i> +55 45 99137-8949</a></li>
+                  <li><a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener"><i
+                        class="fab fa-linkedin-in"></i> <span data-i18n="contato_linkedin">4WaTT Bio
+                        Engenharia</span></a></li>
+                </ul>
+              </div>
+
+              <div class="ct-block" data-reveal data-d="2">
+                <h3 data-i18n="contato_porque_title">Por que a 4WaTT</h3>
+                <div class="ct-seals">
+                  <div class="ct-seal">
+                    <div class="ct-seal__ic"><i class="fas fa-award"></i></div>
+                    <div><b data-i18n="contato_seal1_title">12 anos · 200+ projetos</b><span
+                        data-i18n="contato_seal1_text">Experiência entregue em todo o Brasil.</span></div>
+                  </div>
+                  <div class="ct-seal" style="margin-top:14px;">
+                    <div class="ct-seal__ic"><i class="fas fa-clipboard-check"></i></div>
+                    <div><b data-i18n="contato_seal2_title">Diagnóstico gratuito</b><span
+                        data-i18n="contato_seal2_text">Potencial de resíduo, dimensionamento e modelo de negócio.</span>
+                    </div>
+                  </div>
+                  <div class="ct-seal" style="margin-top:14px;">
+                    <div class="ct-seal__ic"><i class="fas fa-user-shield"></i></div>
+                    <div><b data-i18n="contato_seal3_title">Confidencialidade (NDA)</b><span
+                        data-i18n="contato_seal3_text">Assinamos NDA em todas as tratativas.</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ct-map" data-reveal data-d="3">
+                <iframe title="Localização 4WaTT, Goiânia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  data-i18n-title="contato_map_title"
+                  src="https://www.google.com/maps?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Goiania&output=embed"></iframe>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand footer__col">
+            <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+            <p data-i18n="footer_brand_phrase">De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.
+            </p>
+            <p data-i18n="footer_brand_company">4WaTT Bio Engenharia S/A.</p>
+            <div class="footer__seal"><i class="fas fa-circle-check"></i> <span data-i18n="footer_seal">Site oficial
+                verificado</span></div>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_address_title">Endereço</h4>
+            <ul>
+              <li>Edifício Metropolitan Business</li>
+              <li>Torre Tokyo, sala 601</li>
+              <li>Av. Dep. Jamel Cecílio</li>
+              <li>Jardim Goiás, Goiânia · GO</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_contact_title">Contato</h4>
+            <ul>
+              <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html" data-i18n="legal_privacy">Política de Privacidade</a></li>
+              <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+              <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_social_title">Siga-nos</h4>
+            <div class="footer__social">
+              <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i
+                  class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom"><span data-i18n="footer_rights">© 2026 4WaTT Bio Engenharia S/A · Todos os direitos
+            reservados.</span><span data-i18n="footer_tagline">Da simulação à operação. Patrimônio energético.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+</body>
+
+</html>

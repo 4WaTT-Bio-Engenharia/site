@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Artigos Técnicos sobre Biogás e Biometano | 4WaTT Bio Engenharia</title>
+  <meta name="description" content="Aprofunde seu conhecimento em biogás, biometano, créditos de carbono, regulação ANP e engenharia de biodigestores. Conteúdo técnico da 4WaTT.">
+  <link rel="canonical" href="https://4watt.tech/artigos/">
+  <link rel="icon" href="/assets/img_old/iconeq.png" type="image/png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/custom_v2.css?v=2">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="/assets/css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Fix for horizontal navbar and footer */
+        .navbar {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        .nav-links {
+            display: flex !important;
+            flex-direction: row !important;
+            list-style: none !important;
+            gap: 2rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .footer-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 2rem !important;
+            width: 100% !important;
+        }
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        .mobile-home-btn { display:none; color:#fff; font-size:1.2rem; padding:8px; margin-left:8px; text-decoration:none; }
+        @media (max-width: 992px) {
+            .mobile-home-btn { display:inline-flex!important; align-items:center; justify-content:center; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .main-footer {
+                transform: none !important;
+                width: 100% !important;
+            }
+            .nav-links {
+                display: none !important; /* Hide on mobile by default, handled by JS */
+            }
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
+
+        /* User preference: Left alignment */
+        body, p, h1, h2, h3, h4, h5, h6, .hero-sub, .section p, .glass-card {
+            text-align: left !important;
+        }
+        .container, .hero-content__inner, .footer-grid {
+            align-items: flex-start !important;
+        }
+        .hero-buttons, .hero-confidence {
+            justify-content: flex-start !important;
+        }
+        p {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            color: #000 !important;
+        }
+        @media (min-width: 1025px) {
+            .menu-toggle { display: none !important; }
+        }
+
+        /* ── Hub de artigos ── */
+        .page-hero--articles {
+          padding: 120px 0 64px;
+          background: linear-gradient(135deg, #027260 0%, #240529 52%, #140317 100%);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .breadcrumb {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 17px;
+          color: #ffffff !important;
+          margin-bottom: 20px;
+          font-family: Inter, sans-serif;
+          opacity: 1;
+          font-weight: 800;
+          text-shadow: 0 3px 14px rgba(0,0,0,0.32);
+        }
+        .breadcrumb a {
+          color: #ffffff !important;
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+        .breadcrumb a:hover { opacity: 1; text-decoration: underline; }
+        .breadcrumb-sep { font-size: 15px; color: #ffffff !important; }
+        .page-hero--articles h1 {
+          font-family: Montserrat, sans-serif;
+          font-size: clamp(28px, 4vw, 48px);
+          font-weight: 800;
+          color: #fffafa !important;
+          letter-spacing: -0.02em;
+          line-height: 1.15;
+          margin-bottom: 16px;
+        }
+        .page-hero--articles .lead {
+          font-family: Inter, sans-serif;
+          font-size: 22px;
+          color: #ffffff !important;
+          max-width: 580px;
+          line-height: 1.82;
+          opacity: 1;
+          font-weight: 600;
+          text-shadow: 0 3px 14px rgba(0,0,0,0.3);
+        }
+
+        /* ── Filtros ── */
+        .category-filters {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin-bottom: 48px;
+        }
+        .category-filter {
+          padding: 8px 18px;
+          border-radius: 100px;
+          border: 1.5px solid #e5e7eb;
+          font-family: Montserrat, sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          color: #6B7280;
+          background: white;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .category-filter.active,
+        .category-filter:hover {
+          background: #3D0036;
+          border-color: #3D0036;
+          color: white;
+        }
+
+        /* ── Artigo em destaque ── */
+        .article-featured {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          background: rgba(61,0,54,0.04);
+          border: 1px solid #e5e7eb;
+          border-radius: 16px;
+          overflow: hidden;
+          margin-bottom: 48px;
+        }
+        .article-featured__image {
+          aspect-ratio: 4/3;
+          overflow: hidden;
+        }
+        .article-featured__image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .article-featured__body {
+          padding: 48px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: linear-gradient(135deg, #2a0831 0%, #3a0940 58%, #025c4d 100%);
+        }
+        .article-featured__body .badge {
+          display: inline-block;
+          padding: 6px 14px;
+          border-radius: 100px;
+          background: rgba(255,255,255,0.14);
+          color: white;
+          font-family: Montserrat, sans-serif;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin-bottom: 18px;
+          width: fit-content;
+          border: 1px solid rgba(255,255,255,0.22);
+        }
+        .article-featured__title {
+          font-family: Montserrat, sans-serif;
+          font-size: clamp(28px, 3vw, 38px);
+          font-weight: 800;
+          color: #ffffff !important;
+          line-height: 1.18;
+          letter-spacing: -0.02em;
+          margin-bottom: 18px;
+          overflow-wrap: break-word;
+          text-shadow: 0 2px 14px rgba(0,0,0,0.18);
+        }
+        .article-featured__summary {
+          font-family: Inter, sans-serif;
+          font-size: clamp(19px, 2vw, 23px);
+          font-weight: 500;
+          color: #ffffff !important;
+          line-height: 1.82;
+          margin-bottom: 28px;
+          overflow-wrap: break-word;
+          max-width: 56ch;
+          text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+        .article-featured__meta {
+          font-family: Inter, sans-serif;
+          font-size: 16px;
+          font-weight: 700;
+          color: #ffffff !important;
+          margin-bottom: 32px;
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+        }
+        .article-featured__link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-family: Montserrat, sans-serif;
+          font-size: 15px;
+          font-weight: 800;
+          color: #ffffff;
+          text-decoration: none;
+          transition: gap 0.2s;
+        }
+        .article-featured__link:hover { gap: 14px; }
+
+        /* ── Seção de artigos ── */
+        .articles-section {
+          padding: 64px 0 96px;
+        }
+        .articles-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 28px;
+        }
+
+        /* ── Card de artigo ── */
+        .card-article {
+          background: #fff;
+          border: 1px solid #e5e7eb;
+          border-radius: 14px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          transition: box-shadow 0.25s, transform 0.25s;
+        }
+        .card-article:hover {
+          box-shadow: 0 8px 32px rgba(61,0,54,0.10);
+          transform: translateY(-3px);
+        }
+        .card-article__image {
+          aspect-ratio: 16/9;
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+        .card-article__image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .card-article--anp .card-article__image img {
+          transform: scale(1.35);
+          object-position: center 40%;
+        }
+        .card-article__body {
+          padding: 28px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .card-article__badge {
+          display: inline-block;
+          padding: 5px 12px;
+          border-radius: 100px;
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+          width: fit-content;
+        }
+        .badge--tecnologia { background: rgba(61,0,54,0.08); color: #3D0036; }
+        .badge--mercado    { background: rgba(0,160,137,0.10); color: #007A6A; }
+        .badge--esg        { background: rgba(27,94,32,0.10); color: #1B5E20; }
+        .badge--soon       { background: #F3F4F6; color: #9CA3AF; }
+        .card-article__title {
+          font-family: Montserrat, sans-serif;
+          font-size: 26px;
+          font-weight: 800;
+          color: #1A1A1A;
+          line-height: 1.28;
+          margin-bottom: 16px;
+          text-decoration: none;
+          display: block;
+          overflow-wrap: break-word;
+        }
+        .card-article__title:hover { color: #3D0036; }
+        .card-article__summary {
+          font-family: Inter, sans-serif;
+          font-size: 19px;
+          font-weight: 500;
+          color: #000;
+          line-height: 1.78;
+          margin-bottom: 26px;
+          flex: 1;
+          overflow-wrap: break-word;
+        }
+        .card-article__footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 16px;
+          border-top: 1px solid #F3F4F6;
+          font-family: Inter, sans-serif;
+          font-size: 17px;
+          font-weight: 600;
+          color: #000;
+          gap: 14px;
+        }
+        .card-article__read-link {
+          font-family: Montserrat, sans-serif;
+          font-size: 15px;
+          font-weight: 800;
+          color: #00A089;
+          text-decoration: none;
+          letter-spacing: 0.02em;
+          white-space: nowrap;
+        }
+        .card-article__read-link:hover { text-decoration: underline; }
+        .card-article--soon {
+          opacity: 0.65;
+          pointer-events: none;
+        }
+        .soon-tag {
+          font-family: Montserrat, sans-serif;
+          font-size: 15px;
+          font-weight: 800;
+          color: #9CA3AF;
+          background: #F3F4F6;
+          padding: 6px 12px;
+          border-radius: 100px;
+        }
+
+        /* ── Responsivo ── */
+        @media (max-width: 1024px) {
+          .article-featured { grid-template-columns: 1fr; }
+          .article-featured__image { aspect-ratio: 16/9; font-size: 48px; }
+          .article-featured__body { padding: 32px; }
+        }
+        @media (max-width: 600px) {
+          .articles-grid { grid-template-columns: 1fr; }
+          .page-hero--articles { padding: 180px 0 40px; }
+          .breadcrumb { font-size: 16px; }
+          .breadcrumb-sep { font-size: 14px; }
+          .page-hero--articles .lead {
+            font-size: 21px;
+            line-height: 1.8;
+          }
+          .article-featured__body { padding: 26px; }
+          .article-featured__title { font-size: 28px; }
+          .article-featured__summary {
+            font-size: 20px;
+            line-height: 1.78;
+            color: #ffffff !important;
+          }
+          .article-featured__meta {
+            font-size: 15px;
+            gap: 10px;
+            color: #ffffff !important;
+          }
+          .card-article__body { padding: 24px; }
+          .card-article--anp .card-article__image img {
+            transform: scale(1.5);
+          }
+          .card-article__badge { font-size: 13px; }
+          .card-article__title { font-size: 23px; }
+          .card-article__summary { font-size: 18px; }
+          .card-article__footer { font-size: 15px; }
+          .soon-tag { font-size: 14px; }
+        }
+    </style>
+
+  <!-- 4WaTT Global Responsive & Visual Polish -->
+  <style>
+    /* === SMOOTH SCROLLING & BASE === */
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* === NAVBAR RESPONSIVE === */
+    @media (max-width: 992px) {
+      .nav-links { display: none !important; }
+      .nav-links.active { display: flex !important; flex-direction: column !important; position: fixed; top: 72px; left: 0; right: 0; background: rgba(26,5,39,0.97); backdrop-filter: blur(16px); padding: 20px; gap: 8px !important; z-index: 9998; border-bottom: 1.5px solid rgba(200,100,255,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+      .nav-links.active li a { color: #fff !important; padding: 12px 16px; border-radius: 10px; display: block; }
+      .nav-links.active li a:hover { background: rgba(255,255,255,0.08); }
+      .dropdown-content { position: static !important; background: rgba(255,255,255,0.07) !important; box-shadow: none !important; padding: 8px !important; margin-top: 4px; border-radius: 10px; }
+      .dropdown-content li a { color: rgba(255,255,255,0.85) !important; }
+    }
+
+    /* === SECTION RESPONSIVENESS === */
+    @media (max-width: 768px) {
+      .section { padding: 60px 0 !important; }
+      .container { padding-left: 20px !important; padding-right: 20px !important; }
+      .section-title { font-size: 1.6rem !important; }
+      .two-col, .two-col--balanced, .syngas-layout {
+        flex-direction: column !important;
+        display: flex !important;
+      }
+      .two-col__text, .two-col__visual, .syngas-text, .syngas-visual { width: 100% !important; min-width: unset !important; }
+    }
+    @media (max-width: 480px) {
+      .page-hero__title { font-size: 1.8rem !important; }
+      .page-hero__lead { font-size: 1rem !important; }
+      .btn { padding: 12px 22px !important; font-size: 0.92rem !important; }
+      .hero-buttons { flex-direction: column !important; gap: 12px !important; }
+      .hero-buttons a, .hero-buttons button { width: 100% !important; text-align: center !important; }
+    }
+
+    /* === BTN POLISH === */
+    .btn, .btn-primary, .btn-outline {
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.4,0,0.2,1) !important;
+    }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,160,137,0.3) !important; }
+    .btn-outline:hover { background: var(--secondary-color) !important; color: #fff !important; transform: translateY(-1px); }
+
+    /* === BREADCRUMB === */
+    .breadcrumb { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .breadcrumb__link, .breadcrumb__current, .breadcrumb__sep {
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      opacity: 0.82;
+    }
+    .breadcrumb__link:hover { opacity: 1; }
+
+    /* === FOOTER RESPONSIVE === */
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+      .main-footer { padding: 60px 0 40px !important; }
+    }
+
+    /* === REVEAL ANIMATIONS === */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  </style>
+    <link rel="stylesheet" href="/assets/css/mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="../assets/css/legacy-bridge.css?v=3.0">
+</head>
+<body class="t4">
+  <div class="bg-aurora bg-aurora--light"></div>
+
+  <!-- NAVBAR -->
+    <nav class="nav">
+    <a class="nav__logo" href="../index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="../assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="../index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="../index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="../index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="../index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="../solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="../solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="../solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="../investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="../imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="../academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true" data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="../simulador.html" data-i18n="cta_simular">Simular Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+<section class="page-hero--articles">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html" data-i18n="nav_home_breadcrumb">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span data-i18n="nav_articles">Artigos</span>
+    </nav>
+    <h1 data-i18n="art_hero_title">Conhecimento técnico em biogás e biometano</h1>
+    <p class="lead" data-i18n="art_hero_lead">Análises, guias técnicos e estudos de mercado da equipe 4WaTT. Conteúdo para quem quer tomar decisões embasadas.</p>
+  </div>
+</section>
+
+<!-- ══ ARTIGOS ══ -->
+<section class="articles-section">
+  <div class="container">
+
+    <!-- Filtros de categoria -->
+    <div class="category-filters" role="group" aria-label="Filtrar por categoria" data-i18n-aria-label="filter_cat_aria">
+      <button class="category-filter active" data-filter="todos" data-i18n="cat_all">Todos</button>
+      <button class="category-filter" data-filter="tecnologia" data-i18n="cat_tech">Tecnologia</button>
+      <button class="category-filter" data-filter="mercado" data-i18n="cat_market">Mercado</button>
+      <button class="category-filter" data-filter="investimento" data-i18n="cat_investment">Investimento</button>
+      <button class="category-filter" data-filter="esg-carbono" data-i18n="cat_esg">ESG &amp; Carbono</button>
+      <button class="category-filter" data-filter="cases" data-i18n="cat_cases">Cases &amp; Engenharia</button>
+    </div>
+
+    <!-- Artigo em destaque -->
+    <article class="article-featured" data-category="tecnologia">
+      <div class="article-featured__image">
+        <img src="/assets/img_old/biogestorroxo.png" alt="Como funciona um biodigestor industrial">
+      </div>
+      <div class="article-featured__body">
+        <span class="badge" data-i18n="art_feat_badge">Tecnologia</span>
+        <h2 class="article-featured__title" data-i18n="art_feat_title">Como funciona um biodigestor industrial</h2>
+        <p class="article-featured__summary" data-i18n="art_feat_summary">Da digestão anaeróbia ao biometano: entenda os 4 estágios biológicos, os principais tipos de reatores (CSTR, UASB, Plug Flow), os parâmetros técnicos críticos e como dimensionar uma planta para o seu resíduo.</p>
+        <div class="article-featured__meta">
+          <span data-i18n="art_feat_date">5 de março de 2026</span>
+          <span>·</span>
+          <span>12 <span data-i18n="min_read">min de leitura</span></span>
+          <span>·</span>
+          <span data-i18n="team_4watt">Equipe 4WaTT</span>
+        </div>
+        <a href="/artigo-como-funciona-biodigestor.html" class="article-featured__link" data-i18n="read_full_article">
+          Ler artigo completo →
+        </a>
+      </div>
+    </article>
+
+    <!-- Grid de artigos -->
+    <div class="articles-grid">
+
+      <!-- Artigo 2: Regulação ANP -->
+      <article class="card-article card-article--anp" data-category="mercado">
+        <div class="card-article__image">
+          <img src="/assets/img_old/anp.jpg" alt="Regulação do biometano no Brasil">
+        </div>
+        <div class="card-article__body">
+          <span class="card-article__badge badge--mercado" data-i18n="art2_badge">Mercado</span>
+          <a href="/artigo-regulacao-biometano.html" class="card-article__title" data-i18n="art2_title">
+            Regulação do biometano no Brasil: o que a ANP 854/2021 muda para o mercado
+          </a>
+          <p class="card-article__summary" data-i18n="art2_summary">Como a resolução da ANP estruturou o mercado de biometano no Brasil, definindo especificações técnicas, condições de injeção na rede e abrindo caminho para contratos de longo prazo.</p>
+          <div class="card-article__footer">
+            <span data-i18n="art2_meta">10 Mar 2026 · 8 min</span>
+            <a href="/artigo-regulacao-biometano.html" class="card-article__read-link" data-i18n="read_more_arrow">Ler →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artigo 3: Créditos de carbono -->
+      <article class="card-article" data-category="esg-carbono">
+        <div class="card-article__image">
+          <img src="/assets/img_old/how-step4.jpg" alt="Créditos de carbono biogás">
+        </div>
+        <div class="card-article__body">
+          <span class="card-article__badge badge--esg" data-i18n="art3_badge">ESG &amp; Carbono</span>
+          <a href="/artigo-creditos-carbono.html" class="card-article__title" data-i18n="art3_title">
+            Créditos de carbono a partir do biogás: oportunidade real ou promessa?
+          </a>
+          <p class="card-article__summary" data-i18n="art3_summary">Como CBIOs, créditos voluntários (Gold Standard, VCS) e a Lei 15.042/2024 criam uma segunda receita para projetos de biogás, e o que você precisa saber para monetizar essa oportunidade.</p>
+          <div class="card-article__footer">
+            <span data-i18n="art3_meta">12 Mar 2026 · 10 min</span>
+            <a href="/artigo-creditos-carbono.html" class="card-article__read-link" data-i18n="read_more_arrow">Ler →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Artigo 4: Em breve -->
+      <article class="card-article card-article--soon" data-category="tecnologia" aria-label="Em breve">
+        <div class="card-article__image">
+          <img src="/assets/img_old/Case_4.000_Suinos.jpg" alt="Suinocultura e biogás">
+        </div>
+        <div class="card-article__body">
+          <span class="card-article__badge badge--soon" data-i18n="cat_sectors">Setores</span>
+          <span class="card-article__title" style="color:#9CA3AF; cursor:default;" data-i18n="art4_title">
+            Suinocultura e biogás: como calcular o potencial de geração
+          </span>
+          <p class="card-article__summary" data-i18n="art4_summary">Metodologia completa para dimensionar um biodigestor a partir de dejetos suínos: índices de geração por animal, TRH ideal, e cálculo do potencial de biometano.</p>
+          <div class="card-article__footer">
+            <span class="soon-tag" data-i18n="soon_tag">Em breve</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    <footer id="footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand reveal">
+                    <img src="../assets/img/logo-4watt-light.png" alt="4WaTT Logo" class="footer__logo" loading="lazy">
+                    <p class="footer-text-bold">De todas as formas de energia, escolha<br><span style="white-space: nowrap;">a que se renova, escolha 4WaTT</span></p>
+                    <p class="footer-text-bold">4WaTT Bio Engenharia S/A.</p>
+                    <p class="footer-text-bold">© 2026 Todos os direitos reservados.</p>
+                </div>
+
+                <div class="footer-col reveal" style="transition-delay: 0.1s;">
+                    <h3>ENDEREÇO</h3>
+                    <div class="footer-address-lines">
+                        <span class="footer-text-bold">Edifício Metropolitan Business</span>
+                        <span class="footer-text-bold">Torre Tokyo, sala 601 4WATT</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span class="footer-text-bold">Av. Dep. Jamel Cecílio</span>
+                            <div class="map-btns-small" style="display: flex; gap: 8px;">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener noreferrer"><i class="fas fa-location-arrow"></i></a>
+                                <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener noreferrer"><i class="fab fa-waze"></i></a>
+                            </div>
+                        </div>
+                        <div class="location-group-bold">
+                            <span class="footer-text-bold">Jardim Goiás, Goiânia - GO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col reveal" style="transition-delay: 0.2s;">
+                    <h3>CONTATO</h3>
+                    <ul class="footer-contact-list-bold">
+                        <li><i class="fas fa-envelope footer-icon-cyan"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+                        <li><i class="fas fa-phone footer-icon-cyan"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+                        <li><i class="fas fa-shield-halved footer-icon-cyan"></i> <a href="../politica-privacidade.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col reveal" style="transition-delay: 0.3s;">
+                    <h3>SIGA-NOS</h3>
+                    <div class="social-icons-bold">
+                        <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                    <div class="verified-seal-mini-footer">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Site Oficial Verificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/languages.js?v=1.9"></script>
+    <script src="/assets/js/languages-pages.js?v=1.1"></script>
+<script src="/assets/js/main.js?v=1.4"></script>
+    <script src="/assets/js/site-premium.js?v=2.2"></script>
+<script>
+// Filtro de categorias
+document.querySelectorAll('.category-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.category-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('[data-category]').forEach(card => {
+      if (filter === 'todos' || card.dataset.category === filter) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

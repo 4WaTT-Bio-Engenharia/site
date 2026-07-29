@@ -1,0 +1,39 @@
+/* ============================================================
+   4WaTT — Viabilidade SKIN (re-tema CLARO) · carregado por ÚLTIMO
+   A página usa CSS variables próprias: basta realinhá-las à paleta
+   off-white da marca. Não altera DOM/IDs nem a lógica (simular()).
+   ============================================================ */
+
+:root {
+  /* base off-white quente */
+  --bg: #F4F1EB !important;
+  --bg-2: #ECE7DD !important;
+  --surface: #FCFBF8 !important;
+  --linha: rgba(30,24,34,0.12) !important;
+  --linha-forte: rgba(30,24,34,0.20) !important;
+
+  /* marca oficial (substitui o roxo/teal antigos) */
+  --roxo: #3A0940 !important;
+  --roxo-700: #2A0720 !important;
+  --roxo-900: #1E0518 !important;
+  --teal: #03A589 !important;
+  --teal-700: #057a64 !important;
+  --teal-bright: #25e0bd !important;
+
+  /* tinta */
+  --tinta: #1E1822 !important;
+  --tinta-suave: #5C5766 !important;
+  --tinta-fraca: #8A8694 !important;
+
+  /* estados */
+  --ok: #057a64 !important;
+  --ok-bg: #E7F5EF !important;
+}
+
+/* leves ajustes de acabamento no novo sistema */
+body { font-family: 'Inter', system-ui, sans-serif; }
+.card { box-shadow: 0 18px 44px -22px rgba(46,12,40,0.16); border-radius: 16px; }
+.seg button.active { background: var(--teal) !important; color: #fff !important; }
+.hero h1 { letter-spacing: -0.02em; }
+.eyebrow { color: var(--teal-700) !important; }
+.inp:focus { border-color: var(--teal) !important; box-shadow: 0 0 0 3px rgba(3,165,137,0.14) !important; }

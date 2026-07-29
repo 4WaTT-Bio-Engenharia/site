@@ -1,0 +1,73 @@
+[
+  {
+    "id": "proj-001",
+    "slug": "projeto-alpha",
+    "nome_publico": "Projeto Alpha",
+    "confidencial": false,
+    "estado": "GO",
+    "lat": -16.3241,
+    "lng": -48.9531,
+    "tecnologia": "biodigestor",
+    "tipo_residuo": "Resíduos Sólidos Orgânicos",
+    "capacidade": "3.500 Nm³/dia de biogás",
+    "estagio": "Projeto Executivo Aprovado",
+    "investimento_estimado": "R$ 18–22 milhões",
+    "tir_estimada_min": 18,
+    "tir_estimada_max": 24,
+    "prazo_retorno": "7–9 anos",
+    "documentos_disponiveis": ["resumo", "nda", "memorando"],
+    "descricao": "Planta de biometano localizada no interior de Goiás, aproveitando resíduos orgânicos regionais. Licenças ambientais protocoladas. Terreno garantido por 25 anos.",
+    "destaques": [
+      "Licença ambiental protocolada -> risco regulatório mitigado",
+      "Contrato de fornecimento de resíduos por 10 anos firmado",
+      "Receita prevista com biometano e créditos CGOB"
+    ]
+  },
+  {
+    "id": "proj-002",
+    "slug": "projeto-beta",
+    "nome_publico": "Projeto Beta",
+    "confidencial": false,
+    "estado": "SP",
+    "lat": -22.9068,
+    "lng": -47.0626,
+    "tecnologia": "biodigestor",
+    "tipo_residuo": "Vinhaça de usina cana",
+    "capacidade": "8.000 Nm³/dia de biometano",
+    "estagio": "Estudo de Viabilidade Concluído",
+    "investimento_estimado": "R$ 35–42 milhões",
+    "tir_estimada_min": 20,
+    "tir_estimada_max": 27,
+    "prazo_retorno": "6–8 anos",
+    "documentos_disponiveis": ["resumo", "nda"],
+    "descricao": "Grande projeto de biometano a partir de vinhaça em parceria com usina cana no interior de São Paulo. Alta disponibilidade de matéria-prima.",
+    "destaques": [
+      "Matéria-prima estável: vinhaça contratada por 15 anos",
+      "Localização estratégica próxima à rede de distribuição",
+      "Potencial de geração de biometano de carbono CGOB"
+    ]
+  },
+  {
+    "id": "proj-003",
+    "slug": "projeto-gamma",
+    "nome_publico": "Projeto Gamma",
+    "confidencial": true,
+    "estado": "PR",
+    "lat": -25.4284,
+    "lng": -49.2733,
+    "tecnologia": "gaseificacao",
+    "tipo_residuo": "RSU —> Resíduos Sólidos Urbanos",
+    "capacidade": "1.200 Nm³/dia de syngas → energia",
+    "estagio": "Aprovação Municipal em andamento",
+    "investimento_estimado": "R$ 28–35 milhões",
+    "tir_estimada_min": 15,
+    "tir_estimada_max": 20,
+    "prazo_retorno": "8–10 anos",
+    "documentos_disponiveis": ["resumo"],
+    "descricao": "Projeto pioneiro de gaseificação de RSU em município do Paraná. Solução para destinação de resíduos sólidos urbanos com geração de energia e biometano. Não identificado, pois sob código por questões de confidencialidade.",
+    "destaques": [
+      "Tecnologia exclusiva 4WaTT —> sem concorrência direta",
+      "Receita garantida pelo contrato de gestão de RSU municipal"
+    ]
+  }
+]

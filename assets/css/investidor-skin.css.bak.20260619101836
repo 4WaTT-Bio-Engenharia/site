@@ -1,0 +1,328 @@
+/* ============================================================
+   4WaTT — Investidor SKIN v2 (DARK ENTERPRISE)
+   Restaura o tema escuro institucional da área do investidor.
+   Carregado por último — sobrescreve todos os blocos <style>.
+   ============================================================ */
+
+/* ── CSS VARS: flip COMPLETO para dark ────────────────────── */
+:root {
+  /* --- legacy-bridge.css vars (--lb-*) --- */
+  --lb-bg:       #0a0614;
+  --lb-surface:  rgba(255,255,255,0.05);
+  --lb-surface2: rgba(255,255,255,0.08);
+  --lb-ink:      #ffffff;
+  --lb-dim:      rgba(255,255,255,0.70);
+  --lb-muted:    rgba(255,255,255,0.45);
+  --lb-border:   rgba(255,255,255,0.10);
+
+  /* --- inline-style HTML vars (--brand-*, --text-*, --bg-*) --- */
+  --brand-purple: #ffffff;
+  --brand-purple-light: rgba(255,255,255,0.90);
+  --brand-green: #03A589;
+  --brand-green-dark: #5fe9cf;
+  --text-dark: #ffffff;
+  --text-body: rgba(255,255,255,0.78);
+  --text-muted: rgba(255,255,255,0.55);
+  --bg-page: #0a0614;
+  --bg-alt: rgba(255,255,255,0.04);
+  --border-light: rgba(255,255,255,0.10);
+  --shadow-card: 0 2px 24px rgba(0,0,0,0.50);
+  --shadow-hover: 0 8px 32px rgba(3,165,137,0.18);
+  --color-verde: #03A589;
+  --color-turquesa: #5fe9cf;
+  --color-roxo: #5fe9cf;
+  --color-off-white: #0a0614;
+  --text-dim: rgba(255,255,255,0.55);
+  --border-subtle: rgba(255,255,255,0.08);
+
+  /* --- investidor-skin vars (--iv-*) --- */
+  --iv-bg: #0a0614;
+  --iv-surface: rgba(255,255,255,0.05);
+  --iv-surface2: rgba(255,255,255,0.08);
+  --iv-ink: #ffffff;
+  --iv-dim: rgba(255,255,255,0.78);
+  --iv-muted: rgba(255,255,255,0.50);
+  --iv-border: rgba(255,255,255,0.10);
+  --iv-teal: #03A589;
+  --iv-teal-light: #5fe9cf;
+  --iv-teal-ink: #5fe9cf;
+  --iv-gold: #DBAA0F;
+  --iv-plum: #1a0527;
+  --iv-roxo: #3A0940;
+}
+
+/* ── BODY / BASE ──────────────────────────────────────────── */
+body {
+  background: #0a0614 !important;
+  color: rgba(255,255,255,0.78) !important;
+}
+/* Substituir a aurora clara do legacy-bridge por uma escura/sutil */
+body::before {
+  background:
+    radial-gradient(36vmax 36vmax at 16% 10%, rgba(3,165,137,0.10), transparent 62%),
+    radial-gradient(40vmax 40vmax at 88% 18%, rgba(58,9,64,0.18), transparent 64%),
+    radial-gradient(34vmax 34vmax at 74% 92%, rgba(58,9,64,0.12), transparent 62%),
+    radial-gradient(30vmax 30vmax at 24% 70%, rgba(3,165,137,0.08), transparent 64%) !important;
+}
+.main-content { background: transparent !important; }
+
+/* ── SEÇÕES ───────────────────────────────────────────────── */
+/* Portfolio e Marketplace já têm gradientes escuros no inline-style —
+   remover a conversão para claro que a versão anterior aplicava */
+#portfolio-projetos,
+#marketplace,
+#processo-investimento { background: transparent !important; }
+
+/* Demais seções (tese, modelo, metodologia, faq) → herdam body escuro */
+#tese-investimento,
+#modelo-4watt,
+#metodologia-financeira,
+#risk-management,
+#faq,
+.section-modelo-4watt-v2,
+.invest-mid-cta { background: transparent !important; }
+
+/* Restaurar opacidade dos pseudo-elementos de gradiente */
+#hero-scene::before, #hero-scene::after,
+#portfolio-projetos::before, #marketplace::before,
+#processo-investimento::before { opacity: 1 !important; }
+
+/* ── TIPOGRAFIA ───────────────────────────────────────────── */
+p, li {
+  color: rgba(255,255,255,0.78) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.78) !important;
+}
+
+/* Overrides de cor de parágrafo por seção (inline style usava #161616) */
+#tese-investimento p, #modelo-4watt p, #risk-management p,
+#tese-investimento .glass-card div, #modelo-4watt .step-content-v2 p {
+  color: rgba(255,255,255,0.72) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.72) !important;
+  font-weight: 500 !important;
+}
+
+/* Títulos das seções claras (usavam --brand-purple / #3a0940 fixo) */
+#tese-investimento h2, #modelo-4watt h2,
+#metodologia-financeira h2, #risk-management h2, #faq h2,
+.invest-mid-cta h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Overlines */
+#tese-investimento .overline, #modelo-4watt .overline,
+#metodologia-financeira .overline, #risk-management .overline,
+#faq .overline, .invest-mid-cta .overline {
+  color: #5fe9cf !important;
+  -webkit-text-fill-color: #5fe9cf !important;
+}
+
+/* Subtítulos internos de cards */
+#tese-investimento .glass-card > div:first-child,
+#modelo-4watt .step-content-v2 h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* .text-muted e similares */
+.text-muted, .text-dim,
+[style*="color:#666"], [style*="color: #666"],
+[style*="color:#777"], [style*="color: #777"],
+[style*="color:#999"], [style*="color: #999"] {
+  color: rgba(255,255,255,0.55) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.55) !important;
+}
+
+/* ── CARDS (glass dark) ───────────────────────────────────── */
+.glass-card, .invest-methodology-card, .invest-risk-card,
+.invest-kpi-card, .step-content-v2, .pipeline-step-v2 {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.50), inset 0 1px 0 rgba(255,255,255,0.05) !important;
+  color: rgba(255,255,255,0.78) !important;
+}
+.glass-card:hover, .invest-methodology-card:hover, .invest-risk-card:hover {
+  border-color: rgba(3,165,137,0.35) !important;
+  box-shadow: 0 8px 32px rgba(3,165,137,0.15), 0 2px 8px rgba(0,0,0,0.4) !important;
+}
+.glass-card h2, .glass-card h3, .glass-card h4,
+.invest-methodology-card__title, .invest-risk-card__title, .invest-risk-card h3,
+.invest-kpi-card h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.glass-card p, .glass-card span, .glass-card li, .glass-card div,
+.invest-methodology-card__text, .invest-risk-card__text,
+.invest-risk-card__list li {
+  color: rgba(255,255,255,0.72) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.72) !important;
+}
+
+/* Portfolio: os cards já têm dark glass no inline-style — manter */
+#portfolio-projetos .glass-card {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
+}
+#portfolio-projetos .glass-card:hover { background: rgba(255,255,255,0.10) !important; }
+#portfolio-projetos .portfolio-tilt__badge {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── BADGES METODOLOGIA / RISCO ───────────────────────────── */
+.invest-methodology-card__step {
+  background: rgba(3,165,137,0.12) !important;
+  border: 1px solid rgba(3,165,137,0.25) !important;
+  color: #5fe9cf !important;
+  -webkit-text-fill-color: #5fe9cf !important;
+}
+.invest-risk-card__type--tecnico {
+  color: #5fe9cf !important;
+  -webkit-text-fill-color: #5fe9cf !important;
+  background: rgba(3,165,137,0.12) !important;
+  border-color: rgba(3,165,137,0.30) !important;
+}
+.invest-risk-card__type--regulatorio {
+  color: #7dd8e0 !important;
+  -webkit-text-fill-color: #7dd8e0 !important;
+  background: rgba(45,172,182,0.12) !important;
+}
+.invest-risk-card__type--operacional {
+  color: #DBAA0F !important;
+  -webkit-text-fill-color: #DBAA0F !important;
+  background: rgba(219,170,15,0.12) !important;
+}
+.invest-risk-card__list li::before { color: #03A589 !important; }
+
+/* ── KPI / CONTADORES ─────────────────────────────────────── */
+.tese-counter__num, .invest-kpi-value, .counter-number {
+  color: #DBAA0F !important;
+  -webkit-text-fill-color: #DBAA0F !important;
+}
+.tese-counter__label, .invest-kpi-label {
+  color: rgba(255,255,255,0.55) !important;
+}
+
+/* ── MARKETPLACE ──────────────────────────────────────────── */
+/* Inline styles já têm texto branco e background semi-escuro — não conflitar */
+/* Apenas garantir options e clear-button */
+#marketplace select option { background: #160d22 !important; color: #fff !important; }
+#mp-clear-filters {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  color: #ffffff !important;
+}
+.market-card {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+}
+.market-card * { color: rgba(255,255,255,0.78) !important; }
+.market-card h3 { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+.market-card:hover { border-color: rgba(3,165,137,0.35) !important; }
+
+/* ── PIPELINE / PROCESSO ──────────────────────────────────── */
+.step-node-v2, .process-step__marker { color: #fff !important; }
+.process-step.is-active .process-step__marker { background: #03A589 !important; }
+.pipeline-connector-v2, .process-step__line {
+  background: linear-gradient(90deg, #03A589, #DBAA0F) !important;
+}
+
+/* ── TIMELINE / PROVA SOCIAL ──────────────────────────────── */
+.ps-tl-year { color: #5fe9cf !important; }
+.ps-tl-text {
+  color: rgba(255,255,255,0.70) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.70) !important;
+}
+.ps-tl-item.is-active .ps-tl-year { color: #5fe9cf !important; }
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.10) !important; }
+.faq-question { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; }
+.faq-answer, .faq-answer p, .faq-answer li {
+  color: rgba(255,255,255,0.72) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.72) !important;
+}
+
+/* ── HERO BADGE ───────────────────────────────────────────── */
+.hero-badge {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+}
+.hero-badge__text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── BORDER SUTIL ENTRE SEÇÕES ────────────────────────────── */
+.section[style*="border-top"] { border-color: rgba(255,255,255,0.08) !important; }
+
+/* ── FORMULÁRIO / CTA ─────────────────────────────────────── */
+.invest-contact-shell {
+  background: linear-gradient(135deg, #1a0527 0%, #2A0720 100%) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  color: #fff !important;
+}
+.invest-contact-shell .invest-contact-title,
+.invest-contact-shell h2 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.invest-contact-shell .invest-contact-lead,
+.invest-contact-shell .invest-contact-point span {
+  color: rgba(255,255,255,0.80) !important;
+}
+.invest-contact-shell .text-gradient-verde { -webkit-text-fill-color: transparent !important; }
+.invest-contact-form-card {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 16px;
+}
+.invest-contact-kicker { background: rgba(255,255,255,0.12) !important; color: #fff !important; }
+
+#form-investidor input, #form-investidor select, #form-investidor textarea,
+.invest-contact-form-card input, .invest-contact-form-card select,
+.invest-contact-form-card textarea, #mp-nda-form input, #mp-nda-form select {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+}
+.invest-contact-form-card select option,
+#form-investidor select option { background: #160d22 !important; color: #fff !important; }
+.invest-contact-form-card .ui-input::placeholder,
+.invest-contact-form-card .ui-textarea::placeholder { color: rgba(255,255,255,0.40) !important; }
+
+/* ── MODAL DO MARKETPLACE ─────────────────────────────────── */
+#mp-modal, #mp-modal-overlay > div, .mp-modal__panel {
+  background: #160d22 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+}
+#mp-modal h3, #mp-modal-project-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#mp-modal p, #mp-modal li, #mp-modal span { color: rgba(255,255,255,0.72) !important; }
+#mp-modal-project-tir, .mp-fact--tir {
+  color: #DBAA0F !important;
+  -webkit-text-fill-color: #DBAA0F !important;
+}
+#mp-modal-overlay { background: rgba(4,1,8,.75) !important; }
+
+/* ── MAPA / TOOLTIP ───────────────────────────────────────── */
+#ps-map-tooltip {
+  background: #160d22 !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.50) !important;
+}
+#ps-map-tooltip p { color: rgba(255,255,255,0.72) !important; }
+
+/* ── BOTÕES ───────────────────────────────────────────────── */
+.btn-primary { background: #03A589 !important; color: #fff !important; border-color: #03A589 !important; }
+.btn-primary:hover { background: #048f77 !important; }
+.btn-secondary {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  color: #ffffff !important;
+}

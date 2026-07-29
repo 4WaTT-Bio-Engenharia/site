@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaseificação de Resíduos Sólidos Urbanos | 4WaTT</title>
+  <meta name="description"
+    content="Tecnologia de gaseificação 4WaTT para RSU: alternativa ao aterro, geração de energia via Syngas e cumprimento da PNRS. Reduz o volume de resíduos em até 90%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.1">
+  <style>
+    :root {
+      --accent: var(--teal);
+      --accent-light: var(--teal-ink);
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-N91NFD55MB');</script>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+</head>
+
+<body class="t4">
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true"
+            data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="#cta" data-i18n="cta_falar">Falar com especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <header class="sol-hero" data-hero>
+      <div class="ph ph--px ph--roxo"><img src="assets/img/lixao.jpeg" alt="Passivo de resíduos urbanos"
+          data-parallax="0.06"></div>
+      <div class="sol-hero__inner container">
+        <span class="sol-badge" data-reveal data-i18n="sol_gaseif_badge"><i class="fas fa-atom"></i> Tecnologia
+          exclusiva 4WaTT</span>
+        <h1 data-reveal data-d="1" data-i18n="sol_gaseif_hero_title">Gaseificação de resíduos sólidos urbanos</h1>
+        <p class="sol-hero__lead" data-reveal data-d="2" data-i18n="sol_gaseif_hero_lead">A solução técnica para
+          municípios que precisam de uma
+          alternativa ao aterro, com geração de energia e cumprimento da PNRS.</p>
+        <div class="sol-hero__cta" data-reveal data-d="3">
+          <a class="btn btn--primary" href="#cta" data-i18n="sol_gaseif_hero_cta_primary">Falar com especialista <i
+              class="fas fa-arrow-right"></i></a>
+          <a class="btn btn--ghost" href="#processo" data-i18n="sol_gaseif_hero_cta_secondary">Como funciona</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- DESAFIO RSU -->
+      <section class="section">
+        <div class="container">
+          <div class="sol-split">
+            <div class="sol-split__head">
+              <span class="kicker" data-reveal data-i18n="sol_gaseif_desafio_kicker">O desafio</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_desafio_title">O Brasil tem um passivo gigante
+                de resíduos urbanos.</h2>
+              <p class="prose" data-reveal data-d="2" data-i18n="sol_gaseif_desafio_p1">O país gera cerca de
+                <strong>81,6 milhões de toneladas de lixo por
+                  ano</strong> (Abrema, 2025), um volume que cresce continuamente.</p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:14px;" data-i18n="sol_gaseif_desafio_p2">A PNRS
+                (Lei 12.305/2010) e o Novo Marco do
+                Saneamento fixaram 2 de agosto de 2024 como prazo final para o fim dos lixões. Na prática, cerca de
+                <strong>3.000 lixões</strong> ainda operam ilegalmente, despejando contaminantes sem controle.
+              </p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:14px;" data-i18n="sol_gaseif_desafio_p3">A
+                gaseificação 4WaTT é o tratamento
+                térmico de alta eficiência que reduz o volume de resíduos em até <strong>90%</strong> e estende a vida
+                útil de aterros em décadas.</p>
+              <div class="sol-stats">
+                <div class="sol-stat" data-reveal>
+                  <div class="v" data-i18n="sol_gaseif_stat1_v">81,6 mi</div>
+                  <div class="l" data-i18n="sol_gaseif_stat1_l">t/ano geradas no Brasil (2025)</div>
+                </div>
+                <div class="sol-stat" data-reveal data-d="1">
+                  <div class="v" data-i18n="sol_gaseif_stat2_v">40,3%</div>
+                  <div class="l" data-i18n="sol_gaseif_stat2_l">do lixo com destinação inadequada</div>
+                </div>
+                <div class="sol-stat" data-reveal data-d="2">
+                  <div class="v"><span data-counter="3000">0</span>+</div>
+                  <div class="l" data-i18n="sol_gaseif_stat3_l">lixões ainda operam ilegalmente</div>
+                </div>
+              </div>
+            </div>
+            <div class="sol-split__media" data-reveal data-d="1">
+              <div class="ph ph--px ph--roxo frame tall"><img src="assets/img_old/lixao1.jpg" alt="Lixão a céu aberto"
+                  data-parallax="0.08"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESÍDUOS PROCESSADOS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_residuos_kicker">Resíduos
+              processados</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_residuos_title">Quais resíduos a tecnologia
+              processa.</h2>
+          </div>
+          <div class="sol-grid sol-grid--5">
+            <article class="sol-tile" data-reveal>
+              <div class="ph"><img src="assets/img_old/insumo-plastico.jpg" alt="Plástico"></div>
+              <div class="sol-tile__body">
+                <div class="sol-tile__name" data-i18n="sol_gaseif_residuo1_name">Plástico</div>
+                <p class="sol-tile__desc" data-i18n="sol_gaseif_residuo1_desc">Não recicláveis mecanicamente,
+                  valorizados energeticamente.</p>
+              </div>
+            </article>
+            <article class="sol-tile" data-reveal data-d="1">
+              <div class="ph"><img src="assets/img_old/insumo-papel.jpg" alt="Papel e papelão"></div>
+              <div class="sol-tile__body">
+                <div class="sol-tile__name" data-i18n="sol_gaseif_residuo2_name">Papel e papelão</div>
+                <p class="sol-tile__desc" data-i18n="sol_gaseif_residuo2_desc">Celulose contaminada ou de baixo valor
+                  comercial.</p>
+              </div>
+            </article>
+            <article class="sol-tile" data-reveal data-d="2">
+              <div class="ph"><img src="assets/img_old/insumo-borracha.jpg" alt="Borracha"></div>
+              <div class="sol-tile__body">
+                <div class="sol-tile__name" data-i18n="sol_gaseif_residuo3_name">Borracha</div>
+                <p class="sol-tile__desc" data-i18n="sol_gaseif_residuo3_desc">Pneus inservíveis e sobras industriais de
+                  alto poder calorífico.</p>
+              </div>
+            </article>
+            <article class="sol-tile" data-reveal data-d="3">
+              <div class="ph"><img src="assets/img_old/insumo-biomassa.jpg" alt="Biomassa"></div>
+              <div class="sol-tile__body">
+                <div class="sol-tile__name" data-i18n="sol_gaseif_residuo4_name">Biomassa</div>
+                <p class="sol-tile__desc" data-i18n="sol_gaseif_residuo4_desc">Resíduos agrícolas, florestais e podas
+                  urbanas trituradas.</p>
+              </div>
+            </article>
+            <article class="sol-tile" data-reveal data-d="4">
+              <div class="ph"><img src="assets/img_old/insumo-rsu.jpg" alt="RSU"></div>
+              <div class="sol-tile__body">
+                <div class="sol-tile__name" data-i18n="sol_gaseif_residuo5_name">RSU</div>
+                <p class="sol-tile__desc" data-i18n="sol_gaseif_residuo5_desc">Lixo doméstico após triagem de
+                  recicláveis.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- A TECNOLOGIA -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-split sol-split--rev">
+            <div class="sol-split__head">
+              <span class="kicker" data-reveal data-i18n="sol_gaseif_tech_kicker">A tecnologia 4WaTT</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_tech_title">Engenharia brasileira para o
+                desafio global do RSU.</h2>
+              <p class="prose" data-reveal data-d="2" data-i18n="sol_gaseif_tech_p1">Gaseificação de leito fixo com
+                fluxo descendente (downdraft): o gás
+                de pirólise é forçado a passar por uma "zona de fogo" estável entre <strong>1.000°C e 1.200°C</strong>.
+              </p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:14px;" data-i18n="sol_gaseif_tech_p2">O
+                craqueamento térmico de alcatrões
+                decompõe moléculas complexas em gases leves e limpos, Syngas de alta qualidade para motores de
+                combustão interna e geração de eletricidade com baixa manutenção. Um pré-tratamento gerencia a alta
+                umidade comum no RSU orgânico brasileiro.</p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:14px;" data-i18n="sol_gaseif_tech_p3">Compatível
+                com a Resolução <strong>CONAMA
+                  316/2002</strong>: tempos de residência dos gases acima de 1 segundo em alta temperatura garantem a
+                destruição completa de compostos orgânicos persistentes, com emissões dentro dos limites legais.</p>
+            </div>
+            <div class="sol-split__media" data-reveal data-d="1">
+              <div class="ph ph--px frame tall"><img src="assets/img_old/IA_usina.jpeg" alt="Planta termoquímica"
+                  data-parallax="0.08"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIFERENCIAIS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_diff_kicker">Diferenciais
+              técnicos</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_diff_title">Por que a engenharia 4WaTT é
+              diferente.</h2>
+          </div>
+          <div class="sol-grid sol-grid--4">
+            <div class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fas fa-cubes"></i></div>
+              <h3 data-i18n="sol_gaseif_diff1_title">Modularidade industrial</h3>
+              <p data-i18n="sol_gaseif_diff1_desc">Módulos de 50 a 100 t/dia descentralizam o processamento e reduzem o
+                custo de logística urbana.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fas fa-fire-flame-curved"></i></div>
+              <h3 data-i18n="sol_gaseif_diff2_title">Craqueamento de alcatrões</h3>
+              <p data-i18n="sol_gaseif_diff2_desc">A geometria interna minimiza resíduos oleosos e produz gás mais rico
+                em H₂ e CO.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fas fa-gem"></i></div>
+              <h3 data-i18n="sol_gaseif_diff3_title">Escória inerte e vitrificada</h3>
+              <p data-i18n="sol_gaseif_diff3_desc">Redução de até 95% do volume do lixo em escória mineral inerte,
+                pronta para pavimentação e construção.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="3">
+              <div class="sol-feat__ic"><i class="fas fa-flag"></i></div>
+              <h3 data-i18n="sol_gaseif_diff4_title">Autonomia tecnológica</h3>
+              <p data-i18n="sol_gaseif_diff4_desc">Projeto 100% nacional, manutenção, reposição e adaptação a diferentes
+                resíduos sem dependência externa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="section section--tight" id="processo">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_processo_kicker">Como
+              funciona</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_processo_title">Do resíduo à energia limpa.</h2>
+          </div>
+          <div class="sol-steps sol-steps--with-media">
+            <div class="sol-steps__track">
+              <div class="sol-step" data-reveal>
+                <div class="sol-step__num"><i class="fa-solid fa-truck-loading"></i><span class="step-n">01</span></div>
+                <div class="sol-step__body">
+                  <h3 data-i18n="sol_gaseif_step1_title">Coleta e preparação</h3>
+                  <p data-i18n="sol_gaseif_step1_desc">Preparação e triagem dos resíduos para garantir a eficiência do
+                    processo.</p>
+                </div>
+              </div>
+              <div class="sol-step" data-reveal>
+                <div class="sol-step__num"><i class="fa-solid fa-temperature-high"></i><span class="step-n">02</span>
+                </div>
+                <div class="sol-step__body">
+                  <h3 data-i18n="sol_gaseif_step2_title">Reator termoquímico</h3>
+                  <p data-i18n="sol_gaseif_step2_desc">Entrada no reator a 1.000°C para iniciar a decomposição térmica
+                    controlada.</p>
+                </div>
+              </div>
+              <div class="sol-step" data-reveal>
+                <div class="sol-step__num"><i class="fa-solid fa-wind"></i><span class="step-n">03</span></div>
+                <div class="sol-step__body">
+                  <h3 data-i18n="sol_gaseif_step3_title">Flash gaseificação</h3>
+                  <p data-i18n="sol_gaseif_step3_desc">Conversão instantânea da matéria em Syngas, gás de síntese de
+                    alto poder energético.</p>
+                </div>
+              </div>
+              <div class="sol-step" data-reveal>
+                <div class="sol-step__num"><i class="fa-solid fa-bolt"></i><span class="step-n">04</span></div>
+                <div class="sol-step__body">
+                  <h3 data-i18n="sol_gaseif_step4_title">Energia limpa</h3>
+                  <p data-i18n="sol_gaseif_step4_desc">Geração de eletricidade limpa ou combustíveis renováveis a partir
+                    do gás produzido.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sol-steps__media" data-reveal data-d="2">
+              <div class="ph ph--px ph--roxo"><img src="assets/img_old/IA_usina.jpeg" alt="Planta termoquímica"
+                  data-parallax="0.06"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- USOS DO SYNGAS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_syngas_kicker">O produto</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_syngas_title">Como o Syngas é utilizado na
+              transição energética.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_gaseif_syngas_lead">Rico em CO e H₂, com alto poder
+              calorífico e queima limpa, substitui
+              gás natural, óleo e GLP em setores de difícil eletrificação.</p>
+          </div>
+          <div class="sol-grid sol-grid--4">
+            <div class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fas fa-temperature-high"></i></div>
+              <h3 data-i18n="sol_gaseif_syngas1_title">Vapor industrial</h3>
+              <p data-i18n="sol_gaseif_syngas1_desc">Alimentação direta de caldeiras, com eficiência térmica superior a
+                combustíveis sólidos.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fas fa-industry"></i></div>
+              <h3 data-i18n="sol_gaseif_syngas2_title">Fornos de alta temperatura</h3>
+              <p data-i18n="sol_gaseif_syngas2_desc">Substitui fósseis em fundição, cerâmicas e química, com controle
+                térmico rigoroso.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fas fa-bolt"></i></div>
+              <h3 data-i18n="sol_gaseif_syngas3_title">Energia elétrica renovável</h3>
+              <p data-i18n="sol_gaseif_syngas3_desc">Motores de combustão interna ou turbinas a gás para geração firme e
+                despachável.</p>
+            </div>
+            <div class="sol-feat" data-reveal data-d="3">
+              <div class="sol-feat__ic"><i class="fas fa-flask-vial"></i></div>
+              <h3 data-i18n="sol_gaseif_syngas4_title">Precursor químico</h3>
+              <p data-i18n="sol_gaseif_syngas4_desc">Base para metanol, amônia e hidrogênio verde via processos de
+                purificação (PSA).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PÚBLICO-ALVO -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_publico_kicker">Para quem
+              é</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_publico_title">Indústria e gestão pública.</h2>
+          </div>
+          <div class="sol-rows">
+            <div class="sol-altrow" data-reveal>
+              <div class="sol-altrow__media">
+                <div class="ph frame"><img src="assets/img_old/target-industria.jpg" alt="Indústrias e parques fabris">
+                </div>
+              </div>
+              <div>
+                <div class="tagline" data-i18n="sol_gaseif_ind_tagline">Autossuficiência &amp; ESG</div>
+                <h3 data-i18n="sol_gaseif_ind_title">Indústrias e parques fabris</h3>
+                <p data-i18n="sol_gaseif_ind_p1">Para a indústria, resíduo é custo logístico e passivo ambiental.
+                  Transformamos sobras de processo,
+                  embalagens e biomassas em energia térmica ou elétrica para autoconsumo.</p>
+                <p data-i18n="sol_gaseif_ind_p2">Reduz a dependência da rede, zera o envio para aterros e gera créditos
+                  de carbono reais para o
+                  balanço de sustentabilidade.</p>
+              </div>
+            </div>
+            <div class="sol-altrow" data-reveal>
+              <div class="sol-altrow__media">
+                <div class="ph frame"><img src="assets/img_old/target-municipio.jpg" alt="Gestão pública e consórcios">
+                </div>
+              </div>
+              <div>
+                <div class="tagline" data-i18n="sol_gaseif_mun_tagline">PNRS &amp; logística</div>
+                <h3 data-i18n="sol_gaseif_mun_title">Gestão pública e consórcios</h3>
+                <p data-i18n="sol_gaseif_mun_p1">O desafio municipal é o volume e a heterogeneidade do RSU. Instalamos
+                  módulos próximos aos centros de
+                  geração, eliminando transbordos e reduzindo drasticamente o custo de frete.</p>
+                <p data-i18n="sol_gaseif_mun_p2">Transforma o "lixo comum", após triagem, em fonte de receita por venda
+                  de energia e economia nas
+                  taxas de disposição final.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPECIFICAÇÕES -->
+      <section class="section section--tight">
+        <div class="container container--narrow">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_specs_kicker">Especificações
+              técnicas</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_specs_title">Parâmetros de processo.</h2>
+          </div>
+          <div class="sol-table-wrap" data-reveal>
+            <table class="sol-table">
+              <thead>
+                <tr>
+                  <th><i class="fa-solid fa-list-check"></i> <span data-i18n="sol_gaseif_specs_header_item">Item</span>
+                  </th>
+                  <th><i class="fa-solid fa-circle-info"></i> <span
+                      data-i18n="sol_gaseif_specs_header_spec">Especificação</span></th>
+                </tr>
+              </thead>
+              <tbody data-stagger>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec1_item">Capacidade por módulo</td>
+                  <td class="accent" data-i18n="sol_gaseif_spec1_spec">50 a 100 t/dia de RSU pré-tratado</td>
+                </tr>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec2_item">Capacidade total</td>
+                  <td data-i18n="sol_gaseif_spec2_spec">Modular e escalável até 500 t/dia</td>
+                </tr>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec3_item">Temperatura de processo</td>
+                  <td class="accent" data-i18n="sol_gaseif_spec3_spec">800–1.200°C</td>
+                </tr>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec4_item">Eficiência energética</td>
+                  <td data-i18n="sol_gaseif_spec4_spec">25–35% (RSU → elétrico)</td>
+                </tr>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec5_item">Resíduo final</td>
+                  <td data-i18n="sol_gaseif_spec5_spec">Escória inerte (8–15% da massa)</td>
+                </tr>
+                <tr>
+                  <td data-i18n="sol_gaseif_spec6_item">Emissões</td>
+                  <td class="accent" data-i18n="sol_gaseif_spec6_spec">Conforme CONAMA 316/2002</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--tight">
+        <div class="container container--narrow">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_gaseif_faq_kicker">Perguntas
+              frequentes</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_faq_title">O que mais perguntam.</h2>
+          </div>
+          <div class="acc" data-accordion data-stagger>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq1_q">Qual a diferença entre
+                gaseificação e incineração? <i class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq1_a">A incineração é combustão total com excesso de O₂, gerando calor
+                  imediato e grandes volumes de gases de exaustão. A gaseificação ocorre com O₂ controlado e transforma
+                  quimicamente a matéria em Syngas, gás mais versátil, queima mais limpa, maior controle de emissões e
+                  superior para eletricidade e biocombustíveis.</p>
+              </div>
+            </div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq2_q">A tecnologia atende à PNRS? <i
+                  class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq2_a">Sim. A Lei 12.305/2010 estabelece uma hierarquia de prioridades, e a
+                  recuperação energética vem após redução e reciclagem. A solução é o complemento ideal da coleta
+                  seletiva: gaseifica o "rejeito do rejeito" que não pode ser reciclado e iria obrigatoriamente para
+                  aterro.</p>
+              </div>
+            </div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq3_q">O que sobra do processo? Existe
+                resíduo tóxico? <i class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq3_a">Diferente da incineração (que gera cinzas voláteis perigosas), a
+                  gaseificação 4WaTT produz escória inerte e vítrea. A altíssima temperatura funde e vitrifica o resíduo
+                  mineral, tornando-o estável e livre de lixiviação tóxica, pode ser usado como agregado para
+                  pavimentação e construção, zerando o envio para aterros.</p>
+              </div>
+            </div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq4_q">A planta gera odores ou ruído
+                para a vizinhança? <i class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq4_a">Não. O processo ocorre em circuito hermeticamente fechado e sob pressão
+                  negativa, impedindo a fuga de odores. O craqueamento térmico a 1.200°C destrói as moléculas do mau
+                  cheiro. O ruído fica dentro dos limites da legislação sonora.</p>
+              </div>
+            </div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq5_q">É viável para municípios
+                pequenos? <i class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq5_a">Sim, a modularidade foi pensada para isso. Enquanto tecnologias
+                  estrangeiras exigem escalas gigantescas, os módulos funcionam a partir de 50 t/dia. Municípios menores
+                  podem se unir em Consórcios Intermunicipais para viabilizar uma usina regional, reduzindo custos de
+                  frete e operação.</p>
+              </div>
+            </div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_gaseif_faq6_q">Como é a remuneração de um
+                projeto desse porte? <i class="fas fa-plus"></i></button>
+              <div class="acc-body">
+                <p data-i18n="sol_gaseif_faq6_a">Tripé financeiro: (1) taxa de disposição (tipping fee) paga por quem
+                  gera o lixo; (2) venda de energia (elétrica ou térmica) gerada pelo Syngas; (3) créditos de carbono
+                  pela mitigação da emissão de metano que ocorreria no aterramento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA + FORM -->
+      <section class="section sol-cta" id="cta">
+        <div class="ph ph--px ph--roxo"><img src="assets/img_old/a_night_photo.jpeg" alt="" data-parallax="0.05"></div>
+        <div class="container">
+          <div class="sol-cta__inner">
+            <div class="sol-cta__copy">
+              <span class="kicker" data-reveal data-i18n="sol_gaseif_cta_kicker">Fale com nossa equipe</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="sol_gaseif_cta_title">Tem um projeto de RSU?</h2>
+              <p class="lead" data-reveal data-d="2" data-i18n="sol_gaseif_cta_lead">Prefeituras, consórcios e
+                indústrias: entenda como a gaseificação
+                4WaTT transforma seu passivo em ativo energético.</p>
+              <ul class="sol-cta__checklist" data-reveal data-d="2">
+                <li><i class="fas fa-check"></i> <span data-i18n="sol_gaseif_check1">Caracterização do resíduo e setup
+                    técnico</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="sol_gaseif_check2">Balanço de massa, energia e
+                    payback</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="sol_gaseif_check3">Rito regulatório (CONAMA
+                    316)</span></li>
+              </ul>
+            </div>
+            <div class="sol-formcard" data-reveal data-d="1">
+              <h3 data-i18n="sol_gaseif_form_title">Solicitar contato</h3>
+              <p class="sub" data-i18n="sol_gaseif_form_sub">Preencha e retornamos em até 24h.</p>
+              <form class="form-4watt" id="form-gaseificacao-rsu" data-form-name="Gaseificação de RSU">
+                <div class="form-field"><label for="gs-nome" data-i18n="sol_gaseif_label_nome">Nome*</label><input
+                    class="form-input" id="gs-nome" name="nome" type="text" required placeholder="Seu nome"
+                    data-i18n-placeholder="sol_gaseif_placeholder_nome"><span class="form-error-msg"></span></div>
+                <div class="form-row">
+                  <div class="form-field"><label for="gs-email" data-i18n="sol_gaseif_label_email">E-mail*</label><input
+                      class="form-input" id="gs-email" name="email" type="email" required placeholder="seu@email.com"
+                      data-i18n-placeholder="sol_gaseif_placeholder_email"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="gs-tel" data-i18n="sol_gaseif_label_tel">WhatsApp</label><input
+                      class="form-input" id="gs-tel" name="whatsapp" type="tel" placeholder="(00) 00000-0000"
+                      data-i18n-placeholder="sol_gaseif_placeholder_tel"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-field"><label for="gs-mun" data-i18n="sol_gaseif_label_mun">Município /
+                    organização</label><input class="form-input" id="gs-mun" name="municipio" type="text"
+                    placeholder="Ex.: Prefeitura de..." data-i18n-placeholder="sol_gaseif_placeholder_mun"><span
+                    class="form-error-msg"></span></div>
+                <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;"
+                  data-i18n="sol_gaseif_form_submit">Solicitar contato <i class="fas fa-arrow-right"></i></button>
+              </form>
+              <div class="form-success" data-i18n="sol_gaseif_form_success">Solicitação enviada! Nossa equipe retorna em
+                até 24h.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand footer__col">
+            <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+            <p data-i18n="footer_brand_phrase">De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.
+            </p>
+            <p data-i18n="footer_brand_company">4WaTT Bio Engenharia S/A.</p>
+            <div class="footer__seal"><i class="fas fa-circle-check"></i> <span data-i18n="footer_seal">Site oficial
+                verificado</span></div>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_address_title">Endereço</h4>
+            <ul>
+              <li>Edifício Metropolitan Business</li>
+              <li>Torre Tokyo, sala 601</li>
+              <li>Av. Dep. Jamel Cecílio</li>
+              <li>Jardim Goiás, Goiânia · GO</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_contact_title">Contato</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+              <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+              <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html" data-i18n="legal_privacy">Política de Privacidade</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 data-i18n="footer_social_title">Siga-nos</h4>
+            <div class="footer__social">
+              <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i
+                  class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom"><span data-i18n="footer_rights">© 2026 4WaTT Bio Engenharia S/A · Todos os direitos
+            reservados.</span><span data-i18n="footer_tagline">Da simulação à operação. Patrimônio energético.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+</body>
+
+</html>

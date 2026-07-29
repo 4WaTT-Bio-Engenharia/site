@@ -1,0 +1,1179 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4WaTT S/A | Comprar Biometano</title>
+<meta name="description" content="Calcule a equivalência energética do seu combustível atual em biometano e descubra o potencial de economia da sua operação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/theme-4watt.css?v=3.8">
+<style>
+/* ============================================================
+   4WaTT · Calculadora de Equivalência Energética — Biometano
+   Camadas: DADOS / CÁLCULO / RENDER (ver <script> no final)
+   ============================================================ */
+
+:root{
+  /* Marca 4WaTT */
+  --roxo-900:#240A2C;
+  --roxo-700:#3C1148;
+  --roxo:#5B1A6B;
+  --teal-700:#0E7E6F;
+  --teal:#13A088;
+  --teal-bright:#26C6A8;
+
+  --tinta:#1E1B23;
+  --tinta-suave:#5C5766;
+  --tinta-fraca:#8A8694;
+  --bg:#F3F2F6;
+  --bg-2:#ECEAF1;
+  --surface:#FFFFFF;
+  --linha:#E6E3EC;
+  --linha-forte:#D6D2DE;
+
+  --ok:#0E9E6E;
+  --ok-bg:#E6F6EF;
+
+  --grad-marca:linear-gradient(142deg,#260A30 0%,#511657 42%,#0F8576 100%);
+  --grad-teal:linear-gradient(135deg,var(--teal) 0%,var(--teal-bright) 100%);
+
+  --sombra-sm:0 1px 2px rgba(36,10,44,.06),0 2px 8px rgba(36,10,44,.05);
+  --sombra-md:0 10px 30px -12px rgba(36,10,44,.22),0 2px 8px rgba(36,10,44,.06);
+  --sombra-lg:0 30px 60px -20px rgba(36,10,44,.35);
+
+  --r-sm:12px; --r:16px; --r-lg:24px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Hanken Grotesk',system-ui,sans-serif;
+  color:var(--tinta);
+  background:var(--bg);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Atmosfera de fundo (orbes suaves da marca + grão) */
+.bg-fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-fx .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.16}
+.bg-fx .orb.a{width:46vw;height:46vw;background:var(--roxo);top:-14vw;left:-10vw}
+.bg-fx .orb.b{width:42vw;height:42vw;background:var(--teal);bottom:-16vw;right:-12vw}
+.bg-fx .grain{position:absolute;inset:0;opacity:.035;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:102px 20px 56px}
+
+/* ---------- Cabeçalho / Hero ---------- */
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+.wordmark{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.7rem;letter-spacing:-.02em;color:var(--tinta)}
+.wordmark .four{color:var(--teal)}
+.wordmark .tt{text-transform:uppercase}
+.brandbar .tag{font-size:.82rem;color:var(--tinta-suave);text-align:right;max-width:230px;line-height:1.3}
+
+.hero{
+  position:relative;overflow:hidden;color:#fff;border-radius:var(--r-lg);
+  background:var(--grad-marca);background-size:160% 160%;
+  padding:clamp(28px,5vw,52px);box-shadow:var(--sombra-lg);
+  animation:heroShift 18s ease-in-out infinite;
+}
+@keyframes heroShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero::after{content:"";position:absolute;right:-12%;top:-40%;width:60%;height:180%;
+  background:radial-gradient(closest-side,rgba(38,198,168,.45),transparent 70%);pointer-events:none}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:#bff2e6;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  padding:7px 14px;border-radius:999px;backdrop-filter:blur(4px)}
+.hero .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 4px rgba(38,198,168,.3)}
+.hero h1{font-family:'Bricolage Grotesque';font-weight:700;letter-spacing:-.03em;
+  font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.04;margin:18px 0 14px;max-width:18ch}
+.hero h1 em{font-style:normal;color:var(--teal-bright)}
+.hero p.lead{font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(255,255,255,.86);max-width:54ch}
+.hero .stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:26px}
+.hero .stat{position:relative}
+.hero .stat b{display:block;font-family:'Bricolage Grotesque';font-size:1.5rem;font-weight:700;color:#fff}
+.hero .stat span{font-size:.8rem;color:rgba(255,255,255,.7)}
+
+/* ---------- Grid principal ---------- */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:18px;margin-top:18px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--linha);border-radius:var(--r-lg);
+  box-shadow:var(--sombra-md);padding:clamp(22px,3vw,32px)}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.card-head .num{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  font-family:'Bricolage Grotesque';font-weight:700;font-size:.95rem;color:#fff;background:var(--grad-teal);
+  box-shadow:0 6px 16px -6px rgba(19,160,136,.7)}
+.card-head h2{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.22rem;letter-spacing:-.01em}
+.card-head .sub{font-size:.82rem;color:var(--tinta-fraca);margin-top:2px}
+
+/* ---------- Formulário ---------- */
+.field{margin-bottom:20px}
+.field > label{display:flex;align-items:center;gap:7px;font-weight:600;font-size:.86rem;color:var(--tinta);margin-bottom:9px}
+.req{color:var(--teal);font-weight:700}
+
+.sel-wrap{position:relative}
+.sel-wrap::after{content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--tinta-suave);border-bottom:2px solid var(--tinta-suave);
+  transform:translateY(-65%) rotate(45deg);pointer-events:none}
+select,.inp{width:100%;font:inherit;font-size:1rem;color:var(--tinta);background:#fff;
+  border:1.5px solid var(--linha-forte);border-radius:var(--r-sm);padding:13px 15px;transition:.18s var(--ease)}
+select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px}
+select:hover,.inp:hover{border-color:#bdb6c9}
+select:focus,.inp:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(19,160,136,.14)}
+
+.inp-money{position:relative}
+.inp-money .pre{position:absolute;left:1.5px;top:1.5px;bottom:1.5px;display:flex;align-items:center;
+  padding:0 13px;color:var(--tinta-suave);font-weight:600;font-size:.92rem;border-right:1px solid var(--linha);
+  border-radius:var(--r-sm) 0 0 var(--r-sm);background:#FAFAFC}
+.inp-money .inp{padding-left:60px}
+.inp-suffix{position:relative}
+.inp-suffix .suf{position:absolute;right:1.5px;top:1.5px;bottom:1.5px;display:flex;align-items:center;
+  padding:0 15px;color:var(--tinta-suave);font-weight:600;font-size:.9rem;background:#FAFAFC;
+  border-left:1px solid var(--linha);border-radius:0 var(--r-sm) var(--r-sm) 0;min-width:62px;justify-content:center}
+.inp-suffix .inp{padding-right:78px}
+
+/* Toggle de unidades (pill segmentado) */
+.seg{display:inline-flex;background:var(--bg-2);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
+.seg button{font:inherit;font-weight:600;font-size:.88rem;color:var(--tinta-suave);background:transparent;
+  border:0;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s var(--ease)}
+.seg button.active{color:#fff;background:var(--roxo);box-shadow:0 4px 12px -4px rgba(91,26,107,.6)}
+.seg button:not(.active):hover{color:var(--roxo)}
+.bio-nota{display:flex;align-items:flex-start;gap:9px;margin-top:12px;padding:11px 14px;border-radius:var(--r-sm);font-size:.85rem;line-height:1.45}
+.bio-nota svg{flex:none;margin-top:1px}
+.bio-nota.ok{background:#ECFAF5;color:#0B6F52;border:1px solid #C7EDDF}
+.bio-nota.aviso{background:#FDF4E3;color:#8A5A12;border:1px solid #F2DCAE}
+
+/* Modo avançado */
+.adv-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:13px 16px;border:1.5px dashed var(--linha-forte);border-radius:var(--r-sm);cursor:pointer;
+  background:#FBFAFC;transition:.18s var(--ease);user-select:none}
+.adv-toggle:hover{border-color:var(--teal);background:#F6FCFA}
+.adv-toggle .lbl{font-weight:600;font-size:.9rem}
+.adv-toggle .lbl small{display:block;font-weight:400;color:var(--tinta-fraca);font-size:.78rem}
+.switch{flex:none;width:42px;height:24px;border-radius:999px;background:var(--linha-forte);position:relative;transition:.2s var(--ease)}
+.switch::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s var(--ease);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.adv-toggle.open .switch{background:var(--teal)}
+.adv-toggle.open .switch::after{left:21px}
+.adv-panel{display:grid;grid-template-columns:1fr 1fr;gap:14px;overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .35s var(--ease),opacity .25s var(--ease),margin .35s var(--ease);margin-top:0}
+.adv-panel.open{max-height:360px;opacity:1;margin-top:16px}
+@media(max-width:480px){.adv-panel{grid-template-columns:1fr}}
+
+/* ---------- Resultados ---------- */
+.results{position:sticky;top:18px}
+.hero-result{position:relative;overflow:hidden;border-radius:var(--r-lg);color:#fff;
+  background:var(--grad-marca);background-size:150% 150%;padding:26px 26px 24px;box-shadow:var(--sombra-md);
+  animation:heroShift 18s ease-in-out infinite}
+.hero-result::after{content:"";position:absolute;right:-30%;bottom:-60%;width:80%;height:140%;
+  background:radial-gradient(closest-side,rgba(38,198,168,.4),transparent 70%)}
+.hero-result .rl{position:relative;font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#bff2e6}
+.hero-result .rv{position:relative;font-family:'Bricolage Grotesque';font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(2.4rem,6vw,3.2rem);line-height:1;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.hero-result .ru{position:relative;font-size:.95rem;color:rgba(255,255,255,.8)}
+.hero-result.duo{display:flex;gap:0;margin-top:12px;padding:0}
+.hero-result.duo .half{flex:1;padding:22px 24px;position:relative;z-index:1}
+.hero-result.duo .half+.half{border-left:1px solid rgba(255,255,255,.16)}
+.hero-result.duo .rl{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#bff2e6}
+.hero-result.duo .rv{font-family:'Bricolage Grotesque';font-weight:700;letter-spacing:-.02em;font-size:clamp(1.6rem,3.6vw,2rem);line-height:1.05;margin:7px 0 3px;font-variant-numeric:tabular-nums}
+.hero-result.duo .ru{font-size:.78rem;color:rgba(255,255,255,.72)}
+@media(max-width:480px){.hero-result.duo{flex-direction:column}.hero-result.duo .half+.half{border-left:0;border-top:1px solid rgba(255,255,255,.16)}}
+
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.res{background:var(--surface);border:1px solid var(--linha);border-radius:var(--r);padding:16px 16px}
+.res .rl{font-size:.74rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta-fraca);display:flex;align-items:center;gap:6px}
+.res .rv{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.5rem;letter-spacing:-.01em;margin-top:6px;font-variant-numeric:tabular-nums;color:var(--tinta)}
+.res .ru{font-size:.78rem;color:var(--tinta-fraca);margin-top:1px}
+.res.accent .rv{color:var(--teal-700)}
+
+.flash{animation:flash .5s var(--ease)}
+@keyframes flash{0%{background:#F0FBF8}100%{}}
+
+/* Bloco economia (só quando viável) */
+.economy{margin-top:14px;border-radius:var(--r);overflow:hidden;border:1px solid #BFE9DB;background:var(--ok-bg)}
+.economy .top{display:flex;align-items:center;gap:14px;padding:18px 20px}
+.economy .ico{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:var(--grad-teal);color:#fff;box-shadow:0 8px 18px -8px rgba(19,160,136,.8)}
+.economy .ico svg{width:24px;height:24px}
+.economy .txt small{display:block;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-700)}
+.economy .txt .big{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.85rem;color:#0B6F52;line-height:1.05;font-variant-numeric:tabular-nums}
+.economy .txt .pct{font-size:.86rem;color:var(--teal-700);font-weight:600}
+.economy .bar{display:flex;justify-content:space-between;gap:10px;padding:12px 20px;background:#fff;border-top:1px solid #DDEFE8;font-size:.86rem}
+.economy .bar div span{display:block;color:var(--tinta-fraca);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.economy .bar div b{font-variant-numeric:tabular-nums;font-weight:700}
+.economy .bar .now b{color:#B0344A}
+.economy .bar .new b{color:var(--teal-700)}
+.economy .plano-tag{display:flex;align-items:center;gap:8px;padding:11px 20px;background:#fff;border-top:1px solid #DDEFE8;font-size:.84rem;color:var(--tinta-suave)}
+.economy .plano-tag svg{flex:none;color:var(--teal-700)}
+.economy .plano-tag b{color:var(--tinta);font-weight:700}
+/* Variante neutra (sem economia direta): mostra valores sem prometer economia */
+.economy.sim{border-color:var(--linha);background:#FAF8FC}
+.economy.sim .ico{background:linear-gradient(135deg,var(--roxo),#7A2A8C)}
+.economy.sim .txt small{color:var(--roxo)}
+.economy.sim .txt .big{color:var(--tinta)}
+.economy.sim .big .un{font-size:1rem;font-weight:600;color:var(--tinta-suave)}
+.economy.sim .txt .pct{color:var(--tinta-suave)}
+.economy .bar .new.alt b{color:var(--roxo)}
+/* Legenda de simulação */
+.sim-nota{display:flex;align-items:center;gap:7px;margin:12px 2px 0;font-size:.78rem;color:var(--tinta-fraca);line-height:1.4}
+.sim-nota svg{flex:none;color:var(--tinta-fraca)}
+
+/* Estado neutro (sem economia exibível) */
+.neutral{margin-top:14px;border-radius:var(--r);border:1px solid var(--linha);background:#FBFAFC;padding:20px;display:flex;gap:14px;align-items:flex-start}
+.neutral .ico{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--bg-2);color:var(--roxo)}
+.neutral p{font-size:.92rem;color:var(--tinta-suave)}
+.neutral p b{color:var(--tinta)}
+
+/* CTA */
+.cta{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:inherit;font-weight:700;
+  font-size:1rem;padding:15px 22px;border-radius:var(--r-sm);border:0;cursor:pointer;text-decoration:none;transition:.18s var(--ease)}
+.btn-primary{background:var(--grad-teal);color:#fff;box-shadow:0 12px 28px -10px rgba(19,160,136,.8)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px -10px rgba(19,160,136,.85)}
+.btn-ghost{background:#fff;color:var(--roxo);border:1.5px solid var(--linha-forte)}
+.btn-ghost:hover{border-color:var(--roxo);background:#FBF7FC}
+.btn svg{width:19px;height:19px}
+
+.empty-hint{font-size:.85rem;color:var(--tinta-fraca);text-align:center;padding:6px 0}
+
+/* Memória de cálculo (acordeão) */
+.memo{margin-top:18px}
+.memo .row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--linha)}
+.memo .row:last-child{border-bottom:0}
+.memo .row .k{font-size:.88rem;color:var(--tinta-suave)}
+.memo .row .k b{color:var(--tinta);display:block;font-weight:600}
+.memo .row .k small{color:var(--tinta-fraca);font-size:.76rem}
+.memo .row .v{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+details.acc{border:1px solid var(--linha);border-radius:var(--r);background:#fff;overflow:hidden}
+details.acc summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;font-weight:600}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary .chev{transition:.2s var(--ease)}
+.memo-title{display:inline-flex;align-items:center;gap:11px;font-family:'Bricolage Grotesque';font-size:1.05rem}
+.memo-badge{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.9rem;color:#fff;background:var(--grad-teal);box-shadow:0 6px 16px -6px rgba(19,160,136,.7)}
+details.acc[open] summary .chev{transform:rotate(180deg)}
+details.acc .body{padding:0 20px 18px}
+
+/* Metodologia / transparência */
+.method{margin-top:18px}
+.flow-card{margin-top:18px}
+.faq{margin-top:18px}
+.method .lead{font-size:1rem;color:var(--tinta-suave);max-width:70ch;margin-bottom:20px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.step{border:1px solid var(--linha);border-radius:var(--r);padding:18px;background:#FBFAFC;position:relative}
+.step .n{font-family:'Bricolage Grotesque';font-weight:700;font-size:.8rem;color:var(--teal-700);letter-spacing:.06em}
+.step h4{font-size:.96rem;margin:8px 0 6px;font-weight:700}
+.step p{font-size:.84rem;color:var(--tinta-suave)}
+.step code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.78rem;color:var(--roxo);background:#fff;border:1px solid var(--linha);padding:2px 7px;border-radius:6px;display:inline-block;margin-top:8px}
+
+/* Tooltip */
+.tip{position:relative;display:inline-flex;align-items:center;cursor:help}
+.tip .q{width:16px;height:16px;border-radius:50%;background:var(--bg-2);color:var(--tinta-suave);
+  font-size:.7rem;font-weight:700;display:grid;place-items:center;border:1px solid var(--linha-forte)}
+.tip .pop{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);
+  width:max-content;max-width:260px;background:var(--roxo-900);color:#fff;font-size:.78rem;font-weight:400;
+  line-height:1.45;padding:10px 13px;border-radius:10px;opacity:0;visibility:hidden;transition:.2s var(--ease);
+  box-shadow:var(--sombra-lg);z-index:5;text-transform:none;letter-spacing:0}
+.tip .pop::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:var(--roxo-900)}
+.tip:hover .pop,.tip:focus-within .pop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+
+/* Rodapé */
+.foot{margin-top:34px;text-align:center;font-size:.8rem;color:var(--tinta-fraca);line-height:1.7}
+.foot a{color:var(--teal-700);text-decoration:none;font-weight:600}
+
+/* Passo a passo (fluxo) */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+@media(max-width:760px){.flow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.flow{grid-template-columns:1fr}}
+.flow .node{position:relative}
+.flow .ring{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;color:#fff;
+  font-family:'Bricolage Grotesque';font-weight:700;font-size:1.2rem;background:var(--grad-marca);
+  box-shadow:0 10px 22px -10px rgba(81,22,87,.75);margin-bottom:14px}
+.flow .node h4{font-size:1rem;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.flow .node p{font-size:.86rem;color:var(--tinta-suave);line-height:1.55}
+
+/* FAQ */
+.faq-item{margin-bottom:12px}
+.faq-item:last-child{margin-bottom:0}
+.faq-item summary{font-size:1rem}
+.faq-item summary span{padding-right:14px}
+.faq-item .body p{color:var(--tinta-suave);font-size:.92rem;line-height:1.65;margin-bottom:10px}
+.faq-item .body p:last-child{margin-bottom:0}
+.faq-item .faq-list{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:8px}
+.faq-item .faq-list li{position:relative;padding-left:22px;font-size:.92rem;color:var(--tinta-suave);line-height:1.55}
+.faq-item .faq-list li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:3px;background:var(--grad-teal)}
+.faq-item .body b{color:var(--tinta)}
+
+/* ===== Cabeçalho + rodapé — padrão do site 4WaTT ===== */
+#main-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:#fff;border-bottom:1px solid #ECEAF1;box-shadow:0 2px 14px rgba(36,10,44,.06)}
+.navbar{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 22px;height:74px;font-family:'Montserrat',sans-serif}
+.navbar .logo img{height:38px;display:block}
+.lg-fallback{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.5rem;color:var(--tinta);letter-spacing:-.02em}
+.lg-fallback .f{color:var(--teal)}
+.nav-links{list-style:none;display:flex;align-items:center;gap:2px;margin:0;padding:0}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:flex;align-items:center;gap:6px;text-decoration:none;color:#2A2730;font-weight:600;font-size:.84rem;padding:9px 11px;border-radius:8px;transition:.18s;white-space:nowrap}
+.nav-links>li>a:hover{color:var(--teal-700);background:#F4F4F7}
+.nav-links .dropdown-content{position:absolute;top:calc(100% + 6px);left:0;min-width:235px;background:#fff;border:1px solid #ECEAF1;border-radius:12px;box-shadow:0 18px 40px -16px rgba(36,10,44,.3);padding:8px;list-style:none;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s}
+.nav-links .dropdown:hover .dropdown-content,.nav-links .dropdown.open .dropdown-content{opacity:1;visibility:visible;transform:none}
+.nav-links .dropdown-content a{display:block;text-decoration:none;color:#2A2730;font-weight:500;font-size:.84rem;padding:9px 12px;border-radius:8px}
+.nav-links .dropdown-content a:hover{background:#F4F4F7;color:var(--teal-700)}
+.menu-toggle{display:none;background:none;border:0;font-size:1.3rem;color:var(--roxo);cursor:pointer;line-height:1}
+.language-selector{position:relative;font-family:'Montserrat',sans-serif}
+.selected-lang{display:flex;align-items:center;gap:7px;cursor:pointer;padding:7px 10px;border:1px solid #E6E3EC;border-radius:8px;font-size:.82rem;color:#2A2730}
+.selected-lang img{width:20px;border-radius:2px}
+.lang-dropdown{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #ECEAF1;border-radius:12px;box-shadow:0 18px 40px -16px rgba(36,10,44,.3);padding:8px;list-style:none;min-width:172px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s}
+.language-selector.open .lang-dropdown{opacity:1;visibility:visible;transform:none}
+.lang-dropdown li{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;font-size:.84rem;cursor:pointer;color:#2A2730}
+.lang-dropdown li:hover{background:#F4F4F7}
+.lang-dropdown img{width:20px;border-radius:2px}
+@media(max-width:1080px){
+  .menu-toggle{display:block}
+  .nav-links{position:fixed;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;background:#fff;border-bottom:1px solid #ECEAF1;box-shadow:0 18px 30px -18px rgba(36,10,44,.3);max-height:0;overflow:hidden;padding:0 18px;transition:max-height .3s var(--ease),padding .3s var(--ease)}
+  .nav-links.open{max-height:82vh;overflow-y:auto;padding:14px 18px}
+  .nav-links>li>a{padding:12px 10px;font-size:.95rem}
+  .nav-links .dropdown-content{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 14px;display:none}
+  .nav-links .dropdown.open .dropdown-content{display:block}
+}
+
+.main-footer{position:relative;z-index:1;color:#fff;font-family:'Montserrat',sans-serif;
+  background:linear-gradient(160deg,#2A0A33 0%,#4A1456 45%,#11897B 100%)}
+.main-footer .container{max-width:1240px;margin:0 auto;padding:54px 22px 40px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px}
+.footer-brand .footer-logo{height:40px;margin-bottom:18px}
+.footer-brand p{font-size:.85rem;color:rgba(255,255,255,.82);line-height:1.6;margin-bottom:14px;max-width:34ch}
+.main-footer h4{font-size:.92rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px;color:#fff}
+.footer-address span{display:block;font-size:.85rem;color:rgba(255,255,255,.85);line-height:1.75}
+.location-links{display:flex;align-items:center;gap:10px;margin-top:4px}
+.location-links a{color:var(--teal-bright);font-size:1.05rem;text-decoration:none}
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.contact-list li{display:flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(255,255,255,.85)}
+.contact-list i{color:var(--teal-bright);width:18px;text-align:center}
+.footer-social .social-icons{display:flex;gap:11px;margin-bottom:18px}
+.footer-social .social-icons a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);color:#fff;font-size:1rem;text-decoration:none;transition:.18s var(--ease)}
+.footer-social .social-icons a:hover{background:var(--teal);transform:translateY(-2px)}
+.verified-seal{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--teal-bright)}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr;gap:26px}}
+
+.reveal{opacity:0;transform:translateY(16px);animation:reveal .7s var(--ease) forwards}
+@keyframes reveal{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.13s}.d3{animation-delay:.21s}.d4{animation-delay:.29s}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}.hero,.hero-result{animation:none}}
+</style>
+  <link rel="stylesheet" href="../assets/css/legacy-bridge.css?v=3.0">
+  <link rel="stylesheet" href="../assets/css/viabilidade-skin.css?v=1.0">
+  <link rel="stylesheet" href="/assets/css/mobile-fixes.css?v=2">
+</head>
+<body>
+
+<!-- NAVBAR -->
+  <nav class="nav">
+    <a class="nav__logo" href="../index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="../assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="../index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="../index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="../index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="../index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="../solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="../solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="../solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="../investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="../imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="../academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true" data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="../simulador.html" data-i18n="cta_simular">Simular Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+<div class="bg-fx"><div class="orb a"></div><div class="orb b"></div><div class="grain"></div></div>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero reveal d1">
+    <span class="eyebrow"><span class="dot"></span><span data-i18n="viab_eyebrow">Equivalência energética · Biometano</span></span>
+    <h1 data-i18n="viab_h1">Migre para o biometano <em>sem perder energia</em> no processo.</h1>
+    <p class="lead" data-i18n="viab_lead">Sua operação consome <strong>calor</strong>, não volume. Esta calculadora converte o seu combustível atual em biometano pela energia térmica realmente entregue — e estima o potencial de economia da sua planta.</p>
+    <div class="stats">
+      <div class="stat"><b data-i18n="viab_stat1_b">100%</b><span data-i18n="viab_stat1_s">renovável e nacional</span></div>
+      <div class="stat"><b data-i18n="viab_stat2_b">= calor</b><span data-i18n="viab_stat2_s">mesma entrega térmica</span></div>
+      <div class="stat"><b data-i18n="viab_stat3_b">MMBtu</b><span data-i18n="viab_stat3_s">base de comparação</span></div>
+    </div>
+  </header>
+
+  <!-- Grid: formulário + resultados -->
+  <div class="grid">
+
+    <!-- COLUNA: ENTRADA -->
+    <section class="card reveal d2">
+      <div class="card-head">
+        <div class="num">1</div>
+        <div><h2>Dados da sua operação</h2><div class="sub">Informe o consumo mensal atual</div></div>
+      </div>
+
+      <div class="field">
+        <label for="combustivel">Combustível atual <span class="req">*</span></label>
+        <div class="sel-wrap">
+          <select id="combustivel"></select>
+        </div>
+      </div>
+
+      <div class="field" id="field-unidade">
+        <label>Unidade de medida</label>
+        <div class="seg" id="seg-unidade"></div>
+      </div>
+
+      <div class="field">
+        <label for="consumo">Consumo mensal <span class="req">*</span>
+          <span class="tip" tabindex="0"><span class="q">?</span>
+            <span class="pop">Quantidade de combustível consumida por mês, na unidade selecionada. Aceita decimais (ex.: 2.257,76).</span>
+          </span>
+        </label>
+        <div class="inp-suffix">
+          <input class="inp" id="consumo" inputmode="decimal" autocomplete="off" placeholder="Ex.: 2.257,76">
+          <span class="suf" id="suf-consumo">kg</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="preco">Preço unitário atual <span class="req">*</span>
+          <span class="tip" tabindex="0"><span class="q">?</span>
+            <span class="pop">Quanto você paga hoje por unidade do combustível (preço por <span id="tip-unid">kg</span>).</span>
+          </span>
+        </label>
+        <div class="inp-money">
+          <span class="pre">R$</span>
+          <input class="inp" id="preco" inputmode="decimal" autocomplete="off" placeholder="0,00">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Migrar para
+          <span class="tip" tabindex="0"><span class="q">?</span>
+            <span class="pop">Escolha o biocombustível de destino. O biometano tem qualidade equivalente ao gás natural; o biogás é indicado para aplicações agropecuárias.</span>
+          </span>
+        </label>
+        <div class="seg" id="seg-bio"></div>
+        <div class="bio-nota" id="bio-nota"></div>
+      </div>
+
+      <div class="field">
+        <label for="plano">Plano de contrato
+          <span class="tip" tabindex="0"><span class="q">?</span>
+            <span class="pop">Quanto maior o prazo de contrato, maior o desconto sobre o preço de equilíbrio. Escolha o plano e veja a economia correspondente.</span>
+          </span>
+        </label>
+        <div class="sel-wrap"><select id="plano"></select></div>
+      </div>
+
+      <!-- Modo avançado: eficiências -->
+      <div class="adv-toggle" id="adv-toggle">
+        <div class="lbl">Ajuste avançado de eficiência<small>Opcional · rendimento térmico dos equipamentos</small></div>
+        <div class="switch"></div>
+      </div>
+      <div class="adv-panel" id="adv-panel">
+        <div class="field" style="margin:0">
+          <label for="ef-atual">Eficiência atual (%)
+            <span class="tip" tabindex="0"><span class="q">?</span><span class="pop">Rendimento térmico do equipamento que queima o combustível atual.</span></span>
+          </label>
+          <div class="inp-suffix">
+            <input class="inp" id="ef-atual" inputmode="decimal" value="100">
+            <span class="suf">%</span>
+          </div>
+        </div>
+        <div class="field" style="margin:0">
+          <label for="ef-bio">Eficiência c/ biometano (%)
+            <span class="tip" tabindex="0"><span class="q">?</span><span class="pop">Rendimento térmico previsto do equipamento operando com biometano.</span></span>
+          </label>
+          <div class="inp-suffix">
+            <input class="inp" id="ef-bio" inputmode="decimal" value="100">
+            <span class="suf">%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLUNA: RESULTADOS -->
+    <section class="results reveal d3" aria-live="polite">
+      <div class="hero-result">
+        <div class="rl"><span id="lbl-bio-equiv">Biometano</span> equivalente</div>
+        <div class="rv" id="r-biometano">—</div>
+        <div class="ru">Nm³ por mês · mesma energia térmica</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="res" id="card-energia">
+          <div class="rl">Energia mensal</div>
+          <div class="rv" id="r-energia">—</div>
+          <div class="ru">MMBtu/mês</div>
+        </div>
+        <div class="res" id="card-custo">
+          <div class="rl">Custo atual</div>
+          <div class="rv" id="r-custo">—</div>
+          <div class="ru" id="r-custo-u">por mês</div>
+        </div>
+        <div class="res accent" id="card-equiv" style="grid-column:1/-1">
+          <div class="rl">Seu preço de <span id="lbl-bio-preco">biometano</span>
+            <span class="tip" tabindex="0"><span class="q">?</span><span class="pop">Valor que você pagaria por Nm³ do biocombustível escolhido no plano de contrato — já com o desconto do prazo aplicado. Quanto maior o prazo, maior o desconto.</span></span>
+          </div>
+          <div class="rv" id="r-equiv">—</div>
+          <div class="ru" id="r-equiv-sub">R$/Nm³ no plano selecionado</div>
+        </div>
+      </div>
+
+      <!-- Bloco dinâmico: economia OU neutro -->
+      <div id="bloco-comercial"></div>
+
+      <!-- CTA -->
+      <div class="cta">
+        <a class="btn btn-primary" id="cta-whats" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.7-6.2A11.86 11.86 0 1 1 12 23.86a11.9 11.9 0 0 1-5.7-1.46L.06 24zM6.6 20.1l.36.2a9.86 9.86 0 1 0-3.4-3.4l.23.37-1 3.65 3.8-.82zM17.4 14.3c-.16-.27-.6-.43-1.24-.75s-1.5-.74-1.74-.82-.4-.12-.58.13-.66.82-.8 1-.3.2-.55.07a8.1 8.1 0 0 1-2.38-1.47 9 9 0 0 1-1.65-2.05c-.17-.3 0-.45.13-.6s.27-.3.4-.46a1.8 1.8 0 0 0 .27-.45.5.5 0 0 0 0-.46c-.06-.13-.58-1.4-.8-1.92s-.42-.43-.58-.44h-.5a.94.94 0 0 0-.68.32 2.86 2.86 0 0 0-.9 2.13 4.96 4.96 0 0 0 1.05 2.64 11.38 11.38 0 0 0 4.4 3.9 14.8 14.8 0 0 0 1.47.54 3.54 3.54 0 0 0 1.62.1 2.65 2.65 0 0 0 1.74-1.23 2.16 2.16 0 0 0 .15-1.22z"/></svg>
+          Falar com um especialista
+        </a>
+        <a class="btn btn-ghost" id="cta-mail" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Solicitar proposta por e-mail
+        </a>
+        <div class="empty-hint" id="hint">Preencha o consumo e o preço para ver o resultado.</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Memória de cálculo -->
+  <section class="card memo reveal d4">
+    <details class="acc" id="memo-acc">
+      <summary>
+        <span class="memo-title"><span class="memo-badge">∑</span>Memória de cálculo</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="body">
+        <div id="memo-conteudo">
+          <p style="color:var(--tinta-fraca);font-size:.9rem;padding:8px 0">Os passos da conversão aparecem aqui após o preenchimento.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- Metodologia / transparência técnica -->
+  <section class="card method reveal d4">
+    <div class="card-head">
+      <div class="num">i</div>
+      <div><h2>Como a equivalência é calculada</h2><div class="sub">Transparência técnica</div></div>
+    </div>
+    <p class="lead">A conversão é feita por <strong>equivalência de energia térmica entregue</strong>. Como o processo industrial consome calor — e não volume bruto — normalizamos todo o consumo em energia (MJ / MMBtu) e dimensionamos o volume de biometano que entrega exatamente a <strong>mesma demanda térmica</strong>. Isso evita o erro comum de comparar litros, m³ e kg diretamente.</p>
+    <div class="steps">
+      <div class="step"><div class="n">PASSO 1</div><h4>Energia do combustível</h4><p>Multiplicamos o consumo pelo poder calorífico da unidade.</p><code id="m1">consumo × PCI</code></div>
+      <div class="step"><div class="n">PASSO 2</div><h4>Energia útil</h4><p>Aplicamos a eficiência do equipamento atual.</p><code>energia × η</code></div>
+      <div class="step"><div class="n">PASSO 3</div><h4>Referência em MMBtu</h4><p>Convertemos para uma base comum de energia.</p><code>÷ 1.055,056</code></div>
+      <div class="step"><div class="n">PASSO 4</div><h4>Volume de biometano</h4><p>Calculamos o volume que entrega a mesma energia útil.</p><code id="m4">÷ (36,67 × η)</code></div>
+    </div>
+  </section>
+
+  <!-- Passo a passo: do resíduo ao processo -->
+  <section class="card flow-card reveal d4">
+    <div class="card-head">
+      <div class="num">→</div>
+      <div><h2>Do resíduo ao seu processo</h2><div class="sub">Como o biometano é produzido e chega até a sua planta</div></div>
+    </div>
+    <div class="flow">
+      <div class="node">
+        <div class="ring">1</div>
+        <h4>Resíduos orgânicos</h4>
+        <p>Dejetos animais, resíduos agroindustriais, vinhaça, lodo de esgoto e resíduos urbanos viram matéria-prima.</p>
+      </div>
+      <div class="node">
+        <div class="ring">2</div>
+        <h4>Biodigestão</h4>
+        <p>Em biodigestores sem oxigênio, microrganismos decompõem a matéria e liberam o biogás bruto.</p>
+      </div>
+      <div class="node">
+        <div class="ring">3</div>
+        <h4>Purificação</h4>
+        <p>Remoção de CO₂, gás sulfídrico e umidade eleva o metano a cerca de 96–97%: nasce o biometano.</p>
+      </div>
+      <div class="node">
+        <div class="ring">4</div>
+        <h4>Compressão e entrega</h4>
+        <p>O biometano é comprimido e distribuído por rede, gasoduto virtual ou em cilindros (GNC/GNL).</p>
+      </div>
+      <div class="node">
+        <div class="ring">5</div>
+        <h4>Uso na sua planta</h4>
+        <p>Substitui o combustível fóssil nos mesmos equipamentos, mantendo a mesma entrega de calor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq reveal d4">
+    <div class="card-head">
+      <div class="num">?</div>
+      <div><h2>Perguntas frequentes</h2><div class="sub">Entenda o biometano e o refino do biogás</div></div>
+    </div>
+
+    <details class="acc faq-item" open>
+      <summary><span>O que é biometano?</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="body"><p>O biometano é um gás renovável composto majoritariamente por metano (CH₄), obtido pela purificação do biogás. Depois de tratado, atinge qualidade equivalente à do gás natural fóssil e pode ser usado nas mesmas aplicações — calor de processo, fornos, caldeiras, secadores, geração de energia e até como combustível veicular — sem adaptação relevante dos equipamentos.</p></div>
+    </details>
+
+    <details class="acc faq-item">
+      <summary><span>Biogás e biometano são a mesma coisa?</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="body"><p>Não. O <b>biogás</b> é o gás bruto gerado pela decomposição de matéria orgânica em ambiente sem oxigênio (digestão anaeróbia). Ele contém aproximadamente 50% a 70% de metano, além de gás carbônico (CO₂), vapor d'água e impurezas como o gás sulfídrico (H₂S). O <b>biometano</b> é esse mesmo biogás já purificado: removidos o CO₂ e os contaminantes, o teor de metano sobe para algo em torno de 96% a 97%, dentro das especificações da ANP.</p></div>
+    </details>
+
+    <details class="acc faq-item">
+      <summary><span>Como o biogás é refinado até virar biometano?</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="body">
+        <p>O refino — também chamado de <i>upgrading</i> — acontece em duas frentes:</p>
+        <ul class="faq-list">
+          <li><b>Limpeza:</b> retira umidade, gás sulfídrico (H₂S) e outros contaminantes que poderiam corroer tubulações e equipamentos.</li>
+          <li><b>Enriquecimento:</b> separa o CO₂ do metano por tecnologias como separação por membranas, adsorção por variação de pressão (PSA), lavagem com água ou lavagem química com aminas.</li>
+        </ul>
+        <p>O resultado é um gás concentrado em metano, estável e dentro das especificações regulatórias, pronto para uso direto ou para injeção na rede de distribuição.</p>
+      </div>
+    </details>
+
+    <details class="acc faq-item">
+      <summary><span>Posso usar o biometano nos meus equipamentos atuais?</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="body"><p>Sim. Por ter qualidade equivalente ao gás natural, o biometano funciona nos mesmos queimadores, caldeiras e fornos, em geral sem modificação significativa. É justamente para isso que serve a equivalência energética desta calculadora: dimensionar o volume de biometano que entrega a mesma demanda térmica da sua operação, preservando o processo.</p></div>
+    </details>
+
+    <details class="acc faq-item">
+      <summary><span>O biometano é realmente renovável e sustentável?</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="body"><p>Sim. O biometano fecha o ciclo do carbono: o CO₂ liberado na queima foi recentemente capturado pela biomassa que lhe deu origem, ao contrário dos combustíveis fósseis. Além disso, ele aproveita resíduos que, de outra forma, emitiriam metano diretamente na atmosfera — um gás de efeito estufa muito mais potente que o CO₂ — transformando passivo ambiental em energia útil.</p></div>
+    </details>
+  </section>
+
+  <p class="foot reveal d4">
+    Estimativa de referência baseada em equivalência energética. Os valores finais são definidos em proposta comercial personalizada.
+  </p>
+</div>
+
+<!-- ===== Rodapé (padrão do site 4WaTT) ===== -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/img/logo-4watt-light.png" class="footer__logo" alt="4WaTT" loading="lazy">
+        <p>De todas as formas de energia, escolha a que se renova, escolha 4WaTT</p>
+        <p>© 2026 4WaTT Bio Engenharia S/A.<br>Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-address-col">
+        <h4>Endereço</h4>
+        <div class="footer-address">
+          <span>Edifício Metropolitan Business</span>
+          <span>Torre Tokyo, sala 601 4WATT</span>
+          <span>Av. Dep. Jamel Cecílio - Jardim Goiás</span>
+          <div class="location-links">
+            <span>Goiânia - GO</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener" aria-label="Google Maps"><i class="fas fa-map-location-dot"></i></a>
+            <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener" aria-label="Waze"><i class="fab fa-waze"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul class="contact-list">
+          <li><i class="fas fa-envelope"></i> contato@4watt.tech</li>
+          <li><i class="fas fa-phone"></i> +55 45 99137-8949</li>
+          <li><i class="fas fa-shield-halved"></i> <a href="../politica-privacidade.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Siga-nos</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="verified-seal"><i class="fas fa-check-circle"></i><span>Site Oficial Verificado</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* ============================================================
+   CAMADA 1 — DADOS (constantes e combustíveis configuráveis)
+   Edite SOMENTE este bloco para ajustar fatores energéticos.
+   ============================================================ */
+const CONFIG = {
+  MMBTU_TO_MJ: 1055.056,
+  PCI_GLP_MJ_KG: 46.47,
+  DENSIDADE_GLP_KG_L: 0.552,
+  PCI_BIOMETANO_MJ_NM3: 36.67,
+  EFICIENCIA_PADRAO: 1.00,
+  // PCIs de referência para os demais combustíveis (ajustáveis):
+  PCI_GAS_NATURAL_MJ_NM3: 38.00,
+  PCI_DIESEL_MJ_L: 35.80,
+  PCI_OLEO_MJ_L: 39.50,
+  PCI_LENHA_MJ_M3: 4500.00,         // lenha de eucalipto ~30% umidade, por m³/estéreo (calibrar p/ região)
+  PCI_BIOGAS_MJ_NM3: 22.00,         // biogás ~60% de metano (ajustável)
+};
+
+/* Regra comercial. O piso de preço permanece OCULTO ao lead.
+   Os planos de contrato (prazo -> desconto) são exibidos no seletor. */
+const COMERCIAL = {
+  PRECO_MINIMO_BIOMETANO: 5.99,     // piso de preço do biometano (oculto, nunca exibido)
+  PRECO_MINIMO_BIOGAS: 2.99,        // piso de preço do biogás (oculto; custo de produção menor)
+  REAJUSTE_ANUAL: 0.12,             // reajuste anual considerado na projeção (12% a.a.)
+};
+
+/* Planos de contrato: quanto maior o prazo, maior o desconto.
+   Edite/adicione planos aqui — o seletor se monta sozinho. */
+const PLANOS = [
+  { meses: 12, desconto: 0.10 },
+  { meses: 24, desconto: 0.12 },
+  { meses: 36, desconto: 0.15 },
+  { meses: 48, desconto: 0.18 },
+  { meses: 60, desconto: 0.20 },
+];
+
+/* Catálogo de combustíveis. Cada unidade declara quantos MJ entrega por unidade.
+   Para adicionar combustível: inclua um item seguindo o mesmo formato. */
+const COMBUSTIVEIS = {
+  glp: {
+    nome: "GLP (Gás Liquefeito de Petróleo)",
+    unidades: {
+      kg: { rotulo: "kg",    mj: () => CONFIG.PCI_GLP_MJ_KG },
+      l:  { rotulo: "litro", mj: () => CONFIG.DENSIDADE_GLP_KG_L * CONFIG.PCI_GLP_MJ_KG },
+    },
+  },
+  gn: {
+    nome: "Gás Natural",
+    unidades: { nm3: { rotulo: "Nm³", mj: () => CONFIG.PCI_GAS_NATURAL_MJ_NM3 } },
+  },
+  diesel: {
+    nome: "Diesel",
+    unidades: { l: { rotulo: "litro", mj: () => CONFIG.PCI_DIESEL_MJ_L } },
+  },
+  oleo: {
+    nome: "Óleo combustível",
+    unidades: { l: { rotulo: "litro", mj: () => CONFIG.PCI_OLEO_MJ_L } },
+  },
+  lenha: {
+    nome: "Lenha",
+    unidades: { m3: { rotulo: "m³", mj: () => CONFIG.PCI_LENHA_MJ_M3 } },
+  },
+};
+
+/* Biocombustíveis de destino (o que o cliente passa a usar).
+   pci: energia por Nm³ · piso: preço mínimo oculto · aviso: recomendação de uso. */
+const BIOCOMBUSTIVEIS = {
+  biometano: {
+    nome: "Biometano",
+    unidade: "Nm³",
+    pci: () => CONFIG.PCI_BIOMETANO_MJ_NM3,
+    piso: () => COMERCIAL.PRECO_MINIMO_BIOMETANO,
+    nota: { tipo: "ok", texto: "Indicado para uso industrial e comercial — qualidade equivalente ao gás natural." },
+  },
+  biogas: {
+    nome: "Biogás",
+    unidade: "Nm³",
+    pci: () => CONFIG.PCI_BIOGAS_MJ_NM3,
+    piso: () => COMERCIAL.PRECO_MINIMO_BIOGAS,
+    nota: { tipo: "aviso", texto: "Recomendado apenas para aplicações agropecuárias. Para uso industrial, recomendamos o biometano." },
+  },
+};
+
+/* ============================================================
+   CAMADA 2 — CÁLCULO (funções puras, normalizadas por energia)
+   ============================================================ */
+const Calc = {
+  energiaBrutaMJ:   (qtd, mjPorUnidade)      => qtd * mjPorUnidade,
+  energiaUtilMJ:    (bruta, eficiencia)      => bruta * eficiencia,
+  paraMMBtu:        (utilMJ)                 => utilMJ / CONFIG.MMBTU_TO_MJ,
+  volumeBio:        (utilMJ, pci, eficienciaBio) => utilMJ / (pci * eficienciaBio),
+  custoAtual:       (qtd, preco)             => qtd * preco,
+  precoEquivalente: (custo, volume)          => volume > 0 ? custo / volume : 0,
+  precoOfertado:    (precoEquiv, desconto, piso) => Math.max(
+                       piso,
+                       precoEquiv * (1 - desconto)
+                    ),
+  /* Soma da economia ao longo de N anos com reajuste composto anual.
+     Modelo: a economia do 1º ano cresce (1+r) a cada ano subsequente. */
+  economiaAcumulada: (economiaAno1, anos, r) => {
+    if (anos <= 0) return 0;
+    if (r === 0) return economiaAno1 * anos;
+    return economiaAno1 * (Math.pow(1 + r, anos) - 1) / r;
+  },
+};
+
+/** Executa toda a simulação a partir das entradas brutas. */
+function simular({ combustivelId, unidadeId, consumo, preco, efAtual, efBio, desconto, meses, biocombustivelId }) {
+  const unidade = COMBUSTIVEIS[combustivelId].unidades[unidadeId];
+  const mjPorUnidade = unidade.mj();
+  const bio = BIOCOMBUSTIVEIS[biocombustivelId || "biometano"];
+
+  const brutaMJ   = Calc.energiaBrutaMJ(consumo, mjPorUnidade);
+  const utilMJ    = Calc.energiaUtilMJ(brutaMJ, efAtual);
+  const mmbtu     = Calc.paraMMBtu(utilMJ);
+  const volumeBio = Calc.volumeBio(utilMJ, bio.pci(), efBio);
+  const custo     = Calc.custoAtual(consumo, preco);
+  const precoEq   = Calc.precoEquivalente(custo, volumeBio);
+
+  // Camada comercial (piso oculto do biocombustível; desconto vem do plano escolhido)
+  const ofertado  = Calc.precoOfertado(precoEq, desconto, bio.piso());
+  const custoBio  = volumeBio * ofertado;
+  const economia  = custo - custoBio;          // economia mensal (1º ano)
+  const viavel    = economia > 0;              // só há economia se o ofertado < equilíbrio
+  const pctEcon   = custo > 0 ? (economia / custo) * 100 : 0;
+
+  // Projeção com reajuste anual composto
+  const anos          = (meses || 0) / 12;
+  const economiaAno1  = economia * 12;
+  const economiaContrato = Calc.economiaAcumulada(economiaAno1, anos, COMERCIAL.REAJUSTE_ANUAL);
+
+  return { mjPorUnidade, brutaMJ, utilMJ, mmbtu, volumeBio, custo, precoEq,
+           ofertado, custoBio, economia, viavel, pctEcon,
+           anos, economiaAno1, economiaContrato,
+           bioNome: bio.nome, bioUnidade: bio.unidade };
+}
+
+/* ============================================================
+   UTILITÁRIOS — formatação e máscaras (pt-BR)
+   ============================================================ */
+const fmtBRL   = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const fmtNum   = (v,d=2)=> v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtInt   = v => v.toLocaleString("pt-BR",{maximumFractionDigits:0});
+const fmtPreco = v => "R$ " + fmtNum(v,2);
+
+/** Converte texto pt-BR em número (>=0). Trata milhar/decimal de forma robusta. */
+function parseBR(txt){
+  if(typeof txt!=="string") return Number(txt)||0;
+  let v = txt.trim().replace(/[^\d.,]/g,"");
+  if(!v) return 0;
+  const temVirgula = v.includes(","), temPonto = v.includes(".");
+  if(temVirgula && temPonto)      v = v.replace(/\./g,"").replace(",", ".");      // 2.257,76
+  else if(temVirgula)             v = v.replace(",", ".");                        // 10,63
+  else if(temPonto){
+    const partes = v.split(".");
+    if(partes.length>2 || (partes[1] && partes[1].length===3))                   // 2.257 / 1.234.567 -> milhar
+      v = v.replace(/\./g,"");
+  }
+  const n = parseFloat(v);
+  return (isFinite(n) && n>=0) ? n : 0;
+}
+
+/** Máscara monetária (estilo centavos) aplicada ao vivo. */
+function aplicarMascaraMoeda(input){
+  const digitos = input.value.replace(/\D/g,"");
+  if(!digitos){ input.value=""; return 0; }
+  const valor = parseInt(digitos,10)/100;
+  input.value = fmtNum(valor,2);
+  return valor;
+}
+
+/* ============================================================
+   CAMADA 3 — RENDER (DOM / interação)
+   ============================================================ */
+const $ = sel => document.querySelector(sel);
+const estado = { combustivelId:"glp", unidadeId:"kg", efAtual:1, efBio:1, preco:0, planoIdx:0, bioId:"biometano" };
+
+/* Anima a transição numérica de um campo de resultado. */
+function setResultado(el, alvo, formatter){
+  if(el._raf) cancelAnimationFrame(el._raf);
+  const ini = el._val || 0, dur = 380, t0 = performance.now();
+  const passo = now => {
+    const p = Math.min(1,(now-t0)/dur);
+    const e = 1-Math.pow(1-p,3);
+    const v = ini + (alvo-ini)*e;
+    el.textContent = formatter(v);
+    if(p<1) el._raf = requestAnimationFrame(passo); else el._val = alvo;
+  };
+  el._raf = requestAnimationFrame(passo);
+}
+function flash(card){ card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash"); }
+
+/* Monta select de combustíveis e segmentos de unidade. */
+function montarCombustiveis(){
+  const sel = $("#combustivel");
+  sel.innerHTML = Object.entries(COMBUSTIVEIS)
+    .map(([id,c]) => `<option value="${id}">${c.nome}</option>`).join("");
+  sel.value = estado.combustivelId;
+  montarUnidades();
+}
+function montarPlanos(){
+  const sel = $("#plano");
+  sel.innerHTML = PLANOS.map((p,i) =>
+    `<option value="${i}">${p.meses} meses de contrato — ${fmtNum(p.desconto*100,0)}% de desconto</option>`
+  ).join("");
+  sel.value = String(estado.planoIdx);
+}
+function montarBio(){
+  const seg = $("#seg-bio");
+  seg.innerHTML = Object.entries(BIOCOMBUSTIVEIS).map(([id,b]) =>
+    `<button type="button" data-b="${id}" class="${id===estado.bioId?"active":""}">${b.nome}</button>`
+  ).join("");
+  seg.querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{
+    estado.bioId = btn.dataset.b;
+    seg.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===btn));
+    renderNotaBio(); recalcular();
+  }));
+  renderNotaBio();
+}
+function renderNotaBio(){
+  const nota = BIOCOMBUSTIVEIS[estado.bioId].nota;
+  const ico = nota.tipo==="aviso"
+    ? `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.6 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`
+    : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>`;
+  $("#bio-nota").className = "bio-nota " + nota.tipo;
+  $("#bio-nota").innerHTML = `${ico}<span>${nota.texto}</span>`;
+}
+function montarUnidades(){
+  const c = COMBUSTIVEIS[estado.combustivelId];
+  const ids = Object.keys(c.unidades);
+  const seg = $("#seg-unidade");
+  // Mantém unidade válida
+  if(!ids.includes(estado.unidadeId)) estado.unidadeId = ids[0];
+  seg.innerHTML = ids.map(id =>
+    `<button type="button" data-u="${id}" class="${id===estado.unidadeId?"active":""}">${c.unidades[id].rotulo}</button>`
+  ).join("");
+  // Esconde o seletor quando há apenas uma unidade
+  $("#field-unidade").style.display = ids.length>1 ? "" : "none";
+  seg.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+    estado.unidadeId = b.dataset.u;
+    seg.querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b));
+    atualizarRotulos(); recalcular();
+  }));
+  atualizarRotulos();
+}
+function rotuloUnidade(){ return COMBUSTIVEIS[estado.combustivelId].unidades[estado.unidadeId].rotulo; }
+function atualizarRotulos(){
+  const u = rotuloUnidade();
+  $("#suf-consumo").textContent = u;
+  $("#tip-unid").textContent = u;
+  $("#r-custo-u").textContent = `por mês · ${fmtPreco(estado.preco)}/${u}`;
+}
+
+/* Renderiza o bloco comercial (economia viável OU mensagem neutra). */
+function renderComercial(r){
+  const box = $("#bloco-comercial");
+  const plano = PLANOS[estado.planoIdx];
+  const legenda = `<p class="sim-nota"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg> Simulação com base nos dados informados. O preço final é garantido somente mediante proposta comercial formal.</p>`;
+
+  if(r.economia > 0){
+    box.innerHTML = `
+      <div class="economy">
+        <div class="top">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg></div>
+          <div class="txt">
+            <small>Economia mensal estimada</small>
+            <div class="big">${fmtBRL(r.economia)}</div>
+            <div class="pct">≈ ${fmtNum(r.pctEcon,1)}% sobre o gasto atual · ${r.bioNome.toLowerCase()} a ${fmtPreco(r.ofertado)}/Nm³</div>
+          </div>
+        </div>
+        <div class="plano-tag">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Plano de <b>${plano.meses} meses</b> · ${fmtNum(plano.desconto*100,0)}% de desconto
+        </div>
+        <div class="bar">
+          <div class="now"><span>Gasto hoje</span><b>${fmtBRL(r.custo)}</b></div>
+          <div class="new"><span>Com ${r.bioNome.toLowerCase()} 4WaTT</span><b>${fmtBRL(r.custoBio)}</b></div>
+        </div>
+      </div>
+
+      <div class="hero-result duo">
+        <div class="half">
+          <div class="rl">Economia no 1º ano</div>
+          <div class="rv" data-anim="${r.economiaAno1}">${fmtBRL(r.economiaAno1)}</div>
+          <div class="ru">acumulado em 12 meses</div>
+        </div>
+        <div class="half">
+          <div class="rl">Economia no contrato</div>
+          <div class="rv" data-anim="${r.economiaContrato}">${fmtBRL(r.economiaContrato)}</div>
+          <div class="ru">${plano.meses} meses · reajuste de 12% a.a.</div>
+        </div>
+      </div>
+      ${legenda}`;
+    box.querySelectorAll(".duo .rv").forEach(el=>{
+      const alvo = parseFloat(el.dataset.anim)||0; el._val = 0;
+      setResultado(el, alvo, v=>fmtBRL(v));
+    });
+  } else {
+    // Mesmo sem economia direta, os valores ficam visíveis (sem prometer economia)
+    box.innerHTML = `
+      <div class="economy sim">
+        <div class="top">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 15 3-3 3 2 4-5"/></svg></div>
+          <div class="txt">
+            <small>Estimativa da simulação</small>
+            <div class="big">${fmtPreco(r.ofertado)}<span class="un">/Nm³</span></div>
+            <div class="pct">${r.bioNome} · plano de ${plano.meses} meses</div>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="now"><span>Gasto hoje</span><b>${fmtBRL(r.custo)}</b></div>
+          <div class="new alt"><span>Estimativa com ${r.bioNome.toLowerCase()}</span><b>${fmtBRL(r.custoBio)}</b></div>
+        </div>
+      </div>
+      <div class="neutral">
+        <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg></div>
+        <p>Para este combustível, o maior valor da migração costuma estar nos <b>ganhos operacionais e ambientais</b>. Fale com um especialista 4WaTT para uma proposta sob medida.</p>
+      </div>
+      ${legenda}`;
+  }
+}
+
+/* Renderiza a memória de cálculo (sem expor regra comercial interna). */
+function renderMemoria(r, entradas){
+  const u = rotuloUnidade();
+  const bio = BIOCOMBUSTIVEIS[estado.bioId];
+  $("#memo-conteudo").innerHTML = `
+    <div class="row"><div class="k"><b>1 · Energia do combustível</b><small>${fmtNum(entradas.consumo)} ${u} × ${fmtNum(r.mjPorUnidade)} MJ/${u}</small></div><div class="v">${fmtInt(r.brutaMJ)} MJ</div></div>
+    <div class="row"><div class="k"><b>2 · Energia útil entregue</b><small>aplicando eficiência de ${fmtNum(estado.efAtual*100,0)}%</small></div><div class="v">${fmtInt(r.utilMJ)} MJ</div></div>
+    <div class="row"><div class="k"><b>3 · Referência energética</b><small>÷ ${fmtNum(CONFIG.MMBTU_TO_MJ,3)} MJ/MMBtu</small></div><div class="v">${fmtNum(r.mmbtu)} MMBtu</div></div>
+    <div class="row"><div class="k"><b>4 · ${r.bioNome} equivalente</b><small>÷ (${fmtNum(bio.pci())} MJ/Nm³ × ${fmtNum(estado.efBio*100,0)}%)</small></div><div class="v">${fmtNum(r.volumeBio)} Nm³</div></div>
+    <div class="row"><div class="k"><b>5 · Custo atual</b><small>${fmtNum(entradas.consumo)} ${u} × ${fmtPreco(entradas.preco)}</small></div><div class="v">${fmtBRL(r.custo)}</div></div>
+    <div class="row"><div class="k"><b>6 · Preço de equilíbrio</b><small>custo atual ÷ volume de ${r.bioNome.toLowerCase()}</small></div><div class="v">${fmtPreco(r.precoEq)}/Nm³</div></div>`;
+}
+
+/* Atualiza links de CTA com o contexto da simulação (pronto para CRM). */
+function atualizarCTA(r, entradas, valido){
+  const u = rotuloUnidade();
+  const nome = COMBUSTIVEIS[estado.combustivelId].nome;
+  let msg = "Olá! Vim pela calculadora da 4WaTT e gostaria de uma proposta.";
+  if(valido){
+    const plano = PLANOS[estado.planoIdx];
+    msg = `Olá! Simulei a conversão no site da 4WaTT:%0A`+
+          `• Combustível atual: ${nome}%0A`+
+          `• Migrar para: ${r.bioNome}%0A`+
+          `• Consumo: ${fmtNum(entradas.consumo)} ${u}/mês%0A`+
+          `• Custo atual: ${fmtBRL(r.custo)}/mês%0A`+
+          `• ${r.bioNome} equivalente: ${fmtNum(r.volumeBio)} Nm³/mês%0A`+
+          `• Plano de interesse: ${plano.meses} meses%0A`+
+          `Gostaria de uma proposta comercial.`;
+  }
+  $("#cta-whats").href = `https://wa.me/5545991378949?text=${msg}`;
+  $("#cta-mail").href  = `mailto:contato@4watt.tech?subject=${encodeURIComponent("Proposta 4WaTT — simulação no site")}&body=${msg.replace(/%0A/g,"%0D%0A")}`;
+}
+
+/** Loop principal de atualização. */
+function recalcular(){
+  const consumo = parseBR($("#consumo").value);
+  const preco   = estado.preco;
+  estado.efAtual = Math.max(0.01, parseBR($("#ef-atual").value)/100 || CONFIG.EFICIENCIA_PADRAO);
+  estado.efBio   = Math.max(0.01, parseBR($("#ef-bio").value)/100   || CONFIG.EFICIENCIA_PADRAO);
+
+  atualizarRotulos();
+  const valido = consumo>0 && preco>0;
+  $("#hint").style.display = valido ? "none" : "block";
+
+  if(!valido){
+    ["#r-biometano","#r-energia","#r-custo","#r-equiv"].forEach(s=>{const e=$(s);e.textContent="—";e._val=0;});
+    $("#bloco-comercial").innerHTML="";
+    atualizarCTA(null,{consumo,preco},false);
+    return;
+  }
+
+  const entradas = { combustivelId:estado.combustivelId, unidadeId:estado.unidadeId,
+                     consumo, preco, efAtual:estado.efAtual, efBio:estado.efBio,
+                     desconto:PLANOS[estado.planoIdx].desconto, meses:PLANOS[estado.planoIdx].meses,
+                     biocombustivelId:estado.bioId };
+  const r = simular(entradas);
+
+  // Rótulos do biocombustível escolhido
+  $("#lbl-bio-equiv").textContent = r.bioNome;
+  $("#lbl-bio-preco").textContent = r.bioNome.toLowerCase();
+
+  setResultado($("#r-biometano"), r.volumeBio, v=>fmtInt(v));
+  setResultado($("#r-energia"),   r.mmbtu,     v=>fmtNum(v));
+  setResultado($("#r-custo"),     r.custo,     v=>fmtBRL(v));
+  setResultado($("#r-equiv"),     r.ofertado,  v=>fmtPreco(v));
+  $("#r-equiv-sub").textContent = `R$/Nm³ · contrato de ${PLANOS[estado.planoIdx].meses} meses`;
+  [$("#card-energia"),$("#card-custo"),$("#card-equiv")].forEach(flash);
+
+  renderComercial(r);
+  renderMemoria(r, entradas);
+  atualizarCTA(r, entradas, true);
+}
+
+/* ---------- Ligações de eventos ---------- */
+function ligarEventos(){
+  $("#combustivel").addEventListener("change", e=>{
+    estado.combustivelId = e.target.value;
+    montarUnidades(); recalcular();
+  });
+  $("#plano").addEventListener("change", e=>{ estado.planoIdx = parseInt(e.target.value,10)||0; recalcular(); });
+  $("#consumo").addEventListener("input", recalcular);
+  $("#preco").addEventListener("input", e=>{ estado.preco = aplicarMascaraMoeda(e.target); recalcular(); });
+  $("#ef-atual").addEventListener("input", recalcular);
+  $("#ef-bio").addEventListener("input", recalcular);
+
+  const adv = $("#adv-toggle");
+  adv.addEventListener("click", ()=>{
+    adv.classList.toggle("open");
+    $("#adv-panel").classList.toggle("open");
+  });
+}
+
+/* ---------- Cabeçalho: menu mobile, dropdowns e idioma ---------- */
+function ligarChrome(){
+  /* Menu mobile/dropdowns legados removidos — gerenciados pelo site-premium.js */
+  const lang = $("#lang-selector");
+  if(!lang) return;
+  const selected = lang.querySelector(".selected-lang");
+  if(selected){
+    selected.addEventListener("click", e=>{ e.stopPropagation(); lang.classList.toggle("open"); });
+    document.addEventListener("click", e=>{ if(!lang.contains(e.target)) lang.classList.remove("open"); });
+  }
+}
+
+/* ============================================================
+   TESTES (asserts) — caso obrigatório. Resultado no console.
+   ============================================================ */
+function rodarTestes(){
+  const r = simular({combustivelId:"glp",unidadeId:"kg",consumo:2257.76,preco:10.63,efAtual:1,efBio:1,desconto:0.10,meses:12,biocombustivelId:"biometano"});
+  const perto=(a,b,t)=>Math.abs(a-b)<=t;
+  const casos=[
+    ["custo atual ≈ R$ 24.000",      perto(r.custo,24000,1)],
+    ["energia ≈ 99,45 MMBtu",         perto(r.mmbtu,99.45,0.05)],
+    ["biometano ≈ 2.861 Nm³",        perto(r.volumeBio,2861,1.5)],
+    ["preço equivalente ≈ R$ 8,39",  perto(r.precoEq,8.39,0.01)],
+  ];
+  const ok = casos.every(c=>c[1]);
+  console.log(`%c[4WaTT] Testes da calculadora: ${ok?"TODOS OK ✓":"FALHA ✗"}`,`color:${ok?"#13A088":"#c0392b"};font-weight:bold`);
+  console.table(casos.map(([nome,passou])=>({teste:nome,resultado:passou?"OK":"FALHOU"})));
+}
+
+/* ---------- Inicialização ---------- */
+document.addEventListener("DOMContentLoaded", ()=>{
+  montarCombustiveis();
+  montarPlanos();
+  montarBio();
+  ligarEventos();
+  ligarChrome();
+  recalcular();
+  rodarTestes();
+});
+</script>
+<script src="../assets/js/languages.js?v=1.9"></script>
+<script src="/assets/js/languages-pages.js?v=1.1"></script>
+<script src="../assets/js/main.js?v=1.4"></script>
+<script src="../assets/js/site-premium.js?v=2.2"></script>
+</body>
+</html>

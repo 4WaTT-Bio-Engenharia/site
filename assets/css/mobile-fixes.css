@@ -1,0 +1,660 @@
+/* ============================================================
+   4WaTT — Mobile Fixes
+   Corrigir responsividade mobile em todas as páginas
+   Carregado como último stylesheet (maior especificidade)
+   ============================================================ */
+
+/* ─── 1. Previne scroll horizontal global ─── */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ─── 2. Imagens sempre contidas ─── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── 3. Grids inline com minmax grande — evita overflow ─── */
+/* Garante que grids auto-fit não vazem em telas estreitas */
+.main-content,
+.section,
+[class*="section"] {
+  overflow-x: hidden;
+}
+
+/* ─── 4a. Tablets intermediários ≤ 600px ─── */
+@media (max-width: 600px) {
+  /* Grids de 3 colunas: cai para 2 colunas antes do breakpoint de 768px */
+  div[style*="display:grid"][style*="repeat(3"],
+  div[style*="display: grid"][style*="repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Parceiros e logos: 3 colunas → 2 colunas */
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Flow steps: até 2 por linha */
+  .flow-steps .step {
+    flex: 0 0 calc(50% - 12px) !important;
+  }
+
+  /* Ecosistema 5 colunas → 2 */
+  .ecosystem-grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Navbar padding lateral menor */
+  .nav {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ─── 4. Ajustes mobile ≤ 768px ─── */
+@media (max-width: 768px) {
+
+  /* Grids de cards com minmax fixo: força 1 coluna */
+  .news-grid,
+  [class*="card-grid"],
+  [class*="cards-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Grids inline com minmax(350px): força 1 coluna no mobile */
+  div[style*="minmax(350px"],
+  div[style*="minmax(350 px"],
+  div[style*="minmax(300px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero buttons: empilha verticalmente */
+  .hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .hero-ctas a,
+  .hero-ctas button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Counter box (biometano e páginas com destaque numérico) */
+  .counter-box {
+    padding: 32px 20px !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Barra de filtros (biometano) */
+  .filters-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .filter-group {
+    width: 100% !important;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    width: 100% !important;
+  }
+
+  /* Mapa (biometano) */
+  .map-container,
+  #map {
+    height: 300px !important;
+  }
+
+  /* Tabelas responsivas */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Inputs e selects sempre 100% */
+  input,
+  select,
+  textarea {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Padding de hero sections inline (padding-top mínimo para navbar) */
+  .hero {
+    padding-top: 110px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Flow steps: 2 por linha no mobile */
+  .flow-steps {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .flow-steps .step {
+    flex: 0 0 calc(50% - 14px) !important;
+    min-width: 0 !important;
+  }
+
+  /* Parceiros / logos: 2 por linha */
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Milestone cards */
+  .milestone-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100px;
+  }
+
+  /* Seções com padding inline excessivo */
+  section[style*="padding:140px"],
+  section[style*="padding: 140px"] {
+    padding-top: 110px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Grids de stats inline */
+  div[style*="display:grid"][style*="repeat(4"],
+  div[style*="display: grid"][style*="repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  div[style*="display:grid"][style*="repeat(3"],
+  div[style*="display: grid"][style*="repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Max-width de conteúdo: nunca vaza */
+  .container,
+  .section,
+  .main-content {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Projetos diff grid */
+  .proj-diff__grid,
+  .proj-diff__grid > * {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Actuation grid */
+  .actuation-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Botões CTA na seção final */
+  .cta-sticky .hero-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .cta-sticky .hero-buttons a,
+  .cta-sticky .hero-buttons button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ─── 5. Ajustes extra pequenos ≤ 480px ─── */
+@media (max-width: 480px) {
+
+  /* Flow steps: 1 por linha */
+  .flow-steps .step {
+    flex: 0 0 100% !important;
+  }
+
+  /* Grids inline: força sempre 1 coluna */
+  div[style*="display:grid"][style*="minmax(350"],
+  div[style*="display: grid"][style*="minmax(350"],
+  div[style*="display:grid"][style*="minmax(340"],
+  div[style*="display: grid"][style*="minmax(340"],
+  div[style*="display:grid"][style*="minmax(320"],
+  div[style*="display: grid"][style*="minmax(320"],
+  div[style*="display:grid"][style*="minmax(300"],
+  div[style*="display: grid"][style*="minmax(300"],
+  div[style*="display:grid"][style*="minmax(250"],
+  div[style*="display: grid"][style*="minmax(250"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="display:grid"][style*="repeat(2"],
+  div[style*="display: grid"][style*="repeat(2"],
+  div[style*="display:grid"][style*="1fr 1fr"],
+  div[style*="display: grid"][style*="1fr 1fr"],
+  form[style*="display:grid"][style*="1fr 1fr"],
+  form[style*="display: grid"][style*="1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats grids inline: 1 coluna */
+  div[style*="display:grid"][style*="repeat(3"],
+  div[style*="display: grid"][style*="repeat(3"],
+  div[style*="display:grid"][style*="repeat(4"],
+  div[style*="display: grid"][style*="repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Textos hero: ajusta tamanho mínimo */
+  h1, .hero h1, .page-hero__title, .bm-hero h1 {
+    font-size: clamp(26px, 7.5vw, 42px) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Subtítulos */
+  h2, .section-title, .page-hero__title {
+    font-size: clamp(20px, 6vw, 34px) !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: clamp(18px, 5vw, 28px) !important;
+  }
+
+  /* Padding de seções */
+  .section, section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Ecosistema grid 5 */
+  .ecosystem-grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Input circles não transbordam */
+  .input-circle,
+  .input-circle img {
+    width: 70px !important;
+    height: 70px !important;
+    min-width: 70px !important;
+    min-height: 70px !important;
+  }
+
+  /* Step icons (ciclo) */
+  .step-icon img {
+    width: 65px !important;
+    height: 65px !important;
+    min-width: 65px !important;
+    min-height: 65px !important;
+  }
+
+  /* Hero sections: garante visibilidade do texto */
+  .hero, .bm-hero, .page-hero {
+    min-height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .hero-content, .bm-hero .container, .page-hero__content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Botões hero empilhados */
+  .hero-buttons, .bm-hero__actions, .page-hero__ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons a, .hero-buttons button,
+  .bm-hero__actions a, .bm-hero__actions button,
+  .page-hero__ctas a, .page-hero__ctas button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Grids de cards específicos */
+  .usinas-grid,
+  .market-grid, #mp-grid,
+  .process-steps,
+  .quality-grid,
+  .volumes-grid,
+  .proj-diff__grid,
+  .actuation-grid,
+  .partners-grid,
+  .trust-carousel__track,
+  .ecosystem-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards de usina e marketplace */
+  .usina-card, .market-card, .quality-card, .volume-card {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Formulários: inputs sempre 100% */
+  .form-field, .ui-field, .form-group {
+    width: 100% !important;
+  }
+
+  .form-input, .ui-input, .ui-select, .ui-textarea,
+  input[type="text"], input[type="email"], input[type="tel"],
+  select, textarea {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 16px !important; /* evita zoom iOS */
+  }
+
+  /* Tabelas responsivas */
+  table, .specs-table, .process-specs {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100% !important;
+  }
+
+  /* Mapa biometano */
+  #map {
+    height: 280px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Contato shell */
+  .invest-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .invest-contact-shell {
+    padding: 28px 16px !important;
+  }
+
+  /* Footer grid */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  /* Pipeline / process steps */
+  .pipeline-step, .process-step {
+    padding: 16px !important;
+  }
+
+  /* Modal em mobile */
+  .modal-content, .glass-card {
+    max-width: calc(100vw - 32px) !important;
+    margin: 16px !important;
+    padding: 20px !important;
+  }
+
+  /* FAQ items */
+  .faq-item, .accordion__item {
+    padding: 16px !important;
+  }
+
+  /* Imagens inline grandes */
+  img[style*="width:"], img[style*="max-width:"] {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Evita texto muito pequeno */
+  p, span, li, td, th, label {
+    font-size: max(14px, inherit) !important;
+  }
+
+  /* Garante que elementos reveal sejam visíveis em mobile
+     (o IntersectionObserver pode falhar em telas muito pequenas) */
+  .reveal, .reveal-left, .reveal-right, .reveal-up,
+  .stagger-item, .cin-reveal, .cin-reveal-scale,
+  .cin-reveal-left, .cin-reveal-right, [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* ─── 6. Ajustes ultra-pequenos ≤ 390px (Galaxy S25 / iPhone 17) ─── */
+@media (max-width: 390px) {
+
+  h1, .hero h1, .page-hero__title, .bm-hero h1 {
+    font-size: clamp(24px, 7vw, 38px) !important;
+  }
+
+  h2, .section-title {
+    font-size: clamp(18px, 5.5vw, 30px) !important;
+  }
+
+  h3 {
+    font-size: clamp(16px, 4.5vw, 24px) !important;
+  }
+
+  /* Navbar mais compacta */
+  #main-header .navbar {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #main-header .logo img {
+    max-width: 110px !important;
+  }
+
+  .menu-toggle {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Garante 1 coluna em TODOS os grids */
+  .usinas-grid,
+  .market-grid, #mp-grid,
+  .process-steps,
+  .quality-grid,
+  .volumes-grid,
+  .proj-diff__grid,
+  .actuation-grid,
+  .partners-grid,
+  .ecosystem-grid-5,
+  .news-grid,
+  .trust-carousel__track {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards não transbordam */
+  .usina-card, .market-card, .quality-card,
+  .volume-card, .process-step, .pipeline-step {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Seções com padding mínimo */
+  .section, section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .hero, .bm-hero, .page-hero {
+    padding-top: 90px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Botões menores mas tocáveis */
+  .btn, .btn-primary, .btn-secondary, .btn-outline {
+    min-height: 48px !important;
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+  }
+
+  /* Formulários */
+  .form-input, .ui-input, .ui-select, .ui-textarea,
+  input, select, textarea {
+    font-size: 16px !important; /* previne zoom iOS */
+    padding: 12px 14px !important;
+  }
+
+  /* Mapa */
+  #map {
+    height: 240px !important;
+  }
+
+  /* Filtros biometano */
+  .filters-bar {
+    padding: 12px !important;
+  }
+
+  .filter-group select {
+    font-size: 14px !important;
+  }
+
+  /* Contato */
+  .invest-contact-shell {
+    padding: 20px 12px !important;
+    border-radius: 20px !important;
+  }
+
+  .invest-contact-form-card {
+    padding: 18px 12px !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    gap: 20px !important;
+  }
+
+  /* Evita scroll horizontal em qualquer grid inline */
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Imagens com largura inline */
+  img[style*="width"] {
+    max-width: 100% !important;
+  }
+
+  /* Hero biometano: título não transborda */
+  .bm-hero .bm-hero__title,
+  .bm-hero h1 {
+    font-size: clamp(22px, 7vw, 36px) !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Hero investidor: título não transborda */
+  .investidor-hero h1,
+  .investidor-hero .page-hero__title {
+    font-size: clamp(22px, 7vw, 36px) !important;
+    word-break: break-word !important;
+  }
+
+  /* Logo ANP e imagens grandes em mobile */
+  img[src*="anp"],
+  img[src*="ANP"],
+  .about-section__logo,
+  .partner-logo {
+    max-width: 120px !important;
+    height: auto !important;
+  }
+
+  /* Exceções: imagens de cards e blocos editoriais não devem encolher no mobile */
+  .feature-item__img,
+  .feature-card__img,
+  .cert-card__img,
+  .quality-card__img,
+  .card-article__image img,
+  .info-card__image--biometano,
+  img.feature-item__img[src*="anp"],
+  img.feature-item__img[src*="ANP"],
+  img.cert-card__img[src*="anp"],
+  img.cert-card__img[src*="ANP"],
+  img.info-card__image--biometano[src*="anp"],
+  img.info-card__image--biometano[src*="ANP"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* O arquivo da ANP tende a parecer menor no mesmo frame; aproxima só ele no mobile */
+  img.feature-item__img[src*="anp"],
+  img.feature-item__img[src*="ANP"],
+  img.cert-card__img[src*="anp"],
+  img.cert-card__img[src*="ANP"],
+  .card-article__image img[src*="anp"],
+  img.info-card__image--biometano[src*="anp"],
+  img.info-card__image--biometano[src*="ANP"] {
+    max-width: none !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: scale(1.12) !important;
+    transform-origin: center center !important;
+  }
+
+  /* Força formulários em 1 coluna em 390px */
+  form[style*="grid-template-columns"],
+  form .form-grid-2,
+  .form-grid-2,
+  #form-investidor > div[style*="grid-template-columns"],
+  .invest-contact-grid,
+  .two-col,
+  .two-col__layout,
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cases / cards em 2 colunas → 1 */
+  .case-grid, .cases-grid, .project-grid,
+  .cards-row, .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero investidor: corrige título cortado */
+  .investidor-hero .page-hero__title,
+  .investidor-hero h1 {
+    font-size: clamp(20px, 6.5vw, 32px) !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero biometano: corrige título */
+  .bm-hero .bm-hero__title {
+    font-size: clamp(20px, 6.5vw, 32px) !important;
+    word-break: break-word !important;
+  }
+
+  /* Contador biometano */
+  .counter-box {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Hero soluções: título não transborda */
+  .page-hero h1,
+  .page-hero .page-hero__title {
+    font-size: clamp(20px, 6.5vw, 32px) !important;
+    word-break: break-word !important;
+  }
+
+  /* Conteúdo do hero com padding seguro */
+  .bm-hero .container,
+  .page-hero .container,
+  .investidor-hero .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}

@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<base href="/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="bm_page_title">Biometano Certificado ANP | Marketplace 4WaTT</title>
+  <meta name="description" data-i18n-placeholder="bm_meta_desc" content="Marketplace de biometano certificado ANP 854/2021. 12.500 Nm³/dia disponíveis. Contratos flexíveis, entrega CNG/LNG/virtual.">
+  <link rel="canonical" href="https://4watt.tech/biometano/">
+  <link rel="icon" href="assets/img_old/iconeq.png" type="image/png">
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+  <link rel="stylesheet" href="assets/css/custom_v2.css?v=2">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/page-common.css">
+  <link rel="stylesheet" href="assets/css/design-system-3d.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+        /* Fix for horizontal navbar and footer */
+        .navbar {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        .nav-links {
+            display: flex !important;
+            flex-direction: row !important;
+            list-style: none !important;
+            gap: 2rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .footer-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 2rem !important;
+            width: 100% !important;
+        }
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        .mobile-home-btn { display:none; color:#fff; font-size:1.2rem; padding:8px; margin-left:8px; text-decoration:none; }
+        @media (max-width: 992px) {
+            .mobile-home-btn { display:inline-flex!important; align-items:center; justify-content:center; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .main-footer {
+                transform: none !important;
+                width: 100% !important;
+            }
+            .nav-links {
+                display: none !important; /* Hide on mobile by default, handled by JS */
+            }
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
+
+        /* User preference: Left alignment */
+        body, p, h1, h2, h3, h4, h5, h6, .hero-sub, .section p, .glass-card {
+            text-align: left !important;
+        }
+        .container, .container-sm, .container-lg {
+            display: block !important;
+            width: 100% !important;
+        }
+        .hero-content__inner, .footer-grid {
+            align-items: flex-start !important;
+        }
+        .hero-buttons, .hero-confidence {
+            justify-content: flex-start !important;
+        }
+        p {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            color: #000;
+        }
+        @media (min-width: 1025px) {
+            .menu-toggle { display: none !important; }
+        }
+    </style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* A's CSS vars */
+    :root {
+      --color-roxo-deep: #2A0025;
+      --color-roxo: #3D0036;
+      --color-verde: #00A089;
+      --color-verde-light: #00C4A9;
+      --color-laranja: #DBAA0F;
+      --bg-void: #050208;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --text-primary: #EAEAEA;
+      --text-dim: rgba(255, 255, 255, 0.65);
+      --text-muted: rgba(255, 255, 255, 0.4);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.06);
+      --border-subtle: rgba(255, 255, 255, 0.05);
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-void);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar fixed */
+    #main-header {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(5, 2, 8, 0.95) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+    
+    /* Hero fixed */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+      background: #ffffff;
+      color: #1a1a1a;
+      overflow: hidden;
+    }
+    .hero-container-flex {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: stretch !important;
+      gap: 60px;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      width: 98% !important;
+      max-width: 1600px !important;
+      margin: 0 auto 0 2% !important;
+    }
+    .hero-visual {
+      flex: 1.8;
+      max-width: 70%;
+      display: flex;
+    }
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-image-wrapper:hover {
+      transform: translateY(-8px);
+    }
+    .hero-main-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-img-decoration {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.1);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      margin: 0 !important;
+      padding-left: 20px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 63% 63% at 0% 0%, rgba(61,0,54,0.6) 0%, rgba(61,0,54,0.34) 26%, rgba(61,0,54,0.14) 46%, transparent 78%),
+        radial-gradient(ellipse 63% 63% at 100% 0%, rgba(61,0,54,0.6) 0%, rgba(61,0,54,0.34) 26%, rgba(61,0,54,0.14) 46%, transparent 78%),
+        radial-gradient(ellipse 63% 63% at 0% 100%, rgba(61,0,54,0.5) 0%, rgba(61,0,54,0.28) 26%, rgba(61,0,54,0.12) 46%, transparent 78%),
+        radial-gradient(ellipse 63% 63% at 100% 100%, rgba(61,0,54,0.5) 0%, rgba(61,0,54,0.28) 26%, rgba(61,0,54,0.12) 46%, transparent 78%),
+        radial-gradient(ellipse at 20% 30%, rgba(0,160,137,0.035) 0%, transparent 58%),
+        radial-gradient(ellipse at 80% 70%, rgba(61,0,54,0.04) 0%, transparent 60%),
+        #ffffff;
+      z-index: 0;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 50px;
+      background: rgba(0,160,137,0.06);
+      border: 1px solid rgba(0,160,137,0.15);
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-verde);
+      margin-bottom: 32px;
+      margin-left: 25%;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-verde);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(45px, 10vw, 115px);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      color: var(--color-roxo);
+      text-align: left !important;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .hero-title-accent {
+      display: block;
+      font-size: 0.27em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-verde-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .hero-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 500;
+      color: #000000;
+      max-width: 700px;
+      margin: 0 0 40px 25% !important;
+      line-height: 1.5;
+      text-align: left !important;
+    }
+    .counter-box {
+      background: #ffffff;
+      border: 1px solid #eee;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border-radius: 24px;
+      padding: 32px 48px;
+      margin-bottom: 40px;
+      margin-left: 20% !important;
+      backdrop-filter: blur(20px);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .counter-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(56px, 8vw, 96px);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-verde-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .counter-label {
+      font-size: 14px;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 12px;
+      width: 130%;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-verde-light) 100%);
+      color: #000;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(0,160,137,0.3);
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-left: 20% !important;
+    }
+    .hero-buttons .btn-primary {
+      background: linear-gradient(135deg, var(--color-roxo) 0%, var(--color-roxo-deep) 100%) !important;
+      color: #ffffff !important;
+      box-shadow: 0 10px 32px rgba(61, 0, 54, 0.28);
+    }
+    .hero-buttons .btn-hero-map,
+    .hero-buttons .btn-hero-map.btn-primary {
+      background: linear-gradient(135deg, var(--color-roxo) 0%, var(--color-roxo-deep) 100%) !important;
+      border: 0 !important;
+      color: #ffffff !important;
+      box-shadow: 0 14px 32px rgba(61, 0, 54, 0.28);
+      padding: 16px 100px !important;
+    }
+    .hero-buttons .btn-hero-map:hover,
+    .hero-buttons .btn-hero-map:active,
+    .hero-buttons .btn-hero-map:focus {
+      background: linear-gradient(135deg, var(--color-roxo) 0%, var(--color-roxo-deep) 100%) !important;
+      color: #ffffff !important;
+      border: 0 !important;
+      box-shadow: 0 14px 32px rgba(61, 0, 54, 0.28) !important;
+      outline: none !important;
+    }
+    .hero-buttons .btn-primary:hover {
+      box-shadow: 0 12px 36px rgba(61, 0, 54, 0.34) !important;
+    }
+    .hero-content {
+      pointer-events: auto !important;
+    }
+    
+    /* Map from A */
+    .map-section {
+      background: #ffffff; /* Fundo Branco */
+      padding: 100px 24px;
+    }
+    .map-section .section-title {
+      color: #1a1a1a !important;
+    }
+    .map-section .section-subtitle {
+      color: #4b5563 !important;
+    }
+    .filters-bar {
+      background: #ffffff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .filter-label {
+      font-size: 11px;
+      color: #6b7280; /* Texto Cinza */
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .filter-select {
+      padding: 12px 16px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      min-width: 180px;
+      cursor: pointer;
+      outline: none;
+    }
+    .filter-select:focus {
+      border-color: var(--color-verde);
+    }
+    
+    #map {
+      height: 500px;
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    #map img {
+      max-width: none !important;
+      height: auto !important;
+    }
+    
+    /* Volumes from A */
+    #volumes {
+      background: #f8f9fa; /* Cinza bem claro */
+      padding: 100px 24px;
+    }
+    .section-title {
+      color: #1a1a1a !important;
+    }
+    .overline {
+      color: var(--color-verde) !important;
+    }
+    .volumes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      max-width: 1600px;
+      width: min(100% - 48px, 1600px);
+      margin: 0 auto;
+    }
+    .volume-card {
+      background: #ffffff;
+      border: 1px solid #eee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+    }
+    .volume-card-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .volume-icon {
+      width: 160px;
+      height: 160px;
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .volume-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 65% center;
+    }
+    .volume-region {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #1a1a1a;
+    }
+    .volume-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--color-verde);
+      margin-bottom: 12px;
+    }
+    .volume-bar {
+      height: 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .volume-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-verde) 0%, var(--color-verde-light) 100%);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 1.5s ease;
+    }
+    .volume-label {
+      font-size: 13px;
+      color: #000000;
+      margin-top: 8px;
+    }
+    
+    /* Usinas enhanced from A */
+    .usinas-grid-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .usinas-grid {
+      display: inline-grid;
+      grid-template-columns: repeat(3, 400px);
+      gap: 28px;
+      padding: 0 24px;
+    }
+    @media (max-width: 1300px) {
+      .usinas-grid {
+        grid-template-columns: repeat(2, 400px);
+      }
+    }
+    @media (max-width: 860px) {
+      .usinas-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+    .usina-card {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #eee;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+    .usina-card:hover {
+      border-color: rgba(0,160,137,0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    }
+    .usina-image {
+      height: 200px;
+      background-size: cover;
+      background-position: 65% center;
+      position: relative;
+    }
+    .usina-status {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .usina-status.disponivel {
+      background: rgba(0,160,137,0.1);
+      color: #007d6a;
+      border: 1px solid rgba(0,160,137,0.3);
+    }
+    .usina-status.em-breve {
+      background: rgba(255,193,7,0.15);
+      color: #b48a00;
+      border: 1px solid rgba(255,193,7,0.3);
+    }
+    .usina-content {
+      padding: 28px;
+    }
+    .usina-location {
+      font-size: 13px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .usina-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      color: #00ffff; /* Titulo Ciano */
+    }
+    .usina-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .spec-label {
+      font-size: 11px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .spec-value {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #ffffff; /* Texto Branco */
+    }
+    .usina-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      padding: 6px 14px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .badge.verde {
+      background: rgba(0,160,137,0.1);
+      border-color: rgba(0,160,137,0.3);
+      color: #007d6a;
+    }
+    .usina-link {
+      color: var(--color-verde);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    .usina-status.disponivel {
+      background: rgba(0,160,137,0.2);
+      color: var(--color-verde-light);
+      border: 1px solid rgba(0,160,137,0.3);
+    }
+    .usina-status.em-breve {
+      background: rgba(255,193,7,0.2);
+      color: #FFC107;
+      border: 1px solid rgba(255,193,7,0.3);
+    }
+    .usina-content {
+      padding: 28px;
+    }
+    .usina-location {
+      font-size: 13px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .usina-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+      color: #00ffff; /* Titulo Ciano */
+    }
+    .usina-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .spec-label {
+      font-size: 11px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .spec-value {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #ffffff; /* Texto Branco */
+    }
+    .usina-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+    .badge.verde {
+      background: rgba(0,160,137,0.15);
+      border-color: rgba(0,160,137,0.3);
+      color: var(--color-verde-light);
+    }
+    
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Existing B styles preserved... */
+    /* ===== HERO VERDE ===== (overridden by new hero class) */
+
+    .bm-hero {
+      background: linear-gradient(135deg, #003830 0%, #005045 40%, #008070 100%);
+      color: white;
+      padding: 140px 0 100px;
+      position: relative;
+      overflow: hidden;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+    .bm-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 85% 30%, rgba(0,196,169,0.2) 0%, transparent 55%),
+                  radial-gradient(ellipse 50% 50% at 5% 80%, rgba(45,172,182,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .bm-hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,196,169,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .bm-hero .container { position: relative; z-index: 1; }
+    .bm-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: var(--weight-bold);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: var(--space-6);
+    }
+    .bm-hero__badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: rgba(0,255,200,0.8);
+      border-radius: 50%;
+      animation: pulse-verde 2s ease-in-out infinite;
+    }
+    .bm-hero h1 {
+      font-size: var(--text-h1);
+      font-family: var(--font-display);
+      font-weight: var(--weight-extrabold);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: white;
+      max-width: 800px;
+      margin-bottom: var(--space-6);
+    }
+    .bm-hero h1 em {
+      font-style: normal;
+      color: #7fffd4;
+    }
+    .bm-hero__lead {
+      font-size: var(--text-lead);
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      line-height: 1.75;
+      margin-bottom: var(--space-10);
+    }
+    .bm-hero__actions {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .bm-hero__actions .btn-primary {
+      background: white;
+      color: var(--color-verde);
+      border-color: white;
+    }
+    .bm-hero__actions .btn-primary:hover {
+      background: rgba(255,255,255,0.9);
+      border-color: rgba(255,255,255,0.9);
+    }
+
+    /* ===== QUALIDADE (Cards Estilo Index) ===== */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .quality-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8f8fb 100%);
+      padding: 0;
+      border-radius: 22px;
+      border: 1px solid rgba(58, 9, 64, 0.08);
+      box-shadow: 0 18px 40px rgba(20, 16, 34, 0.08);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .quality-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(20, 16, 34, 0.12);
+      border-color: rgba(0, 160, 137, 0.22);
+    }
+
+    .quality-card__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: 65% 64%;
+    }
+
+    .quality-card__content {
+      padding: 1.5rem 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .quality-card__icon {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(0, 160, 137, 0.1);
+      color: #007a69;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.95rem;
+    }
+
+    .quality-card__title {
+      color: var(--color-roxo);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+      line-height: 1.18;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .quality-card__title-line {
+      display: block;
+    }
+
+    .section-heading p {
+      color: #000000 !important;
+      font-weight: 600 !important;
+      font-size: 1.1rem;
+      opacity: 1 !important;
+    }
+
+    .quality-card__text {
+      color: #111111 !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 500 !important;
+      line-height: 1.68;
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    @media (max-width: 768px) {
+      .quality-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+      .quality-card__img {
+        height: 180px;
+      }
+    }
+
+    /* ===== MAPA USINAS ===== */
+    .usinas-totals {
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+    }
+    .usinas-total-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .usinas-total-item .number {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: var(--weight-black);
+      color: var(--color-verde);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .usinas-total-item .label {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: var(--weight-semibold);
+      color: var(--color-text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .usinas-sep {
+      width: 1px;
+      height: 40px;
+      background: var(--color-border);
+    }
+    /* ===== NOVO LAYOUT MAPA COM MENU LATERAL ===== */
+    .map-wrapper {
+      display: flex;
+      gap: 3rem;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem;
+      border: 1px solid #f0f0f0;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+      align-items: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .map-menu {
+      flex: 0 0 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .map-menu-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-roxo);
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-verde);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .map-menu-item {
+      padding: 1rem 1.25rem;
+      background: #f9f9f9;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .map-menu-item:hover {
+      background: #fff;
+      border-color: var(--color-verde);
+      box-shadow: 0 4px 12px rgba(0,160,137,0.1);
+      transform: translateX(5px);
+    }
+
+    .map-menu-item__name {
+      font-weight: 700;
+      color: var(--color-roxo);
+      font-size: 1rem;
+    }
+
+    .map-menu-item__loc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .map-visual {
+      flex: 1;
+      position: relative;
+    }
+
+    .map-visual img {
+      width: 40%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));
+    }
+
+    @media (max-width: 992px) {
+      .map-wrapper {
+        flex-direction: column;
+        padding: 2rem;
+      }
+      .map-menu {
+        flex: 1;
+        width: 100%;
+        order: 2;
+      }
+      .map-visual {
+        order: 1;
+        width: 100%;
+      }
+    }
+
+    #mapa-usinas {
+      width: 100%;
+      height: auto !important;
+      min-height: unset !important;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: none !important;
+      border: none !important;
+      margin-bottom: var(--space-8);
+    }
+    .mapa-usinas-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      background: linear-gradient(135deg, #eaf5f3 0%, #f0f8ff 100%);
+    }
+    .mapa-usinas-fallback__title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: var(--weight-bold);
+      color: var(--color-verde);
+    }
+    .mapa-usinas-fallback__text {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      text-align: center;
+      max-width: 380px;
+      line-height: 1.6;
+    }
+    .usinas-filter-bar {
+      margin-bottom: var(--space-6);
+    }
+
+    /* Cards de usina */
+    /* #usinas-grid layout moved to .usinas-grid above */
+    .usina-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      padding: 0;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    }
+    .usina-card__image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .usina-card__body {
+      padding: var(--space-6);
+    }
+    .usina-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(0,160,137,0.2);
+    }
+    .usina-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: var(--space-4);
+    }
+    .usina-card__name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: var(--weight-bold);
+      color: var(--color-roxo);
+      line-height: 1.3;
+    }
+    .usina-card__location {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .usina-card__volume {
+      margin: var(--space-4) 0;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-off-white);
+      border-radius: var(--radius-md);
+    }
+    .usina-card__volume-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: var(--weight-bold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .usina-card__volume-value {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: var(--weight-black);
+      color: var(--color-verde);
+      line-height: 1;
+    }
+    .usina-card__volume-unit {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-weight: normal;
+    }
+    .usina-card__formats {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .usina-card__format-tag {
+      padding: 3px 8px;
+      background: rgba(0,160,137,0.08);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: var(--weight-bold);
+      color: var(--color-verde);
+      letter-spacing: 0.04em;
+    }
+    .usina-card--em-breve {
+      opacity: 0.75;
+    }
+    .usina-card--em-breve .usina-card__volume-value {
+      color: var(--color-laranja);
+    }
+    /* Responsive layout handled in .usinas-grid rules above */
+
+    /* ===== CERTIFICAÇÕES (fundo roxo) ===== */
+    .cert-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+    .cert-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 0;
+      transition: background var(--transition-base), border-color var(--transition-base);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .cert-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(0,196,169,0.35);
+    }
+    .cert-card__img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: 65% 64%;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .cert-card__content {
+      padding: var(--space-8);
+      padding-bottom: var(--space-10);
+      flex: 1;
+    }
+    .cert-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(0,196,169,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: var(--space-4);
+    }
+    .cert-card__title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: var(--weight-bold);
+      color: #ffffff;
+      margin-bottom: var(--space-2);
+    }
+    .cert-card__authority {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: var(--weight-bold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: var(--space-4);
+    }
+    .cert-card__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.98);
+      line-height: 1.78;
+      text-wrap: pretty;
+    }
+    .rastreabilidade-box {
+      margin-top: var(--space-12);
+      padding: var(--space-8) var(--space-10);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-6);
+    }
+    .rastreabilidade-box__icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+    .rastreabilidade-box__title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: var(--weight-bold);
+      color: #ffffff;
+      margin-bottom: var(--space-3);
+    }
+    .rastreabilidade-box__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.98);
+      line-height: 1.78;
+      padding: 0 var(--space-2);
+      text-wrap: pretty;
+    }
+    @media (max-width: 768px) {
+      .cert-cards { grid-template-columns: 1fr; }
+      .rastreabilidade-box { flex-direction: column; }
+    }
+
+    /* ===== PARA QUEM É ===== */
+    .compradores-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-10);
+    }
+    .comprador-card {
+      padding: 0;
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .comprador-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: rgba(0,160,137,0.2);
+    }
+    .comprador-card__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: 65% center;
+    }
+    .comprador-card__content {
+      padding: 1.5rem 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .comprador-card__icon {
+      font-size: 32px;
+      margin-bottom: var(--space-3);
+      display: block;
+    }
+    .comprador-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--color-roxo);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .comprador-card__text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #111111;
+      line-height: 1.62;
+      margin: 0;
+    }
+    @media (max-width: 1024px) {
+      .compradores-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .compradores-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .section-heading.centered .text-h2 {
+        white-space: normal !important;
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+        line-height: 1.08;
+      }
+      .comprador-card {
+        text-align: left;
+      }
+      .comprador-card__img {
+        height: 190px;
+      }
+      .comprador-card__content {
+        padding: 1.25rem 1.25rem 1.4rem;
+        gap: 0.7rem;
+      }
+      .comprador-card__icon {
+        display: none;
+      }
+      .comprador-card__title {
+        font-size: 1.08rem;
+        line-height: 1.25;
+        margin: 0;
+      }
+      .comprador-card__text {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.55;
+        margin: 0;
+      }
+    }
+
+    /* ===== FORMULÁRIO COMPRADOR ===== */
+    .bm-form-section {
+      background: linear-gradient(135deg, var(--color-roxo-deep), #003028);
+      padding: var(--section-py) 0;
+      color: white;
+    }
+    .bm-form-section h2 {
+      font-size: var(--text-h2);
+      font-family: var(--font-display);
+      font-weight: var(--weight-bold);
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+    .bm-form-section__lead {
+      font-size: var(--text-lead);
+      color: white !important;
+      margin-bottom: var(--space-10);
+      max-width: 560px;
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .form-field {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: white;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      color: white;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-verde);
+      background: rgba(255,255,255,0.1);
+    }
+    .form-select option {
+      background: #1a1a1a;
+      color: white;
+      padding: 10px;
+    }
+    @media (max-width: 768px) {
+      #volumes {
+        padding: 72px 16px;
+      }
+      .volumes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .volume-card {
+        padding: 22px 18px;
+        border-radius: 18px;
+      }
+      .volume-card-header {
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+      .volume-icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 16px;
+      }
+      .volume-region {
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+      .volume-value {
+        font-size: clamp(2rem, 11vw, 3rem);
+        margin-bottom: 10px;
+      }
+      .volume-label {
+        font-size: 0.92rem;
+        line-height: 1.45;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .footer-grid {
+        transform: none !important;
+        width: 100% !important;
+      }
+      .main-footer {
+        transform: none !important;
+        width: 100% !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- 4WaTT Global Responsive & Visual Polish -->
+  <style>
+    /* === SMOOTH SCROLLING & BASE === */
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    /* === NAVBAR RESPONSIVE === */
+    @media (max-width: 992px) {
+      .nav-links { display: none !important; }
+      .nav-links.active { display: flex !important; flex-direction: column !important; position: fixed; top: 72px; left: 0; right: 0; background: rgba(26,5,39,0.97); backdrop-filter: blur(16px); padding: 20px; gap: 8px !important; z-index: 9998; border-bottom: 1.5px solid rgba(200,100,255,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+      .nav-links.active li a { color: #fff !important; padding: 12px 16px; border-radius: 10px; display: block; }
+      .nav-links.active li a:hover { background: rgba(255,255,255,0.08); }
+      .dropdown-content { position: static !important; background: rgba(255,255,255,0.07) !important; box-shadow: none !important; padding: 8px !important; margin-top: 4px; border-radius: 10px; }
+      .dropdown-content li a { color: rgba(255,255,255,0.85) !important; }
+    }
+
+    /* === SECTION RESPONSIVENESS === */
+    @media (max-width: 768px) {
+      .section { padding: 60px 0 !important; }
+      .container { padding-left: 20px !important; padding-right: 20px !important; }
+      .section-title { font-size: 1.6rem !important; }
+      .two-col, .two-col--balanced, .syngas-layout {
+        flex-direction: column !important;
+        display: flex !important;
+      }
+      .two-col__text, .two-col__visual, .syngas-text, .syngas-visual { width: 100% !important; min-width: unset !important; }
+    }
+    @media (max-width: 992px) {
+      .hero { padding: 140px 0 60px; min-height: auto; }
+      .hero-container-flex { flex-direction: column; text-align: left; gap: 40px; padding: 0 20px; }
+      .hero-visual { max-width: 100%; order: 2; width: 100%; display: block !important; visibility: visible !important; min-height: 250px; }
+      .hero-content { max-width: 100%; order: 1; align-items: flex-start; margin-left: 0 !important; padding-left: 0 !important; }
+      .hero-subtitle, .counter-box, .hero-buttons, .hero-badge { margin-left: 0 !important; }
+      .hero-badge { display: flex !important; flex-wrap: nowrap !important; align-items: center; white-space: nowrap; }
+      .hero-image-wrapper { transform: none; width: 100%; height: auto; display: block !important; visibility: visible !important; }
+      .hero-main-img { aspect-ratio: 16/9; width: 100%; height: auto; display: block !important; visibility: visible !important; }
+      .hero-subtitle span { display: block !important; margin-left: 0 !important; }
+    }
+    @media (max-width: 480px) {
+      .page-hero__title { font-size: 1.8rem !important; }
+      .page-hero__lead { font-size: 1rem !important; }
+      .btn { padding: 12px 22px !important; font-size: 0.92rem !important; }
+      .hero-buttons { flex-direction: column !important; gap: 12px !important; }
+      .hero-buttons a, .hero-buttons button { width: 100% !important; text-align: center !important; }
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-secondary {
+        padding: 11px 20px !important;
+        font-size: 0.83rem !important;
+      }
+      .hero {
+        padding-top: calc(160px + 3vh) !important;
+      }
+      .hero-content {
+        margin-top: 3vh !important;
+      }
+    }
+
+    /* === BTN POLISH === */
+    .btn, .btn-primary, .btn-outline {
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.4,0,0.2,1) !important;
+    }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,160,137,0.3) !important; }
+    .btn-outline:hover { background: var(--secondary-color) !important; color: #fff !important; transform: translateY(-1px); }
+
+    /* === BREADCRUMB === */
+    .breadcrumb { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .breadcrumb__link, .breadcrumb__current, .breadcrumb__sep {
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      opacity: 0.82;
+    }
+    .breadcrumb__link:hover { opacity: 1; }
+
+    /* === FOOTER RESPONSIVE === */
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+      .main-footer { padding: 60px 0 40px !important; }
+    }
+
+    /* === REVEAL ANIMATIONS === */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
+  </style>
+    <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+
+  <style>
+    /* Unifica o roxo base da página com as seções */
+    body {
+      background: #3D0036 !important;
+    }
+
+    /* === Seção Volumes: fundo roxo === */
+    #volumes {
+      background: #3D0036 !important;
+    }
+    #volumes .section-title,
+    #volumes .section-header .section-title {
+      color: #ffffff !important;
+    }
+    #volumes .overline {
+      color: var(--color-verde-light) !important;
+    }
+    .volume-card {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: none !important;
+    }
+    .volume-region {
+      color: #ffffff !important;
+    }
+    .volume-label {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .volume-bar {
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    /* === Seção Mapa: fundo roxo === */
+    .map-section {
+      background: #3D0036 !important;
+    }
+    .map-section .section-title {
+      color: #ffffff !important;
+    }
+    .map-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+    .map-section .overline {
+      color: var(--color-verde-light) !important;
+    }
+    /* Filtros */
+    .filters-bar {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: none !important;
+    }
+    .filter-label {
+      color: rgba(255, 255, 255, 0.65) !important;
+    }
+    .filter-select {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      color: #ffffff !important;
+    }
+    .filter-select option {
+      background: #3D0036;
+      color: #ffffff;
+    }
+    /* Map wrapper e menu */
+    .map-wrapper {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: none !important;
+    }
+    .map-menu-title {
+      color: #ffffff !important;
+      border-bottom-color: var(--color-verde) !important;
+    }
+    .map-menu-item {
+      background: rgba(255, 255, 255, 0.07) !important;
+      border-color: transparent !important;
+    }
+    .map-menu-item:hover {
+      background: rgba(255, 255, 255, 0.14) !important;
+      border-color: var(--color-verde) !important;
+    }
+    .map-menu-item__name {
+      color: #ffffff !important;
+    }
+    .map-menu-item__loc {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    /* Usinas totals */
+    .usinas-total-item .label {
+      color: rgba(255, 255, 255, 0.65) !important;
+    }
+    .usinas-sep {
+      background: rgba(255, 255, 255, 0.2) !important;
+    }
+    /* Cards de usina */
+    .usina-card {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    .usina-card:hover {
+      background: rgba(255, 255, 255, 0.13) !important;
+      border-color: rgba(0, 196, 169, 0.4) !important;
+    }
+    .usina-card__name {
+      color: #ffffff !important;
+    }
+    .usina-card__location {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .usina-card__volume {
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .usina-card__volume-label {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .usina-card__volume-unit {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .badge {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+    /* Totals bar */
+    .usinas-totals {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html"><img src="assets/img_old/logo-4watt.png" alt="4WaTT"></a></div>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="mobile-home-btn" aria-label="Voltar para home"><i class="fas fa-home"></i></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#video-section">Sobre a 4WaTT</a></li>
+                <li><a href="index.html#solucoes">Soluções</a></li>
+                <li><a href="/biometano/">Biometano</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Mídia <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="artigos.html">Artigos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Nossas Atuações <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+                        <li><a href="solucao-gaseificacao.html">Gaseificação RSU</a></li>
+                        <li><a href="solucao-biometano.html">Produção de Biometano</a></li>
+                    </ul>
+                </li>
+                <li><a href="investidor.html">Área do Investidor</a></li>
+                <li><a class="nav-links__cta" href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container-flex">
+      <!-- Coluna da Esquerda: Imagem -->
+      <div class="hero-visual reveal">
+        <div class="hero-image-wrapper">
+          <img src="assets/img/biometantohero.jpeg" alt="Biometano 4WaTT" class="hero-main-img">
+          <div class="hero-img-decoration"></div>
+        </div>
+      </div>
+
+      <!-- Coluna da Direita: Informações -->
+      <div class="hero-content reveal">
+        <div class="hero-badge" data-i18n="bm_hero_badge">
+          <div class="hero-badge-dot"></div>
+          Certificado ANP 854/2021
+        </div>
+        <h1 class="hero-title">
+          Biometano
+          <span class="hero-title-accent" data-i18n="bm_hero_title">Disponível para Contratação</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="bm_hero_lead">
+          <span style="display: block;">Onde há biometano disponível,</span>
+          <span style="display: block; margin-left: 10%;">você encontra aqui.</span>
+          <span style="display: block;">Contratos flexíveis, rastreabilidade</span>
+          <span style="display: block;">completa e certificação nacional.</span>
+        </p>
+        <div class="counter-box">
+          <div class="counter-number" id="counter">0</div>
+          <div class="counter-label" data-i18n="bm_counter_label">Nm³/dia disponíveis</div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#mapa" class="btn btn-primary btn-hero-map" data-i18n="bm_hero_btn_map">Ver disponibilidade no mapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volumes Section from A -->
+  <section class="section" id="volumes">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="overline" data-i18n="bm_vol_overline">Distribuição por Região</div>
+        <h2 class="section-title" data-i18n="bm_vol_title">Volume disponível</h2>
+      </div>
+      <div class="volumes-grid">
+        <div class="volume-card reveal">
+          <div class="volume-card-header">
+            <div class="volume-icon"><img src="assets/img_old/usina_MS.jpg" alt="Usina Centro-Oeste" data-i18n-alt="bm_vol_centro_icon"></div>
+            <div class="volume-region">Centro-Oeste</div>
+          </div>
+          <div class="volume-value" data-target="1800">0</div>
+          <div class="volume-bar"><div class="volume-bar-fill" data-width="14%"></div></div>
+          <div class="volume-label" data-i18n="bm_vol_goias">Nm³/dia em Goiás</div>
+        </div>
+        <div class="volume-card reveal">
+          <div class="volume-card-header">
+            <div class="volume-icon"><img src="assets/img_old/orlando_usina.jpg" alt="Usina Sudeste" data-i18n-alt="bm_vol_sudeste_icon"></div>
+            <div class="volume-region">Sudeste</div>
+          </div>
+          <div class="volume-value" data-target="10700">0</div>
+          <div class="volume-bar"><div class="volume-bar-fill" data-width="86%"></div></div>
+          <div class="volume-label" data-i18n="bm_vol_sp">Nm³/dia em SP</div>
+        </div>
+        <div class="volume-card reveal">
+          <div class="volume-card-header">
+            <div class="volume-icon"><img src="assets/img_old/pordosol-ceasa.jpeg" alt="Futuro" data-i18n-alt="bm_vol_future_icon"></div>
+            <div class="volume-region">Futuro</div>
+          </div>
+          <div class="volume-value" data-target="12000">0</div>
+          <div class="volume-bar"><div class="volume-bar-fill" data-width="96%"></div></div>
+          <div class="volume-label" data-i18n="bm_vol_future_ms">Nm³/dia previstos (MS - Q3 2026)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE COMPRAR BIOMETANO 4WATT -->
+  <section class="section-muted section-pad">
+
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <div class="overline" data-i18n="bm_diff_overline">Diferenciais</div>
+      <h2 class="text-h2" style="margin-top: var(--space-3); color: var(--color-roxo) !important;" data-i18n="bm_diff_title">Qualidade certificada. Origem rastreada. Contrato seguro.</h2>
+      <p data-i18n="bm_diff_text">O biometano 4WaTT segue os mais altos padrões regulatórios do Brasil, garantindo segurança jurídica e técnica em cada contrato.</p>
+    </div>
+
+    <div class="quality-grid">
+      <div class="quality-card" data-reveal data-reveal-delay="1">
+        <img src="assets/img_old/CertificaçãoRenovaBio.jpg" alt="Certificação RenovaBio" class="quality-card__img">
+        <div class="quality-card__content">
+          <div class="quality-card__icon">Descarbonização</div>
+          <div class="quality-card__title" data-i18n="bm_diff_card1_title">Certificação RenovaBio</div>
+          <div class="quality-card__text" data-i18n="bm_diff_card1_text">Cada lote pode ser vinculado à certificação RenovaBio e à geração de CBIOs, agregando valor ambiental ao fornecimento e reforçando a estratégia de descarbonização do comprador.</div>
+        </div>
+      </div>
+      <div class="quality-card" data-reveal data-reveal-delay="2">
+        <img src="assets/img_old/missao.jpg" alt="Pureza ANP" class="quality-card__img">
+        <div class="quality-card__content">
+          <div class="quality-card__icon">Conformidade</div>
+          <div class="quality-card__title" data-i18n="bm_diff_card2_title">Pureza ANP <span class="quality-card__title-line">(+97% CH₄)</span></div>
+          <div class="quality-card__text" data-i18n="bm_diff_card2_text">Biometano com teor de metano acima de 97%, em linha com a ANP 854/2021, acompanhado por laudos de qualidade emitidos por laboratório credenciado.</div>
+        </div>
+      </div>
+      <div class="quality-card" data-reveal data-reveal-delay="3">
+        <img src="assets/img_old/solve-gestao.jpg" alt="Rastreabilidade Completa" class="quality-card__img">
+        <div class="quality-card__content">
+          <div class="quality-card__icon">Transparência</div>
+          <div class="quality-card__title" data-i18n="bm_diff_card3_title">Rastreabilidade Completa</div>
+          <div class="quality-card__text" data-i18n="bm_diff_card3_text">Plataforma digital que conecta cada Nm³ fornecido à biomassa de origem, à usina produtora e ao certificado correspondente, com histórico claro de fornecimento.</div>
+        </div>
+      </div>
+      <div class="quality-card" data-reveal data-reveal-delay="4">
+        <img src="assets/img_old/ContratosFlexíveis.jpg" alt="Contratos Flexíveis" class="quality-card__img">
+        <div class="quality-card__content">
+          <div class="quality-card__icon">Flexibilidade</div>
+          <div class="quality-card__title" data-i18n="bm_diff_card4_title">Contratos Flexíveis</div>
+          <div class="quality-card__text" data-i18n="bm_diff_card4_text">Estruturamos contratos spot, recorrentes ou plurianuais, com entrega em CNG, LNG ou modelo virtual pela rede, de acordo com o perfil operacional do cliente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA DE USINAS -->
+<section class="section map-section" id="mapa">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="overline" data-i18n="bm_plants_overline">Disponibilidade em Tempo Real</div>
+        <h2 class="section-title" data-i18n="bm_plants_title">Onde tem biometano disponível</h2>
+        <p class="section-subtitle" data-i18n="bm_plants_lead">
+          Explore o mapa interativo e encontre a usina mais próxima da sua operação.
+        </p>
+      </div>
+      
+      <div class="filters-bar reveal">
+        <div class="filter-group">
+          <label class="filter-label" data-i18n="bm_filter_state_label">Estado</label>
+          <select class="filter-select" id="filter-estado">
+            <option value="">Todos</option>
+            <option value="GO">Goiás</option>
+            <option value="SP">São Paulo</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="MS">Mato Grosso do Sul</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" data-i18n="bm_filter_vol_label">Volume mínimo</label>
+          <select class="filter-select" id="filter-volume">
+            <option value="0">Qualquer volume</option>
+            <option value="1000">+1.000 Nm³/dia</option>
+            <option value="2000">+2.000 Nm³/dia</option>
+            <option value="4000">+4.000 Nm³/dia</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" data-i18n="bm_filter_delivery_label">Tipo de entrega</label>
+          <select class="filter-select" id="filter-entrega">
+            <option value="">Todos</option>
+            <option value="CNG">Comprimido</option>
+            <option value="LNG">Liquefeito</option>
+            <option value="Virtual">Virtual</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" data-i18n="bm_filter_status_label">Status</label>
+          <select class="filter-select" id="filter-status">
+            <option value="">Todos</option>
+            <option value="disponivel">Disponível</option>
+            <option value="em_breve">Em breve</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="map" class="reveal"></div>
+    </div>
+    
+  </section>
+
+    <!-- Grid de usinas -->
+    <br>
+    <br>
+<div class="usinas-grid-wrapper">
+  <div class="usinas-grid" id="usinas-grid">
+
+      <article class="usina-card reveal" data-estado="GO" data-volume="1800" data-entrega="CNG" data-status="disponivel" data-reveal-delay="1">
+        <div class="usina-image" style="background-image: url('assets/img_old/cano-biogas-barbosa.jpg');">
+          <span class="usina-status disponivel" data-i18n="bm_badge_available">Disponível</span>
+        </div>
+        <div class="usina-content">
+          <div class="usina-location" data-i18n="bm_usina_go_loc">Goiânia, GO</div>
+          <h3 class="usina-name" data-i18n="bm_usina_go_name">Usina WtE Goiás</h3>
+          <div class="usina-specs">
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_capacity">Capacidade</div>
+              <div class="spec-value">2.400 Nm³/dia</div>
+            </div>
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_available">Disponível</div>
+              <div class="spec-value" style="color: var(--color-verde-light);">1.800 Nm³/dia</div>
+            </div>
+          </div>
+          <div class="usina-badges">
+            <span class="badge verde" data-i18n="bm_badge_cng">Comprimido (CNG)</span>
+            <span class="badge" data-i18n="bm_badge_renovabio">RenovaBio</span>
+          </div>
+          <a href="#" class="usina-link" data-i18n="bm_usina_link">Ver detalhes →</a>
+        </div>
+      </article>
+
+      <article class="usina-card reveal" data-estado="SP" data-volume="4200" data-entrega="Virtual,CNG" data-status="disponivel" data-reveal-delay="2">
+        <div class="usina-image" style="background-image: url('assets/img_old/IA_usina.jpeg');">
+          <span class="usina-status disponivel" data-i18n="bm_badge_available">Disponível</span>
+        </div>
+        <div class="usina-content">
+          <div class="usina-location" data-i18n="bm_usina_sp_loc">Franca, SP</div>
+          <h3 class="usina-name" data-i18n="bm_usina_sp_name">Usina Franca SP</h3>
+          <div class="usina-specs">
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_capacity">Capacidade</div>
+              <div class="spec-value">5.000 Nm³/dia</div>
+            </div>
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_available">Disponível</div>
+              <div class="spec-value" style="color: var(--color-verde-light);">4.200 Nm³/dia</div>
+            </div>
+          </div>
+          <div class="usina-badges">
+            <span class="badge verde" data-i18n="bm_badge_virtual_cng">Virtual + CNG</span>
+            <span class="badge" data-i18n="bm_badge_anp">ANP 854/2021</span>
+          </div>
+          <a href="#" class="usina-link" data-i18n="bm_usina_link">Ver detalhes →</a>
+        </div>
+      </article>
+
+      <article class="usina-card reveal" data-estado="GO" data-volume="6500" data-entrega="CNG,LNG" data-status="disponivel" data-reveal-delay="3">
+        <div class="usina-image" style="background-image: url('assets/img_old/Reciclaveis.jpeg');">
+          <span class="usina-status disponivel" data-i18n="bm_badge_available">Disponível</span>
+        </div>
+        <div class="usina-content">
+          <div class="usina-location" data-i18n="bm_usina_go2_loc">Palmeiras de Goiás, GO</div>
+          <h3 class="usina-name" data-i18n="bm_usina_go2_name">Organo Buritis</h3>
+          <div class="usina-specs">
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_capacity">Capacidade</div>
+              <div class="spec-value">8.000 Nm³/dia</div>
+            </div>
+            <div>
+              <div class="spec-label" data-i18n="bm_spec_available">Disponível</div>
+              <div class="spec-value" style="color: var(--color-verde-light);">6.500 Nm³/dia</div>
+            </div>
+          </div>
+          <div class="usina-badges">
+            <span class="badge verde" data-i18n="bm_badge_cng_lng">CNG + LNG</span>
+            <span class="badge" data-i18n="bm_badge_cbio">CBIO</span>
+          </div>
+          <a href="#" class="usina-link" data-i18n="bm_usina_link">Ver detalhes →</a>
+        </div>
+      </article>
+
+
+    </div><!-- /usinas-grid -->
+  </div><!-- /usinas-grid-wrapper -->
+
+    <div id="no-results-usinas" style="display:none; text-align:center; padding: var(--space-8) 0;">
+      <p style="color: var(--color-text-muted);" data-i18n="bm_no_results">Nenhuma usina encontrada com os filtros selecionados.</p>
+      <button class="btn btn-outline btn-sm" style="margin-top: var(--space-3);" onclick="limparFiltrosUsinas()" data-i18n="btn_clear_filters">Limpar filtros</button>
+    </div>
+  </div>
+    <br>
+    <br>
+</section>
+
+<!-- CERTIFICAÇÕES -->
+<section class="section-dark-mid section-pad" style="padding-bottom: var(--space-16) !important;">
+  <div class="container">
+    <div class="section-heading centered" data-reveal>
+      <div class="overline" style="color: rgba(255,255,255,0.7) !important;" data-i18n="bm_reg_overline">Regulatório</div>
+      <h2 class="text-h2" style="color: white !important; margin-top: var(--space-3);" data-i18n="bm_reg_title">Biometano certificado por autoridades regulatórias</h2>
+      <p style="color: rgba(255,255,255,0.9) !important; opacity: 1 !important;" data-i18n="bm_reg_text">Todo o nosso biometano é produzido, certificado e comercializado em conformidade com a regulamentação vigente no Brasil.</p>
+    </div>
+
+    <div class="cert-cards">
+      <div class="cert-card" data-reveal data-reveal-delay="1">
+        <img src="assets/img_old/renovabio.jpg" alt="RenovaBio" class="cert-card__img">
+        <div class="cert-card__content">
+          <div class="cert-card__title" data-i18n="bm_cert1_title">RenovaBio</div>
+          <div class="cert-card__authority" data-i18n="bm_cert1_auth">ANP / Ministério de Minas e Energia</div>
+          <div class="cert-card__text" data-i18n="bm_cert1_text">
+            O RenovaBio é a política pública de descarbonização do setor de transportes e indústria. Cada m³ de biometano certificado gera CBIOs (créditos de descarbonização negociados na B3) que complementam a receita do produtor e tornam o biometano mais competitivo que o gás natural fóssil.
+          </div>
+        </div>
+      </div>
+      <div class="cert-card" data-reveal data-reveal-delay="2">
+        <img src="assets/img_old/CBIO.png" alt="CBIO B3" class="cert-card__img">
+        <div class="cert-card__content">
+          <div class="cert-card__title" data-i18n="bm_cert2_title">CBIO B3</div>
+          <div class="cert-card__authority" data-i18n="bm_cert2_auth">B3 / Ministério de Minas e Energia</div>
+          <div class="cert-card__text" data-i18n="bm_cert2_text">
+            Os Créditos de Descarbonização (CBIOs) são ativos financeiros emitidos por produtores de biocombustíveis certificados. Cada CBIO representa 1 tonelada de CO₂ equivalente evitado. Para compradores de biometano, a aquisição de CBIOs complementa suas metas ESG e atende exigências de descarbonização de cadeia produtiva.
+          </div>
+        </div>
+      </div>
+      <div class="cert-card" data-reveal data-reveal-delay="3">
+        <img src="assets/img_old/anp.jpg" alt="ANP 854/2021" class="cert-card__img">
+        <div class="cert-card__content">
+          <div class="cert-card__title" data-i18n="bm_cert3_title">ANP 854/2021</div>
+          <div class="cert-card__authority" data-i18n="bm_cert3_auth">Agência Nacional do Petróleo, Gás e Biocombustíveis</div>
+          <div class="cert-card__text" data-i18n="bm_cert3_text">
+            A Resolução ANP 854/2021 regulamenta as especificações de qualidade do biometano no Brasil, incluindo teor mínimo de CH₄ (97%), limites de contaminantes e requisitos de odorização. Todo o biometano 4WaTT é produzido e testado conforme esta norma, com laudos emitidos por laboratório acreditado pelo INMETRO.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rastreabilidade-box" data-reveal>
+      <div>
+        <div class="rastreabilidade-box__title" data-i18n="bm_trace_title">Rastreabilidade de origem garantida</div>
+        <div class="rastreabilidade-box__text" data-i18n="bm_trace_text">
+          Desenvolvemos um sistema digital de rastreabilidade que conecta cada Nm³ de biometano entregue à sua usina de origem, ao lote de biomassa utilizado e ao certificado RenovaBio correspondente. Compradores recebem relatório mensal de rastreabilidade e acesso ao portal de transparência 4WaTT, compatível com exigências de relatórios GRI, CDP e TCFD.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="section-muted section-pad">
+  <div class="container">
+    <div class="section-heading centered" data-reveal>
+      <div class="overline" data-i18n="bm_buyer_overline">Perfil do comprador</div>
+      <h2 class="text-h2" style="margin-top: var(--space-3); color: var(--color-roxo) !important; white-space: nowrap;" data-i18n="bm_buyer_title">Quem compra biometano 4WaTT</h2>
+      <p data-i18n="bm_buyer_text">Empresas que precisam substituir gás natural fóssil, reduzir emissões e ter segurança de fornecimento.</p>
+    </div>
+    <div class="compradores-grid">
+      <div class="comprador-card" data-reveal data-reveal-delay="1">
+        <img src="assets/img_old/GásNatural.jpg" alt="Distribuidoras de Gás Natural" class="comprador-card__img">
+        <div class="comprador-card__content">
+          <span class="comprador-card__icon"></span>
+          <div class="comprador-card__title" data-i18n="bm_buyer1_title">Distribuidoras de Gás Natural</div>
+          <div class="comprador-card__text" data-i18n="bm_buyer1_text">Concessionárias estaduais e comercializadoras independentes que precisam ampliar a oferta de gás verde e atender metas crescentes de descarbonização.</div>
+        </div>
+      </div>
+      <div class="comprador-card" data-reveal data-reveal-delay="2">
+        <img src="assets/img_old/rotaspesadaslogo.png" alt="Frotas Pesadas" class="comprador-card__img">
+        <div class="comprador-card__content">
+          <span class="comprador-card__icon"></span>
+          <div class="comprador-card__title" data-i18n="bm_buyer2_title">Frotas Pesadas</div>
+          <div class="comprador-card__text" data-i18n="bm_buyer2_text">Operadores de ônibus, caminhões e veículos pesados movidos a GNV ou GNC que buscam reduzir emissões sem comprometer a operação da frota.</div>
+        </div>
+      </div>
+      <div class="comprador-card" data-reveal data-reveal-delay="3">
+        <img src="assets/img_old/indústriasUsuáriasdeGN.jpg" alt="Indústrias Usuárias de GN" class="comprador-card__img">
+        <div class="comprador-card__content">
+          <span class="comprador-card__icon"></span>
+          <div class="comprador-card__title" data-i18n="bm_buyer3_title">Indústrias Usuárias de GN</div>
+          <div class="comprador-card__text" data-i18n="bm_buyer3_text">Indústrias cerâmicas, têxteis, alimentícias e químicas que já consomem gás natural e querem descarbonizar processos com um combustível drop-in.</div>
+        </div>
+      </div>
+      <div class="comprador-card" data-reveal data-reveal-delay="4">
+        <img src="assets/img_old/cogeracao-energia.png" alt="Geração Elétrica e Cogeração" class="comprador-card__img">
+        <div class="comprador-card__content">
+          <span class="comprador-card__icon"></span>
+          <div class="comprador-card__title" data-i18n="bm_buyer4_title">Geração Elétrica e Cogeração</div>
+          <div class="comprador-card__text" data-i18n="bm_buyer4_text">Operações de cogeração e geração distribuída a gás que desejam incorporar energia renovável certificada e fortalecer o portfólio energético.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO DE COMPRADOR -->
+<section class="bm-form-section" id="form-comprador">
+  <div class="container-sm">
+    <div data-reveal>
+      <div class="overline" style="color: var(--color-verde); margin-bottom: var(--space-3);" data-i18n="bm_form_overline">Proposta comercial</div>
+      <h2 data-i18n="bm_form_title">Solicitar proposta de fornecimento</h2>
+      <p class="bm-form-section__lead" data-i18n="bm_form_lead">Preencha os dados abaixo e nossa equipe comercial elaborará uma proposta personalizada para o seu perfil de consumo em até 48 horas.</p>
+    </div>
+
+    <form class="form-dark form-4watt" id="form-biometano-comprador" data-reveal>
+      <div class="form-grid-2">
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-nome" data-i18n="form_name">Nome Completo</label>
+          <input class="form-input" type="text" id="bm-nome" name="nome" placeholder="Seu nome" required data-i18n-placeholder="form_name_placeholder">
+        </div>
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-empresa" data-i18n="form_company">Empresa</label>
+          <input class="form-input" type="text" id="bm-empresa" name="empresa" placeholder="Nome da empresa" required data-i18n-placeholder="form_company_placeholder">
+        </div>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-email" data-i18n="form_email">E-mail</label>
+          <input class="form-input" type="email" id="bm-email" name="email" placeholder="seu@empresa.com" required data-i18n-placeholder="form_email_placeholder">
+        </div>
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-tel" data-i18n="form_phone">WhatsApp</label>
+          <input class="form-input" type="tel" id="bm-tel" name="whatsapp" placeholder="+55 (00) 00000-0000" data-i18n-placeholder="form_phone_placeholder">
+        </div>
+      </div>
+      <div class="form-grid-2">
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-volume" data-i18n="bm_form_vol">Volume Desejado (Nm³/mês)</label>
+          <input class="form-input" type="text" id="bm-volume" name="volume_desejado" placeholder="Ex: 150.000 Nm³/mês" required data-i18n-placeholder="bm_form_vol_placeholder">
+        </div>
+        <div class="form-field">
+          <label class="form-label form-label-light" for="bm-prazo" data-i18n="bm_form_term">Prazo do Contrato</label>
+          <select class="form-select" id="bm-prazo" name="prazo_contrato">
+            <option value="" data-i18n="bm_form_term_select">Selecione o prazo</option>
+            <option value="spot" data-i18n="bm_form_term_spot">Spot / mensal</option>
+            <option value="6m" data-i18n="bm_form_term_6m">6 meses</option>
+            <option value="1a" data-i18n="bm_form_term_1a">1 ano</option>
+            <option value="2-3a" data-i18n="bm_form_term_23a">2 a 3 anos</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label form-label-light" for="bm-formato" data-i18n="bm_form_format">Formato de Entrega</label>
+        <select class="form-select" id="bm-formato" name="formato_entrega">
+          <option value="" data-i18n="bm_form_format_select">Selecione o formato</option>
+          <option value="cng" data-i18n="bm_form_format_cng">CNG — Gás Natural Comprimido</option>
+          <option value="lng" data-i18n="bm_form_format_lng">LNG — Gás Natural Liquefeito</option>
+          <option value="virtual" data-i18n="bm_form_format_virtual">Virtual / Injeção na rede de gás</option>
+          <option value="qualquer" data-i18n="bm_form_format_any">Qualquer um (a definir)</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label form-label-light" for="bm-localizacao" data-i18n="bm_form_loc">Localização do Ponto de Entrega</label>
+        <input class="form-input" type="text" id="bm-localizacao" name="localizacao_entrega" placeholder="Cidade, Estado ou CEP da unidade receptora" data-i18n-placeholder="bm_form_loc_placeholder">
+      </div>
+      <div class="form-field">
+        <label class="form-label form-label-light" for="bm-mensagem" data-i18n="form_message">Informações adicionais</label>
+        <textarea class="form-textarea" id="bm-mensagem" name="mensagem" placeholder="Descreva o uso final, requisitos de pureza específicos, urgência ou outras informações relevantes..." rows="4" data-i18n-placeholder="bm_form_msg_placeholder"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%; background: var(--color-verde); border-color: var(--color-verde);" data-i18n="bm_form_btn">
+        Receber proposta de fornecimento
+      </button>
+      <div class="form-success" id="form-bm-success" style="margin-top: var(--space-4);" data-i18n="bm_form_success">
+        Proposta solicitada! Nossa equipe comercial entrará em contato em até 48 horas. Obrigado pelo interesse.
+      </div>
+    </form>
+  </div>
+</section>
+
+    <footer id="footer" class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand -->
+                <div class="footer-brand reveal">
+                    <img src="assets/img_old/logo-4watt.png" alt="4WaTT Logo" class="footer-logo">
+                    <p class="footer-text-bold" data-i18n="footer_phrase">De todas as formas de energia, escolha a que se renova, escolha 4WaTT</p>
+                    <p class="footer-text-bold">4WaTT Bio Engenharia S/A.</p>
+                    <p class="footer-text-bold">© 2026 Todos os direitos reservados.</p>
+                </div>
+
+                <!-- Col 2: Address -->
+                <div class="footer-col reveal" style="transition-delay: 0.1s;">
+                    <h3 data-i18n="footer_address_title">ENDEREÇO</h3>
+                    <div class="footer-address-lines">
+                        <span class="footer-text-bold">Edifício Metropolitan Business</span>
+                        <span class="footer-text-bold">Torre Tokyo, sala 601 4WATT</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span class="footer-text-bold">Av. Dep. Jamel Cecílio</span>
+                            <div class="map-btns-small" style="display: flex; gap: 8px;">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank"><i class="fas fa-location-arrow"></i></a>
+                                <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank"><i class="fab fa-waze"></i></a>
+                            </div>
+                        </div>
+                        <div class="location-group-bold">
+                            <span class="footer-text-bold">Jardim Goiás, Goiânia - GO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Contact -->
+                <div class="footer-col reveal" style="transition-delay: 0.2s;">
+                    <h3 data-i18n="nav_contact">CONTATO</h3>
+                    <ul class="footer-contact-list-bold">
+                        <li><i class="fas fa-envelope footer-icon-cyan"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+                        <li><i class="fas fa-phone footer-icon-cyan"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social -->
+                <div class="footer-col reveal" style="transition-delay: 0.3s;">
+                    <h3 data-i18n="footer_social">SIGA-NOS</h3>
+                    <div class="social-icons-bold">
+                        <a href="https://www.facebook.com/4wattbioeng" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/4watt.tech/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+<script src="assets/js/languages.js?v=1.1"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/forms.js"></script>
+<script>
+  // GSAP from A + enhancements
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Hero counter
+  gsap.to({ val: 0 }, {
+    val: 12500,
+    duration: 2.5,
+    ease: "power2.out",
+    onUpdate: function() {
+      document.getElementById('counter').textContent = Math.floor(this.targets()[0].val).toLocaleString('pt-BR');
+    },
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top bottom",
+      toggleActions: "play none none none"
+    }
+  });
+  
+  // Reveal animations
+  document.querySelectorAll('.reveal').forEach(el => {
+    gsap.fromTo(el, 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  });
+  
+  // Volume cards counters/bars
+  document.querySelectorAll('.volume-value').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    gsap.to({ val: 0 }, {
+      val: target,
+      duration: 2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%"
+      },
+      onUpdate: function() {
+        el.textContent = Math.floor(this.targets()[0].val).toLocaleString('pt-BR');
+      }
+    });
+  });
+  document.querySelectorAll('.volume-bar-fill').forEach(el => {
+    const width = el.dataset.width;
+    gsap.to(el, {
+      width: width,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el.parentElement.parentElement,
+        start: "top 80%"
+      }
+    });
+  });
+  
+  // Leaflet Map from A
+  const map = L.map('map').setView([-18, -50], 5);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    subdomains: 'abcd'
+  }).addTo(map);
+  
+  window.addEventListener('load', () => {
+    setTimeout(() => map.invalidateSize(), 100);
+  });
+  
+  const usinas = [
+    { lat: -16.6869, lng: -49.2648, nome: 'WtE Goiás', volume: '1.800 Nm³/dia', estado: 'GO', status: 'disponivel' },
+    { lat: -20.5386, lng: -47.4008, nome: 'Franca SP', volume: '4.200 Nm³/dia', estado: 'SP', status: 'disponivel' },
+    { lat: -16.856042, lng: -49.966047, nome: 'Organo Buritis', volume: '6.500 Nm³/dia', estado: 'GO', status: 'disponivel' },
+
+  ];
+  
+  usinas.forEach(u => {
+    L.marker([u.lat, u.lng]).addTo(map)
+      .bindPopup(`<b>${u.nome}</b><br>${u.volume}<br>${u.estado}`);
+  });
+  
+  // Unified filter function (A's filters + B's usinas)
+  function applyFilters() {
+    const estado = document.getElementById('filter-estado')?.value || '';
+    const volumeMin = parseInt(document.getElementById('filter-volume')?.value || '0');
+    const entrega = document.getElementById('filter-entrega')?.value || '';
+    const status = document.getElementById('filter-status')?.value || '';
+    
+    // Filter usinas cards
+    document.querySelectorAll('.usina-card').forEach(card => {
+      const cardEstado = card.dataset.estado;
+      const cardVolume = parseInt(card.dataset.volume || 0);
+      const cardEntrega = card.dataset.entrega;
+      const cardStatus = card.dataset.status;
+      
+      let show = true;
+      if (estado && cardEstado !== estado) show = false;
+      if (volumeMin && cardVolume < volumeMin) show = false;
+      if (status && cardStatus !== status) show = false;
+      if (entrega && !cardEntrega?.includes(entrega)) show = false;
+      
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+  
+  // Event listeners for filters
+  ['filter-estado', 'filter-volume', 'filter-entrega', 'filter-status'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', applyFilters);
+  });
+  
+  // Navbar adjustments
+  document.getElementById('main-header') && (document.getElementById('main-header').style.position = 'fixed');
+  
+  // Existing B's form handler preserved
+  const form = document.getElementById('form-biometano-comprador');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type=submit]');
+      btn.classList.add('loading');
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        btn.style.display = 'none';
+        document.getElementById('form-bm-success').classList.add('show');
+      }, 1500);
+    });
+  }
+  
+  // ScrollTrigger refresh for dynamic content
+  ScrollTrigger.refresh();
+</script>
+
+</body>
+</html>

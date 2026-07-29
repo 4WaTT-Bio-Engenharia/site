@@ -1,0 +1,2272 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Funciona um Biodigestor Industrial | 4WaTT Bio Engenharia</title>
+  <meta name="description"
+    content="Guia completo sobre o funcionamento de biodigestores industriais: digestão anaeróbia, tipos de reatores, parâmetros técnicos, produtos e como dimensionar.">
+  <link rel="canonical" href="https://4watt.tech/artigos/como-funciona-biodigestor-industrial/">
+  <link rel="icon" href="assets/img_old/iconeq.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/p7-block.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/footer.css">
+
+  <!-- Schema Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Como funciona um biodigestor industrial",
+    "datePublished": "2026-03-05",
+    "dateModified": "2026-03-05",
+    "author": {"@type": "Organization", "name": "4WaTT Bio Engenharia"},
+    "publisher": {"@type": "Organization", "name": "4WaTT Bio Engenharia", "url": "https://4watt.tech"},
+    "description": "Guia completo sobre biodigestores industriais: digestão anaeróbia, tipos de reatores, parâmetros técnicos e dimensionamento.",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://4watt.tech/artigos/como-funciona-biodigestor-industrial/"}
+  }
+  </script>
+
+  <!-- Schema BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://4watt.tech/"},
+      {"@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://4watt.tech/artigos/"},
+      {"@type": "ListItem", "position": 3, "name": "Tecnologia", "item": "https://4watt.tech/artigos/"},
+      {"@type": "ListItem", "position": 4, "name": "Como funciona um biodigestor industrial", "item": "https://4watt.tech/artigos/como-funciona-biodigestor-industrial/"}
+    ]
+  }
+  </script>
+
+  <style>
+    #main-header {
+      background: linear-gradient(135deg, rgba(0, 160, 137, 0.96) 0%, rgba(58, 9, 64, 0.96) 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    /* ── Estilos do artigo ── */
+    .article-content {
+      font-size: 19px;
+      line-height: 1.85;
+      color: #000000;
+      font-family: Montserrat, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content h2 {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: #3D0036;
+      margin: 48px 0 16px;
+      line-height: 1.3;
+      overflow-wrap: break-word;
+    }
+
+    .article-content h3 {
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #3D0036;
+      margin: 32px 0 12px;
+      overflow-wrap: break-word;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+      color: #000000 !important;
+      opacity: 1 !important;
+    }
+
+    .article-content .section-intro {
+      font-size: 20px;
+      line-height: 1.85;
+      font-weight: 500;
+      color: #111827 !important;
+      margin-bottom: 24px;
+    }
+
+    .article-content .article-lead {
+      font-size: clamp(22px, 2.6vw, 26px);
+      line-height: 1.75;
+      font-weight: 600;
+      color: #1f2937 !important;
+      margin-bottom: 24px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .article-content ul {
+      list-style: disc;
+    }
+
+    .article-content ol {
+      list-style: decimal;
+    }
+
+    .article-content li {
+      margin-bottom: 14px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .article-content strong {
+      font-weight: 700;
+      color: #3D0036;
+    }
+
+    .process-flow {
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 36px;
+    }
+
+    .process-flow__item {
+      background: linear-gradient(180deg, #ffffff, #faf7f9);
+      border: 1px solid rgba(61, 0, 54, 0.12);
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: 0 12px 32px rgba(61, 0, 54, 0.05);
+    }
+
+    .process-flow__stage {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-family: Montserrat, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #00A089;
+    }
+
+    .process-flow__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #3D0036;
+      margin: 0 0 12px;
+    }
+
+    .process-flow__text {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.9;
+      font-weight: 500;
+      color: #111827 !important;
+    }
+
+    .reactor-grid {
+      display: grid;
+      gap: 20px;
+      margin: 28px 0 40px;
+    }
+
+    .reactor-card {
+      background: #ffffff;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 18px;
+      padding: 24px 24px 22px;
+      box-shadow: 0 14px 34px rgba(17, 24, 39, 0.05);
+    }
+
+    .reactor-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .reactor-card__summary {
+      margin-bottom: 14px;
+      color: #111827 !important;
+    }
+
+    .reactor-card__ideal {
+      margin: 0;
+      padding-top: 14px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #111827 !important;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 40px;
+    }
+
+    .info-card {
+      background: linear-gradient(180deg, #ffffff, #fbfbfb);
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 18px;
+      padding: 22px 24px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.05);
+    }
+
+    .info-card__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #3D0036;
+      margin: 0 0 12px;
+    }
+
+    .info-card__title--biofertilizante {
+      font-size: 34px !important;
+      transform: translateY(30%);
+      transform-origin: left top;
+    }
+
+    .info-card__title--biometano {
+      font-size: 34px !important;
+    }
+
+    .info-card__title--energia {
+      font-size: 34px !important;
+    }
+
+    .info-card__title--carbono {
+      font-size: 34px !important;
+    }
+
+    .info-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .info-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(0, 160, 137, 0.10);
+      color: #006b5c;
+      font-family: Montserrat, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .info-card__text {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: #111827 !important;
+    }
+
+    .info-card__text+.info-card__text {
+      margin-top: 10px;
+    }
+
+    .info-card__text--biofertilizante-intro {
+      margin-top: 25% !important;
+    }
+
+    .info-card__text--biofertilizante-note {
+      margin-top: 12px !important;
+    }
+
+    .info-card__text--biometano-intro {
+      margin-top: 30% !important;
+    }
+
+    .info-card__text--biometano-note {
+      margin-top: 12px !important;
+    }
+
+    .info-card__text--energia-intro {
+      transform: translateY(122%);
+      margin-left: 5%;
+    }
+
+    .info-card__text--carbono-intro {
+      grid-column: 2;
+      margin-top: 0 !important;
+      transform: translateY(35%);
+    }
+
+    .info-card__text--carbono-note {
+      grid-column: 2;
+      margin-top: 10px !important;
+      align-self: center;
+      transform: translateY(35%);
+    }
+
+    .info-card__figure {
+      margin: 18px 0 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      background: #f8fafc;
+    }
+
+    .info-card__figure--biofertilizante {
+      margin-top: 0 !important;
+      transform: translateY(-50%);
+    }
+
+    .info-card__figure--biometano {
+      margin-top: 0 !important;
+      transform: translateY(-69%);
+      overflow: visible;
+      border: 0;
+      background: transparent;
+    }
+
+    .info-card__figure--energia {
+      padding: 10px 10px 0;
+      overflow: visible;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .info-card__figure--carbono {
+      grid-column: 1;
+      grid-row: 2 / span 2;
+      margin-top: 6px;
+      background: transparent;
+      border: 0;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .info-card__image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .info-card__image--biometano {
+      transform: translateY(-30%);
+      object-fit: contain;
+      object-position: top center;
+    }
+
+    .info-card__image--energia {
+      width: 100%;
+      max-height: 460px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .info-card__image--carbono {
+      max-height: 280px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    @media (min-width: 1025px) {
+      .info-card__image--energia {
+        width: 135%;
+        max-width: none;
+        margin-left: -17.5%;
+      }
+    }
+
+    .steps-grid {
+      display: grid;
+      gap: 18px;
+      margin: 28px 0 40px;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border-left: 4px solid #00A089;
+      border-radius: 0 18px 18px 0;
+      padding: 22px 24px;
+      box-shadow: 0 12px 28px rgba(17, 24, 39, 0.05);
+    }
+
+    .step-card__eyebrow {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #00A089;
+    }
+
+    .step-card__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #3D0036;
+      margin: 0 0 8px;
+    }
+
+    .step-card__text {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.85;
+      color: #111827 !important;
+    }
+
+    /* Meta do artigo */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #000000;
+      font-family: Inter, sans-serif;
+    }
+
+    .article-meta .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(61, 0, 54, 0.08);
+      color: #3D0036;
+      font-family: Montserrat, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .article-meta-sep {
+      color: #000000;
+    }
+
+    /* Cabeçalho do artigo */
+    .article-hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .article-hero-figure {
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .article-header {
+      grid-column: 2;
+      grid-row: 1;
+      margin-left: -15%;
+    }
+
+    .article-hero-figure img {
+      display: block;
+      width: min(100%, 520px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 22px 48px rgba(61, 0, 54, 0.14));
+    }
+
+    .article-header h1 {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 800;
+      color: #3a0940 !important;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      overflow-wrap: break-word;
+    }
+
+    /* Wrapper do artigo */
+    .article-hero>.container,
+    .article-wrapper>.container {
+      width: min(1560px, calc(100vw - 80px));
+      max-width: 1560px;
+    }
+
+    .article-wrapper {
+      padding: 80px 0;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(780px, 1040px) minmax(280px, 340px);
+      gap: 56px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    .article-layout>main {
+      min-width: 0;
+    }
+
+    .article-content {
+      max-width: none;
+      width: 100%;
+    }
+
+    .process-flow,
+    .reactor-grid,
+    .info-grid,
+    .steps-grid,
+    .related-grid {
+      grid-template-columns: minmax(0, 1fr);
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .process-flow__item,
+    .reactor-card,
+    .info-card,
+    .step-card,
+    .related-card {
+      height: 100%;
+    }
+
+    .callout-stat,
+    .article-cta-inline,
+    .author-box,
+    .tech-table-wrap,
+    .substrato-table-wrap {
+      width: min(100%, 980px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .article-lead,
+    .section-intro {
+      max-width: 54ch;
+    }
+
+    .process-flow__item {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+      column-gap: 28px;
+      align-items: start;
+    }
+
+    .process-flow__title {
+      margin-bottom: 0;
+    }
+
+    .process-flow__text {
+      padding-top: 6px;
+    }
+
+    .reactor-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: start;
+      padding: 30px 32px;
+    }
+
+    .reactor-card h3 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .reactor-card__summary {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.82;
+      max-width: none;
+    }
+
+    .reactor-card__ideal {
+      margin-top: 4px;
+      padding-top: 18px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .info-card {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+      column-gap: 28px;
+      align-items: start;
+      padding: 26px 28px;
+    }
+
+    .info-card__title {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .info-card__meta {
+      margin-bottom: 0;
+    }
+
+    .info-card__text {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .article-content>p,
+    .article-content>h2,
+    .article-content>h3,
+    .article-content>ul,
+    .article-content>ol {
+      max-width: 44em;
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .article-toc {
+      background: #f8f7f6;
+      border-radius: 12px;
+      padding: 30px 28px;
+      margin-bottom: 28px;
+    }
+
+    .article-toc-title {
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    .article-toc-link {
+      display: block;
+      font-size: 16px;
+      color: #000000;
+      padding: 10px 0;
+      text-decoration: none;
+      border-bottom: 1px solid #e5e7eb;
+      transition: color 0.2s;
+      font-family: Inter, sans-serif;
+      line-height: 1.5;
+    }
+
+    .article-toc-link:last-child {
+      border-bottom: none;
+    }
+
+    .article-toc-link:hover {
+      color: #3D0036;
+    }
+
+    /* CTA sidebar */
+    .sidebar-cta {
+      background: linear-gradient(135deg, #3D0036, #6B1060);
+      border-radius: 12px;
+      padding: 30px 28px;
+      color: white;
+    }
+
+    .sidebar-cta__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .sidebar-cta__text {
+      font-family: Inter, sans-serif;
+      font-size: 17px;
+      opacity: 0.92;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .sidebar-cta .btn {
+      display: block;
+      text-align: center;
+      background: #00A089;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-family: Montserrat, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .sidebar-cta .btn:hover {
+      background: #00796B;
+    }
+
+    /* Callout stat */
+    .callout-stat {
+      background: linear-gradient(135deg, rgba(61, 0, 54, 0.06), rgba(0, 160, 137, 0.06));
+      border-left: 4px solid #00A089;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .callout-stat__number {
+      font-family: Montserrat, sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      color: #3D0036;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .callout-stat__text {
+      font-family: Inter, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 1.75;
+    }
+
+    /* Tabela técnica */
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 32px;
+      font-family: Inter, sans-serif;
+      font-size: 15px;
+    }
+
+    .tech-table th {
+      background: #3D0036;
+      color: white;
+      padding: 12px 16px;
+      text-align: left;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tech-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #000000;
+      vertical-align: top;
+    }
+
+    .tech-table tr:nth-child(even) td {
+      background: #f9f8f8;
+    }
+
+    .tech-table td:first-child {
+      font-weight: 600;
+      color: #3D0036;
+    }
+
+    /* Substrato table */
+    .substrato-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 32px;
+      font-family: Inter, sans-serif;
+      font-size: 17px;
+    }
+
+    .substrato-table th {
+      background: linear-gradient(135deg, #3D0036, #5a0d52);
+      padding: 14px 18px;
+      text-align: left;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+    }
+
+    .substrato-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #000000;
+    }
+
+    .substrato-table td:first-child {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .params-table-wrap {
+      width: min(100%, 1100px);
+      margin: 24px auto 40px;
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.05);
+    }
+
+    .params-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      font-family: Inter, sans-serif;
+    }
+
+    .params-table th {
+      background: linear-gradient(135deg, #3D0036, #5a0d52);
+      color: #ffffff;
+      padding: 14px 18px;
+      text-align: left;
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      vertical-align: top;
+    }
+
+    .params-table td {
+      padding: 18px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #111827;
+      font-size: 17px;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    .params-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    .params-table td:first-child {
+      width: 22%;
+      font-family: Montserrat, sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: #3D0036;
+    }
+
+    .params-table td:nth-child(2) {
+      width: 24%;
+      font-weight: 700;
+      color: #006b5c;
+    }
+
+    /* CTA contextual inline */
+    .article-cta-inline {
+      background: linear-gradient(135deg, rgba(0, 160, 137, 0.08), rgba(61, 0, 54, 0.05));
+      border: 1px solid rgba(0, 160, 137, 0.25);
+      border-radius: 14px;
+      padding: 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .article-cta-inline__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #3D0036;
+      margin-bottom: 10px;
+    }
+
+    .article-cta-inline__text {
+      font-family: Inter, sans-serif;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 20px;
+    }
+
+    .article-cta-inline .btn-primary {
+      display: inline-block;
+      background: #3D0036;
+      color: white;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .article-cta-inline .btn-primary:hover {
+      background: #00A089;
+      transform: translateY(-1px);
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8f7f6;
+      border-radius: 14px;
+      padding: 24px;
+      margin: 48px 0;
+      border: 1px solid #e5e7eb;
+    }
+
+    .author-box>div:last-child {
+      margin-left: 0;
+    }
+
+    .author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3D0036, #00A089);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .author-name {
+      font-family: Montserrat, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    .author-bio {
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.5;
+    }
+
+    /* Social share */
+    .social-share {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .social-share__label {
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000000;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: Montserrat, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .social-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .social-btn--linkedin {
+      background: #0A66C2;
+      color: white;
+    }
+
+    .social-btn--whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .social-btn--copy {
+      background: #F3F4F6;
+      color: #000000;
+    }
+
+    /* Artigos relacionados */
+    .related-articles {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 2px solid #e5e7eb;
+    }
+
+    .related-title {
+      font-family: Montserrat, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #3D0036;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .related-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+
+    .related-card:hover {
+      box-shadow: 0 14px 30px rgba(61, 0, 54, 0.10);
+      transform: translateY(-4px);
+      border-color: rgba(61, 0, 54, 0.18);
+    }
+
+    .related-card__image-wrap {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, rgba(61, 0, 54, 0.08), rgba(0, 160, 137, 0.08));
+      overflow: hidden;
+    }
+
+    .related-card__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .related-card:hover .related-card__image {
+      transform: scale(1.04);
+    }
+
+    .related-card__body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 18px 18px 20px;
+    }
+
+    .related-card__badge {
+      font-family: Montserrat, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #00A089;
+    }
+
+    .related-card__title {
+      font-family: Montserrat, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.35;
+    }
+
+    .related-card__excerpt {
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .related-card__meta {
+      font-family: Inter, sans-serif;
+      font-size: 12px;
+      color: #000000;
+    }
+
+    /* Hero do artigo */
+    .article-hero {
+      background: linear-gradient(160deg, rgba(61, 0, 54, 0.04) 0%, #fff 55%);
+      padding: 120px 0 60px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 20px;
+      font-family: Inter, sans-serif;
+      flex-wrap: wrap;
+      /* Permite que o breadcrumb quebre em várias linhas */
+      line-height: 1.4;
+    }
+
+    .breadcrumb a {
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: #3D0036;
+    }
+
+    /* Responsivo */
+    @media (max-width: 1024px) {
+
+      .article-hero>.container,
+      .article-wrapper>.container {
+        width: min(100%, calc(100vw - 48px));
+        max-width: 100%;
+      }
+
+      .article-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .article-header,
+      .article-hero-figure {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .article-hero-figure {
+        justify-content: flex-start;
+      }
+
+      .article-hero-figure img {
+        width: min(100%, 460px);
+      }
+
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .article-hero {
+        padding: 100px 0 40px;
+      }
+
+      .article-wrapper {
+        padding: 40px 0;
+      }
+
+      .process-flow__item,
+      .reactor-card,
+      .info-card {
+        grid-template-columns: 1fr;
+      }
+
+      .reactor-card h3,
+      .reactor-card__summary:nth-of-type(1),
+      .reactor-card__summary:nth-of-type(2),
+      .reactor-card__ideal,
+      .info-card__text--biofertilizante-intro,
+      .info-card__text--biofertilizante-note,
+      .info-card__text--biometano-intro,
+      .info-card__text--biometano-note,
+      .info-card__text--energia-intro,
+      .info-card__text--carbono-intro,
+      .info-card__text--carbono-note {
+        grid-column: auto;
+        grid-row: auto;
+        margin-top: 10px !important;
+        transform: none;
+      }
+
+      .info-card__figure--biofertilizante {
+        margin-top: 18px !important;
+        transform: none;
+      }
+
+      .info-card__figure--biometano {
+        margin-top: 18px !important;
+        transform: none;
+      }
+
+      .info-card__figure--carbono {
+        margin-top: 18px !important;
+      }
+
+      .info-card__image--biometano {
+        transform: none;
+      }
+
+      .info-card__title--biofertilizante {
+        transform: none;
+      }
+
+      .info-card__title--biometano {
+        transform: none;
+      }
+
+      .info-card__title--energia {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      .tech-table,
+      .substrato-table {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #e5e7eb;
+      }
+
+      .tech-table th,
+      .tech-table td,
+      .substrato-table th,
+      .substrato-table td {
+        min-width: 120px;
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      #main-header .logo img {
+        max-height: 34px;
+        width: auto;
+      }
+
+      #main-header .navbar {
+        min-height: 0;
+      }
+
+      .article-hero {
+        padding: 140px 0 40px;
+      }
+
+      .article-header {
+        margin-left: 5%;
+      }
+
+      .article-header h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        text-align: left;
+      }
+
+      .article-content {
+        font-size: 16px;
+        hyphens: auto;
+        text-align: left;
+      }
+
+      .callout-stat {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .article-hero-figure img {
+        width: 100%;
+      }
+
+      .process-flow__item {
+        padding: 24px 22px;
+      }
+
+      .process-flow__stage {
+        font-size: 13px;
+      }
+
+      .process-flow__title {
+        font-size: 26px;
+      }
+
+      .process-flow__text {
+        font-size: 19px;
+        line-height: 1.8;
+      }
+
+      .callout-stat__number {
+        font-size: 42px;
+        white-space: normal;
+      }
+
+      .callout-stat__text {
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-cta-inline {
+        padding: 24px 16px;
+        text-align: left;
+      }
+
+      .article-cta-inline .btn-primary {
+        width: 100%;
+        display: block;
+        margin: 8px 0;
+      }
+
+      .author-box {
+        flex-direction: column;
+        text-align: left;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .social-share {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .params-table-wrap {
+        margin: 20px 0 32px;
+        overflow: visible;
+        border-radius: 16px;
+        box-shadow: none;
+      }
+
+      .params-table {
+        display: block;
+        background: transparent;
+      }
+
+      .params-table thead {
+        display: none;
+      }
+
+      .params-table tbody {
+        display: grid;
+        gap: 14px;
+      }
+
+      .params-table tr {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.06);
+        overflow: hidden;
+      }
+
+      .params-table td {
+        display: block;
+        width: 100% !important;
+        padding: 0 16px 14px;
+        font-size: 15px;
+        line-height: 1.6;
+        border-bottom: 0;
+        background: transparent !important;
+      }
+
+      .params-table td::before {
+        content: attr(data-label);
+        display: none;
+      }
+
+      .params-table td:first-child::before,
+      .params-table td:nth-child(3)::before {
+        display: block;
+        margin-bottom: 6px;
+        font-family: Montserrat, sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6b7280;
+      }
+
+      .params-table td:first-child {
+        padding-top: 16px;
+        padding-bottom: 8px;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .params-table td:nth-child(2) {
+        padding-bottom: 14px;
+        font-size: 14px;
+        line-height: 1.2;
+        color: #ffffff;
+      }
+
+      .params-table td:nth-child(2) span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #00A089, #0c7a69);
+        font-family: Montserrat, sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .params-table td:last-child {
+        padding-bottom: 16px;
+        border-top: 1px solid #edf0f3;
+        padding-top: 14px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- 4WaTT Global Responsive & Visual Polish -->
+  <style>
+    /* === SMOOTH SCROLLING & BASE === */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* === NAVBAR RESPONSIVE === */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(26, 5, 39, 0.97);
+        backdrop-filter: blur(16px);
+        padding: 20px;
+        gap: 8px !important;
+        z-index: 9998;
+        border-bottom: 1.5px solid rgba(200, 100, 255, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-links.active li a {
+        color: #fff !important;
+        padding: 12px 16px;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .nav-links.active li a:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .dropdown-content {
+        position: static !important;
+        background: rgba(255, 255, 255, 0.07) !important;
+        box-shadow: none !important;
+        padding: 8px !important;
+        margin-top: 4px;
+        border-radius: 10px;
+      }
+
+      .dropdown-content li a {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+    }
+
+    /* === SECTION RESPONSIVENESS === */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0 !important;
+      }
+
+      .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .section-title {
+        font-size: 1.6rem !important;
+      }
+
+      .two-col,
+      .two-col--balanced,
+      .syngas-layout {
+        flex-direction: column !important;
+        display: flex !important;
+      }
+
+      .two-col__text,
+      .two-col__visual,
+      .syngas-text,
+      .syngas-visual {
+        width: 100% !important;
+        min-width: unset !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero__title {
+        font-size: 1.8rem !important;
+      }
+
+      .page-hero__lead {
+        font-size: 1rem !important;
+      }
+
+      .btn {
+        padding: 12px 22px !important;
+        font-size: 0.92rem !important;
+      }
+
+      .hero-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+
+      .hero-buttons a,
+      .hero-buttons button {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    /* === BTN POLISH === */
+    .btn,
+    .btn-primary,
+    .btn-outline {
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0, 160, 137, 0.3) !important;
+    }
+
+    .btn-outline:hover {
+      background: var(--secondary-color) !important;
+      color: #fff !important;
+      transform: translateY(-1px);
+    }
+
+    /* === BREADCRUMB === */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb__link,
+    .breadcrumb__current,
+    .breadcrumb__sep {
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      opacity: 0.82;
+    }
+
+    .breadcrumb__link:hover {
+      opacity: 1;
+    }
+
+    /* === FOOTER RESPONSIVE === */
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .main-footer {
+        padding: 60px 0 40px !important;
+      }
+    }
+
+    /* === REVEAL ANIMATIONS === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="assets/css/legacy-bridge.css?v=3.0">
+</head>
+
+<body class="t4">
+  <div class="bg-aurora bg-aurora--light"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true"
+            data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="https://calculadora-zeta-sooty.vercel.app/" data-i18n="cta_simular">Simular
+          Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <!-- ══ HERO DO ARTIGO ══ -->
+  <section class="article-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Início</a> <span>›</span>
+        <a href="/artigos/" data-i18n="nav_articles">Artigos</a> <span>›</span>
+        <a href="/artigos/">Tecnologia</a> <span>›</span>
+        <span>Como funciona um biodigestor industrial</span>
+      </nav>
+      <div class="article-hero-layout">
+        <div class="article-header">
+          <h1 data-i18n="art1_h1">Como funciona um biodigestor industrial</h1>
+          <div class="article-meta">
+            <span class="badge">Tecnologia</span>
+            <span class="article-meta-sep">|</span>
+            <span>5 de março de 2026</span>
+            <span class="article-meta-sep">|</span>
+            <span>Equipe 4WaTT</span>
+            <span class="article-meta-sep">|</span>
+            <span>12 min de leitura</span>
+          </div>
+        </div>
+        <figure class="article-hero-figure">
+          <img src="assets/img/biodigestor_CINZA.png" alt="Ilustração de biodigestor industrial" loading="eager"
+            decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CORPO DO ARTIGO ══ -->
+  <div class="article-wrapper">
+    <div class="container">
+      <div class="article-layout">
+
+        <!-- Conteúdo principal -->
+        <main>
+          <article class="article-content">
+
+            <p class="article-lead" data-i18n="art1_lead">Um biodigestor industrial transforma resíduo orgânico em valor
+              energético. Em um ambiente totalmente fechado e sem oxigênio, comunidades de microrganismos convertem
+              matéria orgânica em <strong>biogás</strong> e <strong>biofertilizante</strong>, dois produtos centrais
+              para projetos de descarbonização, eficiência operacional e geração de receita no agro e na indústria.</p>
+
+            <p>Na prática, um biodigestor industrial opera como uma usina biológica de alta precisão. A diferença para
+              modelos rurais menores está na escala e no controle: uma planta industrial pode processar dezenas ou
+              centenas de toneladas por dia, mantendo estabilidade microbiológica por meio do ajuste fino de
+              temperatura, pH, agitação e tempo de retenção hidráulica.</p>
+
+            <p>O objetivo deste artigo é mostrar esse fluxo de forma organizada, do recebimento do resíduo até a saída
+              de dois produtos finais: biogás com teor elevado de metano e digestato com valor agronômico.</p>
+
+            <!-- ─── O que é digestão anaeróbia ─── -->
+            <h2 id="digestao-anaerobia">O que é a digestão anaeróbia?</h2>
+
+            <p class="section-intro">A digestão anaeróbia não é uma reação única. Ela acontece em sequência, com
+              diferentes grupos de microrganismos atuando em etapas complementares até que a matéria orgânica seja
+              convertida em energia e biofertilizante.</p>
+
+            <div class="steps-grid" aria-label="Etapas da digestão anaeróbia">
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 1</span>
+                <h3 class="step-card__title">Hidrólise</h3>
+                <p class="step-card__text">É o momento da quebra inicial da matéria orgânica. Bactérias hidrolíticas
+                  liberam enzimas que fragmentam carboidratos, proteínas e lipídios em compostos menores e solúveis,
+                  como açúcares, aminoácidos e ácidos graxos.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 2</span>
+                <h3 class="step-card__title">Acidogênese</h3>
+                <p class="step-card__text">Os compostos gerados na hidrólise são fermentados e transformados em ácidos
+                  graxos voláteis (AGV), álcoois, CO₂ e H₂. É uma fase rápida e crítica: quando há acúmulo excessivo de
+                  AGV, o pH cai e o sistema perde estabilidade.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 3</span>
+                <h3 class="step-card__title">Acetogênese</h3>
+                <p class="step-card__text">Nessa etapa, os AGV são convertidos em acetato, hidrogênio e dióxido de
+                  carbono. Esses compostos funcionam como matéria-prima direta para a geração de metano; por isso, a
+                  estabilidade térmica do reator pesa bastante no desempenho.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 4</span>
+                <h3 class="step-card__title">Metanogênese</h3>
+                <p class="step-card__text">É a etapa final e mais sensível do processo. Arqueias metanogênicas convertem
+                  acetato e a combinação H₂/CO₂ em <strong>metano (CH₄)</strong>, definindo a eficiência energética do
+                  biodigestor e a qualidade do biogás produzido.</p>
+              </section>
+            </div>
+
+            <div class="callout-stat">
+              <span class="callout-stat__number">60–70%</span>
+              <span class="callout-stat__text">Concentração típica de metano (CH₄) no biogás produzido por biodigestores
+                agroindustriais. O restante é principalmente CO₂, com traços de H₂S, NH₃ e outros compostos.</span>
+            </div>
+
+            <!-- ─── Tipos de biodigestor ─── -->
+            <h2 id="tipos-biodigestor">Tipos de biodigestor industrial</h2>
+
+            <p class="section-intro">Não existe um biodigestor universal. A escolha do reator depende do tipo de
+              resíduo, da concentração de sólidos, da escala da operação e do nível de controle desejado no processo.
+            </p>
+
+            <div class="reactor-grid">
+              <section class="reactor-card" id="cstr">
+                <h3>CSTR — Continuously Stirred Tank Reactor</h3>
+                <p class="reactor-card__summary">É o modelo mais comum para resíduos com maior concentração de sólidos,
+                  geralmente na faixa de 8% a 12% de sólidos totais. Opera com agitação contínua, mecânica ou
+                  hidráulica, para manter o substrato homogêneo e melhorar o contato entre biomassa e matéria orgânica.
+                </p>
+                <p class="reactor-card__summary">Tem boa versatilidade operacional e costuma oferecer estabilidade de
+                  processo, mas exige maior consumo energético para aquecimento e agitação.</p>
+                <p class="reactor-card__ideal"><strong>Ideal para:</strong> dejetos de suínos e bovinos, resíduos
+                  frigoríficos e FORSU (fração orgânica de resíduos sólidos urbanos).</p>
+              </section>
+
+              <section class="reactor-card" id="uasb">
+                <h3>UASB — Upflow Anaerobic Sludge Blanket</h3>
+                <p class="reactor-card__summary">É um reator de manta de lodo de fluxo ascendente, indicado para
+                  resíduos líquidos com baixa concentração de sólidos. Seu diferencial está na alta concentração de
+                  biomassa anaeróbia granular dentro do reator, o que permite boa eficiência com tempos de retenção
+                  hidráulica muito menores.</p>
+                <p class="reactor-card__summary">Em comparação com um CSTR, o UASB consegue operar com retenção na ordem
+                  de horas, não de semanas, desde que o efluente tenha perfil adequado.</p>
+                <p class="reactor-card__ideal"><strong>Ideal para:</strong> vinhoto de cana-de-açúcar, efluentes de
+                  laticínios, cervejarias e indústrias processadoras de alimentos.</p>
+              </section>
+
+              <section class="reactor-card" id="plug-flow">
+                <h3>Plug Flow</h3>
+                <p class="reactor-card__summary">Nesse formato, o material avança pelo reator de forma tubular, com
+                  fluxo próximo ao modelo pistão e pouca mistura longitudinal. Isso cria um percurso mais previsível
+                  entre entrada e saída do substrato.</p>
+                <p class="reactor-card__summary">É uma alternativa especialmente útil para resíduos fibrosos e com maior
+                  teor de sólidos, que tendem a dificultar a operação de sistemas com agitação convencional.</p>
+                <p class="reactor-card__ideal"><strong>Ideal para:</strong> palha, bagaço de cana, silagem de milho e
+                  resíduos do processamento de grãos.</p>
+              </section>
+
+              <section class="reactor-card" id="dois-estagios">
+                <h3>Biodigestor de Dois Estágios</h3>
+                <p class="reactor-card__summary">Nesse arranjo, a hidrólise e a acidogênese acontecem em um reator,
+                  enquanto a metanogênese ocorre em outro. Isso permite ajustar pH, temperatura e dinâmica
+                  microbiológica de forma independente para cada fase.</p>
+                <p class="reactor-card__summary">A separação reduz inibições cruzadas, melhora a previsibilidade
+                  operacional e pode aumentar a eficiência global de conversão quando o resíduo é mais complexo.</p>
+                <p class="reactor-card__ideal"><strong>Ideal para:</strong> projetos industriais com resíduos de alta
+                  complexidade, como substratos com muito teor de gordura, proteína ou lignina.</p>
+              </section>
+            </div>
+
+            <!-- ─── Parâmetros técnicos ─── -->
+            <h2 id="parametros-tecnicos">Parâmetros técnicos fundamentais</h2>
+
+            <p class="section-intro">Em uma planta industrial, estabilidade operacional depende de monitoramento
+              contínuo. Quando esses indicadores saem da faixa ideal, o efeito aparece rápido na produção de gás, na
+              saúde microbiológica e no custo da operação.</p>
+
+            <div class="params-table-wrap" aria-label="Parâmetros técnicos de biodigestores industriais">
+              <table class="params-table">
+                <thead>
+                  <tr>
+                    <th>Parâmetro</th>
+                    <th>Faixa ótima</th>
+                    <th>Impacto operacional</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Parâmetro">TRH</td>
+                    <td data-label="Faixa ótima"><span>20–40 dias</span></td>
+                    <td data-label="Impacto operacional">Quando o tempo de retenção hidráulica fica baixo demais, a
+                      biomassa pode ser arrastada para fora do sistema. Quando fica alto demais, o projeto tende a
+                      exigir mais volume construído e mais capital investido.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">pH</td>
+                    <td data-label="Faixa ótima"><span>6,8–7,4</span></td>
+                    <td data-label="Impacto operacional">Abaixo de 6,5, as arqueias metanogênicas começam a ser
+                      inibidas. Acima de 8, o risco aumenta por toxicidade associada à amônia.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">Temperatura mesofílica</td>
+                    <td data-label="Faixa ótima"><span>35–37°C</span></td>
+                    <td data-label="Impacto operacional">Mesmo oscilações relativamente pequenas, na faixa de ±2°C, já
+                      podem reduzir de forma relevante a taxa de metanogênese e comprometer a estabilidade do reator.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">Temperatura termofílica</td>
+                    <td data-label="Faixa ótima"><span>50–55°C</span></td>
+                    <td data-label="Impacto operacional">Pode entregar maior produção específica, mas cobra o preço de
+                      menor robustez operacional e maior demanda energética para manter a condição térmica.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">Relação C/N</td>
+                    <td data-label="Faixa ótima"><span>20–30:1</span></td>
+                    <td data-label="Impacto operacional">Quando a relação cai abaixo de 15, cresce o risco de acúmulo de
+                      amônia. Quando sobe acima de 35, falta nitrogênio para sustentar adequadamente a atividade
+                      bacteriana.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">Sólidos totais no CSTR</td>
+                    <td data-label="Faixa ótima"><span>8–12%</span></td>
+                    <td data-label="Impacto operacional">Acima de 15%, aparecem problemas de agitação e formação de
+                      crosta. Abaixo de 6%, o sistema tende a ficar diluído demais e o reator pode acabar
+                      subdimensionado em eficiência econômica.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Parâmetro">AGV</td>
+                    <td data-label="Faixa ótima"><span>&lt; 500 mg/L</span></td>
+                    <td data-label="Impacto operacional">Quando os ácidos graxos voláteis passam de 1.500 mg/L, isso
+                      normalmente sinaliza sobrecarga orgânica e exige ajuste imediato na alimentação do reator.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- ─── Potencial de geração ─── -->
+            <h2 id="potencial-geracao">Quanto biogás uma planta gera?</h2>
+
+            <p class="section-intro">A geração de biogás depende diretamente da composição bioquímica do substrato.
+              Resíduos mais gordurosos tendem a oferecer maior potencial por unidade de matéria orgânica, mas também
+              pedem mais cuidado operacional, retenção maior e pré-tratamento compatível.</p>
+
+            <div class="substrato-table-wrap" aria-label="Potencial de geração de biogás por substrato">
+              <table class="substrato-table">
+                <thead>
+                  <tr>
+                    <th>Substrato</th>
+                    <th>Potencial de geração</th>
+                    <th>Teor de metano</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Dejetos bovinos</td>
+                    <td>0,25–0,40 Nm³/kg SV</td>
+                    <td>CH₄: 55–60%</td>
+                  </tr>
+                  <tr>
+                    <td>Dejetos suínos</td>
+                    <td>0,45–0,60 Nm³/kg SV</td>
+                    <td>CH₄: 60–65%</td>
+                  </tr>
+                  <tr>
+                    <td>Vinhoto de cana</td>
+                    <td>0,30–0,45 Nm³/kg DQO</td>
+                    <td>CH₄: 62–68%</td>
+                  </tr>
+                  <tr>
+                    <td>Resíduos alimentares</td>
+                    <td>0,50–0,80 Nm³/kg SV</td>
+                    <td>CH₄: 60–68%</td>
+                  </tr>
+                  <tr>
+                    <td>Gordura e óleo residual</td>
+                    <td>0,80–1,20 Nm³/kg SV</td>
+                    <td>CH₄: 68–72%</td>
+                  </tr>
+                  <tr>
+                    <td>Resíduos hortifrutigranjeiros</td>
+                    <td>0,40–0,55 Nm³/kg SV</td>
+                    <td>CH₄: 58–63%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout-stat">
+              <span class="callout-stat__number">2.400 Nm³/dia</span>
+              <span class="callout-stat__text">Capacidade de produção de biometano da planta CEASA Goiás, desenvolvida
+                pela 4WaTT a partir de resíduos hortifrutigranjeiros. A planta processa 60 t/dia de resíduos orgânicos
+                do mercado atacadista.</span>
+            </div>
+
+            <!-- ─── Produtos ─── -->
+            <h2 id="outputs">Os produtos de um biodigestor</h2>
+
+            <p class="section-intro">Um biodigestor bem estruturado não entrega só gás. Ele cria um portfólio de
+              produtos energéticos, insumos agrícolas e receitas ambientais que podem melhorar bastante a viabilidade do
+              projeto.</p>
+
+            <div class="info-grid">
+              <section class="info-card">
+                <h3 class="info-card__title info-card__title--biofertilizante">Biofertilizante</h3>
+                <p class="info-card__text info-card__text--biofertilizante-intro">O digestato que sai do reator é rico
+                  em nitrogênio amoniacal, fósforo e potássio biodisponíveis. Quando bem caracterizado, pode substituir
+                  fertilizantes sintéticos, reduzir custo operacional e reforçar o posicionamento ESG da operação.</p>
+                <figure class="info-card__figure info-card__figure--biofertilizante">
+                  <img src="assets/img_old/dsdb.jpeg" alt="Digestato e aplicação como biofertilizante"
+                    class="info-card__image" loading="lazy" decoding="async">
+                </figure>
+                <p class="info-card__text info-card__text--biofertilizante-note">Para uso comercial ou estruturado, o
+                  material deve seguir requisitos técnicos e regulatórios, incluindo enquadramento conforme a Instrução
+                  Normativa MAPA 61/2020.</p>
+              </section>
+              <section class="info-card">
+                <h3 class="info-card__title info-card__title--biometano">Biometano</h3>
+                <p class="info-card__text info-card__text--biometano-intro">Depois do upgrading, com remoção de CO₂, H₂S
+                  e umidade, o biogás pode atingir padrão de biometano com teor superior a 97% de CH₄. Isso abre espaço
+                  para injeção em rede, uso veicular ou venda direta para a indústria.</p>
+                <figure class="info-card__figure info-card__figure--biometano">
+                  <img src="assets/img_old/anp.png" alt="Imagem relacionada à regulação do biometano pela ANP"
+                    class="info-card__image info-card__image--biometano" loading="lazy" decoding="async">
+                </figure>
+                <p class="info-card__text info-card__text--biometano-note">Essa frente é regulada no Brasil pela ANP
+                  854/2021.</p>
+              </section>
+              <section class="info-card">
+                <h3 class="info-card__title info-card__title--energia">Energia elétrica e térmica</h3>
+                <p class="info-card__text info-card__text--energia-intro">Com motogeradores ou turbinas a gás, o biogás
+                  pode ser convertido em eletricidade para autoconsumo ou comercialização. O calor residual também pode
+                  ser recuperado e reutilizado no aquecimento do próprio reator.</p>
+                <figure class="info-card__figure info-card__figure--energia">
+                  <img src="assets/img_old/cogeracao-energia.png"
+                    alt="Cogeração de energia elétrica e térmica a partir do biogás"
+                    class="info-card__image info-card__image--energia" loading="lazy" decoding="async">
+                </figure>
+              </section>
+              <section class="info-card">
+                <h3 class="info-card__title info-card__title--carbono">Créditos de carbono</h3>
+                <p class="info-card__text info-card__text--carbono-intro">Projetos bem estruturados ainda podem capturar
+                  valor com CBIOs e créditos voluntários, pela redução de emissões de metano e pela substituição de
+                  combustíveis fósseis.</p>
+                <figure class="info-card__figure info-card__figure--carbono">
+                  <img
+                    src="assets/img_old/_National_Carbon_Credit_Registry_System_Establishment_to_be_Expedited_per_Prime_Minister's_D_.jpeg"
+                    alt="Ilustração sobre créditos de carbono e registro nacional"
+                    class="info-card__image info-card__image--carbono" loading="lazy" decoding="async">
+                </figure>
+                <p class="info-card__text info-card__text--carbono-note">Em muitos casos, essa frente representa uma
+                  receita complementar relevante dentro do modelo do projeto.</p>
+              </section>
+            </div>
+
+            <!-- ─── Dimensionamento ─── -->
+            <h2 id="dimensionamento">Como dimensionar um biodigestor industrial?</h2>
+
+            <p class="section-intro">Dimensionar um biodigestor industrial é um processo de engenharia. Ele começa com
+              dados confiáveis do resíduo e evolui até a definição do reator e dos sistemas auxiliares que vão sustentar
+              a operação.</p>
+
+            <div class="steps-grid">
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 1</span>
+                <h3 class="step-card__title">Caracterização do resíduo</h3>
+                <p class="step-card__text">O ponto de partida são análises laboratoriais de sólidos totais, sólidos
+                  voláteis, DQO, nitrogênio Kjeldahl, fósforo total e pH. Sem essa base, qualquer dimensionamento vira
+                  aproximação frágil.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 2</span>
+                <h3 class="step-card__title">Ensaio BMP</h3>
+                <p class="step-card__text">O teste de potencial bioquímico de metano mede, em condição controlada,
+                  quanto metano aquele substrato realmente consegue gerar. Esse é um dos dados mais importantes para
+                  estimar volume de reator e expectativa de produção.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 3</span>
+                <h3 class="step-card__title">Definição de TRH e volume útil</h3>
+                <p class="step-card__text">Com base no BMP, na carga orgânica e na taxa de carregamento volumétrico,
+                  calcula-se o volume útil do reator. Em CSTR mesofílico para dejetos suínos, por exemplo, o TRH costuma
+                  ficar na faixa de 25 a 30 dias.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 4</span>
+                <h3 class="step-card__title">Escolha da tecnologia</h3>
+                <p class="step-card__text">Nessa fase entram as definições sobre tipo de reator, sistema de agitação,
+                  estratégia de aquecimento e solução construtiva da cobertura. Essas decisões afetam CAPEX, OPEX e
+                  estabilidade operacional.</p>
+              </section>
+              <section class="step-card">
+                <span class="step-card__eyebrow">Etapa 5</span>
+                <h3 class="step-card__title">Sistemas auxiliares</h3>
+                <p class="step-card__text">O projeto só fecha corretamente quando inclui pré-tratamento, upgrading,
+                  compressão, armazenagem e ponto de saída de energia. É essa integração que transforma o biodigestor em
+                  uma planta industrial viável.</p>
+              </section>
+            </div>
+
+            <!-- CTA contextual -->
+            <div class="article-cta-inline">
+              <p class="article-cta-inline__title">Quer calcular o potencial do seu resíduo?</p>
+              <p class="article-cta-inline__text">Nossa equipe faz um diagnóstico técnico gratuito: estimativa de
+                geração de biogás, tipo de reator indicado e retorno do investimento.</p>
+              <a href="contato.html" class="btn-primary">Solicitar diagnóstico gratuito →</a>
+            </div>
+
+            <!-- Social share -->
+            <div class="social-share">
+              <span class="social-share__label">Compartilhar</span>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://4watt.tech/artigos/como-funciona-biodigestor-industrial/"
+                class="social-btn social-btn--linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://wa.me/?text=Como%20funciona%20um%20biodigestor%20industrial%20-%20Guia%20t%C3%A9cnico%20completo%20-%20https://4watt.tech/artigos/como-funciona-biodigestor-industrial/"
+                class="social-btn social-btn--whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <button class="social-btn social-btn--copy" id="copyLinkBtn"
+                onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Link copiado!'; setTimeout(()=>{this.textContent='Copiar link'},2000)})">Copiar
+                link</button>
+            </div>
+
+            <!-- Author box -->
+            <div class="author-box">
+              <div class="author-avatar" aria-hidden="true"><img src="assets/img_old/iconeq.png" alt=""></div>
+              <div>
+                <p class="author-name">Equipe 4WaTT Bio Engenharia</p>
+                <p class="author-bio">Especialistas em bioengenharia com mais de 12 anos de atuação no setor de biogás e
+                  biometano no Brasil. Mais de 200 projetos realizados em agroindústrias, frigoríficos, usinas de cana e
+                  resíduos sólidos urbanos.</p>
+              </div>
+            </div>
+
+            <!-- Artigos relacionados -->
+            <div class="related-articles">
+              <h2 class="related-title">Continue lendo</h2>
+              <div class="related-grid">
+                <a href="artigo-regulacao-biometano.html" class="related-card">
+                  <span class="related-card__image-wrap">
+                    <img src="assets/img/Regulaçãodobiometano_CINZA.jpg.jpeg"
+                      alt="Ilustração sobre regulação do biometano" class="related-card__image" loading="lazy"
+                      decoding="async">
+                  </span>
+                  <span class="related-card__body">
+                    <span class="related-card__badge">Mercado</span>
+                    <span class="related-card__title">Regulação do biometano no Brasil: o que a ANP 854/2021 muda para o
+                      mercado</span>
+                    <span class="related-card__excerpt">Entenda os efeitos práticos da regulação sobre especificação do
+                      gás, comercialização e estruturação de novos projetos.</span>
+                    <span class="related-card__meta">10 Mar 2026 · 8 min</span>
+                  </span>
+                </a>
+                <a href="artigo-creditos-carbono.html" class="related-card">
+                  <span class="related-card__image-wrap">
+                    <img src="assets/img/creditos de carbono CINZA.png" alt="Ilustração sobre créditos de carbono"
+                      class="related-card__image" loading="lazy" decoding="async">
+                  </span>
+                  <span class="related-card__body">
+                    <span class="related-card__badge">ESG &amp; Carbono</span>
+                    <span class="related-card__title">Créditos de carbono a partir do biogás: oportunidade real ou
+                      promessa?</span>
+                    <span class="related-card__excerpt">Veja onde existe captura real de valor, quais premissas precisam
+                      fechar e como evitar narrativa vazia em projetos de biogás.</span>
+                    <span class="related-card__meta">12 Mar 2026 · 10 min</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </article>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="article-toc" aria-label="Índice do artigo">
+            <p class="article-toc-title">Neste artigo</p>
+            <a href="#digestao-anaerobia" class="article-toc-link">O que é a digestão anaeróbia?</a>
+            <a href="#tipos-biodigestor" class="article-toc-link">Tipos de biodigestor industrial</a>
+            <a href="#cstr" class="article-toc-link">— CSTR</a>
+            <a href="#uasb" class="article-toc-link">— UASB</a>
+            <a href="#plug-flow" class="article-toc-link">— Plug Flow</a>
+            <a href="#dois-estagios" class="article-toc-link">— Dois Estágios</a>
+            <a href="#parametros-tecnicos" class="article-toc-link">Parâmetros técnicos</a>
+            <a href="#potencial-geracao" class="article-toc-link">Potencial de geração</a>
+            <a href="#outputs" class="article-toc-link">Produtos do biodigestor</a>
+            <a href="#dimensionamento" class="article-toc-link">Como dimensionar?</a>
+          </div>
+
+          <div class="sidebar-cta">
+            <p class="sidebar-cta__title">Tem resíduos orgânicos na sua operação?</p>
+            <p class="sidebar-cta__text">Descubra o potencial de geração de biogás do seu resíduo com um diagnóstico
+              técnico gratuito.</p>
+            <a href="contato.html" class="btn">Solicitar diagnóstico</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="assets/img/logo-4watt-light.png" alt="4WaTT Logo" class="footer__logo" loading="lazy">
+          <p class="footer-text-bold">De todas as formas de energia, escolha<br><span style="white-space: nowrap;">a que
+              se renova, escolha 4WaTT</span></p>
+          <p class="footer-text-bold">4WaTT Bio Engenharia S/A.</p>
+          <p class="footer-text-bold">© 2026 Todos os direitos reservados.</p>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.1s;">
+          <h3>ENDEREÇO</h3>
+          <div class="footer-address-lines">
+            <span class="footer-text-bold">Edifício Metropolitan Business</span>
+            <span class="footer-text-bold">Torre Tokyo, sala 601 4WATT</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="footer-text-bold">Av. Dep. Jamel Cecílio</span>
+              <div class="map-btns-small" style="display: flex; gap: 8px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania"
+                  target="_blank" rel="noopener noreferrer"><i class="fas fa-location-arrow"></i></a>
+                <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank"
+                  rel="noopener noreferrer"><i class="fab fa-waze"></i></a>
+              </div>
+            </div>
+            <div class="location-group-bold">
+              <span class="footer-text-bold">Jardim Goiás, Goiânia - GO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.2s;">
+          <h3>CONTATO</h3>
+          <ul class="footer-contact-list-bold">
+            <li><i class="fas fa-envelope footer-icon-cyan"></i> <a
+                href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone footer-icon-cyan"></i> <a href="https://wa.me/5545991378949">+55 45
+                99137-8949</a></li>
+            <li><i class="fas fa-shield-halved footer-icon-cyan"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.3s;">
+          <h3>SIGA-NOS</h3>
+          <div class="social-icons-bold">
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+          <div class="verified-seal-mini-footer">
+            <i class="fas fa-check-circle"></i>
+            <span>Site Oficial Verificado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.accordion-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // TOC: highlight ativo ao scroll
+    const tocLinks = document.querySelectorAll('.article-toc-link');
+    const sections = document.querySelectorAll('[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      tocLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + current ? '#3D0036' : '';
+        l.style.fontWeight = l.getAttribute('href') === '#' + current ? '600' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

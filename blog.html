@@ -1,0 +1,568 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Google Analytics GA4
+         Fluxo: www.4watt.tech – GA4
+         URL do fluxo: https://www.4watt.tech
+         Código do fluxo: 3217095081
+         ID da métrica: G-N91NFD55MB -->
+  <script>
+    window.__GA4_FLOW = {
+      name: 'www.4watt.tech – GA4',
+      url: 'https://www.4watt.tech',
+      streamId: '3217095081',
+      measurementId: 'G-N91NFD55MB'
+    };
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', window.__GA4_FLOW.measurementId);
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog e Notícias | 4WaTT Bio Engenharia S/A</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="assets/img_old/iconeq.png" type="image/png">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+  <link rel="stylesheet" href="assets/css/custom_v2.css?v=2">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Fix for horizontal navbar and footer */
+    .navbar {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+
+    .nav-links {
+      display: flex !important;
+      flex-direction: row !important;
+      list-style: none !important;
+      gap: 2rem !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .footer-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 2rem !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    .mobile-home-btn {
+      display: none;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 8px;
+      margin-left: 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-home-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .main-footer {
+        transform: none !important;
+        width: 100% !important;
+      }
+
+      .nav-links {
+        display: none !important;
+        /* Hide on mobile by default, handled by JS */
+      }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
+
+    /* User preference: Left alignment */
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .hero-sub,
+    .section p,
+    .glass-card {
+      text-align: left !important;
+    }
+
+    .container,
+    .hero-content__inner,
+    .footer-grid {
+      align-items: flex-start !important;
+    }
+
+    .hero-buttons,
+    .hero-confidence {
+      justify-content: flex-start !important;
+    }
+
+    p {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      color: #000 !important;
+    }
+
+    @media (min-width: 1025px) {
+      .menu-toggle {
+        display: none !important;
+      }
+    }
+
+    /* ── Page Styles ── */
+    .page-hero--blog {
+      padding: 120px 0 64px;
+      background: linear-gradient(135deg, #03a589 0%, #3a0940 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #fffafa !important;
+      margin-bottom: 20px;
+      font-family: Inter, sans-serif;
+      opacity: 0.9;
+    }
+
+    .breadcrumb a {
+      color: #fffafa !important;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .breadcrumb-sep {
+      font-size: 11px;
+      color: #fffafa !important;
+    }
+
+    .page-hero--blog h1 {
+      font-family: Montserrat, sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      color: #fffafa !important;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-hero--blog .lead {
+      font-family: Inter, sans-serif;
+      font-size: 17px;
+      color: #fffafa !important;
+      max-width: 580px;
+      line-height: 1.65;
+      opacity: 0.95;
+    }
+
+    .coming-soon-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .coming-soon-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 800px;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .coming-soon-icon {
+      font-size: 4rem;
+      color: #03a589;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-card {
+        flex-direction: column;
+        text-align: left;
+        padding: 32px;
+      }
+    }
+  </style>
+
+  <!-- 4WaTT Global Responsive & Visual Polish -->
+  <style>
+    /* === SMOOTH SCROLLING & BASE === */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* === NAVBAR RESPONSIVE === */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(26, 5, 39, 0.97);
+        backdrop-filter: blur(16px);
+        padding: 20px;
+        gap: 8px !important;
+        z-index: 9998;
+        border-bottom: 1.5px solid rgba(200, 100, 255, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-links.active li a {
+        color: #fff !important;
+        padding: 12px 16px;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .nav-links.active li a:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .dropdown-content {
+        position: static !important;
+        background: rgba(255, 255, 255, 0.07) !important;
+        box-shadow: none !important;
+        padding: 8px !important;
+        margin-top: 4px;
+        border-radius: 10px;
+      }
+
+      .dropdown-content li a {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+    }
+
+    /* === SECTION RESPONSIVENESS === */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 0 !important;
+      }
+
+      .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .section-title {
+        font-size: 1.6rem !important;
+      }
+
+      .two-col,
+      .two-col--balanced,
+      .syngas-layout {
+        flex-direction: column !important;
+        display: flex !important;
+      }
+
+      .two-col__text,
+      .two-col__visual,
+      .syngas-text,
+      .syngas-visual {
+        width: 100% !important;
+        min-width: unset !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero__title {
+        font-size: 1.8rem !important;
+      }
+
+      .page-hero__lead {
+        font-size: 1rem !important;
+      }
+
+      .btn {
+        padding: 12px 22px !important;
+        font-size: 0.92rem !important;
+      }
+
+      .hero-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+
+      .hero-buttons a,
+      .hero-buttons button {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+
+    /* === BTN POLISH === */
+    .btn,
+    .btn-primary,
+    .btn-outline {
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0, 160, 137, 0.3) !important;
+    }
+
+    .btn-outline:hover {
+      background: var(--secondary-color) !important;
+      color: #fff !important;
+      transform: translateY(-1px);
+    }
+
+    /* === BREADCRUMB === */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb__link,
+    .breadcrumb__current,
+    .breadcrumb__sep {
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      opacity: 0.82;
+    }
+
+    .breadcrumb__link:hover {
+      opacity: 1;
+    }
+
+    /* === FOOTER RESPONSIVE === */
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .main-footer {
+        padding: 60px 0 40px !important;
+      }
+    }
+
+    /* === REVEAL ANIMATIONS === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="assets/css/legacy-bridge.css?v=3.0">
+</head>
+
+<body class="t4">
+  <div class="bg-aurora bg-aurora--light"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true"
+            data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="https://calculadora-zeta-sooty.vercel.app/" data-i18n="cta_simular">Simular
+          Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <main>
+    <section class="page-hero--blog">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span data-i18n="nav_blog">Blog</span>
+        </nav>
+        <h1 data-i18n="nav_blog">Blog 4WaTT</h1>
+        <p class="lead">Fique por dentro das novidades, eventos e insights do mercado de energia renovável.</p>
+      </div>
+    </section>
+
+    <section class="coming-soon-section">
+      <div class="container">
+        <div class="coming-soon-card">
+          <div class="coming-soon-icon">
+            <img src="assets/img_old/iconeq.png" alt="4WaTT Icon" style="width: 80px; height: auto;">
+          </div>
+          <div>
+            <span class="badge badge--laranja" style="margin-bottom: 16px;">EM BREVE</span>
+            <h2
+              style="font-family: Montserrat, sans-serif; font-weight: 800; color: #3a0940 !important; margin-bottom: 16px;">
+              Novidades a caminho!</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #000 !important;">Estamos preparando uma série de
+              conteúdos exclusivos, coberturas de eventos e insights técnicos para você. Em breve, esta seção estará
+              repleta de informações valiosas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="assets/img/logo-4watt-light.png" alt="4WaTT Logo" class="footer__logo" loading="lazy">
+          <p class="footer-text-bold">De todas as formas de energia, escolha<br><span style="white-space: nowrap;">a que
+              se renova, escolha 4WaTT</span></p>
+          <p class="footer-text-bold">4WaTT Bio Engenharia S/A.</p>
+          <p class="footer-text-bold">© 2026 Todos os direitos reservados.</p>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.1s;">
+          <h3>ENDEREÇO</h3>
+          <div class="footer-address-lines">
+            <span class="footer-text-bold">Edifício Metropolitan Business</span>
+            <span class="footer-text-bold">Torre Tokyo, sala 601 4WATT</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="footer-text-bold">Av. Dep. Jamel Cecílio</span>
+              <div class="map-btns-small" style="display: flex; gap: 8px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania"
+                  target="_blank" rel="noopener noreferrer"><i class="fas fa-location-arrow"></i></a>
+                <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank"
+                  rel="noopener noreferrer"><i class="fab fa-waze"></i></a>
+              </div>
+            </div>
+            <div class="location-group-bold">
+              <span class="footer-text-bold">Jardim Goiás, Goiânia - GO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.2s;">
+          <h3>CONTATO</h3>
+          <ul class="footer-contact-list-bold">
+            <li><i class="fas fa-envelope footer-icon-cyan"></i> <a
+                href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone footer-icon-cyan"></i> <a href="https://wa.me/5545991378949">+55 45
+                99137-8949</a></li>
+            <li><i class="fas fa-shield-halved footer-icon-cyan"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.3s;">
+          <h3>SIGA-NOS</h3>
+          <div class="social-icons-bold">
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-youtube"></i></a>
+          </div>
+
+          <div class="verified-seal-mini-footer">
+            <i class="fas fa-check-circle"></i>
+            <span>Site Oficial Verificado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+</body>
+
+</html>

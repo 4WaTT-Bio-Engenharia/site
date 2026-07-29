@@ -1,0 +1,98 @@
+/* ============================================================
+   4WaTT — Legacy Bridge · pele CLARA off-white premium para as
+   páginas legadas (navbar #main-header, footer .main-footer,
+   botões e base). Carregado por ÚLTIMO no <head>.
+   Não reconstrói layouts: ajusta cor/aparência para casar com o novo.
+   ============================================================ */
+
+:root {
+  --lb-bg:       #F4F1EB;
+  --lb-surface:  #FCFBF8;
+  --lb-surface2: #ECE7DD;
+  --lb-ink:      #1E1822;
+  --lb-dim:      rgba(30,24,34,0.70);
+  --lb-muted:    rgba(30,24,34,0.50);
+  --lb-border:   rgba(30,24,34,0.12);
+  --lb-teal:     #03A589;
+  --lb-teal-ink: #057a64;
+  --lb-roxo:     #3A0940;
+  --lb-plum:     #2A0720;
+  --lb-gold:     #DBAA0F;
+
+  /* desloca variáveis do design-system legado para a base creme */
+  --color-off-white: #F4F1EB;
+  --bg-light: #F4F1EB;
+  --bg-page: #F4F1EB;
+}
+
+/* ---------- base ---------- */
+body { background: var(--lb-bg) !important; color: var(--lb-ink); position: relative; }
+main { background: transparent; position: relative; z-index: 1; }
+a { color: inherit; }
+
+/* ---------- Fundo AURORA + grão (legadas) ---------- */
+body::before {
+  content: ""; position: fixed; inset: -25vmax; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(36vmax 36vmax at 16% 10%, rgba(3,165,137,0.24), transparent 62%),
+    radial-gradient(40vmax 40vmax at 88% 18%, rgba(58,9,64,0.20), transparent 64%),
+    radial-gradient(34vmax 34vmax at 74% 92%, rgba(219,170,15,0.18), transparent 62%),
+    radial-gradient(30vmax 30vmax at 24% 70%, rgba(3,165,137,0.14), transparent 64%);
+  filter: blur(38px); animation: lb-aurora 28s ease-in-out infinite alternate; will-change: transform;
+}
+@keyframes lb-aurora {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(7%, -5%, 0) scale(1.1); }
+  100% { transform: translate3d(-5%, 6%, 0) scale(1.06); }
+}
+/* mantém header/footer acima do fundo */
+#main-header { z-index: 100; }
+#main-header .nav-links > li > a { color: rgba(30,24,34,0.82) !important; font-weight: 600 !important; }
+@media (prefers-reduced-motion: reduce) { body::before { animation: none !important; } }
+
+/* ---------- NAVBAR (#main-header) — só aparência, mantém o posicionamento do navbar.css ---------- */
+#main-header { background: rgba(250,248,244,0.92) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--lb-border) !important; box-shadow: 0 2px 12px rgba(46,12,40,0.05); }
+#main-header .navbar { background: transparent !important; }
+#main-header .logo img { filter: none !important; height: 30px; width: auto; }
+#main-header .nav-links > li > a { color: var(--lb-dim) !important; font-weight: 500; }
+#main-header .nav-links > li > a:hover { color: var(--lb-ink) !important; }
+#main-header .dropbtn { color: var(--lb-dim) !important; }
+#main-header .dropdown-content { background: var(--lb-surface) !important; border: 1px solid var(--lb-border) !important; box-shadow: 0 18px 44px -22px rgba(46,12,40,0.22) !important; }
+#main-header .dropdown-content a { color: var(--lb-dim) !important; }
+#main-header .dropdown-content a:hover { color: var(--lb-teal-ink) !important; background: var(--lb-surface2) !important; }
+#main-header .nav-links__cta { background: var(--lb-teal) !important; color: #fff !important; border: 0 !important; border-radius: 8px !important; padding: 10px 18px !important; }
+#main-header .nav-links__cta:hover { background: #048f77 !important; }
+#main-header .menu-toggle, #main-header .mobile-home-btn { color: var(--lb-ink) !important; }
+
+/* ---------- BOTÕES ---------- */
+.btn-primary, .btn.btn-primary { background: var(--lb-teal) !important; color: #fff !important; border-color: var(--lb-teal) !important; box-shadow: 0 12px 26px -12px rgba(3,165,137,.5) !important; }
+.btn-primary:hover { background: #048f77 !important; }
+.btn-outline { background: transparent !important; border-color: var(--lb-roxo) !important; color: var(--lb-roxo) !important; }
+.btn-outline:hover { background: var(--lb-roxo) !important; color: #fff !important; }
+.btn-secondary { background: var(--lb-surface) !important; border-color: var(--lb-border) !important; color: var(--lb-ink) !important; }
+.btn-ghost { color: var(--lb-teal-ink) !important; }
+
+/* badges mantêm cor da marca; só garante contraste do laranja → gold */
+.badge--laranja { background: var(--lb-gold) !important; color: #2a2000 !important; }
+
+/* ---------- FOOTER (.main-footer) ---------- */
+#footer.main-footer, .main-footer { background: var(--lb-plum) !important; color: rgba(255,255,255,0.7) !important; }
+.main-footer h1, .main-footer h2, .main-footer h3, .main-footer h4 { color: #fff !important; }
+.main-footer p, .main-footer span, .main-footer li, .main-footer a { color: rgba(255,255,255,0.7) !important; }
+.main-footer a:hover { color: var(--lb-teal) !important; }
+.main-footer .footer-text-bold { color: rgba(255,255,255,0.78) !important; }
+.main-footer .footer-icon-cyan, .main-footer i { color: var(--lb-teal) !important; }
+.main-footer .footer-logo { filter: brightness(0) invert(1) !important; opacity: .95; }
+.main-footer .social-icons-bold a, .main-footer .social-icons a { color: rgba(255,255,255,0.72) !important; border-color: rgba(255,255,255,0.2) !important; }
+.main-footer .social-icons-bold a:hover { color: var(--lb-teal) !important; border-color: var(--lb-teal) !important; }
+.main-footer .verified-seal-mini-footer { color: rgba(255,255,255,0.55) !important; }
+
+/* ---------- seções claras genéricas ---------- */
+.bg-light, .section--light, .coming-soon-section { background: var(--lb-bg) !important; }
+.coming-soon-card, .card, .glass-card { background: var(--lb-surface) !important; border: 1px solid var(--lb-border) !important; box-shadow: 0 18px 44px -22px rgba(46,12,40,0.16) !important; }
+
+/* breadcrumb / heros de página legados */
+.breadcrumb a { color: var(--lb-teal-ink) !important; }
+.page-hero--blog, [class*="page-hero"] { background: var(--lb-surface2) !important; }
+.page-hero--blog h1, [class*="page-hero"] h1 { color: var(--lb-roxo) !important; }

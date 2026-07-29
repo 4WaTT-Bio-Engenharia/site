@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Não Encontrada | 4WaTT Bio Engenharia</title>
+  <link rel="icon" href="assets/img_old/iconeq.png" type="image/png">
+  <meta name="description" content="A página que você tentou acessar não foi encontrada. Volte para a 4WaTT e continue navegando por nossas soluções em biogás e biometano.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://4watt.tech/404.html">
+
+  <meta property="og:title" content="Página Não Encontrada | 4WaTT Bio Engenharia">
+  <meta property="og:description" content="A página que você tentou acessar não foi encontrada. Retorne para a navegação principal da 4WaTT.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4watt.tech/404.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.3">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(0, 160, 137, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(58, 9, 64, 0.18), transparent 28%),
+        #f7f7f5;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+    }
+    .mobile-home-btn {
+      display: none;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 8px;
+      margin-left: 8px;
+      text-decoration: none;
+    }
+    #main-header {
+      background: linear-gradient(90deg, #1a0527 0%, #2e084a 60%, #0a2018 100%) !important;
+    }
+    .error-shell {
+      min-height: calc(100vh - 220px);
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+    }
+    .container {
+      width: min(1180px, calc(100vw - 48px));
+      margin: 0 auto;
+    }
+    .error-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+    .error-card,
+    .status-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(17, 17, 17, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    .error-card {
+      padding: 44px;
+    }
+    .status-card {
+      padding: 32px;
+      background: linear-gradient(160deg, #120816 0%, #24102f 58%, #08211b 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .status-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(0, 160, 137, 0.18), transparent 35%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 55%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00a089;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+    .error-code {
+      margin: 0 0 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(4.8rem, 10vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      color: #3a0940;
+    }
+    .error-title {
+      margin: 0 0 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #111111;
+    }
+    .error-text {
+      margin: 0 0 28px;
+      max-width: 58ch;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #222222;
+    }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .btn-brand,
+    .btn-muted {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.96rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-brand {
+      background: #00a089;
+      color: #ffffff;
+      box-shadow: 0 12px 28px rgba(0, 160, 137, 0.24);
+    }
+    .btn-muted {
+      background: #ffffff;
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      color: #3a0940;
+    }
+    .btn-brand:hover,
+    .btn-muted:hover {
+      transform: translateY(-1px);
+    }
+    .helper-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .helper-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #111111;
+      line-height: 1.65;
+    }
+    .helper-list i {
+      margin-top: 4px;
+      color: #00a089;
+    }
+    .status-kicker {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.86);
+    }
+    .status-number {
+      position: relative;
+      z-index: 1;
+      margin: 22px 0 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(4.5rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+      color: #ffffff;
+    }
+    .status-title {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .status-text {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 22px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .status-links {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+    }
+    .status-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .status-link small {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.78rem;
+    }
+    .footer-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 2rem !important;
+      width: 100% !important;
+    }
+    @media (max-width: 992px) {
+      .mobile-home-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+      #main-header .navbar {
+        position: relative !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        min-height: 72px !important;
+        gap: 10px !important;
+      }
+      #main-header .logo {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+      }
+      #main-header .menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        z-index: 10003 !important;
+        width: 46px !important;
+        height: 46px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-left: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      #main-header .nav-links {
+        display: none !important;
+      }
+      #main-header .nav-links.active {
+        display: flex !important;
+      }
+      #main-header .mobile-home-btn {
+        display: none !important;
+      }
+      .error-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        width: min(100vw - 32px, 1180px);
+      }
+      .error-shell {
+        padding: 104px 0 56px;
+      }
+      .error-card,
+      .status-card {
+        padding: 26px 22px;
+      }
+      .error-actions {
+        flex-direction: column;
+      }
+      .btn-brand,
+      .btn-muted {
+        width: 100%;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/legacy-bridge.css?v=3.0">
+</head>
+<body class="t4">
+  <!-- NAVBAR -->
+    <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true" data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="simulador.html" data-i18n="cta_simular">Simular Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <main class="error-shell">
+    <div class="container">
+      <div class="error-grid">
+        <section class="error-card">
+          <div class="eyebrow" data-i18n="err404_eyebrow">Erro de Navegação</div>
+          <p class="error-code">404</p>
+          <h1 class="error-title" data-i18n="err404_title">Página não encontrada.</h1>
+          <p class="error-text" data-i18n="err404_text">
+            O endereço acessado não está disponível no momento ou pode ter sido movido.
+            Continue a navegação pelas áreas principais da 4WaTT e retome seu caminho sem perder contexto.
+          </p>
+
+          <div class="error-actions">
+            <a href="index.html" class="btn-brand"><span data-i18n="err404_btn_home">Voltar para a home</span> <i class="fas fa-arrow-right"></i></a>
+            <a href="contato.html" class="btn-muted" data-i18n="err404_btn_contact">Falar com a equipe</a>
+            <a href="investidor.html" class="btn-muted" data-i18n="err404_btn_investor">Área do Investidor</a>
+          </div>
+
+          <ul class="helper-list">
+            <li><i class="fas fa-check-circle"></i><span data-i18n="err404_help1">Confira se o endereço foi digitado corretamente.</span></li>
+            <li><i class="fas fa-check-circle"></i><span data-i18n="err404_help2">Acesse nossas soluções em biogás, biometano e gaseificação pelo menu principal.</span></li>
+            <li><i class="fas fa-check-circle"></i><span data-i18n="err404_help3">Se precisar de suporte imediato, use a página de contato.</span></li>
+          </ul>
+        </section>
+
+        <aside class="status-card">
+          <div class="status-kicker"><i class="fas fa-map-signs"></i> <span data-i18n="err404_side_kicker">Redirecionamento rápido</span></div>
+          <div class="status-number">404</div>
+          <h2 class="status-title" data-i18n="err404_side_title">O conteúdo não foi localizado.</h2>
+          <p class="status-text" data-i18n="err404_side_text">
+            Use os atalhos abaixo para voltar a uma página ativa do site.
+          </p>
+
+          <div class="status-links">
+            <a class="status-link" href="solucao-biogas.html">
+              <span><span data-i18n="err404_link_biogas_title">Engenharia de Biogás</span><small data-i18n="err404_link_biogas_sub">Projetos, escopo técnico e entregáveis</small></span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a class="status-link" href="solucao-biometano.html">
+              <span><span data-i18n="err404_link_biom_title">Produção de Biometano</span><small data-i18n="err404_link_biom_sub">Solução técnica e monetização</small></span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a class="status-link" href="investidor.html">
+              <span><span data-i18n="err404_link_inv_title">Área do Investidor</span><small data-i18n="err404_link_inv_sub">Modelos, ativos e fluxo de investimento</small></span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <img src="assets/img/logo-4watt-light.png" alt="4WaTT Logo" class="footer__logo" loading="lazy">
+          <p class="footer-text-bold">De todas as formas de energia, escolha<br><span style="white-space: nowrap;">a que se renova, escolha 4WaTT</span></p>
+          <p class="footer-text-bold">4WaTT Bio Engenharia S/A.</p>
+          <p class="footer-text-bold">© 2026 Todos os direitos reservados.</p>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.1s;">
+          <h3>ENDEREÇO</h3>
+          <div class="footer-address-lines">
+            <span class="footer-text-bold">Edifício Metropolitan Business</span>
+            <span class="footer-text-bold">Torre Tokyo, sala 601 4WATT</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="footer-text-bold">Av. Dep. Jamel Cecílio</span>
+              <div class="map-btns-small" style="display: flex; gap: 8px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener noreferrer"><i class="fas fa-location-arrow"></i></a>
+                <a href="https://waze.com/ul?q=Av.+Dep.+Jamel+Cecilio+2690+Torre+Tokyo+Sala+601+Goiania" target="_blank" rel="noopener noreferrer"><i class="fab fa-waze"></i></a>
+              </div>
+            </div>
+            <div class="location-group-bold">
+              <span class="footer-text-bold">Jardim Goiás, Goiânia - GO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.2s;">
+          <h3>CONTATO</h3>
+          <ul class="footer-contact-list-bold">
+            <li><i class="fas fa-envelope footer-icon-cyan"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone footer-icon-cyan"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+            <li><i class="fas fa-shield-halved footer-icon-cyan"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal" style="transition-delay: 0.3s;">
+          <h3>SIGA-NOS</h3>
+          <div class="social-icons-bold">
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <div class="verified-seal-mini-footer">
+            <i class="fas fa-check-circle"></i>
+            <span>Site Oficial Verificado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+<script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+</body>
+</html>

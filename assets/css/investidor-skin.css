@@ -1,0 +1,965 @@
+/* ============================================================
+   4WaTT — Investidor Skin v3.1
+   Tema escuro institucional. Carrega após todos os outros CSS.
+   ============================================================ */
+
+/* ── TOKENS ESCUROS ───────────────────────────────────────── */
+:root {
+  --iv-bg:        #0a0614;
+  --iv-surface:   rgba(255,255,255,0.05);
+  --iv-surface2:  rgba(255,255,255,0.08);
+  --iv-ink:       #ffffff;
+  --iv-dim:       rgba(255,255,255,0.76);
+  --iv-muted:     rgba(255,255,255,0.55);
+  --iv-border:    rgba(255,255,255,0.10);
+  --iv-border-hi: rgba(255,255,255,0.20);
+  --iv-teal:      #03A589;
+  --iv-teal-light:#5fe9cf;
+  --iv-gold:      #DBAA0F;
+  --iv-plum:      #1a0527;
+  --iv-roxo:      #3A0940;
+
+  /* Overrides para variáveis legadas usadas em inline styles */
+  --brand-purple: #ffffff;
+  --brand-purple-light: rgba(255,255,255,0.90);
+  --border-subtle: rgba(255,255,255,0.08);
+}
+
+/* ── BASE / FUNDO ─────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--iv-bg) !important;
+  color: var(--iv-dim) !important;
+}
+
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(36vmax 36vmax at 16% 10%, rgba(3,165,137,0.10), transparent 62%),
+    radial-gradient(40vmax 40vmax at 88% 18%, rgba(58,9,64,0.18), transparent 64%),
+    radial-gradient(34vmax 34vmax at 74% 92%, rgba(58,9,64,0.12), transparent 62%),
+    radial-gradient(30vmax 30vmax at 24% 70%, rgba(3,165,137,0.08), transparent 64%) !important;
+}
+
+.main-content,
+.wrap {
+  background: transparent !important;
+}
+
+/* ── TIPOGRAFIA GLOBAL ────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+p, li, span, div {
+  color: var(--iv-dim);
+}
+
+.text-muted, .text-dim {
+  color: var(--iv-muted) !important;
+  -webkit-text-fill-color: var(--iv-muted) !important;
+}
+
+.overline {
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+.text-gradient-verde {
+  background: linear-gradient(135deg, var(--iv-teal-light) 0%, var(--iv-teal) 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero-scene {
+  background: linear-gradient(160deg, #0f0a14 0%, #1a0a20 55%, #0a1a17 100%);
+}
+
+.hero-scene__image-wrap {
+  opacity: 0.55;
+}
+
+.hero-h1 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 32px rgba(0,0,0,0.5);
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.88) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.88) !important;
+}
+
+.hero-badge {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+.hero-badge__text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.hero-glow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: glow-pulse-inv 6s ease-in-out infinite;
+}
+
+.hero-glow--verde {
+  top: 20%; right: 15%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,160,137,0.15) 0%, transparent 60%);
+}
+
+.hero-glow--warm {
+  bottom: 10%; left: 10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(45,172,182,0.10) 0%, transparent 60%);
+  animation-direction: reverse;
+  animation-duration: 8s;
+}
+
+@keyframes glow-pulse-inv {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ── SEÇÕES CLARAS → ESCURO ───────────────────────────────── */
+#tese-investimento,
+#modelo-4watt,
+#metodologia-financeira,
+#risk-management,
+#faq,
+.section-modelo-4watt-v2,
+.invest-mid-cta,
+.cta-section {
+  background: transparent !important;
+}
+
+/* Remove fundos claros inline/externos em seções de conteúdo */
+.section {
+  background: transparent !important;
+}
+
+/* ── PORTFOLIO / MARKETPLACE ──────────────────────────────── */
+#portfolio-projetos {
+  background: linear-gradient(180deg, #1a0527 0%, #2e084a 50%, #3d0a5c 100%);
+}
+
+#portfolio-projetos *,
+#portfolio-projetos h2,
+#portfolio-projetos h3,
+#portfolio-projetos p,
+#portfolio-projetos span,
+#portfolio-projetos li {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#portfolio-projetos p,
+#portfolio-projetos span[style*="color:var(--text-dim)"] {
+  color: rgba(255,255,255,0.75) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.75) !important;
+}
+
+#marketplace {
+  background: linear-gradient(180deg, #3d0a5c 0%, #2a0845 55%, #1a0527 100%);
+}
+
+#marketplace *,
+#marketplace h2,
+#marketplace h3,
+#marketplace p,
+#marketplace span,
+#marketplace li,
+#marketplace label {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#marketplace p,
+#marketplace span[style*="color:var(--text-dim)"] {
+  color: rgba(255,255,255,0.80) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.80) !important;
+}
+
+#marketplace .ui-select {
+  background: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.22) !important;
+}
+
+#marketplace .ui-select option {
+  background: #160d22 !important;
+  color: #ffffff !important;
+}
+
+#mp-clear-filters {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.16) !important;
+  color: #ffffff !important;
+}
+
+/* ── PROCESSO ─────────────────────────────────────────────── */
+#processo-investimento {
+  background: linear-gradient(180deg, #1a0527 0%, #0f0a14 100%);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#processo-investimento *,
+#processo-investimento h2,
+#processo-investimento h3,
+#processo-investimento p,
+#processo-investimento span,
+#processo-investimento li {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#processo-investimento p,
+#processo-investimento span[style*="color:var(--text-dim)"] {
+  color: rgba(255,255,255,0.78) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.78) !important;
+}
+
+/* ── CARDS GLOBAIS (escuros) ──────────────────────────────── */
+.glass-card,
+.invest-methodology-card,
+.invest-risk-card,
+.step-content-v2,
+.pipeline-step-v2,
+.market-card,
+.faq-item {
+  background: var(--iv-surface) !important;
+  border: 1px solid var(--iv-border) !important;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.45) !important;
+  color: var(--iv-dim) !important;
+}
+
+.glass-card:hover,
+.invest-methodology-card:hover,
+.invest-risk-card:hover,
+.step-content-v2:hover,
+.market-card:hover {
+  border-color: rgba(3,165,137,0.35) !important;
+  box-shadow: 0 8px 32px rgba(3,165,137,0.15) !important;
+}
+
+.glass-card h2, .glass-card h3, .glass-card h4,
+.invest-methodology-card__title,
+.invest-risk-card__title,
+.step-content-v2 h3,
+.market-card h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.glass-card p, .glass-card span, .glass-card li, .glass-card div,
+.invest-methodology-card__text,
+.invest-risk-card__text,
+.invest-risk-card__list li,
+.step-content-v2 p,
+.market-card p,
+.market-card span,
+.market-card li {
+  color: var(--iv-dim) !important;
+  -webkit-text-fill-color: var(--iv-dim) !important;
+}
+
+/* Portfolio cards */
+#portfolio-projetos .glass-card {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+#portfolio-projetos .glass-card:hover {
+  background: rgba(255,255,255,0.10) !important;
+}
+
+.portfolio-tilt__badge {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Marketplace cards */
+#marketplace .glass-card {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+#marketplace .mp-project-card {
+  background: rgba(255,255,255,0.07) !important;
+  border-color: rgba(255,255,255,0.14) !important;
+}
+
+#marketplace .mp-project-card *,
+#marketplace .mp-project-card h3,
+#marketplace .mp-project-card p,
+#marketplace .mp-project-card span,
+#marketplace .mp-project-card li {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── SEÇÕES ESPECÍFICAS: METODOLOGIA / RISCO / FAQ ────────── */
+#metodologia-financeira,
+#risk-management,
+#faq {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+.risk-management-intro,
+.faq-header {
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.risk-management-intro h2,
+.faq-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 16px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.risk-management-intro p,
+.faq-header p {
+  font-size: 17px;
+  color: var(--iv-muted) !important;
+  -webkit-text-fill-color: var(--iv-muted) !important;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.faq-item {
+  width: 100%;
+  background: rgba(255,255,255,0.03) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 22px 26px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.faq-answer {
+  padding: 0 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding-bottom: 22px;
+  max-height: 500px;
+}
+
+.invest-methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.invest-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+/* ── SEÇÕES ESPECÍFICAS: METODOLOGIA / RISCO / FAQ ────────── */
+#metodologia-financeira,
+#risk-management,
+#faq {
+  background: transparent !important;
+}
+
+#metodologia-financeira *,
+#risk-management *,
+#faq * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#metodologia-financeira p,
+#risk-management p,
+#faq p,
+#metodologia-financeira span,
+#risk-management span,
+#faq span,
+#faq .faq-answer,
+#faq .faq-answer p,
+#faq .faq-answer li {
+  color: var(--iv-dim) !important;
+  -webkit-text-fill-color: var(--iv-dim) !important;
+}
+
+#metodologia-financeira .overline,
+#risk-management .overline,
+#faq .overline {
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+#metodologia-financeira .invest-methodology-card,
+#risk-management .invest-risk-card,
+#faq .faq-item {
+  background: var(--iv-surface) !important;
+  border-color: var(--iv-border) !important;
+}
+
+#metodologia-financeira .invest-methodology-card p,
+#metodologia-financeira .invest-methodology-card span,
+#risk-management .invest-risk-card p,
+#risk-management .invest-risk-card span,
+#risk-management .invest-risk-card li {
+  color: var(--iv-dim) !important;
+  -webkit-text-fill-color: var(--iv-dim) !important;
+}
+
+#metodologia-financeira .invest-methodology-card__title,
+#risk-management .invest-risk-card__title,
+#faq .faq-question {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── BADGES ───────────────────────────────────────────────── */
+.invest-methodology-card__step {
+  background: rgba(3,165,137,0.12) !important;
+  border-color: rgba(3,165,137,0.25) !important;
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+.invest-risk-card__type--tecnico {
+  background: rgba(3,165,137,0.12) !important;
+  border-color: rgba(3,165,137,0.30) !important;
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+.invest-risk-card__type--regulatorio {
+  background: rgba(45,172,182,0.12) !important;
+  color: #7dd8e0 !important;
+  -webkit-text-fill-color: #7dd8e0 !important;
+}
+
+.invest-risk-card__type--operacional {
+  background: rgba(219,170,15,0.12) !important;
+  color: var(--iv-gold) !important;
+  -webkit-text-fill-color: var(--iv-gold) !important;
+}
+
+.invest-risk-card__list li::before {
+  color: var(--iv-teal) !important;
+}
+
+/* ── KPIs / CONTADORES ────────────────────────────────────── */
+.tese-counter__num,
+.invest-kpi-value,
+.counter-number {
+  color: var(--iv-gold) !important;
+  -webkit-text-fill-color: var(--iv-gold) !important;
+}
+
+.tese-counter__label,
+.invest-kpi-label {
+  color: var(--iv-muted) !important;
+  -webkit-text-fill-color: var(--iv-muted) !important;
+}
+
+/* ── PIPELINE / PROCESSO ──────────────────────────────────── */
+.step-node-v2,
+.process-step__marker {
+  color: #ffffff !important;
+}
+
+.process-step.is-active .process-step__marker {
+  background: var(--iv-teal) !important;
+}
+
+.pipeline-connector-v2,
+.process-step__line {
+  background: linear-gradient(90deg, var(--iv-teal), var(--iv-gold)) !important;
+}
+
+.process-step {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+.process-step.is-active {
+  border-color: rgba(3,165,137,0.35) !important;
+  background: rgba(3,165,137,0.09) !important;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+.faq-question {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.faq-answer,
+.faq-answer p,
+.faq-answer li {
+  color: var(--iv-dim) !important;
+  -webkit-text-fill-color: var(--iv-dim) !important;
+}
+
+/* ── CTA / FORMULÁRIO ─────────────────────────────────────── */
+.cta-section {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.cta-sticky {
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: unset;
+  justify-content: flex-start;
+  padding: 40px 24px 64px;
+}
+
+.cta-sticky > div {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.invest-contact-shell {
+  background: linear-gradient(135deg, var(--iv-plum) 0%, var(--iv-roxo) 100%) !important;
+  border: 1px solid var(--iv-border) !important;
+  color: #ffffff !important;
+  padding: 32px;
+  border-radius: 24px;
+}
+
+.invest-contact-shell .invest-contact-title,
+.invest-contact-shell h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.invest-contact-shell .invest-contact-lead,
+.invest-contact-shell .invest-contact-point span {
+  color: rgba(255,255,255,0.80) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.80) !important;
+}
+
+.invest-contact-form-card {
+  background: rgba(255,255,255,0.07) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 16px;
+}
+
+.invest-contact-kicker {
+  background: rgba(255,255,255,0.12) !important;
+  color: #ffffff !important;
+}
+
+#form-investidor input,
+#form-investidor select,
+#form-investidor textarea,
+.invest-contact-form-card input,
+.invest-contact-form-card select,
+.invest-contact-form-card textarea,
+#mp-nda-form input,
+#mp-nda-form select {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.16) !important;
+}
+
+.invest-contact-form-card select option,
+#form-investidor select option {
+  background: #160d22 !important;
+  color: #ffffff !important;
+}
+
+.invest-contact-form-card .ui-input::placeholder,
+.invest-contact-form-card .ui-textarea::placeholder {
+  color: rgba(255,255,255,0.40) !important;
+}
+
+.invest-contact-disclaimer {
+  background: rgba(255,255,255,0.09) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  color: rgba(255,255,255,0.95) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.95) !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  margin-top: 28px;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.invest-contact-disclaimer .legal-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-right: 8px;
+  border-radius: 8px;
+  background: var(--iv-gold) !important;
+  color: #121212 !important;
+  -webkit-text-fill-color: #121212 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+/* ── MAPA ─────────────────────────────────────────────────── */
+#ps-map-wrap {
+  background: #0d0618 !important;
+  border-color: var(--iv-border) !important;
+}
+
+#ps-map-tooltip {
+  background: rgba(22, 13, 34, 0.97) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: #ffffff !important;
+}
+
+#ps-map-tooltip p {
+  color: rgba(255,255,255,0.72) !important;
+}
+
+/* ── MODAL DO MARKETPLACE ─────────────────────────────────── */
+#mp-modal,
+#mp-modal-overlay > div,
+.mp-modal__panel {
+  background: #160d22 !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+#mp-modal h3,
+#mp-modal-project-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#mp-modal p,
+#mp-modal li,
+#mp-modal span {
+  color: rgba(255,255,255,0.72) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.72) !important;
+}
+
+#mp-modal-project-tir,
+.mp-fact--tir {
+  color: var(--iv-gold) !important;
+  -webkit-text-fill-color: var(--iv-gold) !important;
+}
+
+#mp-modal-overlay {
+  background: rgba(4,1,8,0.75) !important;
+}
+
+/* ── BOTÕES ───────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--iv-teal) !important;
+  color: #ffffff !important;
+  border-color: var(--iv-teal) !important;
+}
+
+.btn-primary:hover {
+  background: #048f77 !important;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.16) !important;
+  color: #ffffff !important;
+}
+
+.hero-buttons .btn-secondary {
+  background: rgba(255,255,255,0.95) !important;
+  color: #006b5a !important;
+}
+
+/* ── PROVA SOCIAL / TIMELINE ──────────────────────────────── */
+.ps-tl-year {
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+.ps-tl-text {
+  color: rgba(255,255,255,0.70) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.70) !important;
+}
+
+.ps-tl-item.is-active .ps-tl-year {
+  color: var(--iv-teal-light) !important;
+  -webkit-text-fill-color: var(--iv-teal-light) !important;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+#footer,
+#footer.main-footer,
+.main-footer {
+  background: var(--iv-plum) !important;
+  color: rgba(255,255,255,0.78) !important;
+}
+
+#footer p,
+#footer li,
+#footer a,
+#footer span,
+#footer h4,
+#footer div,
+#footer h3 {
+  color: rgba(255,255,255,0.78) !important;
+  -webkit-text-fill-color: rgba(255,255,255,0.78) !important;
+}
+
+#footer h3,
+#footer h4 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#footer a:hover {
+  color: var(--iv-teal-light) !important;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ── ANIMAÇÕES ────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ── TESE DE INVESTIMENTO ─────────────────────────────────── */
+.tese-header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tese-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-top: 20px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.tese-lead {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--iv-muted) !important;
+  -webkit-text-fill-color: var(--iv-muted) !important;
+  line-height: 1.6;
+  margin-top: 24px;
+  font-weight: 500;
+}
+
+.tese-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tese-metric-card {
+  text-align: left;
+  padding: clamp(36px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tese-metric-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(48px, 7vw, 84px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+  color: var(--iv-gold) !important;
+  -webkit-text-fill-color: var(--iv-gold) !important;
+}
+
+.tese-metric-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.tese-chart-card {
+  padding: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tese-chart-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 320px;
+}
+
+.tese-chart-wrap svg text {
+  fill: rgba(255,255,255,0.85) !important;
+}
+
+.tese-chart-wrap svg line {
+  stroke: rgba(255,255,255,0.15) !important;
+}
+
+.tese-chart-wrap svg .tese-bar-bg {
+  fill: rgba(255,255,255,0.08) !important;
+}
+
+.tese-chart-wrap svg .tese-bar {
+  fill: url(#teseBarGrad) !important;
+}
+
+/* ── FAQ CTA ──────────────────────────────────────────────── */
+.faq-footer-cta {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.faq-footer-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .tese-grid,
+  .invest-methodology-grid,
+  .invest-contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  body { overflow-x: hidden; }
+  .nav-links { display: none; }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: rgba(26,5,39,0.97);
+    backdrop-filter: blur(16px);
+    padding: 20px;
+    gap: 8px;
+    z-index: 9998;
+    border-bottom: 1.5px solid rgba(200,100,255,0.15);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .nav-links.active li a {
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: block;
+  }
+  .dropdown-content {
+    position: static;
+    background: rgba(255,255,255,0.07);
+    box-shadow: none;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 10px;
+  }
+  .dropdown-content li a {
+    color: rgba(255,255,255,0.85);
+  }
+  .mobile-home-btn { display: inline-flex; align-items: center; justify-content: center; }
+  .hero-buttons a,
+  .hero-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .marketplace-grid,
+  #mp-grid,
+  .invest-kpis-grid,
+  .portfolio-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    transform: none;
+  }
+  .invest-contact-shell { padding: 28px 20px; }
+  .invest-contact-form-card { padding: 22px 18px; }
+}

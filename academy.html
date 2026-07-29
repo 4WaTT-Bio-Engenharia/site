@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>4WaTT Academy | 4WaTT Bio Engenharia</title>
+  <meta name="description" content="4WaTT Academy, plataforma de educação em bioenergia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.1">
+  <style>
+    :root {
+      --accent: var(--roxo-soft);
+      --accent-light: var(--roxo-soft);
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-N91NFD55MB');</script>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+</head>
+
+<body class="t4">
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+      data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true"
+            data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="https://calculadora-zeta-sooty.vercel.app/" data-i18n="cta_simular">Simular
+          Viabilidade</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <header class="sol-hero" data-hero>
+      <div class="ph ph--px"><img src="assets/img_old/reuniao.jpeg" alt="Equipe 4WaTT em formação técnica"></div>
+      <div class="sol-hero__inner container">
+        <span class="sol-badge" data-reveal><i class="fas fa-circle-notch"></i> <span data-i18n="stub_badge">Em breve</span></span>
+        <h1 data-reveal data-d="1" data-i18n="stub_academy_name">4WaTT Academy</h1>
+        <p class="sol-hero__lead" data-reveal data-d="2" data-i18n="stub_academy_lead">Formação técnica e estratégica para quem decide e para quem opera
+          usinas de biogás e biometano. Conhecimento que reduz risco e acelera projeto.</p>
+        <div class="sol-hero__cta" data-reveal data-d="3">
+          <a class="btn btn--primary" href="#cadastro" data-i18n="academy_hero_cta_primary">Garantir acesso antecipado <i class="fas fa-arrow-right"></i></a>
+          <a class="btn btn--ghost" href="contato.html" data-i18n="cta_falar">Falar com especialista</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- O QUE A ACADEMY VAI OFERECER -->
+      <section class="section">
+        <div class="container">
+          <div class="sol-split">
+            <div class="sol-split__head">
+              <span class="kicker" data-reveal data-i18n="academy_oferta_kicker">O que está por vir</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="academy_oferta_title">Educação prática, direto de quem projeta e opera.</h2>
+              <p class="prose" data-reveal data-d="2" data-i18n="academy_oferta_p1">A 4WaTT Academy está em construção: trilhas de aprendizado
+                conduzidas pela própria equipe de engenharia que projeta e acompanha a operação de usinas de biogás e
+                biometano no Brasil.</p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:16px;" data-i18n="academy_oferta_p2">Conteúdo objetivo, sem enrolação: o que
+                funciona na prática, os erros mais caros e como evitá-los antes que virem CAPEX perdido.</p>
+              <div class="sol-stats">
+                <div class="sol-stat" data-reveal><div class="v">3</div><div class="l" data-i18n="academy_stat_trilhas">Trilhas planejadas</div></div>
+                <div class="sol-stat" data-reveal data-d="1"><div class="v">100%</div><div class="l" data-i18n="academy_stat_pratico">Conteúdo prático</div></div>
+                <div class="sol-stat" data-reveal data-d="2"><div class="v">12</div><div class="l" data-i18n="academy_stat_anos">Anos de experiência da equipe</div></div>
+              </div>
+            </div>
+            <div class="sol-split__media" data-reveal data-d="1">
+              <div class="ph ph--px frame tall"><img src="assets/img_old/pordosol-ceasa.jpeg" alt="Usina de biogás 4WaTT em operação"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEMAS PREVISTOS -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head">
+            <span class="kicker" data-reveal data-i18n="academy_temas_kicker">Temas previstos</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="academy_temas_title">Trilhas em construção.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="academy_temas_lead">Cadastre sua área de interesse abaixo para ajudar a priorizar o
+              lançamento de cada trilha.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+            <div class="card" style="padding:28px;" data-reveal>
+              <i class="fas fa-fire-flame-curved" style="font-size:26px;color:var(--teal-ink);"></i>
+              <h3 style="margin-top:16px;font-size:19px;" data-i18n="academy_card1_title">Biogás</h3>
+              <p class="prose" style="margin-top:8px;font-size:14.5px;" data-i18n="academy_card1_text">Fundamentos de digestão anaeróbia, dimensionamento
+                e operação de biodigestores.</p>
+            </div>
+            <div class="card" style="padding:28px;" data-reveal data-d="1">
+              <i class="fas fa-leaf" style="font-size:26px;color:var(--teal-ink);"></i>
+              <h3 style="margin-top:16px;font-size:19px;" data-i18n="academy_card2_title">Biometano</h3>
+              <p class="prose" style="margin-top:8px;font-size:14.5px;" data-i18n="academy_card2_text">Upgrading, especificação ANP e comercialização
+                de biometano.</p>
+            </div>
+            <div class="card" style="padding:28px;" data-reveal data-d="2">
+              <i class="fas fa-diagram-project" style="font-size:26px;color:var(--teal-ink);"></i>
+              <h3 style="margin-top:16px;font-size:19px;" data-i18n="academy_card3_title">Gestão de projetos</h3>
+              <p class="prose" style="margin-top:8px;font-size:14.5px;" data-i18n="academy_card3_text">Do estudo de viabilidade à partida da planta:
+                prazos, riscos e entregáveis.</p>
+            </div>
+            <div class="card" style="padding:28px;" data-reveal data-d="3">
+              <i class="fas fa-chart-line" style="font-size:26px;color:var(--teal-ink);"></i>
+              <h3 style="margin-top:16px;font-size:19px;" data-i18n="academy_card4_title">Comercial &amp; Investidor</h3>
+              <p class="prose" style="margin-top:8px;font-size:14.5px;" data-i18n="academy_card4_text">Modelo de negócio, TIR, estruturação e
+                relacionamento com investidores.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CADASTRO -->
+      <section class="section" id="cadastro">
+        <div class="container" style="max-width:720px;">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal data-i18n="academy_form_kicker">Lista de espera</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="academy_form_title">Garanta seu acesso antecipado.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="academy_form_lead">Cadastre-se e seja avisado em primeira mão quando a 4WaTT Academy for
+              lançada.</p>
+          </div>
+          <div class="card" style="padding:clamp(24px,4vw,44px);" data-reveal data-d="3">
+            <form class="form-4watt" id="academyForm" data-form-name="Academy">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="ac-nome" data-i18n="academy_label_nome">Nome*</label>
+                  <input class="form-input" id="ac-nome" name="nome" type="text" required placeholder="Seu nome completo"
+                    data-i18n-placeholder="academy_placeholder_nome">
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-field">
+                  <label for="ac-empresa" data-i18n="academy_label_empresa">Empresa/segmento*</label>
+                  <input class="form-input" id="ac-empresa" name="empresa" type="text" required placeholder="Empresa ou segmento de atuação"
+                    data-i18n-placeholder="academy_placeholder_empresa">
+                  <span class="form-error-msg"></span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="ac-email" data-i18n="academy_label_email">E-mail*</label>
+                  <input class="form-input" id="ac-email" name="email" type="email" required placeholder="seu@email.com"
+                    data-i18n-placeholder="academy_placeholder_email">
+                  <span class="form-error-msg"></span>
+                </div>
+                <div class="form-field">
+                  <label for="ac-wpp" data-i18n="academy_label_wpp">WhatsApp*</label>
+                  <input class="form-input" id="ac-wpp" name="whatsapp" type="tel" required placeholder="(00) 00000-0000"
+                    data-i18n-placeholder="academy_placeholder_wpp">
+                  <span class="form-error-msg"></span>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="ac-interesse" data-i18n="academy_label_interesse">Área de interesse na Academy*</label>
+                <select class="form-select" id="ac-interesse" name="interesse" required>
+                  <option value="" data-i18n="academy_select_default">Selecione a área de interesse</option>
+                  <option data-i18n="academy_opt_biogas">Biogás</option>
+                  <option data-i18n="academy_opt_biometano">Biometano</option>
+                  <option data-i18n="academy_opt_gestao">Gestão de projetos</option>
+                  <option data-i18n="academy_opt_comercial">Comercial / Investidor</option>
+                  <option data-i18n="academy_opt_outro">Outro</option>
+                </select>
+                <span class="form-error-msg"></span>
+              </div>
+              <div class="form-field">
+                <label for="ac-msg" data-i18n="academy_label_msg">Mensagem</label>
+                <textarea class="form-textarea" id="ac-msg" name="mensagem" placeholder="O que você gostaria de aprender na 4WaTT Academy?"
+                  data-i18n-placeholder="academy_placeholder_msg"></textarea>
+                <span class="form-error-msg"></span>
+              </div>
+              <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;" data-i18n="academy_form_submit">Garantir
+                acesso antecipado <i class="fas fa-arrow-right"></i></button>
+              <p class="form-consent" data-i18n="academy_form_consent">Ao enviar, você concorda em ser avisado por e-mail/WhatsApp quando a 4WaTT
+                Academy for lançada.</p>
+            </form>
+            <div class="form-success" data-i18n="academy_form_success">Cadastro recebido! Você será um dos primeiros a saber quando a 4WaTT Academy
+              for lançada.</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand footer__col">
+            <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+            <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+            <p>4WaTT Bio Engenharia S/A.</p>
+            <div class="footer__seal"><i class="fas fa-circle-check"></i> Site oficial verificado</div>
+          </div>
+          <div class="footer__col">
+            <h4>Endereço</h4>
+            <ul>
+              <li>Edifício Metropolitan Business</li>
+              <li>Torre Tokyo, sala 601</li>
+              <li>Av. Dep. Jamel Cecílio</li>
+              <li>Jardim Goiás, Goiânia · GO</li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Contato</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+              <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+              <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html" data-i18n="legal_privacy">Política de Privacidade</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Siga-nos</h4>
+            <div class="footer__social">
+              <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i
+                  class="fab fa-facebook-f"></i></a>
+              <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener"
+                aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+            simulação à operação. Patrimônio energético.</span></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/languages.js?v=1.9"></script>
+  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/main.js?v=1.4"></script>
+  <script src="assets/js/site-premium.js?v=2.2"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+</body>
+
+</html>

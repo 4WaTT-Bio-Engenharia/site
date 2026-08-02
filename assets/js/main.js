@@ -168,6 +168,14 @@ async function applyTranslations(lang) {
         }
     });
 
+    // Tradução de atributos label (optgroups, por exemplo)
+    document.querySelectorAll('[data-i18n-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-label');
+        if (dict[key]) {
+            element.setAttribute('label', dict[key]);
+        }
+    });
+
     document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
         const active = btn.dataset.lang === lang;
         btn.classList.toggle('active', active);

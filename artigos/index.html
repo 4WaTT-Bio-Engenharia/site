@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -467,6 +467,13 @@
       .main-footer { padding: 60px 0 40px !important; }
     }
 
+    /* === ACADEMY CTA === */
+    .academy-cta { padding: 48px 0 64px; background: linear-gradient(135deg, rgba(58,9,64,0.06) 0%, rgba(3,165,137,0.06) 100%); }
+    .academy-cta__inner { border: 1px solid rgba(58,9,64,0.12); border-radius: 20px; padding: clamp(28px, 4vw, 44px); background: #fff; box-shadow: 0 14px 40px rgba(0,0,0,0.06); text-align: center; }
+    .academy-cta__inner h2 { font-family: var(--font-display, 'Montserrat', sans-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 0 0 12px; color: var(--roxo, #3A0940); }
+    .academy-cta__inner p { color: var(--muted, #5c5c5c); font-size: 15px; line-height: 1.6; margin: 0 auto 24px; max-width: 54ch; }
+    .academy-cta__inner .btn { margin-top: 6px; }
+
     /* === REVEAL ANIMATIONS === */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
@@ -505,7 +512,7 @@
           <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
         </div>
       </li>
-      <li><a class="nav__cta" href="../simulador.html" data-i18n="cta_simular">Simular Viabilidade</a></li>
+      <li><a class="nav__cta" href="https://calculadora-zeta-sooty.vercel.app/" data-i18n="cta_simular">Simular Viabilidade</a></li>
     </ul>
     <div class="nav__progress"></div>
   </nav>
@@ -618,6 +625,17 @@
   </div>
 </section>
 
+<!-- Academy CTA -->
+<section class="academy-cta">
+  <div class="container container--narrow">
+    <div class="academy-cta__inner reveal" data-reveal>
+      <h2>4WaTT Academy</h2>
+      <p>Conteúdo técnico, webinars e comunidade para quem quer ir além da estimativa e construir projetos de biogás/biometano com engenharia de verdade.</p>
+      <a href="../academy.html" class="btn btn--primary">Entrar na lista de espera <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
     <footer id="footer" class="main-footer">
         <div class="container">
             <div class="footer-grid">
@@ -673,9 +691,9 @@
         </div>
     </footer>
 
-    <script src="/assets/js/languages.js?v=1.9"></script>
+    <script src="/assets/js/languages.js?v=2.0"></script>
     <script src="/assets/js/languages-pages.js?v=1.1"></script>
-<script src="/assets/js/main.js?v=1.4"></script>
+<script src="/assets/js/main.js?v=1.5"></script>
     <script src="/assets/js/site-premium.js?v=2.2"></script>
 <script>
 // Filtro de categorias
@@ -693,6 +711,16 @@ document.querySelectorAll('.category-filter').forEach(btn => {
     });
   });
 });
+
+// Ocultar filtros que não possuem artigos publicados
+(function hideEmptyFilters() {
+  document.querySelectorAll('.category-filter[data-filter]').forEach(btn => {
+    const filter = btn.dataset.filter;
+    if (filter === 'todos') return;
+    const hasCards = document.querySelector('[data-category="' + filter + '"]') !== null;
+    if (!hasCards) btn.style.display = 'none';
+  });
+})();
 </script>
 </body>
 </html>

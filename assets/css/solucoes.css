@@ -130,7 +130,9 @@
 .sol-cta__checklist i { color: #5fe9cf; }
 .sol-formcard { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: clamp(26px, 3vw, 38px); box-shadow: var(--shadow-lg); color: var(--ink); }
 .sol-formcard h3 { font-size: 20px; margin-bottom: 6px; }
-.sol-formcard .sub { color: var(--muted); font-size: 13.5px; margin-bottom: 24px; }
+.sol-formcard .sub { color: var(--muted); font-size: 13.5px; margin-bottom: 12px; }
+.sol-formcard__note { font-size: 13.5px; line-height: 1.6; color: var(--dim); margin-bottom: 24px; }
+.sol-formcard__note strong { color: var(--accent-light); font-weight: 600; }
 @media (max-width: 880px) { .sol-cta__inner { grid-template-columns: 1fr; } }
 
 /* ---------- Section header ---------- */

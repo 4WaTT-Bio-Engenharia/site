@@ -22,7 +22,8 @@ img {
 .main-content,
 .section,
 [class*="section"] {
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 /* ─── 4a. Tablets intermediários ≤ 600px ─── */

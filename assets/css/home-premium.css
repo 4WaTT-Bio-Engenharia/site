@@ -132,12 +132,41 @@
 }
 
 /* ====================== 06 · MACHINE (colagem) ====================== */
-.machine__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
-.machine__collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1.4fr 1fr; gap: 14px; height: clamp(420px, 56vw, 620px); }
-.machine__collage .ph { border-radius: 14px; box-shadow: var(--shadow); }
+#engenharia {
+  overflow: visible;
+}
+
+.machine__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(30px, 5vw, 70px);
+  align-items: start;
+}
+
+.machine__collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.4fr 1fr;
+  gap: 14px;
+  width: 100%;
+  min-height: clamp(280px, 42vw, 520px);
+  height: auto;
+  aspect-ratio: 5 / 4;
+  max-height: none;
+}
+
+.machine__collage .ph { border-radius: 14px; box-shadow: var(--shadow); min-height: 0; }
 .machine__collage .c1 { grid-row: 1 / span 2; }
+.machine__head { min-width: 0; overflow: visible; }
 .machine__head .h2 { margin: 16px 0; }
-.machine__list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+.machine__list {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: visible;
+  max-height: none;
+}
 .m-item { display: grid; grid-template-columns: auto 1fr; gap: 18px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 13px; background: var(--surface); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), border-color .3s, box-shadow .3s; }
 .m-item:hover { transform: translateX(6px); border-color: var(--border-hi); box-shadow: var(--shadow); }
 .m-item__n { font-family: var(--mono); font-size: 13px; color: var(--teal-ink); padding-top: 2px; }
@@ -145,7 +174,11 @@
 .m-item p { color: var(--dim); font-size: 13.5px; line-height: 1.5; }
 @media (max-width: 880px) {
   .machine__grid { grid-template-columns: 1fr; }
-  .machine__collage { height: 360px; }
+  .machine__collage {
+    min-height: 240px;
+    aspect-ratio: 16 / 11;
+    height: auto;
+  }
 }
 
 /* ====================== 07 · FUNIL (timeline) ====================== */

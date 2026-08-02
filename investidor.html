@@ -52,7 +52,7 @@
   <link rel="stylesheet" href="assets/css/p7-block.css">
   <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- 4WaTT Global Responsive -->
@@ -884,7 +884,7 @@
 
     /* ── PORTFOLIO (escuro → texto branco) ─── */
     #portfolio-projetos {
-      background: linear-gradient(180deg, #1a0527 0%, #2e084a 50%, #3d0a5c 100%);
+      background: linear-gradient(180deg, #2A0720 0%, #3A0940 50%, #6e2466 100%);
       padding: 100px 0 80px;
     }
 
@@ -1110,7 +1110,7 @@
 
     /* ── MARKETPLACE (dark section) ──────────── */
     #marketplace {
-      background: linear-gradient(180deg, #3d0a5c 0%, #2a0845 55%, #1a0527 100%) !important;
+      background: linear-gradient(180deg, #6e2466 0%, #3A0940 55%, #2A0720 100%) !important;
       padding-top: 80px !important;
       padding-bottom: 80px !important;
     }
@@ -1277,11 +1277,11 @@
       padding: 32px;
       border-radius: 24px;
       background:
-        radial-gradient(circle at top left, rgba(132, 245, 255, 0.28), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(151, 71, 255, 0.22), transparent 26%),
-        linear-gradient(145deg, #1fd6e2 0%, #0fbfd6 42%, #6a0dad 100%);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      box-shadow: 0 24px 60px rgba(62, 22, 112, 0.22);
+        radial-gradient(circle at top left, rgba(3, 165, 137, 0.20), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(110, 36, 102, 0.26), transparent 30%),
+        linear-gradient(145deg, #2A0720 0%, #3A0940 48%, #0a2018 100%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 24px 60px rgba(42, 7, 32, 0.38);
     }
 
     .invest-contact-shell * {
@@ -1342,8 +1342,8 @@
       gap: 3px;
       padding: 10px 14px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .invest-contact-point strong {
@@ -1360,9 +1360,9 @@
     .invest-contact-form-card {
       padding: 20px;
       border-radius: 20px;
-      background: rgba(0, 0, 0, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      box-shadow: 0 12px 40px rgba(3, 83, 94, 0.16);
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.24);
       position: relative;
       overflow: hidden;
     }
@@ -1391,7 +1391,7 @@
     .invest-contact-form-card .ui-select:focus,
     .invest-contact-form-card .ui-textarea:focus {
       outline: none;
-      border-color: rgba(0, 255, 200, 0.5) !important;
+      border-color: rgba(3, 165, 137, 0.65) !important;
     }
 
     .invest-contact-form-card .ui-input::placeholder,
@@ -1774,10 +1774,15 @@
     }
 
     /* ── HERO ───────────────────────────────────────────────── */
+    .hero-content__inner {
+      text-align: center !important;
+    }
+
     .hero-h1 {
       font-size: clamp(2.6rem, 6vw, 5rem) !important;
       line-height: 1.05 !important;
       letter-spacing: -0.03em !important;
+      text-align: center !important;
     }
 
     .hero-sub {
@@ -1785,9 +1790,37 @@
       line-height: 1.75 !important;
       max-width: 600px !important;
       margin-top: 20px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center !important;
     }
 
     /* ── TESE DE INVESTIMENTO ───────────────────────────────── */
+    .tese-header {
+      text-align: center !important;
+      max-width: 900px;
+      margin: 0 auto 64px !important;
+    }
+
+    .tese-title {
+      text-align: center !important;
+    }
+
+    .tese-lead {
+      text-align: center !important;
+      max-width: 850px;
+      margin: 24px auto 0 !important;
+      font-size: clamp(18px, 2vw, 22px) !important;
+      line-height: 1.6 !important;
+    }
+
     #tese-investimento h2 {
       font-size: clamp(28px, 4vw, 50px) !important;
       line-height: 1.10 !important;
@@ -1821,6 +1854,7 @@
       width: 100% !important;
       height: 100% !important;
       display: block !important;
+      overflow: visible !important;
     }
 
     /* ── PORTFOLIO DE PROJETOS ──────────────────────────────── */
@@ -1962,6 +1996,24 @@
     }
 
     /* ── FAQ ────────────────────────────────────────────────── */
+    .faq-header {
+      text-align: center !important;
+      max-width: 800px;
+      margin: 0 auto 48px !important;
+    }
+
+    .faq-header h2 {
+      text-align: center !important;
+    }
+
+    .faq-header p {
+      text-align: center !important;
+      max-width: 850px;
+      margin: 16px auto 0 !important;
+      font-size: 17px !important;
+      line-height: 1.7 !important;
+    }
+
     .faq-item {
       border-radius: 16px !important;
     }
@@ -2454,7 +2506,7 @@
         <!-- Gráfico — fora dos cards -->
         <div class="tese-chart-block reveal" data-reveal data-d="4">
           <div class="tese-chart-wrap">
-            <svg id="tese-chart" viewBox="0 0 520 280" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
+            <svg id="tese-chart" viewBox="0 -18 520 298" width="100%" height="100%" preserveAspectRatio="xMidYMid meet"
               role="img" aria-label="Gráfico animado de crescimento do mercado de biometano">
               <defs>
                 <linearGradient id="teseBarGrad" x1="0" y1="0" x2="0" y2="1">
@@ -2573,7 +2625,7 @@
 
     <!-- TIPOS DE PROJETO -->
     <section class="section" id="portfolio-projetos"
-      style="border-top:none; margin-top:0; background: linear-gradient(180deg, #1a0527 0%, #2e084a 50%, #3d0a5c 100%); padding-top: 120px; padding-bottom: 80px">
+      style="border-top:none; margin-top:0; background: linear-gradient(180deg, #2A0720 0%, #3A0940 50%, #6e2466 100%); padding-top: 120px; padding-bottom: 80px">
       <div class="reveal">
         <div style="text-align:left; margin-bottom:48px; margin-left:0">
           <div class="overline"

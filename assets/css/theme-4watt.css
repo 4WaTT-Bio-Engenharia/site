@@ -200,18 +200,26 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
 .nav__links a:hover { color: var(--ink); }
 .nav__dd { position: relative; }
 .nav__dd > a { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-.nav__dd > a i { font-size: 10px; }
+.nav__dd > a i { font-size: 10px; transition: transform .2s; }
 .nav__dd-menu {
-  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(8px);
-  min-width: 232px; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 8px; list-style: none; margin: 0;
-  opacity: 0; visibility: hidden; transition: opacity .22s, transform .22s, visibility 0s .22s; box-shadow: var(--shadow);
+  list-style: none; margin: 0; padding: 8px;
 }
-.nav__dd:hover .nav__dd-menu, .nav__dd:focus-within .nav__dd-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); transition-delay: 0s; }
-/* Ponte invisível que cobre o gap entre o trigger e o menu, evitando que o mouseout feche o dropdown */
-.nav__dd::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 10px; }
-.nav__dd-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: var(--dim); }
+.nav__dd-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: var(--dim); transition: background .2s, color .2s; }
 .nav__dd-menu a:hover { background: var(--surface-2); color: var(--teal-ink); }
+
+@media (min-width: 1181px) {
+  .nav__dd-menu {
+    position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(8px);
+    min-width: 232px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px;
+    opacity: 0; visibility: hidden; transition: opacity .22s, transform .22s, visibility 0s .22s; box-shadow: var(--shadow);
+  }
+  .nav__dd:hover .nav__dd-menu, .nav__dd:focus-within .nav__dd-menu {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); transition-delay: 0s;
+  }
+  /* Ponte invisível que cobre o gap entre o trigger e o menu, evitando que o mouseout feche o dropdown */
+  .nav__dd::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 10px; }
+}
 .nav__cta { padding: 10px 20px !important; border: 1px solid var(--teal) !important; border-radius: 8px; color: var(--teal-ink) !important; }
 .nav__cta:hover { background: var(--teal); color: #fff !important; }
 .nav__toggle { display: none; background: none; border: 0; color: var(--ink); font-size: 22px; cursor: pointer; }
@@ -236,8 +244,18 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
   }
   .nav__links.is-open { transform: translateX(0); }
   .nav__links a { font-size: 16px; padding: 10px 0; }
-  .nav__dd-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; background: transparent; border: 0; padding: 2px 0 6px 14px; min-width: auto; }
-  .nav__dd-menu a { padding: 7px 0; }
+  .nav__dd { width: 100%; }
+  .nav__dd::after { display: none; }
+  .nav__dd-menu {
+    position: static; transform: none !important; opacity: 1 !important; visibility: visible !important;
+    box-shadow: none; background: transparent; border: 0; padding: 2px 0 6px 14px; min-width: auto;
+    transition: none !important;
+  }
+  .nav__dd:hover .nav__dd-menu,
+  .nav__dd:focus-within .nav__dd-menu {
+    transform: none !important; opacity: 1 !important; visibility: visible !important; transition: none !important;
+  }
+  .nav__dd-menu a { padding: 7px 0; transition: none; }
   .nav__dd > a i { transform: rotate(180deg); }
   .nav__lang { width: 100%; margin: 12px 0 0; }
   .lang-selector { width: 100%; }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -7,9 +7,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <title>4WaTT Score | 4WaTT Bio Engenharia</title>
-  <meta name="description" content="4WaTT Score, rating de maturidade de projetos de bioenergia.">
+  <title>4WaTT Score | Diagnóstico de Maturidade de Projetos de Bioenergia</title>
+  <meta name="description" content="4WaTT Score avalia a maturidade do seu projeto de biogás ou biometano em quatro dimensões — técnica, econômica, regulatória e operacional — e entrega um plano de ação para destravar capital e execução.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,11 +16,27 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.8">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
   <style>
     :root {
       --accent: var(--teal);
       --accent-light: var(--teal-ink);
     }
+    .score-hero { min-height: 92svh; }
+    .score-hero .ph::after { background: linear-gradient(120deg, rgba(42,7,32,0.92), rgba(58,9,64,0.78)); }
+    .score-card { border: 1px solid var(--border); border-radius: 18px; background: var(--surface); padding: 28px; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+    .score-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .score-card__ic { width: 48px; height: 48px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-light); display: grid; place-items: center; font-size: 20px; margin-bottom: 18px; }
+    .score-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .score-card p { color: var(--dim); font-size: 14px; line-height: 1.6; }
+    .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    @media (max-width: 980px) { .score-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .score-grid { grid-template-columns: 1fr; } }
+    .score-deliver { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .score-deliver:last-child { border-bottom: 0; }
+    .score-deliver__num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--display); font-weight: 700; font-size: 14px; display: grid; place-items: center; flex: 0 0 auto; }
+    .score-deliver h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .score-deliver p { color: var(--dim); font-size: 14px; line-height: 1.55; }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-N91NFD55MB');</script>
@@ -65,26 +80,171 @@
   </nav>
 
   <div class="wrap">
-    <section class="stub">
-      <div class="ph ph--px ph--roxo"><img src="assets/img_old/biodigestor-lona-paisagem.jpg" alt=""></div>
+    <section class="stub score-hero">
+      <div class="ph ph--px"><img src="assets/img_old/engenharia_projeto.jpg" alt=""></div>
       <div class="stub__inner container">
-        <span class="stub__badge" data-reveal><i class="fas fa-circle-notch"></i> <span data-i18n="stub_badge">Em
-            breve</span></span>
+        <span class="stub__badge" data-reveal><i class="fas fa-stethoscope"></i> <span data-i18n="score_badge">Diagnóstico · Ecossistema 4WaTT</span></span>
         <h1 data-reveal data-d="1"><small data-i18n="stub_sub_brand">Submarca · Ecossistema 4WaTT</small><span
             data-i18n="stub_score_name">4WaTT Score</span></h1>
-        <p class="stub__fn text-accent" data-reveal data-d="2" data-i18n="stub_score_fn">Rating que classifica a
-          maturidade do seu projeto.</p>
-        <p class="stub__lead" data-reveal data-d="3" data-i18n="stub_score_lead">Uma nota clara que diz exatamente onde
-          o seu projeto está e qual é o próximo passo para destravar capital e execução. Da incerteza ao plano.</p>
+        <p class="stub__fn text-accent" data-reveal data-d="2" data-i18n="stub_score_fn">Rating que classifica a maturidade do seu projeto.</p>
+        <p class="stub__lead" data-reveal data-d="3" data-i18n="score_hero_lead">Entre uma estimativa rápida e um projeto de investimento, falta uma resposta decisiva: <strong>o projeto está maduro o suficiente para avançar?</strong> O 4WaTT Score avalia quatro dimensões e entrega uma nota, um mapa de gaps e um plano de ação priorizado.</p>
         <div class="stub__cta" data-reveal data-d="4">
-          <a class="btn btn--primary" href="contato.html"><span data-i18n="stub_waitlist">Entrar na lista de
-              espera</span> <i class="fas fa-arrow-right"></i></a>
-          <a class="btn btn--ghost" href="contato.html" data-i18n="cta_falar">Falar com especialista</a>
+          <a class="btn btn--primary" href="contato.html"><span data-i18n="score_cta_primary">Solicitar avaliação</span> <i class="fas fa-arrow-right"></i></a>
+          <a class="btn btn--ghost" href="https://calculadora-zeta-sooty.vercel.app/" data-i18n="cta_simular">Simular viabilidade</a>
         </div>
         <p class="stub__back" data-reveal data-d="5"><i class="fas fa-arrow-left"></i> <a href="index.html#ecossistema"
             data-i18n="stub_back_eco">Voltar ao ecossistema</a></p>
       </div>
     </section>
+
+    <main>
+      <!-- Bridge -->
+      <section class="section section--tight">
+        <div class="container container--narrow">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal data-i18n="score_bridge_kicker">Do simulador ao projeto</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="score_bridge_title">Entre a estimativa e o projeto de investimento.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="score_bridge_lead">O simulador diz, em minutos, se o potencial vale uma conversa. O Score diz, em poucos dias, se o projeto está pronto para engenharia, financiamento e execução.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pillars -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head">
+            <span class="kicker" data-reveal data-i18n="score_pillars_kicker">O que avaliamos</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="score_pillars_title">Quatro dimensões, uma nota clara.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="score_pillars_lead">Cada dimensão recebe uma nota e pesa no score final. Assim, você sabe exatamente onde investir antes de avançar.</p>
+          </div>
+          <div class="score-grid" data-stagger>
+            <article class="score-card" data-reveal>
+              <div class="score-card__ic"><i class="fa-solid fa-flask"></i></div>
+              <h3 data-i18n="score_pillar1_title">Técnica</h3>
+              <p data-i18n="score_pillar1_desc">Substrato, geração estimada, tecnologia de digestão, upgrading, logística de resíduo e condições do site.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="1">
+              <div class="score-card__ic"><i class="fa-solid fa-coins"></i></div>
+              <h3 data-i18n="score_pillar2_title">Econômico-financeira</h3>
+              <p data-i18n="score_pillar2_desc">CAPEX, OPEX, modelo de receita, payback, TIR e viabilidade de financiamento bancário.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="2">
+              <div class="score-card__ic"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h3 data-i18n="score_pillar3_title">Regulatória</h3>
+              <p data-i18n="score_pillar3_desc">Licenciamento ambiental, regulação ANP, contratos de compra de gás, acesso à rede e créditos de carbono.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="3">
+              <div class="score-card__ic"><i class="fa-solid fa-helmet-safety"></i></div>
+              <h3 data-i18n="score_pillar4_title">Operacional</h3>
+              <p data-i18n="score_pillar4_desc">Equipe interna, infraestrutura disponível, parcerias, experiência com contratos e apetite a risco.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deliverables -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-split">
+            <div class="sol-split__head">
+              <span class="kicker" data-reveal data-i18n="score_deliver_kicker">Entregáveis</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="score_deliver_title">Do diagnóstico ao plano.</h2>
+              <p class="prose" data-reveal data-d="2" data-i18n="score_deliver_intro">Ao final do Score, você não fica com uma nota isolada. Recebe um documento prático que serve de base para decisão interna e para acelerar a etapa seguinte.</p>
+              <div class="score-deliver__list" data-reveal data-d="3">
+                <div class="score-deliver">
+                  <div class="score-deliver__num">1</div>
+                  <div>
+                    <h4 data-i18n="score_deliver1_title">Nota de maturidade por dimensão</h4>
+                    <p data-i18n="score_deliver1_desc">Score geral e nota individual em técnica, economia, regulatório e operação.</p>
+                  </div>
+                </div>
+                <div class="score-deliver">
+                  <div class="score-deliver__num">2</div>
+                  <div>
+                    <h4 data-i18n="score_deliver2_title">Mapa de gaps priorizados</h4>
+                    <p data-i18n="score_deliver2_desc">Lista do que falta resolver, do mais crítico ao menos urgente, com estimativa de esforço.</p>
+                  </div>
+                </div>
+                <div class="score-deliver">
+                  <div class="score-deliver__num">3</div>
+                  <div>
+                    <h4 data-i18n="score_deliver3_title">Próximo passo recomendado</h4>
+                    <p data-i18n="score_deliver3_desc">Indicação clara: simular mais, iniciar Projeto de Investimento, estruturar financiamento ou resolver pendências regulatórias.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sol-split__media" data-reveal data-d="1">
+              <div class="ph ph--px frame tall"><img src="assets/img_old/engenheiro_com_planta_na_mao.png" alt="Engenharia 4WaTT avaliando projeto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For whom -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal data-i18n="score_audience_kicker">Para quem é</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="score_audience_title">Quem precisa de Score antes de avançar.</h2>
+          </div>
+          <div class="score-grid" data-stagger>
+            <article class="score-card" data-reveal>
+              <div class="score-card__ic"><i class="fa-solid fa-industry"></i></div>
+              <h3 data-i18n="score_audience1_title">Indústria e agronegócio</h3>
+              <p data-i18n="score_audience1_desc">Quem tem resíduo e quer saber se o projeto de biogás ou biometano está maduro para engenharia.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="1">
+              <div class="score-card__ic"><i class="fa-solid fa-briefcase"></i></div>
+              <h3 data-i18n="score_audience2_title">Gestores de projeto</h3>
+              <p data-i18n="score_audience2_desc">Quem precisa de um diagnóstico objetivo para alinhar diretoria, engenharia e área de negócios.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="2">
+              <div class="score-card__ic"><i class="fa-solid fa-chart-line"></i></div>
+              <h3 data-i18n="score_audience3_title">Investidores e fundos</h3>
+              <p data-i18n="score_audience3_desc">Quem quer triar oportunidades e identificar os principais riscos antes de uma due diligence.</p>
+            </article>
+            <article class="score-card" data-reveal data-d="3">
+              <div class="score-card__ic"><i class="fa-solid fa-building-columns"></i></div>
+              <h3 data-i18n="score_audience4_title">Financiadores</h3>
+              <p data-i18n="score_audience4_desc">Quem precisa de uma visão independente da viabilidade para avaliar risco de crédito.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section sol-cta" id="cta">
+        <div class="ph ph--px ph--roxo"><img src="assets/img_old/how-step3.jpg" alt="" data-parallax="0.05"></div>
+        <div class="container">
+          <div class="sol-cta__inner">
+            <div class="sol-cta__copy">
+              <span class="kicker" data-reveal data-i18n="score_cta_kicker">Próximo passo</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="score_cta_title">Solicite o diagnóstico do seu projeto.</h2>
+              <p class="lead" data-reveal data-d="2" data-i18n="score_cta_lead">Nossa equipe de engenharia analisa as informações disponíveis e retorna com o Score e o plano de ação em até 5 dias úteis.</p>
+            </div>
+            <div class="sol-formcard" data-reveal data-d="1">
+              <h3 data-i18n="score_form_title">Começar o Score</h3>
+              <p class="sub" data-i18n="score_form_sub">Preencha e nossa equipe entra em contato.</p>
+              <form class="form-4watt" id="form-score" data-form-name="4WaTT Score">
+                <div class="form-row">
+                  <div class="form-field"><label for="sc-nome" data-i18n="score_form_label_nome">Nome*</label><input class="form-input" id="sc-nome" name="nome" type="text" required placeholder="Seu nome" data-i18n-placeholder="sol_biogas_form_ph_nome"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="sc-empresa" data-i18n="score_form_label_empresa">Empresa</label><input class="form-input" id="sc-empresa" name="empresa" type="text" placeholder="Sua empresa" data-i18n-placeholder="sol_biogas_form_ph_empresa"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field"><label for="sc-email" data-i18n="score_form_label_email">E-mail*</label><input class="form-input" id="sc-email" name="email" type="email" required placeholder="seu@email.com" data-i18n-placeholder="sol_biogas_form_ph_email"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="sc-tel" data-i18n="score_form_label_tel">WhatsApp</label><input class="form-input" id="sc-tel" name="whatsapp" type="tel" placeholder="(00) 00000-0000" data-i18n-placeholder="sol_biogas_form_ph_tel"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-field"><label for="sc-residuo" data-i18n="score_form_label_residuo">Resíduo / substrato</label><input class="form-input" id="sc-residuo" name="residuo" type="text" placeholder="Ex.: dejetos bovinos, efluente de frigorífico, RSU..." data-i18n-placeholder="score_form_ph_residuo"><span class="form-error-msg"></span></div>
+                <div class="form-field"><label for="sc-mensagem" data-i18n="score_form_label_msg">O que já foi feito no projeto?</label><textarea class="form-textarea" id="sc-mensagem" name="mensagem" rows="3" placeholder="Estimativa de geração, estudos, licenciamento, conversas com financiadores..." data-i18n-placeholder="score_form_ph_msg"></textarea><span class="form-error-msg"></span></div>
+                <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;" data-i18n="score_form_submit">Solicitar diagnóstico <i class="fas fa-arrow-right"></i></button>
+              </form>
+              <div class="form-success" data-i18n="score_form_success">Solicitação enviada! Nossa equipe retorna em até 5 dias úteis.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="container">
@@ -115,27 +275,23 @@
           <div class="footer__col">
             <h4>Siga-nos</h4>
             <div class="footer__social">
-              <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener"
-                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i
-                  class="fab fa-instagram"></i></a>
-              <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i
-                  class="fab fa-facebook-f"></i></a>
-              <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener"
-                aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.youtube.com/watch?v=Hldv59NfzVk" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
-        <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
-            simulação à operação. Patrimônio energético.</span></div>
+        <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da simulação à operação. Patrimônio energético.</span></div>
       </div>
     </footer>
   </div>
 
-  <script src="assets/js/languages.js?v=2.0"></script>
-  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/languages.js?v=2.1"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
   <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.2"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
 </body>
 
 </html>

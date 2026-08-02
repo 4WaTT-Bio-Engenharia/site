@@ -511,7 +511,7 @@ Deploy é feito por **upload direto de arquivos** para hospedagem estática. Nã
 
 9. **Páginas `noindex`:** as páginas `blog.html`, `noticias.html`, `imprensa.html`, `academy.html`, `partners.html`, `saas.html`, `score.html`, `politica-privacidade.html`, `404.html` e `500.html` possuem `<meta name="robots" content="noindex, follow">`. As páginas de artigos individuais e as subpáginas (`artigos/index.html`, `biometano/index.html`, `viabilidade/comprar-biometano.html`) **não** possuem `noindex`. Ao tornar uma página definitiva, remova a meta tag.
 
-10. **CTAs para `simulador.html`:** a página `simulador.html` não existe mais no repositório. Várias páginas ainda apontam para ela no CTA da navbar, o que gera links quebrados. A homepage e várias páginas já migraram para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Ao revisar CTAs, padronize para a calculadora externa ou recrie `simulador.html`.
+10. **CTAs para `simulador.html`:** `simulador.html` não existe mais. Os CTAs das páginas ativas foram padronizados para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Restam referências apenas em arquivos `.bak`, no snippet `snippets/navbar-premium.html` (que já foi atualizado para a calculadora externa) e na documentação. Ao revisar novas páginas, mantenha o padrão da calculadora externa.
 
 ---
 
@@ -530,16 +530,17 @@ As seguintes dependências são carregadas via CDN nas páginas:
 
 ## 19. Estado Atual Observado e Inconsistências Conhecidas
 
-- `simulador.html` foi removido, mas ainda é referenciado em `snippets/navbar-premium.html` e nos CTAs de `404.html`, `500.html`, `artigos/index.html`, `biometano/index.html` e `viabilidade/comprar-biometano.html`.
-- `snippets/navbar-premium.html` não reflete o estado atual da navbar: o CTA do snippet aponta para `simulador.html`, enquanto a maioria das páginas usa a calculadora externa.
+- `simulador.html` não existe mais. As referências nos CTAs das páginas ativas foram migradas para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Apenas arquivos `.bak`, `investidor.html.bak.20260619101836` e a documentação legada ainda citam `simulador.html`.
+- `snippets/navbar-premium.html` já reflete o estado atual da navbar: CTA padrão aponta para a calculadora externa.
+- As páginas de artigos `artigo-por-que-ia-nao-basta.html` (categoria Investimento) e `artigo-cases-engenharia.html` (categoria Cases & Engenharia) foram criadas e adicionadas a `/artigos/index.html`, preenchendo as categorias vazias do blog.
 - Algumas páginas de artigos carregam `forms.js` duas vezes sem necessidade.
 - `languages-core.js` existe em `assets/js/` mas não é carregado por nenhuma página ativa.
-- `languages-pages.js` é carregado por todas as páginas ativas, mas contém apenas chaves `pt`.
+- `languages-pages.js` é carregado por todas as páginas ativas; contém chaves `pt` e `en` para artigos, stubs e páginas de erro.
 - `investidor.html` carrega `investidor-skin.css`? **Não** — o arquivo existe, mas a página usa CSS inline no próprio HTML; o arquivo `investidor-skin.css` está em desuso.
 - `main.js` referencia `languages-extended.js` para os idiomas ES/IT/FR/DE/NO, mas esse arquivo não existe; as traduções já estão em `languages.js`, então funciona, mas gera um 404 no console.
-- `sitemap.xml` ainda referencia `https://4watt.tech/simulador.html`, que não existe.
+- `sitemap.xml` foi atualizado e não referencia mais `simulador.html`.
 - `politica-privacidade.html` possui GA4 e `noindex`; não é um stub comercial.
 
 ---
 
-*Última atualização: 1 de agosto de 2026 — revisado com base na exploração real do conteúdo dos arquivos do projeto.*
+*Última atualização: 2 de agosto de 2026 — itens do Notion "Mudanças do site" aplicados: Projeto de Investimento consolidado em `solucao-biogas.html`, FAQ de pagamento e de IA, CTAs padronizados para calculadora externa, cases com dados reais na home, artigos `artigo-por-que-ia-nao-basta.html` e `artigo-cases-engenharia.html` publicados no blog.*

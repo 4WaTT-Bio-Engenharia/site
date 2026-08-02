@@ -253,6 +253,7 @@
                 <li data-i18n="sol_biogas_cta_check2"><i class="fas fa-check"></i> Retorno em até 1 dia útil</li>
                 <li data-i18n="sol_biogas_cta_check3"><i class="fas fa-check"></i> Equipe de engenheiros especializados</li>
               </ul>
+              <p class="lead" style="margin-top:24px; font-size: clamp(15px, 1.5vw, 17px); opacity: 0.95;" data-i18n="sol_biogas_cta_package_why">O pacote consolidado é recomendado porque une viabilidade, projeto básico, modelagem financeira e kit bancário em um fluxo só. Isso evita retrabalho, acelera a aprovação de crédito e reduz o risco de custos surpresa na obra.</p>
             </div>
             <div class="sol-formcard" data-reveal data-d="1">
               <h3 data-i18n="sol_biogas_form_title">Fale com a engenharia</h3>
@@ -275,13 +276,14 @@
                   </select><span class="form-error-msg"></span></div>
                 <div class="form-field"><label for="bg-etapa" data-i18n="sol_biogas_form_label_etapa">Escopo de interesse</label>
                   <select class="form-select" id="bg-etapa" name="etapa">
-                    <option value="" data-i18n="sol_biogas_form_opt_etapa_default">Selecione o escopo</option>
                     <optgroup data-i18n-label="sol_biogas_form_optgroup_recommended" label="Pacote recomendado">
-                      <option data-i18n="sol_biogas_form_opt_completo">Projeto de Investimento 4WaTT — pacote recomendado</option>
+                      <option value="projeto-de-investimento" selected data-i18n="sol_biogas_form_opt_completo">Projeto de Investimento 4WaTT — viabilidade + projeto básico + modelagem financeira + kit bancário (recomendado)</option>
                     </optgroup>
                     <optgroup data-i18n-label="sol_biogas_form_optgroup_individual" label="Etapas avulsas (sob consulta)">
-                      <option data-i18n="sol_biogas_form_opt_estudo">Estudo de viabilidade</option><option data-i18n="sol_biogas_form_opt_pb">Projeto básico</option><option data-i18n="sol_biogas_form_opt_pe">Projeto executivo</option>
-                      <option data-i18n="sol_biogas_form_opt_supervisao">Supervisão de obra</option>
+                      <option value="estudo" data-i18n="sol_biogas_form_opt_estudo">Estudo de viabilidade</option>
+                      <option value="pb" data-i18n="sol_biogas_form_opt_pb">Projeto básico</option>
+                      <option value="pe" data-i18n="sol_biogas_form_opt_pe">Projeto executivo</option>
+                      <option value="supervisao" data-i18n="sol_biogas_form_opt_supervisao">Supervisão de obra</option>
                     </optgroup>
                   </select><span class="form-error-msg"></span></div>
                 <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;" data-i18n="sol_biogas_form_submit">Solicitar Projeto de Investimento <i class="fas fa-arrow-right"></i></button>
@@ -316,8 +318,8 @@
     </footer>
   </div>
 
-  <script src="assets/js/languages.js?v=2.0"></script>
-  <script src="/assets/js/languages-pages.js?v=1.1"></script>
+  <script src="assets/js/languages.js?v=2.1"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
 <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.2"></script>
   <script src="assets/js/forms.js?v=1.3"></script>

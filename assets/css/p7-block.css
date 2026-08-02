@@ -1562,3 +1562,60 @@
         grid-template-columns: 1fr !important;
     }
 }
+
+/* CTA de Academy ao final de artigos individuais */
+.article-academy-cta {
+    margin: 48px 0 32px;
+    padding: 32px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #3D0036, #6B1060);
+    color: #ffffff;
+}
+
+.article-academy-cta__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #00A089;
+    margin-bottom: 10px;
+}
+
+.article-content .article-academy-cta h3 {
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 800;
+    color: #ffffff !important;
+    margin: 0 0 14px;
+    line-height: 1.2;
+}
+
+.article-content .article-academy-cta p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92) !important;
+    margin: 0 0 22px;
+}
+
+.article-content .article-academy-cta .btn {
+    display: inline-block;
+    background: #00A089;
+    color: #ffffff !important;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.article-content .article-academy-cta .btn:hover {
+    background: #00796B;
+}
+
+@media (max-width: 768px) {
+    .article-academy-cta {
+        padding: 24px;
+    }
+}

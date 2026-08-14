@@ -1,0 +1,33 @@
+# 4WaTT Bio Engenharia
+
+> Empresa brasileira de bioengenharia especializada em projetos de biogás, biometano e gaseificação de RSU. Atua do EVTE ao O&M — engenharia própria em todas as etapas, sediada em Goiânia (GO), Brasil.
+
+## Serviços
+
+- **Engenharia de Biogás**: projetos de biodigestão anaeróbia para resíduos agroindustriais, dejetos suínos, aves e RSU. Do dimensionamento ao comissionamento.
+- **Biometano**: purificação, certificação RenovaBio (CBIO), conexão à rede de gás natural e contratos de offtake.
+- **Gaseificação de RSU**: conversão térmica de resíduos sólidos urbanos em syngas e energia elétrica.
+- **Simulador de Viabilidade**: ferramenta online para análise de TIR, VPL e payback de projetos de biogás e biometano.
+
+## Diferenciais
+
+- Engenharia própria: a mesma equipe técnica do projeto acompanha a operação (O&M), reduzindo risco de transição entre construção e operação.
+- Financiamento estruturado: apoio à captação via CRI, debêntures e fundos de infraestrutura.
+- Certificação RenovaBio integrada ao escopo de projetos de biometano.
+- Cases executados: Organoburitis, Rota Pesadas e CEASA Goiânia.
+
+## Cases
+
+- CEASA Goiás: operação e manutenção (O&M) da usina de biogás da central de abastecimento, com reengenharia de esteiras e equipamentos, regularização de equipe, portal do cliente com dados em tempo real e projetos em desenvolvimento (refinaria de biometano, turbina a gás para biogás e IA aplicada à operação). https://4watt.tech/case-ceasa-goias.html
+
+## Links
+
+- Site: https://4watt.tech
+- Soluções Biogás: https://4watt.tech/solucao-biogas.html
+- Soluções Biometano: https://4watt.tech/solucao-biometano.html
+- Gaseificação RSU: https://4watt.tech/solucao-gaseificacao.html
+- Área do Investidor: https://4watt.tech/investidor.html
+- Case CEASA Goiás: https://4watt.tech/case-ceasa-goias.html
+- Blog técnico: https://4watt.tech/artigos/
+- Simulador de viabilidade: https://calculadora-zeta-sooty.vercel.app/
+- Contato: https://4watt.tech/contato.html

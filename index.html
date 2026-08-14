@@ -18,7 +18,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
-  <link rel="stylesheet" href="assets/css/home-premium.css?v=3.6">
+  <link rel="stylesheet" href="assets/css/home-premium.css?v=3.7">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
   <script>
@@ -455,49 +455,80 @@
               resíduo em energia e valor mensurável. Conheça cada case.</p>
           </div>
 
-          <div class="cases">
-            <article class="case-card" tabindex="0" role="button" data-case-title="CEASA Goiás"
-              data-case-location="Goiânia · GO" data-case-image="assets/img_old/case-ceasa.png"
-              data-case-description="Estudo de viabilidade e projeto básico para os resíduos orgânicos da central de abastecimento. Transforma descarte em energia dentro da própria operação."
-              data-case-stat="1.200 Nm³/dia de biogás dimensionados · RSU orgânico" data-case-cta="case-ceasa-goias.html"
-              data-reveal>
-              <div class="ph"><img src="assets/img_old/case-ceasa.png" alt="CEASA Goiás"></div>
-              <div class="case-card__body">
-                <div class="case-card__loc" data-i18n="home_case1_loc">Goiânia · GO</div>
-                <div class="case-card__title" data-i18n="home_case1_title">CEASA Goiás</div>
-                <div class="case-card__stat" data-i18n="home_case1_stat">1.200 Nm³/dia de biogás dimensionados · RSU orgânico</div>
-                <span class="case-card__more" data-i18n="home_case1_more">Ver case <i
-                    class="fas fa-arrow-right"></i></span>
-              </div>
-            </article>
-            <article class="case-card" tabindex="0" role="button" data-case-title="Frigorífico Franca"
-              data-case-location="Franca · SP" data-case-image="assets/img_old/case-franca.jpg"
-              data-case-description="Projeto executivo completo para biodigestão de efluentes de frigorífico bovino, com cogeração elétrica e substituição de GLP na caldeira."
-              data-case-stat="2.800 Nm³/dia de biogás · em operação" data-case-cta="contato.html" data-reveal
-              data-d="1">
-              <div class="ph"><img src="assets/img_old/case-franca.jpg" alt="Frigorífico Franca"></div>
-              <div class="case-card__body">
-                <div class="case-card__loc" data-i18n="home_case2_loc">Franca · SP</div>
-                <div class="case-card__title" data-i18n="home_case2_title">Frigorífico Franca</div>
-                <div class="case-card__stat" data-i18n="home_case2_stat">2.800 Nm³/dia de biogás · em operação</div>
-                <span class="case-card__more" data-i18n="home_case2_more">Ver case <i
-                    class="fas fa-arrow-right"></i></span>
-              </div>
-            </article>
-            <article class="case-card" tabindex="0" role="button" data-case-title="Organo Buritis"
-              data-case-location="Buritis · MG" data-case-image="assets/img_old/case-organo.jpg"
-              data-case-description="Valorização de resíduos orgânicos em biofertilizante e energia, integrando o ciclo de nutrientes à geração de bioenergia."
-              data-case-stat="Resíduo orgânico → biofertilizante + energia" data-case-cta="contato.html" data-reveal
-              data-d="2">
-              <div class="ph"><img src="assets/img_old/case-organo.jpg" alt="Organo Buritis"></div>
-              <div class="case-card__body">
-                <div class="case-card__loc" data-i18n="home_case3_loc">Palmeiras de Goiás · GO</div>
-                <div class="case-card__title" data-i18n="home_case3_title">Organo Buritis</div>
-                <div class="case-card__stat" data-i18n="home_case3_stat">Resíduo em biofertilizante e energia.</div>
-                <span class="case-card__more" data-i18n="home_case3_more">Ver case <i
-                    class="fas fa-arrow-right"></i></span>
-              </div>
-            </article>
+          <div class="cases-marquee" data-reveal>
+            <div class="cases-marquee__track">
+              <article class="case-card" tabindex="0" role="button" data-case-title="CEASA Goiás"
+                data-case-location="Goiânia · GO" data-case-image="assets/img_old/case-ceasa.png"
+                data-case-description="Estudo de viabilidade e projeto básico para os resíduos orgânicos da central de abastecimento. Transforma descarte em energia dentro da própria operação."
+                data-case-stat="1.200 Nm³/dia de biogás dimensionados · RSU orgânico" data-case-cta="case-ceasa-goias.html">
+                <div class="ph"><img src="assets/img_old/case-ceasa.png" alt="CEASA Goiás"></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case1_loc">Goiânia · GO</div>
+                  <div class="case-card__title" data-i18n="home_case1_title">CEASA Goiás</div>
+                  <div class="case-card__stat" data-i18n="home_case1_stat">1.200 Nm³/dia de biogás dimensionados · RSU orgânico</div>
+                  <span class="case-card__more" data-i18n="home_case1_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                  <a class="case-card__cta" href="case-ceasa-goias.html" onclick="event.stopPropagation();" data-i18n="home_case1_cta">Ver case completo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </article>
+              <article class="case-card" tabindex="0" role="button" data-case-title="Frigorífico Franca"
+                data-case-location="Franca · SP" data-case-image="assets/img_old/case-franca.jpg"
+                data-case-description="Projeto executivo completo para biodigestão de efluentes de frigorífico bovino, com cogeração elétrica e substituição de GLP na caldeira."
+                data-case-stat="2.800 Nm³/dia de biogás · em operação" data-case-cta="contato.html">
+                <div class="ph"><img src="assets/img_old/case-franca.jpg" alt="Frigorífico Franca"></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case2_loc">Franca · SP</div>
+                  <div class="case-card__title" data-i18n="home_case2_title">Frigorífico Franca</div>
+                  <div class="case-card__stat" data-i18n="home_case2_stat">2.800 Nm³/dia de biogás · em operação</div>
+                  <span class="case-card__more" data-i18n="home_case2_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                </div>
+              </article>
+              <article class="case-card" tabindex="0" role="button" data-case-title="Organo Buritis"
+                data-case-location="Buritis · MG" data-case-image="assets/img_old/case-organo.jpg"
+                data-case-description="Valorização de resíduos orgânicos em biofertilizante e energia, integrando o ciclo de nutrientes à geração de bioenergia."
+                data-case-stat="Resíduo orgânico → biofertilizante + energia" data-case-cta="contato.html">
+                <div class="ph"><img src="assets/img_old/case-organo.jpg" alt="Organo Buritis"></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case3_loc">Palmeiras de Goiás · GO</div>
+                  <div class="case-card__title" data-i18n="home_case3_title">Organo Buritis</div>
+                  <div class="case-card__stat" data-i18n="home_case3_stat">Resíduo em biofertilizante e energia.</div>
+                  <span class="case-card__more" data-i18n="home_case3_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                </div>
+              </article>
+              <article class="case-card" aria-hidden="true">
+                <div class="ph"><img src="assets/img_old/case-ceasa.png" alt=""></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case1_loc">Goiânia · GO</div>
+                  <div class="case-card__title" data-i18n="home_case1_title">CEASA Goiás</div>
+                  <div class="case-card__stat" data-i18n="home_case1_stat">1.200 Nm³/dia de biogás dimensionados · RSU orgânico</div>
+                  <span class="case-card__more" data-i18n="home_case1_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                  <a class="case-card__cta" href="case-ceasa-goias.html" tabindex="-1" data-i18n="home_case1_cta">Ver case completo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </article>
+              <article class="case-card" aria-hidden="true">
+                <div class="ph"><img src="assets/img_old/case-franca.jpg" alt=""></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case2_loc">Franca · SP</div>
+                  <div class="case-card__title" data-i18n="home_case2_title">Frigorífico Franca</div>
+                  <div class="case-card__stat" data-i18n="home_case2_stat">2.800 Nm³/dia de biogás · em operação</div>
+                  <span class="case-card__more" data-i18n="home_case2_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                </div>
+              </article>
+              <article class="case-card" aria-hidden="true">
+                <div class="ph"><img src="assets/img_old/case-organo.jpg" alt=""></div>
+                <div class="case-card__body">
+                  <div class="case-card__loc" data-i18n="home_case3_loc">Palmeiras de Goiás · GO</div>
+                  <div class="case-card__title" data-i18n="home_case3_title">Organo Buritis</div>
+                  <div class="case-card__stat" data-i18n="home_case3_stat">Resíduo em biofertilizante e energia.</div>
+                  <span class="case-card__more" data-i18n="home_case3_more">Ver case <i
+                      class="fas fa-arrow-right"></i></span>
+                </div>
+              </article>
+            </div>
           </div>
 
           <div class="partners">
@@ -630,7 +661,7 @@
     </div>
   </div>
 
-  <script src="assets/js/languages.js?v=2.2"></script>
+  <script src="assets/js/languages.js?v=2.3"></script>
   <script src="/assets/js/languages-pages.js?v=1.3"></script>
   <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.2"></script>

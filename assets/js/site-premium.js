@@ -230,6 +230,76 @@
     });
   }
 
+  /* ---------- Marquee arrastável: auto-scroll contínuo + arraste/toque do usuário ----------
+     Padrão para qualquer carrossel do site: envolver o conteúdo (já duplicado 2x
+     para o loop) num wrapper com [data-marquee]. Opcional: data-marquee-speed
+     (px por frame; padrão 0.55). Mouse arrasta a esteira; toque/trackpad usam o
+     scroll nativo do wrapper; ambos pausam o auto-scroll enquanto o usuário interage. */
+  function initDraggableMarquee(wrapper) {
+    var track = wrapper.firstElementChild;
+    if (!track) return;
+
+    var speed = parseFloat(wrapper.getAttribute('data-marquee-speed')) || 0.55;
+    var half = track.scrollWidth / 2;
+    function measure() { half = track.scrollWidth / 2; }
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+
+    var paused = false;
+    var dragging = false;
+    var startX = 0, startScroll = 0;
+    var resumeTimer = null;
+
+    function pauseFor(ms) {
+      paused = true;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function () { if (!dragging) paused = false; }, ms);
+    }
+
+    wrapper.addEventListener('mouseenter', function () { paused = true; });
+    wrapper.addEventListener('mouseleave', function () { if (!dragging) paused = false; });
+
+    wrapper.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      dragging = true;
+      paused = true;
+      startX = e.clientX;
+      startScroll = wrapper.scrollLeft;
+      wrapper.classList.add('is-dragging');
+      try { wrapper.setPointerCapture(e.pointerId); } catch (err) { /* ignore: pointer already released */ }
+    });
+    wrapper.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      wrapper.scrollLeft = startScroll - (e.clientX - startX);
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      wrapper.classList.remove('is-dragging');
+      pauseFor(2200);
+    }
+    wrapper.addEventListener('pointerup', endDrag);
+    wrapper.addEventListener('pointercancel', endDrag);
+    wrapper.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+    wrapper.addEventListener('touchend', function () { pauseFor(2200); }, { passive: true });
+    wrapper.addEventListener('wheel', function () { pauseFor(2200); }, { passive: true });
+
+    if (reduce) return; // sem auto-scroll; o arraste/scroll nativo continua funcionando
+
+    function tick() {
+      if (half > 0 && !paused && !dragging) {
+        wrapper.scrollLeft += speed;
+        if (wrapper.scrollLeft >= half) wrapper.scrollLeft -= half;
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initMarquees() {
+    document.querySelectorAll('[data-marquee]').forEach(initDraggableMarquee);
+  }
+
   ready(function () {
     initReveal();
     initCounters();
@@ -241,5 +311,6 @@
     initAccordion();
     initFunnel();
     initAnchors();
+    initMarquees();
   });
 })();

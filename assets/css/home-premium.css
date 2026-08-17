@@ -221,12 +221,13 @@
 .case-card__cta:hover { background: #048f77; transform: translateY(-2px); }
 @media (max-width: 880px) { .cases { grid-template-columns: 1fr; } }
 
-/* ---------- Cases: marquee automático (rolagem contínua, sem interação) ---------- */
-.cases-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
-.cases-marquee__track { display: flex; gap: 16px; width: max-content; align-items: stretch; animation: cases-marq 40s linear infinite; }
-.cases-marquee:hover .cases-marquee__track { animation-play-state: paused; }
+/* ---------- Cases: marquee automático + arrastável (ver [data-marquee] em site-premium.js) ---------- */
+.cases-marquee { overflow-x: auto; overflow-y: hidden; scroll-behavior: auto; scrollbar-width: none; cursor: grab; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.cases-marquee::-webkit-scrollbar { display: none; }
+.cases-marquee.is-dragging { cursor: grabbing; }
+.cases-marquee.is-dragging .case-card { pointer-events: none; }
+.cases-marquee__track { display: flex; gap: 16px; width: max-content; align-items: stretch; user-select: none; }
 .cases-marquee__track .case-card { flex: 0 0 auto; width: min(400px, 82vw); }
-@keyframes cases-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (max-width: 880px) { .cases-marquee__track .case-card { width: min(320px, 80vw); } }
 
 .partners { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }

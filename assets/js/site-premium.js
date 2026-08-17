@@ -245,9 +245,11 @@
     window.addEventListener('resize', measure);
     window.addEventListener('load', measure);
 
+    var DRAG_THRESHOLD = 6; // px — abaixo disso é clique, não arraste
     var paused = false;
+    var pointerIsDown = false;
     var dragging = false;
-    var startX = 0, startScroll = 0;
+    var startX = 0, startScroll = 0, activePointerId = null;
     var resumeTimer = null;
 
     function pauseFor(ms) {
@@ -259,21 +261,32 @@
     wrapper.addEventListener('mouseenter', function () { paused = true; });
     wrapper.addEventListener('mouseleave', function () { if (!dragging) paused = false; });
 
+    // Só vira "arraste" depois que o ponteiro se move além do limiar — assim um
+    // clique simples (em um card ou no botão "Ver case completo") nunca é
+    // sequestrado pelo pointer capture do carrossel.
     wrapper.addEventListener('pointerdown', function (e) {
       if (e.pointerType !== 'mouse') return;
-      dragging = true;
+      pointerIsDown = true;
+      dragging = false;
       paused = true;
       startX = e.clientX;
       startScroll = wrapper.scrollLeft;
-      wrapper.classList.add('is-dragging');
-      try { wrapper.setPointerCapture(e.pointerId); } catch (err) { /* ignore: pointer already released */ }
+      activePointerId = e.pointerId;
     });
     wrapper.addEventListener('pointermove', function (e) {
-      if (!dragging) return;
-      wrapper.scrollLeft = startScroll - (e.clientX - startX);
+      if (!pointerIsDown) return;
+      var delta = e.clientX - startX;
+      if (!dragging) {
+        if (Math.abs(delta) < DRAG_THRESHOLD) return;
+        dragging = true;
+        wrapper.classList.add('is-dragging');
+        try { wrapper.setPointerCapture(activePointerId); } catch (err) { /* ignore: pointer already released */ }
+      }
+      wrapper.scrollLeft = startScroll - delta;
     });
     function endDrag() {
-      if (!dragging) return;
+      pointerIsDown = false;
+      if (!dragging) { paused = false; return; }
       dragging = false;
       wrapper.classList.remove('is-dragging');
       pauseFor(2200);

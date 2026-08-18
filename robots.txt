@@ -1,0 +1,28 @@
+User-agent: *
+Disallow: /academy.html
+Disallow: /saas.html
+Disallow: /score.html
+Disallow: /partners.html
+Disallow: /noticias.html
+Disallow: /assets/img_old/
+Disallow: /*.bak$
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://4watt.tech/sitemap.xml

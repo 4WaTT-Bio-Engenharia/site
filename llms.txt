@@ -5,7 +5,7 @@
 ## Serviços
 
 - **Engenharia de Biogás**: projetos de biodigestão anaeróbia para resíduos agroindustriais, dejetos suínos, aves e RSU. Do dimensionamento ao comissionamento.
-- **Biometano**: purificação, certificação RenovaBio (CBIO), conexão à rede de gás natural e contratos de offtake.
+- **Biometano**: purificação, certificação RenovaBio (CBIO), conexão à rede de gás natural e contratos de offtake. Também oferta biometano de projetos próprios em desenvolvimento em Goiás e Mato Grosso.
 - **Gaseificação de RSU**: conversão térmica de resíduos sólidos urbanos em syngas e energia elétrica.
 - **Simulador de Viabilidade**: ferramenta online para análise de TIR, VPL e payback de projetos de biogás e biometano.
 
@@ -16,6 +16,17 @@
 - Certificação RenovaBio integrada ao escopo de projetos de biometano.
 - Cases executados: Organoburitis, Rota Pesadas e CEASA Goiânia.
 
+## Projetos de biometano em desenvolvimento
+
+A 4WaTT tem quatro projetos de biometano em desenvolvimento em dois estados brasileiros, Goiás e Mato Grosso, somando 50.000 m³/dia de capacidade na Fase 01 e 92.000 m³/dia na Fase 02. Os volumes são capacidade informada de dimensionamento dos projetos em desenvolvimento, não produção operacional atual. Empresas interessadas em comprar biometano e investidores interessados em participar dos projetos devem entrar em contato.
+
+- **4W WTE 01** — Palmeiras de Goiás (GO). Fase 01: 10.000 m³/dia. Fase 02: 20.000 m³/dia.
+- **4W WTE 02** — Goiânia (GO). Fase 01: 10.000 m³/dia. Fase 02: 20.000 m³/dia.
+- **4W WTE 03** — Pires do Rio (GO). Fase 01: 10.000 m³/dia. Fase 02: 20.000 m³/dia.
+- **UTB MT** — Diamantino (MT). Fase 01: 20.000 m³/dia. Fase 02: 32.000 m³/dia.
+
+Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4watt.tech/projetos-biometano.html
+
 ## Cases
 
 - CEASA Goiás: operação e manutenção (O&M) da usina de biogás da central de abastecimento, com reengenharia de esteiras e equipamentos, regularização de equipe, portal do cliente com dados em tempo real e projetos em desenvolvimento (refinaria de biometano, turbina a gás para biogás e IA aplicada à operação). https://4watt.tech/case-ceasa-goias.html
@@ -25,6 +36,7 @@
 - Site: https://4watt.tech
 - Soluções Biogás: https://4watt.tech/solucao-biogas.html
 - Soluções Biometano: https://4watt.tech/solucao-biometano.html
+- Projetos de biometano em desenvolvimento: https://4watt.tech/projetos-biometano.html
 - Gaseificação RSU: https://4watt.tech/solucao-gaseificacao.html
 - Área do Investidor: https://4watt.tech/investidor.html
 - Case CEASA Goiás: https://4watt.tech/case-ceasa-goias.html

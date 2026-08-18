@@ -1,0 +1,616 @@
+/* ============================================================
+   4WaTT — Biometano · Projetos (LP comercial)
+   Sobre: theme-4watt.css (tokens, .btn, .section, .container,
+   .kicker, .form-*, .ph) + solucoes.css (.sol-hero, .sol-head,
+   .sol-grid, .sol-cta, .sol-formcard, .acc).
+
+   Prefixo exclusivo: .bmp-*
+   Esta folha SÓ ADICIONA. Não redefine nenhuma classe do tema.
+   Onde há estilo contextual sobre classe do tema (ex.: .kicker
+   dentro da faixa escura), ele está sempre escopado por um
+   ancestral .bmp-*, seguindo o padrão de .sol-cta__copy .kicker.
+
+   Acento da página (definir no <style> inline do HTML):
+     :root { --accent: var(--roxo-soft); --accent-light: var(--roxo); }
+
+   Ordem de carga recomendada no HTML:
+     theme-4watt.css → solucoes.css → biometano-projetos.css → mobile-fixes.css
+
+   Desktop-first (media queries max-width), como case-ceasa.css.
+   Breakpoints: 980 · 880 · 780 · 560 · 420
+   ============================================================ */
+
+:root {
+  /* Raios — o site não tem escala --radius-*; estes são locais da folha */
+  --bmp-r-lg: 22px;
+  --bmp-r:    16px;
+  --bmp-r-sm: 11px;
+
+  /* Tinta sobre faixas escuras (plum). Mesmos valores já praticados
+     em solucoes.css / case-ceasa.css, aqui tokenizados para que
+     nenhuma regra abaixo precise de cor cravada. */
+  --bmp-on-dark:       #ffffff;
+  --bmp-on-dark-80:    rgba(255,255,255,0.80);
+  --bmp-on-dark-55:    rgba(255,255,255,0.55);
+  --bmp-on-dark-line:  rgba(255,255,255,0.16);
+  --bmp-on-dark-fill:  rgba(255,255,255,0.07);
+  --bmp-on-dark-grid:  rgba(255,255,255,0.055);
+  --bmp-mint:          #5fe9cf;  /* teal legível sobre plum */
+  --bmp-gold-on-dark:  #f0c93f;  /* gold legível sobre plum */
+}
+
+/* Kicker com a cor de acento da página (o tema fixa teal-ink no texto) */
+.bmp-kicker { color: var(--accent-light); }
+
+/* ============================================================
+   FAIXAS / RITMO DE FUNDO
+   ============================================================ */
+.bmp-band          { position: relative; }
+.bmp-band--tint    { background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* ============================================================
+   01 · HERO — micro-stats sobre a foto escura
+   (estrutura vem de .sol-hero / .sol-badge / .sol-hero__cta)
+   ============================================================ */
+.bmp-hero { min-height: 88svh; }
+
+.bmp-hero__stats {
+  display: flex; flex-wrap: wrap; align-items: flex-start;
+  gap: 0 clamp(24px, 3.4vw, 52px);
+  margin-top: clamp(30px, 4vh, 46px);
+  padding-top: 26px;
+  border-top: 1px solid var(--bmp-on-dark-line);
+  max-width: 760px;
+}
+.bmp-hero__stat { position: relative; padding-right: clamp(24px, 3.4vw, 52px); }
+.bmp-hero__stat + .bmp-hero__stat::before {
+  content: ""; position: absolute; left: calc(-1 * clamp(12px, 1.7vw, 26px)); top: 4px; bottom: 4px;
+  width: 1px; background: var(--bmp-on-dark-line);
+}
+.bmp-hero__stat:last-child { padding-right: 0; }
+.bmp-hero__stat .v {
+  font-family: var(--display); font-weight: 900; line-height: 1;
+  font-size: clamp(24px, 3vw, 36px); letter-spacing: -.03em; color: var(--bmp-on-dark);
+  display: flex; align-items: baseline; gap: 7px;
+}
+.bmp-hero__stat .v small {
+  font-family: var(--mono); font-weight: 500; font-size: 11.5px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--bmp-mint);
+}
+.bmp-hero__stat .l {
+  margin-top: 9px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--bmp-on-dark-55); line-height: 1.45; max-width: 20ch;
+}
+
+/* ============================================================
+   02 · OPORTUNIDADE — 3 blocos editoriais (sem caixa)
+   Usar dentro de .sol-grid.sol-grid--3 para herdar o responsivo.
+   ============================================================ */
+.bmp-opp-card { border-top: 2px solid var(--accent); padding-top: 22px; }
+.bmp-opp-card__idx {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--accent-light);
+}
+.bmp-opp-card__t {
+  font-family: var(--display); font-weight: 700; font-size: clamp(18px, 1.9vw, 21px);
+  line-height: 1.25; letter-spacing: -.015em; color: var(--ink); margin: 12px 0 10px;
+}
+.bmp-opp-card__p { color: var(--dim); font-size: 14.5px; line-height: 1.65; }
+.bmp-opp-card__p strong { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   03 · DOIS CAMINHOS — painéis Consumidores × Investidores
+   Cor semântica por painel via --p-accent / --p-ink / --p-fg.
+   ============================================================ */
+.bmp-paths {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: clamp(18px, 2.4vw, 28px);
+  align-items: stretch;
+}
+
+.bmp-path {
+  --p-accent: var(--teal);
+  --p-ink:    var(--teal-ink);
+  --p-fg:     var(--bmp-on-dark);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--bmp-r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(28px, 3.2vw, 44px);
+  transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+}
+.bmp-path:hover { transform: translateY(-4px); border-color: var(--border-hi); box-shadow: var(--shadow); }
+.bmp-path::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--p-accent);
+}
+.bmp-path--consumo { --p-accent: var(--teal); --p-ink: var(--teal-ink); --p-fg: var(--bmp-on-dark); }
+.bmp-path--capital { --p-accent: var(--gold); --p-ink: var(--gold-ink); --p-fg: var(--plum); }
+
+/* Glifo industrial de fundo (ícone FA grande, quase invisível) */
+.bmp-path__glyph {
+  position: absolute; right: -6px; top: -10px; z-index: 0;
+  font-size: clamp(96px, 12vw, 148px); line-height: 1;
+  color: color-mix(in srgb, var(--p-accent) 9%, transparent);
+  pointer-events: none; user-select: none;
+}
+.bmp-path > * { position: relative; z-index: 1; }
+
+.bmp-path__eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--p-ink);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.bmp-path__eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--p-accent); flex: 0 0 auto; }
+
+.bmp-path__title {
+  font-family: var(--display); font-weight: 800; letter-spacing: -.02em; line-height: 1.12;
+  font-size: clamp(23px, 2.7vw, 32px); color: var(--ink); margin: 16px 0 12px;
+}
+.bmp-path__p { color: var(--dim); font-size: 15px; line-height: 1.7; max-width: 46ch; }
+
+.bmp-path__list { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.bmp-path__list li { position: relative; padding-left: 22px; font-size: 14.5px; line-height: 1.5; color: var(--dim); }
+.bmp-path__list li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; border-radius: 2px; background: var(--p-accent);
+}
+.bmp-path__list strong { color: var(--ink); font-weight: 600; }
+
+.bmp-path__cta {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-weight: 700; font-size: 15px;
+  padding: 14px 24px; border-radius: var(--bmp-r-sm);
+  background: var(--p-accent); color: var(--p-fg); border: 1px solid var(--p-accent);
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), filter .25s;
+}
+.bmp-path__cta i { transition: transform .28s var(--ease); }
+.bmp-path__cta:hover { transform: translateY(-2px); box-shadow: var(--shadow); filter: brightness(.94); }
+.bmp-path__cta:hover i { transform: translateX(4px); }
+/* respiro entre a lista e o CTA quando o painel estica */
+.bmp-path__list + .bmp-path__cta { margin-top: clamp(26px, 3vw, 36px); }
+
+@media (max-width: 880px) { .bmp-paths { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   04 · PROJETOS — card com "razão de fases" + investimento sob consulta
+   ============================================================ */
+.bmp-projects {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.bmp-proj {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--bmp-r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(24px, 2.6vw, 34px);
+  transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+}
+/* trilho de acento que "desenha" no hover */
+.bmp-proj::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  transform: scaleX(0); transform-origin: 0 50%;
+  transition: transform .5s var(--ease);
+}
+.bmp-proj:hover { transform: translateY(-5px); border-color: var(--border-hi); box-shadow: var(--shadow); }
+.bmp-proj:hover::before { transform: none; }
+
+.bmp-proj__top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.bmp-proj__loc {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--muted);
+}
+.bmp-proj__loc i { color: var(--accent-light); font-size: 12px; }
+.bmp-proj__idx {
+  font-family: var(--display); font-weight: 900; font-size: 20px;
+  letter-spacing: -.02em; color: var(--faint); line-height: 1; flex: 0 0 auto;
+}
+
+.bmp-proj__name {
+  font-family: var(--display); font-weight: 800; letter-spacing: -.02em; line-height: 1.15;
+  font-size: clamp(20px, 2.1vw, 26px); color: var(--ink); margin: 14px 0 10px;
+}
+.bmp-proj__desc { color: var(--dim); font-size: 14px; line-height: 1.6; }
+
+/* ---- Razão de fases: dois volumes lado a lado, hierarquizados ---- */
+.bmp-proj__phases {
+  margin-top: auto;                 /* empurra o bloco inferior: ledgers alinham entre cards */
+  padding-top: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.bmp-proj__desc + .bmp-proj__phases { margin-top: clamp(22px, 2.6vw, 30px); }
+
+.bmp-phase { position: relative; padding: 18px 16px 18px 0; }
+.bmp-phase + .bmp-phase { padding: 18px 0 18px 16px; }
+.bmp-phase + .bmp-phase::before {
+  content: ""; position: absolute; left: 0; top: 14px; bottom: 14px;
+  width: 1px; background: var(--border);
+}
+
+.bmp-phase__tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+}
+.bmp-phase__tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
+
+/* Fase em curso: marcador sólido, valor em roxo cheio */
+.bmp-phase--now  .bmp-phase__tag  { color: var(--teal-ink); }
+.bmp-phase--now  .bmp-phase__tag::before { background: var(--teal); }
+.bmp-phase--now  .bmp-phase__v    { color: var(--roxo); }
+/* Fase futura: marcador vazado, valor em roxo suave — plano, não fato */
+.bmp-phase--next .bmp-phase__tag  { color: var(--gold-ink); }
+.bmp-phase--next .bmp-phase__tag::before { background: transparent; box-shadow: inset 0 0 0 2px var(--gold-ink); }
+.bmp-phase--next .bmp-phase__v    { color: var(--roxo-soft); }
+
+.bmp-phase__v {
+  font-family: var(--display); font-weight: 900; line-height: 1;
+  font-size: clamp(23px, 2.5vw, 31px); letter-spacing: -.035em;
+  color: var(--roxo); margin-top: 11px;
+}
+.bmp-phase__u {
+  margin-top: 7px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: .05em; color: var(--muted);
+}
+.bmp-phase__note { margin-top: 5px; font-size: 11.5px; line-height: 1.4; color: var(--muted); }
+
+/* ---- Investimento: "sob consulta" como chip acionável, não campo vazio ---- */
+.bmp-proj__invest {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; padding-top: 16px;
+}
+.bmp-proj__invest-l {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.bmp-proj__invest-v {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .03em;
+  color: var(--roxo);
+  background: color-mix(in srgb, var(--roxo) 5%, var(--surface-2));
+  border: 1px dashed color-mix(in srgb, var(--roxo) 34%, transparent);
+  padding: 7px 14px; border-radius: 100px;
+  transition: background .25s, border-color .25s, color .25s;
+}
+.bmp-proj__invest-v i { font-size: 10.5px; opacity: .75; }
+.bmp-proj__invest-v:hover,
+.bmp-proj:hover .bmp-proj__invest-v {
+  background: color-mix(in srgb, var(--roxo) 10%, var(--surface-2));
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--roxo) 55%, transparent);
+}
+
+/* ---- CTA do card: botão próprio (não usa .btn, evita colisão com o tema) ---- */
+.bmp-proj__cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; margin-top: 20px;
+  font-family: var(--display); font-weight: 700; font-size: 14px;
+  color: var(--roxo); background: transparent;
+  border: 1px solid var(--border-hi); border-radius: var(--bmp-r-sm);
+  padding: 13px 20px; cursor: pointer;
+  transition: background .28s var(--ease), color .28s, border-color .28s;
+}
+.bmp-proj__cta i { transition: transform .28s var(--ease); font-size: 12px; }
+.bmp-proj__cta:hover,
+.bmp-proj:hover .bmp-proj__cta {
+  background: var(--roxo); border-color: var(--roxo); color: var(--bmp-on-dark);
+}
+.bmp-proj__cta:hover i { transform: translateX(4px); }
+
+/* Destaque temporário quando o card é alcançado por um pino do mapa */
+.bmp-proj.is-highlight {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent), var(--shadow);
+}
+.bmp-proj.is-highlight::before { transform: none; }
+
+@media (max-width: 880px) { .bmp-projects { grid-template-columns: 1fr; } }
+@media (max-width: 420px) {
+  .bmp-proj__phases { grid-template-columns: 1fr; }
+  .bmp-phase { padding: 16px 0; }
+  .bmp-phase + .bmp-phase { padding: 16px 0; }
+  .bmp-phase + .bmp-phase::before { left: 0; right: 0; top: 0; bottom: auto; width: auto; height: 1px; }
+  .bmp-proj__invest { align-items: flex-start; flex-direction: column; gap: 9px; }
+}
+
+/* ============================================================
+   05 · CAPACIDADE DO PORTFÓLIO — faixa escura com malha técnica
+   Usar como <section class="section bmp-caps"> para herdar o
+   z-index de .section > .container do tema.
+   ============================================================ */
+.bmp-caps {
+  position: relative; overflow: hidden;
+  background: var(--plum-2); color: var(--bmp-on-dark);
+}
+/* blueprint grid — industrial, custo zero de bytes */
+.bmp-caps::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--bmp-on-dark-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmp-on-dark-grid) 1px, transparent 1px);
+  background-size: 68px 68px;
+  -webkit-mask-image: radial-gradient(120% 92% at 50% 0%, #000 0%, transparent 74%);
+  mask-image: radial-gradient(120% 92% at 50% 0%, #000 0%, transparent 74%);
+}
+.bmp-caps .kicker           { color: var(--bmp-mint); }
+.bmp-caps .kicker::before   { background: var(--bmp-mint); }
+.bmp-caps .h2               { color: var(--bmp-on-dark); }
+.bmp-caps .lead             { color: var(--bmp-on-dark-80); }
+
+.bmp-caps__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(22px, 2.8vw, 40px);
+  margin-top: clamp(32px, 4.5vw, 56px);
+}
+.bmp-cap { border-top: 2px solid var(--bmp-on-dark-line); padding-top: 20px; }
+.bmp-cap--vol { border-top-color: var(--bmp-gold-on-dark); }
+
+.bmp-cap__v {
+  font-family: var(--display); font-weight: 900; line-height: .95;
+  font-size: clamp(38px, 5.2vw, 68px); letter-spacing: -.04em;
+  color: var(--bmp-on-dark);
+  display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
+}
+.bmp-cap__u {
+  font-family: var(--mono); font-weight: 500; font-size: clamp(11px, 1vw, 13px);
+  letter-spacing: .09em; text-transform: uppercase; color: var(--bmp-gold-on-dark);
+  white-space: nowrap;
+}
+.bmp-cap--count .bmp-cap__u { color: var(--bmp-mint); }
+.bmp-cap__l {
+  margin-top: 14px; font-size: 13.5px; line-height: 1.5;
+  color: var(--bmp-on-dark-55); max-width: 24ch;
+}
+
+.bmp-caps__note {
+  display: flex; gap: 12px; align-items: flex-start;
+  margin-top: clamp(36px, 5vw, 58px); padding-top: 22px;
+  border-top: 1px solid var(--bmp-on-dark-line);
+  font-family: var(--mono); font-size: 12px; line-height: 1.65;
+  color: var(--bmp-on-dark-55); max-width: 78ch;
+}
+.bmp-caps__note i { color: var(--bmp-mint); margin-top: 3px; flex: 0 0 auto; }
+
+@media (max-width: 880px) { .bmp-caps__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .bmp-caps__grid { grid-template-columns: 1fr; } }
+
+/* ---- Tabela consolidada: projeto × fase, sobre a faixa escura ----
+   Dado tabular de verdade (<caption>/<th scope>) — é o formato que
+   buscadores e motores generativos extraem com maior fidelidade,
+   e a leitura por linha que torna os 4 projetos comparáveis. */
+.bmp-tablewrap {
+  margin-top: clamp(34px, 4.5vw, 54px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.bmp-table {
+  width: 100%; min-width: 540px;
+  border-collapse: collapse;
+  font-size: 14px; color: var(--bmp-on-dark-80);
+}
+.bmp-table caption {
+  text-align: left; padding-bottom: 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--bmp-mint);
+}
+.bmp-table th,
+.bmp-table td {
+  padding: 15px 16px; text-align: left;
+  border-bottom: 1px solid var(--bmp-on-dark-line);
+}
+.bmp-table thead th {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--bmp-on-dark-55);
+}
+.bmp-table tbody th {
+  font-family: var(--display); font-weight: 700; font-size: 15px;
+  color: var(--bmp-on-dark); white-space: nowrap;
+}
+.bmp-table tbody td:nth-child(3) { color: var(--bmp-on-dark); font-weight: 600; }
+.bmp-table tfoot th,
+.bmp-table tfoot td {
+  border-bottom: 0; border-top: 2px solid var(--bmp-gold-on-dark);
+  font-family: var(--display); font-weight: 800; color: var(--bmp-on-dark);
+}
+.bmp-table tfoot th { white-space: nowrap; }
+
+/* ============================================================
+   06 · LOCALIZAÇÃO — mapa SVG estático (GO + MT) + lista numerada
+   ============================================================ */
+.bmp-geo {
+  display: grid; grid-template-columns: 1.05fr .95fr;
+  gap: clamp(32px, 5vw, 72px); align-items: center;
+}
+
+.bmp-map {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--bmp-r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(18px, 2.2vw, 30px);
+}
+.bmp-map__svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.bmp-map__state {
+  fill: var(--surface-2);
+  stroke: var(--border-hi); stroke-width: 1.25;
+  stroke-linejoin: round; stroke-linecap: round;
+}
+.bmp-map__state--hl {
+  fill: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  stroke: color-mix(in srgb, var(--accent) 42%, transparent);
+}
+.bmp-map__df { fill: var(--surface); stroke: var(--border-hi); stroke-width: 1; }
+.bmp-map__statelabel {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .22em;
+  text-transform: uppercase; fill: var(--muted);
+}
+
+.bmp-map__pin { cursor: default; }
+.bmp-map__pin-halo {
+  fill: var(--accent); opacity: .3;
+  transform-box: fill-box; transform-origin: 50% 50%;
+  animation: bmp-ping 3.4s var(--ease-io) infinite;
+}
+.bmp-map__pin:nth-of-type(2) .bmp-map__pin-halo { animation-delay: .55s; }
+.bmp-map__pin:nth-of-type(3) .bmp-map__pin-halo { animation-delay: 1.1s; }
+.bmp-map__pin:nth-of-type(4) .bmp-map__pin-halo { animation-delay: 1.65s; }
+.bmp-map__pin-dot { fill: var(--accent); stroke: var(--surface); stroke-width: 2.5; }
+.bmp-map__pin-n {
+  font-family: var(--mono); font-weight: 500; font-size: 8.5px;
+  fill: var(--surface); text-anchor: middle; dominant-baseline: central;
+  pointer-events: none;
+}
+@keyframes bmp-ping {
+  0%        { transform: scale(.55); opacity: .38; }
+  70%, 100% { transform: scale(2.2);  opacity: 0; }
+}
+
+.bmp-map__cap {
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+  font-family: var(--mono); font-size: 11px; line-height: 1.55; color: var(--muted);
+}
+
+.bmp-locs { list-style: none; margin: 0; padding: 0; }
+.bmp-loc {
+  display: grid; grid-template-columns: 30px 1fr auto;
+  align-items: center; gap: 16px;
+  padding: 18px 2px; border-bottom: 1px solid var(--border);
+}
+.bmp-loc:first-child { border-top: 1px solid var(--border); }
+.bmp-loc__n {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--mono); font-size: 11px;
+  background: var(--accent); color: var(--bmp-on-dark);
+}
+.bmp-loc__city { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--ink); }
+.bmp-loc__proj { display: block; margin-top: 3px; font-size: 13px; color: var(--muted); line-height: 1.4; }
+.bmp-loc__uf {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+  color: var(--accent-light); background: var(--surface-2);
+  border: 1px solid var(--border); padding: 5px 11px; border-radius: 100px;
+}
+
+@media (max-width: 980px) { .bmp-geo { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .bmp-map { padding: 14px; }
+  .bmp-map__statelabel { font-size: 11px; letter-spacing: .16em; }
+  .bmp-loc { grid-template-columns: 26px 1fr auto; gap: 12px; }
+  .bmp-loc__n { width: 26px; height: 26px; font-size: 10px; }
+  .bmp-loc__city { font-size: 15.5px; }
+}
+
+/* ============================================================
+   07 · CTA FINAL — complementos sobre .sol-cta / .sol-formcard
+   ============================================================ */
+.bmp-cta__pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 26px;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--bmp-on-dark);
+  background: var(--bmp-on-dark-fill); border: 1px solid var(--bmp-on-dark-line);
+  padding: 8px 15px; border-radius: 100px;
+}
+.bmp-cta__pill i { color: var(--bmp-mint); }
+
+/* ============================================================
+   08 · MODAL DE INTERESSE
+   Contrato exigido por initInterestModal() (assets/js/forms.js:315):
+     #modal-interesse-overlay  recebe .open
+     #modal-interesse          o modal
+     .modal__close             botão de fechar
+     [name="projeto"]          input preenchido por data-project
+
+   Reescrito sobre os tokens de theme-4watt.css. NÃO copiar o bloco
+   de components.css: ele depende de --space-*, --color-*, --radius-*,
+   --z-modal e --transition-* do design-system legado, que não existem
+   nesta pilha — as regras cairiam para valores inválidos.
+   ============================================================ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,.62);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(16px, 4vw, 32px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s var(--ease);
+}
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+.modal {
+  position: relative;
+  width: 100%; max-width: 540px;
+  max-height: calc(100svh - 48px); overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--bmp-r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(26px, 3.4vw, 40px);
+  transform: scale(.96) translateY(10px);
+  transition: transform .32s var(--ease-io);
+}
+.modal-overlay.open .modal { transform: none; }
+
+.modal__close {
+  position: absolute; top: 16px; right: 16px;
+  width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--surface-2); color: var(--dim);
+  border: 1px solid var(--border); cursor: pointer;
+  font-size: 15px; line-height: 1;
+  transition: background .22s, color .22s, border-color .22s;
+}
+.modal__close:hover { background: var(--roxo); color: var(--bmp-on-dark); border-color: var(--roxo); }
+.modal__close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.modal__title {
+  font-family: var(--display); font-weight: 800; letter-spacing: -.02em;
+  font-size: clamp(20px, 2.2vw, 25px); line-height: 1.2;
+  color: var(--roxo); margin: 0 44px 8px 0;
+}
+.modal__subtitle { font-size: 14.5px; line-height: 1.6; color: var(--dim); margin-bottom: 6px; }
+
+/* Projeto selecionado — eco visual do chip do card */
+.bmp-modal__chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin: 4px 0 22px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .03em;
+  color: var(--roxo);
+  background: color-mix(in srgb, var(--roxo) 8%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--roxo) 30%, transparent);
+  padding: 8px 15px; border-radius: 100px;
+}
+.bmp-modal__chip i { font-size: 10.5px; opacity: .75; }
+
+@media (max-width: 560px) {
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal {
+    max-width: none; max-height: 92svh;
+    border-radius: var(--bmp-r-lg) var(--bmp-r-lg) 0 0;
+    border-bottom: 0;
+  }
+}
+
+/* ============================================================
+   MOVIMENTO REDUZIDO
+   (o tema já zera transitions/animations em .t4 *, aqui só o que
+   é aplicado a nós SVG e pseudo-elementos com transform inicial)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .bmp-map__pin-halo { animation: none; opacity: .22; transform: none; }
+  .bmp-proj::before  { transform: none; }
+  .modal             { transform: none; }
+}

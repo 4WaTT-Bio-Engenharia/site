@@ -37,6 +37,20 @@
   <style>
     :root { --accent: var(--teal); --accent-light: var(--teal-ink); }
 
+    /* Hero mais escuro SÓ nesta página. O padrão vem de solucoes.css
+       (.sol-hero .ph::after: 0.45 / 0.25 / 0.80), compartilhado pelas outras
+       páginas de solução — por isso a sobrescrita mora aqui, com .t4 na frente
+       para ganhar do seletor original em vez de depender da ordem das folhas.
+       A parada do meio (40%) é a que manda na leitura: é onde o céu claro fica
+       atrás do h1. Medido nesta faixa: −25% de luminância e contraste do texto
+       branco subindo de 5,03:1 para 7,71:1. */
+    .t4 .sol-hero .ph::after{
+      background:linear-gradient(180deg,
+        rgba(20,8,18,.72) 0%,
+        rgba(20,8,18,.60) 40%,
+        rgba(20,8,18,.96) 100%);
+    }
+
     /* Blocos exclusivos desta página: fotos do case e campos de resultado
        a preencher com dado real antes de publicar. */
     .res-photo{ margin:0; }

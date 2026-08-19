@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Resíduos por Assinatura Mensal | 4WaTT Bio Engenharia</title>
+  <meta name="description"
+    content="Assinatura mensal de gestão de resíduos com engenharia própria: PGRS, MTR e documentação inclusos, indicadores, plataforma e projeto de triagem. Sob consulta.">
+  <link rel="canonical" href="https://4watt.tech/solucao-gestao-residuos.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="4WaTT Bio Engenharia">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Gestão de Resíduos por Assinatura Mensal | 4WaTT Bio Engenharia">
+  <meta property="og:description" content="Assinatura mensal de gestão de resíduos com engenharia própria: PGRS, MTR e documentação inclusos, indicadores, plataforma e projeto de triagem. Sob consulta.">
+  <meta property="og:url" content="https://4watt.tech/solucao-gestao-residuos.html">
+  <meta property="og:image" content="https://4watt.tech/assets/img/og-4watt.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gestão de Resíduos por Assinatura Mensal | 4WaTT Bio Engenharia">
+  <meta name="twitter:description" content="Assinatura mensal de gestão de resíduos com engenharia própria: PGRS, MTR e documentação inclusos, indicadores, plataforma e projeto de triagem. Sob consulta.">
+  <meta name="twitter:image" content="https://4watt.tech/assets/img/og-4watt.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <style>
+    :root { --accent: var(--teal); --accent-light: var(--teal-ink); }
+
+    /* Blocos exclusivos desta página: fotos do case e campos de resultado
+       a preencher com dado real antes de publicar. */
+    .res-photo{ margin:0; }
+    .res-photo .ph{ aspect-ratio:16/10; border-radius:14px; overflow:hidden; }
+    .res-photo .ph img{ width:100%; height:100%; object-fit:cover; }
+    .res-photo figcaption{ margin-top:10px; font-size:.85rem; color:var(--dim); }
+
+    .res-list{ list-style:none; padding:0; margin:16px 0 0; display:grid; gap:9px; }
+    .res-list li{ position:relative; padding-left:22px; color:var(--dim); font-size:14px; line-height:1.6; }
+    .res-list li::before{ content:""; position:absolute; left:0; top:.7em; width:12px; height:1px; background:var(--accent); }
+
+    /* Linha de oferta no hero */
+    .t4 .res-hero-note{
+      margin-top:22px; font-size:14px; line-height:1.7; color:rgba(255,255,255,.82);
+      max-width:62ch;
+    }
+    .res-hero-note i{ color:var(--teal); margin-right:8px; }
+    .res-hero-note strong{ color:#fff; }
+
+    /* Faixa "o que não cabe na mensalidade" */
+    .res-scope{
+      margin-top:clamp(26px,4vw,40px); padding:clamp(20px,3vw,30px);
+      border:1px solid var(--border); border-radius:16px;
+      background:color-mix(in srgb, var(--teal) 5%, transparent);
+      display:grid; gap:20px; align-items:center;
+    }
+    .res-scope h3{ font-size:18px; margin-bottom:8px; }
+    .res-scope p{ color:var(--dim); font-size:14px; line-height:1.7; max-width:78ch; }
+    .res-scope strong{ color:var(--teal-ink); }
+    @media (min-width:900px){ .res-scope{ grid-template-columns:1fr auto; gap:36px; } }
+
+    /* theme-4watt.css define `.t4 p { margin: 0 }` (especificidade 0,1,1), que vence
+       seletores de classe simples. As regras de margem em <p> desta página precisam
+       do prefixo .t4 para valer. Ver skill site-4watt. */
+
+    /* Selos do hero */
+    .res-chips{ list-style:none; padding:0; margin:24px 0 0; display:flex; flex-wrap:wrap; gap:10px; }
+    .res-chips li{
+      display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:#fff;
+      background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22);
+      backdrop-filter:blur(6px); padding:8px 14px; border-radius:99px;
+    }
+    .res-chips i{ color:var(--teal); }
+
+    /* Faixa: incluso em todos os planos */
+    .res-incluso{
+      background:linear-gradient(125deg, var(--plum), var(--roxo) 65%, #1d3b3a);
+      color:#fff; border-radius:20px; padding:clamp(24px,3.6vw,38px);
+      margin-bottom:22px; display:grid; gap:26px;
+      box-shadow:0 26px 60px -34px rgba(42,7,32,.9);
+    }
+    .res-incluso__pill{
+      display:inline-block; font-family:'Roboto Mono', monospace; font-size:11px; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--plum); background:var(--teal);
+      padding:5px 12px; border-radius:99px; margin-bottom:14px; font-weight:600;
+    }
+    .res-incluso__head h3{ font-size:clamp(20px,2.2vw + .6rem,27px); color:#fff; margin-bottom:10px; }
+    .res-incluso__head p{ color:rgba(255,255,255,.78); font-size:14px; line-height:1.7; max-width:52ch; }
+    .res-incluso__list{ list-style:none; padding:0; margin:0; display:grid; gap:14px; }
+    /* texto corrido com check pendurado. NÃO usar display:flex aqui: o <strong>
+       vira item flex e o restante da frase quebra em outra coluna. */
+    .res-incluso__list li{
+      position:relative; padding-left:26px; font-size:14.5px; line-height:1.65;
+      color:rgba(255,255,255,.85);
+    }
+    .res-incluso__list i{ position:absolute; left:0; top:.32em; color:var(--teal); }
+    .res-incluso__list strong{ color:#fff; }
+    @media (min-width:920px){
+      .res-incluso{ grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:44px; align-items:center; }
+    }
+
+    /* Planos */
+    .res-plans{ display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); align-items:stretch; }
+    .res-plan{
+      position:relative; border:1px solid var(--border); border-radius:18px; background:var(--surface);
+      padding:26px 24px 24px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; height:100%;
+      transition:transform .3s var(--ease), box-shadow .3s;
+    }
+    .res-plan:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+    .res-plan--hi{
+      border-color:color-mix(in srgb, var(--gold) 60%, transparent); border-width:2px;
+      box-shadow:0 22px 48px -26px rgba(219,170,15,.6);
+    }
+    .res-plan__ribbon{
+      position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+      background:var(--gold); color:var(--plum); font-family:'Roboto Mono', monospace;
+      font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      padding:6px 16px; border-radius:99px; white-space:nowrap;
+    }
+    .t4 .res-plan__base{
+      position:relative; padding-left:20px; font-size:12.5px; line-height:1.5;
+      color:var(--teal-ink); margin:0 0 18px;
+    }
+    .res-plan__base i{ position:absolute; left:0; top:.22em; }
+    .res-check{ list-style:none; padding:0; margin:0 0 22px; display:grid; gap:11px; flex:1; }
+    .res-check li{ position:relative; padding-left:22px; font-size:14px; line-height:1.6; color:var(--dim); }
+    .res-check i{ position:absolute; left:0; top:.42em; color:var(--teal); font-size:12px; }
+    .res-check li strong{ color:var(--ink); }
+
+    /* Barra fixa de conversão */
+    .res-sticky{
+      position:fixed; left:0; right:0; bottom:0; z-index:90;
+      background:rgba(42,7,32,.96); backdrop-filter:blur(10px);
+      border-top:1px solid rgba(255,255,255,.14);
+      padding:11px clamp(14px,4vw,28px);
+      display:flex; align-items:center; justify-content:center; gap:clamp(12px,3vw,28px);
+      transform:translateY(105%); transition:transform .32s var(--ease);
+    }
+    .res-sticky.is-on{ transform:none; }
+    .res-sticky__txt{ color:rgba(255,255,255,.86); font-size:13.5px; line-height:1.4; }
+    .res-sticky__txt strong{ color:#fff; display:block; font-size:15px; }
+    .res-sticky .btn{ flex:none; padding:12px 22px; }
+    @media (max-width:719px){
+      .res-sticky__txt{ display:none; }
+      .res-sticky .btn{ width:100%; justify-content:center; }
+    }
+    @media print{ .res-sticky{ display:none; } }
+    .res-plan__tag{
+      font-family:'Roboto Mono', monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--teal-ink); margin-bottom:12px;
+    }
+    .res-plan--hi .res-plan__tag{ color:var(--gold-ink); }
+    .res-plan h3{ font-size:26px; margin-bottom:8px; }
+    .res-plan__for{ color:var(--dim); font-size:14px; line-height:1.6; }
+    @media (min-width:900px){
+      /* alinha preço e lista nos três cards, mesmo com textos de tamanhos diferentes */
+      .t4 .res-plan__for{ min-height:4.8em; }
+      .t4 .res-plan__base{ min-height:3.2em; }
+    }
+    .res-plan__price{
+      margin:18px 0 4px; padding:12px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      font-family:'Roboto Mono', monospace; font-size:13px; letter-spacing:.04em; color:var(--ink); font-weight:500;
+    }
+    .res-plan .res-list{ flex:1; margin-bottom:22px; }
+    .res-plan .res-list li strong{ color:var(--ink); }
+    .res-plan .btn{ width:100%; justify-content:center; }
+
+    .t4 .res-direto{ margin-top:22px; font-size:15px; }
+    .res-direto a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+    .res-direto a:hover{ color:#fff; }
+
+    .res-results{ margin-top:clamp(28px,4vw,44px); }
+    .t4 .res-results__lbl{
+      font-family:'Roboto Mono', monospace; font-size:.74rem; letter-spacing:.13em;
+      text-transform:uppercase; color:var(--dim); margin-bottom:16px;
+    }
+    .res-results__lbl em{ font-style:normal; color:var(--teal-ink); letter-spacing:.02em; text-transform:none; }
+    .res-result{
+      background:color-mix(in srgb, var(--teal) 7%, transparent);
+      border:1px dashed color-mix(in srgb, var(--teal) 45%, transparent);
+      border-radius:14px; padding:18px;
+    }
+    .res-result strong{
+      display:block; font-family:'Roboto Mono', monospace; font-size:.8rem; line-height:1.5;
+      color:var(--teal-ink); font-weight:500;
+    }
+    .res-result span{ display:block; margin-top:8px; font-weight:700; font-size:.95rem; color:var(--ink); }
+    .t4 .res-note{ margin-top:14px; font-size:.88rem; color:var(--dim); max-width:64ch; }
+
+    /* Faixa de acesso à plataforma — visualmente distinta do formulário de lead */
+    .res-platform{
+      background:linear-gradient(120deg, var(--plum), var(--roxo));
+      border-radius:20px; padding:clamp(24px,4vw,40px); color:#fff;
+      display:grid; gap:22px; align-items:center;
+    }
+    .res-platform h2{ font-size:clamp(1.4rem,2.2vw + .8rem,1.95rem); margin:0 0 8px; color:#fff; }
+    .res-platform p{ margin:0; color:rgba(255,255,255,.82); max-width:56ch; }
+    .res-platform .kicker{ color:var(--teal); }
+    @media (min-width:860px){
+      .res-platform{ grid-template-columns:1fr auto; gap:40px; }
+      .res-platform .btn{ justify-self:end; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N91NFD55MB');</script>
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+</head>
+
+<body class="t4">
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início" data-i18n-title="nav_logo_aria">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-i18n-title="nav_toggle_aria"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema" data-i18n="nav_ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz" data-i18n="nav_residuos">Resíduos</a></li>
+      <li><a href="index.html#engenharia" data-i18n="nav_engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada" data-i18n="nav_jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0" data-i18n="nav_solucoes">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html" data-i18n="nav_gestao_residuos">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html" data-i18n="nav_biogas">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html" data-i18n="nav_biom">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html" data-i18n="nav_gaseificacao">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true" data-i18n="lang_pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" data-i18n="lang_en">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="#cta" data-i18n="sol_residuos_nav_cta">Quero um diagnóstico</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <header class="sol-hero" data-hero>
+      <div class="ph ph--px ph--teal"><img src="assets/img/ceasa/ceasa-11-esteira.jpg" alt="Linha de esteiras de triagem de resíduos implantada pela 4WaTT na central de abastecimento CEASA, em Goiás" data-parallax="0.06"></div>
+      <div class="sol-hero__inner container">
+        <span class="sol-badge" data-reveal><i class="fas fa-recycle"></i> <span data-i18n="sol_residuos_badge">Serviço por assinatura mensal</span></span>
+        <h1 data-reveal data-d="1" data-i18n="sol_residuos_hero_title">Sua empresa paga para descartar.<br>Nós fazemos o resíduo pagar de volta.</h1>
+        <p class="sol-hero__lead" data-reveal data-d="2" data-i18n="sol_residuos_hero_lead">Assinatura mensal de gestão de resíduos com engenharia própria: <strong>PGRS, MTR e
+          toda a documentação legal em dia</strong>, indicadores todo mês, plataforma de gestão e o projeto de triagem
+          que faz o material voltar como receita — sem você contratar mais ninguém.</p>
+        <div class="sol-hero__cta" data-reveal data-d="3">
+          <a class="btn btn--gold" href="#cta" data-i18n="sol_residuos_hero_cta_primary">Quero meu diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
+          <a class="btn btn--primary" href="#planos" data-i18n="sol_residuos_hero_cta_secondary">Ver planos e o que está incluso</a>
+        </div>
+        <ul class="res-chips" data-reveal data-d="3">
+          <li data-i18n="sol_residuos_chip1"><i class="fas fa-file-shield"></i> PGRS, MTR e documentos em todos os planos</li>
+          <li data-i18n="sol_residuos_chip2"><i class="fas fa-award"></i> Assessoria em Certificação em Sustentabilidade Ambiental</li>
+          <li data-i18n="sol_residuos_chip3"><i class="fas fa-helmet-safety"></i> Engenharia própria, com equipe em campo</li>
+        </ul>
+        <p class="res-hero-note" data-reveal data-d="3" data-i18n="sol_residuos_hero_note"><i class="fas fa-circle-info"></i> Diagnóstico gratuito, resposta em até 1 dia útil e sem compromisso. <strong>Mensalidade sob consulta</strong>, definida na proposta — depois que um engenheiro vir a sua operação.</p>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- O QUE VOCÊ CONTRATA -->
+      <section class="section section--tight" id="servico">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_servico_kicker">O serviço</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_servico_title">O que você contrata.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_servico_lead">Não é software avulso nem consultoria por hora. É um contrato mensal em
+              que a 4WaTT passa a responder pela gestão de resíduos da sua operação — com <strong>PGRS, MTR e demais
+              documentos legais inclusos</strong>, assessoria na Certificação em Sustentabilidade Ambiental e engenheiro
+              responsável assinando o que entrega.</p></div>
+          <div class="sol-grid sol-grid--4">
+            <article class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fa-solid fa-file-shield"></i></div>
+              <h3 data-i18n="sol_residuos_entrega1_title">PGRS, MTR e documentação legal</h3>
+              <p data-i18n="sol_residuos_entrega1_desc">Elaboramos e mantemos o seu PGRS, emitimos e controlamos os MTR e cuidamos dos demais documentos exigidos do gerador. Você para de correr atrás de prazo — e de explicar atraso.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fa-solid fa-chart-column"></i></div>
+              <h3 data-i18n="sol_residuos_entrega2_title">Relatório mensal de indicadores</h3>
+              <p data-i18n="sol_residuos_entrega2_desc">Quanto foi gerado, para onde foi e quanto foi recuperado — por fração e por unidade, no mesmo formato todo mês, para dar para comparar.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fa-solid fa-laptop"></i></div>
+              <h3 data-i18n="sol_residuos_entrega3_title">Plataforma de gestão</h3>
+              <p data-i18n="sol_residuos_entrega3_desc">Acesso para a sua equipe: documentos, indicadores e o andamento da operação em um lugar só, sem depender de planilha compartilhada.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="3">
+              <div class="sol-feat__ic"><i class="fa-solid fa-user-tie"></i></div>
+              <h3 data-i18n="sol_residuos_entrega4_title">Engenheiro responsável e certificação</h3>
+              <p data-i18n="sol_residuos_entrega4_desc">Visitas técnicas, pareceres e plano de melhoria assinados por engenharia própria — mais o suporte e a assessoria para a sua Certificação em Sustentabilidade Ambiental.</p>
+            </article>
+          </div>
+
+          <div class="res-scope" data-reveal>
+            <div>
+              <h3 data-i18n="sol_residuos_escopo_title">E o que não cabe na mensalidade padrão?</h3>
+              <p data-i18n="sol_residuos_escopo_desc">Projeto de engenharia da triagem, equipamentos, obra de implantação e operação e manutenção em campo
+                são dimensionados no diagnóstico e <strong>podem entrar no plano contratado</strong>, conforme o nível escolhido —
+                em vez de virarem uma surpresa no meio do contrato.</p>
+            </div>
+            <a class="btn btn--primary" href="#planos" data-i18n="sol_residuos_escopo_cta">Ver os três níveis <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTEXTO + O PASSIVO -->
+      <section class="section" id="passivo">
+        <div class="container">
+          <div class="sol-split sol-split--rev">
+            <div class="sol-split__head">
+              <span class="kicker" data-reveal data-i18n="sol_residuos_contexto_kicker">O passivo</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_contexto_title">O resíduo entra na planilha como despesa e sai dela como despesa.</h2>
+              <p class="prose" data-reveal data-d="2" data-i18n="sol_residuos_contexto_p1">Gestão de resíduos é a disciplina que organiza a geração, a
+                segregação, a rastreabilidade e a destinação do que uma operação descarta — e define quanto desse
+                material volta como receita em vez de sair como custo. No Brasil, segundo o <strong>Panorama dos
+                Resíduos Sólidos 2025 (ABREMA)</strong>, apenas <strong>8,7%</strong> dos resíduos sólidos urbanos
+                gerados em 2024 foram encaminhados à reciclagem, e <strong>40,3%</strong> ainda tiveram disposição
+                final inadequada.</p>
+              <p class="prose" data-reveal data-d="2" style="margin-top:14px;" data-i18n="sol_residuos_contexto_p2">A <strong>Lei 12.305/2010</strong>, que institui a Política
+                Nacional de Resíduos Sólidos, já estabelece a ordem de prioridade: não geração, redução, reutilização,
+                reciclagem, tratamento e só então disposição final. Na prática, a maior parte das operações que
+                avaliamos para na etapa documental — não por falta de intenção, mas por falta de estrutura técnica
+                entre o que se gera e o que se poderia recuperar.</p>
+              <div class="sol-stats">
+                <div class="sol-stat" data-reveal><div class="v"><span data-counter="8">8</span>,7%</div><div class="l" data-i18n="sol_residuos_stat_reciclagem">do RSU brasileiro foi reciclado em 2024 (ABREMA)</div></div>
+                <div class="sol-stat" data-reveal data-d="1"><div class="v"><span data-counter="40">40</span>,3%</div><div class="l" data-i18n="sol_residuos_stat_inadequada">ainda com disposição final inadequada (ABREMA)</div></div>
+                <div class="sol-stat" data-reveal data-d="2"><div class="v"><span data-counter="384">384</span> kg</div><div class="l" data-i18n="sol_residuos_stat_percapita">de RSU por habitante ao ano no Brasil</div></div>
+                <div class="sol-stat" data-reveal data-d="3"><div class="v">PNRS</div><div class="l" data-i18n="sol_residuos_stat_pnrs">Lei 12.305/2010 · hierarquia de prioridade</div></div>
+              </div>
+            </div>
+            <div class="sol-split__media" data-reveal data-d="1">
+              <div class="ph ph--px ph--teal frame tall"><img src="assets/img/ceasa/ceasa-baia-antes-rsu.jpg" alt="Baia de recepção com resíduo orgânico acumulado antes da reestruturação da operação" data-parallax="0.08" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 DORES -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_dores_kicker">Onde trava</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_dores_title">Quatro coisas que estão custando dinheiro à sua operação agora.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_dores_lead">Se pelo menos duas destas descrevem a sua empresa, o diagnóstico gratuito
+              já se paga em informação.</p></div>
+          <div class="sol-grid sol-grid--4">
+            <article class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+              <h3 data-i18n="sol_residuos_dor1_title">Resíduo tratado só como custo</h3>
+              <p data-i18n="sol_residuos_dor1_desc">A destinação vira uma linha fixa de despesa, renegociada por preço e nunca por engenharia. Ninguém mede o que está sendo enterrado junto.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fa-solid fa-clipboard-check"></i></div>
+              <h3 data-i18n="sol_residuos_dor2_title">Exposição em auditoria e fiscalização</h3>
+              <p data-i18n="sol_residuos_dor2_desc">Documentação dispersa entre setores, prazos controlados por planilha e evidências que só aparecem quando alguém pede. O risco não é teórico: é de prazo.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fa-solid fa-diagram-project"></i></div>
+              <h3 data-i18n="sol_residuos_dor3_title">Sem rastreabilidade entre unidades</h3>
+              <p data-i18n="sol_residuos_dor3_desc">Cada filial mede de um jeito, com fornecedor diferente e critério próprio. Sem base comum, não existe indicador consolidado nem comparação entre plantas.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="3">
+              <div class="sol-feat__ic"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+              <h3 data-i18n="sol_residuos_dor4_title">Reciclagem que não acontece por falta de estrutura</h3>
+              <p data-i18n="sol_residuos_dor4_desc">O material tem valor de mercado, mas sai misturado. Sem área de triagem, fluxo definido e equipamento dimensionado, o reciclável vira rejeito no portão.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- OS 3 PILARES -->
+      <section class="section section--tight" id="solucao">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_pilares_kicker">Como trabalhamos</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_pilares_title">As três frentes de engenharia por trás do contrato.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_pilares_lead">O que a assinatura mobiliza na prática: quem cuida do dado, quem projeta a estrutura e quem avalia o que dá para recuperar. Sempre a mesma equipe técnica.</p></div>
+          <div class="sol-rows">
+            <div class="sol-altrow" data-reveal>
+              <div class="sol-altrow__media">
+                <div class="ph frame"><img src="assets/img/ceasa/ceasa-portal-cliente.png" alt="Portal do cliente 4WaTT com indicadores de volume processado e histórico da operação de resíduos" loading="lazy"></div>
+              </div>
+              <div>
+                <div class="tagline" data-i18n="sol_residuos_pilar1_tag">A · Pilar 1</div>
+                <h3 data-i18n="sol_residuos_pilar1_name">Gestão de resíduos</h3>
+                <p data-i18n="sol_residuos_pilar1_desc">Inventário por tipo e por unidade, fluxo documental organizado, indicadores mensais e rotina de conformidade. Vamos além do compliance mínimo: o dado passa a servir para decisão de engenharia, não só para arquivo.</p>
+                <ul class="res-list">
+                  <li data-i18n="sol_residuos_pilar1_item1">Inventário e classificação por fração gerada</li>
+                  <li data-i18n="sol_residuos_pilar1_item2">Rastreabilidade documental entre unidades</li>
+                  <li data-i18n="sol_residuos_pilar1_item3">Indicadores de geração, destinação e recuperação</li>
+                </ul>
+              </div>
+            </div>
+            <div class="sol-altrow" data-reveal>
+              <div class="sol-altrow__media">
+                <div class="ph frame"><img src="assets/img/ceasa/ceasa-14-esteira.jpg" alt="Esteira de triagem dimensionada pela engenharia da 4WaTT, em operação" loading="lazy"></div>
+              </div>
+              <div>
+                <div class="tagline" data-i18n="sol_residuos_pilar2_tag">B · Pilar 2</div>
+                <h3 data-i18n="sol_residuos_pilar2_name">Projetos de reciclagem e triagem</h3>
+                <p data-i18n="sol_residuos_pilar2_desc">Engenharia de processo aplicada ao volume real: layout da área de recepção, dimensionamento de esteiras, prensas e equipamentos, definição de fluxo e implantação acompanhada em campo.</p>
+                <ul class="res-list">
+                  <li data-i18n="sol_residuos_pilar2_item1">Caracterização gravimétrica e projeto de processo</li>
+                  <li data-i18n="sol_residuos_pilar2_item2">Dimensionamento de esteiras, prensas e recepção</li>
+                  <li data-i18n="sol_residuos_pilar2_item3">Implantação, comissionamento e treinamento</li>
+                </ul>
+              </div>
+            </div>
+            <div class="sol-altrow" data-reveal>
+              <div class="sol-altrow__media">
+                <div class="ph frame"><img src="assets/img/ceasa/ceasa-4-bio-sol.jpg" alt="Biodigestor da usina de biogás alimentada pelo resíduo orgânico triado" loading="lazy"></div>
+              </div>
+              <div>
+                <div class="tagline" data-i18n="sol_residuos_pilar3_tag">C · Pilar 3</div>
+                <h3 data-i18n="sol_residuos_pilar3_name">Valorização</h3>
+                <p data-i18n="sol_residuos_pilar3_desc">Avaliamos o potencial de valorização do seu resíduo: conexão com cadeias de reciclagem para o material seco e, quando o volume e a fração orgânica justificarem, rota de biogás ou biometano — a engenharia que já é o núcleo da 4WaTT.</p>
+                <ul class="res-list">
+                  <li data-i18n="sol_residuos_pilar3_item1">Potencial de recuperação por fração</li>
+                  <li data-i18n="sol_residuos_pilar3_item2">Conexão com destinos de reciclagem</li>
+                  <li data-i18n="sol_residuos_pilar3_item3">Estudo de rota energética quando aplicável</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="sol-hero__cta" data-reveal style="justify-content:center;margin-top:clamp(28px,5vh,48px);">
+            <a class="btn btn--gold" href="#cta" data-i18n="sol_residuos_hero_cta_primary">Quero meu diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
+            <a class="btn btn--ghost" href="#planos" data-i18n="sol_residuos_cta_biogas">Ver planos e o que está incluso</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANOS
+           ATENÇÃO: o conteúdo de cada nível foi montado a partir do modelo comercial
+           (mensalidade = gestão + plataforma + engenharia de acompanhamento; projeto,
+           equipamentos, obra e O&M podem compor o plano). VALIDAR item a item com o
+           comercial antes de publicar. Nenhum valor é exibido: mensalidade sob consulta. -->
+      <section class="section section--tight" id="planos">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_planos_kicker">Planos</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_planos_title">Escolha até onde a 4WaTT vai entrar na sua operação.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_planos_lead">Três níveis, todos por assinatura mensal, todos com a documentação
+              legal inclusa. O que muda é o quanto a nossa engenharia entra em campo. A mensalidade sai na proposta,
+              depois do diagnóstico gratuito — e não muda sem que o escopo mude.</p></div>
+
+          <!-- Faixa: o que vai em TODOS os níveis -->
+          <div class="res-incluso" data-reveal>
+            <div class="res-incluso__head">
+              <span class="res-incluso__pill" data-i18n="sol_residuos_incluso_pill">Em todos os planos</span>
+              <h3 data-i18n="sol_residuos_incluso_title">A documentação legal é obrigação nossa, não sua.</h3>
+              <p data-i18n="sol_residuos_incluso_desc">Estes quatro itens estão inclusos do nível Essencial ao Completo. Nenhum deles é cobrado à parte.</p>
+            </div>
+            <ul class="res-incluso__list">
+              <li data-i18n="sol_residuos_incluso1"><i class="fas fa-check"></i> <strong>Elaboração e manutenção do PGRS</strong> — plano escrito, revisado e mantido atualizado</li>
+              <li data-i18n="sol_residuos_incluso2"><i class="fas fa-check"></i> <strong>Emissão e controle de MTR</strong> e dos demais documentos legais exigidos do gerador</li>
+              <li data-i18n="sol_residuos_incluso3"><i class="fas fa-check"></i> <strong>Suporte e assessoria na Certificação em Sustentabilidade Ambiental</strong></li>
+              <li data-i18n="sol_residuos_incluso4"><i class="fas fa-check"></i> <strong>Plataforma de gestão e relatório mensal</strong> de geração, destinação e recuperação</li>
+            </ul>
+          </div>
+
+          <div class="res-plans">
+            <article class="res-plan" data-reveal>
+              <div class="res-plan__tag" data-i18n="sol_residuos_plano1_tag">Nível 1</div>
+              <h3 data-i18n="sol_residuos_plano1_name">Essencial</h3>
+              <p class="res-plan__for" data-i18n="sol_residuos_plano1_for">Tira a sua empresa da zona de risco documental e mostra, pela primeira vez, o que ela realmente gera.</p>
+              <div class="res-plan__price"><span data-i18n="sol_residuos_plano_price">Mensalidade sob consulta</span></div>
+              <p class="res-plan__base" data-i18n="sol_residuos_plano_base"><i class="fas fa-circle-check"></i> PGRS, MTR, documentos, certificação e plataforma inclusos</p>
+              <ul class="res-check">
+                <li data-i18n="sol_residuos_plano1_i1"><i class="fas fa-check"></i> Inventário e classificação por fração gerada</li>
+                <li data-i18n="sol_residuos_plano1_i2"><i class="fas fa-check"></i> Controle de prazos e evidências, unidade por unidade</li>
+                <li data-i18n="sol_residuos_plano1_i3"><i class="fas fa-check"></i> Dossiê pronto para auditoria e fiscalização</li>
+                <li data-i18n="sol_residuos_plano1_i4"><i class="fas fa-check"></i> Canal direto com a equipe técnica da 4WaTT</li>
+              </ul>
+              <a class="btn btn--ghost" href="#cta" data-i18n="sol_residuos_plano_cta">Solicitar proposta</a>
+            </article>
+
+            <article class="res-plan res-plan--hi" data-reveal data-d="1">
+              <div class="res-plan__ribbon" data-i18n="sol_residuos_plano_ribbon">Mais contratado</div>
+              <div class="res-plan__tag" data-i18n="sol_residuos_plano2_tag">Nível 2</div>
+              <h3 data-i18n="sol_residuos_plano2_name">Gestão</h3>
+              <p class="res-plan__for" data-i18n="sol_residuos_plano2_for">Onde o resíduo deixa de ser só despesa: engenheiro em campo e o que dá para recuperar, com número.</p>
+              <div class="res-plan__price"><span data-i18n="sol_residuos_plano_price">Mensalidade sob consulta</span></div>
+              <p class="res-plan__base" data-i18n="sol_residuos_plano_base"><i class="fas fa-circle-check"></i> PGRS, MTR, documentos, certificação e plataforma inclusos</p>
+              <ul class="res-check">
+                <li data-i18n="sol_residuos_plano2_i1"><i class="fas fa-plus"></i> <strong>Tudo do Essencial</strong>, e mais:</li>
+                <li data-i18n="sol_residuos_plano2_i2"><i class="fas fa-check"></i> Engenheiro responsável, com visitas técnicas periódicas</li>
+                <li data-i18n="sol_residuos_plano2_i3"><i class="fas fa-check"></i> Caracterização gravimétrica e plano de melhoria</li>
+                <li data-i18n="sol_residuos_plano2_i4"><i class="fas fa-check"></i> Estudo do potencial de valorização por fração</li>
+                <li data-i18n="sol_residuos_plano2_i5"><i class="fas fa-check"></i> Apoio na negociação com destinos de reciclagem</li>
+              </ul>
+              <a class="btn btn--gold" href="#cta" data-i18n="sol_residuos_plano_cta">Solicitar proposta</a>
+            </article>
+
+            <article class="res-plan" data-reveal data-d="2">
+              <div class="res-plan__tag" data-i18n="sol_residuos_plano3_tag">Nível 3</div>
+              <h3 data-i18n="sol_residuos_plano3_name">Completo</h3>
+              <p class="res-plan__for" data-i18n="sol_residuos_plano3_for">A 4WaTT projeta, implanta e opera a triagem — do jeito que já faz no CEASA Goiás.</p>
+              <div class="res-plan__price"><span data-i18n="sol_residuos_plano_price">Mensalidade sob consulta</span></div>
+              <p class="res-plan__base" data-i18n="sol_residuos_plano_base"><i class="fas fa-circle-check"></i> PGRS, MTR, documentos, certificação e plataforma inclusos</p>
+              <ul class="res-check">
+                <li data-i18n="sol_residuos_plano3_i1"><i class="fas fa-plus"></i> <strong>Tudo do Gestão</strong>, e mais:</li>
+                <li data-i18n="sol_residuos_plano3_i2"><i class="fas fa-check"></i> Projeto de engenharia da triagem: layout, dimensionamento e especificação</li>
+                <li data-i18n="sol_residuos_plano3_i3"><i class="fas fa-check"></i> Implantação acompanhada e comissionamento</li>
+                <li data-i18n="sol_residuos_plano3_i4"><i class="fas fa-check"></i> Operação e manutenção em campo, com equipe treinada</li>
+                <li data-i18n="sol_residuos_plano3_i5"><i class="fas fa-check"></i> Rota energética do orgânico, quando o volume justifica</li>
+              </ul>
+              <a class="btn btn--ghost" href="#cta" data-i18n="sol_residuos_plano_cta">Solicitar proposta</a>
+            </article>
+          </div>
+
+          <p class="res-note" data-reveal data-i18n="sol_residuos_planos_note">Equipamentos e obra civil têm orçamento próprio, apresentado junto com a proposta — nunca cobrado por
+            fora depois. O diagnóstico que define o nível adequado é gratuito e não obriga a contratar.</p>
+        </div>
+      </section>
+
+      <!-- CASE CEASA -->
+      <section class="section section--tight" id="case">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_case_kicker">Estudo de caso</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_case_title">Como estruturamos um projeto de triagem de resíduos em uma Central de Abastecimento (CEASA)</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_case_lead">Uma central de abastecimento concentra, em um único endereço, um volume
+              de orgânico que poucas indústrias geram — e com variação diária. O trabalho começou por onde sempre
+              começa: medir o que entra.</p></div>
+
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <h3 data-i18n="sol_residuos_case_desafio_title">Desafio</h3>
+              <p data-i18n="sol_residuos_case_desafio_desc">Operação de triagem herdada, com esteiras de recepção subdimensionadas para o volume real recebido, equipamentos mecânicos com desgaste acumulado gerando paradas não planejadas, baias de recepção sem rotina de limpeza e equipe sem regime de contratação consolidado. Não havia canal estruturado de indicadores entre a operação e a gestão.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3 data-i18n="sol_residuos_case_fizemos_title">O que fizemos</h3>
+              <p data-i18n="sol_residuos_case_fizemos_desc">Diagnóstico em campo do fluxo de recebimento e da capacidade real de processamento; registro formal das inconformidades de projeto herdadas; reengenharia das esteiras subdimensionadas; correção mecânica de bombas e componentes; redefinição das rotinas de triagem e de limpeza das baias; regularização, formação e treinamento da equipe operacional.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fa-solid fa-industry"></i></div>
+              <h3 data-i18n="sol_residuos_case_estrutura_title">Estrutura implantada</h3>
+              <p data-i18n="sol_residuos_case_estrutura_desc">Área de recepção e triagem redimensionada para a demanda corrente, rotina operacional documentada, equipe treinada em operação e manutenção, plano de manutenção dos equipamentos críticos e acompanhamento periódico de indicadores com o cliente, hoje disponível pela plataforma de gestão.</p>
+            </article>
+          </div>
+
+          <div class="sol-grid sol-grid--2" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:clamp(28px,4vw,44px);">
+            <!-- Foto real do projeto CEASA (assets/img/ceasa/). Trocar aqui se houver imagem melhor. -->
+            <figure class="res-photo" data-reveal>
+              <div class="ph ph--teal"><img src="assets/img/ceasa/ceasa-esteira-depois-rsu.jpg" alt="Esteira de triagem do projeto CEASA redimensionada pela 4WaTT, após a reengenharia" loading="lazy"></div>
+              <figcaption data-i18n="sol_residuos_case_ph1_cap">Esteira de triagem redimensionada — projeto CEASA.</figcaption>
+            </figure>
+            <!-- Foto real do projeto CEASA (assets/img/ceasa/). Trocar aqui se houver imagem melhor. -->
+            <figure class="res-photo" data-reveal data-d="1">
+              <div class="ph ph--teal"><img src="assets/img/residuos/ceasa-equipe-triagem.jpg" alt="Equipe da 4WaTT com uniforme e EPI executando a triagem de resíduos orgânicos na esteira" loading="lazy"></div>
+              <figcaption data-i18n="sol_residuos_case_ph2_cap">Equipe treinada e rotina de triagem em operação — projeto CEASA.</figcaption>
+            </figure>
+          </div>
+
+          <div class="res-results">
+            <p class="res-results__lbl" data-i18n="sol_residuos_case_results_lbl">Resultados medidos <em>— a preencher com dado real antes de publicar</em></p>
+            <!-- Substituir os três campos abaixo pelos números reais apurados do projeto.
+                 Não publicar a página com os colchetes visíveis. -->
+            <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+              <div class="res-result" data-reveal><strong>[RESULTADO: inserir dado real de toneladas/mês triadas]</strong><span data-i18n="sol_residuos_case_result1_lbl">Volume triado</span></div>
+              <div class="res-result" data-reveal data-d="1"><strong>[RESULTADO: inserir % real de material desviado do aterro]</strong><span data-i18n="sol_residuos_case_result2_lbl">Desvio de aterro</span></div>
+              <div class="res-result" data-reveal data-d="2"><strong>[RESULTADO: inserir dado real de ganho operacional apurado]</strong><span data-i18n="sol_residuos_case_result3_lbl">Ganho operacional</span></div>
+            </div>
+            <p class="res-note" data-i18n="sol_residuos_case_results_note">Não publicamos estimativa como resultado. Os números desta seção só entram no ar depois de apurados e validados com o cliente.</p>
+          </div>
+
+          <div class="sol-hero__cta" data-reveal style="justify-content:center;margin-top:clamp(24px,4vh,40px);">
+            <a class="btn btn--primary" href="case-ceasa-goias.html" data-i18n="sol_residuos_case_cta">Ver o case CEASA completo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="section section--tight" id="processo">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_processo_kicker">Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_processo_title">Do primeiro contato ao contrato em operação.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_processo_lead">Quatro etapas, sem etapa pulada. Você só vê preço na etapa 2 — e só vê
+              preço depois que um engenheiro entendeu a sua operação.</p></div>
+          <div class="sol-steps sol-steps--with-media">
+            <div class="sol-steps__track">
+              <div class="sol-step" data-reveal><div class="sol-step__num"><i class="fa-solid fa-magnifying-glass-chart"></i><span class="step-n">01</span></div><div class="sol-step__body"><h3 data-i18n="sol_residuos_step1_title">Diagnóstico gratuito</h3><p data-i18n="sol_residuos_step1_desc">Levantamento do resíduo gerado, do fluxo atual e das obrigações aplicáveis, com visita técnica e caracterização gravimétrica. Fecha com um parecer objetivo do que dá para recuperar. Sem custo e sem obrigação de contratar.</p></div></div>
+              <div class="sol-step" data-reveal><div class="sol-step__num"><i class="fa-solid fa-file-signature"></i><span class="step-n">02</span></div><div class="sol-step__body"><h3 data-i18n="sol_residuos_step2_title">Proposta e nível do plano</h3><p data-i18n="sol_residuos_step2_desc">Apresentamos o nível adequado ao seu caso, as entregas mensais nomeadas uma a uma e a mensalidade. Se houver projeto, equipamento ou obra, o orçamento vem junto — nada aparece depois.</p></div></div>
+              <div class="sol-step" data-reveal><div class="sol-step__num"><i class="fa-solid fa-helmet-safety"></i><span class="step-n">03</span></div><div class="sol-step__body"><h3 data-i18n="sol_residuos_step3_title">Implantação e onboarding</h3><p data-i18n="sol_residuos_step3_desc">Organização documental inicial, cadastro da operação na plataforma e treinamento da sua equipe. Nos contratos que incluem estrutura física: montagem, comissionamento e rotinas operacionais escritas.</p></div></div>
+              <div class="sol-step" data-reveal><div class="sol-step__num"><i class="fa-solid fa-arrows-rotate"></i><span class="step-n">04</span></div><div class="sol-step__body"><h3 data-i18n="sol_residuos_step4_title">Assinatura mensal em operação</h3><p data-i18n="sol_residuos_step4_desc">Todo mês: documentação atualizada, relatório de indicadores e acompanhamento do engenheiro responsável. O escopo é revisto quando a operação muda — e a mensalidade só muda com ele.</p></div></div>
+            </div>
+            <div class="sol-steps__media" data-reveal data-d="2">
+              <div class="ph ph--px ph--teal"><img src="assets/img/ceasa/ceasa-2-triagem.jpg" alt="Colaboradora da 4WaTT com EPI completo na linha de triagem de resíduos orgânicos" data-parallax="0.06" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIFERENCIAL -->
+      <section class="section section--tight" id="diferencial">
+        <div class="container">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_dif_kicker">Por que a 4WaTT</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_dif_title">Consultoria entrega relatório. Software entrega tela. Nós entregamos a estrutura funcionando.</h2>
+            <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_dif_lead">A 4WaTT é uma empresa de engenharia — mecânica, civil, elétrica e
+              ambiental — que projeta e opera plantas de biogás e biometano. Quando o diagnóstico aponta que a solução
+              exige uma esteira redimensionada, uma área de recepção refeita ou uma rota energética para o orgânico,
+              quem dimensiona, especifica e acompanha a obra é a mesma equipe que assinou o diagnóstico.</p></div>
+          <div class="sol-grid sol-grid--4">
+            <article class="sol-feat" data-reveal>
+              <div class="sol-feat__ic"><i class="fa-solid fa-drafting-compass"></i></div>
+              <h3 data-i18n="sol_residuos_dif1_title">Engenharia própria, não terceirizada</h3>
+              <p data-i18n="sol_residuos_dif1_desc">As quatro disciplinas dentro de casa. O projeto não troca de mão entre o diagnóstico e a obra.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="1">
+              <div class="sol-feat__ic"><i class="fa-solid fa-trowel-bricks"></i></div>
+              <h3 data-i18n="sol_residuos_dif2_title">Do parecer à estrutura física</h3>
+              <p data-i18n="sol_residuos_dif2_desc">Dimensionamos, especificamos e acompanhamos a implantação — inclusive quando implica intervenção civil e elétrica.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="2">
+              <div class="sol-feat__ic"><i class="fa-solid fa-fire-flame-simple"></i></div>
+              <h3 data-i18n="sol_residuos_dif3_title">Rota energética quando faz sentido</h3>
+              <p data-i18n="sol_residuos_dif3_desc">Biogás e biometano são o núcleo técnico da empresa. Avaliamos a rota com critério de projeto, e dizemos quando não fecha.</p>
+            </article>
+            <article class="sol-feat" data-reveal data-d="3">
+              <div class="sol-feat__ic"><i class="fa-solid fa-user-gear"></i></div>
+              <h3 data-i18n="sol_residuos_dif4_title">Operação e manutenção em campo</h3>
+              <p data-i18n="sol_residuos_dif4_desc">Temos equipe em planta de resíduos em operação. O que propomos já passou pelo teste do turno.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACESSO À PLATAFORMA -->
+      <section class="section section--tight" id="plataforma">
+        <div class="container">
+          <div class="res-platform" data-reveal>
+            <div>
+              <span class="kicker" data-i18n="sol_residuos_plat_kicker">Acesso de cliente</span>
+              <h2 data-i18n="sol_residuos_plat_title">Já é cliente 4WaTT?</h2>
+              <p data-i18n="sol_residuos_plat_desc">Acesse a plataforma de gestão para consultar documentação, indicadores e o andamento da operação.</p>
+            </div>
+            <a class="btn btn--gold" href="https://pgrs-4watt.lovable.app" target="_blank" rel="noopener noreferrer" data-i18n="sol_residuos_plat_cta">Acessar a plataforma <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--tight" id="faq">
+        <div class="container container--narrow">
+          <div class="sol-head"><span class="kicker" data-reveal data-i18n="sol_residuos_faq_kicker">Perguntas frequentes</span>
+            <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_faq_title">O que mais perguntam.</h2></div>
+          <div class="acc" data-accordion data-stagger>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q0">Afinal, o que exatamente eu estou contratando? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a0">Um serviço de gestão de resíduos por assinatura mensal. A 4WaTT passa a responder pela gestão de resíduos da sua operação e entrega, todo mês: documentação e inventário em dia, relatório de indicadores por fração e por unidade, acesso à plataforma de gestão e o acompanhamento de um engenheiro responsável. Conforme o nível contratado, entram também o projeto de engenharia da triagem, a implantação da estrutura e a operação e manutenção em campo.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_qp">Quanto custa a mensalidade? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_ap">A mensalidade é sob consulta e é apresentada na proposta, depois do diagnóstico gratuito. Ela depende do volume gerado, do número de unidades atendidas, das frações envolvidas (orgânico, reciclável seco, Classe I) e do nível contratado — Essencial, Gestão ou Completo. Não trabalhamos com tabela fechada porque uma unidade de 5 t/mês e uma rede com oito filiais não dão o mesmo trabalho. Equipamentos e obra, quando fazem parte do escopo, têm orçamento próprio apresentado junto.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q1">O que é gestão de resíduos e o que ela inclui? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a1">Gestão de resíduos é o conjunto de rotinas técnicas e documentais que controla a geração, a segregação, o armazenamento, o transporte e a destinação final do que uma operação descarta. Na 4WaTT o escopo inclui inventário por fração gerada, organização documental, indicadores mensais de geração e recuperação e — o que diferencia de uma consultoria puramente documental — o projeto de engenharia da estrutura de triagem que torna a recuperação possível.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q2">Qual a diferença entre gestão de resíduos e um projeto de reciclagem? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a2">Gestão organiza e comprova o que já acontece. Um projeto de reciclagem ou triagem muda o que acontece: define layout de recepção, dimensiona esteiras, prensas e áreas, e cria o fluxo físico que separa o material com valor do rejeito. Um sem o outro trava — dado sem estrutura não recupera material, e estrutura sem dado não se dimensiona corretamente.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_qd">O PGRS e os MTR estão inclusos mesmo no plano mais simples? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_ad">Sim. Elaboração e manutenção do PGRS, emissão e controle dos MTR, os demais documentos legais exigidos do gerador e o suporte à Certificação em Sustentabilidade Ambiental estão inclusos do nível Essencial ao Completo, sem cobrança à parte. O que muda entre os níveis é o quanto a engenharia da 4WaTT entra em campo — visitas técnicas, caracterização, projeto de triagem e operação. Documento em dia é o piso do serviço, não o produto premium.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q3">Vocês assumem o MTR e as obrigações nos sistemas públicos? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a3">A obrigação legal continua sendo do gerador — isso a lei não transfere. O que muda é quem opera: a 4WaTT emite os MTR, controla prazos, mantém o histórico rastreável e responde pelas rotinas nas plataformas públicas aplicáveis, em nome da sua empresa. E vai além do compliance mínimo: o mesmo dado que alimenta a obrigação legal vira o estudo do que dá para recuperar. Nenhum sistema de controle faz essa segunda parte.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_qc">A 4WaTT emite a Certificação em Sustentabilidade Ambiental? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_ac">Quem emite certificado é o organismo certificador — nenhuma empresa pode certificar a si mesma nem ao cliente. O que está incluso é o suporte e a assessoria para você chegar lá: organização das evidências, indicadores mensais consistentes, documentação do sistema de gestão de resíduos, preparação para auditoria e acompanhamento técnico durante o processo. É exatamente a parte em que a maioria das empresas trava.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q4">Que tipos de empresa a 4WaTT atende nesse serviço? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a4">Geradores de volume relevante e recorrente: indústria e agroindústria, frigoríficos, centrais de abastecimento (CEASA), redes de varejo e supermercados, condomínios comerciais e operações logísticas. O critério não é o setor, e sim a existência de volume concentrado o bastante para justificar estrutura de triagem própria ou compartilhada.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q5">Quando o resíduo orgânico vira biogás ou biometano? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a5">Quando a fração orgânica é grande, constante e pouco contaminada. A avaliação considera volume diário, sazonalidade, teor de sólidos e a distância até o uso final da energia. A 4WaTT faz esse estudo com o mesmo critério usado em seus projetos de biodigestão — e diz claramente quando a rota energética não fecha, em vez de empurrar uma planta que não se paga.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_qn">Preciso trocar de fornecedor de coleta para contratar? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_an">Não. A 4WaTT não é transportadora nem aterro: a gestão funciona com os fornecedores de coleta e destinação que você já usa. O que fazemos é organizar, medir e cobrar desempenho dessa cadeia — e, quando o diagnóstico mostra que o material está indo para o destino errado, apontar a alternativa com o número na mão. Trocar fornecedor é decisão sua, não condição de contrato.</p></div></div>
+            <div class="acc-item"><button class="acc-head" data-i18n="sol_residuos_faq_q6">Como funciona o diagnóstico gratuito? <i class="fas fa-plus"></i></button><div class="acc-body"><p data-i18n="sol_residuos_faq_a6">Após o contato, um engenheiro da 4WaTT levanta o perfil da operação: resíduo predominante, volume aproximado por mês, número de unidades e o que já existe de estrutura. O retorno é uma leitura preliminar do potencial de triagem e valorização, sem custo e sem compromisso. Havendo aderência, a etapa seguinte é a visita técnica e a caracterização em campo.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA + FORM -->
+      <section class="section sol-cta" id="cta">
+        <div class="ph ph--px ph--roxo"><img src="assets/img/ceasa/ceasa-9-esteira.jpg" alt="" data-parallax="0.05" loading="lazy"></div>
+        <div class="container">
+          <div class="sol-cta__inner">
+            <div class="sol-cta__copy">
+              <span class="kicker" data-reveal data-i18n="sol_residuos_cta_kicker">Próximo passo</span>
+              <h2 class="h2" data-reveal data-d="1" data-i18n="sol_residuos_cta_title">Descubra hoje quanto do seu resíduo é dinheiro.</h2>
+              <p class="lead" data-reveal data-d="2" data-i18n="sol_residuos_cta_lead">Um engenheiro da nossa equipe retorna para entender a operação, o volume
+                gerado e o que já existe de estrutura. Depois disso você recebe uma proposta com o nível de plano
+                indicado, as entregas mensais listadas e a mensalidade. Sem compromisso e sem proposta automática.</p>
+              <ul class="sol-cta__checklist" data-reveal data-d="2">
+                <li data-i18n="sol_residuos_cta_check1"><i class="fas fa-check"></i> Análise preliminar do resíduo predominante</li>
+                <li data-i18n="sol_residuos_cta_check5"><i class="fas fa-check"></i> Leitura da sua situação documental: PGRS, MTR e o que estiver vencido</li>
+                <li data-i18n="sol_residuos_cta_check2"><i class="fas fa-check"></i> Leitura do potencial de triagem e valorização</li>
+                <li data-i18n="sol_residuos_cta_check3"><i class="fas fa-check"></i> Proposta com escopo mensal e mensalidade fechada</li>
+                <li data-i18n="sol_residuos_cta_check4"><i class="fas fa-check"></i> Retorno de um engenheiro, não de um robô de vendas</li>
+              </ul>
+              <p class="lead res-direto" data-reveal data-d="3" data-i18n="sol_residuos_cta_direto">Prefere falar direto? <a href="mailto:contato@4watt.tech">contato@4watt.tech</a> · <a href="https://wa.me/5545991378949" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+            </div>
+            <div class="sol-formcard" data-reveal data-d="1">
+              <h3 data-i18n="sol_residuos_form_title">Solicitar diagnóstico e proposta</h3>
+              <p class="sub" data-i18n="sol_residuos_form_sub">Preencha e retornamos em até 1 dia útil. O diagnóstico é gratuito.</p>
+              <form class="form-4watt" id="form-residuos" data-form-name="Gestão de Resíduos">
+                <div class="form-row">
+                  <div class="form-field"><label for="rs-nome" data-i18n="sol_residuos_form_label_nome">Nome*</label><input class="form-input" id="rs-nome" name="nome" type="text" required placeholder="Seu nome" data-i18n-placeholder="sol_residuos_form_ph_nome"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="rs-empresa" data-i18n="sol_residuos_form_label_empresa">Empresa*</label><input class="form-input" id="rs-empresa" name="empresa" type="text" required placeholder="Sua empresa" data-i18n-placeholder="sol_residuos_form_ph_empresa"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field"><label for="rs-cargo" data-i18n="sol_residuos_form_label_cargo">Cargo</label><input class="form-input" id="rs-cargo" name="cargo" type="text" placeholder="Seu cargo" data-i18n-placeholder="sol_residuos_form_ph_cargo"><span class="form-error-msg"></span></div>
+                  <div class="form-field"><label for="rs-email" data-i18n="sol_residuos_form_label_email">E-mail*</label><input class="form-input" id="rs-email" name="email" type="email" required placeholder="seu@email.com" data-i18n-placeholder="sol_residuos_form_ph_email"><span class="form-error-msg"></span></div>
+                </div>
+                <div class="form-field"><label for="rs-tel" data-i18n="sol_residuos_form_label_tel">WhatsApp</label><input class="form-input" id="rs-tel" name="whatsapp" type="tel" placeholder="(00) 00000-0000" data-i18n-placeholder="sol_residuos_form_ph_tel"><span class="form-error-msg"></span></div>
+                <div class="form-field"><label for="rs-tipo" data-i18n="sol_residuos_form_label_tipo">Resíduo predominante</label>
+                  <select class="form-select" id="rs-tipo" name="tipo_residuo">
+                    <option value="" data-i18n="sol_residuos_form_opt_tipo_default">Selecione</option>
+                    <option value="organico" data-i18n="sol_residuos_form_opt_tipo_1">Orgânico</option>
+                    <option value="reciclavel-seco" data-i18n="sol_residuos_form_opt_tipo_2">Reciclável seco</option>
+                    <option value="perigoso-classe-i" data-i18n="sol_residuos_form_opt_tipo_3">Perigoso — Classe I</option>
+                    <option value="misto-outro" data-i18n="sol_residuos_form_opt_tipo_4">Misto / outro</option>
+                  </select><span class="form-error-msg"></span></div>
+                <div class="form-field"><label for="rs-volume" data-i18n="sol_residuos_form_label_volume">Volume aproximado por mês</label><input class="form-input" id="rs-volume" name="volume_residuo" type="text" placeholder="Ex.: cerca de 40 t/mês" data-i18n-placeholder="sol_residuos_form_ph_volume"><span class="form-error-msg"></span></div>
+                <div class="form-field"><label for="rs-msg" data-i18n="sol_residuos_form_label_mensagem">Mensagem</label><textarea class="form-textarea" id="rs-msg" name="mensagem" placeholder="Contexto da operação, unidades envolvidas, o que já existe de estrutura..." data-i18n-placeholder="sol_residuos_form_ph_mensagem"></textarea><span class="form-error-msg"></span></div>
+                <button class="btn btn--gold" type="submit" style="width:100%;justify-content:center;" data-i18n="sol_residuos_form_submit">Quero um diagnóstico gratuito <i class="fas fa-arrow-right"></i></button>
+              </form>
+              <div class="form-success" data-i18n="sol_residuos_form_success">Solicitação recebida! Um engenheiro da 4WaTT retorna em até 1 dia útil.</div>
+              <p class="sol-formcard__note" data-i18n="sol_residuos_form_note">Os dados enviados são usados apenas para responder a esta solicitação, conforme a <a href="politica-privacidade.html">Política de Privacidade</a> (LGPD).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand footer__col">
+            <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+            <p data-i18n="footer_brand_phrase">De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+            <p data-i18n="footer_brand_company">4WaTT Bio Engenharia S/A.</p>
+            <div class="footer__seal" data-i18n="footer_seal"><i class="fas fa-circle-check"></i> Site oficial verificado</div>
+          </div>
+          <div class="footer__col"><h4 data-i18n="footer_address_title">Endereço</h4><ul><li>Edifício Metropolitan Business</li><li>Torre Tokyo, sala 601</li><li>Av. Dep. Jamel Cecílio</li><li>Jardim Goiás, Goiânia · GO</li></ul></div>
+          <div class="footer__col"><h4 data-i18n="footer_contact_title">Contato</h4><ul><li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li><li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li><li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html" data-i18n="legal_privacy">Política de Privacidade</a></li></ul></div>
+          <div class="footer__col"><h4 data-i18n="footer_social_title">Siga-nos</h4><div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div></div>
+        </div>
+        <div class="footer__bottom"><span data-i18n="footer_rights">© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span data-i18n="footer_tagline">Da simulação à operação. Patrimônio energético.</span></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Barra fixa de conversão: aparece depois do hero e some quando o formulário entra em tela -->
+  <div class="res-sticky" id="res-sticky" aria-hidden="true">
+    <p class="res-sticky__txt" data-i18n="sol_residuos_sticky_txt"><strong>Diagnóstico gratuito, sem compromisso.</strong> PGRS, MTR e documentos inclusos em todos os planos.</p>
+    <a class="btn btn--gold" href="#cta" data-i18n="sol_residuos_sticky_cta">Quero minha proposta <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <script>
+    (function () {
+      var bar = document.getElementById('res-sticky');
+      var hero = document.querySelector('.sol-hero');
+      var form = document.getElementById('cta');
+      if (!bar || !hero || !form) return;
+      function upd() {
+        var passouHero = hero.getBoundingClientRect().bottom < 0;
+        var formNaTela = form.getBoundingClientRect().top < window.innerHeight * 0.85;
+        var mostrar = passouHero && !formNaTela;
+        bar.classList.toggle('is-on', mostrar);
+        bar.setAttribute('aria-hidden', mostrar ? 'false' : 'true');
+      }
+      upd();
+      window.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      window.addEventListener('hashchange', upd);
+      /* a rolagem inicial por âncora (#planos, #cta) acontece depois deste script
+         e nem sempre dispara 'scroll' — reavalia após o layout assentar */
+      window.addEventListener('load', upd);
+      setTimeout(upd, 400);
+    })();
+  </script>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+
+  <!-- JSON-LD: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gestão de resíduos e estruturação de projetos de reciclagem",
+    "serviceType": "Gestão de resíduos por assinatura mensal, projetos de triagem e reciclagem e valorização de resíduos",
+    "description": "Serviço de gestão de resíduos contratado por assinatura mensal, com engenharia própria. Em todos os níveis a mensalidade inclui a elaboração e manutenção do PGRS (Plano de Gerenciamento de Resíduos Sólidos), a emissão e o controle de MTR (Manifesto de Transporte de Resíduos) e demais documentos legais exigidos do gerador, suporte e assessoria na Certificação em Sustentabilidade Ambiental, plataforma de gestão e relatório mensal de indicadores. Conforme o nível contratado (Essencial, Gestão ou Completo), inclui também o projeto de engenharia da triagem, a implantação da estrutura e a operação e manutenção em campo, além da avaliação do potencial de valorização, com rota de biogás e biometano quando aplicável. Mensalidade sob consulta, definida após diagnóstico gratuito.",
+    "url": "https://4watt.tech/solucao-gestao-residuos.html",
+    "areaServed": { "@type": "Country", "name": "Brasil" },
+    "provider": {
+      "@type": "Organization",
+      "name": "4WaTT Bio Engenharia S/A",
+      "url": "https://4watt.tech",
+      "email": "contato@4watt.tech",
+      "telephone": "+55-45-99137-8949",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Dep. Jamel Cecílio, Edifício Metropolitan Business, Torre Tokyo, sala 601, Jardim Goiás",
+        "addressLocality": "Goiânia",
+        "addressRegion": "GO",
+        "addressCountry": "BR"
+      }
+    },
+    "audience": {
+      "@type": "BusinessAudience",
+      "name": "Indústria, agroindústria, frigoríficos, centrais de abastecimento (CEASA), redes de varejo e condomínios comerciais"
+    },
+    "termsOfService": "Contrato mensal. Mensalidade sob consulta, definida na proposta após diagnóstico gratuito, conforme volume gerado, número de unidades e nível contratado.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Níveis de assinatura mensal",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "description": "Assinatura mensal. Inclui em todos os níveis: elaboração e manutenção do PGRS, emissão e controle de MTR e demais documentos legais, suporte e assessoria na Certificação em Sustentabilidade Ambiental, plataforma de gestão e relatório mensal de indicadores. No nível Essencial: inventário e classificação por fração gerada, controle de prazos e evidências por unidade, dossiê pronto para auditoria e canal direto com a equipe técnica.",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL", "description": "Mensalidade sob consulta" },
+          "itemOffered": { "@type": "Service", "name": "Gestão de resíduos — nível Essencial" }
+        },
+        {
+          "@type": "Offer",
+          "name": "Gestão",
+          "description": "Assinatura mensal. Inclui em todos os níveis: elaboração e manutenção do PGRS, emissão e controle de MTR e demais documentos legais, suporte e assessoria na Certificação em Sustentabilidade Ambiental, plataforma de gestão e relatório mensal de indicadores. No nível Gestão, além de tudo do Essencial: engenheiro responsável com visitas técnicas periódicas, caracterização gravimétrica, plano de melhoria, estudo do potencial de valorização por fração e apoio na negociação com destinos de reciclagem.",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL", "description": "Mensalidade sob consulta" },
+          "itemOffered": { "@type": "Service", "name": "Gestão de resíduos — nível Gestão" }
+        },
+        {
+          "@type": "Offer",
+          "name": "Completo",
+          "description": "Assinatura mensal. Inclui em todos os níveis: elaboração e manutenção do PGRS, emissão e controle de MTR e demais documentos legais, suporte e assessoria na Certificação em Sustentabilidade Ambiental, plataforma de gestão e relatório mensal de indicadores. No nível Completo, além de tudo do nível Gestão: projeto de engenharia da triagem (layout, dimensionamento e especificação), implantação acompanhada, comissionamento, operação e manutenção em campo e rota energética do orgânico quando o volume justifica.",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "BRL", "description": "Mensalidade sob consulta" },
+          "itemOffered": { "@type": "Service", "name": "Gestão de resíduos — nível Completo" }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage — cópia literal do bloco `pt` de languages.js (sol_residuos_faq_*).
+       Ao editar uma pergunta/resposta, atualizar languages.js E este bloco. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Afinal, o que exatamente eu estou contratando?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Um serviço de gestão de resíduos por assinatura mensal. A 4WaTT passa a responder pela gestão de resíduos da sua operação e entrega, todo mês: documentação e inventário em dia, relatório de indicadores por fração e por unidade, acesso à plataforma de gestão e o acompanhamento de um engenheiro responsável. Conforme o nível contratado, entram também o projeto de engenharia da triagem, a implantação da estrutura e a operação e manutenção em campo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa a mensalidade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A mensalidade é sob consulta e é apresentada na proposta, depois do diagnóstico gratuito. Ela depende do volume gerado, do número de unidades atendidas, das frações envolvidas (orgânico, reciclável seco, Classe I) e do nível contratado — Essencial, Gestão ou Completo. Não trabalhamos com tabela fechada porque uma unidade de 5 t/mês e uma rede com oito filiais não dão o mesmo trabalho. Equipamentos e obra, quando fazem parte do escopo, têm orçamento próprio apresentado junto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é gestão de resíduos e o que ela inclui?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gestão de resíduos é o conjunto de rotinas técnicas e documentais que controla a geração, a segregação, o armazenamento, o transporte e a destinação final do que uma operação descarta. Na 4WaTT o escopo inclui inventário por fração gerada, organização documental, indicadores mensais de geração e recuperação e — o que diferencia de uma consultoria puramente documental — o projeto de engenharia da estrutura de triagem que torna a recuperação possível."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual a diferença entre gestão de resíduos e um projeto de reciclagem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gestão organiza e comprova o que já acontece. Um projeto de reciclagem ou triagem muda o que acontece: define layout de recepção, dimensiona esteiras, prensas e áreas, e cria o fluxo físico que separa o material com valor do rejeito. Um sem o outro trava — dado sem estrutura não recupera material, e estrutura sem dado não se dimensiona corretamente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O PGRS e os MTR estão inclusos mesmo no plano mais simples?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Elaboração e manutenção do PGRS, emissão e controle dos MTR, os demais documentos legais exigidos do gerador e o suporte à Certificação em Sustentabilidade Ambiental estão inclusos do nível Essencial ao Completo, sem cobrança à parte. O que muda entre os níveis é o quanto a engenharia da 4WaTT entra em campo — visitas técnicas, caracterização, projeto de triagem e operação. Documento em dia é o piso do serviço, não o produto premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vocês assumem o MTR e as obrigações nos sistemas públicos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A obrigação legal continua sendo do gerador — isso a lei não transfere. O que muda é quem opera: a 4WaTT emite os MTR, controla prazos, mantém o histórico rastreável e responde pelas rotinas nas plataformas públicas aplicáveis, em nome da sua empresa. E vai além do compliance mínimo: o mesmo dado que alimenta a obrigação legal vira o estudo do que dá para recuperar. Nenhum sistema de controle faz essa segunda parte."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A 4WaTT emite a Certificação em Sustentabilidade Ambiental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quem emite certificado é o organismo certificador — nenhuma empresa pode certificar a si mesma nem ao cliente. O que está incluso é o suporte e a assessoria para você chegar lá: organização das evidências, indicadores mensais consistentes, documentação do sistema de gestão de resíduos, preparação para auditoria e acompanhamento técnico durante o processo. É exatamente a parte em que a maioria das empresas trava."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que tipos de empresa a 4WaTT atende nesse serviço?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Geradores de volume relevante e recorrente: indústria e agroindústria, frigoríficos, centrais de abastecimento (CEASA), redes de varejo e supermercados, condomínios comerciais e operações logísticas. O critério não é o setor, e sim a existência de volume concentrado o bastante para justificar estrutura de triagem própria ou compartilhada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quando o resíduo orgânico vira biogás ou biometano?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quando a fração orgânica é grande, constante e pouco contaminada. A avaliação considera volume diário, sazonalidade, teor de sólidos e a distância até o uso final da energia. A 4WaTT faz esse estudo com o mesmo critério usado em seus projetos de biodigestão — e diz claramente quando a rota energética não fecha, em vez de empurrar uma planta que não se paga."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso trocar de fornecedor de coleta para contratar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A 4WaTT não é transportadora nem aterro: a gestão funciona com os fornecedores de coleta e destinação que você já usa. O que fazemos é organizar, medir e cobrar desempenho dessa cadeia — e, quando o diagnóstico mostra que o material está indo para o destino errado, apontar a alternativa com o número na mão. Trocar fornecedor é decisão sua, não condição de contrato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o diagnóstico gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Após o contato, um engenheiro da 4WaTT levanta o perfil da operação: resíduo predominante, volume aproximado por mês, número de unidades e o que já existe de estrutura. O retorno é uma leitura preliminar do potencial de triagem e valorização, sem custo e sem compromisso. Havendo aderência, a etapa seguinte é a visita técnica e a caracterização em campo."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "4WaTT", "item": "https://4watt.tech/" },
+      { "@type": "ListItem", "position": 2, "name": "Soluções", "item": "https://4watt.tech/solucao-gestao-residuos.html" },
+      { "@type": "ListItem", "position": 3, "name": "Gestão de Resíduos", "item": "https://4watt.tech/solucao-gestao-residuos.html" }
+    ]
+  }
+  </script>
+</body>
+
+</html>

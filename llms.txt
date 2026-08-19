@@ -4,6 +4,7 @@
 
 ## Serviços
 
+- **Gestão de Resíduos**: serviço contratado por **assinatura mensal**, para geradores industriais, agroindustriais, frigoríficos, centrais de abastecimento (CEASA), varejo e condomínios comerciais. **Incluído em todos os níveis**: elaboração e manutenção do PGRS (Plano de Gerenciamento de Resíduos Sólidos), emissão e controle de MTR (Manifesto de Transporte de Resíduos) e demais documentos legais exigidos do gerador, suporte e assessoria na Certificação em Sustentabilidade Ambiental, plataforma de gestão e relatório mensal de indicadores. Três níveis: Essencial (inventário, controle de prazos e dossiê de auditoria), Gestão (engenheiro responsável, caracterização gravimétrica, estudo de valorização) e Completo (projeto de engenharia da triagem, implantação e O&M em campo). **Mensalidade sob consulta**, definida em proposta após diagnóstico gratuito, conforme volume gerado e número de unidades. Equipamentos e obra têm orçamento próprio. A 4WaTT não é organismo certificador: presta suporte e assessoria à certificação. Diferencial: engenharia própria do diagnóstico à estrutura física. https://4watt.tech/solucao-gestao-residuos.html
 - **Engenharia de Biogás**: projetos de biodigestão anaeróbia para resíduos agroindustriais, dejetos suínos, aves e RSU. Do dimensionamento ao comissionamento.
 - **Biometano**: purificação, certificação RenovaBio (CBIO), conexão à rede de gás natural e contratos de offtake. Também oferta biometano de projetos próprios em desenvolvimento em Goiás e Mato Grosso.
 - **Gaseificação de RSU**: conversão térmica de resíduos sólidos urbanos em syngas e energia elétrica.
@@ -34,6 +35,7 @@ Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4
 ## Links
 
 - Site: https://4watt.tech
+- Gestão de Resíduos: https://4watt.tech/solucao-gestao-residuos.html
 - Soluções Biogás: https://4watt.tech/solucao-biogas.html
 - Soluções Biometano: https://4watt.tech/solucao-biometano.html
 - Projetos de biometano em desenvolvimento: https://4watt.tech/projetos-biometano.html

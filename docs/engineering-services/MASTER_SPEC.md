@@ -526,15 +526,16 @@ algo acima contradiz o que está aqui, **este bloco vale**, porque é o mais rec
 |---|---|
 | Hub (`engenharia/index.html`) | **Pronto** — 6 blocos, grid das 8 verticais enriquecido |
 | Engenharia Elétrica | **Pronta** — página de vertical + 27 landing pages no padrão aprovado |
-| Engenharia Mecânica | **Parcial** — página existe, mas no padrão antigo; 0 de 13 landing pages |
+| Engenharia Mecânica | **Pronta** (2026-08-24) — hero `.sol-hero`, 13 cards linkados, 13 landing pages |
 | Civil · Ambiental · Gestão de Projetos · Processos · Digital · Automação | **Não iniciadas** — só o card no hub; falta lista de serviços do usuário |
 | i18n | **Não iniciado** — 0 ocorrências de `data-i18n` nas 30 páginas da unidade |
 | Navbar compartilhado | **Não feito** — item ausente em `snippets/navbar-premium.html` e nas 26 páginas da raiz |
 | Marcadores de protótipo | **Ativos** nas 30 páginas (banner amarelo, `noindex`, `<base href="/">`) |
 | `sitemap.xml` | Sem nenhuma página da unidade (coerente enquanto `noindex`) |
 
-**Total hoje: 30 arquivos HTML em `engenharia/`** — hub + 2 páginas de vertical + 27
-landing pages de serviço. `engenharia.css` em `?v=0.9`, versão única nas 30.
+**Total hoje: 43 arquivos HTML em `engenharia/`** — hub + 2 páginas de vertical + 27
+landing pages de Elétrica + 13 de Mecânica. `engenharia.css` em `?v=0.9`, versão única
+nas 43.
 
 ### Ferramenta de geração (criada em 2026-08-24)
 
@@ -815,14 +816,9 @@ nunca implementado, foi adicionado como 2º vídeo de Mecânica (hub e
 
 ### O que falta — atualizado 2026-08-24
 
-**Prioridade 1 — Mecânica (tem tudo para começar).** `engenharia/mecanica.html` ficou
-para trás quando Elétrica evoluiu. Falta: (a) trocar `.eng-page-banner` pelo hero
-`.sol-hero`, mantendo os dois botões de vídeo existentes; (b) transformar os 13 cards de
-`<div>` em `<a href="engenharia/mecanica/{slug}.html">`; (c) criar
-`conteudo_mecanica.py` e gerar as 13 landing pages. Os 13 serviços já estão no HTML, em
-4 grupos (Projeto mecânico 3 · Fabricação 5 · Montagem mecânica 4 · Manutenção 1). A
-pasta de imagens tem 8 arquivos utilizáveis — **confirmar as legendas com o usuário**
-antes de publicar, porque cada legenda precisa descrever o que a peça é de fato.
+**Prioridade 1 — CONCLUÍDA em 2026-08-24.** Mecânica está pronta: hero `.sol-hero`,
+13 cards linkados e 13 landing pages geradas. Ver a seção "Engenharia Mecânica
+concluída" acima.
 
 **Prioridade 2 — as 6 verticais restantes.** Civil, Ambiental, Gestão de Projetos e
 Obras, Processos, Digital e Automação **não têm página de vertical nenhuma**, só o card
@@ -856,6 +852,51 @@ O preview em voz de marca no Bloco 2 do hub não substitui essa validação.
 7. **Tarefa em paralelo, não bloqueante:** investigação de CSS ausente em
    `contato.html` (`task_6bf1a1bd`, sinalizada à parte) — não relacionada a este
    trabalho, mas ainda pendente.
+
+### Engenharia Mecânica concluída (2026-08-24)
+
+Vertical fechada no mesmo padrão de Elétrica. O que mudou:
+
+**Gerador parametrizado por vertical.** `gerar-paginas-servico.py` ganhou o dict
+`VERTICAIS` (slug, nome, curto, arquivo, capa) e `montar(s, v)` passou a receber a
+config já enriquecida com o conteúdo do módulo. `PRANCHAS`, `IMAGEM_SOBRE` e
+`ALT_PRANCHA` saíram do gerador e passaram a viver em cada `conteudo_{vertical}.py` —
+o contrato de um módulo de conteúdo é exportar esses três mais `SERVICOS`. A string
+"Ver todos os serviços de Elétrica" virou `{v['curto']}`. Aceita argumento de linha de
+comando: `python docs/engineering-services/gerar-paginas-servico.py mecanica`.
+**Refactor validado regerando as 26 páginas de Elétrica byte a byte idênticas.**
+
+**`engenharia/mecanica.html`** saiu do `.eng-page-banner` para o hero `.sol-hero`
+(capa `cover-wide.jpg`, breadcrumb, badge, CTA), com os **dois** botões de vídeo
+preservados dentro do `.sol-hero__cta`. Os 13 cards viraram `<a>`. A página passou a
+carregar `solucoes.css?v=2.2`, que o `.sol-hero` exige e que ela não carregava.
+
+**13 landing pages** em `engenharia/mecanica/`, 1.357–1.525 palavras cada, com perfil
+estrutural idêntico ao de `eletrica/curto-circuito.html`.
+
+**Origem do conteúdo — os 13 são voz de marca.** Diferente de Elétrica (15 dos 27 com
+referência externa), Mecânica não tem nenhuma referência validada item a item. Todos
+levam `voz_marca: True` e o comentário HTML de rastreabilidade. Autorizado pelo usuário
+em 2026-08-24. **Atualizar assim que houver referência real de cada serviço.**
+
+**Imagens.** As 6 pranchas do carrossel são os arquivos reais do acervo, copiados para
+nomes kebab-case e usados **sem recorte** — decisão explícita do usuário, mesmo com 4
+delas sendo capturas do SolidWorks com a interface visível (a árvore de montagem é parte
+da evidência). Capa do hero: `cover-wide.jpg`, JPEG 1920×1080 gerado do render
+`0 - MONTAGEM SECADOR.png` para não servir 1,7 MB de fundo. Legendas e `alt` conferidos
+abrindo cada arquivo, um a um.
+
+**Verificado:** `auditar.py` com 0 links quebrados; console limpo; HTTP 200 nas 13
+páginas e em todos os assets; 6 pranchas → 12 em runtime (auto-duplicação);
+`scrollWidth` 5.260 vs `clientWidth` 1.265; hero de `mecanica.html` com 648px, idêntico
+ao de `eletrica.html`; 3 seções em `rgb(58,9,64)`→`rgb(42,7,32)`; accordion abre e fecha;
+sem scroll horizontal; `engenharia.css?v=0.9` único nas 43 páginas.
+
+**Não verificado (pane oculto):** animação do tilt 3D, movimento do carrossel e 375px
+real. Screenshot indisponível no ambiente.
+
+**Pendente:** as 6 verticais restantes seguem dependendo da lista real de serviços do
+usuário — **não inventar**.
 
 ### Limitação de verificação do ambiente (vale para todas as sessões)
 

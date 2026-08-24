@@ -8,6 +8,7 @@
 - **Engenharia de Biogás**: projetos de biodigestão anaeróbia para resíduos agroindustriais, dejetos suínos, aves e RSU. Do dimensionamento ao comissionamento.
 - **Biometano**: purificação, certificação RenovaBio (CBIO), conexão à rede de gás natural e contratos de offtake. Também oferta biometano de projetos próprios em desenvolvimento em Goiás e Mato Grosso.
 - **Gaseificação de RSU**: conversão térmica de resíduos sólidos urbanos em syngas e energia elétrica.
+- **Serviços de Engenharia**: unidade de engenharia industrial contratada à parte dos projetos de biogás. **Oito verticais sob uma coordenação só**: Engenharia Elétrica, Engenharia Mecânica, Engenharia Civil e Infraestrutura, Engenharia Ambiental, Gestão de Projetos e Obras, Engenharia de Processos, Engenharia Digital/Dados/IA, e Automação e Instrumentação. **Três modelos de contratação**: Owner's Engineering (fiscalização e representação técnica do dono), EPCM (gerenciamento de engenharia, suprimentos e construção) e EPC/Turn-Key (responsabilidade integral pela entrega). Duas verticais estão detalhadas serviço a serviço hoje: **Engenharia Elétrica com 27 serviços** (estudo de curto-circuito, coordenação e seletividade, qualidade de energia, energia incidente/arco, eficiência energética, mercado livre, RISE, laudo e projeto de SPDA e de aterramento, termografia, NR-10 e prontuário, projeto elétrico industrial, subestação, iluminação, banco de capacitores, filtros harmônicos, geração distribuída, montagem elétrica e comissionamento) e **Engenharia Mecânica com 13 serviços** (projeto mecânico industrial, projeto industrial, fundações de máquinas, caldeiraria, tanques industriais, plataforma e pipe-rack, guarda-corpo, corte e dobra de chapas, montagem industrial, montagem de máquinas, montagem eletromecânica, tubulação industrial e manutenção industrial). Diferencial declarado: engenharia própria — a mesma equipe que projeta também fabrica, monta e mantém. Normas públicas usadas como referência nas páginas: NR-8, NR-10, NR-11, NR-12, NR-13, NR-18, NR-35, NBR 5410, NBR 5419, NBR 6118, NBR 6122, NBR 8800, NBR 14039, NBR 14718, NBR 14762, PRODIST Módulo 8, IEEE 519, IEEE 1584, ASME B31.3, ASME Seção VIII, AWS D1.1, API 650, ISO 10816. Orçamento sob consulta. https://4watt.tech/engenharia/index.html
 - **Simulador de Viabilidade**: ferramenta online para análise de TIR, VPL e payback de projetos de biogás e biometano.
 
 ## Diferenciais
@@ -36,6 +37,9 @@ Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4
 
 - Site: https://4watt.tech
 - Gestão de Resíduos: https://4watt.tech/solucao-gestao-residuos.html
+- Serviços de Engenharia: https://4watt.tech/engenharia/index.html
+- Engenharia Elétrica (27 serviços): https://4watt.tech/engenharia/eletrica.html
+- Engenharia Mecânica (13 serviços): https://4watt.tech/engenharia/mecanica.html
 - Soluções Biogás: https://4watt.tech/solucao-biogas.html
 - Soluções Biometano: https://4watt.tech/solucao-biometano.html
 - Projetos de biometano em desenvolvimento: https://4watt.tech/projetos-biometano.html

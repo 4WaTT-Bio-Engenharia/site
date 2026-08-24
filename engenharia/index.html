@@ -8,10 +8,26 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4WaTT | Serviços de Engenharia</title>
+  <title>Serviços de Engenharia Industrial | 4WaTT Bio Engenharia</title>
   <meta name="description"
-    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Serviços de Engenharia 4WaTT: 8 frentes de engenharia multidisciplinar, prova técnica cruzada e modelos de contratação.">
-  <meta name="robots" content="noindex, nofollow">
+    content="Oito verticais de engenharia industrial sob uma coordenação só: elétrica, mecânica, civil, ambiental, processos, automação, digital e gestão de obras. Owner’s Engineering, EPCM e EPC.">
+  <link rel="canonical" href="https://4watt.tech/engenharia/index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="4WaTT Bio Engenharia">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Serviços de Engenharia Industrial | 4WaTT Bio Engenharia">
+  <meta property="og:description" content="Oito verticais de engenharia industrial sob uma coordenação só: elétrica, mecânica, civil, ambiental, processos, automação, digital e gestão de obras. Owner’s Engineering, EPCM e EPC.">
+  <meta property="og:url" content="https://4watt.tech/engenharia/index.html">
+  <meta property="og:image" content="https://4watt.tech/assets/img/og-4watt.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Serviços de Engenharia Industrial | 4WaTT Bio Engenharia">
+  <meta name="twitter:description" content="Oito verticais de engenharia industrial sob uma coordenação só: elétrica, mecânica, civil, ambiental, processos, automação, digital e gestão de obras. Owner’s Engineering, EPCM e EPC.">
+  <meta name="twitter:image" content="https://4watt.tech/assets/img/og-4watt.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -21,14 +37,14 @@
   <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
   <link rel="stylesheet" href="assets/css/home-premium.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
   <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
   <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N91NFD55MB');</script>
 </head>
 
 <body class="t4">
-  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
-    PREVIEW DE SPEC — página ainda não implementada oficialmente, só para revisão visual do Bloco 1–4 (ver docs/engineering-services/pages/index.md)
-  </div>
 
   <nav class="nav">
     <a class="nav__logo" href="index.html" aria-label="4WaTT início">
@@ -47,6 +63,7 @@
           <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
           <li><a href="solucao-biometano.html">Biometano</a></li>
           <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+          <li><a href="engenharia/index.html">Serviços de Engenharia</a></li>
         </ul>
       </li>
       <li><a href="investidor.html">Área do Investidor</a></li>
@@ -376,66 +393,73 @@
   </section>
 
   <!-- ====================== BLOCO 6 · CTA FINAL / FORMULÁRIO ====================== -->
-  <section class="section" id="contato-eng">
-    <div class="container" style="max-width:640px;">
-      <div style="text-align:center;margin-bottom:40px;">
-        <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
-        <h2 class="h2" data-reveal data-d="1">Pronto para colocar seu projeto em pé?</h2>
-        <p class="lead" data-reveal data-d="2">Conte o desafio da sua operação — nossa equipe responde com o próximo
-          passo técnico em até 1 dia útil.</p>
+  <!-- ============ CTA + FORMULÁRIO ============
+       Mesmo padrão da seção "Próximo passo" de solucao-gestao-residuos.html:
+       .sol-cta (fundo roxo com foto + overlay) > .sol-cta__inner em 2 colunas,
+       com .sol-cta__copy à esquerda e .sol-formcard à direita. Classes de
+       solucoes.css, nenhum CSS novo. -->
+  <section class="section sol-cta" id="contato-eng">
+    <div class="ph ph--px ph--roxo"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="" data-parallax="0.05" loading="lazy"></div>
+    <div class="container">
+      <div class="sol-cta__inner">
+        <div class="sol-cta__copy">
+          <span class="kicker" data-reveal>Próximo passo</span>
+          <h2 class="h2" data-reveal data-d="1">Fale com a engenharia 4WaTT.</h2>
+          <p class="lead" data-reveal data-d="2">Um engenheiro da nossa equipe retorna para entender o escopo, o
+            estágio em que o projeto está e qual frente resolve o seu problema. Depois disso você recebe o próximo
+            passo técnico por escrito — não uma proposta automática.</p>
+          <ul class="sol-cta__checklist" data-reveal data-d="2">
+            <li><i class="fas fa-check"></i> Leitura do escopo pela vertical certa, entre as oito</li>
+            <li><i class="fas fa-check"></i> Indicação do modelo de contratação que cabe: Owner’s Engineering, EPCM ou EPC</li>
+            <li><i class="fas fa-check"></i> Definição do próximo entregável técnico e do que ele exige de você</li>
+            <li><i class="fas fa-check"></i> Retorno de um engenheiro, não de um robô de vendas</li>
+          </ul>
+          <p class="lead res-direto" data-reveal data-d="3">Prefere falar direto? <a href="mailto:contato@4watt.tech">contato@4watt.tech</a> · <a href="https://wa.me/5545991378949" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+        </div>
+        <div class="sol-formcard" data-reveal data-d="1">
+          <h3>Falar com um especialista</h3>
+          <p class="sub">Preencha e retornamos em até 1 dia útil.</p>
+          <form class="form-4watt" id="engForm" data-form-name="Engenharia">
+            <div class="form-row">
+              <div class="form-field"><label for="eng-nome">Nome*</label><input class="form-input" id="eng-nome" name="nome" type="text" required placeholder="Seu nome completo"><span class="form-error-msg"></span></div>
+              <div class="form-field"><label for="eng-empresa">Empresa*</label><input class="form-input" id="eng-empresa" name="empresa" type="text" required placeholder="Nome da empresa"><span class="form-error-msg"></span></div>
+            </div>
+            <div class="form-row">
+              <div class="form-field"><label for="eng-email">E-mail*</label><input class="form-input" id="eng-email" name="email" type="email" required placeholder="seu@email.com"><span class="form-error-msg"></span></div>
+              <div class="form-field"><label for="eng-wpp">WhatsApp*</label><input class="form-input" id="eng-wpp" name="whatsapp" type="tel" required placeholder="(00) 00000-0000"><span class="form-error-msg"></span></div>
+            </div>
+            <div class="form-field">
+              <label for="eng-vertical">Vertical de interesse*</label>
+              <select class="form-select" id="eng-vertical" name="vertical" required>
+                <option value="">Selecione a frente de engenharia</option>
+                <option>Engenharia Civil e Infraestrutura</option>
+                <option>Engenharia Elétrica</option>
+                <option>Engenharia Mecânica</option>
+                <option>Engenharia Ambiental</option>
+                <option>Gestão de Projetos e Obras</option>
+                <option>Engenharia de Processos</option>
+                <option>Engenharia Digital, Dados e IA</option>
+                <option>Automação e Instrumentação</option>
+                <option>Ainda não sei, quero orientação</option>
+              </select><span class="form-error-msg"></span>
+            </div>
+            <div class="form-field">
+              <label for="eng-modelo">Modelo de contratação de interesse</label>
+              <select class="form-select" id="eng-modelo" name="modelo_contratacao">
+                <option value="">Selecione (opcional)</option>
+                <option>Owner's Engineering / Fiscalização</option>
+                <option>EPCM</option>
+                <option>EPC / Turn-Key</option>
+                <option>Ainda não sei</option>
+              </select>
+            </div>
+            <div class="form-field"><label for="eng-msg">Descreva o desafio</label><textarea class="form-textarea" id="eng-msg" name="mensagem" placeholder="Conte o contexto do seu projeto..."></textarea><span class="form-error-msg"></span></div>
+            <button class="btn btn--gold" type="submit" style="width:100%;justify-content:center;">Enviar e falar com um especialista <i class="fas fa-arrow-right"></i></button>
+          </form>
+          <div class="form-success">Solicitação recebida! Um engenheiro da 4WaTT retorna em até 1 dia útil.</div>
+          <p class="sol-formcard__note">Os dados enviados são usados apenas para responder a esta solicitação, conforme a <a href="politica-privacidade.html">Política de Privacidade</a> (LGPD).</p>
+        </div>
       </div>
-
-      <form class="form-4watt" id="engForm" data-form-name="Engenharia" data-reveal data-d="3">
-        <div class="form-row">
-          <div class="form-field"><label for="eng-nome">Nome*</label><input class="form-input" id="eng-nome"
-              name="nome" type="text" required placeholder="Seu nome completo"><span class="form-error-msg"></span>
-          </div>
-          <div class="form-field"><label for="eng-empresa">Empresa*</label><input class="form-input"
-              id="eng-empresa" name="empresa" type="text" required placeholder="Nome da empresa"><span
-              class="form-error-msg"></span></div>
-        </div>
-        <div class="form-row">
-          <div class="form-field"><label for="eng-email">E-mail*</label><input class="form-input" id="eng-email"
-              name="email" type="email" required placeholder="seu@email.com"><span class="form-error-msg"></span>
-          </div>
-          <div class="form-field"><label for="eng-wpp">WhatsApp*</label><input class="form-input" id="eng-wpp"
-              name="whatsapp" type="tel" required placeholder="(00) 00000-0000"><span class="form-error-msg"></span>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="eng-vertical">Vertical de interesse*</label>
-          <select class="form-select" id="eng-vertical" name="vertical" required>
-            <option value="">Selecione a frente de engenharia</option>
-            <option>Engenharia Civil e Infraestrutura</option>
-            <option>Engenharia Elétrica</option>
-            <option>Engenharia Mecânica</option>
-            <option>Engenharia Ambiental</option>
-            <option>Gestão de Projetos e Obras</option>
-            <option>Engenharia de Processos</option>
-            <option>Engenharia Digital, Dados e IA</option>
-            <option>Automação e Instrumentação</option>
-            <option>Ainda não sei, quero orientação</option>
-          </select><span class="form-error-msg"></span>
-        </div>
-        <div class="form-field">
-          <label for="eng-modelo">Modelo de contratação de interesse</label>
-          <select class="form-select" id="eng-modelo" name="modelo_contratacao">
-            <option value="">Selecione (opcional)</option>
-            <option>Owner's Engineering / Fiscalização</option>
-            <option>EPCM</option>
-            <option>EPC / Turn-Key</option>
-            <option>Ainda não sei</option>
-          </select>
-        </div>
-        <div class="form-field"><label for="eng-msg">Descreva o desafio</label><textarea class="form-textarea"
-            id="eng-msg" name="mensagem" placeholder="Conte o contexto do seu projeto..."></textarea><span
-            class="form-error-msg"></span></div>
-        <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;">Enviar e falar com
-          um especialista <i class="fas fa-arrow-right"></i></button>
-        <p class="form-consent">Ao enviar, você concorda em ser contatado pela equipe 4WaTT. Tratamos seus dados com
-          confidencialidade.</p>
-      </form>
-      <div class="form-success">Mensagem enviada! Nosso time entra em contato em até 1 dia útil.</div>
     </div>
   </section>
 
@@ -488,12 +512,137 @@
     </div>
   </footer>
 
-  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="assets/js/languages.js?v=2.8"></script>
   <script src="/assets/js/languages-pages.js?v=1.3"></script>
   <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.4"></script>
   <script src="assets/js/forms.js?v=1.3"></script>
   <script src="assets/js/engenharia.js?v=0.3"></script>
+
+  <script type="application/ld+json">
+{
+  "@type": "ProfessionalService",
+  "name": "4WaTT Bio Engenharia S/A",
+  "url": "https://4watt.tech",
+  "email": "contato@4watt.tech",
+  "telephone": "+55-45-99137-8949",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Dep. Jamel Cecílio, Edifício Metropolitan Business, Torre Tokyo, sala 601, Jardim Goiás",
+    "addressLocality": "Goiânia",
+    "addressRegion": "GO",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/4watt-tech-b798041b1",
+    "https://www.instagram.com/4watt.tech/",
+    "https://www.facebook.com/4wattbioeng"
+  ],
+  "@context": "https://schema.org",
+  "description": "Unidade de serviços de engenharia industrial da 4WaTT Bio Engenharia, com oito verticais técnicas sob uma única coordenação e três modelos de contratação: Owner's Engineering, EPCM e EPC/Turn-Key.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Brasil"
+  },
+  "knowsAbout": [
+    "Engenharia elétrica industrial",
+    "Engenharia mecânica industrial",
+    "Engenharia civil industrial",
+    "Engenharia ambiental",
+    "Automação e instrumentação industrial",
+    "Gestão de projetos e obras",
+    "Biogás",
+    "Biometano",
+    "Owner's Engineering",
+    "EPCM",
+    "EPC Turn-Key"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Verticais de Engenharia 4WaTT",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia Civil e Infraestrutura"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia Elétrica",
+          "url": "https://4watt.tech/engenharia/eletrica.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia Mecânica",
+          "url": "https://4watt.tech/engenharia/mecanica.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia Ambiental"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gestão de Projetos e Obras"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia de Processos"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engenharia Digital, Dados e IA"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automação e Instrumentação"
+        }
+      }
+    ]
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "4WaTT",
+      "item": "https://4watt.tech/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Serviços de Engenharia",
+      "item": "https://4watt.tech/engenharia/index.html"
+    }
+  ]
+}
+  </script>
 </body>
 
 </html>

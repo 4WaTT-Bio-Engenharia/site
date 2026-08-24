@@ -529,9 +529,9 @@ algo acima contradiz o que está aqui, **este bloco vale**, porque é o mais rec
 | Engenharia Mecânica | **Pronta** (2026-08-24) — hero `.sol-hero`, 13 cards linkados, 13 landing pages |
 | Civil · Ambiental · Gestão de Projetos · Processos · Digital · Automação | **Não iniciadas** — só o card no hub; falta lista de serviços do usuário |
 | i18n | **Não iniciado** — 0 ocorrências de `data-i18n` nas 30 páginas da unidade |
-| Navbar compartilhado | **Não feito** — item ausente em `snippets/navbar-premium.html` e nas 26 páginas da raiz |
-| Marcadores de protótipo | **Ativos** nas 30 páginas (banner amarelo, `noindex`, `<base href="/">`) |
-| `sitemap.xml` | Sem nenhuma página da unidade (coerente enquanto `noindex`) |
+| Navbar compartilhado | **Feito** (2026-08-24) — "Serviços de Engenharia" é a última opção do dropdown Soluções em 28 páginas + snippet, com chave `nav_servicos_engenharia` em pt/en |
+| Marcadores de protótipo | **Removidos** (2026-08-24) — banner e `noindex` saíram; `<base href="/">` fica, é o que resolve os caminhos raiz-relativos nas subpastas |
+| `sitemap.xml` | **43 URLs da unidade** (2026-08-24), agora que as páginas são indexáveis |
 
 **Total hoje: 43 arquivos HTML em `engenharia/`** — hub + 2 páginas de vertical + 27
 landing pages de Elétrica + 13 de Mecânica. `engenharia.css` em `?v=0.9`, versão única
@@ -897,6 +897,50 @@ real. Screenshot indisponível no ambiente.
 
 **Pendente:** as 6 verticais restantes seguem dependendo da lista real de serviços do
 usuário — **não inventar**.
+
+### Publicação oficial e rodada de GEO/SEO (2026-08-24)
+
+A unidade saiu do estado de protótipo. O que mudou nas 43 páginas:
+
+- **Marcadores de protótipo removidos:** banner amarelo "PREVIEW DE SPEC" e
+  `<meta name="robots" content="noindex, nofollow">`. O prefixo `[PREVIEW DE SPEC —
+  NÃO PUBLICADO]` saiu das meta descriptions. **`<base href="/">` ficou** — é ele que
+  resolve os caminhos raiz-relativos nas subpastas.
+- **SEO/GEO completo,** no padrão de `solucao-gestao-residuos.html` (a página mais bem
+  implementada do site): `canonical`, Open Graph, Twitter Card e `gtag` nas 43.
+- **JSON-LD:** `Service` + `FAQPage` + `BreadcrumbList` nas 40 páginas de serviço;
+  `Service` + `OfferCatalog` + `BreadcrumbList` nas 2 verticais; `ProfessionalService`
+  + `OfferCatalog` + `knowsAbout` + `BreadcrumbList` no hub. O `Organization` de
+  `provider` carrega endereço real e `sameAs` dos 3 perfis oficiais — é o sinal de
+  reconciliação de entidade que motor generativo usa para desambiguar a marca.
+- **`citation`** no `Service` lista as normas públicas que a própria página cita.
+  **Nenhuma estatística foi inventada** (regra nº 8): as "fontes" são os nomes de norma
+  e nada mais. Se o usuário quiser dado de mercado, precisa fornecer a fonte.
+- **`FAQPage` gerado a partir do mesmo dado do texto visível** (`conteudo_*.py`), então
+  aqui **não existe** a armadilha de divergência que as páginas de solução têm.
+  Em `qualidade-de-energia.html` (não regerada) o FAQ é extraído do próprio HTML.
+- **Navbar:** "Serviços de Engenharia" virou a última opção do dropdown Soluções em
+  28 páginas + `snippets/navbar-premium.html` + o `NAVBAR` do gerador. Nas páginas da
+  raiz e das subpastas usa `data-i18n="nav_servicos_engenharia"`, chave nova criada em
+  `pt` e `en`. `languages.js` subiu para `?v=2.8` nas 70 páginas.
+- **`sitemap.xml`:** 19 → 62 URLs. **`llms.txt`:** ganhou a unidade, as 8 verticais, os
+  3 modelos de contratação, os 40 serviços nomeados e a lista de normas de referência.
+  **`robots.txt`** não precisou mudar — os `Allow` de GPTBot/ClaudeBot/PerplexityBot já
+  cobriam a unidade, e nada dela está em `Disallow`.
+- **Formulário do hub** refeito no padrão `.sol-cta` da seção "Próximo passo" de
+  `solucao-gestao-residuos.html`: fundo roxo com foto e overlay, 2 colunas
+  (`.sol-cta__copy` + `.sol-formcard`), checklist de 4 itens e nota de LGPD. Campos
+  `vertical` e `modelo_contratacao` **preservados** — o Apps Script depende deles.
+  O hub passou a carregar `solucoes.css?v=2.2`.
+
+**Verificado:** 43/43 sem banner e sem `noindex`, com canonical batendo com o caminho
+real, OG, Twitter Card e item de navbar; 144 blocos JSON-LD do site inteiro com sintaxe
+válida; `auditar.py` com 0 links quebrados e 0 chaves faltando em `en`; sitemap com XML
+válido; console limpo; HTTP 200.
+
+**Não verificado (pane travado em 383px):** o layout de 2 colunas do novo formulário só
+existe acima de 880px (`solucoes.css:136`) — a marcação é idêntica à da referência
+aprovada, mas **a conferência visual em desktop é do usuário**.
 
 ### Limitação de verificação do ambiente (vale para todas as sessões)
 

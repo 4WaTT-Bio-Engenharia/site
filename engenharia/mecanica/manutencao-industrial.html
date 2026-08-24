@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenção Industrial | Engenharia Mecânica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Manutenção industrial mecânica 4WaTT: corretiva, preventiva e diagnóstico de causa raiz, com histórico documentado.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Manutenção Industrial — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/mecanica.html">Engenharia Mecânica</a>
+        <span>/</span>
+        <span class="is-current">Manutenção Industrial</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-screwdriver-wrench"></i> Engenharia Mecânica</span>
+      <h1 data-reveal data-d="1">Manutenção Industrial</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Trocar a peça que quebrou resolve o dia. Descobrir por que ela quebrou é o que impede a próxima parada.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/mecanica.html">Ver todos os serviços de Mecânica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Causa raiz</div>
+          <div class="eng-svc-strip__l">Diagnóstico do porquê, não só substituição do componente</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Histórico documentado</div>
+          <div class="eng-svc-strip__l">O que foi feito e o que foi medido, registrado</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Engenharia junto</div>
+          <div class="eng-svc-strip__l">Quem projeta e monta também atende a manutenção</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é a manutenção industrial mecânica</h2>
+          <p class="lead" data-reveal data-d="2">Manutenção mecânica cobre desde a intervenção corretiva — o equipamento parou e precisa voltar — até a preventiva planejada e o diagnóstico de falhas recorrentes. A diferença entre uma manutenção que resolve e uma que só adia está menos na velocidade do reparo e mais no que se investiga junto: um rolamento que falha três vezes no mesmo ponto não é um problema de rolamento; é um sintoma de desalinhamento, de base, de esforço de tubulação ou de lubrificação — e trocar o componente pela quarta vez não altera nada disso.</p>
+          <p class="lead" data-reveal data-d="3">A outra metade do serviço é o registro. Manutenção sem histórico obriga cada intervenção a começar do zero, sem saber o que já foi tentado, quais valores foram medidos da última vez e há quanto tempo aquele componente está em serviço. Com histórico, padrões aparecem: o equipamento que sempre falha depois de determinada condição de operação, o ponto que consome peça acima do esperado, a intervenção que resolveu de verdade. É o que transforma manutenção de despesa recorrente em informação para decidir onde investir.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Render do skid de secagem de biogás projetado pela engenharia 4WaTT, com vaso vertical, soprador e trocador de calor" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">Por que a mesma falha volta</h2>
+            <p class="lead" data-reveal data-d="2">Três padrões explicam a maior parte das paradas que se repetem — e nenhum deles se resolve trocando a peça.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-rotate"></i></div><h3>Sintoma tratado como causa</h3><p>Substituir o componente que falhou sem investigar o que o levou à falha garante que ele falhará de novo, no mesmo intervalo.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-clock-rotate-left"></i></div><h3>Sem histórico, sem padrão</h3><p>Cada intervenção recomeça do zero. O que já foi tentado, medido e descartado se perde entre uma parada e outra.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-triangle-exclamation"></i></div><h3>Corretiva como rotina</h3><p>Quando toda manutenção é emergencial, a parada acontece no pior momento possível e o custo inclui produção perdida, não só o reparo.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que executamos</span>
+        <h2 class="h2" data-reveal data-d="1">O que a manutenção mecânica cobre</h2>
+        <p class="lead" data-reveal data-d="2">Da intervenção pontual ao diagnóstico do que faz a falha se repetir.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Frente</th><th><i class="fa-solid fa-circle-info"></i> O que envolve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Manutenção corretiva</td><td>Intervenção para retorno à operação, com diagnóstico do que falhou e por quê, e não apenas substituição.</td></tr>
+            <tr><td>Manutenção preventiva</td><td>Intervenções planejadas em janela definida, com escopo baseado no histórico e na recomendação do fabricante.</td></tr>
+            <tr><td>Alinhamento e nivelamento</td><td>Correção de conjunto acoplado fora de tolerância, com os valores medidos antes e depois registrados.</td></tr>
+            <tr><td>Recuperação de componentes</td><td>Reparo ou refabricação de peça desgastada ou danificada, quando substituir não é viável ou não é a melhor opção.</td></tr>
+            <tr><td>Diagnóstico de falha recorrente</td><td>Investigação de causa raiz quando o mesmo componente ou o mesmo equipamento falha repetidamente.</td></tr>
+            <tr><td>Registro e histórico</td><td>Documentação do que foi executado, do que foi medido e do que foi recomendado para a próxima janela.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos a manutenção</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-stethoscope"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Diagnóstico</h3>
+                <p>Antes de intervir, entendemos o que falhou, em que condição e com que histórico. Intervenção sem diagnóstico costuma acertar o sintoma e errar a causa.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-list-check"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Definição do escopo</h3>
+                <p>O que será feito nesta janela e o que pode esperar, com prioridade definida por risco de parada e não apenas por urgência aparente.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-screwdriver-wrench"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Execução</h3>
+                <p>Intervenção conduzida com os valores de referência do fabricante como critério, e com medição registrada nas etapas críticas.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-file-pen"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Registro e recomendação</h3>
+                <p>O que foi executado, o que foi medido e o que precisa de atenção na próxima janela, documentado e entregue.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Equipamentos projetados, fabricados e montados pela engenharia 4WaTT. São os mesmos conjuntos que acompanhamos em operação.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Prancha técnica Skid de secagem de biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Equipamento</span>
+            <span class="eng-svc-plate__name">Skid de secagem de biogás</span>
+            <span class="eng-svc-plate__desc">Vaso de secagem, soprador e trocador de calor montados sobre um único skid metálico.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Prancha técnica Secador de biogás — conjunto — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto mecânico</span>
+            <span class="eng-svc-plate__name">Secador de biogás — conjunto</span>
+            <span class="eng-svc-plate__desc">Modelo 3D com vaso, compressor, condensador ventilado, soprador radial e tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-isometrica.png" alt="Prancha técnica Flare enclausurado — isométrica — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Caldeiraria</span>
+            <span class="eng-svc-plate__name">Flare enclausurado — isométrica</span>
+            <span class="eng-svc-plate__desc">Torre sobre base de concreto, com selo hídrico, gas seal, válvula borboleta e caixa de controle de chama.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-lateral.png" alt="Prancha técnica Flare — vista lateral — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Detalhamento</span>
+            <span class="eng-svc-plate__name">Flare — vista lateral</span>
+            <span class="eng-svc-plate__desc">Vista ortográfica da mesma montagem, para conferência de alturas e interfaces de tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Prancha técnica Biodigestores e pré-tanque — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Montagem geral</span>
+            <span class="eng-svc-plate__name">Biodigestores e pré-tanque</span>
+            <span class="eng-svc-plate__desc">Montagem geral com tubulações, sensores, válvulas, bombas helicoidais e flare.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Prancha técnica Esteira de triagem de RSU — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Transporte</span>
+            <span class="eng-svc-plate__name">Esteira de triagem de RSU</span>
+            <span class="eng-svc-plate__desc">Transportador de correia com estrutura metálica, moega de carga e acionamento por motorredutor.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações em que o serviço se aplica</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Falha que se repete.</strong> Mesmo componente, mesmo equipamento, mesmo intervalo. É o caso mais indicado para diagnóstico de causa raiz.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Parada não programada frequente.</strong> Quando a corretiva virou rotina, o problema já não é de manutenção: é de método.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Equipamento sem histórico.</strong> Planta com anos de operação e nenhum registro do que já foi feito — reconstruir esse histórico costuma ser o primeiro ganho.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Janela de parada planejada.</strong> Aproveitar uma parada programada exige escopo definido antes, para que a equipe não descubra o que fazer com a planta já desligada.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Vibração, ruído ou temperatura fora do normal.</strong> São os três sinais que costumam anteceder a falha — e o momento em que intervir ainda é barato.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-gears"></i></div><h3>Equipamento em operação</h3><p>A intervenção executada e o equipamento liberado, com as verificações registradas.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-magnifying-glass-chart"></i></div><h3>Diagnóstico da causa</h3><p>O que provocou a falha — e não apenas o que falhou —, com recomendação para evitar a repetição.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-clock-rotate-left"></i></div><h3>Histórico atualizado</h3><p>Registro do que foi feito e medido, para que a próxima intervenção não recomece do zero.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Em que a manutenção se apoia</h2>
+        <p class="lead" data-reveal data-d="2">Manutenção mecânica combina normas de segurança, de equipamento sob pressão e de avaliação de vibração.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>NR-12</h3><p>Segurança em máquinas e equipamentos — rege intervenção, bloqueio e proteções durante a manutenção.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-gauge-high"></i></div><h3>NR-13</h3><p>Caldeiras, vasos de pressão, tubulações e tanques metálicos — define inspeções periódicas obrigatórias.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-wave-square"></i></div><h3>ISO 10816</h3><p>Referência para avaliação de vibração em máquinas, útil no diagnóstico de causa raiz.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que fazer a manutenção com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Manutenção com engenharia junto.</strong> Quando a falha tem origem em projeto, base ou montagem, a mesma casa tem quem diagnostique e quem corrija — não só quem troque a peça.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Causa raiz como parte do serviço.</strong> Investigar por que falhou não é escopo adicional: é o que evita que a mesma parada aconteça de novo.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Histórico que fica com você.</strong> O registro do que foi feito e medido é entregue, e serve de base para decidir onde vale investir na planta.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Experiência em planta de biogás e biometano.</strong> Equipamento que trabalha com gás úmido, efluente e sólido tem modos de falha próprios, que manutenção genérica costuma não reconhecer.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar atendimento de manutenção <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre manutenção industrial</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Vocês atendem emergência? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Atendemos corretiva, e ela costuma ser a porta de entrada. Mas o valor maior aparece quando a intervenção inclui o diagnóstico do que provocou a falha, para que ela não volte.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês fazem contrato de manutenção periódica? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Fazemos, com escopo e janelas definidos a partir do histórico do equipamento e da recomendação do fabricante, e não por um calendário genérico.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Atendem equipamento que não foi fornecido por vocês? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. Nesses casos o primeiro passo é levantar a condição atual e o histórico disponível, porque é isso que orienta o que fazer primeiro.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O que é diagnóstico de causa raiz? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É investigar o que levou o componente a falhar, em vez de apenas substituí-lo. Um rolamento que falha repetidamente costuma estar acusando desalinhamento, base, lubrificação ou esforço de tubulação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês recuperam peça em vez de substituir? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Quando faz sentido técnico e econômico, sim. Componente de equipamento importado ou fora de linha é um caso frequente, e a refabricação passa pela mesma caldeiraria.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Como fica o registro das intervenções? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Cada intervenção gera registro do que foi executado, dos valores medidos e das recomendações para a próxima janela. Esse histórico é entregue e fica com você.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/mecanica/cover-wide.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">A mesma falha está voltando?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

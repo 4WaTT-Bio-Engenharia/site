@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem Eletromecânica | Engenharia Mecânica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Montagem eletromecânica 4WaTT: mecânica e elétrica executadas pela mesma coordenação, do assentamento à energização.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Montagem Eletromecânica — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/mecanica.html">Engenharia Mecânica</a>
+        <span>/</span>
+        <span class="is-current">Montagem Eletromecânica</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-bolt"></i> Engenharia Mecânica</span>
+      <h1 data-reveal data-d="1">Montagem Eletromecânica</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Quando mecânica e elétrica são fornecedores diferentes, a interface entre elas vira terra de ninguém. Montagem eletromecânica é o serviço que elimina essa fronteira.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/mecanica.html">Ver todos os serviços de Mecânica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Uma coordenação só</div>
+          <div class="eng-svc-strip__l">Mecânica e elétrica no mesmo cronograma e na mesma responsabilidade</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Do assentamento à energização</div>
+          <div class="eng-svc-strip__l">Sem transferência de escopo no meio do caminho</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Interface documentada</div>
+          <div class="eng-svc-strip__l">O que cada frente entrega para a seguinte, por escrito</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é a montagem eletromecânica</h2>
+          <p class="lead" data-reveal data-d="2">Montagem eletromecânica é a execução integrada das frentes mecânica e elétrica de uma instalação: posicionar e alinhar o equipamento, montar a estrutura e a tubulação, e também instalar eletrocalha, cabear, ligar motor e instrumento, e deixar o conjunto pronto para energizar e partir. O que caracteriza o serviço não é a soma das duas frentes, mas o fato de estarem sob a mesma coordenação e o mesmo cronograma.</p>
+          <p class="lead" data-reveal data-d="3">A razão de existir é prática. A maior parte dos atrasos e das pendências de qualidade em obra nasce na fronteira entre disciplinas: o motor que foi ligado antes do alinhamento final, o instrumento instalado em posição que a mecânica depois teve que mudar, o cabo que passa exatamente onde a tubulação precisava ir. Quando as duas frentes respondem à mesma engenharia, essas decisões são tomadas com as duas visões na mesa — e a discussão sobre de quem foi a responsabilidade deixa de existir.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Render da esteira transportadora de triagem de RSU projetada pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que a fronteira entre disciplinas costuma custar</h2>
+            <p class="lead" data-reveal data-d="2">Nenhum desses problemas é de execução ruim. Todos são de coordenação ausente.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-hourglass-half"></i></div><h3>Frente esperando frente</h3><p>Elétrica mobilizada antes de a mecânica liberar o equipamento — ou o contrário. Equipe parada é o custo mais silencioso da obra.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-rotate-left"></i></div><h3>Retrabalho na interface</h3><p>Eletrocalha, suporte de instrumento ou tubulação instalados em rota conflitante, que uma das frentes terá que refazer.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-circle-question"></i></div><h3>Pendência sem dono</h3><p>Quando algo não funciona na partida, o tempo de descobrir de quem é o escopo costuma ser maior que o de corrigir.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que executamos</span>
+        <h2 class="h2" data-reveal data-d="1">O que a montagem eletromecânica cobre</h2>
+        <p class="lead" data-reveal data-d="2">As duas frentes, planejadas em conjunto desde antes da mobilização.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Frente</th><th><i class="fa-solid fa-circle-info"></i> O que envolve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Montagem mecânica</td><td>Posicionamento, assentamento, alinhamento e nivelamento de equipamento, mais estrutura e tubulação.</td></tr>
+            <tr><td>Infraestrutura elétrica</td><td>Eletrocalha, eletroduto, leito e suportação, com rota definida junto com a tubulação e não depois dela.</td></tr>
+            <tr><td>Cabeamento</td><td>Lançamento e identificação de cabos de força, comando e instrumentação, conforme o projeto elétrico.</td></tr>
+            <tr><td>Ligação de motores</td><td>Conexão dos acionamentos, com verificação de sentido de rotação antes da partida do conjunto.</td></tr>
+            <tr><td>Instrumentação de campo</td><td>Instalação de sensores e transmissores em posição validada pelas duas disciplinas.</td></tr>
+            <tr><td>Testes e liberação</td><td>Verificação mecânica e elétrica antes da energização, com registro do que foi conferido.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos a montagem</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-diagram-project"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Planejamento integrado</h3>
+                <p>Uma única sequência para as duas frentes, com as dependências mapeadas e as rotas de tubulação e de eletrocalha compatibilizadas antes da obra.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-helmet-safety"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Execução mecânica</h3>
+                <p>Equipamento posicionado, alinhado e nivelado, com estrutura e tubulação montadas na ordem prevista.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-bolt"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Execução elétrica</h3>
+                <p>Infraestrutura, cabeamento, ligação de motores e instrumentação, executados sobre uma frente mecânica já liberada.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-circle-check"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Verificação conjunta e entrega</h3>
+                <p>Conferência mecânica e elétrica na mesma passagem, incluindo sentido de rotação, antes de liberar para partida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Conjuntos da engenharia 4WaTT que reúnem mecânica e acionamento elétrico no mesmo skid — exatamente o tipo de montagem que este serviço executa.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Prancha técnica Skid de secagem de biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Equipamento</span>
+            <span class="eng-svc-plate__name">Skid de secagem de biogás</span>
+            <span class="eng-svc-plate__desc">Vaso de secagem, soprador e trocador de calor montados sobre um único skid metálico.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Prancha técnica Secador de biogás — conjunto — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto mecânico</span>
+            <span class="eng-svc-plate__name">Secador de biogás — conjunto</span>
+            <span class="eng-svc-plate__desc">Modelo 3D com vaso, compressor, condensador ventilado, soprador radial e tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-isometrica.png" alt="Prancha técnica Flare enclausurado — isométrica — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Caldeiraria</span>
+            <span class="eng-svc-plate__name">Flare enclausurado — isométrica</span>
+            <span class="eng-svc-plate__desc">Torre sobre base de concreto, com selo hídrico, gas seal, válvula borboleta e caixa de controle de chama.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-lateral.png" alt="Prancha técnica Flare — vista lateral — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Detalhamento</span>
+            <span class="eng-svc-plate__name">Flare — vista lateral</span>
+            <span class="eng-svc-plate__desc">Vista ortográfica da mesma montagem, para conferência de alturas e interfaces de tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Prancha técnica Biodigestores e pré-tanque — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Montagem geral</span>
+            <span class="eng-svc-plate__name">Biodigestores e pré-tanque</span>
+            <span class="eng-svc-plate__desc">Montagem geral com tubulações, sensores, válvulas, bombas helicoidais e flare.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Prancha técnica Esteira de triagem de RSU — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Transporte</span>
+            <span class="eng-svc-plate__name">Esteira de triagem de RSU</span>
+            <span class="eng-svc-plate__desc">Transportador de correia com estrutura metálica, moega de carga e acionamento por motorredutor.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações em que o serviço se aplica</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Instalação de conjunto acionado.</strong> Bomba, ventilador, compressor ou esteira: equipamento que só entrega valor quando mecânica e elétrica estão prontas juntas.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Skid ou unidade compacta.</strong> Equipamentos que chegam pré-montados ainda exigem interligação mecânica e elétrica em campo, e as duas se cruzam o tempo todo.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Obra com prazo apertado.</strong> Coordenação única permite paralelizar frentes com segurança, em vez de esperar uma terminar para a outra começar.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Histórico de conflito entre fornecedores.</strong> Se a última obra teve discussão de escopo na interface, contratar as duas frentes juntas resolve a causa.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Ampliação em planta operando.</strong> Janela de parada curta exige que as duas disciplinas trabalhem sob o mesmo planejamento minuto a minuto.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-plug-circle-check"></i></div><h3>Conjunto pronto para partir</h3><p>Equipamento montado, alinhado, cabeado e testado, com sentido de rotação verificado.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-clipboard-list"></i></div><h3>Registro das duas frentes</h3><p>O que foi executado e conferido em cada disciplina, num único conjunto de documentos.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-file-pen"></i></div><h3>Documentação as-built</h3><p>Rotas, ligações e posições como ficaram de fato, para que a manutenção não trabalhe com desenho desatualizado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Em que a execução se apoia</h2>
+        <p class="lead" data-reveal data-d="2">O serviço responde simultaneamente às normas de instalação elétrica e às de segurança em máquinas e canteiro.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-bolt"></i></div><h3>NR-10</h3><p>Segurança em instalações e serviços em eletricidade — rege toda a frente elétrica, do cabeamento à energização.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>NR-12</h3><p>Segurança em máquinas e equipamentos — trata dos dispositivos de partida, parada e proteção do conjunto.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-person-falling"></i></div><h3>NR-35</h3><p>Trabalho em altura — presente na montagem de eletrocalha, estrutura e equipamento elevado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que contratar as duas frentes com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Uma responsabilidade só.</strong> Não existe fronteira contratual entre mecânica e elétrica — o que elimina a discussão de escopo quando algo não funciona na partida.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Rotas compatibilizadas antes da obra.</strong> Tubulação e eletrocalha são definidas juntas no projeto, e não descobertas em conflito no canteiro.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria nas duas disciplinas.</strong> As verticais de Mecânica e Elétrica da 4WaTT são da mesma casa, com a mesma coordenação de obra.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Verificação conjunta antes de energizar.</strong> Alinhamento, aperto, ligação e sentido de rotação conferidos na mesma passagem, antes da partida.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento de montagem eletromecânica <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre montagem eletromecânica</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Qual a diferença para a montagem industrial? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A montagem industrial cobre a frente mecânica. A eletromecânica acrescenta a frente elétrica sob a mesma coordenação — infraestrutura, cabeamento, ligação de motores e instrumentação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Posso contratar só uma das frentes? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Pode. Montagem industrial e os serviços de montagem elétrica existem separadamente. A opção integrada faz sentido quando as duas se cruzam bastante ou quando o prazo é curto.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês fazem o projeto elétrico também? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Fazemos, na vertical de Engenharia Elétrica. Quando projeto e montagem são da mesma casa, a compatibilização de rotas acontece no papel e não no canteiro.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Como é verificado o sentido de rotação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Antes de acoplar a carga, com o equipamento liberado mecanicamente. Partir um conjunto acoplado com rotação invertida pode danificar bomba, redutor ou o próprio processo.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O serviço inclui a automação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A instalação física dos instrumentos e o cabeamento até o painel fazem parte. A programação e a integração ao sistema de controle são tratadas pela vertical de Automação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quem responde pela segurança elétrica na obra? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A frente elétrica é conduzida sob os requisitos da NR-10, com a documentação e as qualificações que a norma exige para cada atividade.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/mecanica/cover-wide.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Precisa das duas frentes sob a mesma coordenação?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

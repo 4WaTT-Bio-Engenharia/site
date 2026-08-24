@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Montagem de Máquinas | Engenharia Mecânica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Montagem de máquinas 4WaTT: assentamento, alinhamento e nivelamento executados para o equipamento partir sem esforço induzido.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Montagem de Máquinas — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/mecanica.html">Engenharia Mecânica</a>
+        <span>/</span>
+        <span class="is-current">Montagem de Máquinas</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-toolbox"></i> Engenharia Mecânica</span>
+      <h1 data-reveal data-d="1">Montagem de Máquinas</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Máquina bem montada dura mais. Alinhamento fora de tolerância não impede a partida — só encurta a vida do acoplamento, do rolamento e da vedação.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/mecanica.html">Ver todos os serviços de Mecânica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Alinhamento verificado</div>
+          <div class="eng-svc-strip__l">Conjunto acoplado conferido, não presumido</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Nivelamento e grauteamento</div>
+          <div class="eng-svc-strip__l">Contato pleno entre máquina e base</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Registro de montagem</div>
+          <div class="eng-svc-strip__l">Valores medidos documentados na entrega</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é a montagem de máquinas</h2>
+          <p class="lead" data-reveal data-d="2">Montar uma máquina é bem mais do que colocá-la sobre a base e apertar os chumbadores. Envolve nivelar o equipamento, garantir contato pleno com a fundação através do grauteamento, alinhar o conjunto acionador e acionado dentro da tolerância que o fabricante especifica, e verificar que nada — nem tubulação, nem estrutura — está transmitindo esforço para a máquina. Cada uma dessas etapas tem um valor mensurável, e todas elas ficam invisíveis depois que o equipamento começa a girar.</p>
+          <p class="lead" data-reveal data-d="3">É justamente por ficarem invisíveis que costumam ser puladas. Uma máquina desalinhada parte, roda e produz — só que o desalinhamento vira vibração, e a vibração vira desgaste acelerado em acoplamento, rolamento e vedação. Quando a falha aparece, meses depois, o diagnóstico costuma ser tratado como problema de qualidade do componente. A causa raiz continua embaixo do equipamento, e vai destruir o componente novo também.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Render da esteira transportadora de triagem de RSU projetada pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que uma montagem apressada cobra depois</h2>
+            <p class="lead" data-reveal data-d="2">A conta da montagem mal executada não chega na obra. Chega na manutenção, parcelada, por anos.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-arrows-left-right"></i></div><h3>Desalinhamento</h3><p>Acionador e acionado fora de tolerância geram esforço radial e axial permanentes, que consomem acoplamento e rolamento muito antes do previsto.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-wave-square"></i></div><h3>Pé manco e base sem contato</h3><p>Apoio irregular faz a máquina deformar ao ser apertada. O eixo sai de posição e a vibração aparece na partida.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-pipe-section"></i></div><h3>Esforço vindo da tubulação</h3><p>Linha conectada com desalinhamento força o bocal do equipamento. É uma das causas mais frequentes de vazamento em selo mecânico.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é executado</span>
+        <h2 class="h2" data-reveal data-d="1">O que a montagem cobre, etapa a etapa</h2>
+        <p class="lead" data-reveal data-d="2">Cada etapa tem critério de aceitação. Nenhuma delas é concluída no olho.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Etapa</th><th><i class="fa-solid fa-circle-info"></i> Critério</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Conferência da base</td><td>Verificação de nível, posição de chumbadores e condição do concreto antes de a máquina descer sobre a fundação.</td></tr>
+            <tr><td>Assentamento</td><td>Posicionamento e apoio do equipamento, com verificação de contato uniforme em todos os pés.</td></tr>
+            <tr><td>Nivelamento</td><td>Ajuste dentro da tolerância especificada pelo fabricante, medido e não estimado.</td></tr>
+            <tr><td>Grauteamento</td><td>Preenchimento do espaço entre base e equipamento, garantindo transmissão uniforme de carga para a fundação.</td></tr>
+            <tr><td>Alinhamento do conjunto</td><td>Ajuste do acoplamento entre acionador e acionado dentro da tolerância, com os valores registrados.</td></tr>
+            <tr><td>Verificação final</td><td>Giro livre, aperto conforme especificado e conferência de que tubulação e estrutura não impõem esforço à máquina.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos a montagem</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-file-lines"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Leitura do manual do fabricante</h3>
+                <p>Cada máquina tem tolerâncias próprias de nivelamento, alinhamento e aperto. O manual é o critério — não a prática genérica.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-ruler"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Preparação e conferência da base</h3>
+                <p>Nível, posição de chumbadores e condição do concreto verificados antes do assentamento, quando corrigir ainda é simples.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-arrows-to-dot"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Assentamento e alinhamento</h3>
+                <p>Nivelamento, grauteamento e alinhamento do conjunto acoplado, com medição registrada em cada etapa.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-clipboard-check"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Liberação para partida</h3>
+                <p>Giro livre, aperto conferido e verificação de esforço externo antes de liberar o equipamento para operar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Conjuntos mecânicos projetados e montados pela engenharia 4WaTT. Skid, secador e esteira passaram pelo mesmo procedimento de assentamento e alinhamento.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Prancha técnica Skid de secagem de biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Equipamento</span>
+            <span class="eng-svc-plate__name">Skid de secagem de biogás</span>
+            <span class="eng-svc-plate__desc">Vaso de secagem, soprador e trocador de calor montados sobre um único skid metálico.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Prancha técnica Secador de biogás — conjunto — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto mecânico</span>
+            <span class="eng-svc-plate__name">Secador de biogás — conjunto</span>
+            <span class="eng-svc-plate__desc">Modelo 3D com vaso, compressor, condensador ventilado, soprador radial e tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-isometrica.png" alt="Prancha técnica Flare enclausurado — isométrica — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Caldeiraria</span>
+            <span class="eng-svc-plate__name">Flare enclausurado — isométrica</span>
+            <span class="eng-svc-plate__desc">Torre sobre base de concreto, com selo hídrico, gas seal, válvula borboleta e caixa de controle de chama.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-lateral.png" alt="Prancha técnica Flare — vista lateral — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Detalhamento</span>
+            <span class="eng-svc-plate__name">Flare — vista lateral</span>
+            <span class="eng-svc-plate__desc">Vista ortográfica da mesma montagem, para conferência de alturas e interfaces de tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Prancha técnica Biodigestores e pré-tanque — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Montagem geral</span>
+            <span class="eng-svc-plate__name">Biodigestores e pré-tanque</span>
+            <span class="eng-svc-plate__desc">Montagem geral com tubulações, sensores, válvulas, bombas helicoidais e flare.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Prancha técnica Esteira de triagem de RSU — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Transporte</span>
+            <span class="eng-svc-plate__name">Esteira de triagem de RSU</span>
+            <span class="eng-svc-plate__desc">Transportador de correia com estrutura metálica, moega de carga e acionamento por motorredutor.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações em que o serviço se aplica</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Equipamento novo a instalar.</strong> Bomba, ventilador, compressor, redutor, motogerador — qualquer conjunto acoplado que precise entrar em operação bem montado.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Vibração após instalação recente.</strong> Máquina nova que vibra desde a partida quase sempre está acusando montagem, não defeito de fabricação.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Troca de componente do conjunto.</strong> Substituir motor, acoplamento ou mancal exige realinhar — o conjunto não volta sozinho à posição anterior.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Remanejamento de máquina.</strong> Equipamento que muda de lugar precisa de todo o procedimento novamente, mesmo que já estivesse funcionando bem antes.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Desgaste recorrente de acoplamento ou rolamento.</strong> Componente que falha repetidamente no mesmo ponto é sintoma clássico de desalinhamento não corrigido.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-gears"></i></div><h3>Máquina montada e liberada</h3><p>Equipamento assentado, nivelado, alinhado e verificado, pronto para a partida.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-contract"></i></div><h3>Registro dos valores medidos</h3><p>Nivelamento, alinhamento e aperto documentados — referência para comparar quando houver suspeita futura.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-list-check"></i></div><h3>Pendências identificadas</h3><p>O que foi encontrado fora do previsto na base, na tubulação ou no próprio equipamento, com recomendação de correção.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Em que a execução se apoia</h2>
+        <p class="lead" data-reveal data-d="2">Montagem de máquina combina o manual do fabricante com normas de vibração e de segurança.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-wave-square"></i></div><h3>ISO 10816</h3><p>Referência internacional para avaliação de vibração em máquinas por medições em partes não rotativas.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>NR-12</h3><p>Segurança em máquinas e equipamentos — trata de instalação, proteções e dispositivos de partida.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-truck-arrow-right"></i></div><h3>NR-11</h3><p>Transporte, movimentação, armazenagem e manuseio de materiais — aplicável ao içamento e à movimentação do equipamento.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que montar a máquina com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Alinhamento medido e registrado.</strong> Os valores ficam documentados na entrega, o que permite comparar quando houver suspeita de problema meses depois.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Base e máquina pela mesma engenharia.</strong> Quando o projeto de fundação também é nosso, a interface que mais falha nesse serviço simplesmente não existe.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Diagnóstico junto com a execução.</strong> Se a base, a tubulação ou o equipamento chegarem com problema, isso é apontado antes da partida e não descoberto na primeira falha.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Continuidade para a manutenção.</strong> O mesmo time que montou pode acompanhar a máquina em operação, com o histórico de montagem em mãos.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento de montagem <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre montagem de máquinas</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Por que o alinhamento é tão determinante? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Porque o desalinhamento não impede o funcionamento — ele apenas transfere esforço permanente para acoplamento, rolamento e vedação. O equipamento roda, e vai falhando por dentro.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês montam máquina de qualquer fabricante? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. O procedimento parte sempre do manual de instalação do fabricante, que traz as tolerâncias específicas daquele equipamento.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O que é pé manco? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É quando um dos pontos de apoio da máquina não toca a base uniformemente. Ao apertar os chumbadores, o equipamento deforma e o eixo sai de posição — daí a verificação de contato antes do aperto final.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">A montagem inclui a parte elétrica? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A montagem mecânica entrega o equipamento pronto para energizar. A ligação elétrica e o comissionamento são serviços da vertical de Elétrica, coordenados no mesmo cronograma.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Dá para corrigir alinhamento de máquina já instalada? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Dá, e é um serviço frequente. O trabalho inclui identificar se a origem é apenas alinhamento ou se há problema de base, o que muda completamente a solução.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quanto tempo depois da montagem devo reavaliar? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É boa prática reverificar o alinhamento após o equipamento atingir a temperatura normal de operação, porque a dilatação altera as posições relativas do conjunto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/mecanica/cover-wide.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Vai instalar ou realinhar uma máquina?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma e Pipe-Rack | Engenharia Mecânica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Plataformas e pipe-racks 4WaTT: estrutura metálica dimensionada para a carga real, com acesso seguro e espaço para crescer.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Plataforma e Pipe-Rack — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/mecanica.html">Engenharia Mecânica</a>
+        <span>/</span>
+        <span class="is-current">Plataforma e Pipe-Rack</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-table-cells-large"></i> Engenharia Mecânica</span>
+      <h1 data-reveal data-d="1">Plataforma e Pipe-Rack</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Plataforma é o que dá acesso ao equipamento. Pipe-rack é o que organiza a tubulação. Os dois são estrutura — e estrutura mal dimensionada não avisa antes de falhar.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/mecanica.html">Ver todos os serviços de Mecânica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Carga real calculada</div>
+          <div class="eng-svc-strip__l">Peso, uso e ação do vento considerados no dimensionamento</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Acesso seguro</div>
+          <div class="eng-svc-strip__l">Escada, corrimão e guarda-corpo previstos no projeto</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Reserva para ampliação</div>
+          <div class="eng-svc-strip__l">Espaço para a próxima linha de tubulação</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que são plataformas e pipe-racks</h2>
+          <p class="lead" data-reveal data-d="2">Plataforma é a estrutura que permite operar e manter equipamento fora do nível do piso: acessar um bocal no topo de um tanque, chegar até uma válvula elevada, ou simplesmente circular com segurança numa área onde o processo acontece acima da cabeça. Pipe-rack é a estrutura que sustenta e organiza a tubulação que atravessa a planta, mantendo linhas agrupadas, apoiadas nos vãos corretos e fora do caminho de pessoas e veículos.</p>
+          <p class="lead" data-reveal data-d="3">Ambos são estrutura metálica, e ambos costumam ser tratados como acessório quando são, na verdade, item de projeto. Uma plataforma dimensionada só pelo peso das pessoas ignora a carga de equipamento apoiado e a ação do vento. Um pipe-rack sem vão calculado gera flecha na tubulação e esforço não previsto nos bocais dos equipamentos que ela conecta. E um pipe-rack projetado exatamente para as linhas de hoje transforma a primeira ampliação em improviso pendurado na lateral.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Modelo 3D da montagem geral de biodigestores e pré-tanque projetada pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que uma estrutura mal resolvida provoca</h2>
+            <p class="lead" data-reveal data-d="2">Estrutura é o item que só chama atenção quando falha — e a falha costuma envolver pessoas ou tubulação em serviço.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-triangle-exclamation"></i></div><h3>Estrutura subdimensionada</h3><p>Plataforma calculada apenas para circulação não suporta equipamento apoiado nem carga de manutenção — e a deformação aparece antes do colapso, quando alguém percebe.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-arrow-down-wide-short"></i></div><h3>Flecha na tubulação</h3><p>Vão de apoio maior do que a linha aguenta gera deformação, acúmulo de líquido em ponto baixo e esforço nos bocais dos equipamentos conectados.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-layer-group"></i></div><h3>Rack sem espaço para crescer</h3><p>Sem reserva prevista, cada linha nova vira suporte improvisado — e o rack perde a função de organizar que justificava sua existência.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é dimensionado</span>
+        <h2 class="h2" data-reveal data-d="1">O que o projeto define</h2>
+        <p class="lead" data-reveal data-d="2">Cada item responde a uma carga ou a um requisito de acesso — nenhum deles é escolha estética.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Item</th><th><i class="fa-solid fa-circle-info"></i> Do que depende</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cargas consideradas</td><td>Peso próprio, equipamento apoiado, circulação, carga de manutenção e ação do vento sobre a estrutura.</td></tr>
+            <tr><td>Perfis e vãos</td><td>Dimensionados para a carga e para a flecha admissível, tanto da estrutura quanto da tubulação apoiada.</td></tr>
+            <tr><td>Ligações e apoios</td><td>Detalhes de conexão entre peças e de fixação na fundação ou na estrutura existente.</td></tr>
+            <tr><td>Acessos</td><td>Escada, escada de marinheiro ou rampa, conforme a frequência de uso e a altura a vencer.</td></tr>
+            <tr><td>Proteções de borda</td><td>Guarda-corpo, rodapé e corrimão dimensionados para o esforço que a norma exige que suportem.</td></tr>
+            <tr><td>Reserva para ampliação</td><td>Níveis e largura de rack deixados disponíveis para linhas futuras, definidos antes da fabricação.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o projeto</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-clipboard-list"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Levantamento das cargas</h3>
+                <p>Definimos o que a estrutura vai sustentar: equipamento, tubulação, circulação e manutenção. Estrutura dimensionada por estimativa é estrutura dimensionada por sorte.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-ruler-combined"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Concepção e dimensionamento</h3>
+                <p>Arranjo, vãos e perfis são definidos e verificados, com a flecha admissível tratada como critério e não como consequência.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-fire"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Fabricação</h3>
+                <p>A estrutura é fabricada na mesma caldeiraria, com controle dimensional e tratamento de superfície adequado à exposição.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-helmet-safety"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Montagem em campo</h3>
+                <p>Montagem com a sequência definida em projeto, incluindo alinhamento, nivelamento e instalação das proteções de borda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Montagens e estruturas modeladas pela engenharia 4WaTT. A mesma disciplina de vão, apoio e acesso aparece em cada plataforma e pipe-rack que entregamos.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Prancha técnica Skid de secagem de biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Equipamento</span>
+            <span class="eng-svc-plate__name">Skid de secagem de biogás</span>
+            <span class="eng-svc-plate__desc">Vaso de secagem, soprador e trocador de calor montados sobre um único skid metálico.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Prancha técnica Secador de biogás — conjunto — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto mecânico</span>
+            <span class="eng-svc-plate__name">Secador de biogás — conjunto</span>
+            <span class="eng-svc-plate__desc">Modelo 3D com vaso, compressor, condensador ventilado, soprador radial e tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-isometrica.png" alt="Prancha técnica Flare enclausurado — isométrica — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Caldeiraria</span>
+            <span class="eng-svc-plate__name">Flare enclausurado — isométrica</span>
+            <span class="eng-svc-plate__desc">Torre sobre base de concreto, com selo hídrico, gas seal, válvula borboleta e caixa de controle de chama.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-lateral.png" alt="Prancha técnica Flare — vista lateral — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Detalhamento</span>
+            <span class="eng-svc-plate__name">Flare — vista lateral</span>
+            <span class="eng-svc-plate__desc">Vista ortográfica da mesma montagem, para conferência de alturas e interfaces de tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Prancha técnica Biodigestores e pré-tanque — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Montagem geral</span>
+            <span class="eng-svc-plate__name">Biodigestores e pré-tanque</span>
+            <span class="eng-svc-plate__desc">Montagem geral com tubulações, sensores, válvulas, bombas helicoidais e flare.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Prancha técnica Esteira de triagem de RSU — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Transporte</span>
+            <span class="eng-svc-plate__name">Esteira de triagem de RSU</span>
+            <span class="eng-svc-plate__desc">Transportador de correia com estrutura metálica, moega de carga e acionamento por motorredutor.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Sinais de que sua planta precisa deste serviço</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Equipamento sem acesso seguro.</strong> Se a manutenção de rotina hoje é feita com escada portátil ou improviso, falta plataforma.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Tubulação apoiada em improviso.</strong> Linha apoiada em cavalete solto, em outra tubulação ou na estrutura do prédio é sinal de rack ausente ou saturado.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Ampliação de planta.</strong> Linhas novas precisam de caminho previsto. Definir o rack junto com a ampliação evita a solução pendurada.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Adequação de segurança.</strong> Guarda-corpo, rodapé e acesso são exigências normativas, e a fiscalização costuma olhar exatamente para isso.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Deformação visível na estrutura.</strong> Flecha perceptível em viga ou em linha apoiada é sinal de carga acima da prevista — ou de estrutura nunca calculada.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-file-contract"></i></div><h3>Memorial de cálculo</h3><p>Cargas consideradas, verificação de resistência e de flecha, e critérios adotados — por escrito e auditáveis.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-table-cells-large"></i></div><h3>Estrutura fabricada e montada</h3><p>A plataforma ou rack pronto, com acessos e proteções de borda instalados.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-arrows-up-to-line"></i></div><h3>Capacidade documentada</h3><p>Quanto a estrutura suporta e quanto de reserva ficou disponível — informação necessária para a próxima ampliação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Em que o dimensionamento se apoia</h2>
+        <p class="lead" data-reveal data-d="2">Estrutura de acesso cruza norma de estruturas metálicas com norma de segurança do trabalho.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-building"></i></div><h3>NBR 8800</h3><p>Norma de projeto de estruturas de aço e estruturas mistas de aço e concreto — base do dimensionamento.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-person-falling"></i></div><h3>NR-35</h3><p>Norma regulamentadora de trabalho em altura — define requisitos de proteção e de sistemas de acesso.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>NR-12</h3><p>Segurança em máquinas e equipamentos — inclui exigências de plataformas, passarelas e vias de acesso.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que projetar a estrutura com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Estrutura pensada junto com o processo.</strong> O rack e as plataformas nascem do arranjo da planta, e não como adaptação depois que os equipamentos já estão no lugar.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Cálculo com a carga real.</strong> Equipamento apoiado, carga de manutenção e ação do vento entram na conta — não apenas o peso de quem circula.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Projeto, fabricação e montagem na mesma casa.</strong> A estrutura é dimensionada, fabricada e montada pelo mesmo time, sem interface perdida entre fornecedores.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Ampliação prevista desde o início.</strong> Reserva de nível e de largura é decidida no projeto, quando ainda custa apenas desenho.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento de estrutura <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre plataformas e pipe-racks</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Qual a diferença entre plataforma e pipe-rack? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Plataforma é estrutura de acesso para pessoas operarem e manterem equipamento fora do nível do piso. Pipe-rack é estrutura de apoio para tubulação que atravessa a planta. Frequentemente convivem na mesma obra.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Dá para ampliar uma estrutura existente? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Depende da capacidade remanescente. O primeiro passo é verificar se a estrutura atual suporta a carga adicional — ampliar sem essa verificação é o erro mais comum nesse tipo de serviço.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O projeto inclui as proteções de borda? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Inclui. Guarda-corpo, rodapé e corrimão fazem parte do dimensionamento, porque precisam suportar esforço definido por norma e não podem ser tratados como acabamento.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês fabricam a estrutura ou só projetam? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Fazemos as duas coisas, na mesma vertical. Projeto, caldeiraria e montagem mecânica compartilham a mesma coordenação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">A estrutura pode ser galvanizada? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Pode, e o tratamento de superfície é definido pela exposição prevista. Ambiente agressivo ou externo pede solução diferente de estrutura abrigada.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Como fica a fundação da estrutura? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>O projeto define as cargas transmitidas e a posição dos chumbadores. A fundação em si é executada com a vertical de Engenharia Civil, a partir desses dados.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/mecanica/cover-wide.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Precisa de acesso seguro ou de organizar a tubulação?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

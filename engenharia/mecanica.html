@@ -20,8 +20,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
   <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
   <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
 </head>
 
 <body class="t4">
@@ -62,25 +64,23 @@
     <div class="nav__progress"></div>
   </nav>
 
-  <!-- ====================== BANNER DA VERTICAL ====================== -->
-  <header class="eng-page-banner">
-    <div class="container eng-page-banner__inner">
-      <span class="eng-page-banner__icon"><i class="fas fa-gears"></i></span>
-      <div>
-        <h1 class="eng-page-banner__title">Engenharia Mecânica</h1>
-        <p class="eng-page-banner__sub">Projeto, fabricação, montagem e manutenção mecânica industrial.</p>
+  <!-- ====================== HERO DA VERTICAL ====================== -->
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Engenharia Mecânica 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <span class="is-current">Engenharia Mecânica</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-gears"></i> Engenharia Mecânica · 4WaTT</span>
+      <h1 data-reveal data-d="1">Engenharia Mecânica</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Projeto, fabricação, montagem e manutenção mecânica industrial — 13 serviços, engenharia própria 4WaTT.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+        <span class="btn btn--ghost" role="button" tabindex="0" aria-label="Assistir vídeo: Montagem mecânica" data-video-id="aiSHlmFX-Dc" style="cursor:pointer;"><i class="fas fa-play"></i> Vídeo: Montagem mecânica</span>
+        <span class="btn btn--ghost" role="button" tabindex="0" aria-label="Assistir vídeo: Skid biogás com geração de energia" data-video-id="CRoETXYdh_8" style="cursor:pointer;"><i class="fas fa-play"></i> Vídeo: Skid biogás</span>
       </div>
-      <span class="eng-page-banner__play-group">
-        <span class="eng-page-banner__play" role="button" tabindex="0" aria-label="Assistir vídeo: Engenharia Mecânica"
-          data-video-id="aiSHlmFX-Dc">
-          <i class="fas fa-play"></i> Vídeo: Montagem mecânica
-        </span>
-        <span class="eng-page-banner__play" role="button" tabindex="0" aria-label="Assistir vídeo: Skid biogás com geração de energia"
-          data-video-id="CRoETXYdh_8">
-          <i class="fas fa-play"></i> Vídeo: Skid biogás
-        </span>
-      </span>
-      <a class="eng-page-banner__back" href="engenharia/index.html#verticais"><i class="fas fa-arrow-left"></i> Todas as frentes</a>
     </div>
   </header>
 
@@ -91,37 +91,37 @@
       <div class="eng-service-group" data-reveal>
         <div class="eng-service-group__label">Projeto mecânico <span class="eng-service-group__count">3</span></div>
         <div class="eng-service-grid">
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-drafting-compass"></i></span><span class="eng-service-card__name">Projeto mecânico industrial</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-file-lines"></i></span><span class="eng-service-card__name">Projeto industrial</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-vector-square"></i></span><span class="eng-service-card__name">Fundações de máquinas</span></div>
+          <a class="eng-service-card" href="engenharia/mecanica/projeto-mecanico-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-drafting-compass"></i></span><span class="eng-service-card__name">Projeto mecânico industrial</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/projeto-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-file-lines"></i></span><span class="eng-service-card__name">Projeto industrial</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/fundacoes-de-maquinas.html"><span class="eng-service-card__icon"><i class="fas fa-vector-square"></i></span><span class="eng-service-card__name">Fundações de máquinas</span></a>
         </div>
       </div>
 
       <div class="eng-service-group" data-reveal>
         <div class="eng-service-group__label">Fabricação <span class="eng-service-group__count">5</span></div>
         <div class="eng-service-grid">
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-fire"></i></span><span class="eng-service-card__name">Caldeiraria industrial</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-database"></i></span><span class="eng-service-card__name">Tanques industriais</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-table-cells-large"></i></span><span class="eng-service-card__name">Plataforma e pipe-rack</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-grip-lines-vertical"></i></span><span class="eng-service-card__name">Guarda-corpo</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-scissors"></i></span><span class="eng-service-card__name">Corte e dobra de chapas</span></div>
+          <a class="eng-service-card" href="engenharia/mecanica/caldeiraria-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-fire"></i></span><span class="eng-service-card__name">Caldeiraria industrial</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/tanques-industriais.html"><span class="eng-service-card__icon"><i class="fas fa-database"></i></span><span class="eng-service-card__name">Tanques industriais</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/plataforma-pipe-rack.html"><span class="eng-service-card__icon"><i class="fas fa-table-cells-large"></i></span><span class="eng-service-card__name">Plataforma e pipe-rack</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/guarda-corpo.html"><span class="eng-service-card__icon"><i class="fas fa-grip-lines-vertical"></i></span><span class="eng-service-card__name">Guarda-corpo</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/corte-e-dobra-de-chapas.html"><span class="eng-service-card__icon"><i class="fas fa-scissors"></i></span><span class="eng-service-card__name">Corte e dobra de chapas</span></a>
         </div>
       </div>
 
       <div class="eng-service-group" data-reveal>
         <div class="eng-service-group__label">Montagem mecânica <span class="eng-service-group__count">4</span></div>
         <div class="eng-service-grid">
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-gear"></i></span><span class="eng-service-card__name">Montagem industrial</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-toolbox"></i></span><span class="eng-service-card__name">Montagem de máquinas</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-bolt"></i></span><span class="eng-service-card__name">Montagem eletromecânica</span></div>
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-route"></i></span><span class="eng-service-card__name">Tubulação industrial</span></div>
+          <a class="eng-service-card" href="engenharia/mecanica/montagem-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-gear"></i></span><span class="eng-service-card__name">Montagem industrial</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/montagem-de-maquinas.html"><span class="eng-service-card__icon"><i class="fas fa-toolbox"></i></span><span class="eng-service-card__name">Montagem de máquinas</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/montagem-eletromecanica.html"><span class="eng-service-card__icon"><i class="fas fa-bolt"></i></span><span class="eng-service-card__name">Montagem eletromecânica</span></a>
+          <a class="eng-service-card" href="engenharia/mecanica/tubulacao-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-route"></i></span><span class="eng-service-card__name">Tubulação industrial</span></a>
         </div>
       </div>
 
       <div class="eng-service-group" data-reveal>
         <div class="eng-service-group__label">Manutenção mecânica <span class="eng-service-group__count">1</span></div>
         <div class="eng-service-grid">
-          <div class="eng-service-card"><span class="eng-service-card__icon"><i class="fas fa-screwdriver-wrench"></i></span><span class="eng-service-card__name">Manutenção industrial</span></div>
+          <a class="eng-service-card" href="engenharia/mecanica/manutencao-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-screwdriver-wrench"></i></span><span class="eng-service-card__name">Manutenção industrial</span></a>
         </div>
       </div>
 

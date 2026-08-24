@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Mecânico Industrial | Engenharia Mecânica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Projeto mecânico industrial 4WaTT: equipamento modelado em 3D, detalhado para fabricação e pensado para montar em campo.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/mecanica/cover-wide.jpg" alt="Projeto Mecânico Industrial — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/mecanica.html">Engenharia Mecânica</a>
+        <span>/</span>
+        <span class="is-current">Projeto Mecânico Industrial</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-drafting-compass"></i> Engenharia Mecânica</span>
+      <h1 data-reveal data-d="1">Projeto Mecânico Industrial</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Um equipamento que só existe no papel não se fabrica. O projeto mecânico é o que transforma a ideia em desenho de oficina, lista de material e sequência de montagem.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/mecanica.html">Ver todos os serviços de Mecânica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Modelagem 3D</div>
+          <div class="eng-svc-strip__l">O conjunto inteiro montado virtualmente antes de virar aço</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Detalhamento fabricável</div>
+          <div class="eng-svc-strip__l">Desenho que a caldeiraria consegue executar sem interpretar</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Engenharia própria</div>
+          <div class="eng-svc-strip__l">O mesmo time que projeta também monta e opera</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é o projeto mecânico industrial</h2>
+          <p class="lead" data-reveal data-d="2">Projeto mecânico é a etapa em que um equipamento deixa de ser conceito e passa a ser fabricável. Envolve definir geometria, material, espessura, tipo de junta, interface com tubulação e com estrutura, e representar tudo isso em desenhos que uma oficina consegue executar sem precisar adivinhar. É um trabalho de decisão: cada escolha de material ou de arranjo fecha uma porta e abre outra, e todas elas aparecem no custo de fabricação, no prazo de montagem e na facilidade de manutenção anos depois.</p>
+          <p class="lead" data-reveal data-d="3">Na 4WaTT esse projeto nasce em modelo 3D, com o conjunto inteiro montado virtualmente antes de qualquer chapa ser cortada. Isso permite verificar interferência entre componentes, checar acesso para manutenção e conferir se o equipamento passa pela porta do galpão — três problemas que, descobertos em campo, custam retrabalho. Do modelo saem os desenhos de fabricação, a lista de material e a sequência de montagem, que é o pacote que a oficina e a equipe de campo realmente usam.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Modelo 3D do conjunto secador de biogás da engenharia 4WaTT, com compressor, condensador ventilado e soprador radial" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que acontece quando o projeto é raso</h2>
+            <p class="lead" data-reveal data-d="2">Projeto mecânico incompleto não aparece no orçamento: aparece na oficina, na obra e no primeiro mês de operação.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-screwdriver-wrench"></i></div><h3>Retrabalho na fabricação</h3><p>Desenho ambíguo obriga a oficina a interpretar. Quando a interpretação diverge da intenção, a peça volta para o corte — e o cronograma volta junto.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-arrows-left-right-to-line"></i></div><h3>Interferência descoberta em campo</h3><p>Duas peças que ocupam o mesmo espaço são um problema barato no modelo 3D e caro no pátio, com o guindaste já contratado.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-ban"></i></div><h3>Equipamento que não se mantém</h3><p>Sem prever acesso para troca de vedação, rolamento ou instrumento, cada manutenção de rotina vira desmontagem parcial.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é entregue</span>
+        <h2 class="h2" data-reveal data-d="1">O que compõe o pacote de projeto</h2>
+        <p class="lead" data-reveal data-d="2">Cada documento tem um destinatário claro — comprador, oficina ou equipe de montagem. Nada é desenho para arquivar.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Documento</th><th><i class="fa-solid fa-circle-info"></i> Para que serve na prática</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Modelo 3D do conjunto</td><td>Base de tudo: permite verificar interferência, acesso de manutenção e envelope de transporte antes da fabricação.</td></tr>
+            <tr><td>Desenhos de fabricação</td><td>Vistas, cortes e detalhes por peça, com tolerância e acabamento — o que a oficina usa na bancada.</td></tr>
+            <tr><td>Lista de material</td><td>Chapa, perfil, tubo, flange, parafuso e componente comprado, quantificados para cotação e compra.</td></tr>
+            <tr><td>Detalhes de solda</td><td>Tipo de junta, preparação de borda e sequência, para que a soldagem não deforme o conjunto.</td></tr>
+            <tr><td>Interfaces com tubulação e estrutura</td><td>Posição e orientação de bocais, apoios e chumbadores — o que evita ajuste improvisado em campo.</td></tr>
+            <tr><td>Memorial descritivo</td><td>Premissas, materiais adotados e critérios de dimensionamento, por escrito e defensáveis.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o projeto</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-comments"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Definição de requisitos</h3>
+                <p>Entendemos o que o equipamento precisa fazer, em que condição de operação, com que fluido, em que espaço disponível e com que restrição de transporte e montagem.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-cube"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Modelagem 3D</h3>
+                <p>O conjunto é montado virtualmente peça por peça. É aqui que interferência, acesso e envelope são resolvidos, enquanto a correção ainda é só um clique.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-ruler-combined"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Detalhamento para fabricação</h3>
+                <p>O modelo vira desenhos de oficina com tolerância, acabamento e detalhes de solda, mais a lista de material pronta para cotação.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-clipboard-check"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Revisão e entrega</h3>
+                <p>Revisamos o pacote com quem vai fabricar e com quem vai montar, para que o desenho reflita a realidade da oficina e do campo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Modelos e montagens reais da engenharia mecânica 4WaTT. É o mesmo nível de detalhamento que entregamos em cada projeto mecânico industrial.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-skid-secagem-biogas.png" alt="Prancha técnica Skid de secagem de biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Equipamento</span>
+            <span class="eng-svc-plate__name">Skid de secagem de biogás</span>
+            <span class="eng-svc-plate__desc">Vaso de secagem, soprador e trocador de calor montados sobre um único skid metálico.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-secador-conjunto.png" alt="Prancha técnica Secador de biogás — conjunto — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto mecânico</span>
+            <span class="eng-svc-plate__name">Secador de biogás — conjunto</span>
+            <span class="eng-svc-plate__desc">Modelo 3D com vaso, compressor, condensador ventilado, soprador radial e tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-isometrica.png" alt="Prancha técnica Flare enclausurado — isométrica — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Caldeiraria</span>
+            <span class="eng-svc-plate__name">Flare enclausurado — isométrica</span>
+            <span class="eng-svc-plate__desc">Torre sobre base de concreto, com selo hídrico, gas seal, válvula borboleta e caixa de controle de chama.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-flare-lateral.png" alt="Prancha técnica Flare — vista lateral — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Detalhamento</span>
+            <span class="eng-svc-plate__name">Flare — vista lateral</span>
+            <span class="eng-svc-plate__desc">Vista ortográfica da mesma montagem, para conferência de alturas e interfaces de tubulação.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-biodigestores-pretanque.png" alt="Prancha técnica Biodigestores e pré-tanque — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Montagem geral</span>
+            <span class="eng-svc-plate__name">Biodigestores e pré-tanque</span>
+            <span class="eng-svc-plate__desc">Montagem geral com tubulações, sensores, válvulas, bombas helicoidais e flare.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/mecanica/svc-esteira-rsu.png" alt="Prancha técnica Esteira de triagem de RSU — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Transporte</span>
+            <span class="eng-svc-plate__name">Esteira de triagem de RSU</span>
+            <span class="eng-svc-plate__desc">Transportador de correia com estrutura metálica, moega de carga e acionamento por motorredutor.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Sinais de que você precisa de projeto mecânico</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Equipamento sob medida.</strong> Quando não existe modelo de catálogo que atenda, o projeto próprio é o caminho — e ele começa antes da cotação, não depois.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Adaptação de equipamento existente.</strong> Mudança de capacidade, de fluido ou de layout exige reverificação mecânica, não só uma adaptação improvisada em campo.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Fabricação por terceiros.</strong> Se a oficina é externa, o desenho é o contrato técnico. Ambiguidade ali vira divergência comercial depois.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Histórico de retrabalho.</strong> Se a última montagem exigiu ajuste, corte ou reposicionamento em campo, o problema estava no projeto, não na equipe.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Exigência de rastreabilidade.</strong> Auditoria, seguro e financiamento pedem memorial e desenho as-built — que só existem se o projeto foi formalizado.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-cube"></i></div><h3>Modelo 3D navegável</h3><p>O conjunto completo, para consulta, verificação de acesso e base de qualquer modificação futura.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-lines"></i></div><h3>Pacote de fabricação</h3><p>Desenhos por peça, lista de material e detalhes de solda — pronto para ir à oficina ou à cotação.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-diagram-project"></i></div><h3>Sequência de montagem</h3><p>A ordem em que o conjunto deve ser montado em campo, com as interfaces já resolvidas no papel.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Em que o projeto se apoia</h2>
+        <p class="lead" data-reveal data-d="2">O projeto dialoga com as normas que regem segurança de máquinas, estruturas metálicas e equipamentos sob pressão no Brasil.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>NR-12</h3><p>Norma regulamentadora de segurança no trabalho em máquinas e equipamentos — define o que precisa ser previsto já no projeto, não depois.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-building"></i></div><h3>NBR 8800</h3><p>Norma de projeto de estruturas de aço e estruturas mistas — referência para o dimensionamento de bases, suportes e skids.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-gauge-high"></i></div><h3>ASME Seção VIII</h3><p>Código de referência para vasos de pressão, aplicável quando o equipamento opera acima da pressão atmosférica.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que projetar com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Projeto de quem também monta.</strong> O mesmo time que desenha o equipamento acompanha a fabricação e a montagem — o desenho já nasce pensando em quem vai executar.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Modelagem 3D como padrão, não como extra.</strong> Interferência, acesso de manutenção e envelope de transporte são verificados no modelo, antes de virar aço.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Continuidade multidisciplinar.</strong> Se o equipamento exige base de concreto, painel elétrico ou automação, a mesma engenharia resolve a etapa seguinte.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Experiência em planta de biogás e biometano.</strong> Equipamento de processo com gás, umidade e sólido tem particularidades que projeto genérico costuma ignorar.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento de projeto <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre projeto mecânico industrial</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">O que exatamente entra num projeto mecânico? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Modelo 3D do conjunto, desenhos de fabricação por peça, lista de material, detalhes de solda, interfaces com tubulação e estrutura, e memorial descritivo com as premissas adotadas.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Preciso ter o equipamento já definido para contratar? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. Boa parte dos projetos começa com um requisito de processo — o que precisa acontecer, com que fluido e em que espaço — e a definição do equipamento é justamente o primeiro passo do trabalho.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês fabricam o que projetam? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. A 4WaTT tem as frentes de fabricação e montagem mecânica na mesma vertical, então o projeto pode seguir direto para execução sem passar por tradução entre empresas.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">E se eu quiser fabricar com outro fornecedor? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sem problema. O pacote de fabricação é feito para ser executável por qualquer oficina qualificada — é essa a função do detalhamento e da lista de material.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O projeto contempla a estrutura de apoio? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Contempla as interfaces: posição de chumbadores, cargas transmitidas e requisitos de apoio. A base de concreto em si é o serviço de fundações de máquinas, que a mesma engenharia executa.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Como fica a documentação depois da montagem? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>O modelo e os desenhos são atualizados com o que efetivamente foi executado, para que a documentação as-built reflita o equipamento real e sirva de base para manutenção e futuras modificações.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/mecanica/cover-wide.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Tem um equipamento para tirar do papel?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

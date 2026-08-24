@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4WaTT | Serviços de Engenharia</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Serviços de Engenharia 4WaTT: 8 frentes de engenharia multidisciplinar, prova técnica cruzada e modelos de contratação.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/home-premium.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente, só para revisão visual do Bloco 1–4 (ver docs/engineering-services/pages/index.md)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="contato.html">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <!-- ====================== BLOCO 1 · HERO (padrão .hero-h da home, com vídeo) ====================== -->
+  <header class="hero-h is-loading" data-hero>
+    <div class="hero-h__media">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/img/engenharia/civil/cover.png">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-h__inner container">
+      <div class="hero-h__top">
+        <span class="kicker">Nova unidade 4WaTT</span>
+      </div>
+      <h1 class="h-reveal">
+        <span class="line"><span>Engenharia robusta.</span></span>
+        <span class="line"><span>Decisões com <em>segurança técnica.</em></span></span>
+      </h1>
+      <p class="hero-h__sub">
+        Da engenharia civil à automação com inteligência artificial: a mesma competência técnica que sustenta os
+        projetos de biogás e biometano da 4WaTT, agora disponível para qualquer desafio de engenharia da sua
+        operação.
+      </p>
+      <div class="hero-h__cta">
+        <a class="btn btn--primary" href="#contato-eng">
+          Falar com um especialista <i class="fas fa-arrow-right"></i>
+        </a>
+        <a class="btn btn--ghost" href="#verticais">
+          Explorar as 8 frentes de engenharia <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+      <div class="hero-h__meta">
+        <span>8 <b>disciplinas</b> de engenharia</span>
+        <span>Owner's Engineering · EPCM · <b>EPC/Turn-Key</b></span>
+        <span>Engenharia própria <b>4WaTT</b></span>
+      </div>
+    </div>
+    <div class="hero-h__scroll">SCROLL</div>
+  </header>
+
+  <!-- ====================== BLOCO 2 · GRID DE VERTICAIS (com scroll-stage) ====================== -->
+  <section class="section eng-verticais" id="verticais">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+    <div class="container">
+      <div class="eng-verticais__head">
+        <span class="kicker" data-reveal>As 8 frentes</span>
+        <h2 class="h2" data-reveal data-d="1">Uma capacidade técnica, oito frentes de atuação</h2>
+        <p class="lead" data-reveal data-d="2">A 4WaTT possui uma robusta capacidade técnica de engenharia avançada, capaz de conduzir projetos complexos com a segurança técnica necessária para resolver desafios reais. Uma competência que hoje sustenta seus projetos de biogás e biometano e que passa a estar disponível como frente própria de Serviços de Engenharia.</p>
+      </div>
+
+      <div class="eng-vert-grid">
+        <!-- Civil, Ambiental e Processos: preview de serviços redigido em voz de marca 4WaTT
+             (autorizado pelo usuário em 2026-08-23) — não é lista validada item a item como
+             Elétrica/Mecânica. Atualizar quando o usuário fornecer referência real. -->
+        <a class="eng-vert-card" href="engenharia/civil.html" data-reveal>
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/civil/cover.png" alt="Engenharia Civil e Infraestrutura" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia Civil e Infraestrutura</span>
+            <span class="eng-vert-card__desc">Projetos civis e de infraestrutura com a segurança estrutural que operações complexas exigem. Da fundação à obra pronta, a mesma engenharia própria que sustenta plantas industriais de biogás e biometano da 4WaTT.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Projetos estruturais e de fundação</span>
+              <span class="eng-vert-card__tag">Infraestrutura industrial</span>
+              <span class="eng-vert-card__tag">Fiscalização de obra civil</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/eletrica.html" data-reveal data-d="1">
+          <span class="eng-vert-card__img">
+            <img src="assets/img/engenharia/eletrica/cover.jpg" alt="Engenharia Elétrica" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();">
+            <span class="eng-vert-card__play" role="button" tabindex="0" aria-label="Assistir vídeo: Engenharia Elétrica" data-video-id="fyDKUkN7Pi8"><i class="fas fa-play"></i></span>
+          </span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia Elétrica</span>
+            <span class="eng-vert-card__desc">Projetos elétricos de média e alta complexidade, do dimensionamento à supervisão de instalação. De estudos de curto-circuito a laudos NR-10, engenharia elétrica industrial de ponta a ponta.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Projeto elétrico industrial</span>
+              <span class="eng-vert-card__tag">Laudo de SPDA</span>
+              <span class="eng-vert-card__tag">Estudo de curto-circuito</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/mecanica.html" data-reveal data-d="2">
+          <span class="eng-vert-card__img">
+            <img src="assets/img/engenharia/mecanica/cover.png" alt="Engenharia Mecânica" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();">
+            <span class="eng-vert-card__play-group">
+              <span class="eng-vert-card__play" role="button" tabindex="0" aria-label="Assistir vídeo: Engenharia Mecânica" data-video-id="aiSHlmFX-Dc"><i class="fas fa-play"></i></span>
+              <span class="eng-vert-card__play" role="button" tabindex="0" aria-label="Assistir vídeo: Skid biogás com geração de energia" data-video-id="CRoETXYdh_8"><i class="fas fa-play"></i></span>
+            </span>
+          </span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia Mecânica</span>
+            <span class="eng-vert-card__desc">Engenharia mecânica aplicada a equipamentos e processos industriais. Projeto, fabricação, montagem e manutenção sob o mesmo teto, sem depender de fornecedores externos.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Projeto mecânico industrial</span>
+              <span class="eng-vert-card__tag">Caldeiraria industrial</span>
+              <span class="eng-vert-card__tag">Manutenção industrial</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/ambiental.html" data-reveal data-d="3">
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/ambiental/cover.jpeg" alt="Engenharia Ambiental" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia Ambiental</span>
+            <span class="eng-vert-card__desc">Estudos e projetos ambientais que sustentam a viabilidade técnica e regulatória do empreendimento. Da licença ao gerenciamento de resíduos, a mesma disciplina ambiental que já opera plantas de biogás em produção.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Licenciamento ambiental</span>
+              <span class="eng-vert-card__tag">Estudos e PGRS</span>
+              <span class="eng-vert-card__tag">Outorga de recursos hídricos</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/gestao-projetos-obras.html" data-reveal>
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/gestao-projetos-obras/cover.png" alt="Gestão de Projetos e Obras" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Gestão de Projetos e Obras</span>
+            <span class="eng-vert-card__desc">Gerenciamento e fiscalização de obras nos modelos Owner's Engineering, EPCM ou EPC/Turn-Key. Você escolhe o nível de responsabilidade que a 4WaTT assume no seu projeto.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Owner's Engineering</span>
+              <span class="eng-vert-card__tag">EPCM</span>
+              <span class="eng-vert-card__tag">EPC / Turn-Key</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/processos.html" data-reveal data-d="1">
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/processos/cover.jpg" alt="Engenharia de Processos" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia de Processos</span>
+            <span class="eng-vert-card__desc">Consultoria técnica e estudos de viabilidade para operações fora do escopo de biogás e biometano. EVTE, business plan e otimização de processos com o mesmo rigor técnico usado nos projetos internos da 4WaTT.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">EVTE — Estudo de Viabilidade</span>
+              <span class="eng-vert-card__tag">Business plan</span>
+              <span class="eng-vert-card__tag">Otimização de processos</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/digital.html" data-reveal data-d="2">
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/digital/cover.jpg" alt="Engenharia Digital, Dados e IA" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Engenharia Digital, Dados e IA</span>
+            <span class="eng-vert-card__desc">Skills personalizadas, MCP, RAG e automação de processos com inteligência artificial aplicada à operação. Da análise de dados à automação de tarefas repetitivas, tecnologia que não depende de biogás ou biometano para fazer sentido.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">Process Intelligence</span>
+              <span class="eng-vert-card__tag">Data & Analytics</span>
+              <span class="eng-vert-card__tag">MCP e RAG personalizados</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+        <a class="eng-vert-card" href="engenharia/automacao.html" data-reveal data-d="3">
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/automacao/cover.jpeg" alt="Automação e Instrumentação" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__body">
+            <span class="eng-vert-card__name">Automação e Instrumentação</span>
+            <span class="eng-vert-card__desc">IoT, sistemas SCADA e IA aplicada à tomada de decisão em ambiente industrial. Sensores, integração e inteligência artificial trabalhando juntos na planta, não só no escritório.</span>
+            <span class="eng-vert-card__tags">
+              <span class="eng-vert-card__tag">IoT industrial</span>
+              <span class="eng-vert-card__tag">Integração SCADA</span>
+              <span class="eng-vert-card__tag">IA para tomada de decisão</span>
+            </span>
+            <span class="eng-vert-card__more">Saiba mais <i class="fas fa-arrow-right"></i></span>
+          </span>
+        </a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== BLOCO 3 · PROVA TÉCNICA CRUZADA ====================== -->
+  <section class="section" id="autoridade" style="background:var(--plum);">
+    <div class="container">
+      <div class="authority__head">
+        <div>
+          <span class="kicker" data-reveal style="color:#5fe9cf;">Execução comprovada</span>
+          <h2 class="h2" data-reveal data-d="1" style="color:#fff;">A mesma engenharia,<br>em campo.</h2>
+        </div>
+        <p class="lead" data-reveal data-d="2" style="max-width:30ch;color:rgba(255,255,255,.75);">Estes projetos de
+          biogás usam as mesmas disciplinas oferecidas pela nova unidade — veja qual.</p>
+      </div>
+
+      <div class="cases-marquee" data-marquee data-marquee-speed="0.6" data-reveal>
+        <div class="cases-marquee__track">
+          <article class="case-card" tabindex="0" role="button" data-case-title="CEASA Goiás"
+            data-case-location="Goiânia · GO" data-case-image="assets/img_old/case-ceasa.png"
+            data-case-description="Estudo de viabilidade e projeto básico para os resíduos orgânicos da central de abastecimento. Transforma descarte em energia dentro da própria operação."
+            data-case-stat="1.200 Nm³/dia de biogás dimensionados · RSU orgânico" data-case-cta="case-ceasa-goias.html">
+            <div class="ph"><img src="assets/img_old/case-ceasa.png" alt="CEASA Goiás"></div>
+            <div class="case-card__body">
+              <div class="case-card__loc">Goiânia · GO</div>
+              <div class="case-card__title">CEASA Goiás</div>
+              <div class="case-card__stat">1.200 Nm³/dia de biogás dimensionados · RSU orgânico</div>
+              <div class="case-card__eng-tags">
+                <a class="case-card__eng-tag" href="engenharia/mecanica.html" onclick="event.stopPropagation();">Mecânica</a>
+                <a class="case-card__eng-tag" href="engenharia/ambiental.html" onclick="event.stopPropagation();">Ambiental</a>
+                <a class="case-card__eng-tag" href="engenharia/gestao-projetos-obras.html" onclick="event.stopPropagation();">Gestão de Projetos</a>
+              </div>
+              <span class="case-card__more">Ver case <i class="fas fa-arrow-right"></i></span>
+              <a class="case-card__cta" href="case-ceasa-goias.html" onclick="event.stopPropagation();">Ver case completo <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+          <article class="case-card" tabindex="0" role="button" data-case-title="Frigorífico Franca"
+            data-case-location="Franca · SP" data-case-image="assets/img_old/case-franca.jpg"
+            data-case-description="Projeto executivo completo para biodigestão de efluentes de frigorífico bovino, com cogeração elétrica e substituição de GLP na caldeira."
+            data-case-stat="2.800 Nm³/dia de biogás · em operação" data-case-cta="contato.html">
+            <div class="ph"><img src="assets/img_old/case-franca.jpg" alt="Frigorífico Franca"></div>
+            <div class="case-card__body">
+              <div class="case-card__loc">Franca · SP</div>
+              <div class="case-card__title">Frigorífico Franca</div>
+              <div class="case-card__stat">2.800 Nm³/dia de biogás · em operação</div>
+              <div class="case-card__eng-tags">
+                <a class="case-card__eng-tag" href="engenharia/mecanica.html" onclick="event.stopPropagation();">Mecânica</a>
+                <a class="case-card__eng-tag" href="engenharia/ambiental.html" onclick="event.stopPropagation();">Ambiental</a>
+                <a class="case-card__eng-tag" href="engenharia/gestao-projetos-obras.html" onclick="event.stopPropagation();">Gestão de Projetos</a>
+              </div>
+              <span class="case-card__more">Ver case <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </article>
+          <article class="case-card" tabindex="0" role="button" data-case-title="Organo Buritis"
+            data-case-location="Buritis · MG" data-case-image="assets/img_old/case-organo.jpg"
+            data-case-description="Valorização de resíduos orgânicos em biofertilizante e energia, integrando o ciclo de nutrientes à geração de bioenergia."
+            data-case-stat="Resíduo orgânico → biofertilizante + energia" data-case-cta="contato.html">
+            <div class="ph"><img src="assets/img_old/case-organo.jpg" alt="Organo Buritis"></div>
+            <div class="case-card__body">
+              <div class="case-card__loc">Palmeiras de Goiás · GO</div>
+              <div class="case-card__title">Organo Buritis</div>
+              <div class="case-card__stat">Resíduo em biofertilizante e energia.</div>
+              <div class="case-card__eng-tags">
+                <a class="case-card__eng-tag case-card__eng-tag--all" href="#verticais" onclick="event.stopPropagation();">
+                  <i class="fas fa-diagram-project"></i> Todas as frentes de engenharia envolvidas
+                </a>
+              </div>
+              <span class="case-card__more">Ver case <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== BLOCO 4 · MODELOS DE CONTRATAÇÃO ====================== -->
+  <section class="section eng-models">
+    <div class="container">
+      <div class="eng-models__head">
+        <span class="kicker" data-reveal>Modelos de contratação</span>
+        <h2 class="h2" data-reveal data-d="1">O nível de responsabilidade que faz sentido para o seu projeto</h2>
+        <p class="lead" data-reveal data-d="2">Da fiscalização técnica à entrega completa — você escolhe quanto do
+          projeto a 4WaTT assume.</p>
+      </div>
+
+      <div class="eng-model-grid">
+        <article class="eng-model-card" data-reveal>
+          <div class="eng-model-card__icon"><i class="fa-solid fa-user-shield"></i></div>
+          <h3>Owner's Engineering / Fiscalização</h3>
+          <p>Você mantém o controle do projeto; a 4WaTT representa seu interesse técnico, fiscalizando entregas e
+            protegendo o investimento.</p>
+          <ul>
+            <li>Fiscalização técnica independente</li>
+            <li>Controle de qualidade das entregas</li>
+            <li>Representação do dono do projeto perante fornecedores</li>
+          </ul>
+        </article>
+        <article class="eng-model-card" data-reveal data-d="1">
+          <div class="eng-model-card__icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3>EPCM</h3>
+          <p>A 4WaTT coordena engenharia, suprimentos e construção sem executar a obra diretamente — um
+            gerenciamento técnico dedicado ao seu projeto.</p>
+          <ul>
+            <li>Gerenciamento integrado de engenharia e suprimentos</li>
+            <li>Coordenação de fornecedores e contratados</li>
+            <li>Cronograma e orçamento sob controle técnico</li>
+          </ul>
+        </article>
+        <article class="eng-model-card" data-reveal data-d="2">
+          <div class="eng-model-card__icon"><i class="fa-solid fa-key"></i></div>
+          <h3>EPC / Turn-Key</h3>
+          <p>A 4WaTT assume a entrega completa — projeto, suprimentos e execução — com um único ponto de
+            responsabilidade até a operação.</p>
+          <ul>
+            <li>Responsabilidade única, ponta a ponta</li>
+            <li>Entrega pronta para operar</li>
+            <li>Prazo e escopo fechados em contrato</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== BLOCO 5 · INTEGRAÇÃO INSTITUCIONAL (Teste 8) ====================== -->
+  <section class="section eng-integration">
+    <div class="container">
+      <div class="eng-integration__inner">
+        <span class="kicker" data-reveal>Parte do ecossistema 4WaTT</span>
+        <h2 class="h2" data-reveal data-d="1">Uma nova frente. O mesmo ecossistema.</h2>
+        <p class="lead" data-reveal data-d="2">
+          Serviços de Engenharia é uma nova Unidade de Negócio da 4WaTT — não substitui,
+          reorganiza ou reduz o que a empresa já entrega em biogás, biometano, gaseificação
+          e gestão de resíduos. As duas frentes convivem e podem se complementar dentro do
+          mesmo projeto.
+        </p>
+        <div class="eng-integration__links" data-reveal data-d="3">
+          <a class="eng-integration__link" href="solucao-gestao-residuos.html">Gestão de Resíduos <i class="fas fa-arrow-right"></i></a>
+          <a class="eng-integration__link" href="solucao-biogas.html">Engenharia de Biogás <i class="fas fa-arrow-right"></i></a>
+          <a class="eng-integration__link" href="solucao-biometano.html">Biometano <i class="fas fa-arrow-right"></i></a>
+          <a class="eng-integration__link" href="solucao-gaseificacao.html">Gaseificação de RSU <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== BLOCO 6 · CTA FINAL / FORMULÁRIO ====================== -->
+  <section class="section" id="contato-eng">
+    <div class="container" style="max-width:640px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+        <h2 class="h2" data-reveal data-d="1">Pronto para colocar seu projeto em pé?</h2>
+        <p class="lead" data-reveal data-d="2">Conte o desafio da sua operação — nossa equipe responde com o próximo
+          passo técnico em até 1 dia útil.</p>
+      </div>
+
+      <form class="form-4watt" id="engForm" data-form-name="Engenharia" data-reveal data-d="3">
+        <div class="form-row">
+          <div class="form-field"><label for="eng-nome">Nome*</label><input class="form-input" id="eng-nome"
+              name="nome" type="text" required placeholder="Seu nome completo"><span class="form-error-msg"></span>
+          </div>
+          <div class="form-field"><label for="eng-empresa">Empresa*</label><input class="form-input"
+              id="eng-empresa" name="empresa" type="text" required placeholder="Nome da empresa"><span
+              class="form-error-msg"></span></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label for="eng-email">E-mail*</label><input class="form-input" id="eng-email"
+              name="email" type="email" required placeholder="seu@email.com"><span class="form-error-msg"></span>
+          </div>
+          <div class="form-field"><label for="eng-wpp">WhatsApp*</label><input class="form-input" id="eng-wpp"
+              name="whatsapp" type="tel" required placeholder="(00) 00000-0000"><span class="form-error-msg"></span>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="eng-vertical">Vertical de interesse*</label>
+          <select class="form-select" id="eng-vertical" name="vertical" required>
+            <option value="">Selecione a frente de engenharia</option>
+            <option>Engenharia Civil e Infraestrutura</option>
+            <option>Engenharia Elétrica</option>
+            <option>Engenharia Mecânica</option>
+            <option>Engenharia Ambiental</option>
+            <option>Gestão de Projetos e Obras</option>
+            <option>Engenharia de Processos</option>
+            <option>Engenharia Digital, Dados e IA</option>
+            <option>Automação e Instrumentação</option>
+            <option>Ainda não sei, quero orientação</option>
+          </select><span class="form-error-msg"></span>
+        </div>
+        <div class="form-field">
+          <label for="eng-modelo">Modelo de contratação de interesse</label>
+          <select class="form-select" id="eng-modelo" name="modelo_contratacao">
+            <option value="">Selecione (opcional)</option>
+            <option>Owner's Engineering / Fiscalização</option>
+            <option>EPCM</option>
+            <option>EPC / Turn-Key</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <div class="form-field"><label for="eng-msg">Descreva o desafio</label><textarea class="form-textarea"
+            id="eng-msg" name="mensagem" placeholder="Conte o contexto do seu projeto..."></textarea><span
+            class="form-error-msg"></span></div>
+        <button class="btn btn--primary" type="submit" style="width:100%;justify-content:center;">Enviar e falar com
+          um especialista <i class="fas fa-arrow-right"></i></button>
+        <p class="form-consent">Ao enviar, você concorda em ser contatado pela equipe 4WaTT. Tratamos seus dados com
+          confidencialidade.</p>
+      </form>
+      <div class="form-success">Mensagem enviada! Nosso time entra em contato em até 1 dia útil.</div>
+    </div>
+  </section>
+
+  <!-- Modal de vídeo — usado pelos cards de verticais que têm [data-video-id] (ver assets/js/engenharia.js) -->
+  <div class="eng-video-modal" id="engVideoModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="eng-video-modal__backdrop" data-video-close></div>
+    <div class="eng-video-modal__dialog">
+      <button class="eng-video-modal__close" type="button" aria-label="Fechar vídeo" data-video-close><i class="fas fa-xmark"></i></button>
+      <div class="eng-video-modal__embed"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/forms.js?v=1.3"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

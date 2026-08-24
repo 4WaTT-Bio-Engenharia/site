@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prontuário de Instalações Elétricas | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Prontuário NR-10 4WaTT: documentação técnica consolidada, organizada e mantida atualizada.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Prontuário de Instalações Elétricas — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Prontuário de Instalações Elétricas</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-file-lines"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Prontuário de Instalações Elétricas</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">É o primeiro documento que a fiscalização pede. E o que quase nenhuma planta consegue apresentar completo.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Documento consolidado</div>
+          <div class="eng-svc-strip__l">Projetos, laudos e histórico num só lugar</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Mantido vivo</div>
+          <div class="eng-svc-strip__l">Atualizado a cada intervenção relevante</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Pronto para auditoria</div>
+          <div class="eng-svc-strip__l">No formato que a fiscalização espera</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é o prontuário de instalações elétricas</h2>
+          <p class="lead" data-reveal data-d="2">O prontuário é o documento consolidado exigido pela NR-10 que reúne, num único lugar organizado, toda a evidência técnica da sua instalação elétrica: diagramas unifilares, especificação de equipamentos, procedimentos de segurança, resultados de inspeções e laudos — aterramento, SPDA, termografia — e o registro das manutenções realizadas. Não é um relatório: é um dossiê que precisa acompanhar a instalação pela vida útil dela.</p>
+          <p class="lead" data-reveal data-d="3">É também o documento que mais frequentemente se descobre incompleto na hora errada. A situação típica não é ausência total — é dispersão: o projeto está com o escritório que fez a obra, o laudo de aterramento está numa pasta de e-mail, o unifilar impresso na parede não corresponde mais à instalação, e o histórico de manutenção existe só na memória do eletricista. Nosso trabalho é reunir isso, identificar o que falta, produzir o que não existe e entregar um prontuário que sirva tanto para a fiscalização quanto para a sua própria equipe de manutenção no dia a dia.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha de quadro de cargas e diagrama unifilar produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">Por que o prontuário costuma falhar</h2>
+            <p class="lead" data-reveal data-d="2">Raramente o problema é má vontade. É que manter documentação viva exige um processo, e quase nenhuma planta tem esse processo.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-folder-minus"></i></div><h3>Documentação dispersa</h3><p>Cada peça está com um responsável diferente. Reunir tudo na véspera da auditoria é o que trava a maioria dos processos.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-clock-rotate-left"></i></div><h3>Informação desatualizada</h3><p>Unifilar que não corresponde à instalação atual é pior que nenhum: induz a equipe de manutenção ao erro.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-gavel"></i></div><h3>Exposição em fiscalização</h3><p>É o primeiro documento solicitado. Não conseguir apresentar é o começo mais difícil possível para uma inspeção.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que compõe</span>
+        <h2 class="h2" data-reveal data-d="1">O conteúdo do prontuário</h2>
+        <p class="lead" data-reveal data-d="2">Cada peça tem uma função — e a ausência de qualquer uma delas é o que costuma ser apontado em auditoria.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Componente</th><th><i class="fa-solid fa-circle-info"></i> Para que serve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Diagramas unifilares atualizados</td><td>A representação da instalação como ela é hoje, base de qualquer intervenção segura.</td></tr>
+            <tr><td>Especificação de equipamentos</td><td>Proteção, transformadores e painéis, com as características que sustentam a operação segura.</td></tr>
+            <tr><td>Procedimentos de segurança</td><td>Como a intervenção deve ser feita, incluindo desenergização e reenergização.</td></tr>
+            <tr><td>Laudos técnicos</td><td>Aterramento, SPDA, termografia e demais ensaios — com as respectivas ARTs e datas.</td></tr>
+            <tr><td>Registro de manutenções</td><td>Histórico do que foi feito na instalação, quando e por quem.</td></tr>
+            <tr><td>Análise de risco</td><td>Avaliação dos riscos elétricos, incluindo o resultado do estudo de energia incidente quando existente.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como montamos o prontuário</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-boxes-stacked"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Inventário do que existe</h3>
+                <p>Reunimos projetos, laudos e registros dispersos, e verificamos quais ainda correspondem à instalação atual.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-magnifying-glass"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Identificação das lacunas</h3>
+                <p>Comparamos o que existe com o que a norma exige, e listamos o que precisa ser produzido do zero.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-pen-ruler"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Produção do que falta</h3>
+                <p>Levantamento em campo, atualização de unifilar e emissão dos laudos ausentes, com a mesma engenharia.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-folder-open"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Consolidação e rotina de atualização</h3>
+                <p>Entregamos o prontuário organizado e a rotina para mantê-lo vivo a cada nova intervenção.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. É esse nível de documentação técnica que compõe um prontuário que sobrevive a auditoria.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Sinais de que seu prontuário precisa de atenção</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Ninguém sabe dizer onde ele está.</strong> Se a resposta demora, o documento não cumpre a função de estar disponível quando for preciso.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">O unifilar da parede está desatualizado.</strong> É o indicador mais visível de que a documentação parou de acompanhar a instalação.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Os laudos estão vencidos ou dispersos.</strong> Laudo válido que ninguém encontra tem, na prática, o mesmo efeito de laudo inexistente.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">A planta passou por ampliação.</strong> Toda intervenção relevante deveria gerar atualização — na prática, quase nunca gera.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Você está se preparando para auditoria.</strong> É o momento de reunir e completar, com tempo, em vez de correr contra o prazo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-folder-tree"></i></div><h3>Prontuário consolidado</h3><p>Diagramas, laudos, procedimentos e histórico reunidos e organizados para consulta rápida.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-pen-ruler"></i></div><h3>Documentos produzidos</h3><p>O que faltava — unifilar atualizado, laudos ausentes — emitido pela mesma engenharia.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-arrows-rotate"></i></div><h3>Rotina de atualização</h3><p>O processo definido para manter o documento vivo a cada nova intervenção na instalação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Documentos que o compõem</span>
+        <h2 class="h2" data-reveal data-d="1">O que costuma precisar ser emitido junto</h2>
+        <p class="lead" data-reveal data-d="2">Quando o inventário aponta lacunas, estes são os documentos mais frequentemente ausentes.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-arrow-down-to-line"></i></div><h3>Laudo de aterramento</h3><p>Medição da resistência de aterramento da instalação, com ART.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>Laudo de SPDA</h3><p>Comprovação da eficácia do sistema de proteção contra descargas atmosféricas.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-burst"></i></div><h3>Estudo de energia incidente</h3><p>Base da análise de risco e da definição de EPI para intervenção em equipamento energizado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que montar o prontuário com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> Quem organiza o prontuário é quem entende do que está documentando — não um serviço de arquivo.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Produzimos o que falta.</strong> Se o inventário apontar unifilar desatualizado ou laudo ausente, a mesma engenharia emite, sem terceirizar.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Documento que serve à manutenção.</strong> Além de atender à fiscalização, o prontuário é montado para ser útil no dia a dia de quem opera a instalação.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Rotina de atualização definida.</strong> Entregamos o processo para manter o documento vivo — que é o que evita o problema voltar em dois anos.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar organização do prontuário <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre o prontuário</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">O prontuário substitui os laudos individuais? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. Ele reúne e referencia esses laudos, mas cada um continua sendo um documento técnico próprio, com sua ART e sua periodicidade de renovação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quem deve manter o prontuário atualizado? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A responsabilidade formal é da empresa. Na prática, a 4WaTT pode conduzir a atualização técnica a cada novo laudo ou intervenção, mantendo o documento consistente.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">É exigido em fiscalização? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim, e costuma ser o primeiro documento solicitado numa fiscalização de segurança do trabalho relacionada a instalações elétricas.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">E se eu não tiver quase nada documentado? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É a situação mais comum e não é impedimento. Fazemos o levantamento em campo e produzimos o que falta — unifilar, laudos e o que mais for necessário.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Precisa ser em papel? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>O que a norma exige é que o documento esteja organizado, atualizado e disponível. O formato pode ser digital, desde que acessível a quem precisa consultá-lo.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Com que frequência atualizar? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A cada intervenção relevante na instalação — ampliação, troca de proteção, novo laudo. É por isso que entregamos a rotina junto com o documento.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Seu prontuário sobreviveria a uma fiscalização hoje?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

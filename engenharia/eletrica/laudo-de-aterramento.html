@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laudo de Aterramento | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Laudo de aterramento 4WaTT: medição de resistência em campo, com ART e diagnóstico de não-conformidade.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Laudo de Aterramento — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Laudo de Aterramento</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-arrow-down-to-line"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Laudo de Aterramento</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">O aterramento é a parte da instalação que ninguém vê e todo mundo depende. Medir é a única forma de saber se ele funciona.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Medição instrumentada</div>
+          <div class="eng-svc-strip__l">Terrômetro em campo, valor real por ponto</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Laudo com ART</div>
+          <div class="eng-svc-strip__l">Assinado por engenheiro responsável</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Diagnóstico incluso</div>
+          <div class="eng-svc-strip__l">Onde está fora do padrão e por quê</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é o laudo de aterramento</h2>
+          <p class="lead" data-reveal data-d="2">O sistema de aterramento tem uma função silenciosa: dar à corrente de falha um caminho seguro até o solo, em vez de deixá-la procurar esse caminho através de uma pessoa ou de um equipamento. Quando ele funciona, ninguém percebe. Quando não funciona, três coisas acontecem ao mesmo tempo — a proteção contra choque deixa de ser confiável, equipamentos sensíveis ficam expostos a surto, e os dispositivos de proteção da instalação podem não atuar como deveriam, porque contam com o aterramento para operar.</p>
+          <p class="lead" data-reveal data-d="3">O laudo de aterramento resolve isso com medição, não com inspeção visual. Com terrômetro em campo, medimos a resistência nos pontos relevantes da instalação, inspecionamos fisicamente conexões e malha, e comparamos o resultado com os parâmetros adequados ao tipo de instalação. O resultado é um relatório com ART que formaliza a condição real — documento frequentemente exigido dentro de laudos NR-10, em vistorias de seguradora e em auditorias de segurança industrial.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha de subestação blindada de 2 MVA produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que um aterramento ruim compromete</h2>
+            <p class="lead" data-reveal data-d="2">Aterramento fora do padrão não avisa. Ele simplesmente deixa de proteger nas três frentes que deveria cobrir.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-hand-dots"></i></div><h3>Proteção contra choque</h3><p>Sem caminho de baixa resistência para a falha, a carcaça de um equipamento pode permanecer energizada — e quem encostar fecha o circuito.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-microchip"></i></div><h3>Equipamento eletrônico exposto</h3><p>Automação, instrumentação e sistemas de controle dependem de referência de terra estável para não sofrer com surto e ruído.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>Proteção que não atua</h3><p>Dispositivos de proteção contam com o aterramento para detectar falha à terra. Aterramento ruim compromete a atuação deles.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é verificado</span>
+        <h2 class="h2" data-reveal data-d="1">O escopo da avaliação</h2>
+        <p class="lead" data-reveal data-d="2">Medição e inspeção caminham juntas: o número explica a condição, e a inspeção explica o número.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Item avaliado</th><th><i class="fa-solid fa-circle-info"></i> O que verificamos</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Resistência de aterramento</td><td>Medição com terrômetro nos pontos relevantes da instalação, em condições registradas no laudo.</td></tr>
+            <tr><td>Condição da malha</td><td>Estado físico dos condutores enterrados e das hastes, onde houver acesso para inspeção.</td></tr>
+            <tr><td>Conexões e emendas</td><td>Pontos de conexão são a falha mais comum — corrosão e aperto insuficiente aumentam a resistência do conjunto.</td></tr>
+            <tr><td>Equipotencialização</td><td>Verificação das ligações entre massas metálicas, que evitam diferença de potencial perigosa.</td></tr>
+            <tr><td>Continuidade dos condutores de proteção</td><td>Se o condutor de proteção chega efetivamente aos pontos de utilização.</td></tr>
+            <tr><td>Adequação ao tipo de instalação</td><td>Comparação do resultado com o parâmetro apropriado ao porte e à natureza da instalação.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos a avaliação</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-map-location-dot"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Definição dos pontos de medição</h3>
+                <p>Identificamos os pontos que representam de fato o sistema — medir no lugar errado produz um número que não significa nada.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-gauge-high"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Medição com terrômetro</h3>
+                <p>Ensaio instrumentado, com registro das condições de medição, que influenciam diretamente o resultado.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-magnifying-glass"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Inspeção física</h3>
+                <p>Avaliação de conexões, hastes e condutores de proteção, para explicar a causa quando o valor estiver fora do esperado.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-file-signature"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Laudo com ART</h3>
+                <p>Relatório assinado, com os valores medidos, o diagnóstico e as correções necessárias em ordem de prioridade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. O mesmo domínio técnico de aterramento e instalação que sustenta cada laudo emitido.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações que pedem o laudo</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Exigência dentro da NR-10.</strong> A condição do aterramento é um dos itens avaliados na conformidade de segurança da instalação elétrica.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Auditoria ou seguro.</strong> É um dos laudos mais pedidos quando alguém de fora avalia o risco elétrico da planta.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Falhas eletrônicas recorrentes.</strong> Queima repetida de placas, instrumentação instável e ruído em automação frequentemente têm origem no aterramento.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Após ampliação da planta.</strong> Crescer a instalação sem revisar o aterramento é uma das causas mais comuns de sistema subdimensionado.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Antes do laudo de SPDA.</strong> O aterramento é um dos três subsistemas do SPDA — vale conhecer a condição dele antes.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-gauge-high"></i></div><h3>Valores medidos e registrados</h3><p>Resultado por ponto, com as condições de medição documentadas — não uma estimativa.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-signature"></i></div><h3>Laudo com ART</h3><p>Documento formal que comprova a condição real perante auditorias, seguradoras e fiscalização.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-screwdriver-wrench"></i></div><h3>Diagnóstico da causa</h3><p>Quando o valor está fora do padrão, o laudo aponta o porquê — solo, malha subdimensionada ou conexão comprometida.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referência técnica</span>
+        <h2 class="h2" data-reveal data-d="1">Em que a avaliação se apoia</h2>
+        <p class="lead" data-reveal data-d="2">O laudo dialoga com as normas de instalação elétrica e com a norma de proteção contra descargas atmosféricas.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-book"></i></div><h3>NBR 5410</h3><p>Instalações elétricas de baixa tensão — referência para os critérios de aterramento e proteção nesse nível.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-bolt"></i></div><h3>NBR 5419</h3><p>Proteção contra descargas atmosféricas — o aterramento é um dos três subsistemas do SPDA.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-shield"></i></div><h3>NR-10</h3><p>Norma de segurança em instalações elétricas, dentro da qual a condição do aterramento é avaliada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que fazer o laudo com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> Quem mede e assina é o mesmo time que projeta e executa sistemas de aterramento.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Instrumentação própria.</strong> Medição feita com equipamento nosso, com as condições de ensaio registradas no laudo.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Diagnóstico, não só número.</strong> Um valor fora do padrão sem explicação não ajuda ninguém. O laudo aponta a causa provável e o caminho de correção.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Correção na mesma casa.</strong> Se o laudo indicar adequação de malha ou projeto novo de aterramento, a mesma engenharia executa.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento do laudo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre laudo de aterramento</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Aterramento e SPDA são o mesmo laudo? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>São avaliações relacionadas mas distintas. O aterramento é um dos três subsistemas do SPDA, mas também existe isoladamente para proteção de pessoas e equipamentos em qualquer instalação elétrica.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Esse laudo é exigido pela NR-10? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A NR-10 trata da segurança em instalações elétricas de forma ampla, e a condição do aterramento é um dos itens avaliados nesse contexto. O laudo fundamenta essa parte da conformidade.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O que causa um aterramento fora do padrão? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Solo com alta resistividade, malha subdimensionada para o tipo de instalação, conexões corroídas ou mal apertadas, e ampliações da planta que não revisaram o aterramento original.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">A medição varia conforme a época do ano? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim, as condições do solo influenciam o resultado. Por isso registramos as condições de medição no laudo — sem esse contexto, o número perde significado técnico.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Se estiver fora do padrão, dá para corrigir? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Quase sempre. As soluções vão de recomposição de conexões a ampliação de malha ou tratamento de solo. O laudo indica o caminho adequado ao seu caso.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">A planta precisa parar para a medição? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Em geral não. Se algum ensaio específico exigir desenergização de um trecho, isso é combinado e programado antes com a sua equipe.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Seu aterramento foi medido ou só presumido?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

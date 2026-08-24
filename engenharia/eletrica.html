@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia Elétrica | 4WaTT Serviços de Engenharia</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Engenharia Elétrica 4WaTT: estudos, laudos, projetos e montagem elétrica industrial.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <!-- ====================== HERO DA VERTICAL ====================== -->
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Engenharia Elétrica 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <span class="is-current">Engenharia Elétrica</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-bolt"></i> Engenharia Elétrica · 4WaTT</span>
+      <h1 data-reveal data-d="1">Engenharia Elétrica</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Estudos, laudos, projetos, montagem e manutenção elétrica industrial — 27 serviços, engenharia própria 4WaTT.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+        <span class="btn btn--ghost" role="button" tabindex="0" aria-label="Assistir vídeo: Engenharia Elétrica" data-video-id="fyDKUkN7Pi8" style="cursor:pointer;"><i class="fas fa-play"></i> Ver vídeo</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================== GRUPOS DE SERVIÇOS ====================== -->
+  <section class="section eng-services">
+    <div class="container">
+
+      <div class="eng-service-group" data-reveal>
+        <div class="eng-service-group__label">Estudos elétricos <span class="eng-service-group__count">7</span></div>
+        <div class="eng-service-grid">
+          <a class="eng-service-card" href="engenharia/eletrica/curto-circuito.html"><span class="eng-service-card__icon"><i class="fas fa-bolt"></i></span><span class="eng-service-card__name">Curto-circuito</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/coordenacao-seletividade.html"><span class="eng-service-card__icon"><i class="fas fa-sliders"></i></span><span class="eng-service-card__name">Coordenação e seletividade</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/qualidade-de-energia.html"><span class="eng-service-card__icon"><i class="fas fa-wave-square"></i></span><span class="eng-service-card__name">Qualidade de energia</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/energia-incidente-arco.html"><span class="eng-service-card__icon"><i class="fas fa-burst"></i></span><span class="eng-service-card__name">Energia incidente (arco)</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/eficiencia-energetica.html"><span class="eng-service-card__icon"><i class="fas fa-lightbulb"></i></span><span class="eng-service-card__name">Eficiência energética</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/mercado-livre-energia.html"><span class="eng-service-card__icon"><i class="fas fa-chart-line"></i></span><span class="eng-service-card__name">Mercado livre de energia</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/rise.html"><span class="eng-service-card__icon"><i class="fas fa-file-lines"></i></span><span class="eng-service-card__name">RISE</span></a>
+        </div>
+      </div>
+
+      <div class="eng-service-group" data-reveal>
+        <div class="eng-service-group__label">Laudos e inspeções <span class="eng-service-group__count">5</span></div>
+        <div class="eng-service-grid">
+          <a class="eng-service-card" href="engenharia/eletrica/laudo-de-spda.html"><span class="eng-service-card__icon"><i class="fas fa-shield-halved"></i></span><span class="eng-service-card__name">Laudo de SPDA</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/laudo-de-aterramento.html"><span class="eng-service-card__icon"><i class="fas fa-arrow-down-to-line"></i></span><span class="eng-service-card__name">Laudo de aterramento</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/termografia-eletrica.html"><span class="eng-service-card__icon"><i class="fas fa-temperature-high"></i></span><span class="eng-service-card__name">Termografia elétrica</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/nr-10.html"><span class="eng-service-card__icon"><i class="fas fa-shield"></i></span><span class="eng-service-card__name">NR-10</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/prontuario-nr10.html"><span class="eng-service-card__icon"><i class="fas fa-file-lines"></i></span><span class="eng-service-card__name">Prontuário NR10</span></a>
+        </div>
+      </div>
+
+      <div class="eng-service-group" data-reveal>
+        <div class="eng-service-group__label">Projetos elétricos <span class="eng-service-group__count">9</span></div>
+        <div class="eng-service-grid">
+          <a class="eng-service-card" href="engenharia/eletrica/projeto-eletrico-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-file-lines"></i></span><span class="eng-service-card__name">Projeto elétrico industrial</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/projeto-de-spda.html"><span class="eng-service-card__icon"><i class="fas fa-bolt"></i></span><span class="eng-service-card__name">Projeto de SPDA</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/projeto-de-aterramento.html"><span class="eng-service-card__icon"><i class="fas fa-arrow-down-to-line"></i></span><span class="eng-service-card__name">Projeto de aterramento</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/projeto-de-subestacao.html"><span class="eng-service-card__icon"><i class="fas fa-building"></i></span><span class="eng-service-card__name">Projeto de subestação</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/iluminacao-industrial.html"><span class="eng-service-card__icon"><i class="fas fa-lightbulb"></i></span><span class="eng-service-card__name">Iluminação industrial</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/banco-de-capacitores.html"><span class="eng-service-card__icon"><i class="fas fa-layer-group"></i></span><span class="eng-service-card__name">Banco de capacitores</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/filtros-harmonicos.html"><span class="eng-service-card__icon"><i class="fas fa-wave-square"></i></span><span class="eng-service-card__name">Filtros harmônicos</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/geracao-distribuida.html"><span class="eng-service-card__icon"><i class="fas fa-solar-panel"></i></span><span class="eng-service-card__name">Geração distribuída</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/projeto-residencial-predial.html"><span class="eng-service-card__icon"><i class="fas fa-house"></i></span><span class="eng-service-card__name">Elétrico residencial e predial</span></a>
+        </div>
+      </div>
+
+      <div class="eng-service-group" data-reveal>
+        <div class="eng-service-group__label">Montagem elétrica <span class="eng-service-group__count">6</span></div>
+        <div class="eng-service-grid">
+          <a class="eng-service-card" href="engenharia/eletrica/instalacoes-eletricas-industriais.html"><span class="eng-service-card__icon"><i class="fas fa-bolt"></i></span><span class="eng-service-card__name">Instalações elétricas industriais</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/montagem-spda.html"><span class="eng-service-card__icon"><i class="fas fa-shield"></i></span><span class="eng-service-card__name">Montagem de SPDA</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/montagem-subestacao.html"><span class="eng-service-card__icon"><i class="fas fa-building"></i></span><span class="eng-service-card__name">Montagem de subestação</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/comissionamento-equipamentos.html"><span class="eng-service-card__icon"><i class="fas fa-check"></i></span><span class="eng-service-card__name">Comissionamento de equipamentos</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/fabricacao-painel-eletrico.html"><span class="eng-service-card__icon"><i class="fas fa-clipboard"></i></span><span class="eng-service-card__name">Fabricação de painel elétrico</span></a>
+          <a class="eng-service-card" href="engenharia/eletrica/instalacao-iluminacao.html"><span class="eng-service-card__icon"><i class="fas fa-lightbulb"></i></span><span class="eng-service-card__name">Instalação de iluminação</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================== CTA FINAL ====================== -->
+  <section class="section eng-page-cta">
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Tem um desafio de engenharia elétrica?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de vídeo (mesmo padrão do hub) -->
+  <div class="eng-video-modal" id="engVideoModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="eng-video-modal__backdrop" data-video-close></div>
+    <div class="eng-video-modal__dialog">
+      <button class="eng-video-modal__close" type="button" aria-label="Fechar vídeo" data-video-close><i class="fas fa-xmark"></i></button>
+      <div class="eng-video-modal__embed"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

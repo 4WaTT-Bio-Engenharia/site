@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geração Distribuída | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Geração distribuída 4WaTT: projeto de conexão dimensionado pelo consumo real, com documentação para a concessionária.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Geração Distribuída — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Geração Distribuída</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-solar-panel"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Geração Distribuída</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Gerar a própria energia é uma decisão de engenharia antes de ser uma decisão de investimento.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Dimensionado pelo consumo</div>
+          <div class="eng-svc-strip__l">Sistema definido pelo seu perfil real de carga</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Documentação de conexão</div>
+          <div class="eng-svc-strip__l">Preparada para aprovação na distribuidora</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Proteção de interconexão</div>
+          <div class="eng-svc-strip__l">Conexão segura entre geração e rede</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que entrega o projeto de geração distribuída</h2>
+          <p class="lead" data-reveal data-d="2">Geração distribuída é produzir energia elétrica no próprio local de consumo — tipicamente solar fotovoltaica — e conectar essa geração à rede da distribuidora sob regras regulatórias específicas. A parte que costuma receber atenção é o painel e o inversor. A parte que trava projetos é a outra: o dimensionamento correto para o seu perfil de consumo e a documentação técnica exigida para que a distribuidora aprove a conexão.</p>
+          <p class="lead" data-reveal data-d="3">O projeto começa pelo consumo, não pelo telhado. Um sistema dimensionado acima do que você consome gera excedente que nem sempre compensa financeiramente; abaixo, deixa retorno na mesa. A partir do dimensionamento correto vêm a especificação dos equipamentos, a proteção de interconexão — que é o que garante que a sua geração não energize a rede durante uma manutenção da distribuidora — e o dossiê técnico de conexão. Um sistema tecnicamente perfeito com documentação inadequada simplesmente não é ligado.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha de usina solar de 1 MW produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">Onde os projetos de geração travam</h2>
+            <p class="lead" data-reveal data-d="2">Quase nunca é o equipamento. É o dimensionamento e o trâmite técnico que atrasam ou reduzem o retorno.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-arrows-left-right"></i></div><h3>Dimensionamento desalinhado</h3><p>Sistema maior ou menor que o perfil de consumo compromete o retorno do investimento desde o primeiro mês.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-circle-xmark"></i></div><h3>Documentação reprovada</h3><p>Projeto fora dos requisitos da distribuidora volta para correção e adia a entrada em operação por meses.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-plug-circle-exclamation"></i></div><h3>Interconexão mal resolvida</h3><p>Proteção de interconexão inadequada é risco de segurança e motivo direto de reprovação técnica.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que compõe</span>
+        <h2 class="h2" data-reveal data-d="1">Os entregáveis do projeto</h2>
+        <p class="lead" data-reveal data-d="2">Do perfil de consumo à documentação que a distribuidora exige para liberar a ligação.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Entregável</th><th><i class="fa-solid fa-circle-info"></i> O que resolve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Análise do perfil de consumo</td><td>Define o dimensionamento adequado, a partir do histórico real de faturas e do regime de operação.</td></tr>
+            <tr><td>Dimensionamento do sistema</td><td>Potência, quantidade de módulos e configuração dos arranjos, considerando a área disponível.</td></tr>
+            <tr><td>Estudo de sombreamento e implantação</td><td>Como o terreno ou a cobertura afetam a geração, e a disposição que maximiza o aproveitamento.</td></tr>
+            <tr><td>Especificação de equipamentos</td><td>Módulos, inversores e estruturas com as características técnicas adequadas ao projeto.</td></tr>
+            <tr><td>Proteção de interconexão</td><td>Dispositivos que garantem conexão e desconexão seguras entre a geração e a rede da distribuidora.</td></tr>
+            <tr><td>Dossiê de conexão</td><td>Documentação técnica no formato exigido pela distribuidora para aprovação do acesso.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o projeto</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-file-invoice-dollar"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Análise de consumo</h3>
+                <p>Partimos do histórico de faturas e do regime de operação — é o consumo que dimensiona o sistema, não a área disponível.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-sun"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Estudo de implantação</h3>
+                <p>Avaliação da área, orientação e sombreamento, com modelagem da geração esperada por segmento.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-pen-ruler"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Dimensionamento e detalhamento</h3>
+                <p>Sistema, arranjos, estrutura e proteção de interconexão especificados em prancha executável.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-file-contract"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Dossiê para a distribuidora</h3>
+                <p>Preparação e acompanhamento da documentação técnica exigida para aprovação do acesso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais de geração assinadas pela engenharia 4WaTT — inclusive projeto de usina solar com implantação, subestação e modelagem de irradiância.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações em que vale avaliar geração própria</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Energia pesa no seu custo operacional.</strong> Quanto maior o peso da conta, maior o impacto de gerar parte do que você consome.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Você tem área disponível.</strong> Cobertura de galpão, área de terreno ou estacionamento subutilizado costumam viabilizar o projeto.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Recebeu proposta de integrador.</strong> Vale ter o dimensionamento avaliado por quem não está vendendo o sistema.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Está construindo uma planta nova.</strong> Prever a geração no projeto elétrico desde o início é muito mais barato que adaptar depois.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Já tem geração e quer ampliar.</strong> Ampliação exige revisão da conexão e da proteção de interconexão, não só mais módulos.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-solar-panel"></i></div><h3>Sistema dimensionado</h3><p>Potência e configuração definidas pelo seu consumo real e pela área efetivamente aproveitável.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-diagram-project"></i></div><h3>Projeto executivo</h3><p>Implantação, arranjos, estrutura e proteção detalhados para execução e cotação.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-file-contract"></i></div><h3>Dossiê de conexão</h3><p>Documentação preparada para o processo de aprovação junto à distribuidora.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Frentes relacionadas</span>
+        <h2 class="h2" data-reveal data-d="1">Onde este projeto se conecta</h2>
+        <p class="lead" data-reveal data-d="2">Geração própria muda o comportamento elétrico da planta — e isso toca outras frentes.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-building"></i></div><h3>Projeto de subestação</h3><p>Sistemas maiores exigem revisão do arranjo e da proteção da subestação existente.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-chart-simple"></i></div><h3>Eficiência energética</h3><p>Reduzir o consumo antes de dimensionar a geração costuma baratear o sistema necessário.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-chart-line"></i></div><h3>Mercado livre de energia</h3><p>Geração própria altera o perfil de consumo e pode mudar bastante a estratégia de contratação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que projetar com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> O mesmo time que projeta subestação e instalação industrial dimensiona a sua geração — com visão do sistema inteiro.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Não vendemos equipamento.</strong> O dimensionamento segue o seu consumo e o seu retorno, não o kit que um fornecedor precisa girar.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Experiência real em geração.</strong> A 4WaTT projeta e opera geração de energia em plantas de biogás — conexão à rede e proteção de interconexão são terreno conhecido.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Do projeto à aprovação.</strong> Preparamos o dossiê e acompanhamos o trâmite junto à distribuidora até a liberação do acesso.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento do projeto <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre geração distribuída</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">O projeto inclui a instalação dos equipamentos? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>O projeto é a etapa de engenharia e documentação. A instalação física é tratada como serviço de montagem, contratável junto ou separadamente.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Toda geração distribuída precisa de aprovação da distribuidora? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. A conexão à rede pública exige submissão de projeto técnico e aprovação da distribuidora local antes da entrada em operação.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vale a pena para a minha operação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Depende do perfil de consumo, da tarifa aplicável e da área disponível. Essa é justamente a análise que fazemos antes de recomendar qualquer dimensionamento — e às vezes a resposta é reduzir o consumo primeiro.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Devo dimensionar para gerar 100% do que consumo? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Nem sempre é o melhor retorno. O dimensionamento ótimo depende do seu perfil de consumo ao longo do dia e das regras de compensação aplicáveis — avaliamos isso caso a caso.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O que é proteção de interconexão? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É o conjunto de dispositivos que garante que a sua geração se desconecte da rede em situações específicas — por exemplo, durante uma manutenção da distribuidora. É item obrigatório e motivo comum de reprovação quando mal resolvido.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Já recebi uma proposta de integrador. Vocês avaliam? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. Avaliar dimensionamento e projeto de terceiros é uma demanda frequente — e como não vendemos equipamento, a análise não tem conflito de interesse.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Quer avaliar geração própria com quem não vende painel?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISE — Relatório de Inspeção de Segurança Elétrica | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] RISE 4WaTT: relatório de inspeção de segurança elétrica para auditoria de cliente e qualificação de fornecedor.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="RISE — Relatório de Inspeção de Segurança Elétrica — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">RISE — Relatório de Inspeção de Segurança Elétrica</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-file-lines"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">RISE — Relatório de Inspeção de Segurança Elétrica</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Quando um cliente grande audita a sua instalação elétrica, ele não pede explicação. Pede documento.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Copy redigida em voz de marca 4WaTT, sem referência externa validada item a item
+       (autorizado pelo usuário) — ver docs/engineering-services/MASTER_SPEC.md -->
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Levantamento em campo</div>
+          <div class="eng-svc-strip__l">Avaliação objetiva dos itens de segurança elétrica</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Formato de auditoria</div>
+          <div class="eng-svc-strip__l">Organizado no padrão que o solicitante espera</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Não-conformidades mapeadas</div>
+          <div class="eng-svc-strip__l">Com o caminho de correção antes da auditoria formal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é o RISE</h2>
+          <p class="lead" data-reveal data-d="2">RISE é a sigla usada para Relatório de Inspeção de Segurança Elétrica: um levantamento técnico que avalia e documenta a condição de segurança de uma instalação elétrica. Diferente de um laudo específico — que responde uma pergunta técnica isolada, como a resistência do aterramento — o RISE olha o conjunto: proteção, sinalização, condição física da instalação, documentação existente, aderência aos procedimentos de segurança.</p>
+          <p class="lead" data-reveal data-d="3">Ele costuma aparecer numa situação bem concreta: um cliente relevante, uma contratante ou um processo de homologação de fornecedor exige a comprovação de que a sua instalação está em condições seguras. Quem pede normalmente tem um formato esperado, e o relatório precisa responder isso de forma direta. Por isso conduzimos o levantamento já pensando na auditoria: além de apontar o que está em conformidade, o relatório mostra com clareza o que precisa ser corrigido e em que ordem — para que você tenha tempo de resolver antes de alguém de fora encontrar.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha de quadro de cargas e diagrama unifilar produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">Por que isso costuma virar urgência</h2>
+            <p class="lead" data-reveal data-d="2">O RISE raramente é planejado com antecedência. Ele aparece quando já existe um prazo, e é aí que o problema fica caro.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-clock"></i></div><h3>Prazo de auditoria correndo</h3><p>Quando a exigência chega junto com a data, sobra pouco tempo para levantar e ainda corrigir o que for encontrado.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-circle-xmark"></i></div><h3>Documentação dispersa</h3><p>Laudos antigos, projetos desatualizados e nada consolidado. Reunir isso na véspera é o que trava a maior parte dos processos.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-handshake-slash"></i></div><h3>Homologação em risco</h3><p>Para fornecedores de grandes contratantes, reprovar na avaliação de segurança pode significar perder o contrato.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é avaliado</span>
+        <h2 class="h2" data-reveal data-d="1">As frentes cobertas pelo relatório</h2>
+        <p class="lead" data-reveal data-d="2">O escopo exato se ajusta ao que o solicitante exige, mas estas são as frentes recorrentes.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Frente avaliada</th><th><i class="fa-solid fa-circle-info"></i> O que verificamos</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Proteção elétrica</td><td>Condição e adequação dos dispositivos de proteção instalados frente à instalação existente.</td></tr>
+            <tr><td>Aterramento</td><td>Condição física do sistema e existência de laudo de medição válido.</td></tr>
+            <tr><td>SPDA</td><td>Presença, estado e documentação do sistema de proteção contra descargas atmosféricas.</td></tr>
+            <tr><td>Sinalização e identificação</td><td>Placas de advertência, identificação de circuitos e sinalização de risco nos painéis.</td></tr>
+            <tr><td>Documentação técnica</td><td>Existência e atualidade de projetos, diagramas, laudos e prontuário.</td></tr>
+            <tr><td>Condição física da instalação</td><td>Painéis, quadros, cabeamento e infraestrutura — o que a inspeção visual e os ensaios revelam.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o levantamento</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-clipboard-question"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Entendimento da exigência</h3>
+                <p>Antes de ir a campo, verificamos quem está pedindo e em que formato — isso define o escopo e evita retrabalho.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-magnifying-glass"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Inspeção em campo</h3>
+                <p>Levantamento das frentes de segurança elétrica com instrumentação própria onde o ensaio for necessário.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-triangle-exclamation"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Classificação das não-conformidades</h3>
+                <p>Cada achado é registrado e classificado por gravidade, separando o que impede aprovação do que é melhoria.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-file-signature"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Relatório e plano de correção</h3>
+                <p>Você recebe o RISE no formato esperado e a lista priorizada do que corrigir antes da auditoria formal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. A mesma base documental e técnica que sustenta cada relatório de inspeção que emitimos.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações em que o RISE é exigido</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Homologação como fornecedor.</strong> Grandes contratantes industriais frequentemente exigem comprovação de segurança elétrica no processo de cadastro.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Auditoria de cliente.</strong> Clientes com política própria de segurança podem auditar a instalação de quem presta serviço nas suas dependências.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Due diligence técnica.</strong> Em processos de aquisição, locação ou financiamento, a condição da instalação elétrica costuma entrar na avaliação.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Renovação de apólice.</strong> Seguradoras podem solicitar comprovação técnica da condição da instalação para manter ou revisar cobertura.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Preparação preventiva.</strong> O melhor momento é antes de alguém pedir — dá tempo de corrigir sem prazo em cima.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-file-shield"></i></div><h3>Relatório no formato de auditoria</h3><p>Organizado para responder diretamente ao que o solicitante espera ver, sem exigir tradução.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-list-check"></i></div><h3>Não-conformidades priorizadas</h3><p>O que impede aprovação, o que é recomendável e o que já está adequado — com ordem de execução.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-route"></i></div><h3>Caminho de regularização</h3><p>Quais laudos, projetos ou correções físicas resolvem cada pendência encontrada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Documentos relacionados</span>
+        <h2 class="h2" data-reveal data-d="1">O que costuma vir junto</h2>
+        <p class="lead" data-reveal data-d="2">O RISE consolida e referencia documentos técnicos específicos — quando eles não existem, indicamos quais são necessários.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>Laudo de SPDA</h3><p>Comprova a eficácia do sistema de proteção contra descargas atmosféricas da edificação.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-arrow-down-to-line"></i></div><h3>Laudo de aterramento</h3><p>Documenta a medição da resistência de aterramento da instalação.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-folder-open"></i></div><h3>Prontuário NR-10</h3><p>Documento consolidado exigido pela norma, que reúne a documentação técnica da instalação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que fazer o RISE com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> O levantamento é conduzido pelo mesmo time que projeta e opera instalações industriais — não por um inspetor sem contexto de engenharia.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Levantamento pensado para a auditoria.</strong> Entendemos primeiro quem está pedindo e em que formato, para o relatório responder de verdade à exigência.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Laudos complementares na mesma casa.</strong> Se faltar laudo de SPDA, de aterramento ou prontuário, a mesma engenharia emite — sem coordenar três fornecedores diferentes.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Correção executável.</strong> Se o relatório apontar adequação física, a 4WaTT executa a etapa seguinte com a mesma responsabilidade técnica.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento do RISE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre o RISE</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Quando o RISE costuma ser exigido? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Em processos de homologação de fornecedor, auditorias de segurança de grandes clientes industriais, due diligence técnica e, em alguns casos, por seguradoras.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O RISE substitui os laudos individuais? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. Ele consolida e referencia laudos específicos, como SPDA e aterramento. Quando esses laudos não existem, o relatório aponta a necessidade e podemos emiti-los.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">É uma exigência normativa obrigatória? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não é uma obrigação legal universal como a NR-10. Normalmente é uma exigência contratual, feita por um cliente, contratante ou processo de auditoria específico.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quanto tempo leva? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Depende do porte da instalação e do escopo exigido pelo solicitante. Definimos isso no entendimento inicial, antes de ir a campo.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">E se o relatório apontar muitas não-conformidades? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É o cenário mais comum em primeira inspeção, e é justamente o valor do trabalho: descobrir com você antes que alguém de fora descubra. O relatório vem com o plano de correção priorizado.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">A planta precisa parar? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Na maior parte do levantamento, não. Se algum ensaio específico exigir desenergização, isso é combinado e programado com a sua equipe.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Precisa comprovar a segurança da sua instalação?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eficiência Energética | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Eficiência energética 4WaTT: diagnóstico do consumo real e plano de ação priorizado por retorno.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Eficiência Energética — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Eficiência Energética</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-lightbulb"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Eficiência Energética</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Sua conta de energia sobe todo ano e ninguém sabe dizer exatamente por quê. O diagnóstico começa por aí.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Consumo real medido</div>
+          <div class="eng-svc-strip__l">Levantamento de campo cruzado com o histórico de faturas</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Plano priorizado</div>
+          <div class="eng-svc-strip__l">Oportunidades ordenadas por retorno, não por preferência</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Execução na mesma casa</div>
+          <div class="eng-svc-strip__l">A engenharia que diagnostica também implanta</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é um estudo de eficiência energética</h2>
+          <p class="lead" data-reveal data-d="2">Toda planta industrial desperdiça energia em algum lugar. A pergunta que importa não é se existe desperdício — é onde ele está, quanto ele custa por mês, e quanto custaria eliminá-lo. O estudo de eficiência energética responde essas três perguntas na ordem certa: primeiro mede o consumo real por área e por equipamento, depois cruza esses dados com o histórico de faturas e com o enquadramento tarifário, e só então aponta onde vale a pena mexer.</p>
+          <p class="lead" data-reveal data-d="3">É um trabalho deliberadamente diferente de uma auditoria genérica. Recomendação padrão do tipo “troque a iluminação por LED” não precisa de estudo — precisa de catálogo. O que entregamos é o oposto: um plano de ação ordenado por retorno, em que cada oportunidade vem com o consumo que ela representa hoje, o que muda depois da intervenção, e a ordem em que faz sentido executar. Isso permite começar pelo que se paga mais rápido e usar essa economia para financiar as etapas seguintes.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha de quadro de cargas e diagrama unifilar produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>Onde o dinheiro escapa</span>
+            <h2 class="h2" data-reveal data-d="1">As três frentes que mais pesam na conta</h2>
+            <p class="lead" data-reveal data-d="2">Na maioria das plantas industriais, o desperdício se concentra em poucos pontos — e quase nunca são os que a equipe imagina.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-gears"></i></div><h3>Motores superdimensionados</h3><p>Motor girando muito abaixo da carga nominal opera fora da faixa eficiente. Como ele funciona normalmente, o desperdício passa despercebido por anos.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-clock"></i></div><h3>Operação em horário de ponta</h3><p>Carga pesada rodando na faixa tarifária mais cara é um dos desperdícios mais fáceis de corrigir — e um dos menos percebidos.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-plug-circle-exclamation"></i></div><h3>Perdas na própria instalação</h3><p>Fator de potência baixo, harmônicos e cabos subdimensionados geram custo que aparece na fatura sem uma causa óbvia na produção.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é analisado</span>
+        <h2 class="h2" data-reveal data-d="1">As frentes que o estudo cobre</h2>
+        <p class="lead" data-reveal data-d="2">Cada frente é avaliada pelo que ela representa na sua conta — não por importância teórica.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Frente analisada</th><th><i class="fa-solid fa-circle-info"></i> O que buscamos</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Perfil de carga</td><td>Como o consumo se distribui ao longo do dia e da semana, e onde estão os picos que definem a demanda contratada.</td></tr>
+            <tr><td>Enquadramento tarifário</td><td>Se a modalidade contratada é a mais adequada ao seu perfil real de consumo.</td></tr>
+            <tr><td>Motores e acionamentos</td><td>Dimensionamento, regime de operação e oportunidades de acionamento eletrônico.</td></tr>
+            <tr><td>Iluminação</td><td>Nível de luz por atividade versus potência instalada — corrigindo excesso e falta.</td></tr>
+            <tr><td>Fator de potência e reativo</td><td>Excedente de reativo cobrado na fatura e a correção adequada para eliminá-lo.</td></tr>
+            <tr><td>Climatização e utilidades</td><td>Sistemas de apoio que costumam operar continuamente e raramente são revisados.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o diagnóstico</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-file-invoice-dollar"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Análise do histórico de faturas</h3>
+                <p>Começamos pelo que já existe: o histórico revela padrão de demanda, excedente de reativo e enquadramento tarifário antes mesmo da visita.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-magnifying-glass-chart"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Levantamento em campo</h3>
+                <p>Mapeamos os equipamentos, o regime real de operação e, quando necessário, medimos o consumo por área.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-scale-balanced"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Cruzamento e priorização</h3>
+                <p>Cada oportunidade é quantificada e ordenada por retorno — o que economiza mais com o menor investimento vem primeiro.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-list-check"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Plano de ação entregue</h3>
+                <p>Você recebe o diagnóstico com o caminho de execução, e decide o que fazer internamente e o que contratar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. A mesma capacidade técnica que aplicamos ao redesenhar o consumo da sua planta.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Sinais de que há economia esperando na sua planta</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">A conta sobe sem a produção subir.</strong> É o indicador mais direto de que algo mudou na instalação, não na operação.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Você nunca revisou o enquadramento tarifário.</strong> Perfis de consumo mudam com o tempo, e a modalidade contratada raramente é revisitada depois da assinatura.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">A planta cresceu por partes.</strong> Ampliações sucessivas costumam deixar motores, cabos e iluminação dimensionados para uma operação que não existe mais.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Há excedente de reativo na fatura.</strong> É um custo evitável, e normalmente um dos mais rápidos de eliminar.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Você vai expandir.</strong> É mais barato nascer eficiente do que corrigir depois — o estudo antes da obra evita retrabalho caro.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-chart-simple"></i></div><h3>Diagnóstico do consumo real</h3><p>Onde a energia está sendo usada de fato, por área e por sistema — medido, não estimado.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-list-check"></i></div><h3>Plano priorizado por retorno</h3><p>Oportunidades ordenadas do que se paga mais rápido ao que exige projeto e investimento maior.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-route"></i></div><h3>Caminho de execução</h3><p>O que dá para resolver com ajuste operacional, o que exige projeto, e o que a 4WaTT pode executar em seguida.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Frentes complementares</span>
+        <h2 class="h2" data-reveal data-d="1">Onde o diagnóstico costuma desembocar</h2>
+        <p class="lead" data-reveal data-d="2">Eficiência energética raramente termina em si mesma — ela aponta a próxima intervenção técnica.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-wave-square"></i></div><h3>Qualidade de energia</h3><p>Quando o desperdício vem de harmônicos ou desequilíbrio, o caminho é o estudo instrumentado de qualidade de energia.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-layer-group"></i></div><h3>Correção de fator de potência</h3><p>Excedente de reativo na fatura costuma se resolver com banco de capacitores corretamente dimensionado.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-chart-line"></i></div><h3>Mercado livre de energia</h3><p>Dependendo da carga, migrar de ambiente de contratação pode superar o ganho de qualquer medida técnica isolada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que fazer o diagnóstico com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> Quem faz o diagnóstico é o mesmo time que projeta e opera plantas industriais — não um consultor que entrega relatório e some.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Prioridade por retorno, não por catálogo.</strong> Não vendemos equipamento. A ordem das recomendações segue o que economiza mais na sua planta, não o que é mais fácil de fornecer.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Do diagnóstico à execução.</strong> Se a recomendação for filtro, banco de capacitores, projeto elétrico ou iluminação, a mesma engenharia executa a etapa seguinte.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Leitura de conta junto com leitura de campo.</strong> Muita economia está no enquadramento tarifário e no perfil de demanda, não só no equipamento.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar diagnóstico de eficiência <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre eficiência energética</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Que tipo de operação se beneficia mais? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Plantas com motores de grande porte, muitas horas de operação diária ou consumo relevante em horário de ponta costumam ter o maior potencial identificado. Mas o diagnóstico vale sempre que a conta de energia for um custo significativo.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O estudo já inclui o projeto das melhorias? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. O estudo entrega o diagnóstico e o plano priorizado. O projeto detalhado de cada intervenção é orçado à parte — e pode ser executado pela mesma engenharia.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Em quanto tempo aparece resultado? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Depende da ação. Ajustes operacionais e revisão de enquadramento tarifário podem aparecer já na fatura seguinte; substituição de equipamento tem retorno ao longo de meses, conforme o investimento.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vocês vendem os equipamentos recomendados? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não somos revenda. Isso é proposital: garante que a priorização siga o retorno para a sua planta, e não a margem de um produto.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Preciso parar a produção para o levantamento? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. O levantamento é feito com a planta operando — inclusive porque medir o consumo em operação normal é justamente o objetivo.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">E se o problema for a qualidade da energia que chega? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>O diagnóstico identifica esse cenário e aponta o estudo instrumentado de qualidade de energia como próximo passo, com a medição contínua necessária para comprovar.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Quanto da sua conta de energia é desperdício?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

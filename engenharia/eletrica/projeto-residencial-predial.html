@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Elétrico Residencial e Predial | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Projeto elétrico residencial e predial 4WaTT: dimensionamento correto, dentro da norma, pronto para execução.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Projeto Elétrico Residencial e Predial — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Projeto Elétrico Residencial e Predial</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-house"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Projeto Elétrico Residencial e Predial</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">A mesma engenharia que dimensiona planta industrial, aplicada na escala de uma residência ou de um edifício.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Dimensionado para o uso</div>
+          <div class="eng-svc-strip__l">Circuitos definidos pelo uso real de cada ambiente</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Dentro da norma</div>
+          <div class="eng-svc-strip__l">Proteção e circuitos conforme NBR 5410</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Pronto para executar</div>
+          <div class="eng-svc-strip__l">Documentação que o eletricista segue sem interpretar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que entrega o projeto elétrico residencial e predial</h2>
+          <p class="lead" data-reveal data-d="2">Instalação residencial e predial parece simples até o momento em que o disjuntor começa a desarmar toda vez que o chuveiro e o ar-condicionado ligam juntos, ou até a reforma revelar que o quadro não tem espaço para mais nada. A maior parte desses problemas não nasce de execução ruim — nasce da ausência de projeto, com circuitos definidos no improviso da obra e um quadro dimensionado pelo que existia naquele momento.</p>
+          <p class="lead" data-reveal data-d="3">O projeto detalha a instalação completa: pontos de luz e tomada por ambiente, divisão de circuitos, dimensionamento de condutores, quadro de distribuição e proteção. E faz isso a partir do uso real de cada espaço — cozinha e área de serviço concentram carga de forma muito diferente de um quarto. O escopo vale tanto para residência unifamiliar quanto para edificação predial de maior porte, com o nível de detalhe adequado a cada caso, e entrega a documentação necessária para execução e, quando aplicável, para aprovação junto aos órgãos competentes.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha de quadro de cargas e diagrama unifilar produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE IMPORTA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O que está em jogo</span>
+            <h2 class="h2" data-reveal data-d="1">O que a falta de projeto cobra depois</h2>
+            <p class="lead" data-reveal data-d="2">Em instalação predial, o erro de projeto raramente aparece na entrega. Ele aparece no uso — e a correção sempre envolve quebrar parede.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-plug-circle-xmark"></i></div><h3>Circuitos sobrecarregados</h3><p>Disjuntor que desarma com uso normal indica divisão de circuitos feita sem considerar a carga real de cada ambiente.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-hammer"></i></div><h3>Correção que quebra parede</h3><p>Adicionar circuito depois da obra pronta custa muito mais do que ter previsto no projeto — e nem sempre é possível.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-fire"></i></div><h3>Risco real de incêndio</h3><p>Condutor subdimensionado aquece dentro da parede, onde ninguém vê, até a isolação falhar.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABELA DE ESCOPO ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que compõe</span>
+        <h2 class="h2" data-reveal data-d="1">Os entregáveis do projeto</h2>
+        <p class="lead" data-reveal data-d="2">O escopo se ajusta ao porte da edificação, mas estes são os documentos que estruturam qualquer projeto predial.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Entregável</th><th><i class="fa-solid fa-circle-info"></i> O que resolve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Previsão de carga por ambiente</td><td>Define quantos pontos e que potência cada espaço precisa, a partir do uso real previsto.</td></tr>
+            <tr><td>Divisão de circuitos</td><td>Separa cargas de forma que uma não derrube a outra, e que a manutenção não desligue a casa inteira.</td></tr>
+            <tr><td>Dimensionamento de condutores</td><td>Bitola calculada por circuito, considerando corrente e queda de tensão no trajeto.</td></tr>
+            <tr><td>Quadro de distribuição</td><td>Layout, quantidade de módulos e espaço de reserva para ampliação futura.</td></tr>
+            <tr><td>Proteção e dispositivos diferenciais</td><td>Especificação dos dispositivos de proteção contra sobrecorrente e contra choque elétrico.</td></tr>
+            <tr><td>Pranchas e legendas</td><td>Plantas com pontos, circuitos e encaminhamento — documentação que o eletricista executa sem interpretar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">Como conduzimos o projeto</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-comments"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Entendimento do uso</h3>
+                <p>Conversamos sobre como cada ambiente será usado — é isso, e não a metragem, que define a carga.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-calculator"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Previsão de carga e circuitos</h3>
+                <p>Dimensionamento dos circuitos e dos condutores conforme o uso previsto e os critérios normativos.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-pen-ruler"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Detalhamento em planta</h3>
+                <p>Pontos, circuitos, encaminhamento e quadro representados em prancha executável.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-handshake"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Apoio à execução</h3>
+                <p>Esclarecimento técnico durante a obra, para que o executado corresponda ao projetado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. O mesmo rigor técnico de projeto industrial, aplicado também na escala predial.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha técnica Quadro de cargas e unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha técnica Subestação blindada 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha técnica Diagrama de proteção — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha técnica Usina solar 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Prancha técnica Modelagem de irradiância — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha técnica Motogerador 250 kW a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUANDO CONTRATAR ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Quando contratar</span>
+        <h2 class="h2" data-reveal data-d="1">Situações que pedem projeto elétrico</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Construção nova.</strong> É o momento em que o projeto custa menos e evita mais — depois da parede fechada, tudo fica caro.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Reforma que mexe no quadro.</strong> Alteração de quadro ou aumento relevante de carga justifica revisar o projeto elétrico.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Disjuntores desarmando com uso normal.</strong> Sintoma clássico de circuitos mal divididos ou subdimensionados na instalação original.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Instalação antiga.</strong> Instalações com décadas costumam não atender aos critérios atuais de proteção contra choque elétrico.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Vai instalar carga nova relevante.</strong> Ar-condicionado, chuveiro elétrico ou carregador veicular mudam bastante o dimensionamento necessário.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>A entrega</span>
+        <h2 class="h2" data-reveal data-d="1">O que chega até você no fim</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-diagram-project"></i></div><h3>Plantas e diagramas</h3><p>Pontos, circuitos e quadro representados de forma que o eletricista execute sem dúvida.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-calculator"></i></div><h3>Memorial de dimensionamento</h3><p>A justificativa técnica dos circuitos e dos condutores especificados.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-list-check"></i></div><h3>Lista de materiais</h3><p>Especificação que permite cotar com fornecedores diferentes pelo mesmo critério.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS / DIFERENCIAIS TÉCNICOS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referência técnica</span>
+        <h2 class="h2" data-reveal data-d="1">Em que o projeto se apoia</h2>
+        <p class="lead" data-reveal data-d="2">O dimensionamento segue a norma brasileira de instalações elétricas de baixa tensão.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-book"></i></div><h3>NBR 5410</h3><p>Norma brasileira de instalações elétricas de baixa tensão — referência central do projeto predial e residencial.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-arrow-down-to-line"></i></div><h3>Aterramento e equipotencialização</h3><p>Requisitos de proteção contra choque que a norma estabelece para instalações prediais.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-bolt"></i></div><h3>NBR 5419</h3><p>Quando a edificação exigir proteção contra descargas atmosféricas, o SPDA entra como projeto complementar.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que projetar com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia industrial aplicada à escala predial.</strong> O mesmo rigor de dimensionamento que usamos em planta industrial, adaptado ao porte da sua edificação.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Projeto a partir do uso real.</strong> Conversamos sobre como os ambientes serão usados antes de dimensionar — é o que evita circuito sobrecarregado depois.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Documentação executável.</strong> Prancha que o eletricista segue sem precisar interpretar é o que garante que o executado corresponda ao projetado.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Continuidade multidisciplinar.</strong> Se a edificação exigir SPDA, aterramento ou entrada de energia dedicada, a mesma engenharia resolve.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento do projeto <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre projeto elétrico residencial e predial</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">Esse projeto serve para qualquer porte de edificação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim. O escopo cobre desde residência unifamiliar até edificação predial de maior porte, com o nível de detalhamento adequado a cada caso.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O projeto inclui a instalação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Não. O projeto é a etapa de engenharia; a execução é feita pelo eletricista ou instalador responsável, a partir da documentação entregue.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Preciso de projeto mesmo numa reforma pequena? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Depende do escopo. Alterações que envolvem o quadro de distribuição ou aumento relevante de carga justificam a revisão do projeto — trocar tomada de lugar, não.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Minha instalação é antiga. Vale atualizar? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Instalações com décadas costumam não atender aos critérios atuais de proteção contra choque elétrico. Vale ao menos avaliar, mesmo que a atualização seja feita por etapas.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Vou instalar carregador de veículo elétrico. Muda algo? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Muda bastante. É uma carga significativa e contínua, que precisa de circuito e proteção dedicados — e frequentemente exige revisão do quadro e da entrada.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O projeto serve para aprovação? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É desenvolvido com a documentação necessária para os trâmites aplicáveis ao tipo de edificação e à exigência local.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Precisa de um projeto elétrico bem dimensionado?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

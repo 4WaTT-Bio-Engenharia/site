@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudo de Qualidade de Energia | Engenharia Elétrica · 4WaTT</title>
+  <meta name="description"
+    content="[PREVIEW DE SPEC — NÃO PUBLICADO] Estudo de qualidade de energia 4WaTT: medição instrumentada, laudo técnico com ART.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <style>:root { --accent: var(--teal); --accent-light: var(--teal-ink); }</style>
+</head>
+
+<body class="t4">
+  <div style="position:sticky;top:0;z-index:999;background:#DBAA0F;color:#2A0720;text-align:center;font:600 12px/1 var(--mono,monospace);padding:6px 10px;">
+    PREVIEW DE SPEC — página ainda não implementada oficialmente (ver docs/engineering-services/pages/)
+  </div>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html" aria-label="4WaTT início">
+      <img src="assets/img/logo-4watt-dark.png" alt="4WaTT Bio Engenharia">
+    </a>
+    <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="nav__links">
+      <li><a href="index.html#ecossistema">Ecossistema</a></li>
+      <li><a href="index.html#matriz">Resíduos</a></li>
+      <li><a href="index.html#engenharia">Equipamentos</a></li>
+      <li><a href="index.html#jornada">Jornada</a></li>
+      <li class="nav__dd">
+        <a tabindex="0">Soluções <i class="fas fa-chevron-down"></i></a>
+        <ul class="nav__dd-menu">
+          <li><a href="solucao-gestao-residuos.html">Gestão de Resíduos</a></li>
+          <li><a href="solucao-biogas.html">Engenharia de Biogás</a></li>
+          <li><a href="solucao-biometano.html">Biometano</a></li>
+          <li><a href="solucao-gaseificacao.html">Gaseificação de RSU</a></li>
+        </ul>
+      </li>
+      <li><a href="investidor.html">Área do Investidor</a></li>
+      <li><a href="engenharia/index.html" style="color:var(--teal)">Serviços de Engenharia</a></li>
+      <li><a href="imprensa.html">Imprensa</a></li>
+      <li class="nav__lang">
+        <div class="lang-selector" role="group" aria-label="Seletor de idioma">
+          <button class="lang-btn active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </li>
+      <li><a class="nav__cta" href="engenharia/index.html#contato-eng">Falar com um especialista</a></li>
+    </ul>
+    <div class="nav__progress"></div>
+  </nav>
+
+  <header class="sol-hero" data-hero>
+    <div class="ph ph--px"><img src="assets/img/engenharia/eletrica/cover.jpg" alt="Estudo de Qualidade de Energia — 4WaTT" data-parallax="0.06"></div>
+    <div class="sol-hero__inner container">
+      <nav class="eng-svc-breadcrumb" aria-label="Breadcrumb">
+        <a href="engenharia/index.html">Serviços de Engenharia</a>
+        <span>/</span>
+        <a href="engenharia/eletrica.html">Engenharia Elétrica</a>
+        <span>/</span>
+        <span class="is-current">Estudo de Qualidade de Energia</span>
+      </nav>
+      <span class="sol-badge" data-reveal><i class="fas fa-wave-square"></i> Engenharia Elétrica</span>
+      <h1 data-reveal data-d="1">Estudo de Qualidade de Energia</h1>
+      <p class="sol-hero__lead" data-reveal data-d="2">Meça o que a sua rede elétrica esconde — tensão fora de faixa, harmônicos e desequilíbrio que corroem equipamentos e faturas.</p>
+      <div class="sol-hero__cta" data-reveal data-d="3">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="engenharia/eletrica.html">Ver todos os serviços de Elétrica</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE FATOS (roxo sólido) ============ -->
+  <section class="section eng-svc-dark" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);">
+    <div class="container">
+      <div class="eng-svc-strip">
+        <div class="eng-svc-strip__item" data-reveal>
+          <div class="eng-svc-strip__v">Medição contínua</div>
+          <div class="eng-svc-strip__l">Analisador instalado em campo, não leitura pontual</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="1">
+          <div class="eng-svc-strip__v">Laudo com ART</div>
+          <div class="eng-svc-strip__l">Assinado por engenheiro responsável</div>
+        </div>
+        <div class="eng-svc-strip__item" data-reveal data-d="2">
+          <div class="eng-svc-strip__v">Engenharia própria</div>
+          <div class="eng-svc-strip__l">O mesmo time que projeta e opera plantas 4WaTT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE É (fundo tingido + prancha real) ============ -->
+  <section class="section eng-svc-about">
+    <div class="container">
+      <div class="sol-split">
+        <div class="sol-split__head">
+          <span class="kicker" data-reveal>O que é</span>
+          <h2 class="h2" data-reveal data-d="1">O que é o estudo de qualidade de energia</h2>
+          <p class="lead" data-reveal data-d="2">O estudo de qualidade de energia é uma medição instrumentada da sua rede elétrica, feita com um analisador conectado ao ponto de interesse por um período contínuo — não é uma leitura pontual com multímetro. Enquanto uma leitura pontual mostra só o instante em que o técnico está olhando, o analisador fica registrando o comportamento real da instalação ao longo do tempo: variações de tensão, frequência, desequilíbrio entre fases, presença de harmônicos e fator de potência, entre outros parâmetros. Essa diferença importa porque muitos problemas de qualidade de energia são intermitentes — aparecem só em determinado horário, sob determinada carga, e uma leitura de poucos segundos simplesmente não os captura.</p>
+          <p class="lead" data-reveal data-d="3">Os dados coletados são comparados às referências regulatórias e normativas de qualidade de energia usadas no mercado brasileiro — a principal delas é o Módulo 8 do PRODIST (Procedimentos de Distribuição de Energia Elétrica), que trata especificamente de qualidade de energia elétrica. O resultado final é um diagnóstico que aponta se a energia entregue à sua operação está dentro do esperado e, quando não está, onde exatamente está o problema. É a base técnica para decidir se vale a pena investir em filtro harmônico, banco de capacitores, ou abrir uma reclamação formal junto à concessionária.</p>
+        </div>
+        <div class="sol-split__media" data-reveal data-d="2">
+          <div class="ph"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Modelagem computacional de irradiância solar produzida pela engenharia 4WaTT" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A ENERGIA "SUJA" CUSTA CARO — palco 3D ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container">
+          <div class="sol-head sol-head--center">
+            <span class="kicker" data-reveal>O custo escondido</span>
+            <h2 class="h2" data-reveal data-d="1">Por que a energia "suja" custa caro</h2>
+            <p class="lead" data-reveal data-d="2">Os sintomas raramente apontam direto para a causa — motor que esquenta, disjuntor que desarma sem explicação, capacitor que falha antes da hora. Três consequências concentram a maior parte do prejuízo.</p>
+          </div>
+          <div class="sol-grid sol-grid--3">
+            <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-shield-halved"></i></div><h3>Proteção que atua sem explicação</h3><p>Disjuntores e relés desarmando sem causa aparente costumam ser sintoma de distúrbio na rede, não defeito no próprio dispositivo de proteção.</p></article>
+            <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-triangle-exclamation"></i></div><h3>Equipamento que falha antes da hora</h3><p>Motores que aquecem além do esperado e capacitores que falham prematuramente costumam indicar harmônicos ou desequilíbrio de fase na alimentação.</p></article>
+            <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-sack-dollar"></i></div><h3>Consumo que sobe sem explicação</h3><p>Energia reativa excedente e perdas por aquecimento em cabos e transformadores aparecem na fatura sem uma causa óbvia na operação.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARÂMETROS MEDIDOS ============ -->
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>O que é medido</span>
+        <h2 class="h2" data-reveal data-d="1">Os parâmetros que o estudo avalia</h2>
+        <p class="lead" data-reveal data-d="2">Cada parâmetro tem um papel diferente no diagnóstico — e um desvio isolado nem sempre é o mesmo problema que um desvio combinado.</p>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-list-check"></i> Parâmetro</th><th><i class="fa-solid fa-circle-info"></i> O que avalia</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Tensão em regime permanente</td><td>Se o nível de tensão entregue se mantém dentro da faixa adequada para o funcionamento dos equipamentos.</td></tr>
+            <tr><td>Frequência</td><td>Estabilidade da frequência da rede — desvios relevantes indicam instabilidade no fornecimento.</td></tr>
+            <tr><td>Desequilíbrio de tensão</td><td>Diferença de tensão entre as três fases — desequilíbrio aquece motores trifásicos e reduz sua vida útil.</td></tr>
+            <tr><td>Distorção harmônica (THD)</td><td>Quanto a forma de onda se afasta da senoide pura, geralmente causada por cargas eletrônicas não lineares.</td></tr>
+            <tr><td>Flutuação de tensão (flicker)</td><td>Variações rápidas de tensão que podem causar cintilação perceptível em iluminação.</td></tr>
+            <tr><td>Fator de potência</td><td>Eficiência no uso da energia — fator baixo gera cobrança de excedente de reativo na fatura.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA A CAMPANHA — palco 3D (mesmo motor do Bloco 2 do hub) ============ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="eng-scroll-stage" data-scroll-stage>
+      <div class="eng-scroll-stage__frame">
+        <div class="container" style="max-width:820px;">
+          <div class="sol-head">
+            <span class="kicker" data-reveal>Como funciona</span>
+            <h2 class="h2" data-reveal data-d="1">A campanha de medição, passo a passo</h2>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-step" data-reveal>
+              <div class="sol-step__num"><i class="fa-solid fa-magnifying-glass"></i><span class="step-n">01</span></div>
+              <div class="sol-step__body">
+                <h3>Levantamento do ponto de medição</h3>
+                <p>Identificação do quadro ou circuito mais representativo do problema relatado ou do ponto de interesse da instalação.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="1">
+              <div class="sol-step__num"><i class="fa-solid fa-plug-circle-bolt"></i><span class="step-n">02</span></div>
+              <div class="sol-step__body">
+                <h3>Instalação do analisador</h3>
+                <p>Conexão do equipamento ao ponto definido, sem necessidade de desligar a instalação.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="2">
+              <div class="sol-step__num"><i class="fa-solid fa-chart-line"></i><span class="step-n">03</span></div>
+              <div class="sol-step__body">
+                <h3>Coleta contínua</h3>
+                <p>O analisador permanece registrando por um período contínuo, capturando o comportamento real da carga ao longo do tempo — inclusive picos e variações que uma leitura pontual não pega.</p>
+              </div>
+            </div>
+            <div class="sol-step" data-reveal data-d="3">
+              <div class="sol-step__num"><i class="fa-solid fa-file-signature"></i><span class="step-n">04</span></div>
+              <div class="sol-step__body">
+                <h3>Análise e laudo</h3>
+                <p>Os dados coletados são analisados frente às referências normativas aplicáveis, e o resultado vira laudo técnico com ART.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARROSSEL DE PRANCHAS REAIS (roxo sólido, full-bleed) ============
+       Motor: [data-marquee] de site-premium.js + auto-duplicação de engenharia.js.
+       Só os 6 itens REAIS aqui — o script clona sozinho para fechar o loop. -->
+  <section class="section eng-svc-dark">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Engenharia própria</span>
+        <h2 class="h2" data-reveal data-d="1">Documentação técnica de verdade, não modelo genérico</h2>
+        <p class="lead" data-reveal data-d="2">Pranchas reais assinadas pela engenharia 4WaTT. É o mesmo rigor de detalhamento que sustenta cada laudo de qualidade de energia que entregamos.</p>
+      </div>
+    </div>
+    <div class="eng-svc-marquee" data-marquee data-marquee-speed="0.35" data-reveal style="position:relative;z-index:1;">
+      <div class="eng-svc-marquee__track">
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-diagrama-quadro-cargas.jpg" alt="Prancha de quadro de cargas e diagrama unifilar — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Dimensionamento</span>
+            <span class="eng-svc-plate__name">Quadro de cargas e unifilar</span>
+            <span class="eng-svc-plate__desc">Levantamento de carga por circuito, fator de utilização e dimensionamento de condutor e disjuntor.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-subestacao-2mva.jpg" alt="Prancha de subestação blindada de 2 MVA — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Projeto elétrico</span>
+            <span class="eng-svc-plate__name">Subestação blindada 2 MVA</span>
+            <span class="eng-svc-plate__desc">Arranjo físico, memorial de cálculo de demanda e geração, detalhes de aterramento e estrutura.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-protecao-diagrama.jpg" alt="Prancha de diagrama de proteção de subestação — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Proteção</span>
+            <span class="eng-svc-plate__name">Diagrama de proteção</span>
+            <span class="eng-svc-plate__desc">Conexão do relé de proteção, planta de localização e notas técnicas exigidas pela concessionária.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-usina-solar-1mw.jpg" alt="Prancha de usina solar de 1 MW — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Geração</span>
+            <span class="eng-svc-plate__name">Usina solar 1 MW</span>
+            <span class="eng-svc-plate__desc">Implantação sobre topografia, método de conexão dos módulos, subestação, transformador e drenagem.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-modelagem-irradiancia.png" alt="Modelagem computacional de irradiância solar por segmento — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Simulação</span>
+            <span class="eng-svc-plate__name">Modelagem de irradiância</span>
+            <span class="eng-svc-plate__desc">Simulação computacional de geração por segmento, com mapa de perdas por sombreamento.</span>
+          </span>
+        </article>
+        <article class="eng-svc-plate">
+          <span class="eng-svc-plate__img"><img src="assets/img/engenharia/eletrica/svc-motogerador-biogas.jpg" alt="Prancha de grupo motogerador a biogás — engenharia 4WaTT" loading="lazy"></span>
+          <span class="eng-svc-plate__body">
+            <span class="eng-svc-plate__tag">Cogeração</span>
+            <span class="eng-svc-plate__name">Motogerador 250 kW a biogás</span>
+            <span class="eng-svc-plate__desc">Unifilar, entrada de energia e subestação abrigada com transformador de média tensão.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DE ONDE VEM O PROBLEMA ============ -->
+  <section class="section">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Causas comuns</span>
+        <h2 class="h2" data-reveal data-d="1">De onde vem a baixa qualidade de energia</h2>
+      </div>
+      <ul data-reveal data-d="1" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Cargas não lineares</strong> — inversores de frequência, retificadores e equipamentos eletrônicos que distorcem a forma de onda.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Desequilíbrio entre fases</strong> — distribuição desigual de cargas monofásicas numa instalação trifásica.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Energia reativa excedente</strong> — motores e transformadores operando com fator de potência baixo.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Variações da concessionária</strong> — distúrbios que chegam pela própria rede de distribuição, fora do controle da instalação.</span></li>
+        <li style="display:flex;gap:14px;align-items:flex-start;"><i class="fas fa-check" style="color:var(--teal-ink);margin-top:5px;flex:0 0 auto;"></i><span style="color:var(--dim);font-size:15px;line-height:1.6;"><strong style="color:var(--ink);">Ressonância harmônica</strong> — interação entre banco de capacitores e cargas harmônicas que amplifica a distorção em vez de corrigi-la.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ESTUDO × MEDIÇÃO RÁPIDA ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Por que instrumentado</span>
+        <h2 class="h2" data-reveal data-d="1">Estudo instrumentado × medição rápida com multímetro</h2>
+      </div>
+      <div class="sol-table-wrap" data-reveal>
+        <table class="sol-table">
+          <thead>
+            <tr><th><i class="fa-solid fa-magnifying-glass-chart"></i> Aspecto</th><th>Estudo instrumentado 4WaTT</th><th>Medição rápida (multímetro)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Duração</td><td>Contínua, por período representativo da operação</td><td>Instantânea, um único momento</td></tr>
+            <tr><td>Harmônicos</td><td>Registrados e quantificados</td><td>Não capturados</td></tr>
+            <tr><td>Comparação normativa</td><td>Sim, frente às referências aplicáveis</td><td>Não</td></tr>
+            <tr><td>Resultado</td><td>Laudo técnico com ART e recomendação de ação</td><td>Leitura isolada, sem diagnóstico</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O QUE VOCÊ RECEBE ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>O laudo</span>
+        <h2 class="h2" data-reveal data-d="1">O que você recebe ao final</h2>
+      </div>
+      <div class="sol-grid sol-grid--3">
+        <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-magnifying-glass-chart"></i></div><h3>Diagnóstico instrumentado</h3><p>Medição contínua no ponto de interesse, não uma leitura pontual — captura variações que só aparecem ao longo do tempo.</p></article>
+        <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-file-signature"></i></div><h3>Laudo técnico com ART</h3><p>Relatório assinado por engenheiro responsável, pronto para embasar decisão de investimento ou negociação com a concessionária.</p></article>
+        <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-bolt"></i></div><h3>Base para ação corretiva</h3><p>Aponta se o problema pede filtro harmônico, banco de capacitores, ou ajuste na própria instalação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NORMAS DE REFERÊNCIA ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container">
+      <div class="sol-head sol-head--center">
+        <span class="kicker" data-reveal>Referências técnicas</span>
+        <h2 class="h2" data-reveal data-d="1">Normas de qualidade de energia no Brasil</h2>
+        <p class="lead" data-reveal data-d="2">O estudo compara os dados coletados às referências reconhecidas pelo setor elétrico brasileiro.</p>
+      </div>
+      <div class="sol-grid sol-grid--3">
+        <article class="sol-feat" data-reveal><div class="sol-feat__ic"><i class="fas fa-file-contract"></i></div><h3>PRODIST Módulo 8</h3><p>Procedimento da ANEEL que trata especificamente de qualidade de energia elétrica na distribuição — a referência central do estudo no Brasil.</p></article>
+        <article class="sol-feat" data-reveal data-d="1"><div class="sol-feat__ic"><i class="fas fa-globe"></i></div><h3>IEEE 519</h3><p>Referência internacional amplamente usada como parâmetro técnico complementar para distorção harmônica em instalações industriais.</p></article>
+        <article class="sol-feat" data-reveal data-d="2"><div class="sol-feat__ic"><i class="fas fa-shield"></i></div><h3>NR-10</h3><p>Norma de segurança em instalações elétricas — relevante quando o distúrbio de qualidade de energia também representa risco à equipe.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE A 4WATT (roxo sólido) ============ -->
+  <section class="section eng-svc-dark">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Diferencial</span>
+        <h2 class="h2" data-reveal data-d="1">Por que fazer o estudo com a 4WaTT</h2>
+      </div>
+      <ul class="eng-svc-checks" data-reveal data-d="1">
+        <li><i class="fas fa-check"></i><span><strong>Engenharia própria, sem terceirização.</strong> O mesmo time que projeta e opera plantas de biogás e biometano da 4WaTT conduz o estudo do início ao fim.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Laudo com ART.</strong> Documento assinado por engenheiro responsável, pronto para embasar decisão de investimento ou negociação formal com a concessionária.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Recomendação prática de próximo passo.</strong> Não entregamos só o diagnóstico — apontamos o caminho de correção mais direto para o seu caso, com a ordem de prioridade.</span></li>
+        <li><i class="fas fa-check"></i><span><strong>Capacidade multidisciplinar.</strong> Se o diagnóstico apontar filtro harmônico, banco de capacitores ou revisão de projeto elétrico, a mesma engenharia executa a etapa seguinte.</span></li>
+      </ul>
+      <div style="margin-top:36px;" data-reveal data-d="2">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Solicitar orçamento do estudo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2);">
+    <div class="container" style="max-width:820px;">
+      <div class="sol-head">
+        <span class="kicker" data-reveal>Perguntas frequentes</span>
+        <h2 class="h2" data-reveal data-d="1">Dúvidas sobre qualidade de energia</h2>
+      </div>
+      <div class="acc" data-accordion data-stagger>
+        <div class="acc-item">
+          <button class="acc-head">O que é estudo de qualidade de energia? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>É uma medição instrumentada e contínua da rede elétrica, feita com analisador de energia, que avalia parâmetros como tensão, frequência, desequilíbrio e harmônicos frente às referências normativas aplicáveis.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quais parâmetros o estudo mede? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Tensão em regime permanente, frequência, desequilíbrio entre fases, distorção harmônica (THD), flutuação de tensão (flicker) e fator de potência, entre outros conforme o escopo contratado.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Qual norma rege a qualidade de energia no Brasil? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A referência central é o Módulo 8 do PRODIST, da ANEEL. Em instalações industriais, a IEEE 519 costuma ser usada como parâmetro técnico complementar.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">Quanto tempo dura a medição? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>A campanha fica instalada por um período contínuo — o suficiente para capturar o comportamento real da carga, incluindo picos e variações que uma leitura pontual não pega.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O que causa baixa qualidade de energia? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Cargas não lineares, desequilíbrio entre fases, energia reativa excedente, variações vindas da própria concessionária e ressonância harmônica são as causas mais comuns.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head">O laudo serve para negociar com a concessionária? <i class="fas fa-plus"></i></button>
+          <div class="acc-body"><p>Sim — quando o problema está na entrada de energia, o laudo instrumentado é o documento técnico que embasa a reclamação formal ou o pedido de ajuste junto à distribuidora.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL — roxo sólido com vídeo de fundo ============ -->
+  <section class="section eng-page-cta eng-cta-video">
+    <div class="eng-cta-video__media">
+      <video autoplay muted loop playsinline preload="none" poster="assets/img/engenharia/eletrica/cover.jpg">
+        <source src="assets/4watt-servicos-engenharia.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <span class="kicker" data-reveal>Fale com a engenharia 4WaTT</span>
+      <h2 class="h2" data-reveal data-d="1">Precisa de um estudo de qualidade de energia?</h2>
+      <p data-reveal data-d="2">Fale com um especialista e receba o próximo passo técnico em até 1 dia útil.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn--primary" href="engenharia/index.html#contato-eng">Falar com um especialista <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand footer__col">
+          <img class="footer__logo" src="assets/img/logo-4watt-light.png" alt="4WaTT">
+          <p>De todas as formas de energia, escolha a que se renova. Escolha 4WaTT.</p>
+          <p>4WaTT Bio Engenharia S/A.</p>
+          <div class="footer__seal"><i class="fas fa-circle-check"></i> <span>Site oficial verificado</span></div>
+        </div>
+        <div class="footer__col">
+          <h4>Endereço</h4>
+          <ul>
+            <li>Edifício Metropolitan Business</li>
+            <li>Torre Tokyo, sala 601</li>
+            <li>Av. Dep. Jamel Cecílio</li>
+            <li>Jardim Goiás, Goiânia · GO</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-shield-halved"></i> <a href="politica-privacidade.html">Política de Privacidade</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:contato@4watt.tech">contato@4watt.tech</a></li>
+            <li><i class="fas fa-phone"></i> <a href="https://wa.me/5545991378949">+55 45 99137-8949</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Siga-nos</h4>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/in/4watt-tech-b798041b1" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/4watt.tech/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/4wattbioeng" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 4WaTT Bio Engenharia S/A · Todos os direitos reservados.</span><span>Da
+          simulação à operação. Patrimônio energético.</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/languages.js?v=2.7"></script>
+  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="assets/js/main.js?v=1.5"></script>
+  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/engenharia.js?v=0.3"></script>
+</body>
+
+</html>

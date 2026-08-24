@@ -1,0 +1,606 @@
+/* ==========================================================================
+   engenharia.css — 4WaTT | Serviços de Engenharia (nova Unidade de Negócio)
+   Depende de theme-4watt.css (tokens) — carregar sempre depois dele.
+   Spec: docs/engineering-services/pages/index.md
+   ========================================================================== */
+
+/* ---------- Bloco 1 · Hero ----------
+   REVISADO (2026-08-23): o hero deixou de ser um componente próprio (.eng-hero) e
+   passou a usar a MESMA estrutura/escala da home (.hero-h, definida em
+   home-premium.css) — min-height:100svh, vídeo de fundo, h1 até 72px, etc. Isso
+   corrige o problema relatado: hero pequeno/sem imagem, fora do padrão de escala das
+   outras páginas do site. Vídeo: assets/4watt-servicos-engenharia.mp4 (fornecido pelo
+   usuário). Nenhum CSS de hero próprio necessário — só a folha compartilhada. */
+
+/* ---------- Bloco 2 · Grid de verticais ---------- */
+.eng-verticais { /* padding vem do .section base (clamp 72–132px, theme-4watt.css) — não sobrescrever com valor menor */ }
+
+/* Palco de scroll ("painel de instrumento", agora com acabamento "liquid glass") —
+   adaptação vanilla do efeito de tilt/scale por scroll pedido pelo usuário (referência:
+   componente React ContainerScroll, framer-motion). Sem dependência nova: reaproveita o
+   mesmo motor rAF+scroll de [data-parallax] em site-premium.js, aplicado a variáveis CSS
+   em vez de translateY. JS: assets/js/engenharia.js.
+
+   REVISÃO 2026-08-23 (feedback: painel pequeno/flutuando num vazio branco, pedido de
+   sombra lateral 3D + efeito "liquid glass"):
+   - Painel quase full-bleed (era max-width:1200px numa seção com container de 1280px —
+     em telas largas sobrava muito branco ao redor; agora ocupa quase toda a largura da
+     viewport, coerente com o resto do site ser full-bleed).
+   - Dois `.orb` (mesmo componente já usado no resto do site) posicionados atrás do
+     painel, DENTRO da seção (não fixed/global — não repete o bug do bg-aurora) — o
+     `backdrop-filter` do painel borra essa cor por trás, é o que dá o efeito de vidro
+     (sem isso, o blur não teria nada colorido pra revelar).
+   - `background` trocou de opaco pra semitransparente + `backdrop-filter: blur+saturate`
+     — vidro fosco de verdade, não só uma cor escura.
+   - `::after` novo — brilho especular no topo (glass highlight), sutil, `mix-blend-mode:
+     overlay`, imitando o reflexo de luz do "Liquid Glass" da Apple.
+   - Sombra lateral colorida (teal de um lado, gold do outro) além da sombra inferior —
+     reforça a leitura de "placa de vidro flutuando em 3D", não só elevada pra cima. */
+.eng-verticais { position: relative; overflow: hidden; }
+.eng-scroll-stage {
+  perspective: 1800px;
+  padding: 0 12px;
+  position: relative;
+}
+.eng-scroll-stage__frame {
+  --stage-rot: 14deg;
+  --stage-scale: .94;
+  --stage-y: 40px;
+  transform: perspective(1800px) rotateX(var(--stage-rot)) scale(var(--stage-scale)) translateY(var(--stage-y));
+  transform-origin: 50% 100%;
+  transition: transform .12s cubic-bezier(.16,.84,.44,1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid rgba(219, 170, 15, .3);
+  background: linear-gradient(180deg, var(--roxo) 0%, var(--plum) 100%);
+  box-shadow:
+    -70px 50px 130px -60px rgba(3,165,137,.35),
+     70px 60px 140px -60px rgba(219,170,15,.28),
+      0 90px 160px -50px rgba(10,3,9,.55),
+      0 0 0 1px rgba(255,255,255,.06) inset;
+  padding: clamp(56px, 7vw, 96px) clamp(20px, 4vw, 56px);
+  max-width: 1720px;
+  width: calc(100% - 8px);
+  margin: 0 auto;
+}
+.eng-scroll-stage__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 25%, black 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 25%, black 0%, transparent 72%);
+  pointer-events: none;
+}
+.eng-scroll-stage { position: relative; z-index: 1; }
+.eng-scroll-stage__frame > .container { position: relative; z-index: 1; }
+
+/* Texto/cards dentro do palco escuro precisam da variante clara — o resto da página
+   (Blocos 2-fora-do-palco não existe mais, mas Bloco 4 continua em fundo claro e NÃO
+   deve herdar isso; por isso o escopo é sempre .eng-scroll-stage <algo>, nunca global). */
+.eng-scroll-stage .eng-verticais__head { position: relative; z-index: 1; max-width: 680px; margin: 0 auto clamp(40px, 5vw, 64px); text-align: center; }
+.eng-scroll-stage .kicker { color: var(--gold); }
+.eng-scroll-stage .h2 { color: #fff; }
+.eng-scroll-stage .lead { color: rgba(255,255,255,.75); margin-top: 14px; }
+.eng-scroll-stage .eng-vert-grid { position: relative; z-index: 1; max-width: 1500px; margin: 0 auto; gap: clamp(20px, 2vw, 32px); }
+.eng-scroll-stage .eng-vert-card {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.14);
+}
+.eng-scroll-stage .eng-vert-card:hover { background: rgba(255,255,255,.1); border-color: rgba(219,170,15,.45); }
+.eng-scroll-stage .eng-vert-card__name { color: #fff; font-size: 18px; }
+.eng-scroll-stage .eng-vert-card__desc { color: rgba(255,255,255,.68); font-size: 14px; }
+.eng-scroll-stage .eng-vert-card__more { color: var(--gold); }
+.eng-scroll-stage .eng-vert-card__img { background: linear-gradient(135deg, rgba(219,170,15,.22), rgba(0,0,0,.25)); }
+.eng-scroll-stage .eng-vert-card__img--empty::after { color: rgba(219,170,15,.45); }
+
+/* Reaproveitado nas landing pages de serviço (2026-08-23) — o mesmo palco 3D do
+   Bloco 2 do hub, agora envolvendo a trilha de etapas (.sol-steps) de uma página de
+   serviço. Precisa de overrides de cor porque .sol-step foi desenhado para fundo claro
+   (theme-4watt.css). Escopado só dentro de .eng-scroll-stage, mesma regra dos outros
+   overrides acima — nunca vaza pra fora do palco. */
+.eng-scroll-stage .sol-steps::before,
+.eng-scroll-stage .sol-steps--with-media .sol-steps__track::before { background: linear-gradient(var(--gold), transparent); }
+.eng-scroll-stage .sol-step__num { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.25); color: var(--gold); }
+.eng-scroll-stage .sol-step__num .step-n { background: var(--gold); color: var(--plum); border-color: rgba(20,8,18,.4); }
+.eng-scroll-stage .sol-step__time { color: var(--gold); }
+.eng-scroll-stage .sol-step h3 { color: #fff; }
+.eng-scroll-stage .sol-step p { color: rgba(255,255,255,.72); }
+.eng-scroll-stage .sol-step ul li { color: rgba(255,255,255,.72); }
+.eng-scroll-stage .sol-step ul li::before { background: var(--gold); }
+
+/* Figura de evidência real (diagrama/projeto 4WaTT) nas páginas de serviço — mesmo
+   tratamento visual de .ph (foto full-bleed com raio e sombra) já usado no site,
+   só com legenda abaixo. */
+.eng-svc-figure { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
+.eng-svc-figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.eng-svc-figure__cap { margin-top: 12px; font-size: 13px; color: var(--muted); text-align: center; }
+
+/* ==========================================================================
+   Acabamento premium das landing pages de serviço (2026-08-23)
+   Pedido do usuário: "luxo de marca Ferrari da engenharia" — mais roxo sólido,
+   mais elementos 3D, carrossel de pranchas reais. Tudo em cima dos tokens de
+   theme-4watt.css (--roxo/--plum/--gold/--teal), sem paleta nova.
+   ========================================================================== */
+
+/* Seção full-bleed em roxo sólido, com a mesma grade de blueprint do palco do hub.
+   Usar como `class="section eng-svc-dark"` — herda o ritmo de padding do .section. */
+.eng-svc-dark {
+  position: relative;
+  background: linear-gradient(180deg, var(--roxo) 0%, var(--plum) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.eng-svc-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 20%, black 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 20%, black 0%, transparent 75%);
+  pointer-events: none;
+}
+.eng-svc-dark > .container { position: relative; z-index: 1; }
+.eng-svc-dark .kicker { color: var(--gold); }
+.eng-svc-dark .h2 { color: #fff; }
+.eng-svc-dark .lead { color: rgba(255,255,255,.75); }
+.eng-svc-dark .sol-head .h2 { color: #fff; }
+
+/* Faixa de fatos — números/afirmações curtas sobre o roxo, filete gold no topo de cada
+   coluna (mesmo princípio do .sol-stat de solucoes.css, adaptado para fundo escuro). */
+.eng-svc-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); }
+.eng-svc-strip__item { border-top: 2px solid var(--gold); padding-top: 18px; }
+.eng-svc-strip__v { font-family: var(--display); font-weight: 900; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.05; letter-spacing: -.03em; color: #fff; }
+.eng-svc-strip__l { margin-top: 10px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.62); line-height: 1.45; }
+@media (max-width: 720px) { .eng-svc-strip { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Carrossel de pranchas técnicas reais — MESMO motor [data-marquee] do resto do site
+   (initDraggableMarquee em site-premium.js + auto-duplicação em engenharia.js).
+   Nenhum JS novo, nenhum `animation: infinite`. */
+.eng-svc-marquee {
+  overflow-x: auto; overflow-y: hidden;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.eng-svc-marquee::-webkit-scrollbar { display: none; }
+.eng-svc-marquee.is-dragging { cursor: grabbing; }
+.eng-svc-marquee.is-dragging .eng-svc-plate { pointer-events: none; }
+.eng-svc-marquee__track { display: flex; gap: 20px; width: max-content; align-items: stretch; user-select: none; }
+
+/* "Prancha" — cartão de documento técnico. Papel claro sobre o roxo = leitura de
+   documento de engenharia de verdade, com moldura gold discreta (detalhe premium). */
+.eng-svc-plate {
+  flex: 0 0 auto;
+  width: min(420px, 84vw);
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(219,170,15,.28);
+  box-shadow: 0 30px 60px -30px rgba(10,3,9,.7);
+  transition: transform .35s var(--ease, ease), border-color .35s, box-shadow .35s;
+}
+.eng-svc-plate:hover { transform: translateY(-6px); border-color: rgba(219,170,15,.6); box-shadow: 0 40px 80px -30px rgba(10,3,9,.85); }
+.eng-svc-plate__img { aspect-ratio: 16 / 10; overflow: hidden; background: #fff; }
+.eng-svc-plate__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease, ease); }
+.eng-svc-plate:hover .eng-svc-plate__img img { transform: scale(1.06); }
+.eng-svc-plate__body { padding: 18px 20px 20px; }
+.eng-svc-plate__tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.eng-svc-plate__name { display: block; margin-top: 8px; font-family: var(--display); font-weight: 700; font-size: 16px; color: #fff; }
+.eng-svc-plate__desc { display: block; margin-top: 6px; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.68); }
+
+/* .sol-feat dentro do palco 3D / de seção escura — o componente foi desenhado para
+   fundo claro (solucoes.css), então precisa da variante escura escopada. */
+.eng-scroll-stage .sol-feat,
+.eng-svc-dark .sol-feat {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.14);
+  box-shadow: none;
+}
+.eng-scroll-stage .sol-feat:hover,
+.eng-svc-dark .sol-feat:hover { border-color: rgba(219,170,15,.45); background: rgba(255,255,255,.09); }
+.eng-scroll-stage .sol-feat h3,
+.eng-svc-dark .sol-feat h3 { color: #fff; }
+.eng-scroll-stage .sol-feat p,
+.eng-svc-dark .sol-feat p { color: rgba(255,255,255,.7); }
+.eng-scroll-stage .sol-feat__ic,
+.eng-svc-dark .sol-feat__ic { background: rgba(219,170,15,.14); border-color: rgba(219,170,15,.35); color: var(--gold); }
+
+/* Seção "O que é" — quebra do monocromático (2026-08-24).
+   Fundo tingido com os accents da marca (teal frio de um lado, gold quente do outro)
+   sobre --surface-2, mais imagem técnica lateral. Layout vem do .sol-split de
+   solucoes.css, já usado em solucao-biogas.html — nenhum grid novo. */
+.eng-svc-about {
+  position: relative;
+  background:
+    radial-gradient(ellipse 55% 75% at 88% 18%, color-mix(in srgb, var(--teal) 16%, transparent) 0%, transparent 68%),
+    radial-gradient(ellipse 48% 62% at 4% 96%, color-mix(in srgb, var(--gold) 13%, transparent) 0%, transparent 70%),
+    var(--surface-2);
+}
+.eng-svc-about > .container { position: relative; z-index: 1; }
+.eng-svc-about .sol-split__head .lead + .lead { margin-top: 16px; }
+.eng-svc-about .sol-split__media .ph {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  background: var(--surface);
+}
+.eng-svc-about .sol-split__media .ph > img { object-fit: cover; }
+@media (max-width: 880px) { .eng-svc-about .sol-split__media .ph { aspect-ratio: 16 / 10; } }
+
+/* CTA final com vídeo de fundo sobre roxo sólido (2026-08-24).
+   Mesmo princípio do .sol-cta de solucoes.css (mídia absoluta + overlay), mas com
+   vídeo em vez de foto. O overlay é o que garante contraste do texto por cima. */
+.eng-page-cta.eng-cta-video {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--roxo) 0%, var(--plum) 100%);
+  color: #fff;
+}
+.eng-cta-video__media { position: absolute; inset: 0; z-index: 0; }
+.eng-cta-video__media video { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .32; }
+.eng-cta-video__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(58, 9, 64, .76) 0%, rgba(42, 7, 32, .93) 100%);
+}
+.eng-cta-video > .container { position: relative; z-index: 1; }
+.eng-cta-video .kicker { color: var(--gold); }
+.eng-cta-video .h2 { color: #fff; }
+.eng-page-cta.eng-cta-video p { color: rgba(255, 255, 255, .78); }
+@media (prefers-reduced-motion: reduce) { .eng-cta-video__media video { display: none; } }
+
+/* Lista de checks sobre fundo escuro (causas/diferenciais) */
+.eng-svc-checks { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.eng-svc-checks li { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.72); }
+.eng-svc-checks li i { color: var(--gold); margin-top: 5px; flex: 0 0 auto; font-size: 13px; }
+.eng-svc-checks li strong { color: #fff; font-weight: 600; }
+
+@media (max-width: 720px) {
+  .eng-scroll-stage { perspective: none; padding: 0; }
+  .eng-scroll-stage__frame { border-radius: 20px; padding: 40px 20px 48px; transform: none !important; box-shadow: 0 30px 60px -30px rgba(10,3,9,.5); }
+}
+
+.eng-vert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6, 24px);
+}
+@media (max-width: 1080px) { .eng-vert-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .eng-vert-grid { grid-template-columns: 1fr; } }
+
+.eng-vert-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s var(--ease, ease), box-shadow .3s;
+}
+.eng-vert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-hi); }
+
+/* Foto de capa por vertical — fornecida pelo usuário em
+   assets/img/engenharia/{slug}/cover.jpg. Enquanto o arquivo não existe, o onerror no
+   <img> (ver markup) remove a tag e deixa só o gradiente de fallback abaixo — nunca
+   mostra o ícone de imagem quebrada do navegador. */
+.eng-vert-card__img { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg, rgba(3,165,137,.16), rgba(58,9,64,.12)); }
+.eng-vert-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease, ease); }
+.eng-vert-card:hover .eng-vert-card__img img { transform: scale(1.05); }
+
+/* Botão de play — só aparece nos cards com [data-video-id]. É <span role="button">, não
+   <button>/<a>, porque o card inteiro já é um <a> — aninhar outro elemento interativo
+   nativo dentro de <a> é HTML inválido; span com role=button é a forma correta.
+   Clique é interceptado em engenharia.js (stopPropagation) para não navegar pro link do
+   card. */
+.eng-vert-card__play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(20, 8, 18, .55);
+  border: 2px solid rgba(255,255,255,.75);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+  z-index: 2;
+}
+.eng-vert-card:hover .eng-vert-card__play { transform: translate(-50%, -50%) scale(1.1); background: var(--teal); border-color: var(--teal); }
+
+/* Card com mais de um vídeo (ex. Mecânica): grupo lado a lado em vez de 1 botão
+   centralizado — cada span mantém seu próprio [data-video-id]/title/aria-label. */
+.eng-vert-card__play-group {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; gap: 12px;
+}
+.eng-vert-card__play-group .eng-vert-card__play { position: static; transform: none; width: 44px; height: 44px; font-size: 14px; }
+.eng-vert-card__play-group .eng-vert-card__play:hover { transform: scale(1.1); }
+.eng-vert-card__img--empty::after {
+  content: "\f5fd"; /* fa-image */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: rgba(3,165,137,.35);
+}
+
+.eng-vert-card__body { display: flex; flex-direction: column; gap: 10px; padding: 20px var(--space-6, 24px) var(--space-6, 24px); flex: 1; }
+.eng-vert-card__name { font-family: var(--display); font-weight: 700; font-size: 16.5px; color: var(--ink); }
+.eng-vert-card__desc { font-size: 13.5px; line-height: 1.5; color: var(--dim); }
+.eng-vert-card__more { font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--teal-ink); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+
+/* Preview de serviços por vertical (2026-08-23) — pílulas curtas entre a descrição e
+   "Saiba mais", mesma lógica visual de .case-card__eng-tag (Bloco 3), sem link (é
+   preview, não navegação — o card inteiro já é o link). */
+.eng-vert-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.eng-vert-card__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10.5px;
+  letter-spacing: .01em;
+}
+.eng-scroll-stage .eng-vert-card__tag { border-color: rgba(255,255,255,.28); color: rgba(255,255,255,.75); }
+
+/* ---------- Bloco 3 · Prova técnica cruzada (tags sobre .case-card existente) ---------- */
+.case-card__eng-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.case-card__eng-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid rgba(255,255,255,.28);
+  color: rgba(255,255,255,.85);
+  font-size: 10.5px;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.case-card__eng-tag:hover { border-color: #fff; color: #fff; }
+.case-card__eng-tag--all { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Bloco 4 · Modelos de contratação ---------- */
+.eng-models { background: var(--surface-2); }
+.eng-models__head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+
+.eng-model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6, 24px);
+}
+@media (max-width: 900px) { .eng-model-grid { grid-template-columns: 1fr; } }
+
+.eng-model-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--space-8, 32px);
+}
+.eng-model-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(58, 9, 64, .08);
+  color: var(--roxo-soft);
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.eng-model-card h3 { font-family: var(--display); font-weight: 700; font-size: 18px; margin: 0 0 10px; color: var(--ink); }
+.eng-model-card p { font-size: 13.5px; line-height: 1.55; color: var(--dim); margin: 0 0 16px; }
+.eng-model-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.eng-model-card li { font-size: 12.5px; line-height: 1.4; color: var(--muted); padding-left: 18px; position: relative; }
+.eng-model-card li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 10px;
+  color: var(--teal-ink);
+}
+
+/* ---------- Bloco 5 · Integração institucional (Teste 8) ----------
+   Peso visual deliberadamente menor que os Blocos 1-4 (vitrine principal) — isto é
+   reforço institucional, não outro destaque. Fundo padrão (sem cor própria). */
+/* .eng-integration usa o padding padrão de .section — sem override */
+.eng-integration__inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.eng-integration__inner .lead { margin-top: 16px; }
+.eng-integration__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.eng-integration__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full, 9999px);
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.eng-integration__link:hover { border-color: var(--teal); color: var(--teal-ink); }
+
+/* ---------- Modal de vídeo (verticais com [data-video-id]) ----------
+   CSS próprio, não reaproveita .cases-modal (mora em cinematic-home.css, folha legada
+   que o GATE 1 já sinalizou pra evitar nas páginas novas). */
+.eng-video-modal {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+}
+.eng-video-modal.is-open { opacity: 1; pointer-events: auto; }
+.eng-video-modal__backdrop { position: absolute; inset: 0; background: rgba(10,3,9,.82); backdrop-filter: blur(4px); }
+.eng-video-modal__dialog {
+  position: relative; z-index: 1;
+  width: min(920px, 92vw);
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,.6);
+  transform: scale(.96);
+  transition: transform .25s ease;
+}
+.eng-video-modal.is-open .eng-video-modal__dialog { transform: scale(1); }
+.eng-video-modal__embed, .eng-video-modal__embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+.eng-video-modal__close {
+  position: absolute; top: -44px; right: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.eng-video-modal__close:hover { background: rgba(255,255,255,.22); }
+@media (max-width: 600px) {
+  .eng-video-modal__close { top: auto; bottom: calc(100% - 44px); right: 8px; }
+}
+
+/* ==========================================================================
+   Páginas internas de vertical (engenharia/eletrica.html etc.) — 2026-08-23
+   Referência de layout: usuário pediu o padrão de tokenengenharia.com.br/servicos/
+   (banner + grupos de serviço categorizados com contador). Adaptado à marca 4WaTT:
+   banner usa --plum em vez do navy do exemplo, ícones Font Awesome (já sitewide),
+   tipografia/tokens do theme-4watt.css. Conteúdo dos grupos: usuário confirmou
+   assumir que a 4WaTT entrega os mesmos serviços mostrados no print de referência.
+   ========================================================================== */
+.eng-page-banner {
+  background: linear-gradient(135deg, var(--plum), var(--roxo));
+  padding: clamp(28px, 4vw, 40px) 0;
+  color: #fff;
+}
+.eng-page-banner__inner { display: flex; align-items: center; gap: 20px; }
+.eng-page-banner__icon {
+  flex: 0 0 auto;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  color: var(--gold);
+}
+.eng-page-banner__title { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 2.6vw, 30px); margin: 0; }
+.eng-page-banner__sub { margin: 4px 0 0; font-size: 14px; color: rgba(255,255,255,.72); }
+.eng-page-banner__back {
+  margin-left: auto;
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,.8);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--radius-full, 9999px);
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+.eng-page-banner__back:hover { border-color: #fff; color: #fff; }
+.eng-page-banner__play {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--plum);
+  background: var(--gold);
+  border-radius: var(--radius-full, 9999px);
+  padding: 9px 18px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.eng-page-banner__play:hover { filter: brightness(1.08); }
+/* Duas pílulas de vídeo lado a lado (ex. Mecânica: montagem + skid) — cada
+   .eng-page-banner__play dentro do grupo mantém seu próprio estilo/hover. */
+.eng-page-banner__play-group { flex: 0 0 auto; display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 640px) {
+  .eng-page-banner__inner { flex-wrap: wrap; }
+  .eng-page-banner__back { margin-left: 0; }
+}
+
+.eng-services { padding-top: clamp(48px, 6vw, 80px); }
+.eng-service-group + .eng-service-group { margin-top: clamp(40px, 5vw, 56px); }
+.eng-service-group__label {
+  display: flex; align-items: baseline; gap: 10px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--roxo-soft);
+  padding-bottom: 14px; margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.eng-service-group__label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.eng-service-group__count { margin-left: auto; font-family: var(--mono); color: var(--muted); }
+
+.eng-service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px) { .eng-service-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .eng-service-grid { grid-template-columns: 1fr; } }
+
+.eng-service-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 12px);
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.eng-service-card:hover { border-color: var(--teal); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.eng-service-card__icon {
+  flex: 0 0 auto;
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: rgba(3,165,137,.1);
+  color: var(--teal-ink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.eng-service-card__name { font-size: 14px; font-weight: 600; color: var(--ink); }
+
+.eng-page-cta { text-align: center; padding: clamp(56px, 7vw, 96px) 0; }
+.eng-page-cta p { color: var(--dim); margin: 10px auto 0; max-width: 50ch; }
+
+/* ==========================================================================
+   Landing pages de serviço individual (engenharia/eletrica/{slug}.html) — 2026-08-23
+   Reaproveita .sol-hero/.sol-feat/.acc de solucoes.css (mesma base de
+   theme-4watt.css, sem trazer design-system.css) — só a trilha de breadcrumb é
+   nova aqui, pois solucoes.css não tem esse componente.
+   ========================================================================== */
+.eng-svc-breadcrumb {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+}
+.eng-svc-breadcrumb a { color: inherit; text-decoration: none; }
+.eng-svc-breadcrumb a:hover { color: #fff; }
+.eng-svc-breadcrumb .is-current { color: rgba(255,255,255,.9); }

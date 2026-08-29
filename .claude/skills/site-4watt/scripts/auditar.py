@@ -23,9 +23,13 @@ import subprocess
 import sys
 
 ATTR = r'data-i18n(?:-placeholder|-title|-alt|-aria-label|-content)?="([^"]+)"'
-SUBDIRS = ['artigos', 'biometano', 'viabilidade']
+# 2026-08-29: /engenharia/ estava fora da varredura. Eram 43 paginas invisiveis
+# para o auditor, entao 'LINKS INTERNOS QUEBRADOS: 0' nunca disse nada sobre elas.
+SUBDIRS = ['artigos', 'biometano', 'viabilidade',
+           'engenharia', 'engenharia/eletrica', 'engenharia/mecanica']
 SHARED = ['theme-4watt.css', 'main.js', 'site-premium.js', 'languages.js',
-          'mobile-fixes.css', 'home-premium.css', 'solucoes.css']
+          'mobile-fixes.css', 'home-premium.css', 'solucoes.css',
+          'engenharia.css', 'engenharia.js']
 
 
 def html_files():
@@ -123,11 +127,21 @@ def main():
     print('\n[4] LINKS INTERNOS QUEBRADOS:', end=' ')
     quebrados = []
     for f in files:
-        base = os.path.dirname(f)
-        for m in re.finditer(r'href="([^"#?:]+\.html)', read(f)):
+        html = read(f)
+        # Paginas de /engenharia/ declaram <base href="/">, entao link relativo
+        # resolve a partir da RAIZ do site, nao da pasta do arquivo. Sem isso o
+        # auditor acusava 474 links quebrados que existem e funcionam no ar.
+        tem_base_raiz = re.search(r'<base\s+href="/"', html) is not None
+        base = '' if tem_base_raiz else os.path.dirname(f)
+        for m in re.finditer(r'href="([^"#?:]+\.html)', html):
             href = m.group(1)
             alvo = href[1:] if href.startswith('/') else os.path.normpath(
                 os.path.join(base, href))
+            alvo = alvo.replace(os.sep, chr(47))
+            # Navegador ancora o '..' na raiz do site: '/' + '../x.html' vira '/x.html'.
+            # Sem esse clamp o auditor acusa como quebrado um link que funciona no ar.
+            while alvo.startswith('../'):
+                alvo = alvo[3:]
             if not os.path.exists(alvo):
                 quebrados.append('%s -> %s' % (f, href))
     quebrados = sorted(set(quebrados))

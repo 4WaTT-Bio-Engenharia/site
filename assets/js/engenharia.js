@@ -165,8 +165,119 @@
     });
   }
 
+  /* ---------- Galeria do case Electrolux (#case-electrolux) ----------
+     Dois comportamentos, os dois opcionais: se a secao nao existir na pagina, sai.
+
+     1. Foto viva. Cada .elux__shot[data-live] tem um <video> curto por cima da foto,
+        com preload="none" e opacity 0. So carrega e toca quando o usuario aponta pra
+        ele, e some voltando pra foto ao sair. A foto continua sendo a verdade da tela:
+        se o video falhar, nao sobra buraco preto.
+
+        Nao usa CSS :hover para tocar porque play() precisa de JS de qualquer jeito, e
+        assim o mesmo caminho serve para foco por teclado, que hover nao cobre.
+
+     2. Arraste na tira. A tira e overflow-x nativo (toque ja funciona), mas no desktop
+        a barra de rolagem esta escondida pelo mask, entao mouse ficaria sem afordancia.
+        O arraste so vira arraste depois de 6px de movimento. Sem esse limiar, um clique
+        parado seria capturado por setPointerCapture e nunca chegaria no elemento de
+        baixo. Foi exatamente o bug que quebrou o botao dentro do card CEASA na home. */
+  function initEluxGallery() {
+    var strip = document.querySelector('.elux__strip');
+    if (!strip) return;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    /* --- 1. Foto viva --- */
+    if (!reduce) {
+      Array.prototype.forEach.call(strip.querySelectorAll('.elux__shot[data-live]'), function (shot) {
+        var video = shot.querySelector('video');
+        if (!video) return;
+
+        function play() {
+          shot.classList.add('is-playing');
+          var attempt = video.play();
+          // Safari/iOS rejeitam play() sem gesto em alguns contextos. Se rejeitar,
+          // desfaz a classe e a foto permanece — nada quebra na tela.
+          if (attempt && typeof attempt.catch === 'function') {
+            attempt.catch(function () { shot.classList.remove('is-playing'); });
+          }
+        }
+
+        function stop() {
+          shot.classList.remove('is-playing');
+          video.pause();
+          try { video.currentTime = 0; } catch (e) { /* alguns navegadores travam antes do metadata */ }
+        }
+
+        // Focavel nos dois casos. Antes o tabindex so era aplicado no ramo de
+        // toque, entao no desktop a foto viva era exclusiva de quem usa mouse e a
+        // regra .elux__shot:focus-visible nunca chegava a valer.
+        shot.setAttribute('tabindex', '0');
+
+        if (finePointer) {
+          shot.addEventListener('pointerenter', play);
+          shot.addEventListener('pointerleave', stop);
+        } else {
+          // Toque: alterna. Sem hover, o usuario precisa de um jeito explicito.
+          shot.addEventListener('click', function () {
+            if (shot.classList.contains('is-playing')) stop(); else play();
+          });
+        }
+
+        // Teclado: foco liga, blur desliga.
+        shot.addEventListener('focus', play, true);
+        shot.addEventListener('blur', stop, true);
+      });
+    }
+
+    /* --- 2. Arraste na tira --- */
+    var DRAG_THRESHOLD = 6;
+    var down = false, dragging = false, startX = 0, startScroll = 0, pointerId = null;
+
+    strip.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0 && e.pointerType === 'mouse') return;
+      down = true;
+      dragging = false;
+      pointerId = e.pointerId;
+      startX = e.clientX;
+      startScroll = strip.scrollLeft;
+    });
+
+    strip.addEventListener('pointermove', function (e) {
+      if (!down || e.pointerId !== pointerId) return;
+      var dx = e.clientX - startX;
+      if (!dragging) {
+        if (Math.abs(dx) < DRAG_THRESHOLD) return;
+        dragging = true;
+        strip.style.cursor = 'grabbing';
+        strip.style.scrollSnapType = 'none'; // snap brigando com arraste da um solavanco
+        try { strip.setPointerCapture(pointerId); } catch (err) { /* ok */ }
+      }
+      strip.scrollLeft = startScroll - dx;
+    });
+
+    function endDrag(e) {
+      if (!down) return;
+      if (e && pointerId !== null && e.pointerId !== pointerId) return;
+      if (dragging) {
+        try { strip.releasePointerCapture(pointerId); } catch (err) { /* ok */ }
+      }
+      down = false;
+      dragging = false;
+      pointerId = null;
+      strip.style.cursor = '';
+      strip.style.scrollSnapType = '';
+    }
+
+    strip.addEventListener('pointerup', endDrag);
+    strip.addEventListener('pointercancel', endDrag);
+    strip.addEventListener('lostpointercapture', endDrag);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initScrollStage();
     initVideoModal();
+    initEluxGallery();
   });
 })();

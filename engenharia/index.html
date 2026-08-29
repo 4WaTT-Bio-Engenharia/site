@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="assets/css/home-premium.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
-  <link rel="stylesheet" href="assets/css/engenharia.css?v=0.9">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=1.1">
   <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N91NFD55MB');</script>
@@ -130,7 +130,7 @@
 
       <div class="eng-vert-grid">
         <!-- Civil, Ambiental e Processos: preview de serviços redigido em voz de marca 4WaTT
-             (autorizado pelo usuário em 2026-08-23) — não é lista validada item a item como
+             (autorizado pelo usuário em 2026-08-23). Não é lista validada item a item como
              Elétrica/Mecânica. Atualizar quando o usuário fornecer referência real. -->
         <a class="eng-vert-card" href="engenharia/civil.html" data-reveal>
           <span class="eng-vert-card__img"><img src="assets/img/engenharia/civil/cover.png" alt="Engenharia Civil e Infraestrutura" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
@@ -212,7 +212,7 @@
             <span class="eng-vert-card__name">Engenharia de Processos</span>
             <span class="eng-vert-card__desc">Consultoria técnica e estudos de viabilidade para operações fora do escopo de biogás e biometano. EVTE, business plan e otimização de processos com o mesmo rigor técnico usado nos projetos internos da 4WaTT.</span>
             <span class="eng-vert-card__tags">
-              <span class="eng-vert-card__tag">EVTE — Estudo de Viabilidade</span>
+              <span class="eng-vert-card__tag">EVTE, Estudo de Viabilidade</span>
               <span class="eng-vert-card__tag">Business plan</span>
               <span class="eng-vert-card__tag">Otimização de processos</span>
             </span>
@@ -260,7 +260,7 @@
           <h2 class="h2" data-reveal data-d="1" style="color:#fff;">A mesma engenharia,<br>em campo.</h2>
         </div>
         <p class="lead" data-reveal data-d="2" style="max-width:30ch;color:rgba(255,255,255,.75);">Estes projetos de
-          biogás usam as mesmas disciplinas oferecidas pela nova unidade — veja qual.</p>
+          biogás usam as mesmas disciplinas oferecidas pela nova unidade. Veja qual.</p>
       </div>
 
       <div class="cases-marquee" data-marquee data-marquee-speed="0.6" data-reveal>
@@ -317,8 +317,149 @@
               <span class="case-card__more">Ver case <i class="fas fa-arrow-right"></i></span>
             </div>
           </article>
+          <article class="case-card" tabindex="0" role="button" data-case-title="Electrolux do Brasil"
+            data-case-location="Curitiba &middot; PR" data-case-image="assets/img/engenharia/processos/elux/web/cover.jpg"
+            data-case-description="Mapeamento de processos com Lean Manufacturing avan&ccedil;ado e Value Stream Mapping na opera&ccedil;&atilde;o da Electrolux do Brasil. Engenharia de m&aacute;quinas, ligas met&aacute;licas especiais e data science aplicados para tirar custo de engenharia e supply chain."
+            data-case-stat="Mais de R$ 5 milh&otilde;es reduzidos em engenharia e supply chain"
+            data-case-cta="#case-electrolux">
+            <div class="ph"><img src="assets/img/engenharia/processos/elux/web/cover.jpg" alt="Apresenta&ccedil;&atilde;o do projeto de engenharia de processos na planta da Electrolux do Brasil" loading="lazy"></div>
+            <div class="case-card__body">
+              <div class="case-card__loc">Curitiba &middot; PR</div>
+              <div class="case-card__title">Electrolux do Brasil</div>
+              <div class="case-card__stat">Mais de R$ 5 milh&otilde;es reduzidos em engenharia e supply chain</div>
+              <div class="case-card__eng-tags">
+                <a class="case-card__eng-tag" href="#verticais" onclick="event.stopPropagation();">Processos</a>
+                <a class="case-card__eng-tag" href="engenharia/mecanica.html" onclick="event.stopPropagation();">Mec&acirc;nica</a>
+                <a class="case-card__eng-tag" href="#verticais" onclick="event.stopPropagation();">Dados e IA</a>
+              </div>
+              <span class="case-card__more">Ver case <i class="fas fa-arrow-right"></i></span>
+              <a class="case-card__cta" href="#case-electrolux" onclick="event.stopPropagation();">Ver case completo <i class="fas fa-arrow-down"></i></a>
+            </div>
+          </article>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ====================== BLOCO 3.1 · CASE ELECTROLUX DO BRASIL ======================
+       Case de profundidade, complementar ao carrossel do Bloco 3 (que prova amplitude).
+       O card "Electrolux do Brasil" da esteira acima chega aqui pelo link
+       .case-card__cta. Esta pagina nao carrega cases-modal-home.js, entao os
+       data-case-* dos cards da esteira sao inertes aqui, igual aos outros tres.
+       CSS: .elux* em assets/css/engenharia.css. JS do hover de vídeo: assets/js/engenharia.js.
+       Mídia: assets/img/engenharia/processos/elux/web/ (originais em .../elux/, fora do deploy).
+       Os quadros de VSM foram publicados em 1200px de propósito: nesse tamanho os
+       cartões de dado da operação ficam ilegíveis, que é o que a confidencialidade do
+       cliente exige. Não republicar em resolução maior. -->
+  <section class="section elux" id="case-electrolux">
+    <div class="container">
+      <div class="elux__head">
+        <span class="kicker" data-reveal>Case &middot; Engenharia de Processos e IA</span>
+        <h2 class="h2" data-reveal data-d="1">Electrolux do Brasil:<br>mais de <em>R$ 5 milh&otilde;es</em> fora do custo.</h2>
+      </div>
+
+      <div class="elux__grid">
+        <div class="elux__copy">
+          <p class="lead" data-reveal data-d="2">A 4WaTT entrou na opera&ccedil;&atilde;o da Electrolux do Brasil para responder uma pergunta f&aacute;cil de fazer e dif&iacute;cil de provar: onde o dinheiro est&aacute; saindo. A resposta veio do ch&atilde;o de f&aacute;brica. O fluxo foi desenhado na parede antes de qualquer projeto ser aberto.</p>
+
+          <ol class="elux__steps" data-reveal data-d="2">
+            <li class="elux__step">
+              <span class="elux__step-n">01</span>
+              <div>
+                <h3>Mapeamento com Value Stream Mapping</h3>
+                <p>Lean Manufacturing avan&ccedil;ado aplicado linha a linha. O Value Stream Mapping mostrou onde o fluxo perdia tempo, material e espa&ccedil;o, com tempo de atravessamento medido em campo e n&atilde;o estimado em planilha.</p>
+              </div>
+            </li>
+            <li class="elux__step">
+              <span class="elux__step-n">02</span>
+              <div>
+                <h3>Ligas met&aacute;licas especiais para m&aacute;quinas de processo</h3>
+                <p>Projetos de engenharia para desenvolvimento de ligas met&aacute;licas especiais aplicadas &agrave;s m&aacute;quinas de processo, atacando o desgaste dos componentes que mais paravam a linha.</p>
+              </div>
+            </li>
+            <li class="elux__step">
+              <span class="elux__step-n">03</span>
+              <div>
+                <h3>M&aacute;quina especial para mangueiras hidr&aacute;ulicas</h3>
+                <p>Desenvolvimento de uma m&aacute;quina especial para fabrica&ccedil;&atilde;o de mangueiras hidr&aacute;ulicas, internalizando uma etapa que antes dependia de fornecedor externo.</p>
+              </div>
+            </li>
+            <li class="elux__step">
+              <span class="elux__step-n">04</span>
+              <div>
+                <h3>Data science e automa&ccedil;&atilde;o digital</h3>
+                <p>Os dados da opera&ccedil;&atilde;o passaram a apontar onde o custo estava, e n&atilde;o onde se imaginava que estivesse. Rotinas manuais de an&aacute;lise viraram automa&ccedil;&atilde;o.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="elux__result" data-reveal data-d="1">
+          <span class="elux__result-label">Resultado consolidado</span>
+          <strong class="elux__result-fig">R$ 5 mi<sup>+</sup></strong>
+          <span class="elux__result-unit">Redu&ccedil;&atilde;o em engenharia e supply chain</span>
+          <p>O corte n&atilde;o veio de uma frente s&oacute;. Veio do diagn&oacute;stico do fluxo, do projeto de material, da m&aacute;quina que internalizou uma etapa e do dado que passou a mostrar onde o custo realmente estava.</p>
+          <ul class="elux__result-tags">
+            <li><a href="#verticais">Engenharia de Processos</a></li>
+            <li><a href="engenharia/mecanica.html">Engenharia Mec&acirc;nica</a></li>
+            <li><a href="#verticais">Dados e IA</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="elux__gallery" data-reveal>
+        <div class="elux__gallery-head">
+          <h3>O trabalho em campo</h3>
+          <span class="elux__gallery-hint">Arraste para o lado</span>
+        </div>
+        <div class="elux__strip" tabindex="0" role="region" aria-label="Galeria do case Electrolux do Brasil">
+          <figure class="elux__shot">
+            <img src="assets/img/engenharia/processos/elux/web/apresentacao.jpg" alt="Engenheiro da 4WaTT apresentando o projeto de engenharia de processos na planta da Electrolux do Brasil" width="1280" height="960" loading="lazy" decoding="async">
+            <figcaption>Apresentação do projeto na planta</figcaption>
+          </figure>
+          <figure class="elux__shot" data-live>
+            <img src="assets/img/engenharia/processos/elux/web/vsm-mapa.jpg" alt="Quadro de Value Stream Mapping montado em papel na planta, com cartões de operação e apontamentos do time" width="900" height="1200" loading="lazy" decoding="async">
+            <video src="assets/img/engenharia/processos/elux/web/vsm-mapa.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="elux__live">Live</span>
+            <figcaption>Quadro de Value Stream Mapping montado na planta</figcaption>
+          </figure>
+          <figure class="elux__shot" data-live>
+            <img src="assets/img/engenharia/processos/elux/web/vsm-fluxos.jpg" alt="Trecho do quadro de VSM com os fluxos de laterais, caixa interna e corpo de porta desenhados" width="900" height="1200" loading="lazy" decoding="async">
+            <video src="assets/img/engenharia/processos/elux/web/vsm-fluxos.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="elux__live">Live</span>
+            <figcaption>Fluxos de laterais, caixa interna e corpo de porta</figcaption>
+          </figure>
+          <figure class="elux__shot" data-live>
+            <img src="assets/img/engenharia/processos/elux/web/vsm-dados.jpg" alt="Cartões de dados de operação e post-its de problemas levantados pelo time durante o mapeamento" width="900" height="1200" loading="lazy" decoding="async">
+            <video src="assets/img/engenharia/processos/elux/web/vsm-dados.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="elux__live">Live</span>
+            <figcaption>Cartões de operação e apontamentos do time</figcaption>
+          </figure>
+          <figure class="elux__shot" data-live>
+            <img src="assets/img/engenharia/processos/elux/web/vsm-consenso.jpg" alt="Trecho do quadro de VSM com a rotina de planejamento e as reuniões de consenso mapeadas" width="900" height="1200" loading="lazy" decoding="async">
+            <video src="assets/img/engenharia/processos/elux/web/vsm-consenso.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="elux__live">Live</span>
+            <figcaption>Rotina de planejamento mapeada junto com o fluxo</figcaption>
+          </figure>
+          <figure class="elux__shot" data-live>
+            <img src="assets/img/engenharia/processos/elux/web/vsm-leadtime.jpg" alt="Linha de tempo de atravessamento desenhada no quadro, separando tempo que agrega valor de tempo de espera" width="1200" height="900" loading="lazy" decoding="async">
+            <video src="assets/img/engenharia/processos/elux/web/vsm-leadtime.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+            <span class="elux__live">Live</span>
+            <figcaption>Linha de tempo de atravessamento do processo</figcaption>
+          </figure>
+          <figure class="elux__shot">
+            <img src="assets/img/engenharia/processos/elux/web/resultados.jpg" alt="Apresentação de fechamento com o resultado financeiro consolidado do projeto de engenharia" width="1280" height="960" loading="lazy" decoding="async">
+            <figcaption>Fechamento de resultado do projeto</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="elux__cta" data-reveal>
+        <a class="btn btn--primary" href="#contato-eng">Discutir um desafio de processo <i class="fas fa-arrow-right"></i></a>
+        <a class="btn btn--ghost" href="#verticais">Ver as 8 frentes de engenharia <i class="fas fa-arrow-up"></i></a>
+      </div>
+      <p class="elux__note">Imagens do trabalho de campo cedidas pelo cliente. Os dados de opera&ccedil;&atilde;o registrados nos quadros foram mantidos ileg&iacute;veis por confidencialidade.</p>
     </div>
   </section>
 
@@ -328,7 +469,7 @@
       <div class="eng-models__head">
         <span class="kicker" data-reveal>Modelos de contratação</span>
         <h2 class="h2" data-reveal data-d="1">O nível de responsabilidade que faz sentido para o seu projeto</h2>
-        <p class="lead" data-reveal data-d="2">Da fiscalização técnica à entrega completa — você escolhe quanto do
+        <p class="lead" data-reveal data-d="2">Da fiscalização técnica à entrega completa. Você escolhe quanto do
           projeto a 4WaTT assume.</p>
       </div>
 
@@ -347,7 +488,7 @@
         <article class="eng-model-card" data-reveal data-d="1">
           <div class="eng-model-card__icon"><i class="fa-solid fa-diagram-project"></i></div>
           <h3>EPCM</h3>
-          <p>A 4WaTT coordena engenharia, suprimentos e construção sem executar a obra diretamente — um
+          <p>A 4WaTT coordena engenharia, suprimentos e construção sem executar a obra diretamente. É um
             gerenciamento técnico dedicado ao seu projeto.</p>
           <ul>
             <li>Gerenciamento integrado de engenharia e suprimentos</li>
@@ -358,7 +499,7 @@
         <article class="eng-model-card" data-reveal data-d="2">
           <div class="eng-model-card__icon"><i class="fa-solid fa-key"></i></div>
           <h3>EPC / Turn-Key</h3>
-          <p>A 4WaTT assume a entrega completa — projeto, suprimentos e execução — com um único ponto de
+          <p>A 4WaTT assume a entrega completa (projeto, suprimentos e execução) com um único ponto de
             responsabilidade até a operação.</p>
           <ul>
             <li>Responsabilidade única, ponta a ponta</li>
@@ -377,7 +518,7 @@
         <span class="kicker" data-reveal>Parte do ecossistema 4WaTT</span>
         <h2 class="h2" data-reveal data-d="1">Uma nova frente. O mesmo ecossistema.</h2>
         <p class="lead" data-reveal data-d="2">
-          Serviços de Engenharia é uma nova Unidade de Negócio da 4WaTT — não substitui,
+          Serviços de Engenharia é uma nova Unidade de Negócio da 4WaTT. Ela não substitui,
           reorganiza ou reduz o que a empresa já entrega em biogás, biometano, gaseificação
           e gestão de resíduos. As duas frentes convivem e podem se complementar dentro do
           mesmo projeto.
@@ -407,7 +548,7 @@
           <h2 class="h2" data-reveal data-d="1">Fale com a engenharia 4WaTT.</h2>
           <p class="lead" data-reveal data-d="2">Um engenheiro da nossa equipe retorna para entender o escopo, o
             estágio em que o projeto está e qual frente resolve o seu problema. Depois disso você recebe o próximo
-            passo técnico por escrito — não uma proposta automática.</p>
+            passo técnico por escrito, não uma proposta automática.</p>
           <ul class="sol-cta__checklist" data-reveal data-d="2">
             <li><i class="fas fa-check"></i> Leitura do escopo pela vertical certa, entre as oito</li>
             <li><i class="fas fa-check"></i> Indicação do modelo de contratação que cabe: Owner’s Engineering, EPCM ou EPC</li>
@@ -463,7 +604,7 @@
     </div>
   </section>
 
-  <!-- Modal de vídeo — usado pelos cards de verticais que têm [data-video-id] (ver assets/js/engenharia.js) -->
+  <!-- Modal de vídeo, usado pelos cards de verticais que têm [data-video-id] (ver assets/js/engenharia.js) -->
   <div class="eng-video-modal" id="engVideoModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="eng-video-modal__backdrop" data-video-close></div>
     <div class="eng-video-modal__dialog">
@@ -517,7 +658,7 @@
   <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.4"></script>
   <script src="assets/js/forms.js?v=1.3"></script>
-  <script src="assets/js/engenharia.js?v=0.3"></script>
+  <script src="assets/js/engenharia.js?v=0.5"></script>
 
   <script type="application/ld+json">
 {

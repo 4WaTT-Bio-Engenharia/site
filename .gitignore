@@ -1,2 +1,10 @@
 __pycache__/
 *.pyc
+
+# Originais de midia da Electrolux (12,5 MB de JPEG/MOV de camera).
+# O que o site serve e a pasta web/ ao lado, ja otimizada. Manter os originais no
+# disco para reprocessar, mas fora do repositorio e fora do upload de deploy.
+assets/img/engenharia/processos/elux/*.JPEG
+assets/img/engenharia/processos/elux/*.MOV
+assets/img/engenharia/processos/elux/*.jpg
+!assets/img/engenharia/processos/elux/web/

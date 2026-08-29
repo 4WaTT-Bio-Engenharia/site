@@ -86,14 +86,25 @@
 .eng-scroll-stage .kicker { color: var(--gold); }
 .eng-scroll-stage .h2 { color: #fff; }
 .eng-scroll-stage .lead { color: rgba(255,255,255,.75); margin-top: 14px; }
-.eng-scroll-stage .eng-vert-grid { position: relative; z-index: 1; max-width: 1500px; margin: 0 auto; gap: clamp(20px, 2vw, 32px); }
+.eng-scroll-stage .eng-vert-grid { position: relative; z-index: 1; max-width: 1140px; margin: 0 auto; }
 .eng-scroll-stage .eng-vert-card {
-  background: rgba(255,255,255,.045);
-  border-color: rgba(255,255,255,.14);
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.13);
+  /* Aresta clara no topo: a luz batendo na quina da superficie. Sem backdrop-filter
+     aqui de proposito. O proprio .eng-scroll-stage__frame ja e uma camada de vidro, e
+     empilhar duas superficies translucidas derruba a legibilidade alem de custar caro. */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
 }
-.eng-scroll-stage .eng-vert-card:hover { background: rgba(255,255,255,.1); border-color: rgba(219,170,15,.45); }
-.eng-scroll-stage .eng-vert-card__name { color: #fff; font-size: 18px; }
-.eng-scroll-stage .eng-vert-card__desc { color: rgba(255,255,255,.68); font-size: 14px; }
+@media (hover: hover) and (pointer: fine) {
+  .eng-scroll-stage .eng-vert-card:hover {
+    background: rgba(255,255,255,.085);
+    border-color: rgba(219,170,15,.42);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 26px 54px -30px rgba(0,0,0,.7);
+  }
+}
+.eng-scroll-stage .eng-vert-card::after { color: rgba(255,255,255,.58); }
+.eng-scroll-stage .eng-vert-card__name { color: #fff; font-size: clamp(18px, 1.5vw, 21px); }
+.eng-scroll-stage .eng-vert-card__desc { color: rgba(255,255,255,.66); font-size: 14.5px; }
 .eng-scroll-stage .eng-vert-card__more { color: var(--gold); }
 .eng-scroll-stage .eng-vert-card__img { background: linear-gradient(135deg, rgba(219,170,15,.22), rgba(0,0,0,.25)); }
 .eng-scroll-stage .eng-vert-card__img--empty::after { color: rgba(219,170,15,.45); }
@@ -274,34 +285,85 @@
   .eng-scroll-stage__frame { border-radius: 20px; padding: 40px 20px 48px; transform: none !important; box-shadow: 0 30px 60px -30px rgba(10,3,9,.5); }
 }
 
+/* Grid de verticais: 2 colunas x 4 linhas (2026-08-29)
+   Antes eram 4 colunas x 2 linhas com card vertical (foto em cima, texto embaixo). Num
+   palco de 1500px cada card ficava com ~340px e precisava espremer nome, descricao e
+   tres pilulas numa coluna estreita, o que empurrou o corpo de texto para 13,5px.
+
+   Agora sao 2 colunas x 4 linhas e o card e horizontal: midia a esquerda, conteudo a
+   direita. O card ganha area, o texto sobe para 14,5px e a leitura vira foto, nome,
+   descricao, pilulas, acao, em vez de uma coluna comprida.
+
+   O palco encolheu de 1500px para 1140px junto com a mudanca. Duas colunas dentro de
+   1500px dariam cards de 730px: a linha de texto passaria de 90 caracteres e perderia
+   ritmo de leitura. */
 .eng-vert-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-6, 24px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 1.6vw, 22px);
+  counter-reset: eng-vert;
 }
-@media (max-width: 1080px) { .eng-vert-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px)  { .eng-vert-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .eng-vert-grid { grid-template-columns: 1fr; } }
 
 .eng-vert-card {
-  display: flex;
-  flex-direction: column;
+  /* Curva forte de saida. As curvas nativas do CSS sao fracas demais e o movimento
+     acaba lendo como atraso em vez de resposta. */
+  --card-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 41%) minmax(0, 1fr);
+  align-items: stretch;
+  min-height: 236px;
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg, 16px);
+  border-radius: 22px;
   text-decoration: none;
   color: inherit;
-  transition: transform .3s var(--ease, ease), box-shadow .3s;
+  isolation: isolate;
+  counter-increment: eng-vert;
+  transition:
+    transform .28s var(--card-ease),
+    box-shadow .28s var(--card-ease),
+    border-color .28s var(--card-ease),
+    background-color .28s var(--card-ease);
 }
-.eng-vert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-hi); }
+/* Indice 01..08 gerado por contador CSS, sem sujar o HTML com oito spans.
+   Reforca a promessa do titulo da secao ("As 8 frentes") sem gastar uma linha de texto. */
+.eng-vert-card::after {
+  content: counter(eng-vert, decimal-leading-zero);
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--muted);
+  opacity: .55;
+  pointer-events: none;
+  transition: opacity .3s var(--card-ease), color .3s var(--card-ease);
+}
+/* Press: a superficie cede um pouco. Confirma que a interface ouviu o toque, e o
+   retorno e curto de proposito. */
+.eng-vert-card:active { transform: scale(.988); transition-duration: .13s; }
+.eng-vert-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* Hover so em ponteiro fino. Em toque o :hover dispara no tap e gera falso positivo. */
+@media (hover: hover) and (pointer: fine) {
+  .eng-vert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-hi); }
+  .eng-vert-card:hover::after { opacity: 1; color: var(--gold); }
+  .eng-vert-card:hover .eng-vert-card__more i { transform: translateX(4px); }
+}
 
 /* Foto de capa por vertical — fornecida pelo usuário em
    assets/img/engenharia/{slug}/cover.jpg. Enquanto o arquivo não existe, o onerror no
    <img> (ver markup) remove a tag e deixa só o gradiente de fallback abaixo — nunca
    mostra o ícone de imagem quebrada do navegador. */
-.eng-vert-card__img { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg, rgba(3,165,137,.16), rgba(58,9,64,.12)); }
-.eng-vert-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease, ease); }
-.eng-vert-card:hover .eng-vert-card__img img { transform: scale(1.05); }
+.eng-vert-card__img { position: relative; height: 100%; overflow: hidden; background: linear-gradient(135deg, rgba(3,165,137,.16), rgba(58,9,64,.12)); }
+.eng-vert-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s var(--card-ease); }
+@media (hover: hover) and (pointer: fine) {
+  .eng-vert-card:hover .eng-vert-card__img img { transform: scale(1.06); }
+}
 
 /* Botão de play — só aparece nos cards com [data-video-id]. É <span role="button">, não
    <button>/<a>, porque o card inteiro já é um <a> — aninhar outro elemento interativo
@@ -334,6 +396,28 @@
 }
 .eng-vert-card__play-group .eng-vert-card__play { position: static; transform: none; width: 44px; height: 44px; font-size: 14px; }
 .eng-vert-card__play-group .eng-vert-card__play:hover { transform: scale(1.1); }
+
+/* Coluna de midia mais estreita que no layout antigo: o botao de play acompanha. */
+.eng-vert-card__play { width: 46px; height: 46px; font-size: 15px; }
+.eng-vert-card__play-group { gap: 10px; }
+.eng-vert-card__play-group .eng-vert-card__play { width: 40px; height: 40px; font-size: 13px; }
+
+/* Abaixo de 620px o card volta a empilhar: uma coluna de midia de 37% viraria uma tira
+   fina demais para a foto significar alguma coisa. */
+@media (max-width: 620px) {
+  .eng-vert-card { grid-template-columns: 1fr; min-height: 0; }
+  .eng-vert-card__img { aspect-ratio: 16 / 10; height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eng-vert-card,
+  .eng-vert-card::after,
+  .eng-vert-card__img img,
+  .eng-vert-card__more i { transition-duration: .01ms !important; }
+  .eng-vert-card:hover,
+  .eng-vert-card:active { transform: none; }
+  .eng-vert-card:hover .eng-vert-card__img img { transform: none; }
+}
 .eng-vert-card__img--empty::after {
   content: "\f5fd"; /* fa-image */
   font-family: "Font Awesome 6 Free";
@@ -343,23 +427,34 @@
   font-size: 22px; color: rgba(3,165,137,.35);
 }
 
-.eng-vert-card__body { display: flex; flex-direction: column; gap: 10px; padding: 20px var(--space-6, 24px) var(--space-6, 24px); flex: 1; }
-.eng-vert-card__name { font-family: var(--display); font-weight: 700; font-size: 16.5px; color: var(--ink); }
-.eng-vert-card__desc { font-size: 13.5px; line-height: 1.5; color: var(--dim); }
-.eng-vert-card__more { font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--teal-ink); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; }
+.eng-vert-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: clamp(20px, 2vw, 26px) clamp(20px, 2vw, 28px);
+  padding-right: clamp(40px, 3.2vw, 50px); /* folga para o indice no canto */
+  min-width: 0;
+}
+/* Tracking negativo cresce junto com o tamanho: letra grande lida com espaco demais
+   entre os caracteres. Corpo de texto fica perto de zero. */
+.eng-vert-card__name { font-family: var(--display); font-weight: 700; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.18; letter-spacing: -.018em; color: var(--ink); }
+.eng-vert-card__desc { font-size: 14.5px; line-height: 1.58; color: var(--dim); }
+.eng-vert-card__more { font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; color: var(--teal-ink); display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 4px; }
+.eng-vert-card__more i { transition: transform .3s var(--card-ease); }
 
 /* Preview de serviços por vertical (2026-08-23) — pílulas curtas entre a descrição e
    "Saiba mais", mesma lógica visual de .case-card__eng-tag (Bloco 3), sem link (é
    preview, não navegação — o card inteiro já é o link). */
-.eng-vert-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.eng-vert-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 .eng-vert-card__tag {
   display: inline-flex;
   align-items: center;
-  padding: 3px 9px;
+  padding: 4px 11px;
   border-radius: var(--radius-full, 9999px);
   border: 1px solid var(--border);
   color: var(--muted);
-  font-size: 10.5px;
+  font-size: 11.5px;
+  line-height: 1.35;
   letter-spacing: .01em;
 }
 .eng-scroll-stage .eng-vert-card__tag { border-color: rgba(255,255,255,.28); color: rgba(255,255,255,.75); }
@@ -604,3 +699,237 @@
 .eng-svc-breadcrumb a { color: inherit; text-decoration: none; }
 .eng-svc-breadcrumb a:hover { color: #fff; }
 .eng-svc-breadcrumb .is-current { color: rgba(255,255,255,.9); }
+
+
+/* ==========================================================================
+   Case Electrolux do Brasil - Engenharia de Processos e IA (2026-08-29)
+   Secao exclusiva de engenharia/index.html (#case-electrolux). Fica logo depois do
+   carrossel "Execucao comprovada" e recebe o clique do card da Electrolux.
+
+   Por que secao propria e nao so mais um card no carrossel: o carrossel prova
+   AMPLITUDE (varios projetos, varias verticais). Este case prova PROFUNDIDADE, e tem
+   material de campo para isso (fotos do quadro de VSM e da apresentacao de resultado).
+   Espremer isso num card de 320px jogaria fora a unica prova visual de processo que a
+   pagina tem.
+
+   Fundo claro (--bg) de proposito: o bloco anterior e escuro (--plum) e o palco das
+   verticais tambem. A alternancia claro/escuro e o que da respiro e marca a troca de
+   assunto sem precisar de divisoria.
+   ========================================================================== */
+.elux {
+  --elux-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Gold da marca escurecido ate passar AA em texto pequeno sobre --bg.
+     O --gold-ink do tema da 3,82:1 a 12px, que reprova. Local de proposito:
+     virar token global obrigaria subir a versao de theme-4watt.css em todas
+     as paginas do site por causa de um numero de etapa. */
+  --elux-gold-deep: #785900;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.elux__head { max-width: 820px; margin-bottom: clamp(36px, 4vw, 56px); }
+.elux__head .h2 { letter-spacing: -.03em; line-height: 1.03; margin-top: 14px; }
+.elux__head .h2 em { font-style: normal; color: var(--teal-ink); }
+
+.elux__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+}
+@media (max-width: 980px) { .elux__grid { grid-template-columns: 1fr; } }
+
+.elux__copy .lead { max-width: 60ch; }
+
+/* As quatro entregas tecnicas. Numeradas porque a ordem importa: o diagnostico veio
+   antes do projeto, e o dado veio antes do corte de custo. */
+.elux__steps { list-style: none; margin: clamp(26px, 3vw, 38px) 0 0; padding: 0; display: grid; gap: 2px; }
+.elux__step {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+.elux__step:last-child { border-bottom: 1px solid var(--border); }
+.elux__step-n {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: var(--elux-gold-deep);
+  padding-top: 3px;
+}
+.elux__step h3 { font-family: var(--display); font-weight: 700; font-size: 16.5px; line-height: 1.3; letter-spacing: -.012em; color: var(--ink); margin: 0 0 6px; }
+.elux__step p { font-size: 14.5px; line-height: 1.6; color: var(--dim); margin: 0; }
+
+/* Cartao de resultado. Superficie escura sozinha num bloco claro: e o unico ponto da
+   secao que se comporta como destaque, entao carrega o numero. */
+.elux__result {
+  position: sticky;
+  top: 108px;
+  background: linear-gradient(165deg, var(--roxo) 0%, var(--plum) 100%);
+  border: 1px solid rgba(219,170,15,.28);
+  border-radius: 24px;
+  padding: clamp(26px, 3vw, 36px);
+  box-shadow: 0 40px 80px -44px rgba(46,12,40,.55), inset 0 1px 0 rgba(255,255,255,.08);
+  color: #fff;
+}
+@media (max-width: 980px) { .elux__result { position: static; } }
+
+.elux__result-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.elux__result-fig {
+  display: block;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(46px, 6vw, 68px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  margin: 12px 0 4px;
+}
+.elux__result-fig sup { font-size: .42em; font-weight: 700; letter-spacing: 0; vertical-align: super; color: var(--gold); margin-left: 4px; }
+.elux__result-unit { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: rgba(255,255,255,.6); text-transform: uppercase; }
+.elux__result p { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.72); margin: 20px 0 0; }
+
+.elux__result-tags { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+.elux__result-tags a {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid rgba(255,255,255,.26);
+  color: rgba(255,255,255,.86);
+  font-size: 11.5px;
+  text-decoration: none;
+  transition: border-color .25s var(--elux-ease), color .25s var(--elux-ease), background-color .25s var(--elux-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .elux__result-tags a:hover { border-color: var(--gold); color: var(--gold); background: rgba(219,170,15,.1); }
+}
+.elux__result-tags a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- Tira de midia ----------
+   Rolagem horizontal nativa com snap, nao o motor [data-marquee]. Dois motivos: aqui
+   ninguem quer que a tira ande sozinha (sao provas, o usuario decide o ritmo), e o
+   auto-duplicador de engenharia.js clonaria os <video> junto, dobrando o custo.
+
+   As bordas usam mask em vez de divisoria: o conteudo se dissolve onde encontra o
+   limite, em vez de bater numa linha de 1px. */
+.elux__gallery { margin-top: clamp(40px, 5vw, 68px); }
+.elux__gallery-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.elux__gallery-head h3 { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: -.01em; color: var(--ink); margin: 0; }
+.elux__gallery-hint { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; color: var(--dim); }
+
+.elux__strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+}
+.elux__strip::-webkit-scrollbar { display: none; }
+.elux__strip:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.elux__shot {
+  position: relative;
+  flex: 0 0 auto;
+  height: clamp(240px, 34vw, 380px);
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  scroll-snap-align: center;
+  transition: border-color .3s var(--elux-ease), box-shadow .3s var(--elux-ease);
+}
+.elux__shot img,
+.elux__shot video {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: cover;
+}
+/* O video fica por cima da foto, nao no lugar dela: se a rede falhar ou o autoplay for
+   bloqueado, o que sobra na tela e a foto, nao um retangulo preto. */
+.elux__shot video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .32s var(--elux-ease);
+  pointer-events: none;
+}
+.elux__shot.is-playing video { opacity: 1; }
+
+.elux__shot figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 34px 16px 14px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(14,4,12,.82));
+  pointer-events: none;
+}
+
+/* Selo de foto viva, no espirito do Live Photo: avisa que aquele quadro tem movimento
+   guardado, antes de o usuario descobrir por acidente. */
+.elux__live {
+  position: absolute;
+  top: 12px; left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(14,4,12,.5);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid rgba(255,255,255,.24);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity .3s var(--elux-ease);
+}
+.elux__live::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(219,170,15,.25);
+}
+.elux__shot.is-playing .elux__live { opacity: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .elux__shot:hover { border-color: var(--border-hi); box-shadow: var(--shadow); }
+}
+.elux__shot:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.elux__cta { margin-top: clamp(32px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.elux__note { font-size: 12.5px; line-height: 1.5; color: var(--dim); max-width: 46ch; margin: 18px 0 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .elux__shot,
+  .elux__shot video,
+  .elux__live,
+  .elux__result-tags a { transition-duration: .01ms !important; }
+  .elux__strip { scroll-behavior: auto; }
+  /* Sem foto viva nesse modo, entao o selo nao pode prometer movimento. */
+  .elux__live { display: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .elux__live { background: rgba(14,4,12,.9); backdrop-filter: none; -webkit-backdrop-filter: none; }
+}

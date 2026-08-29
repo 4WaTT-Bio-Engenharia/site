@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="assets/css/home-premium.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
-  <link rel="stylesheet" href="assets/css/engenharia.css?v=1.1">
+  <link rel="stylesheet" href="assets/css/engenharia.css?v=1.4">
   <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N91NFD55MB');</script>
@@ -220,7 +220,7 @@
           </span>
         </a>
         <a class="eng-vert-card" href="engenharia/digital.html" data-reveal data-d="2">
-          <span class="eng-vert-card__img"><img src="assets/img/engenharia/digital/cover.jpg" alt="Engenharia Digital, Dados e IA" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/digital/cover.jpg" alt="Do dado bruto à decisão: camadas de tratamento, modelo e queda de custo por ciclo" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
           <span class="eng-vert-card__body">
             <span class="eng-vert-card__name">Engenharia Digital, Dados e IA</span>
             <span class="eng-vert-card__desc">Skills personalizadas, MCP, RAG e automação de processos com inteligência artificial aplicada à operação. Da análise de dados à automação de tarefas repetitivas, tecnologia que não depende de biogás ou biometano para fazer sentido.</span>
@@ -233,7 +233,7 @@
           </span>
         </a>
         <a class="eng-vert-card" href="engenharia/automacao.html" data-reveal data-d="3">
-          <span class="eng-vert-card__img"><img src="assets/img/engenharia/automacao/cover.jpeg" alt="Automação e Instrumentação" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
+          <span class="eng-vert-card__img"><img src="assets/img/engenharia/automacao/cover-painel.jpg" alt="Quadro geral de baixa tensão: entrada de energia, disjuntor geral, DPS e circuitos de distribuição" loading="lazy" onerror="this.parentElement.classList.add('eng-vert-card__img--empty');this.remove();"></span>
           <span class="eng-vert-card__body">
             <span class="eng-vert-card__name">Automação e Instrumentação</span>
             <span class="eng-vert-card__desc">IoT, sistemas SCADA e IA aplicada à tomada de decisão em ambiente industrial. Sensores, integração e inteligência artificial trabalhando juntos na planta, não só no escritório.</span>
@@ -395,17 +395,22 @@
           </ol>
         </div>
 
-        <aside class="elux__result" data-reveal data-d="1">
-          <span class="elux__result-label">Resultado consolidado</span>
-          <strong class="elux__result-fig">R$ 5 mi<sup>+</sup></strong>
-          <span class="elux__result-unit">Redu&ccedil;&atilde;o em engenharia e supply chain</span>
-          <p>O corte n&atilde;o veio de uma frente s&oacute;. Veio do diagn&oacute;stico do fluxo, do projeto de material, da m&aacute;quina que internalizou uma etapa e do dado que passou a mostrar onde o custo realmente estava.</p>
-          <ul class="elux__result-tags">
-            <li><a href="#verticais">Engenharia de Processos</a></li>
-            <li><a href="engenharia/mecanica.html">Engenharia Mec&acirc;nica</a></li>
-            <li><a href="#verticais">Dados e IA</a></li>
-          </ul>
-        </aside>
+        <div class="elux__result-wrap" data-reveal data-d="1">
+          <aside class="elux__result" data-tilt>
+            <span class="elux__result-sheen" aria-hidden="true"></span>
+            <div class="elux__result-depth">
+              <span class="elux__result-label">Resultado consolidado</span>
+              <strong class="elux__result-fig">R$ 5 mi<sup>+</sup></strong>
+              <span class="elux__result-unit">Redu&ccedil;&atilde;o em engenharia e supply chain</span>
+            </div>
+            <p>O corte n&atilde;o veio de uma frente s&oacute;. Veio do diagn&oacute;stico do fluxo, do projeto de material, da m&aacute;quina que internalizou uma etapa e do dado que passou a mostrar onde o custo realmente estava.</p>
+            <ul class="elux__result-tags">
+              <li><a href="#verticais">Engenharia de Processos</a></li>
+              <li><a href="engenharia/mecanica.html">Engenharia Mec&acirc;nica</a></li>
+              <li><a href="#verticais">Dados e IA</a></li>
+            </ul>
+          </aside>
+        </div>
       </div>
 
       <div class="elux__gallery" data-reveal>
@@ -467,47 +472,77 @@
   <section class="section eng-models">
     <div class="container">
       <div class="eng-models__head">
-        <span class="kicker" data-reveal>Modelos de contratação</span>
-        <h2 class="h2" data-reveal data-d="1">O nível de responsabilidade que faz sentido para o seu projeto</h2>
-        <p class="lead" data-reveal data-d="2">Da fiscalização técnica à entrega completa. Você escolhe quanto do
-          projeto a 4WaTT assume.</p>
+        <span class="kicker" data-reveal>Modelos de contrata&ccedil;&atilde;o</span>
+        <h2 class="h2" data-reveal data-d="1">O n&iacute;vel de responsabilidade que faz sentido para o seu projeto</h2>
+        <p class="lead" data-reveal data-d="2">Da fiscaliza&ccedil;&atilde;o t&eacute;cnica &agrave; entrega completa. Voc&ecirc; escolhe quanto do projeto a 4WaTT assume.</p>
+      </div>
+
+      <div class="eng-models__scale" data-reveal data-d="2" aria-hidden="true">
+        <span class="eng-models__scale-end">Voc&ecirc; conduz</span>
+        <span class="eng-models__scale-track"></span>
+        <span class="eng-models__scale-end eng-models__scale-end--to">A 4WaTT entrega</span>
       </div>
 
       <div class="eng-model-grid">
-        <article class="eng-model-card" data-reveal>
-          <div class="eng-model-card__icon"><i class="fa-solid fa-user-shield"></i></div>
-          <h3>Owner's Engineering / Fiscalização</h3>
-          <p>Você mantém o controle do projeto; a 4WaTT representa seu interesse técnico, fiscalizando entregas e
-            protegendo o investimento.</p>
+        <article class="eng-model-card" data-level="1" data-reveal>
+          <div class="eng-model-card__top">
+            <span class="eng-model-card__idx">01</span>
+            <h3>Owner&rsquo;s Engineering</h3>
+            <p class="eng-model-card__role">O controle permanece com voc&ecirc;</p>
+          </div>
+          <div class="eng-model-card__meter" role="img" aria-label="A 4WaTT assume 1 de 3 n&iacute;veis de responsabilidade">
+            <span class="eng-model-card__seg is-on"></span>
+            <span class="eng-model-card__seg"></span>
+            <span class="eng-model-card__seg"></span>
+          </div>
+          <p class="eng-model-card__desc">Voc&ecirc; mant&eacute;m o controle do projeto. A 4WaTT representa o seu interesse t&eacute;cnico, fiscaliza as entregas e protege o investimento.</p>
           <ul>
-            <li>Fiscalização técnica independente</li>
+            <li>Fiscaliza&ccedil;&atilde;o t&eacute;cnica independente</li>
             <li>Controle de qualidade das entregas</li>
-            <li>Representação do dono do projeto perante fornecedores</li>
+            <li>Representa&ccedil;&atilde;o do dono do projeto perante fornecedores</li>
           </ul>
         </article>
-        <article class="eng-model-card" data-reveal data-d="1">
-          <div class="eng-model-card__icon"><i class="fa-solid fa-diagram-project"></i></div>
-          <h3>EPCM</h3>
-          <p>A 4WaTT coordena engenharia, suprimentos e construção sem executar a obra diretamente. É um
-            gerenciamento técnico dedicado ao seu projeto.</p>
+
+        <article class="eng-model-card" data-level="2" data-reveal data-d="1">
+          <div class="eng-model-card__top">
+            <span class="eng-model-card__idx">02</span>
+            <h3>EPCM</h3>
+            <p class="eng-model-card__role">Gerenciamento t&eacute;cnico dedicado</p>
+          </div>
+          <div class="eng-model-card__meter" role="img" aria-label="A 4WaTT assume 2 de 3 n&iacute;veis de responsabilidade">
+            <span class="eng-model-card__seg is-on"></span>
+            <span class="eng-model-card__seg is-on"></span>
+            <span class="eng-model-card__seg"></span>
+          </div>
+          <p class="eng-model-card__desc">A 4WaTT coordena engenharia, suprimentos e constru&ccedil;&atilde;o sem executar a obra diretamente. &Eacute; um gerenciamento t&eacute;cnico dedicado ao seu projeto.</p>
           <ul>
             <li>Gerenciamento integrado de engenharia e suprimentos</li>
-            <li>Coordenação de fornecedores e contratados</li>
-            <li>Cronograma e orçamento sob controle técnico</li>
+            <li>Coordena&ccedil;&atilde;o de fornecedores e contratados</li>
+            <li>Cronograma e or&ccedil;amento sob controle t&eacute;cnico</li>
           </ul>
         </article>
-        <article class="eng-model-card" data-reveal data-d="2">
-          <div class="eng-model-card__icon"><i class="fa-solid fa-key"></i></div>
-          <h3>EPC / Turn-Key</h3>
-          <p>A 4WaTT assume a entrega completa (projeto, suprimentos e execução) com um único ponto de
-            responsabilidade até a operação.</p>
+
+        <article class="eng-model-card" data-level="3" data-reveal data-d="2">
+          <div class="eng-model-card__top">
+            <span class="eng-model-card__idx">03</span>
+            <h3>EPC / Turn-Key</h3>
+            <p class="eng-model-card__role">Um &uacute;nico respons&aacute;vel at&eacute; a partida</p>
+          </div>
+          <div class="eng-model-card__meter" role="img" aria-label="A 4WaTT assume 3 de 3 n&iacute;veis de responsabilidade">
+            <span class="eng-model-card__seg is-on"></span>
+            <span class="eng-model-card__seg is-on"></span>
+            <span class="eng-model-card__seg is-on"></span>
+          </div>
+          <p class="eng-model-card__desc">A 4WaTT assume a entrega completa (projeto, suprimentos e execu&ccedil;&atilde;o) com um &uacute;nico ponto de responsabilidade at&eacute; a opera&ccedil;&atilde;o.</p>
           <ul>
-            <li>Responsabilidade única, ponta a ponta</li>
+            <li>Responsabilidade &uacute;nica, ponta a ponta</li>
             <li>Entrega pronta para operar</li>
             <li>Prazo e escopo fechados em contrato</li>
           </ul>
         </article>
       </div>
+
+      <p class="eng-models__foot" data-reveal>N&atilde;o sabe qual encaixa no seu caso? <a href="#contato-eng">Descreva o escopo</a> e um engenheiro indica o modelo antes de qualquer proposta.</p>
     </div>
   </section>
 
@@ -658,7 +693,7 @@
   <script src="assets/js/main.js?v=1.5"></script>
   <script src="assets/js/site-premium.js?v=2.4"></script>
   <script src="assets/js/forms.js?v=1.3"></script>
-  <script src="assets/js/engenharia.js?v=0.5"></script>
+  <script src="assets/js/engenharia.js?v=0.6"></script>
 
   <script type="application/ld+json">
 {

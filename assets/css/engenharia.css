@@ -78,6 +78,15 @@
 }
 .eng-scroll-stage { position: relative; z-index: 1; }
 .eng-scroll-stage__frame > .container { position: relative; z-index: 1; }
+/* No desktop o .container soma 64px de padding de cada lado ao padding que o
+   proprio frame do palco ja aplica. Sao 128px de largura util jogados fora, e o
+   card paga isso apertando a coluna de texto: com a foto maior, a descricao ia
+   para nove linhas. Aqui a folga lateral fica por conta do frame, que e quem
+   desenha a borda. Abaixo de 901px nada muda: o grid ja e de uma coluna e o
+   padding do container e o que garante respiro na borda da tela. */
+@media (min-width: 901px) {
+  .eng-scroll-stage__frame > .container { padding-left: 0; padding-right: 0; }
+}
 
 /* Texto/cards dentro do palco escuro precisam da variante clara — o resto da página
    (Blocos 2-fora-do-palco não existe mais, mas Bloco 4 continua em fundo claro e NÃO
@@ -311,9 +320,9 @@
   --card-ease: cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 41%) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
   align-items: stretch;
-  min-height: 236px;
+  min-height: 264px;
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -477,48 +486,158 @@
 .case-card__eng-tag:hover { border-color: #fff; color: #fff; }
 .case-card__eng-tag--all { border-color: var(--gold); color: var(--gold); }
 
-/* ---------- Bloco 4 · Modelos de contratação ---------- */
-.eng-models { background: var(--surface-2); }
-.eng-models__head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+/* ---------- Bloco 4 · Modelos de contratação ----------
+   Reescrito 2026-08-29.
+
+   O layout antigo eram tres cards iguais com um icone circular em cima. Isso
+   dizia "tres opcoes paralelas", e nao e o que sao: e uma ESCALA de
+   transferencia de responsabilidade, de "voce conduz" ate "a 4WaTT entrega".
+   Um leitor que nao conhece EPCM saia sem entender a diferenca.
+
+   Agora a forma carrega a informacao. Uma escala nomeada uma vez acima do
+   grid, indice 01/02/03, e um medidor de tres segmentos que enche junto com o
+   nivel. O controle espelha o que descreve, entao dispensa legenda.
+
+   Os icones sairam. Escudo, diagrama e chave nao acrescentavam nada ao titulo
+   e competiam com o unico elemento que carrega informacao de verdade. */
+.eng-models {
+  --m-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  background: var(--surface-2);
+}
+.eng-models__head { max-width: 720px; margin: 0 auto clamp(30px, 3.4vw, 42px); text-align: center; }
+.eng-models__head .h2 { letter-spacing: -.03em; line-height: 1.06; }
+.eng-models__head .lead { margin-top: 14px; }
+
+/* Eixo nomeado uma vez. Sem ele, tres medidores identicos viram enfeite. */
+.eng-models__scale {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
+  max-width: 1000px;
+  margin: 0 auto clamp(22px, 2.6vw, 32px);
+  font-family: var(--mono);
+  font-size: clamp(10px, .85vw, 11.5px);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.eng-models__scale-end { flex: 0 0 auto; }
+.eng-models__scale-end--to { color: var(--teal-ink); }
+.eng-models__scale-track {
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-hi), var(--teal));
+}
 
 .eng-model-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6, 24px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.6vw, 22px);
 }
 @media (max-width: 900px) { .eng-model-grid { grid-template-columns: 1fr; } }
 
 .eng-model-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg, 16px);
-  padding: var(--space-8, 32px);
+  border-radius: 22px;
+  padding: clamp(24px, 2.4vw, 34px);
+  transition:
+    transform .28s var(--m-ease),
+    box-shadow .28s var(--m-ease),
+    border-color .28s var(--m-ease);
 }
-.eng-model-card__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(58, 9, 64, .08);
-  color: var(--roxo-soft);
-  font-size: 20px;
-  margin-bottom: 18px;
+/* A superficie esquenta conforme a 4WaTT assume mais. Deliberadamente sutil:
+   e eco do medidor, nao um segundo sinal disputando com ele. */
+.eng-model-card[data-level="2"] { background: linear-gradient(168deg, rgba(3,165,137,.05), var(--surface) 60%); }
+.eng-model-card[data-level="3"] {
+  background: linear-gradient(168deg, rgba(3,165,137,.09), var(--surface) 60%);
+  border-color: rgba(3,165,137,.3);
 }
-.eng-model-card h3 { font-family: var(--display); font-weight: 700; font-size: 18px; margin: 0 0 10px; color: var(--ink); }
-.eng-model-card p { font-size: 13.5px; line-height: 1.55; color: var(--dim); margin: 0 0 16px; }
-.eng-model-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.eng-model-card li { font-size: 12.5px; line-height: 1.4; color: var(--muted); padding-left: 18px; position: relative; }
-.eng-model-card li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  font-size: 10px;
+@media (hover: hover) and (pointer: fine) {
+  .eng-model-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border-hi); }
+  .eng-model-card[data-level="3"]:hover { border-color: rgba(3,165,137,.5); }
+}
+
+.eng-model-card__top { display: flex; flex-direction: column; gap: 5px; margin-bottom: clamp(18px, 1.8vw, 24px); }
+/* --muted da 3,3:1 sobre a superficie do card e reprova AA em 11,5px.
+   --dim sobe para 6,3:1 sem perder a leitura de "secundario". */
+.eng-model-card__idx { font-family: var(--mono); font-size: 11.5px; letter-spacing: .18em; color: var(--dim); }
+.eng-model-card h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.16;
+  letter-spacing: -.022em;
+  color: var(--ink);
+  margin: 0;
+}
+.eng-model-card__role { font-family: var(--mono); font-size: 11.5px; line-height: 1.4; letter-spacing: .05em; color: var(--teal-ink); margin: 3px 0 0; }
+
+/* Medidor: quanto da responsabilidade a 4WaTT assume. */
+.eng-model-card__meter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: clamp(18px, 1.8vw, 24px);
+}
+.eng-model-card__seg {
+  height: 6px;
+  border-radius: var(--radius-full, 9999px);
+  background: var(--border);
+  transform-origin: left center;
+}
+.eng-model-card__seg.is-on { background: var(--teal); }
+/* O preenchimento entra junto com o reveal, em cascata da esquerda para a
+   direita: o olho le a escala enchendo, que e exatamente o que o numero diz.
+   scaleX e nao width porque width recalcula layout e scaleX vai pro compositor. */
+.eng-model-card[data-reveal] .eng-model-card__seg.is-on { transform: scaleX(0); }
+.eng-model-card[data-reveal].in .eng-model-card__seg.is-on {
+  transform: scaleX(1);
+  transition: transform .5s var(--m-ease);
+}
+.eng-model-card[data-reveal].in .eng-model-card__seg:nth-child(2) { transition-delay: .07s; }
+.eng-model-card[data-reveal].in .eng-model-card__seg:nth-child(3) { transition-delay: .14s; }
+
+.eng-model-card__desc { font-size: 14.5px; line-height: 1.6; color: var(--dim); margin: 0 0 clamp(18px, 1.8vw, 24px); }
+
+/* Lista sem icone. O check repetido nove vezes na secao virava textura e
+   competia com o medidor. Fio de 1px separa igual e nao pesa. */
+.eng-model-card ul { list-style: none; margin: auto 0 0; padding: 0; }
+.eng-model-card li {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--dim);
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+.eng-model-card li:last-child { padding-bottom: 0; }
+
+.eng-models__foot {
+  text-align: center;
+  max-width: 58ch;
+  margin: clamp(26px, 3vw, 38px) auto 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--dim);
+}
+.eng-models__foot a {
   color: var(--teal-ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(3,165,137,.35);
+  transition: color .25s var(--m-ease), border-color .25s var(--m-ease);
+}
+.eng-models__foot a:hover { color: var(--teal); border-color: var(--teal); }
+.eng-models__foot a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .eng-model-card,
+  .eng-model-card__seg,
+  .eng-models__foot a { transition-duration: .01ms !important; }
+  .eng-model-card:hover { transform: none; }
+  .eng-model-card[data-reveal] .eng-model-card__seg.is-on { transform: none; }
 }
 
 /* ---------- Bloco 5 · Integração institucional (Teste 8) ----------
@@ -734,7 +853,7 @@
 
 .elux__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
   gap: clamp(28px, 4vw, 64px);
   align-items: start;
 }
@@ -765,36 +884,87 @@
 .elux__step p { font-size: 14.5px; line-height: 1.6; color: var(--dim); margin: 0; }
 
 /* Cartao de resultado. Superficie escura sozinha num bloco claro: e o unico ponto da
-   secao que se comporta como destaque, entao carrega o numero. */
-.elux__result {
+   secao que se comporta como destaque, entao carrega o numero.
+
+   O sticky e a perspectiva moram no WRAPPER, nao no cartao. Dois motivos:
+   o data-reveal ja usa transform no wrapper e brigaria com a inclinacao, e
+   perspective precisa vir do ancestral para o filho inclinar de verdade em
+   vez de so achatar. */
+.elux__result-wrap {
   position: sticky;
   top: 108px;
+  perspective: 1400px;
+}
+@media (max-width: 980px) { .elux__result-wrap { position: static; perspective: none; } }
+
+.elux__result {
+  position: relative;
+  transform-style: preserve-3d;
+  /* Angulos vem do JS (assets/js/engenharia.js, initTilt), amortecidos quadro a
+     quadro. Aqui so declaramos o repouso, para o cartao ficar reto sem JS. */
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   background: linear-gradient(165deg, var(--roxo) 0%, var(--plum) 100%);
   border: 1px solid rgba(219,170,15,.28);
-  border-radius: 24px;
-  padding: clamp(26px, 3vw, 36px);
-  box-shadow: 0 40px 80px -44px rgba(46,12,40,.55), inset 0 1px 0 rgba(255,255,255,.08);
+  border-radius: 26px;
+  padding: clamp(32px, 3.4vw, 46px);
+  /* Sombra em duas camadas: uma larga e difusa para o cartao flutuar sobre o
+     bloco claro, outra curta e proxima para ancorar a base. Uma sombra so
+     sempre parece adesivo. */
+  box-shadow:
+    0 54px 100px -48px rgba(46,12,40,.62),
+    0 16px 34px -22px rgba(46,12,40,.42),
+    inset 0 1px 0 rgba(255,255,255,.09);
   color: #fff;
+  transition: box-shadow .4s var(--elux-ease);
+  will-change: transform;
 }
-@media (max-width: 980px) { .elux__result { position: static; } }
+@media (hover: hover) and (pointer: fine) {
+  .elux__result:hover {
+    box-shadow:
+      0 68px 120px -46px rgba(46,12,40,.68),
+      0 20px 40px -22px rgba(46,12,40,.48),
+      inset 0 1px 0 rgba(255,255,255,.14);
+  }
+}
 
-.elux__result-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+/* Brilho especular que segue o ponteiro. E o que faz a inclinacao ler como
+   superficie fisica pegando luz, e nao como um retangulo girando. */
+.elux__result-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%),
+              rgba(255,255,255,.16), rgba(255,255,255,0) 58%);
+  transition: opacity .35s var(--elux-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .elux__result:hover .elux__result-sheen { opacity: 1; }
+}
+
+/* O numero flutua acima da superficie do cartao. E o unico elemento com
+   translateZ: parallax em tudo vira ruido, em um elemento vira hierarquia. */
+.elux__result-depth { transform: translateZ(38px); }
+@media (max-width: 980px) { .elux__result-depth { transform: none; } }
+
+.elux__result-label { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
 .elux__result-fig {
   display: block;
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(46px, 6vw, 68px);
-  line-height: .98;
-  letter-spacing: -.045em;
+  font-size: clamp(56px, 7.2vw, 86px);
+  line-height: .95;
+  letter-spacing: -.05em;
   font-variant-numeric: tabular-nums;
   color: #fff;
-  margin: 12px 0 4px;
+  margin: 16px 0 6px;
 }
 .elux__result-fig sup { font-size: .42em; font-weight: 700; letter-spacing: 0; vertical-align: super; color: var(--gold); margin-left: 4px; }
-.elux__result-unit { display: block; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: rgba(255,255,255,.6); text-transform: uppercase; }
-.elux__result p { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.72); margin: 20px 0 0; }
+.elux__result-unit { display: block; font-family: var(--mono); font-size: 12.5px; line-height: 1.5; letter-spacing: .12em; color: rgba(255,255,255,.62); text-transform: uppercase; }
+.elux__result p { font-size: 15px; line-height: 1.62; color: rgba(255,255,255,.74); margin: 26px 0 0; }
 
-.elux__result-tags { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+.elux__result-tags { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .elux__result-tags a {
   display: inline-flex;
   align-items: center;
@@ -925,7 +1095,14 @@
   .elux__shot,
   .elux__shot video,
   .elux__live,
+  .elux__result,
+  .elux__result-sheen,
   .elux__result-tags a { transition-duration: .01ms !important; }
+  /* Sem inclinacao nem parallax: o JS ja nao liga o tilt nesse modo, isto e
+     a rede de seguranca caso a classe chegue por outro caminho. */
+  .elux__result { transform: none !important; }
+  .elux__result-depth { transform: none !important; }
+  .elux__result-sheen { display: none; }
   .elux__strip { scroll-behavior: auto; }
   /* Sem foto viva nesse modo, entao o selo nao pode prometer movimento. */
   .elux__live { display: none; }

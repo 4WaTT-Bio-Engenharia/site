@@ -275,9 +275,87 @@
     strip.addEventListener('lostpointercapture', endDrag);
   }
 
+  /* ---------- Inclinacao 3D do cartao de resultado ([data-tilt]) ----------
+     Decorativo, e assume isso. O cartao nao muda de estado nem executa acao:
+     ele so responde ao ponteiro, para uma superficie escura parada no meio de
+     um bloco claro parecer objeto e nao adesivo.
+
+     Tres decisoes que valem registrar:
+
+     1. Amortecimento em vez de acompanhar o ponteiro direto. Colar o angulo na
+        posicao do mouse fica artificial porque nao tem inercia. O lerp de 0,12
+        por quadro da o assentamento de uma mola criticamente amortecida: chega
+        rapido e nao passa do ponto. Overshoot aqui seria errado, porque nenhum
+        gesto de arremesso precedeu o movimento.
+
+     2. Interrompivel de graca. Como o alvo e so uma variavel que o proximo
+        pointermove sobrescreve, o movimento sempre parte do valor que esta na
+        tela. Nao ha animacao para cancelar nem salto ao inverter a direcao.
+
+     3. transform inline em vez de custom property. Mudar uma variavel CSS no
+        cartao recalcularia o estilo de toda a subarvore a cada quadro. O
+        transform direto afeta so o elemento e vai para o compositor. As
+        variaveis --mx/--my do brilho vao no proprio .elux__result-sheen, que
+        nao tem filhos, pelo mesmo motivo.
+
+     Nao roda em toque (sem ponteiro para seguir) nem em prefers-reduced-motion. */
+  function initTilt() {
+    var cards = document.querySelectorAll('[data-tilt]');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var MAX = 7;        // graus no canto; acima disso vira brinquedo
+    var EASE = 0.12;    // fracao da distancia percorrida por quadro
+
+    Array.prototype.forEach.call(cards, function (card) {
+      var sheen = card.querySelector('.elux__result-sheen');
+      var targetX = 0, targetY = 0;   // alvo
+      var curX = 0, curY = 0;         // valor na tela
+      var raf = null;
+
+      function frame() {
+        curX += (targetX - curX) * EASE;
+        curY += (targetY - curY) * EASE;
+        card.style.transform =
+          'rotateX(' + curY.toFixed(3) + 'deg) rotateY(' + curX.toFixed(3) + 'deg)';
+        if (Math.abs(targetX - curX) > 0.01 || Math.abs(targetY - curY) > 0.01) {
+          raf = requestAnimationFrame(frame);
+        } else {
+          // Assentou: zera o transform inline no repouso para o CSS voltar a
+          // mandar, e solta o quadro.
+          raf = null;
+          if (targetX === 0 && targetY === 0) card.style.transform = '';
+        }
+      }
+
+      function tick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        targetX = (px - 0.5) * 2 * MAX;
+        targetY = -(py - 0.5) * 2 * MAX;
+        if (sheen) {
+          sheen.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+          sheen.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        }
+        tick();
+      });
+
+      card.addEventListener('pointerleave', function () {
+        targetX = 0;
+        targetY = 0;
+        tick();
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initScrollStage();
     initVideoModal();
     initEluxGallery();
+    initTilt();
   });
 })();

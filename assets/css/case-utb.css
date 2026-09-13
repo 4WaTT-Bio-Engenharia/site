@@ -1,0 +1,25 @@
+/* ============================================================
+   4WaTT — Case UTB Franca (Terawatt Bioenergia) · sobre theme-4watt.css
+   + solucoes.css + case-ceasa.css (reaproveita cc-hero, cc-marquee,
+   cc-deliver-slide, cc-metrics-*, cc-gallery-*, cc-lightbox, cc-flow).
+   Componentes exclusivos: cards de cliente/grupo, mapa incorporado.
+   ============================================================ */
+
+/* ---------- Cliente & grupo: dois cards, um claro e um escuro ---------- */
+.cc-client-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 32px); }
+.cc-client-card { border-radius: 20px; padding: clamp(28px, 3.4vw, 40px); display: flex; flex-direction: column; gap: 18px; }
+.cc-client-card--light { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.cc-client-card--dark { background: var(--plum-2); border: 1px solid rgba(255,255,255,0.1); color: #fff; }
+.cc-client-card__logo { height: 34px; width: auto; object-fit: contain; align-self: flex-start; }
+.cc-client-card__logo--lg { height: 40px; }
+.cc-client-card p { font-size: 14.5px; line-height: 1.65; color: var(--dim); margin: 0; }
+.cc-client-card--dark p { color: rgba(255,255,255,0.78); }
+.cc-client-card__link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--accent-light); text-decoration: none; margin-top: auto; }
+.cc-client-card--dark .cc-client-card__link { color: #5fe9cf; }
+.cc-client-card__link:hover { text-decoration: underline; }
+@media (max-width: 780px) { .cc-client-grid { grid-template-columns: 1fr; } }
+
+/* ---------- A usina: mapa incorporado ---------- */
+.cc-map-frame { border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); line-height: 0; }
+.cc-map-frame iframe { width: 100%; height: clamp(280px, 34vw, 380px); border: 0; display: block; }
+.cc-usina-outputs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }

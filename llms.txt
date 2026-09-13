@@ -31,6 +31,7 @@ Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4
 
 ## Cases
 
+- UTB Franca (Terawatt Bioenergia, grupo NewSun Energy Group): engenharia multidisciplinar completa para a usina de biometano em Franca (SP), que processará resíduos de curtume das indústrias da região e produzirá biometano, fertilizante organomineral e créditos de carbono. Escopo entregue pela 4WaTT: projeto mecânico (tubulações industriais, pipe rack, caldeiraria industrial e refinaria de biometano), engenharia civil (fundações, biodigestor completo com civil/mecânica/aquecimento, trocador de calor), engenharia de processos (P&ID completo, dimensionamento bioquímico de biogás e biometano), validação computacional (modelagem matemática e simulação por elementos finitos) e licenciamento ambiental completo (estudo, aprovação e emissão da licença), tudo com ART 4WaTT. Obras já avançadas em campo. https://4watt.tech/case-utb-franca.html
 - CEASA Goiás: operação e manutenção (O&M) da usina de biogás da central de abastecimento, com reengenharia de esteiras e equipamentos, regularização de equipe, portal do cliente com dados em tempo real e projetos em desenvolvimento (refinaria de biometano, turbina a gás para biogás e IA aplicada à operação). https://4watt.tech/case-ceasa-goias.html
 
 ## Links
@@ -45,6 +46,7 @@ Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4
 - Projetos de biometano em desenvolvimento: https://4watt.tech/projetos-biometano.html
 - Gaseificação RSU: https://4watt.tech/solucao-gaseificacao.html
 - Área do Investidor: https://4watt.tech/investidor.html
+- Case UTB Franca (Terawatt Bioenergia): https://4watt.tech/case-utb-franca.html
 - Case CEASA Goiás: https://4watt.tech/case-ceasa-goias.html
 - Blog técnico: https://4watt.tech/artigos/
 - Simulador de viabilidade: https://calculadora-zeta-sooty.vercel.app/

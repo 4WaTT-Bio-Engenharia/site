@@ -73,3 +73,18 @@
   .cc-spec-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); padding: 22px 0; }
   .cc-spec-item:first-child { border-top: none; }
 }
+
+/* ---------- Síntese: cards de engenharia com imagem de fundo por etapa ---------- */
+.cc-synth-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.8vw, 20px); }
+.cc-synth-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s; }
+.cc-synth-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.cc-synth-card__media { position: absolute; inset: 0; z-index: 0; }
+.cc-synth-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cc-synth-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,8,18,0.18) 24%, rgba(20,8,18,0.95) 100%); }
+.cc-synth-card__n { position: absolute; top: 16px; left: 16px; z-index: 2; font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; color: #fff; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.32); backdrop-filter: blur(4px); padding: 5px 12px; border-radius: 100px; }
+.cc-synth-card__body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 22px 20px 24px; color: #fff; }
+.cc-synth-card__tag { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #5fe9cf; margin-bottom: 10px; }
+.cc-synth-card__body h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; color: #fff; line-height: 1.25; }
+.cc-synth-card__body p { font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,0.82); margin: 0; }
+@media (max-width: 980px) { .cc-synth-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .cc-synth-grid { grid-template-columns: 1fr; } .cc-synth-card { aspect-ratio: 4/3; } }

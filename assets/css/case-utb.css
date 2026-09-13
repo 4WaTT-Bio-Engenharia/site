@@ -23,3 +23,53 @@
 .cc-map-frame { border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); line-height: 0; }
 .cc-map-frame iframe { width: 100%; height: clamp(280px, 34vw, 380px); border: 0; display: block; }
 .cc-usina-outputs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* ---------- Escopo: grade de disciplinas com efeito 3D no hover ---------- */
+.cc-disc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2.2vw, 26px); }
+.cc-disc-card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transform-style: preserve-3d; transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
+.cc-disc-card:hover { transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) translateY(-8px); box-shadow: var(--shadow); z-index: 2; }
+.cc-disc-card__media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--surface-2); }
+.cc-disc-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.cc-disc-card:hover .cc-disc-card__media img { transform: scale(1.08); }
+.cc-disc-card__top { position: absolute; top: 14px; left: 14px; right: 14px; z-index: 2; display: flex; align-items: center; justify-content: space-between; }
+.cc-disc-card__n { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; color: #fff; background: rgba(20,8,18,0.5); backdrop-filter: blur(4px); padding: 5px 12px; border-radius: 100px; }
+.cc-disc-card__ic { width: 34px; height: 34px; border-radius: 10px; background: rgba(255,255,255,0.94); color: var(--roxo); display: grid; place-items: center; font-size: 14px; box-shadow: var(--shadow-sm); }
+.cc-disc-card__body { padding: 20px 22px 24px; }
+.cc-disc-card__body h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+.cc-disc-card__body p { font-size: 13.5px; line-height: 1.55; color: var(--dim); margin: 0; }
+.cc-disc-card--signature { display: flex; flex-direction: column; justify-content: center; background: var(--plum-2); color: #fff; }
+.cc-disc-card--signature .cc-disc-card__top { position: static; margin: 26px 26px 0; }
+.cc-disc-card--signature .cc-disc-card__n { background: rgba(255,255,255,0.12); }
+.cc-disc-card--signature .cc-disc-card__ic { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.3); box-shadow: none; }
+.cc-disc-card--signature .cc-disc-card__body { padding: 18px 26px 30px; }
+.cc-disc-card--signature h3 { color: #fff; }
+.cc-disc-card--signature p { color: rgba(255,255,255,0.76); }
+@media (max-width: 980px) { .cc-disc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .cc-disc-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Entregas: cartões maiores no carrossel automático ---------- */
+.cc-marquee--lg .cc-deliver-slide { width: min(460px, 85vw); aspect-ratio: 4/3; border-radius: 24px; }
+.cc-marquee--lg .cc-deliver-slide__body h3 { font-size: 23px; }
+.cc-marquee--lg .cc-deliver-slide__body li { font-size: 13.5px; }
+
+/* ---------- Em resumo: faixa técnica, séria e monocromática ---------- */
+.cc-spec-band { background: var(--plum-2); color: #fff; }
+.cc-spec-band .kicker { color: #5fe9cf; justify-content: center; }
+.cc-spec-band .kicker::before { background: var(--teal); }
+.cc-spec-band .h2 { color: #fff; }
+.cc-spec-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 12px; }
+.cc-spec-item { padding: 8px clamp(16px, 2.2vw, 30px); border-left: 1px solid rgba(255,255,255,0.14); }
+.cc-spec-item:first-child { border-left: none; }
+.cc-spec-item__n { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+.cc-spec-item__v { font-family: var(--display); font-weight: 900; font-size: clamp(28px, 2.8vw, 42px); color: #fff; line-height: 1; white-space: nowrap; }
+.cc-spec-item__l { margin-top: 16px; font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.6); max-width: 26ch; }
+@media (max-width: 980px) {
+  .cc-spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .cc-spec-item:nth-child(even) { border-left: none; }
+  .cc-spec-item:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 26px; }
+}
+@media (max-width: 560px) {
+  .cc-spec-grid { grid-template-columns: 1fr; }
+  .cc-spec-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); padding: 22px 0; }
+  .cc-spec-item:first-child { border-top: none; }
+}

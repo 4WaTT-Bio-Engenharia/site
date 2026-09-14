@@ -12,6 +12,23 @@
 .cc-hero__divider { width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
 @media (max-width: 560px) { .cc-hero__divider { display: none; } }
 
+/* ---------- Convite ao vídeo: player suspenso com efeito 3D ---------- */
+.cc-video-invite { position: relative; overflow: hidden; }
+.cc-video-invite::before { content: ""; position: absolute; left: 50%; top: 6%; width: 900px; height: 900px; transform: translateX(-50%); background: radial-gradient(circle, color-mix(in srgb, var(--teal) 10%, transparent) 0%, transparent 68%); pointer-events: none; z-index: 0; }
+.cc-video-invite .container { position: relative; z-index: 1; }
+.cc-video-frame { position: relative; perspective: 1800px; padding: 10px 0 50px; }
+.cc-video-frame__stage {
+  position: relative; aspect-ratio: 16/9; border-radius: 26px; overflow: hidden; background: #000;
+  box-shadow: 0 60px 90px -30px rgba(20,8,18,0.5), 0 20px 40px -10px rgba(20,8,18,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+  transform: rotateX(10deg) rotateY(-8deg) scale(0.96);
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s;
+}
+.cc-video-frame__stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.cc-video-frame__stage:hover { transform: rotateX(2deg) rotateY(-2deg) scale(1); box-shadow: 0 40px 70px -20px rgba(20,8,18,0.42), 0 10px 26px rgba(20,8,18,0.3); }
+.cc-video-frame::after { content: ""; position: absolute; left: 12%; right: 12%; bottom: 8px; height: 46px; background: radial-gradient(ellipse at center, rgba(20,8,18,0.4), transparent 72%); filter: blur(10px); z-index: -1; }
+@media (max-width: 620px) { .cc-video-frame__stage { border-radius: 18px; transform: rotateX(5deg) rotateY(-3deg) scale(0.97); } }
+
 /* ---------- Hero: vídeo do YouTube como fundo, cobrindo o container (iframe não aceita object-fit) ---------- */
 .cc-hero__yt { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .cc-hero__yt iframe {

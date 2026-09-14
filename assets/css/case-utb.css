@@ -5,6 +5,16 @@
    Componentes exclusivos: cards de cliente/grupo, mapa incorporado.
    ============================================================ */
 
+/* ---------- Hero: navegação (voltar + badge), separadas ---------- */
+.cc-hero__nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cc-hero__back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.72); text-decoration: none; transition: color .25s; }
+.cc-hero__back:hover { color: #fff; }
+.cc-hero__divider { width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
+@media (max-width: 560px) { .cc-hero__divider { display: none; } }
+
+/* ---------- Hero: vídeo de fundo (mesmo tratamento do .ph--px > img) ---------- */
+.ph--px > video { width: 100%; height: 124%; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.02); }
+
 /* ---------- Cliente & grupo: dois cards, um claro e um escuro ---------- */
 .cc-client-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 32px); }
 .cc-client-card { border-radius: 20px; padding: clamp(28px, 3.4vw, 40px); display: flex; flex-direction: column; gap: 18px; }
@@ -52,8 +62,10 @@
 .cc-marquee--lg .cc-deliver-slide__body h3 { font-size: 23px; }
 .cc-marquee--lg .cc-deliver-slide__body li { font-size: 13.5px; }
 
-/* ---------- Em resumo: faixa técnica, séria e monocromática ---------- */
-.cc-spec-band { background: var(--plum-2); color: #fff; }
+/* ---------- Em resumo: faixa técnica, séria e monocromática, com foto da sede ---------- */
+.cc-spec-band { position: relative; overflow: hidden; background: var(--plum-2); color: #fff; }
+.cc-spec-band .ph { position: absolute; inset: 0; z-index: 0; }
+.cc-spec-band .container { position: relative; z-index: 3; }
 .cc-spec-band .kicker { color: #5fe9cf; justify-content: center; }
 .cc-spec-band .kicker::before { background: var(--teal); }
 .cc-spec-band .h2 { color: #fff; }

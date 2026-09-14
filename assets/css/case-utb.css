@@ -12,8 +12,14 @@
 .cc-hero__divider { width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
 @media (max-width: 560px) { .cc-hero__divider { display: none; } }
 
-/* ---------- Hero: vídeo de fundo (mesmo tratamento do .ph--px > img) ---------- */
-.ph--px > video { width: 100%; height: 124%; object-fit: cover; display: block; filter: saturate(1.02) contrast(1.02); }
+/* ---------- Hero: vídeo do YouTube como fundo, cobrindo o container (iframe não aceita object-fit) ---------- */
+.cc-hero__yt { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.cc-hero__yt iframe {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 177.78vh; min-width: 100%;
+  height: 56.25vw; min-height: 100%;
+  border: 0;
+}
 
 /* ---------- Cliente & grupo: dois cards, um claro e um escuro ---------- */
 .cc-client-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 32px); }

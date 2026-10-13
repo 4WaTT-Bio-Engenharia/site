@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Termos de Uso e Política de Privacidade - 4WaTT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #03A589;
+      --primary-dark: #028C74;
+      --roxo-4watt: #3A0940;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      min-height: 100vh;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      position: relative;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      min-height: 100%;
+      overflow-y: visible;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .logo {
+      height: 48px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--roxo-4watt);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+    }
+
+    ul, ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(3, 165, 137, 0.08) 0%, rgba(58, 9, 64, 0.04) 100%);
+      border-left: 4px solid var(--primary);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    .date {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .contact-info h3 {
+      margin-top: 0;
+      color: var(--roxo-4watt);
+    }
+
+    @media (max-width: 640px) {
+      html, body {
+        overflow-y: auto !important;
+        position: relative !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 100vh !important;
+        touch-action: pan-y pinch-zoom !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-y: auto !important;
+        scroll-behavior: smooth !important;
+      }
+
+      .container {
+        padding: 24px 16px;
+        overflow-y: visible !important;
+        height: auto !important;
+        min-height: 100% !important;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .logo {
+        height: 40px;
+      }
+      
+      /* Garante que elementos não bloqueiem scroll */
+      header, .highlight-box, .contact-info {
+        overflow: visible !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="./4WaTT_logo.png" alt="4WaTT Bio Engenharia" class="logo" onerror="this.style.display='none'">
+      <h1>Termos de Uso e Política de Privacidade</h1>
+      <p class="subtitle">Calculadora de Viabilidade de Biogás</p>
+    </header>
+
+    <div class="highlight-box">
+      <p><strong>Resumo para o usuário:</strong> Ao utilizar nossa calculadora e fornecer seus dados, você autoriza a 4WaTT Bio Engenharia S.A. a coletar, armazenar e utilizar suas informações para entrar em contato sobre projetos de biogás e biometano. Seus dados são protegidos conforme a LGPD e você pode solicitar sua exclusão a qualquer momento.</p>
+    </div>
+
+    <h2>1. Introdução</h2>
+    <p>A 4WaTT Bio Engenharia S.A. ("4WaTT", "nós", "nosso") valoriza a privacidade e a segurança dos dados de seus usuários. Esta página apresenta os Termos de Uso e a Política de Privacidade aplicáveis ao uso da Calculadora de Viabilidade de Biogás disponível em nosso site.</p>
+    <p>Ao acessar e utilizar nossos serviços, você concorda com os termos aqui descritos. Se não concordar com qualquer parte destes termos, por favor, não utilize nossa calculadora.</p>
+
+    <h2>2. Dados Coletados</h2>
+    <h3>2.1 Dados Pessoais</h3>
+    <p>Para fornecer nossos serviços e entrar em contato sobre oportunidades de projetos de biogás, coletamos os seguintes dados:</p>
+    <ul>
+      <li><strong>Nome completo</strong> — para identificação personalizada</li>
+      <li><strong>Número de WhatsApp</strong> — principal canal de comunicação</li>
+      <li><strong>E-mail</strong> — canal alternativo de comunicação (opcional)</li>
+      <li><strong>Dados da simulação</strong> — tipo e quantidade de resíduos, resultados calculados</li>
+      <li><strong>Data e hora do cadastro</strong> — para registro e auditoria</li>
+      <li><strong>Endereço IP</strong> — para segurança e prevenção de fraudes</li>
+    </ul>
+
+    <h3>2.2 Dados de Navegação</h3>
+    <p>Utilizamos tecnologias como cookies e localStorage para melhorar sua experiência:</p>
+    <ul>
+      <li>Contagem de acessos à calculadora</li>
+      <li>Status de cadastro e simulação (sessão)</li>
+      <li>Preferências de uso</li>
+    </ul>
+
+    <h2>3. Finalidade do Uso dos Dados</h2>
+    <p>Seus dados são utilizados estritamente para as seguintes finalidades:</p>
+    <ol>
+      <li><strong>Contato comercial:</strong> Nossos consultores entrarão em contato para apresentar soluções de biogás/biometano adequadas ao seu perfil</li>
+      <li><strong>Análise técnica preliminar:</strong> Utilizamos os dados da simulação para preparar propostas personalizadas</li>
+      <li><strong>Marketing direto:</strong> Envio de informações sobre produtos, serviços e novidades da 4WaTT (com possibilidade de opt-out)</li>
+      <li><strong>Melhoria dos serviços:</strong> Análise estatística agregada para aprimorar nossa calculadora</li>
+      <li><strong>Cumprimento legal:</strong> Atendimento a obrigações fiscais, contábeis e regulatórias</li>
+    </ol>
+
+    <h2>4. Compartilhamento com a 4WaTT</h2>
+    <p>Ao aceitar estes termos, você autoriza expressamente o compartilhamento de seus dados dentro da estrutura da 4WaTT Bio Engenharia S.A., incluindo:</p>
+    <ul>
+      <li>Equipe comercial autorizada</li>
+      <li>Engenheiros e consultores técnicos</li>
+      <li>Parceiros estratégicos (sob rigorosos acordos de confidencialidade)</li>
+      <li>Prestadores de serviço essenciais (TI, armazenamento em nuvem)</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Compromisso:</strong> Não vendemos, alugamos ou comercializamos seus dados pessoais a terceiros para fins de marketing não relacionados aos nossos serviços.</p>
+    </div>
+
+    <h2>5. Armazenamento e Segurança</h2>
+    <h3>5.1 Local de Armazenamento</h3>
+    <p>Seus dados são armazenados em:</p>
+    <ul>
+      <li><strong>Google Sheets:</strong> Planilha segura com acesso restrito</li>
+      <li><strong>Servidores seguros:</strong> Backup em infraestrutura protegida</li>
+      <li><strong>Session Storage:</strong> Dados temporários no seu navegador (apenas durante a sessão)</li>
+    </ul>
+
+    <h3>5.2 Medidas de Segurança</h3>
+    <p>Adotamos as seguintes medidas para proteger seus dados:</p>
+    <ul>
+      <li>Criptografia em trânsito (HTTPS/TLS)</li>
+      <li>Acesso restrito por autenticação</li>
+      <li>Rate limiting para prevenir abusos</li>
+      <li>Monitoramento contínuo de segurança</li>
+      <li>Treinamento de equipe em proteção de dados</li>
+    </ul>
+
+    <h3>5.3 Prazo de Retenção</h3>
+    <p>Mantemos seus dados pelo período necessário para:</p>
+    <ul>
+      <li>Cumprimento das finalidades descritas (até 5 anos após último contato)</li>
+      <li>Cumprimento de obrigações legais (conforme exigido por lei)</li>
+      <li>Defesa de direitos em processos judiciais (quando aplicável)</li>
+    </ul>
+
+    <h2>6. Seus Direitos (LGPD)</h2>
+    <p>Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem os seguintes direitos:</p>
+
+    <h3>6.1 Direitos do Titular</h3>
+    <ul>
+      <li><strong>Acesso:</strong> Saber quais dados pessoais tratamos sobre você</li>
+      <li><strong>Correção:</strong> Retificar dados incompletos, inexatos ou desatualizados</li>
+      <li><strong>Exclusão:</strong> Solicitar a eliminação de dados desnecessários ou excessivos</li>
+      <li><strong>Portabilidade:</strong> Receber seus dados em formato estruturado</li>
+      <li><strong>Revogação do consentimento:</strong> Retirar seu aceite a qualquer momento</li>
+      <li><strong>Informação:</strong> Saber com quem seus dados foram compartilhados</li>
+      <li><strong>Oposição:</strong> Discordar de determinados tratamentos</li>
+    </ul>
+
+    <h3>6.2 Como Exercer seus Direitos</h3>
+    <p>Para exercer qualquer um dos seus direitos, entre em contato conosco através dos canais indicados na seção "Contato" deste documento. Responderemos em até 15 dias úteis.</p>
+
+    <h2>7. Uso da Calculadora</h2>
+    <h3>7.1 Natureza dos Resultados</h3>
+    <p>Os resultados apresentados pela calculadora são <strong>estimativas preliminares</strong> baseadas em parâmetros técnicos médios do setor. Eles não constituem:</p>
+    <ul>
+      <li>Projeto executivo ou memorial de cálculo</li>
+      <li>Garantia de performance ou retorno financeiro</li>
+      <li>Laudo técnico oficial</li>
+      <li>Proposta comercial vinculante</li>
+    </ul>
+
+    <h3>7.2 Consultoria Técnica</h3>
+    <p>Para obter um estudo detalhado de viabilidade (FEL 1 ou superior), é necessário contratar nossos serviços de consultoria técnica, que incluem:</p>
+    <ul>
+      <li>Visita técnica ao local</li>
+      <li>Análise laboratorial da matéria-prima</li>
+      <li>Dimensionamento detalhado da usina</li>
+      <li>Estudo de viabilidade econômica</li>
+      <li>Desenho conceitual e layouts</li>
+    </ul>
+
+    <h2>8. Propriedade Intelectual</h2>
+    <p>Todo o conteúdo disponível na calculadora, incluindo textos, imagens, logotipos, algoritmos de cálculo e interface, é de propriedade exclusiva da 4WaTT Bio Engenharia S.A. ou de seus licenciadores, protegidos pelas leis de direitos autorais e propriedade industrial.</p>
+
+    <h2>9. Limitação de Responsabilidade</h2>
+    <p>A 4WaTT não se responsabiliza por:</p>
+    <ul>
+      <li>Decisões tomadas exclusivamente com base nos resultados da calculadora</li>
+      <li>Indisponibilidade temporária do serviço por motivos técnicos</li>
+      <li>Danos decorrentes de uso indevido ou não autorizado da plataforma</li>
+      <li>Imprecisões resultantes de dados incorretos fornecidos pelo usuário</li>
+    </ul>
+
+    <h2>10. Alterações nos Termos</h2>
+    <p>Podemos atualizar estes Termos de Uso e Política de Privacidade periodicamente. Alterações significativas serão comunicadas através do site ou por e-mail (quando disponível). O uso continuado dos serviços após as alterações constitui aceitação dos novos termos.</p>
+
+    <h2>11. Legislação Aplicável</h2>
+    <p>Estes termos são regidos pelas leis da República Federativa do Brasil, em especial:</p>
+    <ul>
+      <li>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</li>
+      <li>Marco Civil da Internet (Lei nº 12.965/2014)</li>
+      <li>Código de Defesa do Consumidor (Lei nº 8.078/1990)</li>
+    </ul>
+
+    <h2>12. Contato</h2>
+    <div class="contact-info">
+      <h3>Encarregado de Proteção de Dados (DPO)</h3>
+      <p><strong>4WaTT Bio Engenharia S.A.</strong></p>
+      <p>📍 Endereço: Av. Dep. Jamel Cecílio, 2690, Torre Tokyo, Sala 601 - Jardim Goiás, Goiânia - GO, 74810-100</p>
+      <p>📧 E-mail: <a href="mailto:contato@4watt.com.br">contato@4watt.com.br</a></p>
+      <p>📱 WhatsApp: <a href="https://wa.me/5562996746866">(62) 99674-6866</a></p>
+      <p>🌐 Site: <a href="https://www.4watt.com.br">www.4watt.com.br</a></p>
+    </div>
+
+    <p style="margin-top: 32px;">Para questões relacionadas aos seus dados pessoais, dúvidas sobre esta política ou para exercer seus direitos como titular, utilize preferencialmente o e-mail <a href="mailto:contato@4watt.com.br">contato@4watt.com.br</a>.</p>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="/" class="btn" style="
+        display: inline-block;
+        padding: 12px 32px;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.2s;
+      " onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'">Voltar para a calculadora</a>
+    </div>
+  </div>
+  
+  <script>
+    // Script para garantir scroll em dispositivos móveis
+    (function() {
+      // Remove qualquer bloqueio de scroll
+      document.documentElement.style.overflowY = 'auto';
+      document.documentElement.style.overflowX = 'hidden';
+      document.body.style.overflowY = 'auto';
+      document.body.style.overflowX = 'hidden';
+      document.body.style.position = 'relative';
+      document.body.style.height = 'auto';
+      document.body.style.minHeight = '100vh';
+      
+      // Garante que o scroll funcione em iOS
+      document.addEventListener('touchmove', function(e) {
+        e.stopPropagation();
+      }, { passive: true });
+      
+      // Previne bloqueio de scroll por elementos filhos
+      var containers = document.querySelectorAll('.container, header, .highlight-box, .contact-info');
+      containers.forEach(function(el) {
+        el.style.overflow = 'visible';
+        el.style.maxHeight = 'none';
+      });
+    })();
+  </script>
+</body>
+</html>

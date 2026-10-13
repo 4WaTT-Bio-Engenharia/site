@@ -10,7 +10,9 @@ Site institucional e comercial **estático**, sem sistema de build. Todas as pá
 
 **Idioma principal:** Português (pt-br) — todo o conteúdo, comentários e documentação interna estão em português. O site suporta múltiplos idiomas via sistema de tradução runtime (`pt`, `en`, `es`, `it`, `fr`, `de`, `no`).
 
-**Arquivos de configuração de build não existem:** não há `package.json`, `pyproject.toml`, `Cargo.toml`, `composer.json`, `Gemfile`, `Makefile`, `tsconfig.json`, `webpack.config.js`, `vite.config.*`, `next.config.*`, `Dockerfile`, `docker-compose.yml`, `.env`, `.gitignore`, `.github/workflows/`, CI/CD, testes automatizados, linters ou formatters. As páginas são editadas manualmente e enviadas diretamente ao servidor.
+**Arquivos de configuração de build não existem na raiz:** não há `package.json`, `pyproject.toml`, `Cargo.toml`, `composer.json`, `Gemfile`, `Makefile`, `tsconfig.json`, `webpack.config.js`, `vite.config.*`, `next.config.*`, `Dockerfile`, `docker-compose.yml`, `.env`, `.gitignore`, `.github/workflows/`, CI/CD, testes automatizados, linters ou formatters. As páginas são editadas manualmente e enviadas diretamente ao servidor.
+
+> **Exceção:** a pasta `calculadora-src/` contém a **fonte da calculadora standalone** (Vite + React, com `package.json` próprio e isolado). Ela gera o output estático commitado em `calculadora/` — ver §4a. O restante do site continua sem build.
 
 ---
 
@@ -28,8 +30,8 @@ Site institucional e comercial **estático**, sem sistema de build. Todas as pá
 | Leaflet | `1.9.4` via CDN apenas em `biometano/index.html` |
 | Google Apps Script | Backend de captura e triagem de leads para Google Sheets |
 | Formspree | Fallback para envio de formulários (`xpwzdnkl`) |
-| Google Analytics 4 | Measurement ID `G-N91NFD55MB`, inline no `<head>` das páginas comerciais |
-| Calculadora externa | `https://calculadora-zeta-sooty.vercel.app/` (usada como CTA em várias páginas) |
+| Google Analytics 4 | Measurement ID `G-N91NFD55MB`, inline no `<head>` das páginas comerciais e da calculadora |
+| Calculadora de pré-viabilidade | Página interna `/calculadora/` (app React pré-compilado; fonte em `calculadora-src/`) — destino do CTA "Simular Viabilidade" de todas as páginas |
 
 ### Padrões de código
 
@@ -70,6 +72,8 @@ Site institucional e comercial **estático**, sem sistema de build. Todas as pá
 │   └── navbar-premium.html   # snippet de referência da navbar (não é source of truth)
 ├── viabilidade/
 │   └── comprar-biometano.html    # calculadora de equivalência energética
+├── calculadora/                # Calculadora standalone (OUTPUT do Vite, commitado — é o que sobe no deploy)
+├── calculadora-src/            # FONTE da calculadora (Vite + React; único diretório com package.json/build)
 ├── sitemap.xml               # sitemap parcial
 ├── AGENTS.md                 # este arquivo
 └── CLAUDE.md                 # guia rápido para Claude
@@ -91,12 +95,12 @@ A navbar real nas páginas inclui:
 - Link **Imprensa**
 - Link **Academy**
 - Seletor de idioma **PT/EN** (`.lang-btn[data-lang]`)
-- CTA primário (varia por página: calculadora externa, `#cta`, `contato.html` ou `simulador.html`)
+- CTA primário (padrão: `/calculadora/` — "Simular Viabilidade"; algumas páginas usam `#cta` ou `contato.html`)
 - Barra de progresso de scroll (`.nav__progress`)
 
 Snippet de referência: `snippets/navbar-premium.html`.
 
-> **Cuidado:** os scripts `update_navbar_logos.py` e `inject_i18n_pages.py` são auxiliares, mas a navbar real das páginas foi editada manualmente e pode conter ajustes que os scripts não reproduzem fielmente. Sempre valide visualmente após rodá-los. O snippet `snippets/navbar-premium.html` atualmente ainda aponta o CTA para `simulador.html`, enquanto a maioria das páginas ativas usa a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`.
+> **Cuidado:** os scripts `update_navbar_logos.py` e `inject_i18n_pages.py` são auxiliares, mas a navbar real das páginas foi editada manualmente e pode conter ajustes que os scripts não reproduzem fielmente. Sempre valide visualmente após rodá-los. O CTA padrão da navbar (páginas ativas e `snippets/navbar-premium.html`) aponta para a calculadora interna `/calculadora/`.
 
 ### Animações de fundo
 
@@ -148,7 +152,17 @@ Cada página é **autocontida** — não há sistema de templates. Navbar e foot
 
 **Total: 24 arquivos HTML ativos** (incluindo 2 redirecionamentos; 22 páginas de conteúdo).
 
-> **Nota sobre `simulador.html`:** o arquivo `simulador.html` **não existe** mais no repositório. Várias páginas ainda referenciam `simulador.html` no CTA da navbar (`404.html`, `500.html`, `artigos/index.html`, `biometano/index.html`, `viabilidade/comprar-biometano.html` e o snippet `snippets/navbar-premium.html`), o que gera links quebrados. A homepage e várias páginas já migraram o CTA para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Ao revisar CTAs, padronize para a calculadora externa ou recrie `simulador.html` se for necessário.
+> **Nota sobre `simulador.html`:** o arquivo `simulador.html` **não existe** no repositório. Todas as referências de CTA foram padronizadas para a calculadora interna `/calculadora/` — não recrie `simulador.html` e não aponte CTAs para URLs externas de calculadora.
+
+### Calculadora standalone (`/calculadora/`)
+
+A página `/calculadora/` é uma **cópia pública e efêmera** da Calculadora 4WaTT (a original vive na área logada do SaaS em `calc.4watt.tech`):
+
+- **Como funciona:** app React 18 compilado com Vite; o cálculo roda 100% no navegador (domínio vendorizado em `calculadora-src/src/domain/`). **Não há chamadas de API, captura de leads nem persistência** (`localStorage`/`sessionStorage`) — ao sair da página, a simulação se perde. O Step 3 termina com CTA "Fale com um especialista" → `/contato.html`.
+- **Fonte:** `calculadora-src/` (único diretório do repo com `package.json`). Build: `cd calculadora-src && npm install && npm run build` (Node ≥ 20) → gera `../calculadora/` (`base: '/calculadora/'`).
+- **Output commitado:** `calculadora/` é commitado no repo — no deploy, suba a pasta `calculadora/` junto com o restante do site (a fonte `calculadora-src/` não precisa ir para o servidor).
+- **Estilo próprio:** a página usa apenas `atlas.css` (paleta 4WaTT) e a navbar simplificada da calculadora — **não** carrega o CSS/JS global do site nem o seletor de idiomas (pt-BR apenas). Mantém o GA4 `G-N91NFD55MB`.
+- Ao alterar a calculadora, edite a fonte em `calculadora-src/`, rode o build e commite o novo output. Se os rendimentos/constantes de domínio mudarem no monorepo `Calculadora` (`packages/domain-data/src/`), re-sincronize os 6 arquivos de `calculadora-src/src/domain/`.
 
 ---
 
@@ -366,7 +380,7 @@ Google Analytics 4 configurado inline no `<head>` das páginas comerciais:
 - **Measurement ID:** `G-N91NFD55MB`
 - **Stream ID:** `3217095081` (em `investidor.html` e `blog.html` via `window.__GA4_FLOW`)
 
-**Páginas COM GA4:** `index.html`, `investidor.html`, `contato.html`, `solucao-biogas.html`, `solucao-biometano.html`, `solucao-gaseificacao.html`, `blog.html`, `imprensa.html`, `academy.html`, `partners.html`, `saas.html`, `score.html`, `politica-privacidade.html`. **Total: 13 páginas ativas.**
+**Páginas COM GA4:** `index.html`, `investidor.html`, `contato.html`, `solucao-biogas.html`, `solucao-biometano.html`, `solucao-gaseificacao.html`, `blog.html`, `imprensa.html`, `academy.html`, `partners.html`, `saas.html`, `score.html`, `politica-privacidade.html`, e a calculadora (`/calculadora/`, inline no template Vite). **Total: 14 páginas.**
 
 **Páginas SEM GA4:** `404.html`, `500.html`, `artigos.html`, `biometano.html`, `noticias.html`, `artigo-*.html`, `artigos/index.html`, `biometano/index.html`, `viabilidade/comprar-biometano.html`.
 
@@ -400,10 +414,10 @@ Depois acesse `http://localhost:5501/index.html`.
 - `scripts/inject_i18n_pages.py` — injeta `languages-pages.js` nas páginas que já carregam `languages.js`, corrige paths de assets em subpastas (`assets/` → `/assets/`) e atualiza a versão de `main.js`.
 - `scripts/update_navbar_logos.py` — substitui a navbar premium (`<nav class="nav">`) nas páginas da raiz e subpastas, normaliza paths dos logos e incrementa query strings de CSS. Use com cautela: a navbar real pode conter ajustes manuais não refletidos no script.
 
-### Não existe
+### Não existe (na raiz do site)
 
-- `npm install` / `package.json`
-- Scripts de build
+- `npm install` / `package.json` (exceção isolada: `calculadora-src/` — ver §4 "Calculadora standalone")
+- Scripts de build (idem)
 - Testes automatizados
 - Linting
 - CI/CD pipelines
@@ -442,10 +456,10 @@ Deploy é feito por **upload direto de arquivos** para hospedagem estática. Nã
 
 - [ ] Verificar se o endpoint do Google Apps Script em `forms.js` está atualizado
 - [ ] Verificar se o endpoint `window.__INVESTOR_AUTOMATION_ENDPOINT` em `investidor.html` está atualizado
-- [ ] Atualizar `sitemap.xml` se novas páginas foram adicionadas (o arquivo atual ainda referencia `simulador.html`, que não existe)
+- [ ] Atualizar `sitemap.xml` se novas páginas foram adicionadas
 - [ ] Incrementar query strings de versionamento em CSS/JS (`?v=X.X`) para cache-busting
 - [ ] Evitar enviar arquivos `.bak` para produção
-- [ ] Verificar se CTAs quebrados para `simulador.html` foram corrigidos ou se a página foi recriada
+- [ ] Se a calculadora foi alterada: rodar o build em `calculadora-src/` e subir a pasta `calculadora/` atualizada (a fonte não precisa ir ao servidor)
 - [ ] Compactar a pasta raiz em `_public_html.zip` se esse for o método de envio utilizado
 
 ---
@@ -511,7 +525,7 @@ Deploy é feito por **upload direto de arquivos** para hospedagem estática. Nã
 
 9. **Páginas `noindex`:** as páginas `blog.html`, `noticias.html`, `imprensa.html`, `academy.html`, `partners.html`, `saas.html`, `score.html`, `politica-privacidade.html`, `404.html` e `500.html` possuem `<meta name="robots" content="noindex, follow">`. As páginas de artigos individuais e as subpáginas (`artigos/index.html`, `biometano/index.html`, `viabilidade/comprar-biometano.html`) **não** possuem `noindex`. Ao tornar uma página definitiva, remova a meta tag.
 
-10. **CTAs para `simulador.html`:** `simulador.html` não existe mais. Os CTAs das páginas ativas foram padronizados para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Restam referências apenas em arquivos `.bak`, no snippet `snippets/navbar-premium.html` (que já foi atualizado para a calculadora externa) e na documentação. Ao revisar novas páginas, mantenha o padrão da calculadora externa.
+10. **CTAs de simulação:** o destino padrão é a calculadora interna `/calculadora/` (página standalone — ver §4). A antiga calculadora externa da Vercel (`calculadora-zeta-sooty.vercel.app`) foi descontinuada e não deve ser referenciada; `calc.4watt.tech` é o SaaS logado (área do cliente), não um CTA público.
 
 ---
 
@@ -523,15 +537,14 @@ As seguintes dependências são carregadas via CDN nas páginas:
 - Google Fonts: `https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;600` (varia por página)
 - GSAP 3.12.5 + ScrollTrigger: `https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/...` (em `investidor.html` e `biometano/index.html`)
 - Leaflet 1.9.4: `https://unpkg.com/leaflet@1.9.4/dist/leaflet.js` (apenas `biometano/index.html`)
-- Google Analytics 4: `https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB` (13 páginas ativas)
-- Calculadora externa: `https://calculadora-zeta-sooty.vercel.app/` (CTA em várias páginas)
+- Google Analytics 4: `https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB` (páginas comerciais + `/calculadora/`)
 
 ---
 
 ## 19. Estado Atual Observado e Inconsistências Conhecidas
 
-- `simulador.html` não existe mais. As referências nos CTAs das páginas ativas foram migradas para a calculadora externa `https://calculadora-zeta-sooty.vercel.app/`. Apenas arquivos `.bak`, `investidor.html.bak.20260619101836` e a documentação legada ainda citam `simulador.html`.
-- `snippets/navbar-premium.html` já reflete o estado atual da navbar: CTA padrão aponta para a calculadora externa.
+- Os CTAs "Simular Viabilidade" de todas as páginas apontam para a calculadora interna `/calculadora/`. A URL externa antiga (`calculadora-zeta-sooty.vercel.app`) e o extinto `simulador.html` só aparecem em arquivos `.bak` e documentação legada — não replicar.
+- `snippets/navbar-premium.html` reflete o estado atual da navbar: CTA padrão aponta para `/calculadora/`.
 - As páginas de artigos `artigo-por-que-ia-nao-basta.html` (categoria Investimento) e `artigo-cases-engenharia.html` (categoria Cases & Engenharia) foram criadas e adicionadas a `/artigos/index.html`, preenchendo as categorias vazias do blog.
 - Algumas páginas de artigos carregam `forms.js` duas vezes sem necessidade.
 - `languages-core.js` existe em `assets/js/` mas não é carregado por nenhuma página ativa.
@@ -544,3 +557,5 @@ As seguintes dependências são carregadas via CDN nas páginas:
 ---
 
 *Última atualização: 2 de agosto de 2026 — itens do Notion "Mudanças do site" aplicados: Projeto de Investimento consolidado em `solucao-biogas.html`, FAQ de pagamento e de IA, CTAs padronizados para calculadora externa, cases com dados reais na home, artigos `artigo-por-que-ia-nao-basta.html` e `artigo-cases-engenharia.html` publicados no blog.*
+
+*13 de outubro de 2026 — Calculadora standalone interna em `/calculadora/` (fonte em `calculadora-src/`, Vite + React, 100% client-side e efêmera, sem leads nem persistência). Todos os CTAs "Simular Viabilidade" do site passaram a apontar para `/calculadora/`; referências à calculadora externa da Vercel e ao extinto `simulador.html` removidas das páginas ativas.*

@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import ResultCard from './ResultCard'
-import PreAprovacaoResultados from './PreAprovacaoResultados'
 import { BIOGAS_MINIMO_RESULTADOS_DETALHADOS } from '../domain/materiaPrimaData.js'
 import { formatarNumeroBR } from '../domain/calculos.js'
 
@@ -301,7 +300,9 @@ function ResultadosStep({
         </p>
       </div>
 
-      <PreAprovacaoResultados preAprovacao={preAprovacao} />
+      {/* Painel de pré-aprovação (produção, receitas, CAPEX/OPEX) oculto temporariamente.
+          Para reativar: reimportar PreAprovacaoResultados e renderizar
+          <PreAprovacaoResultados preAprovacao={preAprovacao} /> aqui. */}
 
       {resultados.biogas > BIOGAS_MINIMO_RESULTADOS_DETALHADOS && (
         <div style={{ marginTop: 32 }}>

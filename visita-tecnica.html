@@ -133,18 +133,18 @@
     .map { background: #fff; }
     .map__stage { margin-top: 36px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(180deg, #f9f6ef, #efeae0); overflow: hidden; }
     .map__stage svg { display: block; width: 100%; height: auto; }
-    .map__leg { fill: none; stroke: rgba(58,9,64,.22); stroke-width: 5; stroke-linecap: round; transition: stroke .3s; }
-    .map__leg.is-done { stroke: var(--teal); }
-    .map__leg.is-now { stroke: var(--gold); stroke-dasharray: 2 12; animation: dash 1s linear infinite; }
-    @keyframes dash { to { stroke-dashoffset: -14; } }
+    .map__leg { fill: none; stroke: rgba(255,255,255,.0); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; transition: stroke .3s; }
+    .map__leg.is-done { stroke: #AAF502; }
+    .map__leg.is-now { stroke: #fff; stroke-dasharray: 4 22; animation: dash 1s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -26; } }
     .map__node { cursor: pointer; }
-    .map__node circle { fill: #fff; stroke: var(--roxo); stroke-width: 3; transition: all .25s; }
-    .map__node text.n { font: 700 14px Montserrat; fill: var(--roxo); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
-    .map__node text.l { font: 600 13px Inter; fill: var(--ink); text-anchor: middle; }
+    .map__node circle { fill: #fff; stroke: var(--roxo); stroke-width: 5; transition: all .25s; }
+    .map__node text.n { font: 700 28px Montserrat; fill: var(--roxo); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .map__node text.l { font: 700 30px Inter; fill: #fff; stroke: rgba(20,5,25,.85); stroke-width: 7px; paint-order: stroke; stroke-linejoin: round; text-anchor: middle; }
     .map__node.is-active circle { fill: var(--teal); stroke: var(--teal); }
     .map__node.is-active text.n { fill: #fff; }
-    .map__legtxt { font: 600 12px Inter; fill: var(--gold-ink); text-anchor: middle; }
-    .map__car { fill: var(--gold); stroke: #fff; stroke-width: 3; }
+    .map__legtxt { font: 700 28px Inter; fill: #AAF502; stroke: rgba(20,5,25,.85); stroke-width: 7px; paint-order: stroke; text-anchor: middle; }
+    .map__car { fill: var(--gold); stroke: #fff; stroke-width: 5; }
     .map__ctl { display: flex; gap: 14px; align-items: center; padding: 16px 20px; border-top: 1px solid var(--line); background: #fff; flex-wrap: wrap; }
     .map__ctl button { border: 0; border-radius: 99px; padding: 10px 18px; background: var(--roxo); color: #fff; font: 600 .86rem Inter; cursor: pointer; }
     .map__ctl input[type=range] { flex: 1 1 200px; accent-color: var(--teal); }
@@ -187,7 +187,7 @@
     <div class="facts">
       <div class="fact"><b>08:00</b><span>Encontro no escritório</span></div>
       <div class="fact"><b>4 visitas</b><span>Plantas e unidades em campo</span></div>
-      <div class="fact"><b>Dia inteiro</b><span>Almoço incluso na agenda</span></div>
+      <div class="fact"><b>663 km</b><span>Cerca de 9h10 de estrada, com almoço</span></div>
       <div class="fact"><b>Goiás</b><span>Rota por Palmeiras, Rio Verde e Goiânia</span></div>
     </div>
   </div>
@@ -203,7 +203,7 @@
   <div class="wrap">
     <p class="eyebrow">Programação</p>
     <h2>O dia, do escritório ao retorno</h2>
-    <p class="lead">Toque em cada parada para ver o que esperar. Os horários de chegada nas paradas finais dependem do trânsito e do andamento das visitas, então tratamos como previsão.</p>
+    <p class="lead">Toque em cada parada para ver o que esperar. Os horários com ~ são previsões calculadas a partir dos tempos de deslocamento e podem variar com o trânsito e o andamento das visitas.</p>
     <ol class="timeline" id="timeline"></ol>
   </div>
 </section>
@@ -258,7 +258,7 @@
       <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Siga a orientação da equipe</strong><span class="t">Áreas industriais têm regras de segurança. Nossa equipe indica por onde circular.</span></span></label></li>
       <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Fotos com permissão</strong><span class="t">Pergunte antes de fotografar equipamentos e áreas operacionais.</span></span></label></li>
     </ul>
-    <div class="important"><strong>Importante:</strong> a rota é longa, com mais de 8 horas somadas só em deslocamento. Reserve o dia inteiro e avise a equipe se houver qualquer restrição de saúde ou mobilidade.</div>
+    <div class="important"><strong>Importante:</strong> a rota é longa, com cerca de 9 horas somadas só em deslocamento, e o retorno ao escritório deve ser à noite. Reserve o dia inteiro e avise a equipe se houver qualquer restrição de saúde ou mobilidade.</div>
   </div>
 </section>
 
@@ -268,14 +268,14 @@
     <h2>O percurso do dia no mapa</h2>
     <p class="lead">Arraste o controle ou toque em play para percorrer a rota. Toque em uma parada para ver detalhes e abrir a localização.</p>
     <div class="map__stage">
-      <svg id="mapSvg" viewBox="0 0 900 520" role="img" aria-label="Esquema do trajeto da visita"></svg>
+      <svg id="mapSvg" viewBox="0 0 1352 1042" role="img" aria-label="Esquema do trajeto da visita"></svg>
       <div class="map__ctl">
         <button id="mapPlay" type="button">▶ Percorrer rota</button>
         <input id="mapRange" type="range" min="0" max="1000" value="0" aria-label="Posição no trajeto">
       </div>
       <div class="map__info" id="mapInfo"></div>
     </div>
-    <p class="map__note">Esquema ilustrativo, sem escala. Os tempos são estimativas de deslocamento.</p>
+    <p class="map__note">Rota real: 663 km e cerca de 9h10 de deslocamento somados. Os horários são estimativas e dependem do trânsito. <a href="https://www.google.com/maps/dir/Metropolitan+Mall,+Av.+Dep.+Jamel+Cec%C3%ADlio,+2690+-+Jardim+Goi%C3%A1s,+Goi%C3%A2nia+-+GO,+74810-100/Organo+Buritis,+Av.+Jo%C3%A3o+Martins+Honostorio,+R.+Maj.+Sinfr%C3%B4nio,+Palmeiras+de+Goi%C3%A1s+-+GO,+76190-000/Casar%C3%A3o+Goiano,+BR-060,+S%2Fn,+Cezarina+-+GO,+76195-000/-18.1434801,-50.9977005/CEASA+Goi%C3%A2nia,+BR-153,+KM+5+-+5+-+Jardim+Guanabara,+Goi%C3%A2nia+-+GO,+74675-090/Metropolitan+Mall,+Av.+Dep.+Jamel+Cec%C3%ADlio,+2690+-+Jardim+Goi%C3%A1s,+Goi%C3%A2nia+-+GO,+74810-100" target="_blank" rel="noopener noreferrer" style="color:var(--teal-ink);font-weight:600">Abrir rota completa no Google Maps ↗</a></p>
   </div>
 </section>
 
@@ -329,23 +329,25 @@
       tags: ['Projeto em implantação', 'Duração prevista: 1h'], map: MAPS.buritis, mapLabel: 'Ver local no mapa' },
     { id: 'm1b', short: 'Casarão', type: 'move', time: '~11:48', dur: '25 min', title: 'Deslocamento para o almoço', sub: 'Aproximadamente 25 minutos de estrada',
       body: 'Trecho curto, saindo do Organo Buritis rumo ao Casarão Goiano.', tags: ['25 min de viagem'] },
-    { id: 's3', short: 'Almoço', type: 'stop', time: '~12:13', dur: 'Pausa', title: 'Almoço no Casarão Goiano', sub: 'Pausa para refeição e conversa',
+    { id: 's3', short: 'Almoço', type: 'stop', time: '~12:13', dur: 'Almoço de ~1h', title: 'Almoço no Casarão Goiano', sub: 'Pausa para refeição e conversa',
       body: 'Um momento mais solto para trocar impressões sobre o que foi visto até aqui, com a equipe da 4WaTT à mesa.',
-      tags: ['Almoço incluso'], map: MAPS.casarao, mapLabel: 'Ver restaurante no mapa' },
-    { id: 'm2', short: 'Rio Verde', type: 'move', time: 'Tarde', dur: '2h51', title: 'Deslocamento para Rio Verde', sub: 'Aproximadamente 2h51 de estrada',
+      tags: ['Almoço incluso', 'Saída prevista ~13:13'], map: MAPS.casarao, mapLabel: 'Ver restaurante no mapa' },
+    { id: 'm2', short: 'Rio Verde', type: 'move', time: '~13:13', dur: '2h51', title: 'Deslocamento para Rio Verde', sub: 'Aproximadamente 2h51 de estrada',
       body: 'O trecho mais longo do dia. Aproveite para revisar anotações e perguntar o que ficou em aberto.', tags: ['2h51 de viagem'] },
-    { id: 's4', short: 'Usina Rio Verde', type: 'stop', time: 'Tarde', dur: 'Visita guiada', title: 'Usina 4WaTT em Rio Verde', sub: 'Retrofit para upgrade tecnológico',
+    { id: 's4', short: 'Usina Rio Verde', type: 'stop', time: '~16:04', dur: '~1h de visita', title: 'Usina 4WaTT em Rio Verde', sub: 'Retrofit para upgrade tecnológico',
       body: 'A usina está em reforma neste momento, em retrofit para atualização tecnológica. Mesmo assim, apresenta o ciclo completo de geração de energia, do resíduo ao produto final. É uma boa oportunidade de ver o que significa modernizar um ativo existente.',
-      tags: ['Ciclo completo', 'Em retrofit'] },
-    { id: 's5', short: 'UTB Barbosa', type: 'stop', time: 'Tarde', dur: '40 min', title: 'UTB 4WaTT Barbosa', sub: 'Unidade de tratamento de resíduos',
+      tags: ['Ciclo completo', 'Em retrofit', 'Chegada prevista ~16:04'] },
+    { id: 's5', short: 'UTB Barbosa', type: 'stop', time: '~17:04', dur: '40 min', title: 'UTB 4WaTT Barbosa', sub: 'Unidade de tratamento de resíduos',
       body: 'Parada para conhecer a unidade de tratamento e entender como a matéria-prima é recebida e preparada.',
       tags: ['Duração prevista: 40 min'], map: MAPS.barbosa, mapLabel: 'Ver UTB no mapa' },
-    { id: 'm3', short: 'Rumo à CEASA', type: 'move', time: 'Final da tarde', dur: '3h40', title: 'Deslocamento para a CEASA Goiás', sub: 'Aproximadamente 3h40 de estrada',
+    { id: 'm3', short: 'Rumo à CEASA', type: 'move', time: '~17:44', dur: '3h40', title: 'Deslocamento para a CEASA Goiás', sub: 'Aproximadamente 3h40 de estrada',
       body: 'Último grande trecho antes do retorno. Vamos fazer uma conversa de fechamento sobre o que foi visto no dia.', tags: ['3h40 de viagem'] },
-    { id: 's6', short: 'CEASA Goiás', type: 'stop', time: 'Final do dia', dur: '30 min', title: 'CEASA Goiás', sub: 'Central de abastecimento e origem de resíduo orgânico',
+    { id: 's6', short: 'CEASA Goiás', type: 'stop', time: '~21:24', dur: '30 min', title: 'CEASA Goiás', sub: 'Central de abastecimento e origem de resíduo orgânico',
       body: 'Visita rápida à central, onde se vê a escala do volume de resíduo orgânico que alimenta projetos de biogás.',
       tags: ['Duração prevista: 30 min'], map: MAPS.ceasa, mapLabel: 'Ver CEASA no mapa' },
-    { id: 's7', short: 'Encerramento', type: 'stop', time: 'Noite', dur: 'Encerramento', title: 'Retorno ao escritório', sub: 'Fechamento da agenda',
+    { id: 'm4', short: 'Retorno', type: 'move', time: '~21:54', dur: '~26 min', title: 'Retorno ao escritório', sub: 'Aproximadamente 26 minutos de estrada',
+      body: 'Último trecho do dia, de volta a Goiânia.', tags: ['~26 min de viagem'] },
+    { id: 's7', short: 'Encerramento', type: 'stop', time: '~22:20', dur: 'Encerramento', title: 'Retorno ao escritório', sub: 'Fechamento da agenda',
       body: 'Voltamos ao escritório para o encerramento: espaço para perguntas finais, próximos passos e conversa sobre as oportunidades de investimento.',
       tags: ['Perguntas e próximos passos'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' }
   ];
@@ -423,52 +425,56 @@
   });
 })();
 
-// mapa esquematico
+// mapa real da rota (pixels sobre a imagem 1352x1042)
 (function () {
   var svg = document.getElementById('mapSvg'); if (!svg) return;
   var NS = 'http://www.w3.org/2000/svg';
   var N = [
-    { n: 'E', x: 690, y: 130, l: 'Escritório', d: 'Ponto de partida às 08:00 e de encerramento no fim do dia.', m: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA' },
-    { n: '1', x: 470, y: 150, l: 'Organo Buritis', d: '4W WTE Organo Buritis, em Palmeiras de Goiás. Visita de cerca de 1h à implantação.', m: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8' },
-    { n: '2', x: 420, y: 270, l: 'Casarão Goiano', d: 'Almoço, a cerca de 25 min do Organo Buritis.', m: 'https://maps.app.goo.gl/U6T4j4cdS2x5HQkH7' },
-    { n: '3', x: 170, y: 390, l: 'Usina Rio Verde', d: 'Usina em retrofit, com o ciclo completo de geração de energia.', m: null },
-    { n: '4', x: 430, y: 440, l: 'UTB Barbosa', d: 'Unidade de tratamento, parada de cerca de 40 min.', m: 'https://maps.app.goo.gl/56JAYNnvDunFNydA8' },
-    { n: '5', x: 730, y: 340, l: 'CEASA Goiás', d: 'Projeto entregue, com visita de cerca de 30 min.', m: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7' }
+    { n: 'E', x: 1095, y: 248, lx: 40, ly: 70, l: 'Escritório', d: 'Ponto de partida às 08:00 e de encerramento no fim do dia.', m: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA', ml: 'Abrir escritório no Google Maps ↗' },
+    { n: '1', x: 766, y: 341, lx: 0, ly: 62, l: 'Organo Buritis', d: '4W WTE Organo Buritis, em Palmeiras de Goiás. Chegada prevista às ~10:48, com cerca de 1h de visita à implantação.', m: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8', ml: 'Abrir Organo Buritis no Google Maps ↗' },
+    { n: '2', x: 831, y: 446, lx: 40, ly: 62, l: 'Casarão Goiano', d: 'Almoço, a cerca de 25 min do Organo Buritis. Chegada prevista às ~12:13.', m: 'https://maps.app.goo.gl/U6T4j4cdS2x5HQkH7', ml: 'Abrir Casarão Goiano no Google Maps ↗' },
+    { n: '3', x: 295, y: 955, lx: 60, ly: -40, l: 'Rio Verde', d: 'Usina 4WaTT em retrofit e UTB Barbosa. Chegada prevista às ~16:04: cerca de 1h na usina e 40 min na UTB.', m: 'https://maps.app.goo.gl/56JAYNnvDunFNydA8', ml: 'Abrir UTB Barbosa no Google Maps ↗' },
+    { n: '4', x: 1112, y: 232, lx: -30, ly: -42, l: 'CEASA Goiás', d: 'Projeto entregue. Chegada prevista às ~21:24, com cerca de 30 min de visita.', m: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7', ml: 'Abrir CEASA Goiás no Google Maps ↗' }
   ];
-  var LEGS = ['1h48', '25 min', '2h51', '', '3h40', ''];
-  var order = [0, 1, 2, 3, 4, 5, 0];
+  var L2 = [[831,446],[800,458],[755,473],[700,500],[660,515],[640,535],[590,590],[555,625],[510,675],[470,672],[440,682],[410,695],[365,745],[345,775],[315,800],[295,850],[290,880],[275,905],[280,940],[295,955]];
+  var P = [
+    [[1095,248],[1060,258],[1030,282],[985,300],[960,320],[930,345],[900,375],[862,402],[835,360],[803,330],[775,323],[766,341]],
+    [[766,341],[775,323],[803,330],[835,360],[862,402],[850,425],[831,446]],
+    L2,
+    L2.slice().reverse().concat([[862,402],[900,375],[930,345],[960,320],[985,300],[1030,282],[1062,252],[1090,236],[1112,232]]),
+    [[1112,232],[1100,240],[1095,248]]
+  ];
+  var LEGS = [['1h48', 960, 320], ['25 min', 850, 395], ['2h51', 520, 640], ['3h40', 1000, 300], ['', 0, 0]];
+  var order = [0, 1, 2, 3, 4, 0];
   var legs = [], lens = [], total = 0;
   function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
-  for (var g = 1; g < 9; g++) svg.appendChild(el('line', { x1: g * 100, y1: 0, x2: g * 100, y2: 520, stroke: 'rgba(58,9,64,.05)' }));
-  for (var g2 = 1; g2 < 5; g2++) svg.appendChild(el('line', { x1: 0, y1: g2 * 100, x2: 900, y2: g2 * 100, stroke: 'rgba(58,9,64,.05)' }));
-  for (var i = 0; i < order.length - 1; i++) {
-    var a = N[order[i]], b = N[order[i + 1]];
-    var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
-    var cx = mx - dy * 0.18, cy = my + dx * 0.18;
-    var p = el('path', { d: 'M' + a.x + ' ' + a.y + ' Q' + cx + ' ' + cy + ' ' + b.x + ' ' + b.y, 'class': 'map__leg' });
+  var bg = el('image', { href: 'assets/img/visita/rota.jpg', x: 0, y: 0, width: 1352, height: 1042 });
+  svg.appendChild(bg);
+  P.forEach(function (pts, i) {
+    var d = pts.map(function (q, k) { return (k ? 'L' : 'M') + q[0] + ' ' + q[1]; }).join(' ');
+    var p = el('path', { d: d, 'class': 'map__leg' });
     svg.appendChild(p); legs.push(p); lens.push(p.getTotalLength()); total += lens[i];
-    if (LEGS[i]) {
-      var pt = p.getPointAtLength(lens[i] / 2);
-      var t = el('text', { x: pt.x, y: pt.y - 12, 'class': 'map__legtxt' }); t.textContent = LEGS[i]; svg.appendChild(t);
-    }
-  }
+  });
+  var labels = [['1h48', 950, 292], ['25 min', 905, 430], ['2h51', 560, 600], ['3h40', 1040, 330]];
+  labels.forEach(function (a) {
+    var t = el('text', { x: a[1], y: a[2], 'class': 'map__legtxt' }); t.textContent = a[0]; svg.appendChild(t);
+  });
   var range = document.getElementById('mapRange'), info = document.getElementById('mapInfo'), btn = document.getElementById('mapPlay');
   function cum(i) { var s = 0; for (var k = 0; k < i; k++) s += lens[k]; return s; }
   var nodes = N.map(function (nd, i) {
     var g = el('g', { 'class': 'map__node', tabindex: 0, role: 'button', 'aria-label': nd.l });
-    g.appendChild(el('circle', { cx: nd.x, cy: nd.y, r: 20 }));
+    g.appendChild(el('circle', { cx: nd.x, cy: nd.y, r: 24 }));
     var t = el('text', { x: nd.x, y: nd.y, 'class': 'n' }); t.textContent = nd.n; g.appendChild(t);
-    var l = el('text', { x: nd.x, y: nd.y + 40, 'class': 'l' }); l.textContent = nd.l; g.appendChild(l);
+    var l = el('text', { x: nd.x + nd.lx, y: nd.y + nd.ly, 'class': 'l' }); l.textContent = nd.l; g.appendChild(l);
     g.addEventListener('click', function () { stop(); range.value = Math.round(cum(i) / total * 1000); render(+range.value); });
     g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); g.dispatchEvent(new Event('click')); } });
     svg.appendChild(g); return g;
   });
-  var car = el('circle', { r: 9, 'class': 'map__car', cx: N[0].x, cy: N[0].y }); svg.appendChild(car);
-  svg.appendChild(car);
+  var car = el('circle', { r: 15, 'class': 'map__car', cx: N[0].x, cy: N[0].y }); svg.appendChild(car);
   function select(i) {
     nodes.forEach(function (g, k) { g.classList.toggle('is-active', k === i); });
     var nd = N[i];
-    info.innerHTML = '<b>' + nd.l + '</b><p>' + nd.d + '</p>' + (nd.m ? '<a class="btn" href="' + nd.m + '" target="_blank" rel="noopener noreferrer">Abrir no Google Maps ↗</a>' : '');
+    info.innerHTML = '<b>' + nd.l + '</b><p>' + nd.d + '</p>' + (nd.m ? '<a class="btn" href="' + nd.m + '" target="_blank" rel="noopener noreferrer">' + nd.ml + '</a>' : '');
   }
   function render(v) {
     var d = v / 1000 * total, acc = 0, cur = legs.length - 1;
@@ -489,14 +495,13 @@
     if (raf) return stop();
     from = +range.value >= 1000 ? 0 : +range.value; t0 = performance.now(); btn.textContent = '❚❚ Pausar';
     (function step(now) {
-      var v = from + (now - t0) / 14000 * 1000;
+      var v = from + (now - t0) / 16000 * 1000;
       if (v >= 1000) { range.value = 1000; render(1000); return stop(); }
       range.value = v; render(v); raf = requestAnimationFrame(step);
     })(t0);
   });
   render(0);
 })();
-
 </script>
 </body>
 </html>

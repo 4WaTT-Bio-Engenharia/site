@@ -183,21 +183,46 @@
     .chips a { text-decoration: none; font: 600 .82rem Inter; padding: 8px 14px; border-radius: 99px; background: rgba(58,9,64,.07); color: var(--roxo); transition: background .2s; }
     .chips a:hover { background: rgba(58,9,64,.14); }
 
-    /* fundo */
-    .fund { background: radial-gradient(900px 400px at 10% 0%, rgba(3,165,137,.28), transparent 60%), linear-gradient(160deg, var(--plum), var(--roxo)); color: #fff; }
-    .fund .eyebrow { color: var(--gold); }
-    .fund h2 { color: #fff; max-width: 22ch; }
-    .fund .lead { color: rgba(255,255,255,.8); }
+    /* fundo (paleta 4W Energia) */
+    .fund { background: radial-gradient(900px 420px at 12% 0%, rgba(26,84,212,.35), transparent 60%), radial-gradient(700px 360px at 95% 100%, rgba(170,245,2,.12), transparent 60%), #00373D; color: #fff; }
+    .fund .eyebrow { color: #AAF502; }
+    .fund h2 { color: #fff; max-width: 24ch; }
+    .fund .lead { color: #C5D7DB; }
     .fund__pts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
-    .fund__pt { padding: 20px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.06); }
-    .fund__pt b { display: block; font: 700 1rem Montserrat; margin-bottom: 6px; }
-    .fund__pt span { font-size: .92rem; color: rgba(255,255,255,.75); }
+    .fund__pt { padding: 20px; border: 1px solid rgba(197,215,219,.22); border-radius: 18px; background: rgba(197,215,219,.06); }
+    .fund__pt b { display: block; font: 700 1rem Montserrat; margin-bottom: 6px; color: #AAF502; }
+    .fund__pt span { font-size: .92rem; color: #C5D7DB; }
     .fund__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-    .btn--gold { background: var(--gold); color: var(--plum); margin-top: 0; padding: 14px 24px; font-size: .95rem; }
-    .btn--gold:hover { background: #f0c230; }
-    .btn--ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); margin-top: 0; padding: 14px 24px; font-size: .95rem; }
-    .btn--ghost:hover { background: rgba(255,255,255,.1); }
-    .fund__legal { margin-top: 28px; font-size: .78rem; color: rgba(255,255,255,.55); max-width: 80ch; }
+    .btn--gold { background: #AAF502; color: #00373D; margin-top: 0; padding: 14px 24px; font-size: .95rem; }
+    .btn--gold:hover { background: #bfff2e; }
+    .btn--ghost { background: transparent; border: 1px solid rgba(197,215,219,.5); margin-top: 0; padding: 14px 24px; font-size: .95rem; color: #fff; }
+    .btn--ghost:hover { background: rgba(197,215,219,.12); }
+    .fund__legal { margin-top: 28px; font-size: .78rem; color: rgba(197,215,219,.65); max-width: 80ch; }
+
+    /* carrosseis */
+    .mq { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; cursor: grab; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+    .mq::-webkit-scrollbar { display: none; }
+    .mq.is-drag { cursor: grabbing; }
+    .mq__track { display: flex; gap: 16px; width: max-content; padding: 6px 0; user-select: none; }
+    .mq-card { flex: 0 0 auto; width: 300px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; padding: 22px; border-radius: 22px; border: 1px solid var(--line); background: var(--card); text-decoration: none; color: inherit; -webkit-user-drag: none; }
+    .mq-card img { max-height: 44px; width: auto; max-width: 70%; align-self: flex-start; -webkit-user-drag: none; }
+    .mq-card .co__role { display: block; margin-bottom: 4px; }
+    .mq-card p { margin: 0; font-size: .9rem; color: var(--dim); }
+    .mq-card--4w { background: #00373D; border-color: #00373D; } .mq-card--4w p { color: #C5D7DB; }
+    .mq-card--tws { background: #FEFAE0; border-color: rgba(166,117,60,.35); } .mq-card--tws p { color: #243837; }
+    .mq-card--fund { background: linear-gradient(150deg, #1A54D4, #00373D 75%); border-color: #1A54D4; color: #fff; }
+    .mq-card--fund p { color: #C5D7DB; }
+    .mq-card--fund .badge { align-self: flex-start; font: 800 .8rem Montserrat; letter-spacing: .08em; padding: 6px 12px; border-radius: 99px; background: #AAF502; color: #00373D; }
+    .mq-card--fund h3 { font-size: 1.15rem; color: #fff; margin-top: 10px; }
+    .mq-card--fund .go { font: 600 .84rem Inter; color: #AAF502; }
+    .hero-mq { padding: 36px 0 8px; }
+    .hero-mq .eyebrow { margin-bottom: 18px; }
+    .logos { padding: 44px 0 52px; background: #fff; border-top: 1px solid var(--line); }
+    .logos .eyebrow { text-align: center; margin-bottom: 22px; }
+    .logo-tile { flex: 0 0 auto; width: 230px; height: 108px; display: grid; place-items: center; border-radius: 18px; border: 1px solid var(--line); background: #fff; padding: 18px; }
+    .logo-tile img { max-width: 100%; max-height: 64px; width: auto; -webkit-user-drag: none; }
+    .logo-tile--4w { background: #00373D; border-color: #00373D; }
+    .logo-tile--tws { background: #FEFAE0; border-color: rgba(166,117,60,.35); }
 
     footer { padding: 36px 0 48px; text-align: center; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); }
     @media (max-width: 560px) {
@@ -231,6 +256,18 @@
     </div>
   </div>
 </header>
+
+<section class="hero-mq" id="empresas">
+  <div class="wrap"><p class="eyebrow">O ecossistema em um olhar</p></div>
+  <div class="mq" data-mq data-speed="0.6">
+    <div class="mq__track">
+      <a class="mq-card" href="#ecossistema"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"><div><span class="co__role">Engenharia e operação</span><p>Projeta, constrói e opera usinas de biogás, biometano e gaseificação.</p></div></a>
+      <a class="mq-card mq-card--4w" href="#ecossistema"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"><div><span class="co__role" style="color:#AAF502">Energia</span><p>Geração e comercialização de energia a partir de fontes renováveis.</p></div></a>
+      <a class="mq-card mq-card--tws" href="#ecossistema"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"><div><span class="co__role" style="color:#A6753C">Estrutura jurídica</span><p>Segurança jurídica e consultivo regulatório para o setor elétrico.</p></div></a>
+      <a class="mq-card mq-card--fund" href="#fundo"><div><span class="badge">4W WTE</span><h3>Fundo de Infraestrutura</h3></div><div><p>A forma de participar do ecossistema como investidor.</p><span class="go">Conhecer o fundo ↓</span></div></a>
+    </div>
+  </div>
+</section>
 
 <nav class="route" aria-label="Trajeto do dia">
   <div class="wrap">
@@ -334,21 +371,18 @@
         <div class="co__logo"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
         <span class="co__role">Engenharia e operação</span>
         <p>Projeta, constrói e opera usinas de biogás, biometano e gaseificação, da pré-viabilidade à operação.</p>
-        <p class="co__opp"><b>Oportunidade</b>Uma carteira de projetos com engenharia própria, em estágios diferentes, como os que você vê hoje.</p>
         <small>4watt.tech</small>
       </a>
       <a class="co co--4w" href="https://www.4wenergia.com.br" target="_blank" rel="noopener noreferrer">
         <div class="co__logo co__logo--lg"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
         <span class="co__role">Energia</span>
         <p>Geração e comercialização de energia a partir de fontes renováveis.</p>
-        <p class="co__opp"><b>Oportunidade</b>Dar destino à energia gerada pelos projetos e abrir um mercado para o ativo depois de pronto.</p>
         <small>4wenergia.com.br</small>
       </a>
       <a class="co co--tws" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
         <div class="co__logo co__logo--lg"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
         <span class="co__role">Estrutura jurídica</span>
         <p>Segurança jurídica para o setor elétrico: negócios, due diligence e consultivo regulatório, com mais de 15 anos de atuação.</p>
-        <p class="co__opp"><b>Oportunidade</b>Previsibilidade regulatória e solidez em cada operação, do contrato à conexão.</p>
         <small>twsadv.com.br</small>
       </a>
     </div>
@@ -365,10 +399,10 @@
 <section class="fund" id="fundo">
   <div class="wrap">
     <p class="eyebrow">Para fechar</p>
-    <h2>Participe do ecossistema pelo nosso fundo de infraestrutura</h2>
-    <p class="lead">Você viu o que fazemos em campo e quem está por trás. Se faz sentido para você, o próximo passo é conhecer as oportunidades de investimento e conversar com o nosso time.</p>
+    <h2>Participe do ecossistema pelo 4W WTE Fundo de Infraestrutura</h2>
+    <p class="lead">Você viu o que fazemos em campo e quem está por trás. Se faz sentido para você, o próximo passo é conhecer a oportunidade de investir no 4W WTE Fundo de Infraestrutura e conversar com o nosso time.</p>
     <div class="fund__pts">
-      <div class="fund__pt"><b>Projetos que você viu</b><span>Ativos originados, estruturados e operados dentro do mesmo ecossistema.</span></div>
+      <div class="fund__pt"><b>Projetos que você viu hoje</b><span>Ativos originados, estruturados e operados dentro do mesmo ecossistema.</span></div>
       <div class="fund__pt"><b>Segurança desde a origem</b><span>Estrutura jurídica e regulatória acompanhando cada etapa do projeto.</span></div>
       <div class="fund__pt"><b>Conversa direta</b><span>Sem compromisso: o time apresenta o fundo, os projetos e os próximos passos.</span></div>
     </div>
@@ -377,6 +411,22 @@
       <a class="btn btn--ghost" href="contato.html" target="_blank" rel="noopener noreferrer">Falar com o time</a>
     </div>
     <p class="fund__legal">Conteúdo de caráter institucional e informativo. Não constitui oferta de valores mobiliários, recomendação ou promessa de rentabilidade. Investimentos em infraestrutura envolvem riscos operacionais, regulatórios e de mercado.</p>
+  </div>
+</section>
+
+
+<section class="logos" id="logos" aria-label="Empresas do ecossistema">
+  <p class="eyebrow">Empresas do ecossistema</p>
+  <div class="mq" data-mq data-speed="0.5">
+    <div class="mq__track">
+      <div class="logo-tile"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
+      <div class="logo-tile logo-tile--4w"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
+      <div class="logo-tile logo-tile--tws"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
+      <div class="logo-tile"><img src="assets/img/EPC- Sublogo Vetor.png" alt="EPC by 4WaTT"></div>
+      <div class="logo-tile"><img src="assets/img/O&amp;M - Sublogo Vetor.png" alt="O&amp;M by 4WaTT"></div>
+      <div class="logo-tile"><img src="assets/img/ENGENHARIA- Sublogo Vetor.png" alt="Engenharia by 4WaTT"></div>
+      <div class="logo-tile"><img src="assets/img/FINANCE - Sublogo Vetor.png" alt="Finance by 4WaTT"></div>
+    </div>
   </div>
 </section>
 
@@ -555,6 +605,37 @@
     })(t0);
   });
   render(0);
+})();
+
+// carrosseis automaticos e arrastaveis
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-mq]').forEach(function (mq) {
+    var track = mq.querySelector('.mq__track');
+    var items = Array.prototype.slice.call(track.children);
+    items.forEach(function (it) { var c = it.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.tabIndex = -1; track.appendChild(c); });
+    var speed = parseFloat(mq.dataset.speed) || 0.5, pos = 0, hover = false, dragging = false, moved = false, sx = 0, sp = 0, pid = null;
+    function half() { return track.scrollWidth / 2; }
+    function wrap() { var h = half(); if (pos >= h) pos -= h; if (pos < 0) pos += h; }
+    function tick() {
+      if (!hover && !dragging && !reduce) { pos += speed; wrap(); mq.scrollLeft = pos; }
+      requestAnimationFrame(tick);
+    }
+    mq.addEventListener('mouseenter', function () { hover = true; });
+    mq.addEventListener('mouseleave', function () { hover = false; });
+    mq.addEventListener('scroll', function () { if (!dragging && Math.abs(mq.scrollLeft - pos) > 2) pos = mq.scrollLeft; }, { passive: true });
+    mq.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse' && e.button !== 0) return; dragging = true; moved = false; sx = e.clientX; sp = mq.scrollLeft; pid = e.pointerId; });
+    mq.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - sx;
+      if (!moved && Math.abs(dx) > 6) { moved = true; mq.classList.add('is-drag'); try { mq.setPointerCapture(pid); } catch (_) {} }
+      if (moved) { pos = sp - dx; wrap(); mq.scrollLeft = pos; }
+    });
+    function end() { dragging = false; mq.classList.remove('is-drag'); try { mq.releasePointerCapture(pid); } catch (_) {} }
+    mq.addEventListener('pointerup', end); mq.addEventListener('pointercancel', end);
+    mq.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+    tick();
+  });
 })();
 </script>
 </body>

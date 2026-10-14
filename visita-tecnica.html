@@ -28,7 +28,7 @@
     .lead { color: var(--dim); max-width: 62ch; margin: 14px 0 0; }
 
     /* hero */
-    .hero { background: radial-gradient(1200px 500px at 85% -10%, rgba(3,165,137,.35), transparent 60%), linear-gradient(160deg, var(--plum), var(--roxo)); color: #fff; padding: 28px 0 72px; }
+    .hero { background: linear-gradient(160deg, rgba(42,7,32,.93), rgba(58,9,64,.78) 60%, rgba(2,60,52,.7)), url("assets/img/visita/biodigestor.jpg") center/cover; color: #fff; padding: 28px 0 72px; }
     .hero__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 64px; }
     .hero__top img { height: 34px; width: auto; }
     .hero__top span { font-size: .82rem; opacity: .75; }
@@ -109,6 +109,58 @@
     .co p { margin: 0; color: var(--dim); font-size: .92rem; }
     .co small { color: var(--teal-ink); font-weight: 600; }
 
+    /* photo band */
+    .photo { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; margin-top: 40px; border-radius: 24px; overflow: hidden; background: var(--roxo); color: #fff; }
+    .photo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
+    .photo div { padding: 36px; align-self: center; }
+    .photo h3 { font-size: 1.4rem; margin-bottom: 10px; }
+    .photo p { margin: 0; color: rgba(255,255,255,.8); }
+    @media (max-width: 760px) { .photo { grid-template-columns: 1fr; } .photo div { padding: 24px; } }
+
+    /* case ceasa */
+    .case__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; margin-top: 36px; }
+    .cmp { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4/3; background: #000; user-select: none; touch-action: pan-y; }
+    .cmp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .cmp__after { clip-path: inset(0 0 0 50%); }
+    .cmp__tag { position: absolute; top: 12px; padding: 4px 12px; border-radius: 99px; font: 600 .74rem Inter; background: rgba(0,0,0,.6); color: #fff; z-index: 2; }
+    .cmp__tag--l { left: 12px; } .cmp__tag--r { right: 12px; background: var(--teal); }
+    .cmp__handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; z-index: 3; transform: translateX(-1.5px); pointer-events: none; }
+    .cmp__handle::after { content: "\2194"; position: absolute; top: 50%; left: 50%; width: 42px; height: 42px; margin: -21px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--roxo); font-weight: 700; box-shadow: 0 6px 20px rgba(0,0,0,.3); }
+    .cmp input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 4; margin: 0; }
+    @media (max-width: 760px) { .case__grid { grid-template-columns: 1fr; } }
+
+    /* map */
+    .map { background: #fff; }
+    .map__stage { margin-top: 36px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(180deg, #f9f6ef, #efeae0); overflow: hidden; }
+    .map__stage svg { display: block; width: 100%; height: auto; }
+    .map__leg { fill: none; stroke: rgba(58,9,64,.22); stroke-width: 5; stroke-linecap: round; transition: stroke .3s; }
+    .map__leg.is-done { stroke: var(--teal); }
+    .map__leg.is-now { stroke: var(--gold); stroke-dasharray: 2 12; animation: dash 1s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -14; } }
+    .map__node { cursor: pointer; }
+    .map__node circle { fill: #fff; stroke: var(--roxo); stroke-width: 3; transition: all .25s; }
+    .map__node text.n { font: 700 14px Montserrat; fill: var(--roxo); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .map__node text.l { font: 600 13px Inter; fill: var(--ink); text-anchor: middle; }
+    .map__node.is-active circle { fill: var(--teal); stroke: var(--teal); }
+    .map__node.is-active text.n { fill: #fff; }
+    .map__legtxt { font: 600 12px Inter; fill: var(--gold-ink); text-anchor: middle; }
+    .map__car { fill: var(--gold); stroke: #fff; stroke-width: 3; }
+    .map__ctl { display: flex; gap: 14px; align-items: center; padding: 16px 20px; border-top: 1px solid var(--line); background: #fff; flex-wrap: wrap; }
+    .map__ctl button { border: 0; border-radius: 99px; padding: 10px 18px; background: var(--roxo); color: #fff; font: 600 .86rem Inter; cursor: pointer; }
+    .map__ctl input[type=range] { flex: 1 1 200px; accent-color: var(--teal); }
+    .map__info { padding: 16px 20px 20px; background: #fff; border-top: 1px solid var(--line); min-height: 92px; }
+    .map__info b { font-family: Montserrat; color: var(--roxo); }
+    .map__info p { margin: 4px 0 0; color: var(--dim); }
+    .map__note { font-size: .8rem; color: var(--dim); margin: 12px 4px 0; }
+
+    /* group brand variants */
+    .co--4w { background: #00373D; border-color: #00373D; }
+    .co--4w p { color: #C5D7DB; } .co--4w small { color: #AAF502; }
+    .co--tws { background: #FEFAE0; border-color: rgba(166,117,60,.35); }
+    .co--tws small { color: #A6753C; } .co--tws p { color: #243837; }
+    .co__logo--lg { height: 84px; }
+    .co__logo--lg img { max-height: 80px; }
+
     footer { padding: 36px 0 48px; text-align: center; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); }
     @media (max-width: 560px) {
       section { padding: 52px 0; }
@@ -167,6 +219,30 @@
       <div class="box"><span class="box__n">03</span><h3>Origem do resíduo</h3><p>Na UTB Barbosa e na CEASA Goiás você conhece a ponta de entrada: de onde vem a matéria-prima e como ela é tratada.</p></div>
       <div class="box"><span class="box__n">04</span><h3>Conversa aberta</h3><p>Nosso time técnico acompanha todo o trajeto. Perguntas sobre retorno, risco e prazos são bem-vindas em qualquer parada.</p></div>
     </div>
+    <div class="photo">
+      <img src="assets/img/visita/operacao.jpg" alt="Operador da 4WaTT na triagem de resíduos orgânicos" loading="lazy">
+      <div><h3>Operação de verdade, com gente de verdade</h3><p>Resíduo orgânico entra, é triado e vira energia. Você vai ver esse processo acontecendo, com a equipe que opera os ativos no dia a dia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <p class="eyebrow">Projeto entregue</p>
+    <h2>CEASA Goiás: antes e depois</h2>
+    <div class="case__grid">
+      <div class="cmp" id="cmp">
+        <img src="assets/img/ceasa/ceasa-esteira-antes-suja.png" alt="Esteira de recepção antes da reengenharia" loading="lazy">
+        <img class="cmp__after" src="assets/img/ceasa/ceasa-esteira-depois-rsu.jpg" alt="Esteira de recepção depois da reengenharia" loading="lazy">
+        <span class="cmp__tag cmp__tag--l">Antes</span><span class="cmp__tag cmp__tag--r">Depois</span>
+        <div class="cmp__handle"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+      </div>
+      <div>
+        <p class="lead" style="margin-top:0">Hoje você conhece a CEASA Goiás por dentro. Este é um projeto já entregue: a operação foi reorganizada, a estrutura foi modernizada e o resíduo passou a ser tratado com método. Arraste o controle para ver a diferença.</p>
+        <a class="btn" href="case-ceasa-goias.html" target="_blank" rel="noopener noreferrer">Ver o case completo ↗</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -186,6 +262,23 @@
   </div>
 </section>
 
+<section class="map" id="mapa">
+  <div class="wrap">
+    <p class="eyebrow">Trajeto</p>
+    <h2>O percurso do dia no mapa</h2>
+    <p class="lead">Arraste o controle ou toque em play para percorrer a rota. Toque em uma parada para ver detalhes e abrir a localização.</p>
+    <div class="map__stage">
+      <svg id="mapSvg" viewBox="0 0 900 520" role="img" aria-label="Esquema do trajeto da visita"></svg>
+      <div class="map__ctl">
+        <button id="mapPlay" type="button">▶ Percorrer rota</button>
+        <input id="mapRange" type="range" min="0" max="1000" value="0" aria-label="Posição no trajeto">
+      </div>
+      <div class="map__info" id="mapInfo"></div>
+    </div>
+    <p class="map__note">Esquema ilustrativo, sem escala. Os tempos são estimativas de deslocamento.</p>
+  </div>
+</section>
+
 <section id="grupo">
   <div class="wrap">
     <p class="eyebrow">Quem está por trás</p>
@@ -197,13 +290,13 @@
         <p>Engenharia e desenvolvimento de projetos de biogás, biometano e gaseificação.</p>
         <small>4watt.tech</small>
       </a>
-      <a class="co" href="https://www.4wenergia.com.br" target="_blank" rel="noopener noreferrer">
-        <div class="co__logo"><span class="co__word">4W <em>Energia</em></span></div>
+      <a class="co co--4w" href="https://www.4wenergia.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="co__logo co__logo--lg"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
         <p>Geração e comercialização de energia a partir de fontes renováveis.</p>
         <small>4wenergia.com.br</small>
       </a>
-      <a class="co" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
-        <div class="co__logo"><span class="co__word">TWS <em>Advogados</em></span></div>
+      <a class="co co--tws" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="co__logo co__logo--lg"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
         <p>Sociedade de advogados com foco em estruturação jurídica e regulatória.</p>
         <small>twsadv.com.br</small>
       </a>
@@ -234,7 +327,9 @@
     { id: 's2', short: 'Organo Buritis', type: 'stop', time: '~10:48', dur: '1h de visita', title: '4W WTE Organo Buritis', sub: 'Implantação do projeto em Palmeiras de Goiás',
       body: 'Visita à obra em andamento. Você vê a escala da implantação, as etapas de engenharia e como o projeto se organiza do terreno à operação.',
       tags: ['Projeto em implantação', 'Duração prevista: 1h'], map: MAPS.buritis, mapLabel: 'Ver local no mapa' },
-    { id: 's3', short: 'Almoço', type: 'stop', time: 'Almoço', dur: 'Pausa', title: 'Almoço no Casarão Goiano', sub: 'Pausa para refeição e conversa',
+    { id: 'm1b', short: 'Casarão', type: 'move', time: '~11:48', dur: '25 min', title: 'Deslocamento para o almoço', sub: 'Aproximadamente 25 minutos de estrada',
+      body: 'Trecho curto, saindo do Organo Buritis rumo ao Casarão Goiano.', tags: ['25 min de viagem'] },
+    { id: 's3', short: 'Almoço', type: 'stop', time: '~12:13', dur: 'Pausa', title: 'Almoço no Casarão Goiano', sub: 'Pausa para refeição e conversa',
       body: 'Um momento mais solto para trocar impressões sobre o que foi visto até aqui, com a equipe da 4WaTT à mesa.',
       tags: ['Almoço incluso'], map: MAPS.casarao, mapLabel: 'Ver restaurante no mapa' },
     { id: 'm2', short: 'Rio Verde', type: 'move', time: 'Tarde', dur: '2h51', title: 'Deslocamento para Rio Verde', sub: 'Aproximadamente 2h51 de estrada',
@@ -318,6 +413,90 @@
     tl.querySelectorAll('.stop').forEach(function (el) { if (dots[el.id]) io.observe(el); });
   }
 })();
+
+// slider antes/depois
+(function () {
+  var c = document.getElementById('cmp'); if (!c) return;
+  var after = c.querySelector('.cmp__after'), h = c.querySelector('.cmp__handle');
+  c.querySelector('input').addEventListener('input', function (e) {
+    var v = e.target.value; after.style.clipPath = 'inset(0 0 0 ' + v + '%)'; h.style.left = v + '%';
+  });
+})();
+
+// mapa esquematico
+(function () {
+  var svg = document.getElementById('mapSvg'); if (!svg) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var N = [
+    { n: 'E', x: 690, y: 130, l: 'Escritório', d: 'Ponto de partida às 08:00 e de encerramento no fim do dia.', m: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA' },
+    { n: '1', x: 470, y: 150, l: 'Organo Buritis', d: '4W WTE Organo Buritis, em Palmeiras de Goiás. Visita de cerca de 1h à implantação.', m: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8' },
+    { n: '2', x: 420, y: 270, l: 'Casarão Goiano', d: 'Almoço, a cerca de 25 min do Organo Buritis.', m: 'https://maps.app.goo.gl/U6T4j4cdS2x5HQkH7' },
+    { n: '3', x: 170, y: 390, l: 'Usina Rio Verde', d: 'Usina em retrofit, com o ciclo completo de geração de energia.', m: null },
+    { n: '4', x: 430, y: 440, l: 'UTB Barbosa', d: 'Unidade de tratamento, parada de cerca de 40 min.', m: 'https://maps.app.goo.gl/56JAYNnvDunFNydA8' },
+    { n: '5', x: 730, y: 340, l: 'CEASA Goiás', d: 'Projeto entregue, com visita de cerca de 30 min.', m: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7' }
+  ];
+  var LEGS = ['1h48', '25 min', '2h51', '', '3h40', ''];
+  var order = [0, 1, 2, 3, 4, 5, 0];
+  var legs = [], lens = [], total = 0;
+  function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  for (var g = 1; g < 9; g++) svg.appendChild(el('line', { x1: g * 100, y1: 0, x2: g * 100, y2: 520, stroke: 'rgba(58,9,64,.05)' }));
+  for (var g2 = 1; g2 < 5; g2++) svg.appendChild(el('line', { x1: 0, y1: g2 * 100, x2: 900, y2: g2 * 100, stroke: 'rgba(58,9,64,.05)' }));
+  for (var i = 0; i < order.length - 1; i++) {
+    var a = N[order[i]], b = N[order[i + 1]];
+    var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
+    var cx = mx - dy * 0.18, cy = my + dx * 0.18;
+    var p = el('path', { d: 'M' + a.x + ' ' + a.y + ' Q' + cx + ' ' + cy + ' ' + b.x + ' ' + b.y, 'class': 'map__leg' });
+    svg.appendChild(p); legs.push(p); lens.push(p.getTotalLength()); total += lens[i];
+    if (LEGS[i]) {
+      var pt = p.getPointAtLength(lens[i] / 2);
+      var t = el('text', { x: pt.x, y: pt.y - 12, 'class': 'map__legtxt' }); t.textContent = LEGS[i]; svg.appendChild(t);
+    }
+  }
+  var range = document.getElementById('mapRange'), info = document.getElementById('mapInfo'), btn = document.getElementById('mapPlay');
+  function cum(i) { var s = 0; for (var k = 0; k < i; k++) s += lens[k]; return s; }
+  var nodes = N.map(function (nd, i) {
+    var g = el('g', { 'class': 'map__node', tabindex: 0, role: 'button', 'aria-label': nd.l });
+    g.appendChild(el('circle', { cx: nd.x, cy: nd.y, r: 20 }));
+    var t = el('text', { x: nd.x, y: nd.y, 'class': 'n' }); t.textContent = nd.n; g.appendChild(t);
+    var l = el('text', { x: nd.x, y: nd.y + 40, 'class': 'l' }); l.textContent = nd.l; g.appendChild(l);
+    g.addEventListener('click', function () { stop(); range.value = Math.round(cum(i) / total * 1000); render(+range.value); });
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); g.dispatchEvent(new Event('click')); } });
+    svg.appendChild(g); return g;
+  });
+  var car = el('circle', { r: 9, 'class': 'map__car', cx: N[0].x, cy: N[0].y }); svg.appendChild(car);
+  svg.appendChild(car);
+  function select(i) {
+    nodes.forEach(function (g, k) { g.classList.toggle('is-active', k === i); });
+    var nd = N[i];
+    info.innerHTML = '<b>' + nd.l + '</b><p>' + nd.d + '</p>' + (nd.m ? '<a class="btn" href="' + nd.m + '" target="_blank" rel="noopener noreferrer">Abrir no Google Maps ↗</a>' : '');
+  }
+  function render(v) {
+    var d = v / 1000 * total, acc = 0, cur = legs.length - 1;
+    for (var i = 0; i < legs.length; i++) { if (d <= acc + lens[i] + 0.01) { cur = i; break; } acc += lens[i]; }
+    var pos = Math.min(Math.max(d - acc, 0), lens[cur]);
+    var pt = legs[cur].getPointAtLength(pos);
+    car.setAttribute('cx', pt.x); car.setAttribute('cy', pt.y);
+    legs.forEach(function (p, i) {
+      p.classList.toggle('is-done', i < cur || (i === cur && pos >= lens[i] - 0.5));
+      p.classList.toggle('is-now', i === cur && pos < lens[i] - 0.5 && pos > 0.5);
+    });
+    select(pos > lens[cur] / 2 ? order[cur + 1] : order[cur]);
+  }
+  var raf = null, t0 = 0, from = 0;
+  function stop() { if (raf) cancelAnimationFrame(raf); raf = null; btn.textContent = '▶ Percorrer rota'; }
+  range.addEventListener('input', function () { stop(); render(+range.value); });
+  btn.addEventListener('click', function () {
+    if (raf) return stop();
+    from = +range.value >= 1000 ? 0 : +range.value; t0 = performance.now(); btn.textContent = '❚❚ Pausar';
+    (function step(now) {
+      var v = from + (now - t0) / 14000 * 1000;
+      if (v >= 1000) { range.value = 1000; render(1000); return stop(); }
+      range.value = v; render(v); raf = requestAnimationFrame(step);
+    })(t0);
+  });
+  render(0);
+})();
+
 </script>
 </body>
 </html>

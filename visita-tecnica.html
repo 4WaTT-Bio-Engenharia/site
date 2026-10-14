@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visita técnica 15/10/2026 | 4WaTT</title>
+  <meta name="description" content="Programação da visita técnica 4WaTT em 15 de outubro de 2026: trajeto, paradas, o que esperar e pontos de atenção.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --roxo: #3A0940; --roxo-soft: #6e2466; --plum: #2A0720;
+      --teal: #03A589; --teal-ink: #027a66; --gold: #DBAA0F; --gold-ink: #8a6a00;
+      --bg: #F4F1EB; --card: #ffffff; --ink: #1d1220; --dim: #5a4d5e; --line: rgba(58,9,64,.14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: Montserrat, Inter, sans-serif; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+    a { color: inherit; }
+    .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+    section { padding: 72px 0; }
+    .eyebrow { font: 600 .78rem/1 Inter; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); margin: 0 0 14px; }
+    h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); color: var(--roxo); }
+    .lead { color: var(--dim); max-width: 62ch; margin: 14px 0 0; }
+
+    /* hero */
+    .hero { background: radial-gradient(1200px 500px at 85% -10%, rgba(3,165,137,.35), transparent 60%), linear-gradient(160deg, var(--plum), var(--roxo)); color: #fff; padding: 28px 0 72px; }
+    .hero__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 64px; }
+    .hero__top img { height: 34px; width: auto; }
+    .hero__top span { font-size: .82rem; opacity: .75; }
+    .hero h1 { font-size: clamp(2.1rem, 5.6vw, 3.8rem); font-weight: 800; max-width: 16ch; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { max-width: 58ch; color: rgba(255,255,255,.82); margin: 20px 0 0; font-size: 1.05rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 40px; }
+    .fact { border: 1px solid rgba(255,255,255,.18); border-radius: 16px; padding: 16px 18px; background: rgba(255,255,255,.06); }
+    .fact b { display: block; font: 700 1.5rem Montserrat; color: #fff; }
+    .fact span { font-size: .82rem; color: rgba(255,255,255,.7); }
+
+    /* route strip */
+    .route { position: sticky; top: 0; z-index: 20; background: rgba(244,241,235,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .route__row { display: flex; align-items: center; gap: 0; overflow-x: auto; padding: 14px 0; scrollbar-width: none; }
+    .route__row::-webkit-scrollbar { display: none; }
+    .route__dot { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; cursor: pointer; font: 500 .72rem Inter; color: var(--dim); padding: 0 6px; min-width: 76px; }
+    .route__dot i { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 700 .75rem Montserrat; font-style: normal; background: #fff; border: 2px solid var(--line); color: var(--roxo); transition: all .25s; }
+    .route__dot.is-active i { background: var(--teal); border-color: var(--teal); color: #fff; transform: scale(1.12); }
+    .route__dot.is-active { color: var(--roxo); }
+    .route__bar { flex: 1 0 16px; height: 2px; background: var(--line); margin-bottom: 18px; min-width: 16px; }
+
+    /* timeline */
+    .timeline { list-style: none; margin: 40px 0 0; padding: 0 0 0 28px; border-left: 2px solid var(--line); display: grid; gap: 22px; }
+    .stop { position: relative; }
+    .stop::before { content: ""; position: absolute; left: -37px; top: 22px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--teal); }
+    .stop--move::before { border-color: var(--gold); width: 12px; height: 12px; left: -35px; top: 14px; }
+    .stop__card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .stop--move .stop__card { background: transparent; border-style: dashed; }
+    .stop__head { width: 100%; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; text-align: left; background: none; border: 0; padding: 18px 20px; cursor: pointer; font: inherit; color: inherit; }
+    .stop__time { font: 700 1.05rem Montserrat; color: var(--roxo); min-width: 64px; }
+    .stop__time small { display: block; font: 500 .72rem Inter; color: var(--gold-ink); }
+    .stop__title { font: 700 1.08rem Montserrat; color: var(--ink); }
+    .stop__title small { display: block; font: 400 .88rem Inter; color: var(--dim); margin-top: 2px; }
+    .stop__chev { width: 22px; height: 22px; transition: transform .25s; color: var(--roxo); }
+    .stop.is-open .stop__chev { transform: rotate(180deg); }
+    .stop__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+    .stop.is-open .stop__body { grid-template-rows: 1fr; }
+    .stop__inner { overflow: hidden; }
+    .stop__content { padding: 0 20px 20px; color: var(--dim); }
+    .stop__content p { margin: 0 0 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag { font: 500 .78rem Inter; padding: 6px 12px; border-radius: 99px; background: rgba(3,165,137,.12); color: var(--teal-ink); }
+    .tag--gold { background: rgba(219,170,15,.16); color: var(--gold-ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 16px; border-radius: 99px; background: var(--roxo); color: #fff; text-decoration: none; font: 600 .86rem Inter; transition: background .2s; }
+    .btn:hover { background: var(--roxo-soft); }
+
+    /* expectations */
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 36px; }
+    .box { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+    .box h3 { font-size: 1.05rem; color: var(--roxo); margin-bottom: 8px; }
+    .box p { margin: 0; color: var(--dim); font-size: .95rem; }
+    .box__n { font: 800 .8rem Montserrat; color: var(--teal-ink); margin-bottom: 10px; display: block; }
+
+    /* attention */
+    .attention { background: var(--roxo); color: #fff; }
+    .attention h2 { color: #fff; }
+    .attention .eyebrow { color: var(--gold); }
+    .checks { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .checks label { display: flex; gap: 14px; align-items: flex-start; padding: 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 16px; background: rgba(255,255,255,.05); cursor: pointer; transition: background .2s, border-color .2s; }
+    .checks input { position: absolute; opacity: 0; }
+    .checks .box-ck { flex: 0 0 22px; height: 22px; border-radius: 7px; border: 2px solid rgba(255,255,255,.5); display: grid; place-items: center; margin-top: 2px; transition: all .2s; }
+    .checks input:checked + .box-ck { background: var(--teal); border-color: var(--teal); }
+    .checks input:checked + .box-ck::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px); }
+    .checks input:focus-visible + .box-ck { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .checks label:has(input:checked) { border-color: var(--teal); background: rgba(3,165,137,.16); }
+    .checks strong { display: block; font-family: Montserrat; }
+    .checks span.t { font-size: .9rem; color: rgba(255,255,255,.75); }
+    .important { margin-top: 20px; padding: 18px 20px; border-left: 4px solid var(--gold); background: rgba(219,170,15,.12); border-radius: 0 14px 14px 0; }
+
+    /* group */
+    .group__row { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 36px; }
+    .co { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 200px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px; text-decoration: none; transition: transform .25s, box-shadow .25s; }
+    .co:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -20px rgba(58,9,64,.35); }
+    .co__logo { height: 56px; display: flex; align-items: center; }
+    .co__logo img { max-height: 44px; width: auto; max-width: 100%; }
+    .co__word { font: 800 1.6rem Montserrat; color: var(--roxo); letter-spacing: -.02em; }
+    .co__word em { font-style: normal; color: var(--teal); }
+    .co p { margin: 0; color: var(--dim); font-size: .92rem; }
+    .co small { color: var(--teal-ink); font-weight: 600; }
+
+    footer { padding: 36px 0 48px; text-align: center; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); }
+    @media (max-width: 560px) {
+      section { padding: 52px 0; }
+      .stop__head { grid-template-columns: 1fr auto; }
+      .stop__time { grid-column: 1 / -1; }
+      .timeline { padding-left: 22px; }
+      .stop::before { left: -31px; }
+      .stop--move::before { left: -29px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero__top">
+      <img src="assets/img/logo-4watt-light.png" alt="4WaTT">
+      <span>Programação interna da visita</span>
+    </div>
+    <p class="eyebrow" style="color:var(--gold)">Quinta-feira, 15 de outubro de 2026</p>
+    <h1>Bem-vindos à <em>visita técnica</em> 4WaTT</h1>
+    <p>Hoje você vai ver, em campo, como o biogás e o biometano saem do papel: projetos em implantação, uma usina em retrofit e as estruturas que sustentam a operação. Este é o roteiro do dia, parada por parada.</p>
+    <div class="facts">
+      <div class="fact"><b>08:00</b><span>Encontro no escritório</span></div>
+      <div class="fact"><b>4 visitas</b><span>Plantas e unidades em campo</span></div>
+      <div class="fact"><b>Dia inteiro</b><span>Almoço incluso na agenda</span></div>
+      <div class="fact"><b>Goiás</b><span>Rota por Palmeiras, Rio Verde e Goiânia</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="route" aria-label="Trajeto do dia">
+  <div class="wrap">
+    <div class="route__row" id="routeRow"></div>
+  </div>
+</nav>
+
+<section id="agenda">
+  <div class="wrap">
+    <p class="eyebrow">Programação</p>
+    <h2>O dia, do escritório ao retorno</h2>
+    <p class="lead">Toque em cada parada para ver o que esperar. Os horários de chegada nas paradas finais dependem do trânsito e do andamento das visitas, então tratamos como previsão.</p>
+    <ol class="timeline" id="timeline"></ol>
+  </div>
+</section>
+
+<section id="esperar" style="background:#fff">
+  <div class="wrap">
+    <p class="eyebrow">O que esperar</p>
+    <h2>Uma visita para entender o ciclo completo</h2>
+    <p class="lead">Você verá projetos em estágios diferentes: um em implantação, uma usina em modernização e unidades que já operam. Assim fica claro como cada fase se conecta ao retorno do investimento.</p>
+    <div class="grid3">
+      <div class="box"><span class="box__n">01</span><h3>Implantação</h3><p>No 4W WTE Organo Buritis você acompanha uma obra real: engenharia, cronograma e a escala da estrutura.</p></div>
+      <div class="box"><span class="box__n">02</span><h3>Retrofit e operação</h3><p>A usina de Rio Verde está em reforma para um upgrade tecnológico, mas mostra o ciclo completo de geração de energia.</p></div>
+      <div class="box"><span class="box__n">03</span><h3>Origem do resíduo</h3><p>Na UTB Barbosa e na CEASA Goiás você conhece a ponta de entrada: de onde vem a matéria-prima e como ela é tratada.</p></div>
+      <div class="box"><span class="box__n">04</span><h3>Conversa aberta</h3><p>Nosso time técnico acompanha todo o trajeto. Perguntas sobre retorno, risco e prazos são bem-vindas em qualquer parada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="attention" id="atencao">
+  <div class="wrap">
+    <p class="eyebrow">Pontos de atenção</p>
+    <h2>Para o dia correr bem</h2>
+    <ul class="checks">
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Sapato fechado</strong><span class="t">Obrigatório. Plantas e obras exigem calçado fechado, sem sandálias ou chinelos.</span></span></label></li>
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Pontualidade às 08:00</strong><span class="t">A saída é às 09:00 em ponto, para cumprir a rota completa com folga.</span></span></label></li>
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Roupa confortável</strong><span class="t">Parte da visita é a céu aberto, com sol e poeira. Boné e protetor ajudam.</span></span></label></li>
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Água e hidratação</strong><span class="t">Os trechos de deslocamento são longos. Leve uma garrafa pessoal.</span></span></label></li>
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Siga a orientação da equipe</strong><span class="t">Áreas industriais têm regras de segurança. Nossa equipe indica por onde circular.</span></span></label></li>
+      <li><label><input type="checkbox"><span class="box-ck"></span><span><strong>Fotos com permissão</strong><span class="t">Pergunte antes de fotografar equipamentos e áreas operacionais.</span></span></label></li>
+    </ul>
+    <div class="important"><strong>Importante:</strong> a rota é longa, com mais de 8 horas somadas só em deslocamento. Reserve o dia inteiro e avise a equipe se houver qualquer restrição de saúde ou mobilidade.</div>
+  </div>
+</section>
+
+<section id="grupo">
+  <div class="wrap">
+    <p class="eyebrow">Quem está por trás</p>
+    <h2>Empresas do grupo</h2>
+    <p class="lead">Engenharia, energia e estrutura jurídica trabalhando juntas, para que cada projeto seja executável do ponto de vista técnico, financeiro e regulatório.</p>
+    <div class="group__row">
+      <a class="co" href="https://4watt.tech" target="_blank" rel="noopener noreferrer">
+        <div class="co__logo"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
+        <p>Engenharia e desenvolvimento de projetos de biogás, biometano e gaseificação.</p>
+        <small>4watt.tech</small>
+      </a>
+      <a class="co" href="https://www.4wenergia.com.br" target="_blank" rel="noopener noreferrer">
+        <div class="co__logo"><span class="co__word">4W <em>Energia</em></span></div>
+        <p>Geração e comercialização de energia a partir de fontes renováveis.</p>
+        <small>4wenergia.com.br</small>
+      </a>
+      <a class="co" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
+        <div class="co__logo"><span class="co__word">TWS <em>Advogados</em></span></div>
+        <p>Sociedade de advogados com foco em estruturação jurídica e regulatória.</p>
+        <small>twsadv.com.br</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">4WaTT · Programação da visita técnica de 15/10/2026 · Conteúdo de caráter informativo, sujeito a ajustes no dia.</div>
+</footer>
+
+<script>
+(function () {
+  var MAPS = {
+    escritorio: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA',
+    buritis: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8',
+    casarao: 'https://maps.app.goo.gl/U6T4j4cdS2x5HQkH7',
+    barbosa: 'https://maps.app.goo.gl/56JAYNnvDunFNydA8',
+    ceasa: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7'
+  };
+  // type: stop (parada) | move (deslocamento)
+  var STOPS = [
+    { id: 's1', short: 'Escritório', type: 'stop', time: '08:00', dur: 'Saída às 09:00', title: 'Recepção no escritório 4WaTT', sub: 'Boas-vindas e alinhamento do dia',
+      body: 'Começamos com um café e uma apresentação rápida do roteiro, da equipe e dos projetos que vamos visitar. É o momento de tirar dúvidas iniciais antes de pegar a estrada.',
+      tags: ['Café de boas-vindas', 'Briefing da rota'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' },
+    { id: 'm1', short: 'Estrada', type: 'move', time: '09:00', dur: '1h48', title: 'Deslocamento para Palmeiras de Goiás', sub: 'Aproximadamente 1h48 de estrada',
+      body: 'Trecho para conversar com o time técnico sobre o projeto que vamos conhecer e sobre o cenário do biometano no país.', tags: ['1h48 de viagem'] },
+    { id: 's2', short: 'Organo Buritis', type: 'stop', time: '~10:48', dur: '1h de visita', title: '4W WTE Organo Buritis', sub: 'Implantação do projeto em Palmeiras de Goiás',
+      body: 'Visita à obra em andamento. Você vê a escala da implantação, as etapas de engenharia e como o projeto se organiza do terreno à operação.',
+      tags: ['Projeto em implantação', 'Duração prevista: 1h'], map: MAPS.buritis, mapLabel: 'Ver local no mapa' },
+    { id: 's3', short: 'Almoço', type: 'stop', time: 'Almoço', dur: 'Pausa', title: 'Almoço no Casarão Goiano', sub: 'Pausa para refeição e conversa',
+      body: 'Um momento mais solto para trocar impressões sobre o que foi visto até aqui, com a equipe da 4WaTT à mesa.',
+      tags: ['Almoço incluso'], map: MAPS.casarao, mapLabel: 'Ver restaurante no mapa' },
+    { id: 'm2', short: 'Rio Verde', type: 'move', time: 'Tarde', dur: '2h51', title: 'Deslocamento para Rio Verde', sub: 'Aproximadamente 2h51 de estrada',
+      body: 'O trecho mais longo do dia. Aproveite para revisar anotações e perguntar o que ficou em aberto.', tags: ['2h51 de viagem'] },
+    { id: 's4', short: 'Usina Rio Verde', type: 'stop', time: 'Tarde', dur: 'Visita guiada', title: 'Usina 4WaTT em Rio Verde', sub: 'Retrofit para upgrade tecnológico',
+      body: 'A usina está em reforma neste momento, em retrofit para atualização tecnológica. Mesmo assim, apresenta o ciclo completo de geração de energia, do resíduo ao produto final. É uma boa oportunidade de ver o que significa modernizar um ativo existente.',
+      tags: ['Ciclo completo', 'Em retrofit'] },
+    { id: 's5', short: 'UTB Barbosa', type: 'stop', time: 'Tarde', dur: '40 min', title: 'UTB 4WaTT Barbosa', sub: 'Unidade de tratamento de resíduos',
+      body: 'Parada para conhecer a unidade de tratamento e entender como a matéria-prima é recebida e preparada.',
+      tags: ['Duração prevista: 40 min'], map: MAPS.barbosa, mapLabel: 'Ver UTB no mapa' },
+    { id: 'm3', short: 'Rumo à CEASA', type: 'move', time: 'Final da tarde', dur: '3h40', title: 'Deslocamento para a CEASA Goiás', sub: 'Aproximadamente 3h40 de estrada',
+      body: 'Último grande trecho antes do retorno. Vamos fazer uma conversa de fechamento sobre o que foi visto no dia.', tags: ['3h40 de viagem'] },
+    { id: 's6', short: 'CEASA Goiás', type: 'stop', time: 'Final do dia', dur: '30 min', title: 'CEASA Goiás', sub: 'Central de abastecimento e origem de resíduo orgânico',
+      body: 'Visita rápida à central, onde se vê a escala do volume de resíduo orgânico que alimenta projetos de biogás.',
+      tags: ['Duração prevista: 30 min'], map: MAPS.ceasa, mapLabel: 'Ver CEASA no mapa' },
+    { id: 's7', short: 'Encerramento', type: 'stop', time: 'Noite', dur: 'Encerramento', title: 'Retorno ao escritório', sub: 'Fechamento da agenda',
+      body: 'Voltamos ao escritório para o encerramento: espaço para perguntas finais, próximos passos e conversa sobre as oportunidades de investimento.',
+      tags: ['Perguntas e próximos passos'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' }
+  ];
+  var CHEV = '<svg class="stop__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  var tl = document.getElementById('timeline');
+  var row = document.getElementById('routeRow');
+  var n = 0;
+  STOPS.forEach(function (s, i) {
+    var isStop = s.type === 'stop';
+    if (isStop) n++;
+    var li = document.createElement('li');
+    li.className = 'stop' + (isStop ? '' : ' stop--move');
+    li.id = s.id;
+    var tags = s.tags.map(function (t, k) { return '<span class="tag' + (!isStop ? ' tag--gold' : '') + '">' + t + '</span>'; }).join('');
+    var link = s.map ? '<a class="btn" href="' + s.map + '" target="_blank" rel="noopener noreferrer">' + s.mapLabel + ' ↗</a>' : '';
+    li.innerHTML =
+      '<div class="stop__card">' +
+        '<button class="stop__head" aria-expanded="false" aria-controls="' + s.id + '-b">' +
+          '<span class="stop__time">' + s.time + '<small>' + s.dur + '</small></span>' +
+          '<span class="stop__title">' + s.title + '<small>' + s.sub + '</small></span>' + CHEV +
+        '</button>' +
+        '<div class="stop__body" id="' + s.id + '-b"><div class="stop__inner"><div class="stop__content"><p>' + s.body + '</p><div class="tags">' + tags + '</div>' + link + '</div></div></div>' +
+      '</div>';
+    tl.appendChild(li);
+    var head = li.querySelector('.stop__head');
+    head.addEventListener('click', function () {
+      var open = li.classList.toggle('is-open');
+      head.setAttribute('aria-expanded', open);
+    });
+    // route strip
+    if (isStop) {
+      if (row.children.length) { var bar = document.createElement('span'); bar.className = 'route__bar'; row.appendChild(bar); }
+      var b = document.createElement('button');
+      b.className = 'route__dot'; b.dataset.target = s.id;
+      b.innerHTML = '<i>' + n + '</i>' + s.short;
+      b.addEventListener('click', function () {
+        var el = document.getElementById(s.id);
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('is-open'); el.querySelector('.stop__head').setAttribute('aria-expanded', 'true');
+      });
+      row.appendChild(b);
+    }
+  });
+  // open first by default
+  var first = tl.firstElementChild; first.classList.add('is-open'); first.querySelector('.stop__head').setAttribute('aria-expanded', 'true');
+
+  // highlight active stop in route strip
+  var dots = {};
+  row.querySelectorAll('.route__dot').forEach(function (d) { dots[d.dataset.target] = d; });
+  var lastStopId = 's1';
+  function setActive(id) {
+    Object.keys(dots).forEach(function (k) { dots[k].classList.toggle('is-active', k === id); });
+    if (dots[id]) {
+      var d = dots[id];
+      row.scrollTo({ left: d.offsetLeft - row.clientWidth / 2 + d.clientWidth / 2, behavior: 'smooth' });
+    }
+  }
+  setActive('s1');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && dots[e.target.id]) { lastStopId = e.target.id; setActive(lastStopId); }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    tl.querySelectorAll('.stop').forEach(function (el) { if (dots[el.id]) io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

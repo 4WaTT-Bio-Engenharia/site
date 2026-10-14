@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Visita técnica 15/10/2026 | 4WaTT</title>
-  <meta name="description" content="Programação da visita técnica 4WaTT em 15 de outubro de 2026: trajeto, paradas, o que esperar e pontos de atenção.">
+  <title>Ecossistema 4WaTT | Visita 15/10/2026</title>
+  <meta name="description" content="Bem-vindo ao ecossistema 4WaTT: programação da visita de 15 de outubro de 2026, empresas do grupo e oportunidades de investimento.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,6 +161,44 @@
     .co__logo--lg { height: 84px; }
     .co__logo--lg img { max-height: 80px; }
 
+    /* hero note (fundo) */
+    .hero__note { margin-top: 28px; max-width: 58ch; padding: 12px 16px; border-left: 2px solid var(--gold); font-size: .92rem; color: rgba(255,255,255,.72); }
+    .hero__note a { color: var(--gold); text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .hero__note a:hover { text-decoration: underline; }
+
+    /* ecossistema */
+    .flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0; margin-top: 36px; counter-reset: f; }
+    .flow__step { position: relative; padding: 18px 18px 18px 0; }
+    .flow__step::before { counter-increment: f; content: counter(f); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--teal); color: #fff; font: 700 .8rem Montserrat; margin-bottom: 10px; }
+    .flow__step::after { content: ""; position: absolute; top: 33px; left: 38px; right: 8px; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); }
+    .flow__step:last-child::after { display: none; }
+    .flow__step b { display: block; font: 700 .98rem Montserrat; color: var(--roxo); }
+    .flow__step span { font-size: .88rem; color: var(--dim); }
+    .co { min-height: 0; }
+    .co__role { font: 700 .72rem Inter; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-ink); }
+    .co--4w .co__role { color: #AAF502; } .co--tws .co__role { color: #A6753C; }
+    .co__opp { margin: 0; padding-top: 14px; border-top: 1px solid rgba(127,127,127,.28); font-size: .88rem; }
+    .co__opp b { display: block; font: 700 .72rem Inter; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; opacity: .8; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .chips a { text-decoration: none; font: 600 .82rem Inter; padding: 8px 14px; border-radius: 99px; background: rgba(58,9,64,.07); color: var(--roxo); transition: background .2s; }
+    .chips a:hover { background: rgba(58,9,64,.14); }
+
+    /* fundo */
+    .fund { background: radial-gradient(900px 400px at 10% 0%, rgba(3,165,137,.28), transparent 60%), linear-gradient(160deg, var(--plum), var(--roxo)); color: #fff; }
+    .fund .eyebrow { color: var(--gold); }
+    .fund h2 { color: #fff; max-width: 22ch; }
+    .fund .lead { color: rgba(255,255,255,.8); }
+    .fund__pts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 32px; }
+    .fund__pt { padding: 20px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .fund__pt b { display: block; font: 700 1rem Montserrat; margin-bottom: 6px; }
+    .fund__pt span { font-size: .92rem; color: rgba(255,255,255,.75); }
+    .fund__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn--gold { background: var(--gold); color: var(--plum); margin-top: 0; padding: 14px 24px; font-size: .95rem; }
+    .btn--gold:hover { background: #f0c230; }
+    .btn--ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); margin-top: 0; padding: 14px 24px; font-size: .95rem; }
+    .btn--ghost:hover { background: rgba(255,255,255,.1); }
+    .fund__legal { margin-top: 28px; font-size: .78rem; color: rgba(255,255,255,.55); max-width: 80ch; }
+
     footer { padding: 36px 0 48px; text-align: center; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); }
     @media (max-width: 560px) {
       section { padding: 52px 0; }
@@ -179,11 +217,12 @@
   <div class="wrap">
     <div class="hero__top">
       <img src="assets/img/logo-4watt-light.png" alt="4WaTT">
-      <span>Programação interna da visita</span>
+      <span>Visita ao ecossistema · 15/10/2026</span>
     </div>
     <p class="eyebrow" style="color:var(--gold)">Quinta-feira, 15 de outubro de 2026</p>
-    <h1>Bem-vindos à <em>visita técnica</em> 4WaTT</h1>
-    <p>Hoje você vai ver, em campo, como o biogás e o biometano saem do papel: um projeto em implantação e uma operação já entregue, a CEASA Goiás. Este é o roteiro da tarde, parada por parada.</p>
+    <h1>Bem-vindo ao nosso <em>ecossistema</em></h1>
+    <p>Você veio conhecer a 4WaTT, e vai ver mais do que isso. Engenharia, energia, estrutura jurídica e capital trabalham juntos para tirar projetos de biogás e biometano do papel e mantê-los operando. Hoje você vê esse ecossistema em campo: um projeto em implantação e uma operação já entregue.</p>
+    <p class="hero__note">Ao fim da tarde, vamos conversar sobre como participar desse ecossistema por meio do nosso fundo de infraestrutura. <a href="#fundo">Saiba mais ↓</a></p>
     <div class="facts">
       <div class="fact"><b>13:30</b><span>Café no escritório</span></div>
       <div class="fact"><b>2 visitas</b><span>Projeto em implantação e case entregue</span></div>
@@ -202,7 +241,7 @@
 <section id="agenda">
   <div class="wrap">
     <p class="eyebrow">Programação</p>
-    <h2>O dia, do escritório ao retorno</h2>
+    <h2>A tarde, do escritório ao retorno</h2>
     <p class="lead">Toque em cada parada para ver o que esperar. Os horários com ~ são previsões calculadas a partir dos tempos de deslocamento e podem variar com o trânsito e o andamento das visitas.</p>
     <ol class="timeline" id="timeline"></ol>
   </div>
@@ -211,8 +250,8 @@
 <section id="esperar" style="background:#fff">
   <div class="wrap">
     <p class="eyebrow">O que esperar</p>
-    <h2>Uma visita para entender o ciclo completo</h2>
-    <p class="lead">Você verá projetos em estágios diferentes: um em implantação e outro já entregue e em operação. Assim fica claro como cada fase se conecta ao retorno do investimento.</p>
+    <h2>Uma tarde para entender como o ecossistema funciona</h2>
+    <p class="lead">Você verá projetos em estágios diferentes: um em implantação e outro já entregue e em operação. Assim fica claro como cada empresa do grupo entra em cada fase, e como isso se conecta ao retorno do investimento.</p>
     <div class="grid3">
       <div class="box"><span class="box__n">01</span><h3>Implantação</h3><p>No 4W WTE Organo Buritis você acompanha uma obra real: engenharia, cronograma e a escala da estrutura.</p></div>
       <div class="box"><span class="box__n">02</span><h3>Projeto entregue</h3><p>A CEASA Goiás mostra como fica um ativo depois da atuação da 4WaTT, com o antes e depois da operação.</p></div>
@@ -279,33 +318,70 @@
   </div>
 </section>
 
-<section id="grupo">
+<section id="ecossistema">
   <div class="wrap">
-    <p class="eyebrow">Quem está por trás</p>
-    <h2>Empresas do grupo</h2>
-    <p class="lead">Engenharia, energia e estrutura jurídica trabalhando juntas, para que cada projeto seja executável do ponto de vista técnico, financeiro e regulatório.</p>
+    <p class="eyebrow">O ecossistema</p>
+    <h2>Três empresas, um mesmo objetivo</h2>
+    <p class="lead">Cada empresa resolve uma parte do caminho entre um resíduo e um ativo que gera energia. Juntas, reduzem risco para quem investe: o projeto é pensado, estruturado e operado dentro do mesmo grupo.</p>
+    <div class="flow">
+      <div class="flow__step"><b>Estrutura</b><span>Segurança jurídica e regulatória desde a origem</span></div>
+      <div class="flow__step"><b>Engenharia</b><span>Projeto, construção e operação da usina</span></div>
+      <div class="flow__step"><b>Energia</b><span>Geração e comercialização da energia renovável</span></div>
+      <div class="flow__step"><b>Capital</b><span>Financiamento e participação no fundo</span></div>
+    </div>
     <div class="group__row">
       <a class="co" href="https://4watt.tech" target="_blank" rel="noopener noreferrer">
         <div class="co__logo"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
-        <p>Engenharia e desenvolvimento de projetos de biogás, biometano e gaseificação.</p>
+        <span class="co__role">Engenharia e operação</span>
+        <p>Projeta, constrói e opera usinas de biogás, biometano e gaseificação, da pré-viabilidade à operação.</p>
+        <p class="co__opp"><b>Oportunidade</b>Uma carteira de projetos com engenharia própria, em estágios diferentes, como os que você vê hoje.</p>
         <small>4watt.tech</small>
       </a>
       <a class="co co--4w" href="https://www.4wenergia.com.br" target="_blank" rel="noopener noreferrer">
         <div class="co__logo co__logo--lg"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
+        <span class="co__role">Energia</span>
         <p>Geração e comercialização de energia a partir de fontes renováveis.</p>
+        <p class="co__opp"><b>Oportunidade</b>Dar destino à energia gerada pelos projetos e abrir um mercado para o ativo depois de pronto.</p>
         <small>4wenergia.com.br</small>
       </a>
       <a class="co co--tws" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
         <div class="co__logo co__logo--lg"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
-        <p>Sociedade de advogados com foco em estruturação jurídica e regulatória.</p>
+        <span class="co__role">Estrutura jurídica</span>
+        <p>Segurança jurídica para o setor elétrico: negócios, due diligence e consultivo regulatório, com mais de 15 anos de atuação.</p>
+        <p class="co__opp"><b>Oportunidade</b>Previsibilidade regulatória e solidez em cada operação, do contrato à conexão.</p>
         <small>twsadv.com.br</small>
       </a>
+    </div>
+    <div class="chips" aria-label="Frentes da 4WaTT">
+      <a href="solucao-biogas.html" target="_blank" rel="noopener noreferrer">EPC</a>
+      <a href="contato.html" target="_blank" rel="noopener noreferrer">O&amp;M</a>
+      <a href="investidor.html" target="_blank" rel="noopener noreferrer">Engenharia</a>
+      <a href="contato.html" target="_blank" rel="noopener noreferrer">Finance</a>
+      <a href="/calculadora/" target="_blank" rel="noopener noreferrer">Simulador</a>
     </div>
   </div>
 </section>
 
+<section class="fund" id="fundo">
+  <div class="wrap">
+    <p class="eyebrow">Para fechar</p>
+    <h2>Participe do ecossistema pelo nosso fundo de infraestrutura</h2>
+    <p class="lead">Você viu o que fazemos em campo e quem está por trás. Se faz sentido para você, o próximo passo é conhecer as oportunidades de investimento e conversar com o nosso time.</p>
+    <div class="fund__pts">
+      <div class="fund__pt"><b>Projetos que você viu</b><span>Ativos originados, estruturados e operados dentro do mesmo ecossistema.</span></div>
+      <div class="fund__pt"><b>Segurança desde a origem</b><span>Estrutura jurídica e regulatória acompanhando cada etapa do projeto.</span></div>
+      <div class="fund__pt"><b>Conversa direta</b><span>Sem compromisso: o time apresenta o fundo, os projetos e os próximos passos.</span></div>
+    </div>
+    <div class="fund__cta">
+      <a class="btn btn--gold" href="investidor.html" target="_blank" rel="noopener noreferrer">Conhecer as oportunidades de investimento ↗</a>
+      <a class="btn btn--ghost" href="contato.html" target="_blank" rel="noopener noreferrer">Falar com o time</a>
+    </div>
+    <p class="fund__legal">Conteúdo de caráter institucional e informativo. Não constitui oferta de valores mobiliários, recomendação ou promessa de rentabilidade. Investimentos em infraestrutura envolvem riscos operacionais, regulatórios e de mercado.</p>
+  </div>
+</section>
+
 <footer>
-  <div class="wrap">4WaTT · Programação da visita técnica de 15/10/2026 · Conteúdo de caráter informativo, sujeito a ajustes no dia.</div>
+  <div class="wrap">4WaTT · 4W Energia · TWS Advogados · Visita de 15/10/2026 · Programação sujeita a ajustes no dia.</div>
 </footer>
 
 <script>
@@ -320,7 +396,7 @@
   // type: stop (parada) | move (deslocamento)
   var STOPS = [
     { id: 's1', short: 'Escritório', type: 'stop', time: '13:30', dur: 'Saída às 14:00', title: 'Café no escritório 4WaTT', sub: 'Boas-vindas e alinhamento da tarde',
-      body: 'Começamos com um café e uma apresentação rápida do roteiro, da equipe e dos projetos que vamos visitar. É o momento de tirar dúvidas iniciais antes de pegar a estrada.',
+      body: 'Começamos com um café e uma apresentação rápida do ecossistema, da equipe e dos projetos que vamos visitar. É o momento de tirar dúvidas iniciais antes de pegar a estrada.',
       tags: ['Café de boas-vindas', 'Briefing da rota'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' },
     { id: 'm1', short: 'Estrada', type: 'move', time: '14:00', dur: '1h48', title: 'Deslocamento para Palmeiras de Goiás', sub: 'Aproximadamente 1h48 de estrada',
       body: 'Trecho para conversar com o time técnico sobre o projeto que vamos conhecer e sobre o cenário do biometano no país.', tags: ['1h48 de viagem'] },
@@ -335,8 +411,8 @@
     { id: 'm4', short: 'Retorno', type: 'move', time: '~19:08', dur: '~20 min', title: 'Retorno ao escritório', sub: 'Aproximadamente 20 minutos de estrada',
       body: 'Último trecho do dia, de volta ao escritório.', tags: ['~20 min de viagem'] },
     { id: 's7', short: 'Encerramento', type: 'stop', time: '~19:30', dur: 'Encerramento', title: 'Encerramento no escritório', sub: 'Fechamento da agenda',
-      body: 'Voltamos ao escritório para o encerramento: espaço para perguntas finais, próximos passos e conversa sobre as oportunidades de investimento.',
-      tags: ['Perguntas e próximos passos'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' }
+      body: 'Voltamos ao escritório para o encerramento: perguntas finais, próximos passos e uma conversa sobre como participar do ecossistema por meio do nosso fundo de infraestrutura.',
+      tags: ['Perguntas e próximos passos', 'Fundo de infraestrutura'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' }
   ];
   var CHEV = '<svg class="stop__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
   var tl = document.getElementById('timeline');

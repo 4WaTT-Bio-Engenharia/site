@@ -133,18 +133,18 @@
     .map { background: #fff; }
     .map__stage { margin-top: 36px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(180deg, #f9f6ef, #efeae0); overflow: hidden; }
     .map__stage svg { display: block; width: 100%; height: auto; }
-    .map__leg { fill: none; stroke: rgba(255,255,255,.0); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; transition: stroke .3s; }
+    .map__leg { fill: none; stroke: rgba(255,255,255,0); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; transition: stroke .3s; }
     .map__leg.is-done { stroke: #AAF502; }
-    .map__leg.is-now { stroke: #fff; stroke-dasharray: 4 22; animation: dash 1s linear infinite; }
-    @keyframes dash { to { stroke-dashoffset: -26; } }
+    .map__leg.is-now { stroke: #fff; stroke-dasharray: 6 30; animation: dash 1s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -36; } }
     .map__node { cursor: pointer; }
-    .map__node circle { fill: #fff; stroke: var(--roxo); stroke-width: 5; transition: all .25s; }
-    .map__node text.n { font: 700 28px Montserrat; fill: var(--roxo); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
-    .map__node text.l { font: 700 30px Inter; fill: #fff; stroke: rgba(20,5,25,.85); stroke-width: 7px; paint-order: stroke; stroke-linejoin: round; text-anchor: middle; }
+    .map__node circle { fill: #fff; stroke: var(--roxo); stroke-width: 7; transition: all .25s; }
+    .map__node text.n { font: 700 38px Montserrat; fill: var(--roxo); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .map__node text.l { font: 700 44px Inter; fill: #fff; stroke: rgba(20,5,25,.85); stroke-width: 10px; paint-order: stroke; stroke-linejoin: round; text-anchor: middle; }
     .map__node.is-active circle { fill: var(--teal); stroke: var(--teal); }
     .map__node.is-active text.n { fill: #fff; }
-    .map__legtxt { font: 700 28px Inter; fill: #AAF502; stroke: rgba(20,5,25,.85); stroke-width: 7px; paint-order: stroke; text-anchor: middle; }
-    .map__car { fill: var(--gold); stroke: #fff; stroke-width: 5; }
+    .map__legtxt { font: 700 42px Inter; fill: #AAF502; stroke: rgba(20,5,25,.85); stroke-width: 10px; paint-order: stroke; text-anchor: middle; }
+    .map__car { fill: var(--gold); stroke: #fff; stroke-width: 7; }
     .map__ctl { display: flex; gap: 14px; align-items: center; padding: 16px 20px; border-top: 1px solid var(--line); background: #fff; flex-wrap: wrap; }
     .map__ctl button { border: 0; border-radius: 99px; padding: 10px 18px; background: var(--roxo); color: #fff; font: 600 .86rem Inter; cursor: pointer; }
     .map__ctl input[type=range] { flex: 1 1 200px; accent-color: var(--teal); }
@@ -268,14 +268,14 @@
     <h2>O percurso do dia no mapa</h2>
     <p class="lead">Arraste o controle ou toque em play para percorrer a rota. Toque em uma parada para ver detalhes e abrir a localização.</p>
     <div class="map__stage">
-      <svg id="mapSvg" viewBox="675 120 600 470" role="img" aria-label="Esquema do trajeto da visita"></svg>
+      <svg id="mapSvg" viewBox="0 0 1737 1075" role="img" aria-label="Esquema do trajeto da visita"></svg>
       <div class="map__ctl">
         <button id="mapPlay" type="button">▶ Percorrer rota</button>
         <input id="mapRange" type="range" min="0" max="1000" value="0" aria-label="Posição no trajeto">
       </div>
       <div class="map__info" id="mapInfo"></div>
     </div>
-    <p class="map__note">Rota real: escritório, Organo Buritis, CEASA Goiás e retorno. Os horários são estimativas e dependem do trânsito.</p>
+    <p class="map__note">Rota real: 221 km e cerca de 3h58 de estrada, somando ida, trecho até a CEASA e retorno. Os horários são estimativas e dependem do trânsito. <a href="https://www.google.com/maps/dir/Metropolitan+Mall,+Av.+Dep.+Jamel+Cec%C3%ADlio,+2690+-+Jardim+Goi%C3%A1s,+Goi%C3%A2nia+-+GO,+74810-100/Organo+Buritis,+Av.+Jo%C3%A3o+Martins+Honostorio,+R.+Maj.+Sinfr%C3%B4nio,+Palmeiras+de+Goi%C3%A1s+-+GO,+76190-000/CEASA+Goi%C3%A2nia,+BR-153,+KM+5+-+5+-+Jardim+Guanabara,+Goi%C3%A2nia+-+GO,+74675-090/Metropolitan+Mall,+Av.+Dep.+Jamel+Cec%C3%ADlio,+2690+-+Jardim+Goi%C3%A1s,+Goi%C3%A2nia+-+GO,+74810-100" target="_blank" rel="noopener noreferrer" style="color:var(--teal-ink);font-weight:600">Abrir rota completa no Google Maps ↗</a></p>
   </div>
 </section>
 
@@ -327,13 +327,13 @@
     { id: 's2', short: 'Organo Buritis', type: 'stop', time: '~15:48', dur: '45 min de visita', title: '4W WTE Organo Buritis', sub: 'Implantação do projeto em Palmeiras de Goiás',
       body: 'Visita à obra em andamento. Você vê a escala da implantação, as etapas de engenharia e como o projeto se organiza do terreno à operação.',
       tags: ['Projeto em implantação', 'Duração prevista: 45 min'], map: MAPS.buritis, mapLabel: 'Ver local no mapa' },
-    { id: 'm2', short: 'Rumo à CEASA', type: 'move', time: '~16:33', dur: '~1h45', title: 'Deslocamento para a CEASA Goiás', sub: 'Aproximadamente 1h45 de estrada (estimativa)',
-      body: 'Trecho de volta a Goiânia. Aproveite para tirar as dúvidas que ficaram da obra antes de ver um projeto já entregue.', tags: ['~1h45 de viagem'] },
-    { id: 's6', short: 'CEASA Goiás', type: 'stop', time: '~18:18', dur: '45 min de visita', title: 'CEASA Goiás', sub: 'Projeto entregue e origem de resíduo orgânico',
+    { id: 'm2', short: 'Rumo à CEASA', type: 'move', time: '~16:33', dur: '1h50', title: 'Deslocamento para a CEASA Goiás', sub: 'Aproximadamente 1h50 de estrada',
+      body: 'Trecho de volta a Goiânia. Aproveite para tirar as dúvidas que ficaram da obra antes de ver um projeto já entregue.', tags: ['1h50 de viagem'] },
+    { id: 's6', short: 'CEASA Goiás', type: 'stop', time: '~18:23', dur: '45 min de visita', title: 'CEASA Goiás', sub: 'Projeto entregue e origem de resíduo orgânico',
       body: 'Visita à central, onde se vê a escala do volume de resíduo orgânico que alimenta projetos de biogás e o resultado da atuação da 4WaTT na operação.',
       tags: ['Projeto entregue', 'Duração prevista: 45 min'], map: MAPS.ceasa, mapLabel: 'Ver CEASA no mapa' },
-    { id: 'm4', short: 'Retorno', type: 'move', time: '~19:03', dur: '~26 min', title: 'Retorno ao escritório', sub: 'Aproximadamente 26 minutos de estrada',
-      body: 'Último trecho do dia, de volta ao escritório.', tags: ['~26 min de viagem'] },
+    { id: 'm4', short: 'Retorno', type: 'move', time: '~19:08', dur: '~20 min', title: 'Retorno ao escritório', sub: 'Aproximadamente 20 minutos de estrada',
+      body: 'Último trecho do dia, de volta ao escritório.', tags: ['~20 min de viagem'] },
     { id: 's7', short: 'Encerramento', type: 'stop', time: '~19:30', dur: 'Encerramento', title: 'Encerramento no escritório', sub: 'Fechamento da agenda',
       body: 'Voltamos ao escritório para o encerramento: espaço para perguntas finais, próximos passos e conversa sobre as oportunidades de investimento.',
       tags: ['Perguntas e próximos passos'], map: MAPS.escritorio, mapLabel: 'Abrir escritório no mapa' }
@@ -412,43 +412,43 @@
   });
 })();
 
-// mapa real da rota (pixels sobre a imagem 1352x1042)
+// mapa real da rota (pixels sobre a imagem do Google Maps)
 (function () {
   var svg = document.getElementById('mapSvg'); if (!svg) return;
   var NS = 'http://www.w3.org/2000/svg';
   var N = [
-    { n: 'E', x: 1095, y: 248, lx: 20, ly: 70, l: 'Escritório', d: 'Café às 13:30 e saída às 14:00. Também é o ponto de encerramento, por volta das 19:30.', m: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA', ml: 'Abrir escritório no Google Maps ↗' },
-    { n: '1', x: 766, y: 341, lx: 0, ly: 62, l: 'Organo Buritis', d: '4W WTE Organo Buritis, em Palmeiras de Goiás. Chegada prevista às ~15:48, com 45 min de visita à implantação.', m: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8', ml: 'Abrir Organo Buritis no Google Maps ↗' },
-    { n: '2', x: 1112, y: 232, lx: -40, ly: -42, l: 'CEASA Goiás', d: 'Projeto entregue. Chegada prevista às ~18:18, com 45 min de visita.', m: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7', ml: 'Abrir CEASA Goiás no Google Maps ↗' }
+    { n: 'E', x: 1577, y: 360, lx: 0, ly: 78, l: 'Escritório', d: 'Café às 13:30 e saída às 14:00. Também é o ponto de encerramento, por volta das 19:30.', m: 'https://maps.app.goo.gl/Wpirs2MWZwa6FnucA', ml: 'Abrir escritório no Google Maps ↗' },
+    { n: '1', x: 101, y: 696, lx: 140, ly: 78, l: 'Organo Buritis', d: '4W WTE Organo Buritis, em Palmeiras de Goiás. Chegada prevista às ~15:48, com 45 min de visita à implantação.', m: 'https://maps.app.goo.gl/qz4rPuJKXVhrnRwj8', ml: 'Abrir Organo Buritis no Google Maps ↗' },
+    { n: '2', x: 1652, y: 206, lx: -120, ly: -58, l: 'CEASA Goiás', d: 'Projeto entregue. Chegada prevista às ~18:23, com 45 min de visita.', m: 'https://maps.app.goo.gl/4K8CsyC3wyhF3HLg7', ml: 'Abrir CEASA Goiás no Google Maps ↗' }
   ];
-  var R0 = [[1095,248],[1060,258],[1030,282],[985,300],[960,320],[930,345],[900,375],[862,402],[835,360],[803,330],[775,323],[766,341]];
-  var P = [R0, R0.slice().reverse().slice(0, -1).concat([[1090,236],[1112,232]]), [[1112,232],[1100,240],[1095,248]]];
+  var A = [[1577,360],[1560,385],[1520,395],[1470,402],[1440,408],[1415,400],[1395,375],[1380,365],[1330,390],[1300,412],[1240,445],[1160,485],[1085,510],[1060,540],[1000,590],[975,640],[955,670],[920,685],[860,690],[835,710],[808,748],[770,790],[740,805],[718,830],[695,885],[680,900],[655,900],[630,897],[600,920],[535,968],[520,945],[490,915],[445,845],[440,830],[400,795],[345,715],[300,670],[272,650],[268,660],[240,658],[225,652],[195,640],[160,637],[135,621],[120,640],[80,685],[101,696]];
+  var B = [[101,696],[80,685],[120,640],[135,621],[160,637],[195,640],[225,652],[240,658],[268,660],[272,650],[272,625],[285,618],[310,628],[345,637],[370,632],[420,595],[480,555],[520,530],[565,527],[590,505],[615,490],[690,478],[725,495],[775,470],[830,440],[895,400],[925,365],[960,365],[1000,330],[1045,290],[1050,270],[1060,250],[1085,245],[1140,245],[1250,262],[1300,275],[1340,278],[1395,275],[1400,262],[1440,240],[1490,235],[1510,212],[1580,195],[1610,203],[1652,206]];
+  var C = [[1652,206],[1652,230],[1625,265],[1597,300],[1592,340],[1595,375],[1577,360]];
+  var P = [A, B, C];
   var order = [0, 1, 2, 0];
   var legs = [], lens = [], total = 0;
   function el(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
-  var bg = el('image', { href: 'assets/img/visita/rota.jpg', x: 0, y: 0, width: 1352, height: 1042 });
-  svg.appendChild(bg);
+  svg.appendChild(el('image', { href: 'assets/img/visita/rota.jpg?v=2', x: 0, y: 0, width: 1737, height: 1075 }));
   P.forEach(function (pts, i) {
     var d = pts.map(function (q, k) { return (k ? 'L' : 'M') + q[0] + ' ' + q[1]; }).join(' ');
     var p = el('path', { d: d, 'class': 'map__leg' });
     svg.appendChild(p); legs.push(p); lens.push(p.getTotalLength()); total += lens[i];
   });
-  var labels = [['1h48', 950, 292], ['~1h45', 905, 345]];
-  labels.forEach(function (a) {
+  [['1h48', 1110, 610], ['1h50', 700, 440], ['~20 min', 1520, 300]].forEach(function (a) {
     var t = el('text', { x: a[1], y: a[2], 'class': 'map__legtxt' }); t.textContent = a[0]; svg.appendChild(t);
   });
   var range = document.getElementById('mapRange'), info = document.getElementById('mapInfo'), btn = document.getElementById('mapPlay');
   function cum(i) { var s = 0; for (var k = 0; k < i; k++) s += lens[k]; return s; }
   var nodes = N.map(function (nd, i) {
     var g = el('g', { 'class': 'map__node', tabindex: 0, role: 'button', 'aria-label': nd.l });
-    g.appendChild(el('circle', { cx: nd.x, cy: nd.y, r: 24 }));
+    g.appendChild(el('circle', { cx: nd.x, cy: nd.y, r: 34 }));
     var t = el('text', { x: nd.x, y: nd.y, 'class': 'n' }); t.textContent = nd.n; g.appendChild(t);
     var l = el('text', { x: nd.x + nd.lx, y: nd.y + nd.ly, 'class': 'l' }); l.textContent = nd.l; g.appendChild(l);
     g.addEventListener('click', function () { stop(); range.value = Math.round(cum(i) / total * 1000); render(+range.value); });
     g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); g.dispatchEvent(new Event('click')); } });
     svg.appendChild(g); return g;
   });
-  var car = el('circle', { r: 15, 'class': 'map__car', cx: N[0].x, cy: N[0].y }); svg.appendChild(car);
+  var car = el('circle', { r: 20, 'class': 'map__car', cx: N[0].x, cy: N[0].y }); svg.appendChild(car);
   function select(i) {
     nodes.forEach(function (g, k) { g.classList.toggle('is-active', k === i); });
     var nd = N[i];
@@ -473,7 +473,7 @@
     if (raf) return stop();
     from = +range.value >= 1000 ? 0 : +range.value; t0 = performance.now(); btn.textContent = '❚❚ Pausar';
     (function step(now) {
-      var v = from + (now - t0) / 12000 * 1000;
+      var v = from + (now - t0) / 14000 * 1000;
       if (v >= 1000) { range.value = 1000; render(1000); return stop(); }
       range.value = v; render(v); raf = requestAnimationFrame(step);
     })(t0);

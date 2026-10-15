@@ -224,6 +224,26 @@
     .logo-tile--4w { background: #00373D; border-color: #00373D; }
     .logo-tile--tws { background: #FEFAE0; border-color: rgba(166,117,60,.35); }
 
+    /* big numbers */
+    .bn { background: var(--bg); }
+    .bn__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 36px; }
+    .bn-card { --ac: var(--roxo); display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 24px; background: #fff; border: 1px solid var(--line); }
+    .bn-card__logo { height: 48px; display: flex; align-items: center; }
+    .bn-card__logo img { max-height: 48px; width: auto; max-width: 60%; }
+    .bn-card h3 { font-size: 1.15rem; color: var(--ac); }
+    .bn-card > p { margin: 0; color: var(--dim); font-size: .92rem; }
+    .bn-card__nums { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; margin-top: 6px; padding-top: 18px; border-top: 1px solid rgba(127,127,127,.25); }
+    .bn-num b { display: block; font: 800 clamp(1.7rem, 3.2vw, 2.2rem)/1.05 Montserrat; color: var(--ac); letter-spacing: -.02em; }
+    .bn-num span { display: block; margin-top: 4px; font-size: .84rem; color: var(--dim); }
+    .bn-card--4w { background: #00373D; border-color: #00373D; --ac: #AAF502; }
+    .bn-card--4w h3 { color: #fff; } .bn-card--4w > p, .bn-card--4w .bn-num span { color: #C5D7DB; }
+    .bn-card--tws { background: #FEFAE0; border-color: rgba(166,117,60,.35); --ac: #A6753C; }
+    .bn-card--tws h3 { color: #243837; }
+    .bn-card--c4y { --ac: #4d7c1b; }
+    .bn-card--bess { --ac: #17847c; }
+    .bn-note { margin: 4px 0 0; font-size: .84rem; color: var(--dim); }
+    .bn__legal { margin-top: 20px; font-size: .78rem; color: var(--dim); }
+
     footer { padding: 36px 0 48px; text-align: center; color: var(--dim); font-size: .85rem; border-top: 1px solid var(--line); }
     @media (max-width: 560px) {
       section { padding: 52px 0; }
@@ -264,6 +284,8 @@
       <a class="mq-card" href="#ecossistema"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"><div><span class="co__role">Engenharia e operação</span><p>Projeta, constrói e opera usinas de biogás, biometano e gaseificação.</p></div></a>
       <a class="mq-card mq-card--4w" href="#ecossistema"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"><div><span class="co__role" style="color:#AAF502">Energia</span><p>Geração e comercialização de energia a partir de fontes renováveis.</p></div></a>
       <a class="mq-card mq-card--tws" href="#ecossistema"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"><div><span class="co__role" style="color:#A6753C">Estrutura jurídica</span><p>Segurança jurídica e consultivo regulatório para o setor elétrico.</p></div></a>
+      <a class="mq-card" href="#ecossistema"><img src="assets/img/visita/carbon4you.png" alt="Carbon4You"><div><span class="co__role">Créditos de carbono</span><p>Comercializadora de créditos de carbono.</p></div></a>
+      <a class="mq-card" href="#ecossistema"><img src="assets/img/visita/bess4you.png" alt="BESS4YOU"><div><span class="co__role">Armazenamento</span><p>Armazenamento de energia com sistemas BESS.</p></div></a>
       <a class="mq-card mq-card--fund" href="#fundo"><div><span class="badge">4W WTE</span><h3>Fundo de Infraestrutura</h3></div><div><p>A forma de participar do ecossistema como investidor.</p><span class="go">Conhecer o fundo ↓</span></div></a>
     </div>
   </div>
@@ -358,7 +380,7 @@
 <section id="ecossistema">
   <div class="wrap">
     <p class="eyebrow">O ecossistema</p>
-    <h2>Três empresas, um mesmo objetivo</h2>
+    <h2>Cinco empresas, um mesmo objetivo</h2>
     <p class="lead">Cada empresa resolve uma parte do caminho entre um resíduo e um ativo que gera energia. Juntas, reduzem risco para quem investe: o projeto é pensado, estruturado e operado dentro do mesmo grupo.</p>
     <div class="flow">
       <div class="flow__step"><b>Estrutura</b><span>Segurança jurídica e regulatória desde a origem</span></div>
@@ -382,9 +404,21 @@
       <a class="co co--tws" href="https://www.twsadv.com.br/" target="_blank" rel="noopener noreferrer">
         <div class="co__logo co__logo--lg"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
         <span class="co__role">Estrutura jurídica</span>
-        <p>Segurança jurídica para o setor elétrico: negócios, due diligence e consultivo regulatório, com mais de 15 anos de atuação.</p>
+        <p>Segurança jurídica para o setor elétrico: negócios, due diligence e consultivo regulatório, com mais de 10 anos de atuação.</p>
         <small>twsadv.com.br</small>
       </a>
+    </div>
+    <div class="group__row" style="margin-top:16px">
+      <div class="co">
+        <div class="co__logo co__logo--lg"><img src="assets/img/visita/carbon4you.png" alt="Carbon4You"></div>
+        <span class="co__role">Créditos de carbono</span>
+        <p>Comercializadora de créditos de carbono, conectando sustentabilidade e geração de valor.</p>
+      </div>
+      <div class="co">
+        <div class="co__logo co__logo--lg"><img src="assets/img/visita/bess4you.png" alt="BESS4YOU"></div>
+        <span class="co__role">Armazenamento de energia</span>
+        <p>Armazenamento de energia com sistemas BESS.</p>
+      </div>
     </div>
     <div class="chips" aria-label="Frentes da 4WaTT">
       <a href="solucao-biogas.html" target="_blank" rel="noopener noreferrer">EPC</a>
@@ -415,6 +449,58 @@
 </section>
 
 
+<section class="bn" id="numeros">
+  <div class="wrap">
+    <p class="eyebrow">O ecossistema em números</p>
+    <h2>Resultados que sustentam o fundo</h2>
+    <p class="lead">Cada empresa entrega uma parte da cadeia. Estes são os números que ela traz para o ecossistema.</p>
+    <div class="bn__grid">
+      <div class="bn-card">
+        <div class="bn-card__logo"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
+        <h3>Engenharia e inovação: ciência e performance lado a lado</h3>
+        <p>Engenharia especializada em garantir resultados, com premiação internacional.</p>
+        <div class="bn-card__nums">
+          <div class="bn-num"><b data-count="10" data-prefix="+">+10</b><span>anos de experiência</span></div>
+          <div class="bn-num"><b data-count="2" data-prefix="+" data-suffix="GW">+2GW</b><span>desenvolvidos</span></div>
+          <div class="bn-num"><b data-count="200" data-prefix="+">+200</b><span>projetos</span></div>
+          <div class="bn-num"><b data-count="5" data-prefix="+R$ " data-suffix=" bi">+R$ 5 bi</b><span>de capex sob responsabilidade técnica</span></div>
+        </div>
+      </div>
+      <div class="bn-card bn-card--tws">
+        <div class="bn-card__logo"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
+        <h3>Blindagem jurídica e expertise em infraestrutura</h3>
+        <p>Escritório especializado em setores altamente regulados: energia e biocombustíveis.</p>
+        <div class="bn-card__nums">
+          <div class="bn-num"><b data-count="10" data-prefix="+">+10</b><span>anos de experiência</span></div>
+          <div class="bn-num"><b data-count="1" data-prefix="+" data-suffix="GW">+1GW</b><span>em projetos de energia</span></div>
+          <div class="bn-num" style="grid-column:1/-1"><b data-count="1" data-prefix="+R$ " data-suffix=" bilhão">+R$ 1 bilhão</b><span>economizados para clientes</span></div>
+        </div>
+        <p class="bn-note">Estrutura de SPE S.A. com governança corporativa desde o dia zero.</p>
+      </div>
+      <div class="bn-card bn-card--4w">
+        <div class="bn-card__logo"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
+        <h3>Tração comercial</h3>
+        <div class="bn-card__nums">
+          <div class="bn-num"><b data-count="4" data-prefix="+" data-suffix=" mi">+4 mi</b><span>de kWh</span></div>
+          <div class="bn-num"><b data-count="25" data-prefix="+">+25</b><span>usinas sob gestão</span></div>
+          <div class="bn-num" style="grid-column:1/-1"><b data-count="500" data-prefix="+">+500</b><span>clientes ativos assinantes</span></div>
+        </div>
+      </div>
+      <div class="bn-card bn-card--c4y">
+        <div class="bn-card__logo"><img src="assets/img/visita/carbon4you.png" alt="Carbon4You"></div>
+        <h3>Créditos de carbono</h3>
+        <p>Nossa comercializadora de créditos de carbono.</p>
+      </div>
+      <div class="bn-card bn-card--bess">
+        <div class="bn-card__logo"><img src="assets/img/visita/bess4you.png" alt="BESS4YOU"></div>
+        <h3>Armazenamento de energia</h3>
+        <p>Nossa empresa de armazenamento de energia com sistemas BESS.</p>
+      </div>
+    </div>
+    <p class="bn__legal">Indicadores informados pelas próprias empresas do ecossistema.</p>
+  </div>
+</section>
+
 <section class="logos" id="logos" aria-label="Empresas do ecossistema">
   <p class="eyebrow">Empresas do ecossistema</p>
   <div class="mq" data-mq data-speed="0.5">
@@ -422,10 +508,8 @@
       <div class="logo-tile"><img src="assets/img/logo-4watt-dark.png" alt="4WaTT"></div>
       <div class="logo-tile logo-tile--4w"><img src="assets/img/visita/4w-energia.png" alt="4W Energia"></div>
       <div class="logo-tile logo-tile--tws"><img src="assets/img/visita/tws.png" alt="TWS Sociedade de Advogados"></div>
-      <div class="logo-tile"><img src="assets/img/EPC- Sublogo Vetor.png" alt="EPC by 4WaTT"></div>
-      <div class="logo-tile"><img src="assets/img/O&amp;M - Sublogo Vetor.png" alt="O&amp;M by 4WaTT"></div>
-      <div class="logo-tile"><img src="assets/img/ENGENHARIA- Sublogo Vetor.png" alt="Engenharia by 4WaTT"></div>
-      <div class="logo-tile"><img src="assets/img/FINANCE - Sublogo Vetor.png" alt="Finance by 4WaTT"></div>
+      <div class="logo-tile"><img src="assets/img/visita/carbon4you.png" alt="Carbon4You"></div>
+      <div class="logo-tile"><img src="assets/img/visita/bess4you.png" alt="BESS4YOU"></div>
     </div>
   </div>
 </section>
@@ -613,10 +697,18 @@
   document.querySelectorAll('[data-mq]').forEach(function (mq) {
     var track = mq.querySelector('.mq__track');
     var items = Array.prototype.slice.call(track.children);
-    items.forEach(function (it) { var c = it.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.tabIndex = -1; track.appendChild(c); });
-    var speed = parseFloat(mq.dataset.speed) || 0.5, pos = 0, hover = false, dragging = false, moved = false, sx = 0, sp = 0, pid = null;
-    function half() { return track.scrollWidth / 2; }
-    function wrap() { var h = half(); if (pos >= h) pos -= h; if (pos < 0) pos += h; }
+    var n = items.length;
+    var speed = parseFloat(mq.dataset.speed) || 0.5, pos = 0, hover = false, dragging = false, moved = false, sx = 0, sp = 0, pid = null, setW = 0;
+    function clones() {
+      var copies = Math.max(1, Math.ceil(mq.clientWidth * 1.5 / (setW || 1)));
+      for (var c = 0; c < copies; c++) items.forEach(function (it) { var k = it.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.tabIndex = -1; track.appendChild(k); });
+    }
+    function measure() { var f = track.children[n]; setW = f ? f.offsetLeft - track.children[0].offsetLeft : 0; return setW; }
+    // primeira copia para medir, depois completa
+    items.forEach(function (it) { var k = it.cloneNode(true); k.setAttribute('aria-hidden', 'true'); k.tabIndex = -1; track.appendChild(k); });
+    measure(); clones(); measure();
+    window.addEventListener('resize', measure);
+    function wrap() { if (!setW) return; while (pos >= setW) pos -= setW; while (pos < 0) pos += setW; }
     function tick() {
       if (!hover && !dragging && !reduce) { pos += speed; wrap(); mq.scrollLeft = pos; }
       requestAnimationFrame(tick);
@@ -636,6 +728,27 @@
     mq.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
     tick();
   });
+})();
+
+// contagem dos big numbers
+(function () {
+  var els = document.querySelectorAll('[data-count]');
+  function fmt(el, v) { el.textContent = (el.dataset.prefix || '') + v + (el.dataset.suffix || ''); }
+  function run(el) {
+    var target = parseFloat(el.dataset.count), t0 = null;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return fmt(el, target);
+    (function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min((t - t0) / 1100, 1), e = 1 - Math.pow(1 - k, 3);
+      fmt(el, Math.round(target * e));
+      if (k < 1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.4 });
+  els.forEach(function (el) { io.observe(el); });
 })();
 </script>
 </body>

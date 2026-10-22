@@ -239,6 +239,8 @@
     var track = wrapper.firstElementChild;
     if (!track) return;
 
+    // Modo paginado: reaproveita o arraste sem auto-scroll nem clones (blog 3 + 3).
+    var paged = wrapper.hasAttribute('data-marquee-paged');
     var speed = parseFloat(wrapper.getAttribute('data-marquee-speed')) || 0.55;
     var half = track.scrollWidth / 2;
     function measure() { half = track.scrollWidth / 2; }
@@ -297,7 +299,7 @@
     wrapper.addEventListener('touchend', function () { pauseFor(2200); }, { passive: true });
     wrapper.addEventListener('wheel', function () { pauseFor(2200); }, { passive: true });
 
-    if (reduce) return; // sem auto-scroll; o arraste/scroll nativo continua funcionando
+    if (reduce || paged) return; // sem auto-scroll; o arraste/scroll nativo continua funcionando
 
     function tick() {
       if (half > 0 && !paused && !dragging) {

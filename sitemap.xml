@@ -62,39 +62,27 @@
   </url>
   <url>
     <loc>https://4watt.tech/artigos/</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/artigo-como-funciona-biodigestor.html</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/artigo-creditos-carbono.html</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/artigo-regulacao-biometano.html</loc>
-    <lastmod>2026-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/artigo-por-que-ia-nao-basta.html</loc>
-    <lastmod>2026-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/artigo-cases-engenharia.html</loc>
-    <lastmod>2026-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/biometano/</loc>
@@ -116,15 +104,11 @@
   </url>
   <url>
     <loc>https://4watt.tech/case-ceasa-goias.html</loc>
-    <lastmod>2026-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/case-utb-franca.html</loc>
-    <lastmod>2026-09-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-22</lastmod>
   </url>
   <url>
     <loc>https://4watt.tech/engenharia/index.html</loc>
@@ -383,5 +367,81 @@
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/temas/tecnologia/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/temas/mercado-regulacao/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/temas/investimento/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/temas/esg-carbono/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/temas/cases/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/biogas/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/biometano/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/biodigestores/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/digestao-anaerobia/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/residuos-organicos/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/gestao-de-residuos/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/viabilidade-economica/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/financiamento-de-projetos/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/engenharia-industrial/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/operacao-e-manutencao/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/creditos-de-carbono/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/renovabio-cbios/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/descarbonizacao/</loc>
+    <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://4watt.tech/artigos/tags/regulacao-anp/</loc>
+    <lastmod>2026-10-22</lastmod>
   </url>
 </urlset>

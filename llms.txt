@@ -49,5 +49,19 @@ Valores de investimento por projeto: sob consulta. Detalhes e contato: https://4
 - Case UTB Franca (Terawatt Bioenergia): https://4watt.tech/case-utb-franca.html
 - Case CEASA Goiás: https://4watt.tech/case-ceasa-goias.html
 - Blog técnico: https://4watt.tech/artigos/
-- Simulador de viabilidade: https://calculadora-zeta-sooty.vercel.app/
+- Simulador de viabilidade: https://4watt.tech/calculadora/
 - Contato: https://4watt.tech/contato.html
+
+## Blog técnico 4WaTT
+
+O blog publica guias e casos reais da equipe de engenharia, organizados em Tecnologia e Processos, Mercado e Regulação, Viabilidade e Investimento, ESG e Descarbonização, Cases e Engenharia. Cada artigo conserva sua autoria e data. Análises regulatórias antigas são identificadas como históricas e devem ser conferidas nas fontes oficiais.
+
+- Blog e pesquisa: https://4watt.tech/artigos/
+- Feed RSS: https://4watt.tech/artigos/feed.xml
+- Política editorial: https://4watt.tech/artigos/#politica-editorial
+- Biogás: https://4watt.tech/artigos/tags/biogas/
+- Biometano: https://4watt.tech/artigos/tags/biometano/
+- Biodigestores: https://4watt.tech/artigos/tags/biodigestores/
+- Viabilidade econômica: https://4watt.tech/artigos/tags/viabilidade-economica/
+- Engenharia industrial: https://4watt.tech/artigos/tags/engenharia-industrial/
+- Créditos de carbono: https://4watt.tech/artigos/tags/creditos-de-carbono/

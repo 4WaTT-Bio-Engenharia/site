@@ -40,6 +40,11 @@ def html_files():
     for d in SUBDIRS:
         if not os.path.isdir(d):
             continue
+        # O blog possui arquivos de tema/tag e aliases em subpastas próprias.
+        if d == 'artigos':
+            from pathlib import Path
+            out.extend(str(p).replace('\\', '/') for p in sorted(Path(d).rglob('*.html')) if '.bak' not in p.name)
+            continue
         for f in sorted(os.listdir(d)):
             if f.endswith('.html') and '.bak' not in f:
                 out.append(os.path.join(d, f).replace('\\', '/'))

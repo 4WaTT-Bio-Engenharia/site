@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+gha-creds-*.json
 
 # Originais de midia da Electrolux (12,5 MB de JPEG/MOV de camera).
 # O que o site serve e a pasta web/ ao lado, ja otimizada. Manter os originais no

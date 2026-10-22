@@ -1,0 +1,42 @@
+[
+  {
+    "id": "motogerador-biogas",
+    "url": "/assets/img/blog/campo/motogerador-biogas.webp",
+    "width": 1600,
+    "height": 865,
+    "sourceFile": "gerador_energia_eletrica_biogas.png",
+    "credit": "Acervo 4WaTT"
+  },
+  {
+    "id": "biodigestor-suinocultura",
+    "url": "/assets/img/blog/campo/biodigestor-suinocultura.webp",
+    "width": 836,
+    "height": 475,
+    "sourceFile": "biodigestor_suinocultura.png",
+    "credit": "Acervo 4WaTT"
+  },
+  {
+    "id": "retrofit-antes",
+    "url": "/assets/img/blog/campo/retrofit-antes.webp",
+    "width": 677,
+    "height": 788,
+    "sourceFile": "retrofit_antes.png",
+    "credit": "Acervo 4WaTT"
+  },
+  {
+    "id": "retrofit-depois",
+    "url": "/assets/img/blog/campo/retrofit-depois.webp",
+    "width": 859,
+    "height": 812,
+    "sourceFile": "retrofit_depois.png",
+    "credit": "Acervo 4WaTT"
+  },
+  {
+    "id": "equipamento-inox-biogas",
+    "url": "/assets/img/blog/campo/equipamento-inox-biogas.webp",
+    "width": 1071,
+    "height": 1361,
+    "sourceFile": "Captura de tela 2025-12-08 120848.png",
+    "credit": "Acervo 4WaTT"
+  }
+]

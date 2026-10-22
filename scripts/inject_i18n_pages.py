@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP = {"assets/pages", "img_old"}
-PAGES_SCRIPT = '<script src="/assets/js/languages-pages.js?v=1.0"></script>\n'
+PAGES_SCRIPT = '<script src="/assets/js/languages-pages.js?v=1.8"></script>\n'
 MAIN_VER = re.compile(r'main\.js\?v=[\d.]+', re.M)
 MAIN_NEW = 'main.js?v=1.4'
 

@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=3.9">
+  <link rel="stylesheet" href="assets/css/theme-4watt.css?v=4.0">
   <link rel="stylesheet" href="assets/css/solucoes.css?v=2.2">
   <link rel="stylesheet" href="assets/css/case-ceasa.css?v=1.3">
   <link rel="stylesheet" href="assets/css/case-utb.css?v=1.5">
@@ -40,6 +40,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91NFD55MB"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N91NFD55MB');</script>
   <link rel="stylesheet" href="assets/css/mobile-fixes.css?v=2">
+  <link rel="stylesheet" href="/assets/css/blog.css?v=1.3">
 </head>
 
 <body class="t4">
@@ -64,7 +65,7 @@
         </ul>
       </li>
       <li><a href="investidor.html" data-i18n="nav_investidor">Área do Investidor</a></li>
-      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li>
+      <li><a href="imprensa.html" data-i18n="nav_imprensa">Imprensa</a></li><li><a href="/artigos/" data-i18n="nav_blog">Blog</a></li>
       <li><a href="academy.html" data-i18n="nav_academy">Academy</a></li>
       <li class="nav__lang">
         <div class="lang-selector" role="group" aria-label="Seletor de idioma">
@@ -507,7 +508,9 @@
         </div>
       </section>
 
-    </main>
+
+<!-- BLOG DESCOBERTA INICIO --><div class="container container--narrow"><section class="blog-post-discovery" aria-label="Assuntos relacionados"><h2 data-i18n="blog_article_topics" >Continue explorando este assunto</h2><div class="blog-post-discovery__tags"><a data-i18n="blog_tag_biometano" href="/artigos/tags/biometano/" rel="tag" class="blog-tag">Biometano</a><a data-i18n="blog_tag_engenharia-industrial" href="/artigos/tags/engenharia-industrial/" rel="tag" class="blog-tag">Engenharia industrial</a><a data-i18n="blog_tag_residuos-organicos" href="/artigos/tags/residuos-organicos/" rel="tag" class="blog-tag">Resíduos orgânicos</a></div><a data-i18n="blog_back" href="/artigos/">Voltar ao blog</a></section></div><!-- BLOG DESCOBERTA FIM -->
+</main>
 
     <footer class="footer">
       <div class="container">
@@ -543,9 +546,9 @@
   </div>
 
   <script src="assets/js/languages.js?v=2.8"></script>
-  <script src="/assets/js/languages-pages.js?v=1.3"></script>
+  <script src="/assets/js/languages-pages.js?v=1.8"></script>
   <script src="assets/js/main.js?v=1.5"></script>
-  <script src="assets/js/site-premium.js?v=2.4"></script>
+  <script src="assets/js/site-premium.js?v=2.5"></script>
   <script src="assets/js/case-ceasa.js?v=1.2"></script>
 
   <script type="application/ld+json">
@@ -555,13 +558,34 @@
   "headline": "UTB Franca: Case de Sucesso 4WaTT",
   "description": "Conheça a engenharia multidisciplinar da 4WaTT na usina de biometano da Terawatt Bioenergia (grupo NewSun Energy) em Franca/SP: mecânica, civil, processos, validação computacional e licenciamento ambiental, tudo com ART 4WaTT.",
   "image": "https://4watt.tech/assets/img/cases/utb-franca/obra/sede-frente-dia.JPG",
-  "author": { "@type": "Organization", "name": "4WaTT Bio Engenharia", "url": "https://4watt.tech" },
-  "publisher": { "@type": "Organization", "name": "4WaTT Bio Engenharia", "url": "https://4watt.tech" },
+  "author": {
+    "@type": "Organization",
+    "name": "4WaTT Bio Engenharia",
+    "url": "https://4watt.tech/artigos/#politica-editorial"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "4WaTT Bio Engenharia",
+    "url": "https://4watt.tech"
+  },
   "datePublished": "2026-09-13",
   "dateModified": "2026-09-13",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://4watt.tech/case-utb-franca.html" }
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://4watt.tech/case-utb-franca.html"
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://4watt.tech/artigos/#blog"
+  },
+  "keywords": [
+    "Biometano",
+    "Engenharia industrial",
+    "Resíduos orgânicos"
+  ],
+  "articleSection": "Cases e engenharia"
 }
-  </script>
+</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -573,6 +597,7 @@
   ]
 }
   </script>
+  <script src="/assets/js/blog-interactions.js?v=1.0"></script>
 </body>
 
 </html>

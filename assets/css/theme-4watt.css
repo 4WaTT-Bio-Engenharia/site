@@ -193,9 +193,10 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
   transition: background .4s var(--ease), padding .4s var(--ease), border-color .4s, box-shadow .4s;
 }
 .nav.is-scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 1px 0 rgba(0,0,0,0.08), 0 4px 24px rgba(0,0,0,0.07); border-bottom-color: rgba(0,0,0,0.08); padding-top: 10px; padding-bottom: 10px; }
+.nav__logo { display: block; flex-shrink: 0; }
 .nav__logo img { height: 30px; width: auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06)); }
 .nav__progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: linear-gradient(90deg, var(--teal), var(--gold)); transition: width .1s linear; }
-.nav__links { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(14px, 1.7vw, 30px); list-style: none; margin: 0; padding: 0; }
+.nav__links { display: flex; align-items: center; flex-wrap: nowrap; gap: clamp(12px, 1.1vw, 24px); list-style: none; margin: 0; padding: 0; }
 .nav__links a { font-size: 14px; font-weight: 600; color: rgba(30,24,34,0.82); white-space: nowrap; transition: color .2s; }
 .nav__links a:hover { color: var(--ink); }
 .nav__dd { position: relative; }
@@ -207,7 +208,7 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
 .nav__dd-menu a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: var(--dim); transition: background .2s, color .2s; }
 .nav__dd-menu a:hover { background: var(--surface-2); color: var(--teal-ink); }
 
-@media (min-width: 1181px) {
+@media (min-width: 1440px) {
   .nav__dd-menu {
     position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(8px);
     min-width: 232px; background: var(--surface); border: 1px solid var(--border);
@@ -231,7 +232,7 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
 .lang-btn.active { background: var(--teal); color: #fff; }
 .lang-btn:hover:not(.active) { color: var(--ink); }
 
-@media (max-width: 1180px) {
+@media (max-width: 1439px) {
   .nav__toggle { display: inline-flex; z-index: 101; color: var(--ink); }
   /* backdrop-filter removido no mobile: cria containing block para descendentes position:fixed
      (ex.: .nav__links), fazendo o painel herdar a altura de .nav em vez da viewport inteira */
@@ -269,7 +270,7 @@ body.t4::after { /* segunda camada (contramovimento) + grão fino */
   }
   .nav__backdrop.is-open { opacity: 1; visibility: visible; transition-delay: 0s; }
 }
-@media (min-width: 1181px) {
+@media (min-width: 1440px) {
   .nav__backdrop { display: none; }
 }
 

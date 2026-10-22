@@ -1,0 +1,385 @@
+{
+  "version": 1,
+  "ga4PropertyId": "301593115",
+  "themes": [
+    {
+      "id": "tecnologia",
+      "pt": "Tecnologia e processos",
+      "en": "Technology and processes",
+      "description": {
+        "pt": "Entenda a digestão anaeróbia, os biodigestores e os processos que transformam resíduos em energia.",
+        "en": "Understand anaerobic digestion, biodigesters and the processes that turn waste into energy."
+      }
+    },
+    {
+      "id": "mercado-regulacao",
+      "pt": "Mercado e regulação",
+      "en": "Market and regulation",
+      "description": {
+        "pt": "Análises sobre o mercado brasileiro de biometano, qualidade do gás e regulação. Confira sempre a data e as fontes de cada publicação.",
+        "en": "Analysis of the Brazilian biomethane market, gas quality and regulation. Always check the date and sources of each publication."
+      }
+    },
+    {
+      "id": "investimento",
+      "pt": "Viabilidade e investimento",
+      "en": "Feasibility and investment",
+      "description": {
+        "pt": "Da primeira estimativa ao projeto de investimento: premissas, riscos e documentação para decisões de capital em bioenergia.",
+        "en": "From an initial estimate to an investment project: assumptions, risks and documentation for bioenergy capital decisions."
+      }
+    },
+    {
+      "id": "esg-carbono",
+      "pt": "ESG e descarbonização",
+      "en": "ESG and decarbonisation",
+      "description": {
+        "pt": "Créditos de carbono, RenovaBio e redução de emissões na cadeia do biogás. Conceitos e caminhos para avaliar cada projeto.",
+        "en": "Carbon credits, RenovaBio and emissions reduction across the biogas chain. Concepts and approaches for assessing each project."
+      }
+    },
+    {
+      "id": "cases",
+      "pt": "Cases e engenharia",
+      "en": "Case studies and engineering",
+      "description": {
+        "pt": "Conheça projetos e operações da 4WaTT. Escopo técnico, registros de campo e aprendizados de quem projeta e acompanha a operação.",
+        "en": "Explore 4WaTT projects and operations. Technical scope, field records and lessons from engineering and operational work."
+      }
+    }
+  ],
+  "tags": [
+    {
+      "id": "biogas",
+      "pt": "Biogás",
+      "en": "Biogas",
+      "description": {
+        "pt": "Produção de biogás a partir de resíduos, tecnologias de conversão e aplicações energéticas.",
+        "en": "Biogas production from waste, conversion technologies and energy applications."
+      }
+    },
+    {
+      "id": "biometano",
+      "pt": "Biometano",
+      "en": "Biomethane",
+      "description": {
+        "pt": "Purificação do biogás, projetos de biometano e aplicações do gás renovável.",
+        "en": "Biogas upgrading, biomethane projects and renewable gas applications."
+      }
+    },
+    {
+      "id": "biodigestores",
+      "pt": "Biodigestores",
+      "en": "Biodigesters",
+      "description": {
+        "pt": "Tipos de biodigestores, critérios de dimensionamento e operação de reatores industriais.",
+        "en": "Biodigester types, sizing criteria and industrial reactor operation."
+      }
+    },
+    {
+      "id": "digestao-anaerobia",
+      "pt": "Digestão anaeróbia",
+      "en": "Anaerobic digestion",
+      "description": {
+        "pt": "Etapas biológicas, condições de processo e tratamento de resíduos por digestão anaeróbia.",
+        "en": "Biological stages, process conditions and waste treatment through anaerobic digestion."
+      }
+    },
+    {
+      "id": "residuos-organicos",
+      "pt": "Resíduos orgânicos",
+      "en": "Organic waste",
+      "description": {
+        "pt": "Resíduos agroindustriais e urbanos como matéria-prima para projetos de bioenergia.",
+        "en": "Agro-industrial and urban waste as feedstock for bioenergy projects."
+      }
+    },
+    {
+      "id": "gestao-de-residuos",
+      "pt": "Gestão de resíduos",
+      "en": "Waste management",
+      "description": {
+        "pt": "Tratamento, valorização e gestão operacional de resíduos em plantas e indústrias.",
+        "en": "Waste treatment, recovery and operational management in plants and industry."
+      }
+    },
+    {
+      "id": "viabilidade-economica",
+      "pt": "Viabilidade econômica",
+      "en": "Economic feasibility",
+      "description": {
+        "pt": "Premissas de receita, custos e riscos na avaliação de viabilidade de projetos de biogás e biometano.",
+        "en": "Revenue assumptions, costs and risks in biogas and biomethane project feasibility."
+      }
+    },
+    {
+      "id": "financiamento-de-projetos",
+      "pt": "Financiamento de projetos",
+      "en": "Project financing",
+      "description": {
+        "pt": "Engenharia e documentação que apoiam a análise de crédito e a estruturação de investimentos.",
+        "en": "Engineering and documentation supporting credit analysis and investment structuring."
+      }
+    },
+    {
+      "id": "engenharia-industrial",
+      "pt": "Engenharia industrial",
+      "en": "Industrial engineering",
+      "description": {
+        "pt": "Projetos multidisciplinares, integração de equipamentos e engenharia aplicada à bioenergia.",
+        "en": "Multidisciplinary projects, equipment integration and engineering applied to bioenergy."
+      }
+    },
+    {
+      "id": "operacao-e-manutencao",
+      "pt": "Operação e manutenção",
+      "en": "Operation and maintenance",
+      "description": {
+        "pt": "Aprendizados de campo, reengenharia e manutenção de usinas de biogás.",
+        "en": "Field lessons, re-engineering and maintenance of biogas plants."
+      }
+    },
+    {
+      "id": "creditos-de-carbono",
+      "pt": "Créditos de carbono",
+      "en": "Carbon credits",
+      "description": {
+        "pt": "Mercados de carbono e critérios para avaliar receitas de descarbonização em projetos de biogás.",
+        "en": "Carbon markets and criteria for evaluating decarbonisation revenue in biogas projects."
+      }
+    },
+    {
+      "id": "renovabio-cbios",
+      "pt": "RenovaBio e CBIOs",
+      "en": "RenovaBio and CBIOs",
+      "description": {
+        "pt": "Certificação e créditos de descarbonização no programa brasileiro RenovaBio.",
+        "en": "Certification and decarbonisation credits under Brazil's RenovaBio programme."
+      }
+    },
+    {
+      "id": "descarbonizacao",
+      "pt": "Descarbonização",
+      "en": "Decarbonisation",
+      "description": {
+        "pt": "Biogás e biometano na redução de emissões e na substituição de combustíveis fósseis.",
+        "en": "Biogas and biomethane in emissions reduction and fossil fuel substitution."
+      }
+    },
+    {
+      "id": "regulacao-anp",
+      "pt": "Regulação ANP",
+      "en": "ANP regulation",
+      "description": {
+        "pt": "Análises datadas sobre regras da ANP para o biometano. Consulte as fontes oficiais para verificar a vigência.",
+        "en": "Dated analysis of ANP biomethane rules. Consult official sources to verify current requirements."
+      }
+    },
+    {
+      "id": "gaseificacao-rsu",
+      "pt": "Gaseificação de RSU",
+      "en": "MSW gasification",
+      "description": {
+        "pt": "Pauta editorial para conversão térmica de resíduos sólidos urbanos. Novos artigos serão reunidos aqui após publicação.",
+        "en": "Editorial topic for thermal conversion of municipal solid waste. New articles will appear here after publication."
+      }
+    }
+  ],
+  "posts": [
+    {
+      "id": "biodigestor-industrial",
+      "url": "/artigo-como-funciona-biodigestor.html",
+      "theme": "tecnologia",
+      "tags": [
+        "biogas",
+        "biodigestores",
+        "digestao-anaerobia",
+        "residuos-organicos"
+      ],
+      "published": "2026-03-05",
+      "minutes": 12,
+      "image": "/assets/img/ref_reais/biodigestor-unilever.avif",
+      "imageAlt": {
+        "pt": "Biodigestor industrial da Unilever",
+        "en": "Unilever industrial biodigester"
+      },
+      "title": {
+        "pt": "Como funciona um biodigestor industrial",
+        "en": "How an industrial biodigester works"
+      },
+      "excerpt": {
+        "pt": "Da digestão anaeróbia ao aproveitamento energético: tipos de reatores, parâmetros de operação e dimensionamento de uma planta.",
+        "en": "From anaerobic digestion to energy recovery: reactor types, operating parameters and plant sizing."
+      },
+      "thumbnail": "/assets/img/ref_reais/biodigestor-unilever.avif",
+      "modified": "2026-10-22"
+    },
+    {
+      "id": "regulacao-biometano",
+      "url": "/artigo-regulacao-biometano.html",
+      "theme": "mercado-regulacao",
+      "tags": [
+        "biometano",
+        "regulacao-anp",
+        "renovabio-cbios"
+      ],
+      "published": "2026-03-10",
+      "minutes": 8,
+      "historical": true,
+      "image": "/assets/img/Regulaçãodobiometano_CINZA.jpg.jpeg",
+      "imageAlt": {
+        "pt": "Ilustração sobre regulação do biometano",
+        "en": "Biomethane regulation illustration"
+      },
+      "title": {
+        "pt": "Regulação do biometano: uma análise da ANP 854/2021",
+        "en": "Biomethane regulation: an analysis of ANP 854/2021"
+      },
+      "excerpt": {
+        "pt": "Análise histórica da regulação brasileira do biometano. Leia com a nota de atualização e consulte a fonte oficial para as regras vigentes.",
+        "en": "A historical analysis of Brazilian biomethane regulation. Read the update notice and consult the official source for current rules."
+      },
+      "thumbnail": "/assets/img/blog/regulacao-biometano.webp"
+    },
+    {
+      "id": "creditos-carbono",
+      "url": "/artigo-creditos-carbono.html",
+      "theme": "esg-carbono",
+      "tags": [
+        "creditos-de-carbono",
+        "renovabio-cbios",
+        "descarbonizacao",
+        "biogas"
+      ],
+      "published": "2026-03-12",
+      "minutes": 10,
+      "image": "/assets/img/creditos de carbono CINZA.png",
+      "imageAlt": {
+        "pt": "Ilustração sobre créditos de carbono e bioenergia",
+        "en": "Carbon credits and bioenergy illustration"
+      },
+      "title": {
+        "pt": "Créditos de carbono a partir do biogás: oportunidade real ou promessa?",
+        "en": "Carbon credits from biogas: real opportunity or promise?"
+      },
+      "excerpt": {
+        "pt": "Entenda as diferenças entre CBIOs e créditos voluntários e os cuidados ao avaliar receitas de carbono em um projeto de biogás.",
+        "en": "Understand the differences between CBIOs and voluntary credits, and what to consider when assessing carbon revenue for a biogas project."
+      },
+      "thumbnail": "/assets/img/blog/creditos-carbono.webp"
+    },
+    {
+      "id": "ia-e-viabilidade",
+      "url": "/artigo-por-que-ia-nao-basta.html",
+      "theme": "investimento",
+      "tags": [
+        "viabilidade-economica",
+        "financiamento-de-projetos",
+        "engenharia-industrial"
+      ],
+      "published": "2026-08-01",
+      "minutes": 8,
+      "image": "/assets/img/engenharia/eletrica/cover.jpg",
+      "imageAlt": {
+        "pt": "Projeto técnico de engenharia industrial",
+        "en": "Industrial engineering technical design"
+      },
+      "title": {
+        "pt": "Por que a IA não substitui um projeto de investimento",
+        "en": "Why AI does not replace an investment project"
+      },
+      "excerpt": {
+        "pt": "O que separa uma estimativa rápida de um projeto bancável: caracterização do resíduo, engenharia, riscos e documentação.",
+        "en": "What separates a quick estimate from a bankable project: waste characterisation, engineering, risks and documentation."
+      },
+      "thumbnail": "/assets/img/blog/ia-e-viabilidade.webp"
+    },
+    {
+      "id": "cases-engenharia",
+      "url": "/artigo-cases-engenharia.html",
+      "theme": "cases",
+      "tags": [
+        "engenharia-industrial",
+        "biogas",
+        "viabilidade-economica"
+      ],
+      "published": "2026-08-01",
+      "minutes": 10,
+      "image": "/assets/img/engenharia/mecanica/cover-wide.jpg",
+      "imageAlt": {
+        "pt": "Projeto mecânico industrial da 4WaTT",
+        "en": "4WaTT industrial mechanical design"
+      },
+      "title": {
+        "pt": "Cases de engenharia 4WaTT: do projeto à operação",
+        "en": "4WaTT engineering case studies: from design to operation"
+      },
+      "excerpt": {
+        "pt": "Escopo de engenharia e aprendizados de projetos de biogás da 4WaTT, da concepção ao acompanhamento da operação.",
+        "en": "Engineering scope and lessons from 4WaTT biogas projects, from conception to operational support."
+      },
+      "thumbnail": "/assets/img/blog/cases-engenharia.webp"
+    },
+    {
+      "id": "case-ceasa-goias",
+      "url": "/case-ceasa-goias.html",
+      "theme": "cases",
+      "tags": [
+        "operacao-e-manutencao",
+        "gestao-de-residuos",
+        "residuos-organicos",
+        "biogas"
+      ],
+      "published": "2026-08-13",
+      "minutes": 7,
+      "image": "/assets/img/ceasa/ceasa-4-bio-sol.jpg",
+      "imageAlt": {
+        "pt": "Usina de biogás da CEASA Goiás",
+        "en": "CEASA Goiás biogas plant"
+      },
+      "title": {
+        "pt": "CEASA Goiás: engenharia e operação na prática",
+        "en": "CEASA Goiás: engineering and operation in practice"
+      },
+      "excerpt": {
+        "pt": "Reengenharia de equipamentos, manutenção e dados de operação na usina que transforma resíduos da central de abastecimento.",
+        "en": "Equipment re-engineering, maintenance and operational data at the plant treating waste from the wholesale market."
+      },
+      "thumbnail": "/assets/img/blog/case-ceasa-goias.webp"
+    },
+    {
+      "id": "case-utb-franca",
+      "url": "/case-utb-franca.html",
+      "theme": "cases",
+      "tags": [
+        "biometano",
+        "engenharia-industrial",
+        "residuos-organicos"
+      ],
+      "published": "2026-09-13",
+      "minutes": 9,
+      "image": "/assets/img/cases/utb-franca/projeto-mecanico-refinaria-biometano.png",
+      "imageAlt": {
+        "pt": "Projeto mecânico da refinaria de biometano UTB Franca",
+        "en": "UTB Franca biomethane refinery mechanical design"
+      },
+      "title": {
+        "pt": "UTB Franca: a engenharia por trás do biometano",
+        "en": "UTB Franca: the engineering behind biomethane"
+      },
+      "excerpt": {
+        "pt": "Conheça o escopo multidisciplinar da 4WaTT no projeto da usina de biometano de Franca, em São Paulo.",
+        "en": "Explore 4WaTT's multidisciplinary engineering scope for the biomethane plant project in Franca, São Paulo."
+      },
+      "thumbnail": "/assets/img/blog/case-utb-franca.webp"
+    }
+  ],
+  "editorialFeatured": [
+    "biodigestor-industrial",
+    "case-utb-franca",
+    "ia-e-viabilidade",
+    "creditos-carbono",
+    "case-ceasa-goias",
+    "cases-engenharia"
+  ]
+}

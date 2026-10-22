@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Blog 4WaTT</title>
+    <link>https://4watt.tech/artigos/</link>
+    <description>Biogás, biometano e engenharia na prática.</description>
+    <language>pt-BR</language>
+    <atom:link href="https://4watt.tech/artigos/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UTB Franca: a engenharia por trás do biometano</title>
+      <link>https://4watt.tech/case-utb-franca.html</link>
+      <guid>https://4watt.tech/case-utb-franca.html</guid>
+      <description>Conheça o escopo multidisciplinar da 4WaTT no projeto da usina de biometano de Franca, em São Paulo.</description>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+      <category>Biometano</category>
+      <category>Engenharia industrial</category>
+      <category>Resíduos orgânicos</category>
+    </item>
+    <item>
+      <title>CEASA Goiás: engenharia e operação na prática</title>
+      <link>https://4watt.tech/case-ceasa-goias.html</link>
+      <guid>https://4watt.tech/case-ceasa-goias.html</guid>
+      <description>Reengenharia de equipamentos, manutenção e dados de operação na usina que transforma resíduos da central de abastecimento.</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>Operação e manutenção</category>
+      <category>Gestão de resíduos</category>
+      <category>Resíduos orgânicos</category>
+      <category>Biogás</category>
+    </item>
+    <item>
+      <title>Por que a IA não substitui um projeto de investimento</title>
+      <link>https://4watt.tech/artigo-por-que-ia-nao-basta.html</link>
+      <guid>https://4watt.tech/artigo-por-que-ia-nao-basta.html</guid>
+      <description>O que separa uma estimativa rápida de um projeto bancável: caracterização do resíduo, engenharia, riscos e documentação.</description>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <category>Viabilidade econômica</category>
+      <category>Financiamento de projetos</category>
+      <category>Engenharia industrial</category>
+    </item>
+    <item>
+      <title>Cases de engenharia 4WaTT: do projeto à operação</title>
+      <link>https://4watt.tech/artigo-cases-engenharia.html</link>
+      <guid>https://4watt.tech/artigo-cases-engenharia.html</guid>
+      <description>Escopo de engenharia e aprendizados de projetos de biogás da 4WaTT, da concepção ao acompanhamento da operação.</description>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <category>Engenharia industrial</category>
+      <category>Biogás</category>
+      <category>Viabilidade econômica</category>
+    </item>
+    <item>
+      <title>Créditos de carbono a partir do biogás: oportunidade real ou promessa?</title>
+      <link>https://4watt.tech/artigo-creditos-carbono.html</link>
+      <guid>https://4watt.tech/artigo-creditos-carbono.html</guid>
+      <description>Entenda as diferenças entre CBIOs e créditos voluntários e os cuidados ao avaliar receitas de carbono em um projeto de biogás.</description>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+      <category>Créditos de carbono</category>
+      <category>RenovaBio e CBIOs</category>
+      <category>Descarbonização</category>
+      <category>Biogás</category>
+    </item>
+    <item>
+      <title>Regulação do biometano: uma análise da ANP 854/2021</title>
+      <link>https://4watt.tech/artigo-regulacao-biometano.html</link>
+      <guid>https://4watt.tech/artigo-regulacao-biometano.html</guid>
+      <description>Análise histórica da regulação brasileira do biometano. Leia com a nota de atualização e consulte a fonte oficial para as regras vigentes.</description>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+      <category>Biometano</category>
+      <category>Regulação ANP</category>
+      <category>RenovaBio e CBIOs</category>
+    </item>
+    <item>
+      <title>Como funciona um biodigestor industrial</title>
+      <link>https://4watt.tech/artigo-como-funciona-biodigestor.html</link>
+      <guid>https://4watt.tech/artigo-como-funciona-biodigestor.html</guid>
+      <description>Da digestão anaeróbia ao aproveitamento energético: tipos de reatores, parâmetros de operação e dimensionamento de uma planta.</description>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <category>Biogás</category>
+      <category>Biodigestores</category>
+      <category>Digestão anaeróbia</category>
+      <category>Resíduos orgânicos</category>
+    </item>
+  </channel>
+</rss>
